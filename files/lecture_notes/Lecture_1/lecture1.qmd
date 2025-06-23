@@ -1,6 +1,6 @@
 ---
 title: "Lecture 1: Introduction to Data Science"
-date: ""
+date: "06/23/2025"
 author: "Narjes Mathlouthi"
 format:
   revealjs:
