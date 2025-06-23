@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Class Schedule",
+    "section": "",
+    "text": "Note: This schedule is subject to change. Please check back regularly for updates.\n\nNote: This schedule is subject to change. Please check back regularly for updates.\n\n\n\nWeek\nDate\nTopic\nLab/Quiz\nWorksheet\n\n\n\n\n1\n6/23\nIntroduction\nLab 1\nWorksheet 1\n\n\n\n6/24\nDescriptive Statistics I\n\n\n\n\n\n6/25\nDescriptive Statistics II\n\n\n\n\n\n6/26\nIntro to Probability\n\n\n\n\n2\n6/30\nCounting\nLab 2\nWorksheet 2\n\n\n\n7/01\nConditional Probability\n\n\n\n\n\n7/02\nDiscrete Random Variables\n\n\n\n\n\n7/03\nContinuous Random Variables\n\n\n\n\n3\n7/07\nIntroduction to Inference\nLab 3\nWorksheet 3\n\n\n\n7/08\nConfidence Intervals (Proportions)\n\n\n\n\n\n7/09\nConfidence Intervals (Means)\n\n\n\n\n\n7/10\nQuiz 1 (Weeks 1–2)\n\n\n\n\n4\n7/14\nHypothesis Testing I\nLab 4\nWorksheet 4\n\n\n\n7/15\nHypothesis Testing II\n\n\n\n\n\n7/16\nTwo–Sample t-Tests\n\n\n\n\n\n7/17\nTwo–Sample t-Tests Continued\n\n\n\n\n5\n7/21\nANOVA\nLab 5\nWorksheet 5\n\n\n\n7/22\nIntro to Statistical Modeling\n\n\n\n\n\n7/23\nIntro to Statistical Modeling & Correlation\n\n\n\n\n\n7/24\nQuiz 2 (Weeks 3–4)\n\n\n\n\n6\n7/28\nRegression Analysis\nLab 6\nWorksheet 6\n\n\n\n7/29\nRegression Diagnostics, Sampling\n\n\n\n\n\n7/30\nWrap-Up\n\n\n\n\n\n7/31\nQuiz 3 (Weeks 5–6)"
+  },
+  {
+    "objectID": "index.html#course-overview",
+    "href": "index.html#course-overview",
+    "title": "PSTAT 5A: Understanding Data",
+    "section": "Course Overview",
+    "text": "Course Overview\nIn this course you will learn to:\n\nApply descriptive and inferential statistical methods\n\nWork with probability models and random variables\n\nConstruct confidence intervals and perform hypothesis tests\n\nFit and interpret regression and ANOVA models\n\nUse Python and Jupyter notebooks for data analysis"
+  },
+  {
+    "objectID": "index.html#quick-links",
+    "href": "index.html#quick-links",
+    "title": "PSTAT 5A: Understanding Data",
+    "section": "Quick Links",
+    "text": "Quick Links\n\n\n\nIcon\nSection\nLink\n\n\n\n\n📘\nSyllabus\nView Syllabus\n\n\n🗓️\nSchedule\nClass Schedule\n\n\n🎥\nLectures\nLecture Notes\n\n\n💻\nLabs\nComputing Labs\n\n\n📂\nResources\nData & Code\n\n\n🕑\nOffice Hours\nOffice Hours\n\n\n📬\nContact\nGet in Touch\n\n\n\n\n\nNote: This schedule and all deadlines are subject to change. Check this site regularly for updates.\n\nFeel free to explore via the navigation bar above or through these quick‐link buttons. If you have any questions, use the Contact page or drop by office hours. Let’s have a great quarter!"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html",
+    "href": "files/labs/lab1/lab1.html",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Welcome to the first PSTAT 5A Lab! As we will soon learn, computers play an integral part in effectively and efficiently performing statistical analyses. The primary goal of these Labs is to develop the skills to communicate with computers and learn the basic principles and language of programming.\nThis first lab will introduce you to the JupyterHub environment, Python as a programming language, and some basic concepts of programming. You will also complete a series of tasks to familiarize yourself with the tools and concepts we will use throughout the course.\nThis lab is designed to be completed during your first lab section of the week, and it will set the foundation for the rest of the course. Make sure to read through all the material carefully, as it will be essential for your success in PSTAT 5A.\n\n\n\nEvery week we (the course staff) will publish a lab document, which is intended to be completed during your Lab Section (i.e., your first Section) of the week. Each lab document will consist of a combination of text, tips, and the occasional task for you to complete based on the text provided. Your TA will cover exactly what you need to turn in at the end of each lab in order to receive credit, but you should read all lab material carefully and thoroughly as content from labs will appear on quizzes and exams.\n\n\n\n\nComputers, though incredibly useful, are fairly complex machines. To communicate with them, we need to use a specific language, known as a programming language. There are a number of programming languages currently in use—R, Julia, MatLab, and the language we will use for this course, Python.\nPython programs can be written in many environments (e.g., text editors like VS Code or in a Terminal window). For this class we will use Jupyter Notebook (pronounced “Jew-pi-ter”), an interactive environment that’s hosted online so you don’t have to install anything to run Python code!\n\n\n\n\n\nNavigate to (https://pstat5a.lsit.ucsb.edu)\n\nIf you are using a personal computer, you may want to bookmark this page for easy access later.\n\nClick Sign in with your UCSB NetID, and sign in.\n\n\nNavigate to the Labs folder on the left-hand side of the JupyterHub interface.\n\n\nUnder Notebook, click Python 3 (ipykernel).\n\n\nCongratulations, you have just made your first Jupyter notebook! Now, it’s time for our first task:\n\n\n\n\n\nFind your new notebook in the left-hand file browser (it will be named Untitled or Untitled1 by default).\n\nRight-click the notebook and select → Rename.\n\nRename it to Lab1 and hit Enter.\n\nWatch the title bar update to Lab1.ipynb.\n\n\n\n\n\nJupyter notebooks are built from cells—the shaded boxes you see on screen. Here’s how to work with them:\n\n\n\nInactive cell\n\nAppearance: light grey background\n\nAction: click anywhere inside the cell to activate\n\n\nActive cell\n\nAppearance: colored border (green or blue)\n\nYou can now type code or Markdown here.\n\n\n\nTip: Only the active cell runs when you press Run.\n\n\n\n\n\nClick the ▶️ Run button in the toolbar\n\nOr press Shift + Enter to run and advance to the next cell\n\n\n\n\n\n\n\nYou can switch any cell between Code and Markdown:\n\n\n\nPurpose: write and execute Python code\n\nSelect:\n\nClick the cell\n\nChoose Code from the toolbar dropdown\n\n\n\nRun: ▶️ Run button or Shift + Enter\n\n\n\n\n\nPurpose: write formatted text, headings, lists, math, and embed images\n\nSelect:\n\nClick the cell\n\nChoose Markdown from the toolbar dropdown\n\n\nRender: ▶️ Run button or Shift + Enter\n\n\n\n\n\n\nClick into the initial cell ( marked by [ ] on the left).\n\nIn the toolbar dropdown (that currently says Code), select Markdown.\n\nCopy-paste the following (including the #):\n# Task 2\nRun the cell (▶️).\nCreate a new code cell by clicking the + button in the toolbar.\n\n\nAlternatively, you can press B to add a cell below the current one or A to add one above it.\n\nThis option preserves the previous cell type (Code or Markdown).\n\nYou can also right-click the cell and select Insert Cell Below or Insert Cell Above.\nYou can also use the Insert menu at the top of the page. &gt; Tip: Press Shift + Enter to run a cell and move to (or create) the next one.\n\nEnter and run:\n2 + 2\nObserve that a new cell appears under it automatically.\n\n\nTip: Press Shift + Enter to run a cell and move to (or create) the next one.\n\n\n\n\n\nCreate a new Markdown cell labeled:\n# Task 3\nCreate a new code cell and run:\n2 plus 2\nObserve the SyntaxError and note how Python points to the problem.\n\n\nNote: Always read error messages, they tell you what went wrong!\n\n\n\n\n\nPython follows the usual order of operations:\n\nParentheses\n\nExponents\n\nMultiplication / Division\n\nAddition / Subtraction\n\n\n\n\nOperation\nPython Syntax\nExample\nResult\n\n\n\n\nAddition\n+\n2 + 2\n4\n\n\nSubtraction\n-\n2 - 2\n0\n\n\nMultiplication\n*\n2 * 2\n4\n\n\nDivision\n/\n2 / 2\n1.0\n\n\nExponentiation\n**\n2 ** 2\n4\n\n\n\n\n\n\nCompute the following in separate code cells:\n\n\\[\\frac{2 + 3}{4 + 5^6}\\]\n\\[(1 - 3 \\cdot 4^5)^6\\]\n\n\n\n\n\nIn Python, a module is simply a file (with a .py extension) that contains related code, functions, classes, and variables—that you can reuse in other programs. Modules help you organize your code, avoid naming conflicts, and leverage functionality written by others.\n\n\n\nReusability: Write a function once, then import it wherever you need it.\n\nOrganization: Group related functionality into logical units (e.g., math operations).\n\nNamespace Management: Keep your global namespace clean by accessing code through the module’s name.\n\n\n\n\nThere are several ways to bring module code into your current script or notebook:\n\nImport the entire module\nimport math\nprint(math.sin(1))\nImport specific names\nfrom math import sin, pi\nprint(sin(pi/2))\nImport with an alias\nimport numpy as np\narr = np.array([1, 2, 3])\n\n\nTip: Use specific imports (from module import name) to keep your namespace tidy, or aliases (import module as m) for brevity.\n\n\n\n\n\n\nStandard library: Modules like math, random, and datetime come with Python.\n\nThird-party: Install via pip install package_name (e.g. pip install pandas).\n\nYour own: Create my_utils.py and then import my_utils in your project.\n\nModules are the building blocks of larger Python applications; get comfortable importing and exploring them!\n\n\n\n\n\n\nIn a code cell, type:\nsin(1)\nObserve the NameError.\n\nIn the same (or a new) cell, load the module and retry:\nfrom math import *\nsin(1)\n\n\n\n\n\nVariables in Python are used to store data values. You can think of them as labels for data that you want to use later in your program.\n\nAssignment:\nx = 2\nPrinting:\nprint(x)\n\nPython is case-sensitive: my_variable ≠ My_variable.\n\nBehind the scenes, print() is a function that takes one or more values and displays them on the screen. We’ll learn what functions are and how to create our own functions soon.\n\n\n\n\n\n\nAssign:\nmy_variable = 5\nIn a new cell, run:\nprint(My_variable)\n– observe the NameError due to wrong capitalization.\nNameError: name 'My_variable' is not defined\nIn the same cell, run:\nprint(my_variable)\nNow you should see 5 printed without any errors.\n\n\n\n\n\nComments are notes in your code that Python ignores when running the program. They help you and others understand what your code does. Comments are essential for documenting your code, explaining complex logic, or leaving reminders for yourself or others. They do not affect the execution of your program.\nYou can add comments anywhere in your code, and they can be on their own line or at the end of a line of code.\nIn Python, comments start with a # symbol. Everything after the # on that line is considered a comment and will not be executed by Python. You can also use multi-line comments with triple quotes (\"\"\" or '''), which allows you to write longer explanations or block comments that span multiple lines. These are often used for documentation strings (docstrings) to describe functions, classes, or modules.\nYou can add comments in two ways:\n\nInline comment: Use # to comment out a single line.\nExample:\n# This is an inline comment\nx = 5  # Assign 5 to x\nBlock comment: Use triple quotes \"\"\" or ''' to comment out multiple lines.\n\nExample:\n\"\"\"\nMultiple lines\nof comment here\n\"\"\"\n\n\n\n\n\nGo back and add descriptive comments to some of your previous code cells.\n\n\n\n\nPython has several basic data types, which are the building blocks for more complex data structures. The most common ones are: - bool — boolean (e.g. True, False)\n\nNoneType — represents the absence of a value (e.g. None)\nlist — ordered collection (e.g. [1, 2, 3])\ntuple — immutable ordered collection (e.g. (1, 2, 3))\ndict — key-value pairs (e.g. `{“key”: “value”})\nset — unordered collection of unique items (e.g. {1, 2, 3})\n\nThe most basic data types you will use in this course are:\n\nint — integer (e.g. 1, 42)\nfloat — real number (e.g. 1.0, 3.14)\n\nstr — string/text (e.g. \"hello\", 'abc')\n\n\n\n\n\nRun each in its own cell:\ntype(1)\ntype(1.1)\ntype(\"hello\")\n\n\n\n\nYou can assign values to variables and use them in expressions. Here’s an example:\n\n\n\n\n\nCreate a new Markdown cell labeled:\n# Task 9\nIn a new code cell, perform the following variable assignments:\ncourse = \"PSTAT 5A\"\nnum_sections = 4\nsection_capacity = 25\nA new section has been added! Update the variable num_sections to be one more than when you initially defined it above. (Don’t just use num_sections = 5- think about our discussion on updating variables above!)\nUsing comments, write down what you think the output of each of the following expressions will be:\ntype(course)\ntype(num_sections)\nnum_sections * section_capacity\nThen, run each expression in a separate code chunk and comment on the results.\nCreate a new variable called course_capacity and assign it the value of the maximum capacity of the course. (Hint: there are only 5 sections, and each section has a maximum capacity of 25. Try to use your already-defined variables as much as possible!)\n\n\n\n\n\nThat wraps up Lab 1! You’ve successfully navigated the JupyterHub environment, learned how to switch between and run Code and Markdown cells, experimented with basic Python expressions, and practiced variable assignment. In Lab 2, we’ll dive deeper into Python functions, data structures, and more advanced programming concepts. Great work, see you next time!\n\n\n\n\n\n\n🔖 Table of Contents\n- PSTAT 5A Lab 1  - Structure of Labs  - What Is Programming?  - Getting Started  - Task 1  - The JupyterHub Environment  - 1. Cell Activation  - 2. Running Cells  - Cell Types  - Code Cells  - Markdown Cells  - Task 2  - Task 3  - Python as a Calculator  - Task 4  - Python Modules  - Why Use Modules?  - Importing Modules  - Finding and Installing Modules  - Task 5  - Variable Assignment  - Task 6  - Comments  - Task 7  - Basic Data Types  - Task 8  - Using Variables and Data Types  - Task 9  - Conclusion"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#structure-of-labs",
+    "href": "files/labs/lab1/lab1.html#structure-of-labs",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Every week we (the course staff) will publish a lab document, which is intended to be completed during your Lab Section (i.e., your first Section) of the week. Each lab document will consist of a combination of text, tips, and the occasional task for you to complete based on the text provided. Your TA will cover exactly what you need to turn in at the end of each lab in order to receive credit, but you should read all lab material carefully and thoroughly as content from labs will appear on quizzes and exams."
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#what-is-programming",
+    "href": "files/labs/lab1/lab1.html#what-is-programming",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Computers, though incredibly useful, are fairly complex machines. To communicate with them, we need to use a specific language, known as a programming language. There are a number of programming languages currently in use—R, Julia, MatLab, and the language we will use for this course, Python.\nPython programs can be written in many environments (e.g., text editors like VS Code or in a Terminal window). For this class we will use Jupyter Notebook (pronounced “Jew-pi-ter”), an interactive environment that’s hosted online so you don’t have to install anything to run Python code!"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#getting-started",
+    "href": "files/labs/lab1/lab1.html#getting-started",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Navigate to (https://pstat5a.lsit.ucsb.edu)\n\nIf you are using a personal computer, you may want to bookmark this page for easy access later.\n\nClick Sign in with your UCSB NetID, and sign in.\n\n\nNavigate to the Labs folder on the left-hand side of the JupyterHub interface.\n\n\nUnder Notebook, click Python 3 (ipykernel).\n\n\nCongratulations, you have just made your first Jupyter notebook! Now, it’s time for our first task:"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#task-1",
+    "href": "files/labs/lab1/lab1.html#task-1",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Find your new notebook in the left-hand file browser (it will be named Untitled or Untitled1 by default).\n\nRight-click the notebook and select → Rename.\n\nRename it to Lab1 and hit Enter.\n\nWatch the title bar update to Lab1.ipynb."
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#the-jupyterhub-environment",
+    "href": "files/labs/lab1/lab1.html#the-jupyterhub-environment",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Jupyter notebooks are built from cells—the shaded boxes you see on screen. Here’s how to work with them:\n\n\n\nInactive cell\n\nAppearance: light grey background\n\nAction: click anywhere inside the cell to activate\n\n\nActive cell\n\nAppearance: colored border (green or blue)\n\nYou can now type code or Markdown here.\n\n\n\nTip: Only the active cell runs when you press Run.\n\n\n\n\n\nClick the ▶️ Run button in the toolbar\n\nOr press Shift + Enter to run and advance to the next cell"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#cell-types",
+    "href": "files/labs/lab1/lab1.html#cell-types",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "You can switch any cell between Code and Markdown:\n\n\n\nPurpose: write and execute Python code\n\nSelect:\n\nClick the cell\n\nChoose Code from the toolbar dropdown\n\n\n\nRun: ▶️ Run button or Shift + Enter\n\n\n\n\n\nPurpose: write formatted text, headings, lists, math, and embed images\n\nSelect:\n\nClick the cell\n\nChoose Markdown from the toolbar dropdown\n\n\nRender: ▶️ Run button or Shift + Enter"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#task-2",
+    "href": "files/labs/lab1/lab1.html#task-2",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Click into the initial cell ( marked by [ ] on the left).\n\nIn the toolbar dropdown (that currently says Code), select Markdown.\n\nCopy-paste the following (including the #):\n# Task 2\nRun the cell (▶️).\nCreate a new code cell by clicking the + button in the toolbar.\n\n\nAlternatively, you can press B to add a cell below the current one or A to add one above it.\n\nThis option preserves the previous cell type (Code or Markdown).\n\nYou can also right-click the cell and select Insert Cell Below or Insert Cell Above.\nYou can also use the Insert menu at the top of the page. &gt; Tip: Press Shift + Enter to run a cell and move to (or create) the next one.\n\nEnter and run:\n2 + 2\nObserve that a new cell appears under it automatically.\n\n\nTip: Press Shift + Enter to run a cell and move to (or create) the next one."
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#task-3",
+    "href": "files/labs/lab1/lab1.html#task-3",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Create a new Markdown cell labeled:\n# Task 3\nCreate a new code cell and run:\n2 plus 2\nObserve the SyntaxError and note how Python points to the problem.\n\n\nNote: Always read error messages, they tell you what went wrong!"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#python-as-a-calculator",
+    "href": "files/labs/lab1/lab1.html#python-as-a-calculator",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Python follows the usual order of operations:\n\nParentheses\n\nExponents\n\nMultiplication / Division\n\nAddition / Subtraction\n\n\n\n\nOperation\nPython Syntax\nExample\nResult\n\n\n\n\nAddition\n+\n2 + 2\n4\n\n\nSubtraction\n-\n2 - 2\n0\n\n\nMultiplication\n*\n2 * 2\n4\n\n\nDivision\n/\n2 / 2\n1.0\n\n\nExponentiation\n**\n2 ** 2\n4"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#task-4",
+    "href": "files/labs/lab1/lab1.html#task-4",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Compute the following in separate code cells:\n\n\\[\\frac{2 + 3}{4 + 5^6}\\]\n\\[(1 - 3 \\cdot 4^5)^6\\]"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#python-modules",
+    "href": "files/labs/lab1/lab1.html#python-modules",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "In Python, a module is simply a file (with a .py extension) that contains related code, functions, classes, and variables—that you can reuse in other programs. Modules help you organize your code, avoid naming conflicts, and leverage functionality written by others.\n\n\n\nReusability: Write a function once, then import it wherever you need it.\n\nOrganization: Group related functionality into logical units (e.g., math operations).\n\nNamespace Management: Keep your global namespace clean by accessing code through the module’s name.\n\n\n\n\nThere are several ways to bring module code into your current script or notebook:\n\nImport the entire module\nimport math\nprint(math.sin(1))\nImport specific names\nfrom math import sin, pi\nprint(sin(pi/2))\nImport with an alias\nimport numpy as np\narr = np.array([1, 2, 3])\n\n\nTip: Use specific imports (from module import name) to keep your namespace tidy, or aliases (import module as m) for brevity.\n\n\n\n\n\n\nStandard library: Modules like math, random, and datetime come with Python.\n\nThird-party: Install via pip install package_name (e.g. pip install pandas).\n\nYour own: Create my_utils.py and then import my_utils in your project.\n\nModules are the building blocks of larger Python applications; get comfortable importing and exploring them!"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#task-5",
+    "href": "files/labs/lab1/lab1.html#task-5",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "In a code cell, type:\nsin(1)\nObserve the NameError.\n\nIn the same (or a new) cell, load the module and retry:\nfrom math import *\nsin(1)"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#variable-assignment",
+    "href": "files/labs/lab1/lab1.html#variable-assignment",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Variables in Python are used to store data values. You can think of them as labels for data that you want to use later in your program.\n\nAssignment:\nx = 2\nPrinting:\nprint(x)\n\nPython is case-sensitive: my_variable ≠ My_variable.\n\nBehind the scenes, print() is a function that takes one or more values and displays them on the screen. We’ll learn what functions are and how to create our own functions soon."
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#task-6",
+    "href": "files/labs/lab1/lab1.html#task-6",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Assign:\nmy_variable = 5\nIn a new cell, run:\nprint(My_variable)\n– observe the NameError due to wrong capitalization.\nNameError: name 'My_variable' is not defined\nIn the same cell, run:\nprint(my_variable)\nNow you should see 5 printed without any errors."
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#comments",
+    "href": "files/labs/lab1/lab1.html#comments",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Comments are notes in your code that Python ignores when running the program. They help you and others understand what your code does. Comments are essential for documenting your code, explaining complex logic, or leaving reminders for yourself or others. They do not affect the execution of your program.\nYou can add comments anywhere in your code, and they can be on their own line or at the end of a line of code.\nIn Python, comments start with a # symbol. Everything after the # on that line is considered a comment and will not be executed by Python. You can also use multi-line comments with triple quotes (\"\"\" or '''), which allows you to write longer explanations or block comments that span multiple lines. These are often used for documentation strings (docstrings) to describe functions, classes, or modules.\nYou can add comments in two ways:\n\nInline comment: Use # to comment out a single line.\nExample:\n# This is an inline comment\nx = 5  # Assign 5 to x\nBlock comment: Use triple quotes \"\"\" or ''' to comment out multiple lines.\n\nExample:\n\"\"\"\nMultiple lines\nof comment here\n\"\"\""
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#task-7",
+    "href": "files/labs/lab1/lab1.html#task-7",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Go back and add descriptive comments to some of your previous code cells."
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#basic-data-types",
+    "href": "files/labs/lab1/lab1.html#basic-data-types",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Python has several basic data types, which are the building blocks for more complex data structures. The most common ones are: - bool — boolean (e.g. True, False)\n\nNoneType — represents the absence of a value (e.g. None)\nlist — ordered collection (e.g. [1, 2, 3])\ntuple — immutable ordered collection (e.g. (1, 2, 3))\ndict — key-value pairs (e.g. `{“key”: “value”})\nset — unordered collection of unique items (e.g. {1, 2, 3})\n\nThe most basic data types you will use in this course are:\n\nint — integer (e.g. 1, 42)\nfloat — real number (e.g. 1.0, 3.14)\n\nstr — string/text (e.g. \"hello\", 'abc')"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#task-8",
+    "href": "files/labs/lab1/lab1.html#task-8",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Run each in its own cell:\ntype(1)\ntype(1.1)\ntype(\"hello\")"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#using-variables-and-data-types",
+    "href": "files/labs/lab1/lab1.html#using-variables-and-data-types",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "You can assign values to variables and use them in expressions. Here’s an example:"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#task-9",
+    "href": "files/labs/lab1/lab1.html#task-9",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "Create a new Markdown cell labeled:\n# Task 9\nIn a new code cell, perform the following variable assignments:\ncourse = \"PSTAT 5A\"\nnum_sections = 4\nsection_capacity = 25\nA new section has been added! Update the variable num_sections to be one more than when you initially defined it above. (Don’t just use num_sections = 5- think about our discussion on updating variables above!)\nUsing comments, write down what you think the output of each of the following expressions will be:\ntype(course)\ntype(num_sections)\nnum_sections * section_capacity\nThen, run each expression in a separate code chunk and comment on the results.\nCreate a new variable called course_capacity and assign it the value of the maximum capacity of the course. (Hint: there are only 5 sections, and each section has a maximum capacity of 25. Try to use your already-defined variables as much as possible!)"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1.html#conclusion",
+    "href": "files/labs/lab1/lab1.html#conclusion",
+    "title": "PSTAT 5A Lab 1",
+    "section": "",
+    "text": "That wraps up Lab 1! You’ve successfully navigated the JupyterHub environment, learned how to switch between and run Code and Markdown cells, experimented with basic Python expressions, and practiced variable assignment. In Lab 2, we’ll dive deeper into Python functions, data structures, and more advanced programming concepts. Great work, see you next time!"
+  }
+]
