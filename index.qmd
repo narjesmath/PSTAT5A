@@ -1,0 +1,44 @@
+---
+title: " "
+format:
+  html:
+    toc: false
+---
+
+<img src="img/logo.png" alt="PSTAT5A Logo" width="80" style="float:right; margin: 0 0 1em 1em;"/>
+
+# PSTAT 5A: Understanding Data
+
+Welcome to the _PSTAT 5A_ course website for Summer Session A 2025, taught by **Narjes Mathlouthi**. Here you will find all of the materials and resources you need for lectures, labs, and quizzes, all in one place.
+
+---
+
+## Course Overview
+
+In this course you will learn to:
+
+- Apply descriptive and inferential statistical methods  
+- Work with probability models and random variables  
+- Construct confidence intervals and perform hypothesis tests  
+- Fit and interpret regression and ANOVA models  
+- Use Python and Jupyter notebooks for data analysis
+
+---
+
+## Quick Links
+
+| Icon | Section       | Link                          |
+|:----:|---------------|-------------------------------|
+| 📘   | Syllabus      | [View Syllabus](/files/syllabus/PSTAT5A__Syllabus.pdf) |
+| 🗓️   | Schedule      | [Class Schedule](schedule.qmd) |
+| 🎥   | Lectures      | [Lecture Notes](lectures/)    |
+| 💻   | Labs          | [Computing Labs](labs/)       |
+| 📂   | Resources     | [Data & Code](resources.qmd)  |
+| 🕑   | Office Hours  | [Office Hours](office-hours.qmd) |
+| 📬   | Contact       | [Get in Touch](contact.qmd)   |
+
+---
+
+> **Note:** This schedule and all deadlines are subject to change. Check this site regularly for updates.
+
+Feel free to explore via the navigation bar above or through these quick‐link buttons. If you have any questions, use the **Contact** page or drop by office hours. Let’s have a great quarter!  

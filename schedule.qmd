@@ -1,0 +1,37 @@
+---
+title: "Class Schedule"
+format:
+  html:
+    toc: false
+---
+
+> **Note:** This schedule is subject to change. Please check back regularly for updates.
+
+**Note:** This schedule is subject to change. Please check back regularly for updates.
+
+| Week | Date  | Topic                                       | Lab/Quiz                        | Worksheet   |
+|------|-------|---------------------------------------------|---------------------------------|-------------|
+| 1    | 6/23  | Introduction                                | [Lab 1](/files/labs/lab1/lab1.md)      | Worksheet 1 |
+|      | 6/24  | Descriptive Statistics I                    |                                 |             |
+|      | 6/25  | Descriptive Statistics II                   |                                 |             |
+|      | 6/26  | Intro to Probability                        |                                 |             |
+| 2    | 6/30  | Counting                                    | Lab 2                           | Worksheet 2 |
+|      | 7/01  | Conditional Probability                     |                                 |             |
+|      | 7/02  | Discrete Random Variables                   |                                 |             |
+|      | 7/03  | Continuous Random Variables                 |                                 |             |
+| 3    | 7/07  | Introduction to Inference                   | Lab 3                           | Worksheet 3 |
+|      | 7/08  | Confidence Intervals (Proportions)          |                                 |             |
+|      | 7/09  | Confidence Intervals (Means)                |                                 |             |
+|      | 7/10  | Quiz 1 (Weeks 1–2)                          |                                 |             |
+| 4    | 7/14  | Hypothesis Testing I                        | Lab 4                           | Worksheet 4 |
+|      | 7/15  | Hypothesis Testing II                       |                                 |             |
+|      | 7/16  | Two–Sample t-Tests                          |                                 |             |
+|      | 7/17  | Two–Sample t-Tests Continued                |                                 |             |
+| 5    | 7/21  | ANOVA                                       | Lab 5                           | Worksheet 5 |
+|      | 7/22  | Intro to Statistical Modeling               |                                 |             |
+|      | 7/23  | Intro to Statistical Modeling & Correlation |                                 |             |
+|      | 7/24  | Quiz 2 (Weeks 3–4)                          |                                 |             |
+| 6    | 7/28  | Regression Analysis                         | Lab 6                           | Worksheet 6 |
+|      | 7/29  | Regression Diagnostics, Sampling            |                                 |             |
+|      | 7/30  | Wrap-Up                                     |                                 |             |
+|      | 7/31  | Quiz 3 (Weeks 5–6)                          |                                 |             |
