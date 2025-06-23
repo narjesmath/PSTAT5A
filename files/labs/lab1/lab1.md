@@ -3,7 +3,7 @@
   <!-- MAIN CONTENT COLUMN -->
   <div style="flex: 1; padding-right: 2rem;">
 
-<img src="/img/logo.png" alt="PSTAT5A Logo" width="150"/>
+![](/img/logo.png){ width=150 }
 
 # PSTAT 5A Lab 1
 
@@ -34,11 +34,11 @@ Python programs can be written in many environments (e.g., text editors like VS 
 1. Navigate to **([https://pstat5a.lsit.ucsb.edu](https://pstat5a.lsit.ucsb.edu/hub/login))**   
    - If you are using a personal computer, you may want to bookmark this page for easy access later.
 2. Click **Sign in with your UCSB NetID**, and sign in.  
-   <img src="/img/sign_in.png" alt="Sign in" width="500"/>  
-3. Navigate to the **Labs** folder on the left-hand side of the JupyterHub interface.  
-   <img src="/img/navigate_to_labs.png" alt="Navigate to Labs" width="500"/>  
+![Sign In](/img/sign_in.png){ width=500 }
+3. Navigate to the **Labs** folder on the left-hand side of the JupyterHub interface. 
+![](/img/navigate_to_labs.png){width=500}
 4. Under **Notebook**, click **Python 3 (ipykernel)**.  
-   <img src="/img/select_notebook.png" alt="Select Notebook" width="500"/>
+![](/img/select_notebook.png){width=500}
 
 Congratulations, you have just made your first Jupyter notebook! Now, it’s time for our first task:
 
@@ -48,9 +48,9 @@ Congratulations, you have just made your first Jupyter notebook! Now, it’s tim
 
 1. Find your new notebook in the left-hand file browser (it will be named `Untitled` or `Untitled1` by default).  
 2. Right-click the notebook and select → **Rename**.  
- <img src="/img/right_click_to_rename.png" alt="Select Notebook" width="500"/>
+![Right Click to Rename](/img/right_click_to_rename.png){ width=500 }
 3. Rename it to `Lab1` and hit **Enter**.  
-  <img src="/img/rename_notebook.png" alt="Title Bar Update" width="500"/>
+![Title Bar Update](/img/rename_notebook.png){ width=500 }
 4. Watch the title bar update to `Lab1.ipynb`.
 
 ---
