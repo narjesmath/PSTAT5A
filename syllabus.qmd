@@ -1,0 +1,146 @@
+---
+title: "Syllabus"
+subtitle: "Summer 2025 Course Syllabus"
+author: "Instructor: Narjes Mathlouthi"
+format:
+  html:
+    toc: true
+---
+
+# Course Information
+
+- **Lecture Time:** M/W/T/R 8:00 AM–9:30 AM  
+- **Lecture Hall:** HSSB 1173  
+- **Sections:** As scheduled on GOLD (see Canvas for Zoom links)  
+- **Instructor:** Narjes Mathlouthi  
+- **Email:** nmathlouthi@ucsb.edu  
+- **Office:** Ellison Hall 5829  
+- **Office Hours:** Thursdays 11:00 AM–12:00 PM (via Zoom or by appointment)  
+- **Note:** Zoom links are posted on the Canvas page for the class.
+
+# Teaching Assistants
+
+- Summer Lee (`sle@ucsb.edu`)  
+- Mingzhu He (`mingzhuhe@ucsb.edu`)
+
+> **Email policy:** Include `[PSTAT 5A]` in your subject. Allow 24–48 hours for a reply (avoid weekends).
+
+# Course Description
+
+This introductory course covers the foundations of statistical thinking, including data description, probability, and inference. Students will learn how to summarize data, compute basic probabilities, and make informed decisions using statistical tools.
+
+# Student Learning Objectives
+
+By the end of this course, you will be able to:
+
+- Summarize data using descriptive statistics  
+- Understand fundamental probability rules and distributions  
+- Conduct basic inferential procedures (confidence intervals, hypothesis tests)  
+- Interpret results and communicate findings
+
+# Course Materials
+
+- **Canvas**: Announcements, Zoom links, and grades (`https://canvas.ucsb.edu`)  
+- **Calculator**: Scientific calculator for in-class and quiz work  
+- **Computer**: Use our JupyterHub instance (`https://pstat5a.lsit.ucsb.edu/hub/login`)  
+- **Recommended Texts**:  
+  - *OpenIntro Statistics* (free online)  
+  - *Think Stats* by Allen Downey (free online)
+
+# Class Schedule
+
+> **Note:** For the most up-to-date details, please visit the **Class Schedule** tab on our website: [Class Schedule](schedule.qmd)
+
+
+
+# Grading
+
+**Grade Breakdown:**  
+- Lecture attendance: 5%  
+- Section attendance: 5%  
+- Quiz 1: 30%  
+- Quiz 2: 30%  
+- Quiz 3: 30%  
+
+**Grading Scale:**  
+
+| Grade | Percentage |
+|:-----:|:----------:|
+| A+    | 97–100     |
+| A     | 93–96      |
+| A–    | 90–92      |
+| B+    | 87–89      |
+| B     | 83–86      |
+| B–    | 80–82      |
+| C+    | 77–79      |
+| C     | 73–76      |
+| C–    | 70–72      |
+| D+    | 67–69      |
+| D     | 60–66      |
+| F     | < 60       |
+
+Grades round to the nearest whole number (e.g., 89.7 → 90).
+
+# Attendance & Absences
+
+- One missed lecture & one missed section without penalty  
+- Additional absences require email within one week  
+- Excused absences (emergencies, UCSB events) require documentation
+
+# Quizzes
+
+- **Quiz 1:** Weeks 1–2 (7/10)  
+- **Quiz 2:** Weeks 3–4 (7/24)  
+- **Quiz 3:** Weeks 5–6 (7/31)  
+
+**Format:** Multiple choice & short answer (open book)  
+**Platform:** Gradescope  
+**Availability:** Fridays 7 AM–12 AM (1‑hour limit)  
+**Make‑up policy:** Notify within 48 h; documentation required.
+
+# How to Succeed
+
+- Attend lectures & sections  
+- Engage actively & ask questions  
+- Use office hours for help
+
+# Classroom Expectations
+
+Respect peers & TAs. Stay engaged. Seek support if needed.
+
+# Communication Guidelines
+
+- Use UCSB email with clear subject  
+- Allow 24–48 h for replies  
+- Use office hours or appointments
+
+# Academic Integrity
+
+Do your own work. Cite sources properly. See:  
+- [Academic Integrity Policy](https://studentconduct.sa.ucsb.edu/academic-integrity)  
+- [Student Conduct Code](https://www.sa.ucsb.edu/regulations/student-conduct-code/student-conduct-code)
+
+# Student Resources
+
+## DSP & Accommodations
+
+- [DSP & Accommodations](http://dsp.sa.ucsb.edu) or call (805) 893-2668
+
+## Other Services
+
+- [CLAS](https://clas.sa.ucsb.edu/)  
+- [Student Health](https://studenthealth.sa.ucsb.edu/)  
+- [Basic Needs](https://food.ucsb.edu/)  
+- [CAPS](https://caps.sa.ucsb.edu/)  
+- [Equal Opportunity Program (EOP)](https://eop.sa.ucsb.edu/)  
+- [ONDAS First-Gen Support](https://ondas.ucsb.edu/home)  
+- [Undocumented Student Services](https://uss.sa.ucsb.edu/)  
+- [Transfer Student Center](https://transfercenter.ucsb.edu/)
+
+# Important Dates
+
+- **Add w/o Code:** June 29  
+- **Drop w/ Refund:** June 29  
+- **Add w/ Code:** July 3  
+- **Drop Course:** July 9  
+- **Change Grade Option:** August 1  

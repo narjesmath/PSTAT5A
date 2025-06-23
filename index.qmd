@@ -29,7 +29,7 @@ In this course you will learn to:
 
 | Icon | Section       | Link                          |
 |:----:|---------------|-------------------------------|
-| 📘   | Syllabus      | [View Syllabus](/files/syllabus/PSTAT5A__Syllabus.pdf) |
+| 📘   | Syllabus      | [View Syllabus](syllabus.qmd) |
 | 🗓️   | Schedule      | [Class Schedule](schedule.qmd) |
 | 🎥   | Lectures      | [Lecture Notes](lectures/)    |
 | 💻   | Labs          | [Computing Labs](labs/)       |
