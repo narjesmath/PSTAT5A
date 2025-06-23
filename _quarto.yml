@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: _docs
 
 website:
   title: "PSTAT5A"
