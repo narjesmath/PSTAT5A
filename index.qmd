@@ -31,11 +31,11 @@ In this course you will learn to:
 |:----:|---------------|-------------------------------|
 | 📘   | Syllabus      | [View Syllabus](syllabus.qmd) |
 | 🗓️   | Schedule      | [Class Schedule](schedule.qmd) |
-| 🎥   | Lectures      | [Lecture Notes](lectures/)    |
-| 💻   | Labs          | [Computing Labs](labs/)       |
+| 🎥   | Lectures      | [Lecture Notes](schedule.qmd)    |
+| 💻   | Labs          | [Computing Labs](schedule.qmd)       |
 | 📂   | Resources     | [Data & Code](resources.qmd)  |
-| 🕑   | Office Hours  | [Office Hours](office-hours.qmd) |
-| 📬   | Contact       | [Get in Touch](contact.qmd)   |
+| 🕑   | Office Hours  | [Office Hours](syllabus.qmd) |
+| 📬   | Contact       | [Get in Touch](syllabus.qmd)   |
 
 ---
 

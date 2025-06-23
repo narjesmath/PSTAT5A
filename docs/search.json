@@ -194,5 +194,12 @@
     "title": "PSTAT 5A Lab 1",
     "section": "",
     "text": "That wraps up Lab 1! You’ve successfully navigated the JupyterHub environment, learned how to switch between and run Code and Markdown cells, experimented with basic Python expressions, and practiced variable assignment. In Lab 2, we’ll dive deeper into Python functions, data structures, and more advanced programming concepts. Great work, see you next time!"
+  },
+  {
+    "objectID": "files/lecture_notes/Lecture_1/lecture1.html#course-resources",
+    "href": "files/lecture_notes/Lecture_1/lecture1.html#course-resources",
+    "title": "Lecture 1: Introduction to Data Science",
+    "section": "Course Resources",
+    "text": "Course Resources\n\nCanvas: for grades\n\nGradescope: for quizzes & labs\n\nEntry code: WJ4XR7\n\n\nCourse Website: bit.ly/3Ga8CSK\n\n\nAll relevant course material will be posted on the website. quizzes are the only exception and will be administered via Gradescope.\n\n\nPlease read the syllabus fully and carefully!"
   }
 ]

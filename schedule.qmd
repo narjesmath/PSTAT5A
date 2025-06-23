@@ -11,7 +11,7 @@ format:
 
 | Week | Date  | Topic                                       | Lab/Quiz                        | Worksheet   |
 |------|-------|---------------------------------------------|---------------------------------|-------------|
-| 1    | 6/23  | Introduction                                | [Lab 1](/files/labs/lab1/lab1.md)      | Worksheet 1 |
+| 1    | 6/23  | [Introduction](/files/lecture_notes/Lecture_1/lecture1.qmd)                               | [Lab 1](/files/labs/lab1/lab1.md)      | Worksheet 1 |
 |      | 6/24  | Descriptive Statistics I                    |                                 |             |
 |      | 6/25  | Descriptive Statistics II                   |                                 |             |
 |      | 6/26  | Intro to Probability                        |                                 |             |
