@@ -6,6 +6,7 @@ format:
   html:
     toc: true
 ---
+**📄 [Download the full syllabus as a PDF](/files/syllabus/PSTAT5A__Syllabus.pdf)**
 
 # Course Information
 
