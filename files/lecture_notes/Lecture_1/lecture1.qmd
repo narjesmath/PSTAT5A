@@ -145,7 +145,7 @@ Access the lab environment at: [https://pstat5a.lsit.ucsb.edu](https://pstat5a.l
 - Theory guides how and why we apply tools  
 - Employers need analysts who **understand** and **apply**
 
----
+
 
 # Path Forward: Course Outline
 
@@ -155,7 +155,7 @@ Access the lab environment at: [https://pstat5a.lsit.ucsb.edu](https://pstat5a.l
 4. **Regression**: Modeling relationships  
 5. **Data Collection**: Sampling & study design
 
----
+
 
 # Why Should I Care?
 
@@ -163,7 +163,7 @@ Access the lab environment at: [https://pstat5a.lsit.ucsb.edu](https://pstat5a.l
 - Companies seek **insightful** analysts, not just code runners  
 - This course equips you with both **theory** and **practice**
 
----
+
 
 # Let’s Get Started!
 
