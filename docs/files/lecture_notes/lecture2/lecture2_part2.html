@@ -9,7 +9,7 @@
 <meta name="author" content="Narjes Mathlouthi">
 <meta name="dcterms.date" content="2025-06-25">
 
-<title>Lecture 2: Descriptive Statistics I - Part I – PSTAT5A</title>
+<title>Lecture 2: Descriptive Statistics I - Part II – PSTAT5A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -303,7 +303,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lecture 2: Descriptive Statistics I - Part I</h1>
+<h1 class="title">Lecture 2: Descriptive Statistics I - Part II</h1>
 <p class="subtitle lead">Understanding Data (PSTAT 5A) – Week 1</p>
 </div>
 
@@ -982,7 +982,7 @@ graph TD
 <p><em>15 minutes</em></p>
 <section id="essential-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="essential-libraries">Essential Libraries</h2>
-<div id="75def818" class="cell" data-execution_count="1">
+<div id="1694b80d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
@@ -991,7 +991,7 @@ graph TD
 </section>
 <section id="calculating-the-mean" class="level2">
 <h2 class="anchored" data-anchor-id="calculating-the-mean">Calculating the Mean</h2>
-<div id="64b4809d" class="cell" data-execution_count="2">
+<div id="6856c5fc" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1010,7 +1010,7 @@ Mean (Pandas): 86.6</code></pre>
 </section>
 <section id="calculating-the-median" class="level2">
 <h2 class="anchored" data-anchor-id="calculating-the-median">Calculating the Median</h2>
-<div id="c1c8c45d" class="cell" data-execution_count="3">
+<div id="fdb49ff4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using NumPy</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>median_np <span class="op">=</span> np.median(data)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Median (NumPy): </span><span class="sc">{</span>median_np<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -1025,7 +1025,7 @@ Median (Pandas): 88.0</code></pre>
 </section>
 <section id="calculating-the-mode" class="level2">
 <h2 class="anchored" data-anchor-id="calculating-the-mode">Calculating the Mode</h2>
-<div id="03d5d165" class="cell" data-execution_count="4">
+<div id="ca7382db" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using SciPy</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>mode_result <span class="op">=</span> stats.mode(data)</span>
@@ -1038,7 +1038,7 @@ Median (Pandas): 88.0</code></pre>
 </section>
 <section id="comprehensive-analysis-function" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="comprehensive-analysis-function">Comprehensive Analysis Function</h2>
-<div id="c6813c06" class="cell" data-execution_count="5">
+<div id="7c73f0cd" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> descriptive_summary(data, column_name<span class="op">=</span><span class="st">"Data"</span>):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate comprehensive descriptive statistics"""</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame({column_name: data})</span>
@@ -1064,7 +1064,7 @@ Median (Pandas): 88.0</code></pre>
 </section>
 <section id="handling-categorical-data" class="level2">
 <h2 class="anchored" data-anchor-id="handling-categorical-data">Handling Categorical Data</h2>
-<div id="63dee9b7" class="cell" data-execution_count="6">
+<div id="3d211128" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Categorical data example</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'A'</span>, <span class="st">'C'</span>, <span class="st">'B'</span>, <span class="st">'B'</span>]</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>cat_series <span class="op">=</span> pd.Series(categories)</span>
