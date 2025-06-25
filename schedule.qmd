@@ -11,8 +11,8 @@ format:
 
 | Week | Date  | Topic                                       | Lab/Quiz                        | Worksheet   |
 |------|-------|---------------------------------------------|---------------------------------|-------------|
-| 1    | 6/23  | [Introduction](/files/lecture_notes/Lecture_1/lecture1.qmd)                               | [Lab 1](/files/labs/lab1/lab1.pdf)      | Worksheet 1 |
-|      | 6/24  | Descriptive Statistics I                    |                                 |             |
+| 1    | 6/23  | [Introduction](/files/lecture_notes/Lecture_1/lecture1.qmd)                               | [Lab 1](/files/labs/lab1/lab1.pdf)      |[ Worksheet 1](/files/worksheets/PSTAT_5A_Discussion_Worksheet_1.pdf) |
+|      | 6/24  | [Descriptive Statistics I](/files/lecture_notes/lecture2/lecture2.qmd)                   |                                 |             |
 |      | 6/25  | Descriptive Statistics II                   |                                 |             |
 |      | 6/26  | Intro to Probability                        |                                 |             |
 | 2    | 6/30  | Counting                                    | Lab 2                           | Worksheet 2 |
