@@ -1,37 +1,537 @@
 ---
 title: "Class Schedule"
+subtitle: "PSTAT5A- Understanding Data"
 format:
   html:
     toc: false
+    theme: cosmo
+    css: /theme/schedule-styles.css
+    page-layout: full
+execute:
+  echo: false
+  warning: false
 ---
 
-> **Note:** This schedule is subject to change. Please check back regularly for updates.
 
-**Note:** This schedule is subject to change. Please check back regularly for updates.
 
-| Week | Date  | Topic                                       | Lab/Quiz                        | Worksheet   |
-|------|-------|---------------------------------------------|---------------------------------|-------------|
-| 1    | 6/23  | [Introduction](/files/lecture_notes/Lecture_1/lecture1.qmd)                               | [Lab 1](/files/labs/lab1/lab1.pdf)      |[ Worksheet 1](/files/worksheets/PSTAT_5A_Discussion_Worksheet_1.pdf) |
-|      | 6/24  | [Descriptive Statistics I](/files/lecture_notes/lecture2/lecture2_part1.qmd)                   |                                 |             |
-|      | 6/25  | Descriptive Statistics II                   |                                 |             |
-|      | 6/26  | Intro to Probability                        |                                 |             |
-| 2    | 6/30  | Counting                                    | Lab 2                           | Worksheet 2 |
-|      | 7/01  | Conditional Probability                     |                                 |             |
-|      | 7/02  | Discrete Random Variables                   |                                 |             |
-|      | 7/03  | Continuous Random Variables                 |                                 |             |
-| 3    | 7/07  | Introduction to Inference                   | Lab 3                           | Worksheet 3 |
-|      | 7/08  | Confidence Intervals (Proportions)          |                                 |             |
-|      | 7/09  | Confidence Intervals (Means)                |                                 |             |
-|      | 7/10  | Quiz 1 (Weeks 1–2)                          |                                 |             |
-| 4    | 7/14  | Hypothesis Testing I                        | Lab 4                           | Worksheet 4 |
-|      | 7/15  | Hypothesis Testing II                       |                                 |             |
-|      | 7/16  | Two–Sample t-Tests                          |                                 |             |
-|      | 7/17  | Two–Sample t-Tests Continued                |                                 |             |
-| 5    | 7/21  | ANOVA                                       | Lab 5                           | Worksheet 5 |
-|      | 7/22  | Intro to Statistical Modeling               |                                 |             |
-|      | 7/23  | Intro to Statistical Modeling & Correlation |                                 |             |
-|      | 7/24  | Quiz 2 (Weeks 3–4)                          |                                 |             |
-| 6    | 7/28  | Regression Analysis                         | Lab 6                           | Worksheet 6 |
-|      | 7/29  | Regression Diagnostics, Sampling            |                                 |             |
-|      | 7/30  | Wrap-Up                                     |                                 |             |
-|      | 7/31  | Quiz 3 (Weeks 5–6)                          |                                 |             |
+::: {.notice-banner}
+::: {.notice-icon}
+⚠️
+:::
+**Important:** This schedule is subject to change. Please check back regularly for updates and announcements.
+:::
+
+::: {.legend}
+::: {.legend-item}
+::: {.legend-color style="background: #28a745;"}
+:::
+Labs & Worksheets
+:::
+::: {.legend-item}
+::: {.legend-color style="background: #ff6b6b;"}
+:::
+Quizzes & Exams
+:::
+::: {.legend-item}
+::: {.legend-color style="background: #667eea;"}
+:::
+Lecture Materials
+:::
+:::
+
+::: {.schedule-container}
+
+::: {.week-section .week-1}
+::: {.week-header}
+<span>Week 1: Introduction & Descriptive Statistics</span>
+:::
+::: {.week-content}
+::: {.day-row}
+::: {.week-number}
+1
+:::
+::: {.date}
+6/23
+:::
+::: {.topic}
+[Introduction](/files/lecture_notes/Lecture_1/lecture1.qmd)
+:::
+::: {.lab-quiz}
+[Lab 1](/files/labs/lab1/lab1.pdf)
+:::
+::: {.worksheet}
+[Worksheet 1](/files/worksheets/PSTAT_5A_Discussion_Worksheet_1.pdf)
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+6/24
+:::
+::: {.topic .special-note}
+**No class (lectures canceled)**
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+6/25
+:::
+::: {.topic}
+[Descriptive Statistics I](/files/lecture_notes/lecture2/lecture2_part1.qmd)
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+6/26
+:::
+::: {.topic}
+Descriptive Statistics II
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+:::
+:::
+
+::: {.week-section .week-2}
+::: {.week-header}
+<span>Week 2: Probability Foundations</span>
+:::
+::: {.week-content}
+::: {.day-row}
+::: {.week-number}
+2
+:::
+::: {.date}
+6/30
+:::
+::: {.topic}
+Intro to Probability
+:::
+::: {.lab-quiz}
+Lab 2
+:::
+::: {.worksheet}
+Worksheet 2
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/01
+:::
+::: {.topic}
+Counting
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/02
+:::
+::: {.topic}
+Conditional Probability
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/03
+:::
+::: {.topic}
+Discrete Random Variables
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+:::
+:::
+
+::: {.week-section .week-3}
+::: {.week-header}
+<span>Week 3: Random Variables & Inference</span>
+:::
+::: {.week-content}
+::: {.day-row}
+::: {.week-number}
+3
+:::
+::: {.date}
+7/07
+:::
+::: {.topic}
+Continuous Random Variables
+:::
+::: {.lab-quiz}
+Lab 3
+:::
+::: {.worksheet}
+Worksheet 3
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/08
+:::
+::: {.topic}
+Introduction to Inference
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/09
+:::
+::: {.topic}
+Confidence Intervals (Proportions)
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/10
+:::
+::: {.topic}
+Confidence Intervals (Means)
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/11
+:::
+::: {.topic .quiz-item}
+Quiz 1 (Weeks 1–2)
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+:::
+:::
+
+::: {.week-section .week-4}
+::: {.week-header}
+<span>Week 4: Hypothesis Testing</span>
+:::
+::: {.week-content}
+::: {.day-row}
+::: {.week-number}
+4
+:::
+::: {.date}
+7/14
+:::
+::: {.topic}
+Hypothesis Testing I
+:::
+::: {.lab-quiz}
+Lab 4
+:::
+::: {.worksheet}
+Worksheet 4
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/15
+:::
+::: {.topic}
+Hypothesis Testing II
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/16
+:::
+::: {.topic}
+Two–Sample t-Tests
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/17
+:::
+::: {.topic}
+Two–Sample t-Tests Continued
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+:::
+:::
+
+::: {.week-section .week-5}
+::: {.week-header}
+<span>Week 5: ANOVA & Statistical Modeling</span>
+:::
+::: {.week-content}
+::: {.day-row}
+::: {.week-number}
+5
+:::
+::: {.date}
+7/21
+:::
+::: {.topic}
+ANOVA
+:::
+::: {.lab-quiz}
+Lab 5
+:::
+::: {.worksheet}
+Worksheet 5
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/22
+:::
+::: {.topic}
+Intro to Statistical Modeling
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/23
+:::
+::: {.topic}
+Intro to Statistical Modeling & Correlation
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/24
+:::
+::: {.topic .quiz-item}
+Quiz 2 (Weeks 3–4)
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+:::
+:::
+
+::: {.week-section .week-6}
+::: {.week-header}
+<span>Week 6: Regression & Course Wrap-Up</span>
+:::
+::: {.week-content}
+::: {.day-row}
+::: {.week-number}
+6
+:::
+::: {.date}
+7/28
+:::
+::: {.topic}
+Regression Analysis
+:::
+::: {.lab-quiz}
+Lab 6
+:::
+::: {.worksheet}
+Worksheet 6
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/29
+:::
+::: {.topic}
+Regression Diagnostics, Sampling
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/30
+:::
+::: {.topic}
+Wrap-Up
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+
+::: {.day-row}
+::: {.week-number}
+:::
+::: {.date}
+7/31
+:::
+::: {.topic .quiz-item}
+Quiz 3 (Weeks 5–6)
+:::
+::: {.lab-quiz .empty-cell}
+—
+:::
+::: {.worksheet .empty-cell}
+—
+:::
+:::
+:::
+:::
+
+:::
+
+```{=html}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Add smooth scrolling and hover effects
+  const weekSections = document.querySelectorAll('.week-section');
+  
+  weekSections.forEach(section => {
+    section.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-5px)';
+    });
+    
+    section.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+    });
+  });
+});
+</script>
+
+```
