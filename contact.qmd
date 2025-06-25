@@ -80,7 +80,7 @@ SL
 Teaching Assistant
 :::
 ::: {.contact-name}
-Summer Lee
+Summer Le
 :::
 ::: {.contact-info}
 ::: {.contact-item}

@@ -1,5 +1,5 @@
 ---
-title: "Lecture 2: Descriptive Statistics I - Part I"
+title: "Lecture 2: Descriptive Statistics I - Part II"
 subtitle: "Understanding Data (PSTAT 5A) – Week 1"
 date: today
 author: "Narjes Mathlouthi"

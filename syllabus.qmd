@@ -112,7 +112,7 @@ Teaching Assistants
 SL
 :::
 ::: {.contact-name}
-Summer Lee
+Summer Le
 :::
 ::: {.contact-email}
 sle@ucsb.edu
