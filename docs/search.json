@@ -663,5 +663,166 @@
     "title": "Lecture 2: Descriptive Statistics I",
     "section": "Plot",
     "text": "Plot\n\nPlot.rectY(data, \n  Plot.stackY(\n    Plot.binX( \n      {y: \"count\"}, \n      {x: \"body_mass_g\", fill: \"species\", thresholds: 20})\n    )\n  ).plot({\n    facet: {\n      data,\n      x: \"sex\"\n    },\n    marks: [Plot.frame()]\n  })\n\n\n\n\n\n\n:::"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#todays-agenda",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#todays-agenda",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Today’s Agenda",
+    "text": "Today’s Agenda\n\nIntroduction to Descriptive Statistics (10 minutes)\n\nWhat is descriptive statistics?\n\nWhy it matters before any modeling\n\n\nTypes of Data and Measurement Scales (15 minutes)\nMeasures of Central Tendency (35 minutes)\n\nMean (12 minutes)\nMedian (12 minutes)\nMode (11 minutes)\n\nPython Implementation (15 minutes)\nReal-world Applications and Interpretation (5 minutes)\n\n\nQuick ice-breaker: ask students for one dataset they’ve looked at recently and what first question they asked about it."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#learning-objectives-los",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#learning-objectives-los",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Learning Objectives (LOs)",
+    "text": "Learning Objectives (LOs)\nBy the end of this lecture you should be able to:\n\nDefine descriptive statistics and explain its importance in data analysis (Section 1)\nDistinguish between different types of data and measurement scales (Section 2)\nCalculate and interpret measures of central tendency (mean, median, mode)(Section 3)\nUnderstand when to use each measure of central tendency\nApply Python to compute descriptive statistics(?@sec-python-implementation)\nInterpret basic descriptive statistics in real-world contexts(?@sec-real-world-ex)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#statistics",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#statistics",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Statistics",
+    "text": "Statistics\n\nFacts are stubborn, but statistics are more pliable.\nMark Twain\n\nStatistics refers to the mathematics and techniques with which we understand data. 1\n\n\n\n(source)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#what-are-descriptive-statistics",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#what-are-descriptive-statistics",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "What are Descriptive Statistics?",
+    "text": "What are Descriptive Statistics?\n\nDescriptive statistics are numerical and graphical methods used to summarize, organize, and describe data in a meaningful way.\n\nPurpose of Descriptive Statistics\n\nSummarize large datasets into manageable information\nIdentify patterns and trends in data\nCommunicate findings clearly to others\nPrepare data for further analysis\nMake initial assessments about data quality"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#descriptive-vs.-inferential-statistics",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#descriptive-vs.-inferential-statistics",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Descriptive vs. Inferential Statistics",
+    "text": "Descriptive vs. Inferential Statistics\n\n\n\n\n\n\n\nDescriptive Statistics\nInferential Statistics\n\n\n\n\nDescribes what the data shows\nMakes predictions about populations\n\n\nSummarizes sample data\nUses sample data to make generalizations\n\n\nNo conclusions beyond the data\nDraws conclusions beyond the immediate data\n\n\nExamples: mean, median, graphs\nExamples: hypothesis testing, confidence intervals"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#descriptive-vs.-inferential-statistics-1",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#descriptive-vs.-inferential-statistics-1",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Descriptive vs. Inferential Statistics",
+    "text": "Descriptive vs. Inferential Statistics"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#why-data-types-matter",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#why-data-types-matter",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Why Data Types Matter",
+    "text": "Why Data Types Matter\nUnderstanding data types is crucial because:\n\n\nDifferent statistics are appropriate for different data types\nStatistical methods depend on the level of measurement\nMisapplying statistics can lead to incorrect conclusions"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#types-of-data",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#types-of-data",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Types of Data",
+    "text": "Types of Data\n\n\n\n\n\ngraph TD\n    A[Variable Types]\n    A --&gt; B[Categorical]\n    A --&gt; C[Numerical]\n    B --&gt; B1[\"Nominal&lt;br/&gt;e.g., gender, major\"]\n    B --&gt; B2[\"Ordinal&lt;br/&gt;e.g., rating, education level\"]\n    C --&gt; C1[\"Discrete&lt;br/&gt;e.g., count (# of students)\"]\n    C --&gt; C2[\"Continuous&lt;br/&gt;e.g., measurements like height, weight\"]\n    \n    classDef root fill:#e1f5fe,stroke:#01579b,stroke-width:3px\n    classDef categorical fill:#f3e5f5,stroke:#4a148c,stroke-width:2px\n    classDef numerical fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px\n    classDef nominal fill:#fce4ec,stroke:#880e4f,stroke-width:2px\n    classDef ordinal fill:#fff3e0,stroke:#e65100,stroke-width:2px\n    classDef discrete fill:#e0f2f1,stroke:#00695c,stroke-width:2px\n    classDef continuous fill:#f1f8e9,stroke:#33691e,stroke-width:2px\n    \n    class A root\n    class B categorical\n    class C numerical\n    class B1 nominal\n    class B2 ordinal\n    class C1 discrete\n    class C2 continuous\n\n\n\n\n\n\n\nPrompt: Which summary stat would you pick for “major”? For “gpa”?"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#categorical-data-qualitative",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#categorical-data-qualitative",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Categorical Data (Qualitative)",
+    "text": "Categorical Data (Qualitative)\n\n\nNominal Data\n\nCategories with no natural order\nExamples: gender, color, brand names, marital status\nAppropriate statistics: mode, frequency counts, proportions\n\n\nOrdinal Data\n\nCategories with a natural order or ranking\nExamples: education level, satisfaction ratings, letter grades\nAppropriate statistics: mode, median, percentiles"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#numerical-data-quantitative",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#numerical-data-quantitative",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Numerical Data (Quantitative)",
+    "text": "Numerical Data (Quantitative)\n\nDiscrete Data\n\nCountable values, often integers\nExamples: number of children, cars sold, defective items\nCan take on finite or countably infinite values\n\n\n\nContinuous Data\n\nCan take any value within a range\nExamples: height, weight, temperature, time\nMeasured rather than counted"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#measurement-scales-summary",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#measurement-scales-summary",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Measurement Scales Summary",
+    "text": "Measurement Scales Summary\n\n\n\n\n\n\n\n\n\n\nScale\nType\nProperties\nExamples\nAppropriate Statistics\n\n\n\n\nNominal\nCategorical\nCategories only\nGender, Color\nMode, Frequency\n\n\nOrdinal\nCategorical\nOrder matters\nRankings, Grades\nMode, Median\n\n\nInterval\nNumerical\nEqual intervals, no true zero\nTemperature (°C)\nMean, Median, Mode\n\n\nRatio\nNumerical\nEqual intervals, true zero\nHeight, Weight, Income\nAll statistics"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#what-is-central-tendency",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#what-is-central-tendency",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "What is Central Tendency?",
+    "text": "What is Central Tendency?\nCentral tendency describes the center or typical value of a dataset.\nIt answers the question: “What is a representative value for this data?”"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#definition-and-formula",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#definition-and-formula",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Definition and Formula",
+    "text": "Definition and Formula\nThe mean is the sum of all values divided by the number of values.\n\nFormula\n\nFor a sample: \\(\\bar{x} = \\frac{\\sum x}{n}\\)\nFor a population: \\(\\mu = \\frac{\\sum x}{N}\\)\n\nWhere:\n\n\\(\\bar{x}\\) (x-bar) = sample mean\n\\(\\mu\\) (mu) = population mean\n\\(\\sum x\\) = sum of all values\n\\(n\\) = sample size, \\(N\\) = population size"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#example-calculation",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#example-calculation",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Example Calculation",
+    "text": "Example Calculation\nStudent test scores: 85, 90, 78, 92, 88\n\nMean = \\(\\frac{85 + 90 + 78 + 92 + 88}{5} = \\frac{433}{5} = 86.6\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#properties-of-the-mean",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#properties-of-the-mean",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Properties of the Mean",
+    "text": "Properties of the Mean\n\nUses all data points - every value affects the mean\nSensitive to outliers - extreme values can distort the mean\nUnique - there is only one mean for a dataset\nCan be calculated for interval and ratio data\nBalancing point - sum of deviations from mean equals zero"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#when-to-use-the-mean",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#when-to-use-the-mean",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "When to Use the Mean",
+    "text": "When to Use the Mean\n✅ Use the mean when:\n\nData is approximately symmetric\nNo extreme outliers present\nWorking with interval or ratio data\nNeed to use the value in further calculations"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#advantages-and-disadvantages",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#advantages-and-disadvantages",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Advantages and Disadvantages",
+    "text": "Advantages and Disadvantages\n\n\nAdvantages\n\nUses all information in the dataset\nAlgebraically defined and mathematically tractable\nWidely understood and accepted\n\n\nDisadvantages\n\nAffected by outliers and skewed distributions\nMay not represent a typical value in skewed data\nCannot be used with nominal or ordinal data"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#definition",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#definition",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Definition",
+    "text": "Definition\nThe median is the middle value when data is arranged in ascending or descending order."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#calculation-steps",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#calculation-steps",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Calculation Steps",
+    "text": "Calculation Steps\n\nArrange data in ascending order\nFind the middle position:\n\nIf n is odd: position = \\(\\frac{n + 1}{2}\\)\nIf n is even: average of positions \\(\\frac{n}{2}\\) and \\(\\frac{n}{2} + 1\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#examples",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#examples",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Examples",
+    "text": "Examples\n\nOdd number of values:\n\n\nData: 12, 15, 18, 20, 25\nWhat is the median here ?\nMedian = 18 (middle value)\n\n\n\n\nEven number of values:\n\n\nData: 10, 15, 20, 25, 30, 35\nWhat is the median here ?\nMedian = \\(\\frac{20 + 25}{2} = 22.5\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#properties-of-the-median",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#properties-of-the-median",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Properties of the Median",
+    "text": "Properties of the Median\n\n\nNot affected by outliers - resistant measure\nRepresents the 50th percentile\nMay not be an actual data value (when n is even)\nAppropriate for ordinal, interval, and ratio data\nDivides data into two equal halves"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#when-to-use-the-median",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#when-to-use-the-median",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "When to Use the Median",
+    "text": "When to Use the Median\n✅ Use the median when:\n\nData is skewed (not symmetric)\nOutliers are present\nWorking with ordinal data\nWant a robust measure of central tendency\nData represents income, housing prices, or similar distributions"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture2/lecture2_part1.html#median-vs-mean-with-outliers",
+    "href": "files/lecture_notes/lecture2/lecture2_part1.html#median-vs-mean-with-outliers",
+    "title": "Lecture 2: Descriptive Statistics I - Part I",
+    "section": "Median vs Mean with Outliers",
+    "text": "Median vs Mean with Outliers\nConsider household incomes: $30,000, $32,000, $35,000, $38,000, $2,000,000\n\n\nMean = $427,000 (not representative of typical household)\nMedian = $35,000 (better represents typical household)"
   }
 ]
