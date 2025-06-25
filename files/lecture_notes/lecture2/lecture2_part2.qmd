@@ -379,6 +379,322 @@ Consider household incomes: $30,000, $32,000, $35,000, $38,000, $2,000,000
 - **Mean = $427,000** (not representative of typical household)
 - **Median = $35,000** (better represents typical household)
 
+# The Mode
+*11 minutes*
+
+## Definition
+
+The **mode** is the value that appears most frequently in a dataset.
+
+## Types of Distributions by Mode
+
+- **Unimodal**: One mode
+- **Bimodal**: Two modes  
+- **Multimodal**: More than two modes
+- **No mode**: All values appear with equal frequency
+
+```{mermaid}
+%%{init: {'flowchart': {'nodeSpacing': 100, 'rankSpacing': 100}, 'width': 600, 'height': 400}}%%
+graph TD
+    A["Mode Types"]
+    A --> B["Unimodal<br/>One peak"]
+    A --> C["Bimodal<br/>Two peaks"]
+    A --> D["Multimodal<br/>Multiple peaks"]
+    A --> E["No Mode<br/>No repeated values"]
+    
+    classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:3px,font-size:16px
+    classDef types fill:#f5f5f5,stroke:#424242,stroke-width:2px,font-size:14px
+    
+    class A main
+    class B,C,D,E types
+```
+
+# Mode Examples
+
+## Example 1:
+
+Data: 2, 3, 3, 4, 5, 5, 5, 6, 7
+
+:::{.fragment}
+
+Analysis:
+
+:::{.incremental}
+- Count each value: 2(1), 3(2), 4(1), 5(3), 6(1), 7(1)
+- Most frequent value: 5 appears 3 times
+- Mode = 5
+- Type: **Unimodal (one mode)**
+:::
+:::
+---
+
+## Example 2:
+Data: 1, 2, 2, 3, 4, 4, 5
+
+:::{.fragment}
+
+Analysis:
+
+:::{.incremental}
+- Count each value: 1(1), 2(2), 3(1), 4(2), 5(1)
+- Most frequent values: 2 and 4 both appear twice
+- Modes = 2 and 4
+- Type: **Bimodal (two modes)**
+:::
+:::
+---
+
+## Example 3: 
+Data: 1, 2, 3, 4, 5
+
+:::{.fragment}
+
+Analysis:
+
+:::{.incremental}
+- Count each value: 1(1), 2(1), 3(1), 4(1), 5(1)
+- All values appear exactly once
+- No mode (no value repeats)
+- Type: **No mode**
+:::
+:::
+
+
+
+
+## Mode for Different Data Types
+
+### Categorical Data:
+Favorite colors: Red, Blue, Blue, Green, Blue, Red, Blue
+**Mode = Blue**
+
+
+### Continuous Data:
+Often requires grouping into intervals or bins
+Example: Heights grouped into ranges
+
+## Properties of the Mode
+
+- **Can be used with any type of data** (nominal, ordinal, interval, ratio)
+- **Not affected by outliers**
+- **May not exist** or may not be unique
+- **Represents the most common value**
+- **Easy to identify** in frequency distributions
+
+## When to Use the Mode
+
+✅ **Use the mode when:**
+
+- Working with **categorical (nominal) data**
+- Want to identify the **most popular** or **common** choice
+- Data has clear **peaks** in frequency
+- **Quality control** applications (most common defect type)
+- **Business applications** (best-selling product, most common customer complaint)
+
+## Comparing Measures of Central Tendency {.smaller}
+
+| Measure | Best for Data Type | Strengths | Weaknesses | Affected by Outliers? |
+|---------|-------------------|-----------|------------|---------------------|
+| Mean | Interval, Ratio | Uses all data, mathematically tractable | Sensitive to outliers | Yes |
+| Median | Ordinal, Interval, Ratio | Robust to outliers, represents middle | Ignores extreme values | No |
+| Mode | All types | Works with categorical, identifies most common | May not exist/be unique | No |
+
+## Shape of Distribution Effects {.smaller}
+
+- **Symmetric distribution**: Mean ≈ Median ≈ Mode
+- **Right-skewed (positively skewed)**: Mean > Median > Mode  
+- **Left-skewed (negatively skewed)**: Mode > Median > Mean
+
+![](/files/lecture_notes/lecture2/img/mean_mod_median.png)
+
+
+# Python Implementation {#sec-python-implementation}
+*15 minutes*
+
+## Essential Libraries
+
+```{python}
+#| echo: true
+#| eval: false
+import numpy as np
+import pandas as pd
+from scipy import stats
+import matplotlib.pyplot as plt
+```
+
+## Calculating the Mean
+
+```{python}
+#| echo: true
+#| eval: false
+# Sample data
+data = [85, 90, 78, 92, 88]
+
+# Using NumPy
+mean_np = np.mean(data)
+print(f"Mean (NumPy): {mean_np}")
+
+# Using Pandas
+df = pd.DataFrame({'scores': data})
+mean_pd = df['scores'].mean()
+print(f"Mean (Pandas): {mean_pd}")
+```
+
+Output:
+```
+Mean (NumPy): 86.6
+Mean (Pandas): 86.6
+```
+
+## Calculating the Median
+
+```{python}
+#| echo: true
+#| eval: false
+# Using NumPy
+median_np = np.median(data)
+print(f"Median (NumPy): {median_np}")
+
+# Using Pandas
+median_pd = df['scores'].median()
+print(f"Median (Pandas): {median_pd}")
+```
+
+Output:
+```
+Median (NumPy): 88.0
+Median (Pandas): 88.0
+```
+
+## Calculating the Mode
+
+```{python}
+#| echo: true
+#| eval: false
+# Using SciPy
+from scipy import stats
+mode_result = stats.mode(data)
+print(f"Mode: {mode_result.mode}, Count: {mode_result.count}")
+
+# Using Pandas
+mode_pd = df['scores'].mode()
+print(f"Mode (Pandas): {mode_pd.values}")
+```
+
+## Comprehensive Analysis Function {.smaller}
+
+```{python}
+#| echo: true
+#| eval: false
+def descriptive_summary(data, column_name="Data"):
+    """Calculate comprehensive descriptive statistics"""
+    df = pd.DataFrame({column_name: data})
+    
+    print(f"Descriptive Statistics for {column_name}")
+    print("=" * 40)
+    print(f"Count: {len(data)}")
+    print(f"Mean: {np.mean(data):.2f}")
+    print(f"Median: {np.median(data):.2f}")
+    
+    try:
+        mode_result = stats.mode(data)
+        print(f"Mode: {mode_result.mode[0]} (appears {mode_result.count[0]} times)")
+    except:
+        print("Mode: No unique mode")
+    
+    return df.describe()
+
+# Example usage
+test_scores = [85, 90, 78, 92, 88, 91, 85, 87, 89, 86]
+summary = descriptive_summary(test_scores, "Test Scores")
+```
+
+## Handling Categorical Data
+
+```{python}
+#| echo: true
+#| eval: false
+# Categorical data example
+categories = ['A', 'B', 'B', 'C', 'A', 'B', 'A', 'C', 'B', 'B']
+cat_series = pd.Series(categories)
+
+print("Categorical Data Analysis:")
+print(f"Mode: {cat_series.mode().values[0]}")
+print("\nValue Counts:")
+print(cat_series.value_counts())
+```
+
+Output:
+```
+Categorical Data Analysis:
+Mode: B
+
+Value Counts:
+B    5
+A    3
+C    2
+```
+
+# Real-world Applications{#sec-real-world-ex}
+*5 minutes*
+
+## Business Applications
+
+- **Customer Satisfaction**: Mean rating shows overall satisfaction, median shows typical experience
+- **Sales Data**: Mode identifies best-selling products, median shows typical sale amount  
+- **Employee Performance**: Mean for overall team performance, median for typical employee
+
+## Educational Applications
+
+- **Test Scores**: Mean for class average, median for typical student performance
+- **Grade Distribution**: Mode shows most common grade
+- **Attendance**: Mean for overall attendance rate
+
+## Healthcare Applications
+
+- **Patient Wait Times**: Median often preferred due to skewed distributions
+- **Treatment Outcomes**: Mean for overall effectiveness, mode for most common result
+- **Vital Signs**: All three measures provide different insights
+
+## Interpretation Guidelines
+
+1. **Always consider the context** of your data
+2. **Report multiple measures** when appropriate  
+3. **Be aware of data distribution shape**
+4. **Consider the presence of outliers**
+5. **Choose the most appropriate measure** for your specific question
+
+# Key Takeaways
+
+## Remember These Points
+
+- **Data type determines** which statistics are appropriate
+- **Mean** uses all data but is sensitive to outliers
+- **Median** is robust and represents the middle value
+- **Mode** identifies the most common value and works with all data types
+- **Context matters** when choosing and interpreting measures
+- **Python provides powerful tools** for calculating descriptive statistics
+
+## Next Lecture Preview
+
+**Descriptive Statistics Part II** will cover:
+
+- Measures of variability (range, variance, standard deviation)
+- Measures of position (percentiles, quartiles, z-scores)
+- Shape of distributions (skewness and kurtosis)
+- Advanced Python visualization techniques
+
+# Practice Problems
+
+## Try These Problems
+
+1. Calculate mean, median, and mode for: 12, 15, 18, 12, 20, 25, 12, 30
+
+2. A dataset has mean = 50 and median = 45. What does this tell you about the distribution?
+
+3. Why might median be preferred over mean for reporting household income?
+
+4. Create a Python function to identify the most appropriate measure of central tendency for a given dataset.
 
 # Questions?
 
@@ -400,3 +716,4 @@ Thank you for your attention!
 
 
 
+---

@@ -824,5 +824,89 @@
     "title": "Lecture 2: Descriptive Statistics I - Part I",
     "section": "Median vs Mean with Outliers",
     "text": "Median vs Mean with Outliers\nConsider household incomes: $30,000, $32,000, $35,000, $38,000, $2,000,000\n\n\nMean = $427,000 (not representative of typical household)\nMedian = $35,000 (better represents typical household)"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Course Resources",
+    "section": "",
+    "text": "🔍"
+  },
+  {
+    "objectID": "resources.html#textbook-readings",
+    "href": "resources.html#textbook-readings",
+    "title": "Week 1 Resources",
+    "section": "",
+    "text": "OpenIntro Statistics, Chapters 1 & 2\nFoundations of data, variables, and basic descriptive statistics\n/files/Book/os4_for_screen_reader.pdf\nPython for Data Analysis (McKinney), Chapter 5\nSummary and aggregation functions in pandas (describe(), groupby)\nhttps://learning.oreilly.com/library/view/data-science-from/9781491901410/ch05.html#idp14953264"
+  },
+  {
+    "objectID": "resources.html#interactive-tutorials",
+    "href": "resources.html#interactive-tutorials",
+    "title": "Week 1 Resources",
+    "section": "2. Interactive Tutorials",
+    "text": "2. Interactive Tutorials\n\nUCSB Library Data Lab: “Data Types and Format”\nHands-on lesson covering Python data types, pandas DataFrame structures, and I/O\nhttps://carpentry.library.ucsb.edu/2025-01-14-python-ecology-lesson/04-data-types-and-format.html"
+  },
+  {
+    "objectID": "resources.html#api-documentation",
+    "href": "resources.html#api-documentation",
+    "title": "Week 1 Resources",
+    "section": "3. API Documentation",
+    "text": "3. API Documentation\n\npandas — DataFrame.describe()\nQuick overview of central tendency, dispersion, and shape of your DataFrame\nhttps://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html\nNumPy — Statistical functions (mean, median, std, percentile, …)\nhttps://numpy.org/doc/2.1/reference/routines.statistics.html\nSciPy — scipy.stats module (distributions, tests, descriptive stats)\nhttps://docs.scipy.org/doc/scipy/reference/stats.html"
+  },
+  {
+    "objectID": "resources.html#live-demos-with-observable",
+    "href": "resources.html#live-demos-with-observable",
+    "title": "Week 1 Resources",
+    "section": "4. Live Demos with Observable",
+    "text": "4. Live Demos with Observable\n\n4.1 pandas.DataFrame.describe() demo"
+  },
+  {
+    "objectID": "resources.html#course-resources",
+    "href": "resources.html#course-resources",
+    "title": "Resources",
+    "section": "",
+    "text": "OpenIntro Statistics, Chapters 1 & 2\nFoundations of data, variables, and basic descriptive statistics\nPython for Data Analysis (McKinney), Ch. 5\nSummary and aggregation functions in pandas (describe(), groupby)\n\n\n\n\n\nUCSB Library Data Lab: “Data Types and Format”\nHands-on lesson covering Python data types, pandas DataFrame structures, and I/O\n\n\n\n\n\npandas.DataFrame.describe()\nCentral tendency, dispersion, and shape of your DataFrame\nNumPy statistical functions\nmean, median, std, percentile, and more\nSciPy stats module\nProbability distributions, statistical tests, and descriptive statistics\n\n\n\n\n\n(Resources coming soon!)"
+  },
+  {
+    "objectID": "resources.html#week-1-foundations-of-data-science",
+    "href": "resources.html#week-1-foundations-of-data-science",
+    "title": "Course Resources",
+    "section": "Week 1: Foundations of Data Science",
+    "text": "Week 1: Foundations of Data Science"
+  },
+  {
+    "objectID": "resources.html#getting-started-with-data",
+    "href": "resources.html#getting-started-with-data",
+    "title": "Course Resources",
+    "section": "Getting Started with Data",
+    "text": "Getting Started with Data\nThis week introduces fundamental concepts in data science, including data types, basic statistics, and essential Python tools for data manipulation and analysis."
+  },
+  {
+    "objectID": "resources.html#week-2-data-visualization",
+    "href": "resources.html#week-2-data-visualization",
+    "title": "Course Resources",
+    "section": "Week 2: Data Visualization",
+    "text": "Week 2: Data Visualization\n\n\n🚧\n\n\nResources Coming Soon!\nWeek 2 materials focusing on matplotlib, seaborn, and plotly will be available next week. Check back soon for visualization tutorials and interactive exercises."
+  },
+  {
+    "objectID": "resources.html#week-3-statistical-analysis",
+    "href": "resources.html#week-3-statistical-analysis",
+    "title": "Course Resources",
+    "section": "Week 3: Statistical Analysis",
+    "text": "Week 3: Statistical Analysis\n\n\n📊\n\n\nStatistical Inference & Confidence Intervals (CI’s)\nWeek 3 will cover statistical inference,and confidence intervals. Materials will be posted by week 3."
+  },
+  {
+    "objectID": "resources.html#week-4-advanced-topics",
+    "href": "resources.html#week-4-advanced-topics",
+    "title": "",
+    "section": "Week 4: Advanced Topics",
+    "text": "Week 4: Advanced Topics\n\n\n🔬\n\n\nMachine Learning Fundamentals\nWeek 4 introduces supervised learning, model evaluation, and scikit-learn basics. Resources will be available by [DATE].\n\n\n\n\nCode\nviewof searchTerm = html`&lt;div&gt;&lt;/div&gt;`\n\n// Get search input and add event listener\ndocument.getElementById('searchInput').addEventListener('input', function() {\n  const searchTerm = this.value.toLowerCase();\n  const resourceCards = document.querySelectorAll('.resource-card');\n  \n  resourceCards.forEach(card =&gt; {\n    const title = card.querySelector('.resource-title').textContent.toLowerCase();\n    const description = card.querySelector('.resource-description').textContent.toLowerCase();\n    const type = card.querySelector('.resource-type').textContent.toLowerCase();\n    \n    if (title.includes(searchTerm) || description.includes(searchTerm) || type.includes(searchTerm)) {\n      card.style.display = 'block';\n      card.style.opacity = '1';\n      card.style.transform = 'scale(1)';\n    } else if (searchTerm !== '') {\n      card.style.opacity = '0.3';\n      card.style.transform = 'scale(0.95)';\n    } else {\n      card.style.opacity = '1';\n      card.style.transform = 'scale(1)';\n    }\n  });\n});"
+  },
+  {
+    "objectID": "resources.html#week-4-statistical-methods-testing",
+    "href": "resources.html#week-4-statistical-methods-testing",
+    "title": "Course Resources",
+    "section": "Week 4: Statistical Methods & Testing",
+    "text": "Week 4: Statistical Methods & Testing\n\n\n🔬\n\n\nHypothesis Testing Fundamentals\nWeek 4 will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 4."
   }
 ]

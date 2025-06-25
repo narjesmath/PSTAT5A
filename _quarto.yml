@@ -12,6 +12,7 @@ website:
         text: Home
       - schedule.qmd
       - syllabus.qmd
+      - resources.qmd
 format:
   html:
     theme:

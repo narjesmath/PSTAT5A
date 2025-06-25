@@ -1,0 +1,261 @@
+---
+title: "Course Resources"
+subtitle: "Your comprehensive guide to learning materials and references"
+format:
+  html:
+    toc: true
+    toc-location: left
+    theme: cosmo
+    css: /theme/styles.css
+    code-fold: false
+    code-tools: false
+    smooth-scroll: true
+    page-layout: full
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 200px
+execute:
+  echo: false
+  warning: false
+
+---
+
+
+
+::: {.search-container}
+::: {.search-icon}
+🔍
+:::
+<input type="text" class="search-input" placeholder="Search all resources..." id="searchInput">
+:::
+
+## Week 1: Foundations of Data Science {.panel-tabset}
+
+::: {.week-header}
+## Getting Started with Data
+This week introduces fundamental concepts in data science, including data types, basic statistics, and essential Python tools for data manipulation and analysis.
+:::
+
+### 📚 Textbook Readings
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Core Reading
+:::
+
+::: {.resource-title}
+[**OpenIntro Statistics**, Chapters 1 & 2](/files/Book/os4_for_screen_reader.pdf){target="_blank"}
+:::
+
+::: {.resource-description}
+Essential foundations covering data types, variables, and descriptive statistics. This reading provides the theoretical foundation for understanding how data is structured and analyzed in statistical contexts.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📖 **Format:** PDF
+:::
+::: {.meta-item}
+⏱️ **Time:** 2-3 hours
+:::
+::: {.meta-item}
+🎯 **Level:** Beginner
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Supplementary
+:::
+
+::: {.resource-title}
+[**Python for Data Analysis** (McKinney), Ch. 5](https://learning.oreilly.com/library/view/data-science-from/9781491901410/ch05.html#idp14953264){target="_blank"}
+:::
+
+::: {.resource-description}
+Deep dive into pandas operations including `describe()`, `groupby()`, and other essential aggregation functions. Critical for understanding how to summarize and manipulate real-world datasets.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+💻 **Format:** Online
+:::
+::: {.meta-item}
+⏱️ **Time:** 1-2 hours
+:::
+::: {.meta-item}
+🎯 **Level:** Intermediate
+:::
+:::
+:::
+:::
+
+### 💻 Interactive Tutorials
+
+::: {.resource-card}
+::: {.resource-type}
+Hands-on Practice
+:::
+
+::: {.resource-title}
+[**UCSB Library Data Lab:** Data Types and Format](https://carpentry.library.ucsb.edu/2025-01-14-python-ecology-lesson/04-data-types-and-format.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Comprehensive hands-on workshop covering Python data types, pandas DataFrame structures, and input/output operations. Includes downloadable datasets and step-by-step exercises.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🛠️ **Format:** Interactive
+:::
+::: {.meta-item}
+⏱️ **Time:** 2-3 hours
+:::
+::: {.meta-item}
+📁 **Includes:** Sample datasets
+:::
+:::
+:::
+
+### 📖 Documentation & References
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Core Reference
+:::
+
+::: {.resource-title}
+[**pandas.DataFrame.describe()**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Official documentation for descriptive statistics in pandas. Essential reference for understanding central tendency, dispersion, and shape analysis of your datasets.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📚 **Type:** API Docs
+:::
+::: {.meta-item}
+🔗 **Quick Reference**
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Statistical Functions
+:::
+
+::: {.resource-title}
+[**NumPy Statistical Functions**](https://numpy.org/doc/2.1/reference/routines.statistics.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Complete reference for NumPy's statistical toolkit including `mean()`, `median()`, `std()`, `percentile()`, and advanced statistical measures.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📚 **Type:** API Docs
+:::
+::: {.meta-item}
+🔧 **Functions:** 25+ methods
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Advanced Reference
+:::
+
+::: {.resource-title}
+[**SciPy Stats Module**](https://docs.scipy.org/doc/scipy/reference/stats.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Comprehensive statistical analysis toolkit covering probability distributions, hypothesis testing, and advanced descriptive statistics for research-grade analysis.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📚 **Type:** API Docs
+:::
+::: {.meta-item}
+🎯 **Level:** Advanced
+:::
+:::
+:::
+:::
+
+## Week 2: Data Visualization {.panel-tabset}
+
+::: {.coming-soon}
+::: {.coming-soon-icon}
+🚧
+:::
+### Resources Coming Soon!
+Week 2 materials focusing on matplotlib, seaborn, and plotly will be available next week. Check back soon for visualization tutorials and interactive exercises.
+:::
+
+## Week 3: Statistical Analysis {.panel-tabset}
+
+::: {.coming-soon}
+::: {.coming-soon-icon}
+📊
+:::
+### Statistical Inference & Confidence Intervals (CI's)
+Week 3 will cover statistical inference,and  confidence intervals. Materials will be posted by week 3.
+:::
+
+## Week 4: Statistical Methods & Testing {.panel-tabset}
+
+::: {.coming-soon}
+::: {.coming-soon-icon}
+🔬
+:::
+### Hypothesis Testing Fundamentals
+Week 4  will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 4.
+:::
+
+
+
+
+```{=html}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('searchInput');
+  
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      const resourceCards = document.querySelectorAll('.resource-card');
+      
+      resourceCards.forEach(card => {
+        const title = card.querySelector('.resource-title')?.textContent.toLowerCase() || '';
+        const description = card.querySelector('.resource-description')?.textContent.toLowerCase() || '';
+        const type = card.querySelector('.resource-type')?.textContent.toLowerCase() || '';
+        
+        if (title.includes(searchTerm) || description.includes(searchTerm) || type.includes(searchTerm)) {
+          card.style.display = 'block';
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1)';
+        } else if (searchTerm !== '') {
+          card.style.opacity = '0.3';
+          card.style.transform = 'scale(0.95)';
+        } else {
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1)';
+        }
+      });
+    });
+  }
+});
+</script>
+```
