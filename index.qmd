@@ -3,42 +3,212 @@ title: " "
 format:
   html:
     toc: false
+    theme: cosmo
+    css: /theme/home-page-styles.css
+    page-layout: full
+execute:
+  echo: false
+  warning: false
 ---
 
-<img src="img/logo.png" alt="PSTAT5A Logo" width="80" style="float:right; margin: 0 0 1em 1em;"/>
+::: {.hero-section}
+::: {.logo-container}
+<img src="img/logo.png" alt="PSTAT5A Logo"/>
+:::
 
-# PSTAT 5A: Understanding Data
+::: {.hero-content}
+# PSTAT 5A: Understanding Data {.hero-title}
 
-Welcome to the _PSTAT 5A_ course website for Summer Session A 2025, taught by **Narjes Mathlouthi**. Here you will find all of the materials and resources you need for lectures, labs, and quizzes, all in one place.
+::: {.hero-subtitle}
+Learn the fundamentals of data science and statistical thinking
+:::
 
----
+::: {.instructor-info}
+**Summer Session A 2025** • Taught by **Narjes Mathlouthi**
+:::
 
-## Course Overview
+[Get Started →](schedule.qmd){.cta-button}
+:::
+:::
 
-In this course you will learn to:
+::: {.overview-section .section}
+::: {.section-header}
+## Course Overview {.section-title}
+::: {.section-subtitle}
+Transform raw data into meaningful insights through hands-on learning and real-world applications
+:::
+:::
 
-- Apply descriptive and inferential statistical methods  
-- Work with probability models and random variables  
-- Construct confidence intervals and perform hypothesis tests  
-- Fit and interpret regression and ANOVA models  
-- Use Python and Jupyter notebooks for data analysis
+::: {.learning-objectives}
+::: {.objective-card}
+::: {.objective-icon}
+📊
+:::
+::: {.objective-text}
+Apply descriptive and inferential statistical methods
+:::
+:::
 
----
+::: {.objective-card}
+::: {.objective-icon}
+🎲
+:::
+::: {.objective-text}
+Work with probability models and random variables
+:::
+:::
 
-## Quick Links
+::: {.objective-card}
+::: {.objective-icon}
+🔍
+:::
+::: {.objective-text}
+Construct confidence intervals and perform hypothesis tests
+:::
+:::
 
-| Icon | Section       | Link                          |
-|:----:|---------------|-------------------------------|
-| 📘   | Syllabus      | [View Syllabus](syllabus.qmd) |
-| 🗓️   | Schedule      | [Class Schedule](schedule.qmd) |
-| 🎥   | Lectures      | [Lecture Notes](schedule.qmd)    |
-| 💻   | Labs          | [Computing Labs](schedule.qmd)       |
-| 📂   | Resources     | [Data & Code](resources.qmd)  |
-| 🕑   | Office Hours  | [Office Hours](syllabus.qmd) |
-| 📬   | Contact       | [Get in Touch](syllabus.qmd)   |
+::: {.objective-card}
+::: {.objective-icon}
+📈
+:::
+::: {.objective-text}
+Fit and interpret regression and ANOVA models
+:::
+:::
 
----
+::: {.objective-card}
+::: {.objective-icon}
+🐍
+:::
+::: {.objective-text}
+Use Python and Jupyter notebooks for data analysis
+:::
+:::
+:::
+:::
 
-> **Note:** This schedule and all deadlines are subject to change. Check this site regularly for updates.
+::: {.quick-links-section .section}
+::: {.section-header}
+## Quick Navigation {.section-title}
+::: {.section-subtitle}
+Everything you need for the course, organized and accessible
+:::
+:::
 
-Feel free to explore via the navigation bar above or through these quick‐link buttons. If you have any questions, use the **Contact** page or drop by office hours. Let’s have a great quarter!  
+::: {.quick-links-grid}
+
+::: {.quick-link-card}
+[📘]{.quick-link-icon}
+
+[Syllabus]{.quick-link-title}
+
+[View Syllabus]{.quick-link-desc}
+
+[Go to Syllabus →](syllabus.qmd){.btn .btn-primary}
+:::
+
+::: {.quick-link-card}
+[🗓️]{.quick-link-icon}
+
+[Schedule]{.quick-link-title}
+
+[Class Schedule]{.quick-link-desc}
+
+[View Schedule →](schedule.qmd){.btn .btn-primary}
+:::
+
+::: {.quick-link-card}
+[🎥]{.quick-link-icon}
+
+[Lectures]{.quick-link-title}
+
+[Lecture Notes]{.quick-link-desc}
+
+[View Lectures →](schedule.qmd){.btn .btn-primary}
+:::
+
+::: {.quick-link-card}
+[💻]{.quick-link-icon}
+
+[Labs]{.quick-link-title}
+
+[Computing Labs]{.quick-link-desc}
+
+[View Labs →](schedule.qmd){.btn .btn-primary}
+:::
+
+::: {.quick-link-card}
+[📂]{.quick-link-icon}
+
+[Resources]{.quick-link-title}
+
+[Data & Code]{.quick-link-desc}
+
+[View Resources →](resources.qmd){.btn .btn-primary}
+:::
+
+
+::: {.quick-link-card}
+[📬]{.quick-link-icon}
+
+[Get in Touch]{.quick-link-title}
+
+[Get in Touch]{.quick-link-desc}
+
+[Contact Info →](contact.qmd){.btn .btn-primary}
+:::
+
+:::
+:::
+
+::: {.notice-section}
+::: {.notice-content}
+### Important Notice {.notice-title}
+This schedule and all deadlines are subject to change. Check this site regularly for updates and announcements.
+:::
+:::
+
+::: {.footer-section}
+::: {.footer-content}
+### Ready to Begin? {.footer-title}
+::: {.footer-text}
+Explore the navigation above or use the quick links to dive into course materials. Have questions? Visit office hours or use the contact page. Let's have an amazing learning experience together!
+:::
+:::
+:::
+
+```{=html}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Add smooth scrolling for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Add intersection observer for animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe all cards
+  document.querySelectorAll('.objective-card, .quick-link-card').forEach(card => {
+    observer.observe(card);
+  });
+});
+</script>
+```

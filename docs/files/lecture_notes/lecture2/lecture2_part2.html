@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Narjes Mathlouthi">
+<meta name="dcterms.date" content="2025-06-25">
 
-<title>lecture2_part2 – PSTAT5A</title>
+<title>Lecture 2: Descriptive Statistics I - Part I – PSTAT5A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -66,7 +102,39 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
@@ -104,6 +172,14 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../../syllabus.html"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../resources.html"> 
+<span class="menu-text">Course Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -115,19 +191,1002 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#todays-agenda" id="toc-todays-agenda" class="nav-link active" data-scroll-target="#todays-agenda">Today’s Agenda</a></li>
+  <li><a href="#learning-objectives-los" id="toc-learning-objectives-los" class="nav-link" data-scroll-target="#learning-objectives-los">Learning Objectives (LOs)</a></li>
+  <li><a href="#sec-descriptive" id="toc-sec-descriptive" class="nav-link" data-scroll-target="#sec-descriptive">Introduction to Descriptive Statistics</a>
+  <ul class="collapse">
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a></li>
+  <li><a href="#what-are-descriptive-statistics" id="toc-what-are-descriptive-statistics" class="nav-link" data-scroll-target="#what-are-descriptive-statistics">What are Descriptive Statistics?</a></li>
+  <li><a href="#descriptive-vs.-inferential-statistics" id="toc-descriptive-vs.-inferential-statistics" class="nav-link" data-scroll-target="#descriptive-vs.-inferential-statistics">Descriptive vs.&nbsp;Inferential Statistics</a></li>
+  <li><a href="#descriptive-vs.-inferential-statistics-1" id="toc-descriptive-vs.-inferential-statistics-1" class="nav-link" data-scroll-target="#descriptive-vs.-inferential-statistics-1">Descriptive vs.&nbsp;Inferential Statistics</a></li>
+  </ul></li>
+  <li><a href="#sec-data-types" id="toc-sec-data-types" class="nav-link" data-scroll-target="#sec-data-types">Types of Data and Measurement Scales</a>
+  <ul class="collapse">
+  <li><a href="#why-data-types-matter" id="toc-why-data-types-matter" class="nav-link" data-scroll-target="#why-data-types-matter">Why Data Types Matter</a></li>
+  <li><a href="#types-of-data" id="toc-types-of-data" class="nav-link" data-scroll-target="#types-of-data">Types of Data</a></li>
+  <li><a href="#categorical-data-qualitative" id="toc-categorical-data-qualitative" class="nav-link" data-scroll-target="#categorical-data-qualitative">Categorical Data (Qualitative)</a></li>
+  <li><a href="#numerical-data-quantitative" id="toc-numerical-data-quantitative" class="nav-link" data-scroll-target="#numerical-data-quantitative">Numerical Data (Quantitative)</a>
+  <ul class="collapse">
+  <li><a href="#discrete-data" id="toc-discrete-data" class="nav-link" data-scroll-target="#discrete-data">Discrete Data</a></li>
+  <li><a href="#continuous-data" id="toc-continuous-data" class="nav-link" data-scroll-target="#continuous-data">Continuous Data</a></li>
+  </ul></li>
+  <li><a href="#measurement-scales-summary" id="toc-measurement-scales-summary" class="nav-link" data-scroll-target="#measurement-scales-summary">Measurement Scales Summary</a></li>
+  </ul></li>
+  <li><a href="#sec-central-tendency" id="toc-sec-central-tendency" class="nav-link" data-scroll-target="#sec-central-tendency">Measures of Central Tendency</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a>
+  <ul class="collapse">
+  <li><a href="#what-is-central-tendency" id="toc-what-is-central-tendency" class="nav-link" data-scroll-target="#what-is-central-tendency">What is Central Tendency?</a></li>
+  </ul></li>
+  <li><a href="#the-mean-arithmetic-average" id="toc-the-mean-arithmetic-average" class="nav-link" data-scroll-target="#the-mean-arithmetic-average">The Mean (Arithmetic Average)</a>
+  <ul class="collapse">
+  <li><a href="#definition-and-formula" id="toc-definition-and-formula" class="nav-link" data-scroll-target="#definition-and-formula">Definition and Formula</a>
+  <ul class="collapse">
+  <li><a href="#formula" id="toc-formula" class="nav-link" data-scroll-target="#formula">Formula</a></li>
+  </ul></li>
+  <li><a href="#example-calculation" id="toc-example-calculation" class="nav-link" data-scroll-target="#example-calculation">Example Calculation</a></li>
+  <li><a href="#properties-of-the-mean" id="toc-properties-of-the-mean" class="nav-link" data-scroll-target="#properties-of-the-mean">Properties of the Mean</a></li>
+  <li><a href="#when-to-use-the-mean" id="toc-when-to-use-the-mean" class="nav-link" data-scroll-target="#when-to-use-the-mean">When to Use the Mean</a></li>
+  <li><a href="#advantages-and-disadvantages" id="toc-advantages-and-disadvantages" class="nav-link" data-scroll-target="#advantages-and-disadvantages">Advantages and Disadvantages</a></li>
+  </ul></li>
+  <li><a href="#the-median" id="toc-the-median" class="nav-link" data-scroll-target="#the-median">The Median</a>
+  <ul class="collapse">
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#calculation-steps" id="toc-calculation-steps" class="nav-link" data-scroll-target="#calculation-steps">Calculation Steps</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
+  <ul class="collapse">
+  <li><a href="#odd-number-of-values" id="toc-odd-number-of-values" class="nav-link" data-scroll-target="#odd-number-of-values">Odd number of values:</a></li>
+  <li><a href="#even-number-of-values" id="toc-even-number-of-values" class="nav-link" data-scroll-target="#even-number-of-values">Even number of values:</a></li>
+  </ul></li>
+  <li><a href="#properties-of-the-median" id="toc-properties-of-the-median" class="nav-link" data-scroll-target="#properties-of-the-median">Properties of the Median</a></li>
+  <li><a href="#when-to-use-the-median" id="toc-when-to-use-the-median" class="nav-link" data-scroll-target="#when-to-use-the-median">When to Use the Median</a></li>
+  <li><a href="#median-vs-mean-with-outliers" id="toc-median-vs-mean-with-outliers" class="nav-link" data-scroll-target="#median-vs-mean-with-outliers">Median vs Mean with Outliers</a></li>
+  </ul></li>
+  <li><a href="#the-mode" id="toc-the-mode" class="nav-link" data-scroll-target="#the-mode">The Mode</a>
+  <ul class="collapse">
+  <li><a href="#definition-1" id="toc-definition-1" class="nav-link" data-scroll-target="#definition-1">Definition</a></li>
+  <li><a href="#types-of-distributions-by-mode" id="toc-types-of-distributions-by-mode" class="nav-link" data-scroll-target="#types-of-distributions-by-mode">Types of Distributions by Mode</a></li>
+  </ul></li>
+  <li><a href="#mode-examples" id="toc-mode-examples" class="nav-link" data-scroll-target="#mode-examples">Mode Examples</a>
+  <ul class="collapse">
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1:</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2:</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example 3:</a></li>
+  <li><a href="#mode-for-different-data-types" id="toc-mode-for-different-data-types" class="nav-link" data-scroll-target="#mode-for-different-data-types">Mode for Different Data Types</a>
+  <ul class="collapse">
+  <li><a href="#categorical-data" id="toc-categorical-data" class="nav-link" data-scroll-target="#categorical-data">Categorical Data:</a></li>
+  <li><a href="#continuous-data-1" id="toc-continuous-data-1" class="nav-link" data-scroll-target="#continuous-data-1">Continuous Data:</a></li>
+  </ul></li>
+  <li><a href="#properties-of-the-mode" id="toc-properties-of-the-mode" class="nav-link" data-scroll-target="#properties-of-the-mode">Properties of the Mode</a></li>
+  <li><a href="#when-to-use-the-mode" id="toc-when-to-use-the-mode" class="nav-link" data-scroll-target="#when-to-use-the-mode">When to Use the Mode</a></li>
+  <li><a href="#comparing-measures-of-central-tendency" id="toc-comparing-measures-of-central-tendency" class="nav-link" data-scroll-target="#comparing-measures-of-central-tendency">Comparing Measures of Central Tendency</a></li>
+  <li><a href="#shape-of-distribution-effects" id="toc-shape-of-distribution-effects" class="nav-link" data-scroll-target="#shape-of-distribution-effects">Shape of Distribution Effects</a></li>
+  </ul></li>
+  <li><a href="#sec-python-implementation" id="toc-sec-python-implementation" class="nav-link" data-scroll-target="#sec-python-implementation">Python Implementation</a>
+  <ul class="collapse">
+  <li><a href="#essential-libraries" id="toc-essential-libraries" class="nav-link" data-scroll-target="#essential-libraries">Essential Libraries</a></li>
+  <li><a href="#calculating-the-mean" id="toc-calculating-the-mean" class="nav-link" data-scroll-target="#calculating-the-mean">Calculating the Mean</a></li>
+  <li><a href="#calculating-the-median" id="toc-calculating-the-median" class="nav-link" data-scroll-target="#calculating-the-median">Calculating the Median</a></li>
+  <li><a href="#calculating-the-mode" id="toc-calculating-the-mode" class="nav-link" data-scroll-target="#calculating-the-mode">Calculating the Mode</a></li>
+  <li><a href="#comprehensive-analysis-function" id="toc-comprehensive-analysis-function" class="nav-link" data-scroll-target="#comprehensive-analysis-function">Comprehensive Analysis Function</a></li>
+  <li><a href="#handling-categorical-data" id="toc-handling-categorical-data" class="nav-link" data-scroll-target="#handling-categorical-data">Handling Categorical Data</a></li>
+  </ul></li>
+  <li><a href="#sec-real-world-ex" id="toc-sec-real-world-ex" class="nav-link" data-scroll-target="#sec-real-world-ex">Real-world Applications</a>
+  <ul class="collapse">
+  <li><a href="#business-applications" id="toc-business-applications" class="nav-link" data-scroll-target="#business-applications">Business Applications</a></li>
+  <li><a href="#educational-applications" id="toc-educational-applications" class="nav-link" data-scroll-target="#educational-applications">Educational Applications</a></li>
+  <li><a href="#healthcare-applications" id="toc-healthcare-applications" class="nav-link" data-scroll-target="#healthcare-applications">Healthcare Applications</a></li>
+  <li><a href="#interpretation-guidelines" id="toc-interpretation-guidelines" class="nav-link" data-scroll-target="#interpretation-guidelines">Interpretation Guidelines</a></li>
+  </ul></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a>
+  <ul class="collapse">
+  <li><a href="#remember-these-points" id="toc-remember-these-points" class="nav-link" data-scroll-target="#remember-these-points">Remember These Points</a></li>
+  <li><a href="#next-lecture-preview" id="toc-next-lecture-preview" class="nav-link" data-scroll-target="#next-lecture-preview">Next Lecture Preview</a></li>
+  </ul></li>
+  <li><a href="#practice-problems" id="toc-practice-problems" class="nav-link" data-scroll-target="#practice-problems">Practice Problems</a>
+  <ul class="collapse">
+  <li><a href="#try-these-problems" id="toc-try-these-problems" class="nav-link" data-scroll-target="#try-these-problems">Try These Problems</a></li>
+  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions?</a>
+  <ul class="collapse">
+  <li><a href="#references-further-reading" id="toc-references-further-reading" class="nav-link" data-scroll-target="#references-further-reading">References &amp; Further Reading</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture2_part2.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 2: Descriptive Statistics I - Part I</h1>
+<p class="subtitle lead">Understanding Data (PSTAT 5A) – Week 1</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Narjes Mathlouthi </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 25, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
 
 
-</main> <!-- /main -->
+<section id="todays-agenda" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="todays-agenda">Today’s Agenda</h2>
+<ol type="1">
+<li><strong>Introduction to Descriptive Statistics</strong> (10 minutes)
+<ul>
+<li>What <em>is</em> descriptive statistics?</li>
+<li><ul>
+<li>Why it matters before any modeling</li>
+</ul></li>
+</ul></li>
+<li><strong>Types of Data and Measurement Scales</strong> (15 minutes)</li>
+<li><strong>Measures of Central Tendency</strong> (35 minutes)
+<ul>
+<li>Mean (12 minutes)</li>
+<li>Median (12 minutes)</li>
+<li>Mode (11 minutes)</li>
+</ul></li>
+<li><strong>Python Implementation</strong> (15 minutes)</li>
+<li><strong>Real-world Applications and Interpretation</strong> (5 minutes)</li>
+</ol>
+<div class="notes">
+<p>Quick ice-breaker: ask students for one dataset they’ve looked at recently and what first question they asked about it.</p>
+</div>
+<hr>
+</section>
+<section id="learning-objectives-los" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="learning-objectives-los">Learning Objectives (LOs)</h2>
+<p>By the end of this lecture you should be able to:</p>
+<ul>
+<li><p>Define descriptive statistics and explain its importance in data analysis (<a href="#sec-descriptive" class="quarto-xref">Section&nbsp;1</a>)</p></li>
+<li><p>Distinguish between different types of data and measurement scales (<a href="#sec-data-types" class="quarto-xref">Section&nbsp;2</a>)</p></li>
+<li><p>Calculate and interpret measures of central tendency (mean, median, mode)(<a href="#sec-central-tendency" class="quarto-xref">Section&nbsp;3</a>)</p></li>
+<li><p>Understand when to use each measure of central tendency</p></li>
+<li><p>Apply Python to compute descriptive statistics(<a href="#sec-python-implementation" class="quarto-xref">Section&nbsp;9</a>)</p></li>
+<li><p>Interpret basic descriptive statistics in real-world contexts(<a href="#sec-real-world-ex" class="quarto-xref">Section&nbsp;10</a>)</p></li>
+</ul>
+</section>
+<section id="sec-descriptive" class="level1">
+<h1>Introduction to Descriptive Statistics</h1>
+<p><em>10 minutes</em></p>
+<section id="statistics" class="level2">
+<h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
+<div class="incremental">
+<p><q>Facts are stubborn, but statistics are more pliable.</q></p>
+<p>Mark Twain</p>
+<ul class="incremental">
+<li>Statistics refers to the mathematics and techniques with which we understand data. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+</ul>
+</div>
+<!-- end columns -->
+</section>
+<section id="what-are-descriptive-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-descriptive-statistics">What are Descriptive Statistics?</h2>
+<div class="incremental">
+<p><strong>Descriptive statistics</strong> are numerical and graphical methods used to summarize, organize, and describe data in a meaningful way.</p>
+<div class="fragment">
+<section id="purpose-of-descriptive-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="purpose-of-descriptive-statistics">Purpose of Descriptive Statistics</h3>
+<ul class="incremental">
+<li><strong>Summarize large datasets</strong> into manageable information</li>
+<li><strong>Identify patterns</strong> and trends in data</li>
+<li><strong>Communicate findings</strong> clearly to others</li>
+<li><strong>Prepare data</strong> for further analysis</li>
+<li><strong>Make initial assessments</strong> about data quality</li>
+</ul>
+</section>
+</div>
+</div>
+</section>
+<section id="descriptive-vs.-inferential-statistics" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="descriptive-vs.-inferential-statistics">Descriptive vs.&nbsp;Inferential Statistics</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Descriptive Statistics</th>
+<th>Inferential Statistics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Describes what the data shows</td>
+<td>Makes predictions about populations</td>
+</tr>
+<tr class="even">
+<td>Summarizes sample data</td>
+<td>Uses sample data to make generalizations</td>
+</tr>
+<tr class="odd">
+<td>No conclusions beyond the data</td>
+<td>Draws conclusions beyond the immediate data</td>
+</tr>
+<tr class="even">
+<td>Examples: mean, median, graphs</td>
+<td>Examples: hypothesis testing, confidence intervals</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="descriptive-vs.-inferential-statistics-1" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-vs.-inferential-statistics-1">Descriptive vs.&nbsp;Inferential Statistics</h2>
+<p><img src="../../../files/lecture_notes/lecture2/img/stat_diag.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="sec-data-types" class="level1">
+<h1>Types of Data and Measurement Scales</h1>
+<p><em>15 minutes</em></p>
+<section id="why-data-types-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-data-types-matter">Why Data Types Matter</h2>
+<p>Understanding data types is crucial because:</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Different statistics are appropriate for different data types</li>
+<li>Statistical methods depend on the level of measurement</li>
+<li>Misapplying statistics can lead to incorrect conclusions</li>
+</ul>
+</div>
+</section>
+<section id="types-of-data" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-data">Types of Data</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A[Variable Types]
+    A --&gt; B[Categorical]
+    A --&gt; C[Numerical]
+    B --&gt; B1["Nominal&lt;br/&gt;e.g., gender, major"]
+    B --&gt; B2["Ordinal&lt;br/&gt;e.g., rating, education level"]
+    C --&gt; C1["Discrete&lt;br/&gt;e.g., count (# of students)"]
+    C --&gt; C2["Continuous&lt;br/&gt;e.g., measurements like height, weight"]
+    
+    classDef root fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef categorical fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef numerical fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef nominal fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef ordinal fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef discrete fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    classDef continuous fill:#f1f8e9,stroke:#33691e,stroke-width:2px
+    
+    class A root
+    class B categorical
+    class C numerical
+    class B1 nominal
+    class B2 ordinal
+    class C1 discrete
+    class C2 continuous
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>Prompt: Which summary stat would you pick for “major”? For “gpa”?</p>
+</div>
+</section>
+<section id="categorical-data-qualitative" class="level2">
+<h2 class="anchored" data-anchor-id="categorical-data-qualitative">Categorical Data (Qualitative)</h2>
+<div class="columns">
+<div class="column">
+<section id="nominal-data" class="level3">
+<h3 class="anchored" data-anchor-id="nominal-data">Nominal Data</h3>
+<ul>
+<li>Categories with no natural order</li>
+<li>Examples: gender, color, brand names, marital status</li>
+<li>Appropriate statistics: mode, frequency counts, proportions</li>
+</ul>
+</section>
+</div><div class="column">
+<section id="ordinal-data" class="level3">
+<h3 class="anchored" data-anchor-id="ordinal-data">Ordinal Data</h3>
+<ul>
+<li>Categories with a natural order or ranking</li>
+<li>Examples: education level, satisfaction ratings, letter grades</li>
+<li>Appropriate statistics: mode, median, percentiles</li>
+</ul>
+</section>
+</div>
+</div>
+<!-- end columns -->
+</section>
+<section id="numerical-data-quantitative" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-data-quantitative">Numerical Data (Quantitative)</h2>
+<div class="fragment">
+<section id="discrete-data" class="level3">
+<h3 class="anchored" data-anchor-id="discrete-data">Discrete Data</h3>
+<ul>
+<li>Countable values, often integers</li>
+<li>Examples: number of children, cars sold, defective items</li>
+<li>Can take on finite or countably infinite values</li>
+</ul>
+</section>
+</div>
+<div class="fragment fade-up">
+<section id="continuous-data" class="level3">
+<h3 class="anchored" data-anchor-id="continuous-data">Continuous Data</h3>
+<ul>
+<li>Can take any value within a range</li>
+<li>Examples: height, weight, temperature, time</li>
+<li>Measured rather than counted</li>
+</ul>
+</section>
+</div>
+</section>
+<section id="measurement-scales-summary" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="measurement-scales-summary">Measurement Scales Summary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 10%">
+<col style="width: 21%">
+<col style="width: 17%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Scale</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Examples</th>
+<th>Appropriate Statistics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nominal</td>
+<td>Categorical</td>
+<td>Categories only</td>
+<td>Gender, Color</td>
+<td>Mode, Frequency</td>
+</tr>
+<tr class="even">
+<td>Ordinal</td>
+<td>Categorical</td>
+<td>Order matters</td>
+<td>Rankings, Grades</td>
+<td>Mode, Median</td>
+</tr>
+<tr class="odd">
+<td>Interval</td>
+<td>Numerical</td>
+<td>Equal intervals, no true zero</td>
+<td>Temperature (°C)</td>
+<td>Mean, Median, Mode</td>
+</tr>
+<tr class="even">
+<td>Ratio</td>
+<td>Numerical</td>
+<td>Equal intervals, true zero</td>
+<td>Height, Weight, Income</td>
+<td>All statistics</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="sec-central-tendency" class="level1">
+<h1>Measures of Central Tendency</h1>
+<p><em>35 minutes</em></p>
+</section>
+<section id="section" class="level1">
+<h1></h1>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'flowchart': {'nodeSpacing': 150, 'rankSpacing': 200}, 'width': 800, 'height': 600}}%%
+graph TD
+    A["Measures of Central Tendency"]
+    A --&gt; B["Mean (Average)"]
+    A --&gt; C["Median (Middle Value)"]
+    A --&gt; D["Mode (Most Frequent)"]
+    
+    B --&gt; B1["Sum of all values ÷&lt;br/&gt;Number of values"]
+    B --&gt; B2["Best for:&lt;br/&gt;Symmetric distributions"]
+    B --&gt; B3["Affected by:&lt;br/&gt;Outliers"]
+    
+    C --&gt; C1["Middle value when&lt;br/&gt;data is ordered"]
+    C --&gt; C2["Best for:&lt;br/&gt;Skewed distributions"]
+    C --&gt; C3["Resistant to:&lt;br/&gt;Outliers"]
+    
+    D --&gt; D1["Value that appears&lt;br/&gt;most frequently"]
+    D --&gt; D2["Best for:&lt;br/&gt;Categorical data"]
+    D --&gt; D3["Can have: Multiple modes&lt;br/&gt;or no mode"]
+    
+    classDef main fill:#e3f2fd,stroke:#0d47a1,stroke-width:3px
+    classDef mean fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef median fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef mode fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef details fill:#fafafa,stroke:#616161,stroke-width:1px
+    
+    class A main
+    class B mean
+    class C median
+    class D mode
+    class B1,B2,B3,C1,C2,C3,D1,D2,D3 details
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="what-is-central-tendency" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-central-tendency">What is Central Tendency?</h2>
+<p>Central tendency describes the center or typical value of a dataset.</p>
+<p>It answers the question: <strong>“What is a representative value for this data?”</strong></p>
+</section>
+</section>
+<section id="the-mean-arithmetic-average" class="level1">
+<h1>The Mean (Arithmetic Average)</h1>
+<p><em>12 minutes</em></p>
+<section id="definition-and-formula" class="level2">
+<h2 class="anchored" data-anchor-id="definition-and-formula">Definition and Formula</h2>
+<p>The <strong>mean</strong> is the sum of all values divided by the number of values.</p>
+<p>. . .</p>
+<section id="formula" class="level3">
+<h3 class="anchored" data-anchor-id="formula">Formula</h3>
+<ul>
+<li>For a sample: <span class="math inline">\(\bar{x} = \frac{\sum x}{n}\)</span></li>
+<li>For a population: <span class="math inline">\(\mu = \frac{\sum x}{N}\)</span></li>
+</ul>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(\bar{x}\)</span> (x-bar) = sample mean</li>
+<li><span class="math inline">\(\mu\)</span> (mu) = population mean</li>
+<li><span class="math inline">\(\sum x\)</span> = sum of all values</li>
+<li><span class="math inline">\(n\)</span> = sample size, <span class="math inline">\(N\)</span> = population size</li>
+</ul>
+</section>
+</section>
+<section id="example-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="example-calculation">Example Calculation</h2>
+<p>Student test scores: 85, 90, 78, 92, 88</p>
+<p>. . .</p>
+<p>Mean = <span class="math inline">\(\frac{85 + 90 + 78 + 92 + 88}{5} = \frac{433}{5} = 86.6\)</span></p>
+</section>
+<section id="properties-of-the-mean" class="level2">
+<h2 class="anchored" data-anchor-id="properties-of-the-mean">Properties of the Mean</h2>
+<ul>
+<li><strong>Uses all data points</strong> - every value affects the mean</li>
+<li><strong>Sensitive to outliers</strong> - extreme values can distort the mean</li>
+<li><strong>Unique</strong> - there is only one mean for a dataset</li>
+<li><strong>Can be calculated</strong> for interval and ratio data</li>
+<li><strong>Balancing point</strong> - sum of deviations from mean equals zero</li>
+</ul>
+</section>
+<section id="when-to-use-the-mean" class="level2">
+<h2 class="anchored" data-anchor-id="when-to-use-the-mean">When to Use the Mean</h2>
+<p>✅ <strong>Use the mean when:</strong></p>
+<ul>
+<li>Data is <strong>approximately symmetric</strong></li>
+<li><strong>No extreme outliers</strong> present</li>
+<li>Working with <strong>interval or ratio data</strong></li>
+<li>Need to use the value in <strong>further calculations</strong></li>
+</ul>
+</section>
+<section id="advantages-and-disadvantages" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="advantages-and-disadvantages">Advantages and Disadvantages</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="advantages" class="level3">
+<h3 class="anchored" data-anchor-id="advantages">Advantages</h3>
+<ul>
+<li>Uses all information in the dataset</li>
+<li>Algebraically defined and mathematically tractable</li>
+<li>Widely understood and accepted</li>
+</ul>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="disadvantages" class="level3">
+<h3 class="anchored" data-anchor-id="disadvantages">Disadvantages</h3>
+<ul>
+<li>Affected by outliers and skewed distributions</li>
+<li>May not represent a typical value in skewed data</li>
+<li>Cannot be used with nominal or ordinal data</li>
+</ul>
+</section>
+</div>
+</div>
+</section>
+</section>
+<section id="the-median" class="level1">
+<h1>The Median</h1>
+<p><em>12 minutes</em></p>
+<section id="definition" class="level2">
+<h2 class="anchored" data-anchor-id="definition">Definition</h2>
+<p>The <strong>median</strong> is the middle value when data is arranged in ascending or descending order.</p>
+</section>
+<section id="calculation-steps" class="level2">
+<h2 class="anchored" data-anchor-id="calculation-steps">Calculation Steps</h2>
+<ol type="1">
+<li><strong>Arrange data</strong> in ascending order</li>
+<li><strong>Find the middle position:</strong>
+<ul>
+<li>If n is odd: position = <span class="math inline">\(\frac{n + 1}{2}\)</span></li>
+<li>If n is even: average of positions <span class="math inline">\(\frac{n}{2}\)</span> and <span class="math inline">\(\frac{n}{2} + 1\)</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<div class="fragment">
+<section id="odd-number-of-values" class="level3">
+<h3 class="anchored" data-anchor-id="odd-number-of-values">Odd number of values:</h3>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Data: 12, 15, 18, 20, 25</p></li>
+<li><p>What is the median here ?</p></li>
+<li><p><strong>Median = 18</strong> (middle value)</p></li>
+</ul>
+</div>
+</section>
+</div>
+<div class="fragment">
+<section id="even-number-of-values" class="level3">
+<h3 class="anchored" data-anchor-id="even-number-of-values">Even number of values:</h3>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Data: 10, 15, 20, 25, 30, 35</p></li>
+<li><p>What is the median here ?</p></li>
+<li><p><strong>Median = <span class="math inline">\(\frac{20 + 25}{2} = 22.5\)</span></strong></p></li>
+</ul>
+</div>
+</section>
+</div>
+</section>
+<section id="properties-of-the-median" class="level2">
+<h2 class="anchored" data-anchor-id="properties-of-the-median">Properties of the Median</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Not affected by outliers</strong> - resistant measure</li>
+<li><strong>Represents the 50th percentile</strong></li>
+<li><strong>May not be an actual data value</strong> (when n is even)</li>
+<li><strong>Appropriate for ordinal, interval, and ratio data</strong></li>
+<li><strong>Divides data into two equal halves</strong></li>
+</ul>
+</div>
+</section>
+<section id="when-to-use-the-median" class="level2">
+<h2 class="anchored" data-anchor-id="when-to-use-the-median">When to Use the Median</h2>
+<p>✅ <strong>Use the median when:</strong></p>
+<ul>
+<li>Data is <strong>skewed</strong> (not symmetric)</li>
+<li><strong>Outliers</strong> are present</li>
+<li>Working with <strong>ordinal data</strong></li>
+<li>Want a <strong>robust measure</strong> of central tendency</li>
+<li>Data represents <strong>income, housing prices</strong>, or similar distributions</li>
+</ul>
+</section>
+<section id="median-vs-mean-with-outliers" class="level2">
+<h2 class="anchored" data-anchor-id="median-vs-mean-with-outliers">Median vs Mean with Outliers</h2>
+<p>Consider household incomes: $30,000, $32,000, $35,000, $38,000, $2,000,000</p>
+<p>. . .</p>
+<ul>
+<li><strong>Mean = $427,000</strong> (not representative of typical household)</li>
+<li><strong>Median = $35,000</strong> (better represents typical household)</li>
+</ul>
+</section>
+</section>
+<section id="the-mode" class="level1">
+<h1>The Mode</h1>
+<p><em>11 minutes</em></p>
+<section id="definition-1" class="level2">
+<h2 class="anchored" data-anchor-id="definition-1">Definition</h2>
+<p>The <strong>mode</strong> is the value that appears most frequently in a dataset.</p>
+</section>
+<section id="types-of-distributions-by-mode" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-distributions-by-mode">Types of Distributions by Mode</h2>
+<ul>
+<li><strong>Unimodal</strong>: One mode</li>
+<li><strong>Bimodal</strong>: Two modes<br>
+</li>
+<li><strong>Multimodal</strong>: More than two modes</li>
+<li><strong>No mode</strong>: All values appear with equal frequency</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'flowchart': {'nodeSpacing': 100, 'rankSpacing': 100}, 'width': 600, 'height': 400}}%%
+graph TD
+    A["Mode Types"]
+    A --&gt; B["Unimodal&lt;br/&gt;One peak"]
+    A --&gt; C["Bimodal&lt;br/&gt;Two peaks"]
+    A --&gt; D["Multimodal&lt;br/&gt;Multiple peaks"]
+    A --&gt; E["No Mode&lt;br/&gt;No repeated values"]
+    
+    classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:3px,font-size:16px
+    classDef types fill:#f5f5f5,stroke:#424242,stroke-width:2px,font-size:14px
+    
+    class A main
+    class B,C,D,E types
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="mode-examples" class="level1">
+<h1>Mode Examples</h1>
+<section id="example-1" class="level2">
+<h2 class="anchored" data-anchor-id="example-1">Example 1:</h2>
+<p>Data: 2, 3, 3, 4, 5, 5, 5, 6, 7</p>
+<div class="fragment">
+<p>Analysis:</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Count each value: 2(1), 3(2), 4(1), 5(3), 6(1), 7(1)</li>
+<li>Most frequent value: 5 appears 3 times</li>
+<li>Mode = 5</li>
+<li>Type: <strong>Unimodal (one mode)</strong></li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+<section id="example-2" class="level2">
+<h2 class="anchored" data-anchor-id="example-2">Example 2:</h2>
+<p>Data: 1, 2, 2, 3, 4, 4, 5</p>
+<div class="fragment">
+<p>Analysis:</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Count each value: 1(1), 2(2), 3(1), 4(2), 5(1)</li>
+<li>Most frequent values: 2 and 4 both appear twice</li>
+<li>Modes = 2 and 4</li>
+<li>Type: <strong>Bimodal (two modes)</strong></li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+<section id="example-3" class="level2">
+<h2 class="anchored" data-anchor-id="example-3">Example 3:</h2>
+<p>Data: 1, 2, 3, 4, 5</p>
+<div class="fragment">
+<p>Analysis:</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Count each value: 1(1), 2(1), 3(1), 4(1), 5(1)</li>
+<li>All values appear exactly once</li>
+<li>No mode (no value repeats)</li>
+<li>Type: <strong>No mode</strong></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="mode-for-different-data-types" class="level2">
+<h2 class="anchored" data-anchor-id="mode-for-different-data-types">Mode for Different Data Types</h2>
+<section id="categorical-data" class="level3">
+<h3 class="anchored" data-anchor-id="categorical-data">Categorical Data:</h3>
+<p>Favorite colors: Red, Blue, Blue, Green, Blue, Red, Blue <strong>Mode = Blue</strong></p>
+</section>
+<section id="continuous-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="continuous-data-1">Continuous Data:</h3>
+<p>Often requires grouping into intervals or bins Example: Heights grouped into ranges</p>
+</section>
+</section>
+<section id="properties-of-the-mode" class="level2">
+<h2 class="anchored" data-anchor-id="properties-of-the-mode">Properties of the Mode</h2>
+<ul>
+<li><strong>Can be used with any type of data</strong> (nominal, ordinal, interval, ratio)</li>
+<li><strong>Not affected by outliers</strong></li>
+<li><strong>May not exist</strong> or may not be unique</li>
+<li><strong>Represents the most common value</strong></li>
+<li><strong>Easy to identify</strong> in frequency distributions</li>
+</ul>
+</section>
+<section id="when-to-use-the-mode" class="level2">
+<h2 class="anchored" data-anchor-id="when-to-use-the-mode">When to Use the Mode</h2>
+<p>✅ <strong>Use the mode when:</strong></p>
+<ul>
+<li>Working with <strong>categorical (nominal) data</strong></li>
+<li>Want to identify the <strong>most popular</strong> or <strong>common</strong> choice</li>
+<li>Data has clear <strong>peaks</strong> in frequency</li>
+<li><strong>Quality control</strong> applications (most common defect type)</li>
+<li><strong>Business applications</strong> (best-selling product, most common customer complaint)</li>
+</ul>
+</section>
+<section id="comparing-measures-of-central-tendency" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="comparing-measures-of-central-tendency">Comparing Measures of Central Tendency</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 26%">
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Best for Data Type</th>
+<th>Strengths</th>
+<th>Weaknesses</th>
+<th>Affected by Outliers?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td>Interval, Ratio</td>
+<td>Uses all data, mathematically tractable</td>
+<td>Sensitive to outliers</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Median</td>
+<td>Ordinal, Interval, Ratio</td>
+<td>Robust to outliers, represents middle</td>
+<td>Ignores extreme values</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Mode</td>
+<td>All types</td>
+<td>Works with categorical, identifies most common</td>
+<td>May not exist/be unique</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="shape-of-distribution-effects" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="shape-of-distribution-effects">Shape of Distribution Effects</h2>
+<ul>
+<li><strong>Symmetric distribution</strong>: Mean ≈ Median ≈ Mode</li>
+<li><strong>Right-skewed (positively skewed)</strong>: Mean &gt; Median &gt; Mode<br>
+</li>
+<li><strong>Left-skewed (negatively skewed)</strong>: Mode &gt; Median &gt; Mean</li>
+</ul>
+<p><img src="../../../files/lecture_notes/lecture2/img/mean_mod_median.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="sec-python-implementation" class="level1">
+<h1>Python Implementation</h1>
+<p><em>15 minutes</em></p>
+<section id="essential-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="essential-libraries">Essential Libraries</h2>
+<div id="75def818" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="calculating-the-mean" class="level2">
+<h2 class="anchored" data-anchor-id="calculating-the-mean">Calculating the Mean</h2>
+<div id="64b4809d" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using NumPy</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>mean_np <span class="op">=</span> np.mean(data)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean (NumPy): </span><span class="sc">{</span>mean_np<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Using Pandas</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'scores'</span>: data})</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>mean_pd <span class="op">=</span> df[<span class="st">'scores'</span>].mean()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean (Pandas): </span><span class="sc">{</span>mean_pd<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Output:</p>
+<pre><code>Mean (NumPy): 86.6
+Mean (Pandas): 86.6</code></pre>
+</section>
+<section id="calculating-the-median" class="level2">
+<h2 class="anchored" data-anchor-id="calculating-the-median">Calculating the Median</h2>
+<div id="c1c8c45d" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using NumPy</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>median_np <span class="op">=</span> np.median(data)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Median (NumPy): </span><span class="sc">{</span>median_np<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Using Pandas</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>median_pd <span class="op">=</span> df[<span class="st">'scores'</span>].median()</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Median (Pandas): </span><span class="sc">{</span>median_pd<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Output:</p>
+<pre><code>Median (NumPy): 88.0
+Median (Pandas): 88.0</code></pre>
+</section>
+<section id="calculating-the-mode" class="level2">
+<h2 class="anchored" data-anchor-id="calculating-the-mode">Calculating the Mode</h2>
+<div id="03d5d165" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using SciPy</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>mode_result <span class="op">=</span> stats.mode(data)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mode: </span><span class="sc">{</span>mode_result<span class="sc">.</span>mode<span class="sc">}</span><span class="ss">, Count: </span><span class="sc">{</span>mode_result<span class="sc">.</span>count<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Using Pandas</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>mode_pd <span class="op">=</span> df[<span class="st">'scores'</span>].mode()</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mode (Pandas): </span><span class="sc">{</span>mode_pd<span class="sc">.</span>values<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="comprehensive-analysis-function" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="comprehensive-analysis-function">Comprehensive Analysis Function</h2>
+<div id="c6813c06" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> descriptive_summary(data, column_name<span class="op">=</span><span class="st">"Data"</span>):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Calculate comprehensive descriptive statistics"""</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame({column_name: data})</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Descriptive Statistics for </span><span class="sc">{</span>column_name<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Count: </span><span class="sc">{</span><span class="bu">len</span>(data)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Mean: </span><span class="sc">{</span>np<span class="sc">.</span>mean(data)<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Median: </span><span class="sc">{</span>np<span class="sc">.</span>median(data)<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        mode_result <span class="op">=</span> stats.mode(data)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Mode: </span><span class="sc">{</span>mode_result<span class="sc">.</span>mode[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> (appears </span><span class="sc">{</span>mode_result<span class="sc">.</span>count[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> times)"</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Mode: No unique mode"</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df.describe()</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>test_scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">91</span>, <span class="dv">85</span>, <span class="dv">87</span>, <span class="dv">89</span>, <span class="dv">86</span>]</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> descriptive_summary(test_scores, <span class="st">"Test Scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="handling-categorical-data" class="level2">
+<h2 class="anchored" data-anchor-id="handling-categorical-data">Handling Categorical Data</h2>
+<div id="63dee9b7" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Categorical data example</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'A'</span>, <span class="st">'C'</span>, <span class="st">'B'</span>, <span class="st">'B'</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>cat_series <span class="op">=</span> pd.Series(categories)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Categorical Data Analysis:"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mode: </span><span class="sc">{</span>cat_series<span class="sc">.</span>mode()<span class="sc">.</span>values[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Value Counts:"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cat_series.value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Output:</p>
+<pre><code>Categorical Data Analysis:
+Mode: B
+
+Value Counts:
+B    5
+A    3
+C    2</code></pre>
+</section>
+</section>
+<section id="sec-real-world-ex" class="level1">
+<h1>Real-world Applications</h1>
+<p><em>5 minutes</em></p>
+<section id="business-applications" class="level2">
+<h2 class="anchored" data-anchor-id="business-applications">Business Applications</h2>
+<ul>
+<li><strong>Customer Satisfaction</strong>: Mean rating shows overall satisfaction, median shows typical experience</li>
+<li><strong>Sales Data</strong>: Mode identifies best-selling products, median shows typical sale amount<br>
+</li>
+<li><strong>Employee Performance</strong>: Mean for overall team performance, median for typical employee</li>
+</ul>
+</section>
+<section id="educational-applications" class="level2">
+<h2 class="anchored" data-anchor-id="educational-applications">Educational Applications</h2>
+<ul>
+<li><strong>Test Scores</strong>: Mean for class average, median for typical student performance</li>
+<li><strong>Grade Distribution</strong>: Mode shows most common grade</li>
+<li><strong>Attendance</strong>: Mean for overall attendance rate</li>
+</ul>
+</section>
+<section id="healthcare-applications" class="level2">
+<h2 class="anchored" data-anchor-id="healthcare-applications">Healthcare Applications</h2>
+<ul>
+<li><strong>Patient Wait Times</strong>: Median often preferred due to skewed distributions</li>
+<li><strong>Treatment Outcomes</strong>: Mean for overall effectiveness, mode for most common result</li>
+<li><strong>Vital Signs</strong>: All three measures provide different insights</li>
+</ul>
+</section>
+<section id="interpretation-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-guidelines">Interpretation Guidelines</h2>
+<ol type="1">
+<li><strong>Always consider the context</strong> of your data</li>
+<li><strong>Report multiple measures</strong> when appropriate<br>
+</li>
+<li><strong>Be aware of data distribution shape</strong></li>
+<li><strong>Consider the presence of outliers</strong></li>
+<li><strong>Choose the most appropriate measure</strong> for your specific question</li>
+</ol>
+</section>
+</section>
+<section id="key-takeaways" class="level1">
+<h1>Key Takeaways</h1>
+<section id="remember-these-points" class="level2">
+<h2 class="anchored" data-anchor-id="remember-these-points">Remember These Points</h2>
+<ul>
+<li><strong>Data type determines</strong> which statistics are appropriate</li>
+<li><strong>Mean</strong> uses all data but is sensitive to outliers</li>
+<li><strong>Median</strong> is robust and represents the middle value</li>
+<li><strong>Mode</strong> identifies the most common value and works with all data types</li>
+<li><strong>Context matters</strong> when choosing and interpreting measures</li>
+<li><strong>Python provides powerful tools</strong> for calculating descriptive statistics</li>
+</ul>
+</section>
+<section id="next-lecture-preview" class="level2">
+<h2 class="anchored" data-anchor-id="next-lecture-preview">Next Lecture Preview</h2>
+<p><strong>Descriptive Statistics Part II</strong> will cover:</p>
+<ul>
+<li>Measures of variability (range, variance, standard deviation)</li>
+<li>Measures of position (percentiles, quartiles, z-scores)</li>
+<li>Shape of distributions (skewness and kurtosis)</li>
+<li>Advanced Python visualization techniques</li>
+</ul>
+</section>
+</section>
+<section id="practice-problems" class="level1">
+<h1>Practice Problems</h1>
+<section id="try-these-problems" class="level2">
+<h2 class="anchored" data-anchor-id="try-these-problems">Try These Problems</h2>
+<ol type="1">
+<li><p>Calculate mean, median, and mode for: 12, 15, 18, 12, 20, 25, 12, 30</p></li>
+<li><p>A dataset has mean = 50 and median = 45. What does this tell you about the distribution?</p></li>
+<li><p>Why might median be preferred over mean for reporting household income?</p></li>
+<li><p>Create a Python function to identify the most appropriate measure of central tendency for a given dataset.</p></li>
+</ol>
+</section>
+</section>
+<section id="questions" class="level1">
+<h1>Questions?</h1>
+<p>Thank you for your attention!</p>
+<hr>
+<section id="references-further-reading" class="level3">
+<h3 class="anchored" data-anchor-id="references-further-reading">References &amp; Further Reading</h3>
+<ul>
+<li><p><a href="../../../files/Book/os4_for_screen_reader.pdf"><em>OpenIntro Statistics</em>, Ch. 1 &amp; 2</a></p></li>
+<li><p><a href="https://learning.oreilly.com/library/view/data-science-from/9781491901410/ch05.html#idp14953264"><em>Python for Data Analysis</em> (McKinney), Ch. 5</a></p></li>
+<li><p><a href="https://carpentry.library.ucsb.edu/2025-01-14-python-ecology-lesson/04-data-types-and-format.html">UCSB Library Data Lab workshops</a></p></li>
+<li><p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html">pandas DataFrame.describe()</a> ￼</p></li>
+<li><p><a href="https://numpy.org/doc/2.1/reference/routines.statistics.html">NumPy statistical functions</a> ￼</p></li>
+<li><p><a href="https://docs.scipy.org/doc/scipy/reference/stats.html">SciPy stats module reference</a></p></li>
+</ul>
+<hr>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://learning.oreilly.com/library/view/data-science-from/9781491901410/ch05.html">(source)</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

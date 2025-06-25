@@ -13,6 +13,7 @@ website:
       - schedule.qmd
       - syllabus.qmd
       - resources.qmd
+      - contact.qmd
 format:
   html:
     theme:

@@ -1,0 +1,263 @@
+---
+title: "Contact"
+format:
+  html:
+    toc: false
+    theme: cosmo
+    css: /theme/contact-styles.css
+    page-layout: full
+execute:
+  echo: false
+  warning: false
+---
+
+
+
+::: {.hero-section}
+::: {.hero-content}
+# Get in Touch {.hero-title}
+::: {.hero-subtitle}
+We're here to help you succeed in PSTAT 5A
+:::
+:::
+:::
+
+::: {.contact-grid}
+::: {.contact-card}
+::: {.contact-avatar}
+NM
+:::
+::: {.contact-role}
+Course Instructor
+:::
+::: {.contact-name}
+Narjes Mathlouthi
+:::
+::: {.contact-info}
+::: {.contact-item}
+::: {.contact-icon}
+📧
+:::
+::: {.contact-text}
+[nmathlouthi@ucsb.edu](mailto:nmathlouthi@ucsb.edu)
+:::
+:::
+
+::: {.contact-item}
+::: {.contact-icon}
+🏢
+:::
+::: {.contact-text}
+Ellison Hall 5829
+:::
+:::
+
+::: {.contact-item}
+::: {.contact-icon}
+🕐
+:::
+::: {.contact-text}
+Thursdays 11:00 AM–12:00 PM
+:::
+:::
+
+::: {.contact-item}
+::: {.contact-icon}
+💻
+:::
+::: {.contact-text}
+Via Zoom or by appointment
+:::
+:::
+:::
+:::
+
+::: {.contact-card}
+::: {.contact-avatar}
+SL
+:::
+::: {.contact-role}
+Teaching Assistant
+:::
+::: {.contact-name}
+Summer Lee
+:::
+::: {.contact-info}
+::: {.contact-item}
+::: {.contact-icon}
+📧
+:::
+::: {.contact-text}
+[sle@ucsb.edu](mailto:sle@ucsb.edu)
+:::
+:::
+:::
+:::
+
+::: {.contact-card}
+::: {.contact-avatar}
+MH
+:::
+::: {.contact-role}
+Teaching Assistant
+:::
+::: {.contact-name}
+Mingzhu He
+:::
+::: {.contact-info}
+::: {.contact-item}
+::: {.contact-icon}
+📧
+:::
+::: {.contact-text}
+[mingzhuhe@ucsb.edu](mailto:mingzhuhe@ucsb.edu)
+:::
+:::
+
+::: {.contact-item}
+::: {.contact-icon}
+🕐
+:::
+::: {.contact-text}
+Tuesday 11:00 AM – 12:00 PM
+:::
+:::
+
+::: {.contact-item}
+::: {.contact-icon}
+💻
+:::
+::: {.contact-text}
+Via Zoom (links on Canvas)
+:::
+:::
+:::
+:::
+:::
+
+
+
+
+::: {.office-hours-card}
+::: {.office-hours-content}
+::: {.office-hours-title}
+Instructor Office Hours
+:::
+::: {.office-hours-time}
+Thursdays 11:00 AM – 12:00 PM
+:::
+::: {.office-hours-note}
+  Available via Zoom or by appointment <br>
+  **Zoom links posted on Canvas**
+:::
+:::
+:::
+
+::: {.guidelines-card}
+::: {.guidelines-title}
+Communication Guidelines
+:::
+
+::: {.guideline-item}
+::: {.guideline-number}
+1
+:::
+::: {.guideline-text}
+**Subject Line:** Always include `[PSTAT 5A]` in your email subject for faster response
+:::
+:::
+
+::: {.guideline-item}
+::: {.guideline-number}
+2
+:::
+::: {.guideline-text}
+**Response Time:** Allow 24–48 hours for replies (avoid sending on weekends)
+:::
+:::
+
+::: {.guideline-item}
+::: {.guideline-number}
+3
+:::
+::: {.guideline-text}
+**Use UCSB Email:** Always email from your UCSB account for verification
+:::
+:::
+
+::: {.guideline-item}
+::: {.guideline-number}
+4
+:::
+::: {.guideline-text}
+**Office Hours:** Use office hours for complex questions or detailed help
+:::
+:::
+
+::: {.guideline-item}
+::: {.guideline-number}
+5
+:::
+::: {.guideline-text}
+**Urgent Matters:** For time-sensitive issues, mention "URGENT" in the subject line
+:::
+:::
+:::
+
+::: {.emergency-notice}
+::: {.emergency-content}
+::: {.emergency-title}
+Emergency Contacts
+:::
+::: {.emergency-text}
+For campus emergencies: **911** • For student crisis support: **CAPS 24/7 line (805) 893-4411**
+:::
+:::
+:::
+
+```{=html}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Add click-to-copy functionality for email addresses
+  document.querySelectorAll('a[href^="mailto:"]').forEach(email => {
+    email.addEventListener('click', function(e) {
+      e.preventDefault();
+      const emailAddress = this.textContent;
+      navigator.clipboard.writeText(emailAddress).then(function() {
+        // Visual feedback
+        const originalText = email.textContent;
+        email.textContent = 'Copied!';
+        email.style.color = '#28a745';
+        setTimeout(() => {
+          email.textContent = originalText;
+          email.style.color = '';
+        }, 1500);
+      });
+    });
+  });
+
+  // Add scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe contact cards
+  document.querySelectorAll('.contact-card, .office-hours-card, .guidelines-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'all 0.6s ease';
+    observer.observe(card);
+  });
+});
+</script>
+```

@@ -71,7 +71,7 @@ Lecture Materials
 6/24
 :::
 ::: {.topic .special-note}
-**No class (lectures canceled)**
+**No class (lecture canceled)**
 :::
 ::: {.lab-quiz .empty-cell}
 —
