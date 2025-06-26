@@ -88,7 +88,7 @@ Lecture Materials
 6/25
 :::
 ::: {.topic}
-[Descriptive Statistics I](/files/lecture_notes/lecture2/lecture2_part1.qmd)
+[Descriptive Statistics I](/files/lecture_notes/lecture2/lecture2.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —

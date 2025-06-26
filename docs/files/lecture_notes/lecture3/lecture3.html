@@ -1,561 +1,1423 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>lecture3 – PSTAT5A</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-</style>
-
-
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<html lang="en"><head>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
 
-
-<link rel="stylesheet" href="../../../styles.css">
+  <meta name="author" content="Narjes Mathlouthi">
+  <meta name="dcterms.date" content="2025-06-26">
+  <title>PSTAT5A – Descriptive Statistics Part II</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
+  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
 </head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
 
-<body class="nav-fixed">
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Descriptive Statistics Part II</h1>
+  <p class="subtitle">Variability, Position, Shape &amp; Visualization Lecture</p>
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../img/logo.png" alt="" class="navbar-logo">
-    </a>
-    <a class="navbar-brand" href="../../../index.html">
-    <span class="navbar-title">PSTAT5A</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> <i class="bi bi-home" role="img">
-</i> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../schedule.html"> 
-<span class="menu-text">Class Schedule</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../syllabus.html"> 
-<span class="menu-text">Syllabus</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../resources.html"> 
-<span class="menu-text">Course Resources</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../contact.html"> 
-<span class="menu-text">Contact</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Narjes Mathlouthi 
 </div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+</div>
+</div>
+
+  <p class="date">2025-06-26</p>
+</section>
+<section id="learning-objectives" class="slide level2 smaller">
+<h2>Learning Objectives</h2>
+<p>By the end of this lecture, you will be able to:</p>
+<ul>
+<li>Calculate and interpret measures of variability (range, variance, standard deviation)</li>
+<li>Understand and compute measures of position (percentiles, quartiles, z-scores)</li>
+<li>Assess distribution shape using skewness and kurtosis</li>
+<li>Create and interpret histograms with appropriate bin widths</li>
+<li>Construct and analyze boxplots for data exploration</li>
+<li>Identify trends, patterns, and outliers in data visualizations</li>
+<li>Apply Python for comprehensive descriptive analysis and visualization</li>
+</ul>
+</section>
+<section id="lecture-outline" class="slide level2 smaller">
+<h2>Lecture Outline</h2>
+<ol type="1">
+<li><strong>Measures of Variability</strong> (25 minutes)
+<ul>
+<li>Range, Variance, Standard Deviation (15 min)</li>
+<li>Coefficient of Variation (5 min)</li>
+<li>Python Implementation (5 min)</li>
+</ul></li>
+<li><strong>Measures of Position</strong> (20 minutes)
+<ul>
+<li>Percentiles and Quartiles (10 min)</li>
+<li>Z-scores and Standardization (10 min)</li>
+</ul></li>
+<li><strong>Distribution Shape</strong> (10 minutes)
+<ul>
+<li>Skewness and Kurtosis (10 min)</li>
+</ul></li>
+<li><strong>Data Visualization</strong> (20 minutes)
+<ul>
+<li>Histograms and Bin Width Selection (10 min)</li>
+<li>Boxplots and Interpretation (10 min)</li>
+</ul></li>
+<li><strong>Identifying Trends and Patterns</strong> (5 minutes)</li>
+</ol>
+</section>
+<section>
+<section id="measures-of-variability" class="title-slide slide level1 center">
+<h1>Measures of Variability</h1>
+<p><em>25 minutes</em></p>
+</section>
+<section id="what-is-variability" class="slide level2">
+<h2>What is Variability?</h2>
+<p><strong>Variability</strong> (or dispersion) measures how spread out or scattered the data points are around the center.</p>
+<div class="fragment">
+<h3 id="why-variability-matters">Why Variability Matters</h3>
+<ul>
+<li>Two datasets can have the same mean but very different spreads</li>
+<li>Variability indicates <strong>consistency</strong> and <strong>predictability</strong></li>
+<li>Essential for <strong>risk assessment</strong> and <strong>quality control</strong></li>
+<li>Helps determine <strong>confidence</strong> in our central tendency measures</li>
+</ul>
+</div>
+</section>
+<section id="comparing-datasets-with-same-mean" class="slide level2">
+<h2>Comparing Datasets with Same Mean</h2>
+<ul>
+<li><p>Dataset A: 98, 99, 100, 101, 102 (Mean = 100)</p></li>
+<li><p>Dataset B: 80, 90, 100, 110, 120 (Mean = 100)</p></li>
+</ul>
+<div class="fragment">
+<p><strong>Both have the same mean (100), but Dataset B is much more variable!</strong></p>
+<p>This is why we need measures of variability.</p>
+</div>
+</section></section>
+<section>
+<section id="range" class="title-slide slide level1 center">
+<h1>Range</h1>
+<p><em>5 minutes</em></p>
+</section>
+<section id="definition-and-calculation" class="slide level2">
+<h2>Definition and Calculation</h2>
+<p><strong>Range</strong> = Maximum value - Minimum value</p>
+<div class="fragment">
+<h3 id="example">Example</h3>
+<ul>
+<li>Data: 12, 15, 18, 22, 25, 30, 35</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Range = 35 - 12 = 23</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="properties-of-range" class="slide level2">
+<h2>Properties of Range</h2>
+<div class="fragment">
+<ul>
+<li><strong>Simple to calculate</strong> and understand</li>
+<li><strong>Uses only two values</strong> (ignores all others)</li>
+<li><strong>Sensitive to outliers</strong></li>
+<li><strong>Limited information</strong> about distribution</li>
+</ul>
+</div>
+</section>
+<section id="when-to-use-range" class="slide level2">
+<h2>When to Use Range</h2>
+<p>✅ <strong>Use range when:</strong></p>
+<ul>
+<li><p>Need a <strong>quick, simple measure</strong> of spread</p></li>
+<li><p>Working with <strong>small datasets</strong></p></li>
+<li><p>Communicating to <strong>non-technical audiences</strong></p></li>
+</ul>
+<p>❌ <strong>Avoid range when:</strong></p>
+<ul>
+<li><p><strong>Outliers</strong> are present</p></li>
+<li><p>Need <strong>detailed information</strong> about variability</p></li>
+<li><p>Working with <strong>large datasets</strong></p></li>
+</ul>
+</section></section>
+<section>
+<section id="variance-and-standard-deviation" class="title-slide slide level1 center">
+<h1>Variance and Standard Deviation</h1>
+<p><em>15 minutes</em></p>
+</section>
+<section id="variance-definition" class="slide level2">
+<h2>Variance Definition</h2>
+<p><strong>Variance</strong> measures the average squared deviation from the mean.</p>
+<h3 id="sample-variance-formula">Sample Variance Formula</h3>
+<p><span class="math display">\[s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}\]</span></p>
+<h3 id="population-variance-formula">Population Variance Formula</h3>
+<p><span class="math display">\[\sigma^2 = \frac{\sum(x_i - \mu)^2}{N}\]</span></p>
+<p>Where <span class="math inline">\(s^2\)</span> = sample variance, <span class="math inline">\(\sigma^2\)</span> = population variance</p>
+</section>
+<section id="standard-deviation-definition" class="slide level2">
+<h2>Standard Deviation Definition</h2>
+<p><strong>Standard Deviation</strong> is the square root of variance.</p>
+<h3 id="sample-standard-deviation">Sample Standard Deviation</h3>
+<p><span class="math display">\[s = \sqrt{s^2} = \sqrt{\frac{\sum(x_i - \bar{x})^2}{n-1}}\]</span></p>
+<h3 id="population-standard-deviation">Population Standard Deviation</h3>
+<p><span class="math display">\[\sigma = \sqrt{\sigma^2} = \sqrt{\frac{\sum(x_i - \mu)^2}{N}}\]</span></p>
+</section>
+<section id="step-by-step-calculation-example" class="slide level2">
+<h2>Step-by-Step Calculation Example</h2>
+<p>Data: 10, 12, 14, 16, 18 (Mean = 14)</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x_i\)</span></th>
+<th><span class="math inline">\(x_i - \bar{x}\)</span></th>
+<th><span class="math inline">\((x_i - \bar{x})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10</td>
+<td>-4</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>-2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>18</td>
+<td>4</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td><strong>Sum</strong></td>
+<td></td>
+<td><strong>40</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="completing-the-calculation" class="slide level2">
+<h2>Completing the Calculation</h2>
+<p><span class="math display">\[s^2 = \frac{40}{5-1} = \frac{40}{4} = 10\]</span></p>
+<p><span class="math display">\[s = \sqrt{10} = 3.16\]</span></p>
+<div class="fragment">
+<p><strong>Interpretation:</strong> On average, data points deviate from the mean by about 3.16 units.</p>
+</div>
+</section>
+<section id="properties-of-standard-deviation" class="slide level2">
+<h2>Properties of Standard Deviation</h2>
+<ul>
+<li><strong>Same units</strong> as the original data</li>
+<li><strong>Always non-negative</strong></li>
+<li><strong>Zero</strong> only when all values are identical</li>
+<li><strong>Larger values</strong> indicate more variability</li>
+<li><strong>Approximately 68%</strong> of data within 1 SD of mean (for normal distributions)</li>
+<li><strong>Approximately 95%</strong> of data within 2 SD of mean</li>
+</ul>
+</section>
+<section id="empirical-rule-68-95-99.7-rule" class="slide level2">
+<h2>Empirical Rule (68-95-99.7 Rule)</h2>
+<p>For <strong>approximately normal distributions:</strong></p>
+<ul>
+<li><strong>68%</strong> of data falls within 1 standard deviation of the mean</li>
+<li><strong>95%</strong> of data falls within 2 standard deviations of the mean</li>
+<li><strong>99.7%</strong> of data falls within 3 standard deviations of the mean</li>
+</ul>
+<p>This rule helps us understand what constitutes “typical” vs “unusual” values.</p>
+</section></section>
+<section>
+<section id="coefficient-of-variation" class="title-slide slide level1 center">
+<h1>Coefficient of Variation</h1>
+<p><em>5 minutes</em></p>
+</section>
+<section id="definition-and-purpose" class="slide level2">
+<h2>Definition and Purpose</h2>
+<p><strong>Coefficient of Variation (CV)</strong> = <span class="math inline">\(\frac{\text{Standard Deviation}}{\text{Mean}} \times 100\%\)</span></p>
+<div class="fragment">
+<h3 id="why-use-cv">Why Use CV?</h3>
+<ul>
+<li><strong>Compares variability</strong> across different units or scales</li>
+<li><strong>Relative measure</strong> of variability</li>
+<li>Useful when <strong>means differ substantially</strong></li>
+</ul>
+</div>
+</section>
+<section id="example-comparing-variability" class="slide level2">
+<h2>Example: Comparing Variability</h2>
+<p><strong>Stock A:</strong> Mean return = $50, SD = $10, CV = 20%</p>
+<p><strong>Stock B:</strong> Mean return = $500, SD = $50, CV = 10%</p>
+<div class="fragment">
+<p><strong>Stock B has higher absolute variability ($50 vs $10) but lower relative variability (10% vs 20%)</strong></p>
+<p>Stock B is relatively less risky per dollar invested.</p>
+</div>
+</section>
+<section id="python-implementation---variability" class="slide level2">
+<h2>Python Implementation - Variability</h2>
+<div id="19cef761" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="co"># Sample data</span></span>
+<span id="cb1-5"><a></a>data <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">16</span>, <span class="dv">18</span>, <span class="dv">22</span>, <span class="dv">25</span>]</span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="co"># Calculate measures of variability</span></span>
+<span id="cb1-8"><a></a>range_val <span class="op">=</span> np.<span class="bu">max</span>(data) <span class="op">-</span> np.<span class="bu">min</span>(data)</span>
+<span id="cb1-9"><a></a>variance_sample <span class="op">=</span> np.var(data, ddof<span class="op">=</span><span class="dv">1</span>)  <span class="co"># Sample variance</span></span>
+<span id="cb1-10"><a></a>std_sample <span class="op">=</span> np.std(data, ddof<span class="op">=</span><span class="dv">1</span>)       <span class="co"># Sample standard deviation</span></span>
+<span id="cb1-11"><a></a>cv <span class="op">=</span> (std_sample <span class="op">/</span> np.mean(data)) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb1-12"><a></a></span>
+<span id="cb1-13"><a></a><span class="bu">print</span>(<span class="ss">f"Range: </span><span class="sc">{</span>range_val<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-14"><a></a><span class="bu">print</span>(<span class="ss">f"Variance: </span><span class="sc">{</span>variance_sample<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb1-15"><a></a><span class="bu">print</span>(<span class="ss">f"Standard Deviation: </span><span class="sc">{</span>std_sample<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb1-16"><a></a><span class="bu">print</span>(<span class="ss">f"Coefficient of Variation: </span><span class="sc">{</span>cv<span class="sc">:.1f}</span><span class="ss">%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="measures-of-position" class="title-slide slide level1 center">
+<h1>Measures of Position</h1>
+<p><em>20 minutes</em></p>
+</section>
+<section id="what-are-measures-of-position" class="slide level2">
+<h2>What are Measures of Position?</h2>
+<p><strong>Measures of position</strong> tell us where a particular value stands relative to the rest of the data.</p>
+<p>They answer questions like:</p>
+<ul>
+<li><p>“What percentage of students scored below 85?”</p></li>
+<li><p>“Is this value typical or unusual?”</p></li>
+<li><p>“How does this observation compare to others?”</p></li>
+</ul>
+</section></section>
+<section>
+<section id="percentiles-and-quartiles" class="title-slide slide level1 center">
+<h1>Percentiles and Quartiles</h1>
+<p><em>10 minutes</em></p>
+</section>
+<section id="percentiles-definition" class="slide level2">
+<h2>Percentiles Definition</h2>
+<p>The <strong>k-th percentile</strong> is the value below which k% of the data falls.</p>
+<h3 id="examples">Examples:</h3>
+<ul>
+<li><strong>50th percentile</strong> = Median (50% of data below this value)</li>
+<li><strong>90th percentile</strong> = 90% of data falls below this value</li>
+<li><strong>25th percentile</strong> = 25% of data falls below this value</li>
+</ul>
+</section>
+<section id="quartiles" class="slide level2">
+<h2>Quartiles</h2>
+<p><strong>Quartiles</strong> divide the data into four equal parts:</p>
+<ul>
+<li><strong>Q1 (First Quartile)</strong> = 25th percentile</li>
+<li><strong>Q2 (Second Quartile)</strong> = 50th percentile = Median</li>
+<li><strong>Q3 (Third Quartile)</strong> = 75th percentile</li>
+</ul>
+</section>
+<section id="interquartile-range-iqr" class="slide level2">
+<h2>Interquartile Range (IQR)</h2>
+<p><strong>IQR = Q3 - Q1</strong></p>
+<div class="fragment">
+<h3 id="properties-of-iqr">Properties of IQR:</h3>
+<ul>
+<li>Contains the <strong>middle 50%</strong> of the data</li>
+<li><strong>Resistant to outliers</strong></li>
+<li>Used in <strong>boxplot construction</strong></li>
+<li>Useful for <strong>outlier detection</strong></li>
+</ul>
+</div>
+</section>
+<section id="five-number-summary" class="slide level2">
+<h2>Five-Number Summary</h2>
+<p>The <strong>five-number summary</strong> provides a complete picture of data distribution:</p>
+<ol type="1">
+<li><strong>Minimum</strong></li>
+<li><strong>Q1 (25th percentile)</strong></li>
+<li><strong>Median (50th percentile)</strong></li>
+<li><strong>Q3 (75th percentile)</strong></li>
+<li><strong>Maximum</strong></li>
+</ol>
+<p>This forms the basis for boxplots!</p>
+</section></section>
+<section>
+<section id="z-scores-and-standardization" class="title-slide slide level1 center">
+<h1>Z-scores and Standardization</h1>
+<p><em>10 minutes</em></p>
+</section>
+<section id="z-score-definition" class="slide level2">
+<h2>Z-score Definition</h2>
+<p><strong>Z-score</strong> tells us how many standard deviations a value is from the mean.</p>
+<p><span class="math display">\[z = \frac{x - \mu}{\sigma} \text{ or } z = \frac{x - \bar{x}}{s}\]</span></p>
+</section>
+<section id="interpreting-z-scores" class="slide level2">
+<h2>Interpreting Z-scores</h2>
+<ul>
+<li><strong>z = 0</strong>: Value equals the mean</li>
+<li><strong>z = 1</strong>: Value is 1 standard deviation above the mean</li>
+<li><strong>z = -2</strong>: Value is 2 standard deviations below the mean</li>
+<li><strong>|z| &gt; 2</strong>: Often considered “unusual” (beyond 95% of data)</li>
+<li><strong>|z| &gt; 3</strong>: Very unusual (beyond 99.7% of data)</li>
+</ul>
+</section>
+<section id="z-score-example" class="slide level2">
+<h2>Z-score Example</h2>
+<p>Student’s test score: 85 Class mean: 78, Class standard deviation: 6</p>
+<p><span class="math display">\[z = \frac{85 - 78}{6} = \frac{7}{6} = 1.17\]</span></p>
+<p><strong>Interpretation:</strong> This student scored 1.17 standard deviations above the class average.</p>
+</section>
+<section id="benefits-of-standardization" class="slide level2">
+<h2>Benefits of Standardization</h2>
+<ul>
+<li><strong>Compare across different scales</strong> (test scores vs income)</li>
+<li><strong>Identify outliers</strong> systematically<br>
+</li>
+<li><strong>Combine different variables</strong> meaningfully</li>
+<li><strong>Prepare data</strong> for certain statistical methods</li>
+</ul>
+</section></section>
+<section>
+<section id="distribution-shape" class="title-slide slide level1 center">
+<h1>Distribution Shape</h1>
+<p><em>10 minutes</em></p>
+</section>
+<section id="skewness" class="slide level2">
+<h2>Skewness</h2>
+<p><strong>Skewness</strong> measures the asymmetry of a distribution.</p>
+<h3 id="types-of-skewness">Types of Skewness:</h3>
+<ul>
+<li><strong>Symmetric (Skewness ≈ 0)</strong>: Mean ≈ Median ≈ Mode</li>
+<li><strong>Right-skewed (Positive skewness)</strong>: Mean &gt; Median, long tail to the right</li>
+<li><strong>Left-skewed (Negative skewness)</strong>: Mean &lt; Median, long tail to the left</li>
+</ul>
+</section>
+<section id="visual-examples-of-skewness" class="slide level2 smaller">
+<h2>Visual Examples of Skewness</h2>
+<p><strong>Right-skewed (Income data):</strong></p>
+<ul>
+<li><p>Most people earn moderate amounts</p></li>
+<li><p>Few people earn very high amounts</p></li>
+<li><p>Mean &gt; Median</p></li>
+</ul>
+<p><strong>Left-skewed (Test scores with ceiling effect):</strong></p>
+<ul>
+<li><p>Most students score high</p></li>
+<li><p>Few students score very low</p></li>
+<li><p>Mean &lt; Median</p></li>
+</ul>
+</section>
+<section id="kurtosis" class="slide level2">
+<h2>Kurtosis</h2>
+<p><strong>Kurtosis</strong> measures the “tailedness” of a distribution.</p>
+<h3 id="types">Types:</h3>
+<ul>
+<li><strong>Mesokurtic (Normal-like)</strong>: Kurtosis ≈ 3</li>
+<li><strong>Leptokurtic (Heavy tails)</strong>: Kurtosis &gt; 3, more peaked</li>
+<li><strong>Platykurtic (Light tails)</strong>: Kurtosis &lt; 3, flatter</li>
+</ul>
+<p><strong>Excess Kurtosis</strong> = Kurtosis - 3 (makes normal distributions have excess kurtosis of 0)</p>
+</section>
+<section id="python-implementation---position-shape" class="slide level2">
+<h2>Python Implementation - Position &amp; Shape</h2>
+<div id="b1b31e6d" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb2-4"><a></a></span>
+<span id="cb2-5"><a></a>data <span class="op">=</span> [<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>]</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a><span class="co"># Percentiles and quartiles</span></span>
+<span id="cb2-8"><a></a>q1 <span class="op">=</span> np.percentile(data, <span class="dv">25</span>)</span>
+<span id="cb2-9"><a></a>median <span class="op">=</span> np.percentile(data, <span class="dv">50</span>)</span>
+<span id="cb2-10"><a></a>q3 <span class="op">=</span> np.percentile(data, <span class="dv">75</span>)</span>
+<span id="cb2-11"><a></a>iqr <span class="op">=</span> q3 <span class="op">-</span> q1</span>
+<span id="cb2-12"><a></a></span>
+<span id="cb2-13"><a></a><span class="co"># Z-scores</span></span>
+<span id="cb2-14"><a></a>z_scores <span class="op">=</span> stats.zscore(data)</span>
+<span id="cb2-15"><a></a></span>
+<span id="cb2-16"><a></a><span class="co"># Shape measures</span></span>
+<span id="cb2-17"><a></a>skewness <span class="op">=</span> stats.skew(data)</span>
+<span id="cb2-18"><a></a>kurt <span class="op">=</span> stats.kurtosis(data)</span>
+<span id="cb2-19"><a></a></span>
+<span id="cb2-20"><a></a><span class="bu">print</span>(<span class="ss">f"Q1: </span><span class="sc">{</span>q1<span class="sc">}</span><span class="ss">, Median: </span><span class="sc">{</span>median<span class="sc">}</span><span class="ss">, Q3: </span><span class="sc">{</span>q3<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-21"><a></a><span class="bu">print</span>(<span class="ss">f"IQR: </span><span class="sc">{</span>iqr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-22"><a></a><span class="bu">print</span>(<span class="ss">f"Skewness: </span><span class="sc">{</span>skewness<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb2-23"><a></a><span class="bu">print</span>(<span class="ss">f"Kurtosis: </span><span class="sc">{</span>kurt<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section id="data-visualization" class="title-slide slide level1 center">
+<h1>Data Visualization</h1>
+<p><em>20 minutes</em></p>
+</section>
+
+<section>
+<section id="histograms-and-bin-width-selection" class="title-slide slide level1 center">
+<h1>Histograms and Bin Width Selection</h1>
+<p><em>10 minutes</em></p>
+</section>
+<section id="what-is-a-histogram" class="slide level2">
+<h2>What is a Histogram?</h2>
+<p>A <strong>histogram</strong> displays the distribution of a continuous variable by dividing data into bins and showing the frequency of observations in each bin.</p>
+<h3 id="key-components">Key Components:</h3>
+<ul>
+<li><strong>X-axis</strong>: Variable values (continuous)</li>
+<li><strong>Y-axis</strong>: Frequency or density</li>
+<li><strong>Bins</strong>: Intervals that group the data</li>
+<li><strong>Bars</strong>: Height represents frequency in each bin</li>
+</ul>
+</section>
+<section id="choosing-bin-width-critical-decision" class="slide level2">
+<h2>Choosing Bin Width: Critical Decision</h2>
+<p><strong>Bin width dramatically affects histogram interpretation!</strong></p>
+<h3 id="too-few-bins-wide-bins">Too Few Bins (Wide bins):</h3>
+<ul>
+<li><strong>Oversmoothing</strong> - lose important details</li>
+<li>May <strong>hide multimodality</strong></li>
+<li>Distribution appears simpler than it is</li>
+</ul>
+<h3 id="too-many-bins-narrow-bins">Too Many Bins (Narrow bins):</h3>
+<ul>
+<li><strong>Undersmoothing</strong> - too much noise</li>
+<li>May create <strong>artificial gaps</strong></li>
+<li>Hard to see overall pattern</li>
+</ul>
+</section>
+<section id="bin-width-guidelines" class="slide level2">
+<h2>Bin Width Guidelines</h2>
+<h3 id="rule-of-thumb-methods">Rule of Thumb Methods:</h3>
+<ol type="1">
+<li><strong>Square Root Rule</strong>: Number of bins ≈ <span class="math inline">\(\sqrt{n}\)</span></li>
+<li><strong>Sturges’ Rule</strong>: Number of bins = <span class="math inline">\(1 + \log_2(n)\)</span></li>
+<li><strong>Scott’s Rule</strong>: Bin width = <span class="math inline">\(\frac{3.5 \times \text{SD}}{n^{1/3}}\)</span></li>
+<li><strong>Freedman-Diaconis Rule</strong>: Bin width = <span class="math inline">\(\frac{2 \times \text{IQR}}{n^{1/3}}\)</span></li>
+</ol>
+<p><strong>Best practice:</strong> Try multiple bin widths and choose based on the story your data tells!</p>
+</section>
+<section id="python-histogram-examples" class="slide level2">
+<h2>Python Histogram Examples</h2>
+<div id="98049003" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a></a></span>
+<span id="cb3-4"><a></a><span class="co"># Generate sample data</span></span>
+<span id="cb3-5"><a></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb3-6"><a></a>data <span class="op">=</span> np.random.normal(<span class="dv">100</span>, <span class="dv">15</span>, <span class="dv">1000</span>)</span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a><span class="co"># Create subplots with different bin counts</span></span>
+<span id="cb3-9"><a></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb3-10"><a></a></span>
+<span id="cb3-11"><a></a><span class="co"># Different bin counts</span></span>
+<span id="cb3-12"><a></a>bin_counts <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">100</span>]</span>
+<span id="cb3-13"><a></a>titles <span class="op">=</span> [<span class="st">'10 bins (too few)'</span>, <span class="st">'30 bins (good)'</span>, <span class="st">'50 bins (good)'</span>, <span class="st">'100 bins (too many)'</span>]</span>
+<span id="cb3-14"><a></a></span>
+<span id="cb3-15"><a></a><span class="cf">for</span> i, (bins, title) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(bin_counts, titles)):</span>
+<span id="cb3-16"><a></a>    row, col <span class="op">=</span> i <span class="op">//</span> <span class="dv">2</span>, i <span class="op">%</span> <span class="dv">2</span></span>
+<span id="cb3-17"><a></a>    axes[row, col].hist(data, bins<span class="op">=</span>bins, alpha<span class="op">=</span><span class="fl">0.7</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb3-18"><a></a>    axes[row, col].set_title(title)</span>
+<span id="cb3-19"><a></a>    axes[row, col].set_xlabel(<span class="st">'Value'</span>)</span>
+<span id="cb3-20"><a></a>    axes[row, col].set_ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb3-21"><a></a></span>
+<span id="cb3-22"><a></a>plt.tight_layout()</span>
+<span id="cb3-23"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="interpreting-histograms" class="slide level2">
+<h2>Interpreting Histograms</h2>
+<h3 id="what-to-look-for">What to Look For:</h3>
+<ol type="1">
+<li><strong>Shape</strong>: Normal, skewed, uniform, bimodal?</li>
+<li><strong>Center</strong>: Where is the “typical” value?</li>
+<li><strong>Spread</strong>: How variable is the data?</li>
+<li><strong>Outliers</strong>: Any unusual values?</li>
+<li><strong>Gaps</strong>: Are there missing values in certain ranges?</li>
+<li><strong>Multiple peaks</strong>: Suggests multiple subgroups</li>
+</ol>
+</section></section>
+<section>
+<section id="boxplots-and-interpretation" class="title-slide slide level1 center">
+<h1>Boxplots and Interpretation</h1>
+<p><em>10 minutes</em></p>
+</section>
+<section id="anatomy-of-a-boxplot" class="slide level2">
+<h2>Anatomy of a Boxplot</h2>
+<div id="8b5c4ea9" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># Boxplot components illustration</span></span>
+<span id="cb4-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a><span class="co"># Sample data</span></span>
+<span id="cb4-6"><a></a>data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>]</span>
+<span id="cb4-7"><a></a></span>
+<span id="cb4-8"><a></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb4-9"><a></a></span>
+<span id="cb4-10"><a></a><span class="co"># Create boxplot</span></span>
+<span id="cb4-11"><a></a>bp <span class="op">=</span> ax.boxplot(data, vert<span class="op">=</span><span class="va">False</span>, patch_artist<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-12"><a></a></span>
+<span id="cb4-13"><a></a><span class="co"># Customize colors</span></span>
+<span id="cb4-14"><a></a>bp[<span class="st">'boxes'</span>][<span class="dv">0</span>].set_facecolor(<span class="st">'lightblue'</span>)</span>
+<span id="cb4-15"><a></a>bp[<span class="st">'medians'</span>][<span class="dv">0</span>].set_color(<span class="st">'red'</span>)</span>
+<span id="cb4-16"><a></a>bp[<span class="st">'medians'</span>][<span class="dv">0</span>].set_linewidth(<span class="dv">2</span>)</span>
+<span id="cb4-17"><a></a></span>
+<span id="cb4-18"><a></a><span class="co"># Add labels</span></span>
+<span id="cb4-19"><a></a>ax.set_xlabel(<span class="st">'Values'</span>)</span>
+<span id="cb4-20"><a></a>ax.set_title(<span class="st">'Anatomy of a Boxplot'</span>)</span>
+<span id="cb4-21"><a></a></span>
+<span id="cb4-22"><a></a><span class="co"># Add annotations</span></span>
+<span id="cb4-23"><a></a>ax.annotate(<span class="st">'Q1 (25th percentile)'</span>, xy<span class="op">=</span>(<span class="fl">3.5</span>, <span class="fl">1.1</span>), xytext<span class="op">=</span>(<span class="fl">3.5</span>, <span class="fl">1.3</span>),</span>
+<span id="cb4-24"><a></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span><span class="st">'black'</span>))</span>
+<span id="cb4-25"><a></a>ax.annotate(<span class="st">'Median (Q2)'</span>, xy<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">1.1</span>), xytext<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">1.3</span>),</span>
+<span id="cb4-26"><a></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span><span class="st">'red'</span>))</span>
+<span id="cb4-27"><a></a>ax.annotate(<span class="st">'Q3 (75th percentile)'</span>, xy<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">1.1</span>), xytext<span class="op">=</span>(<span class="dv">11</span>, <span class="fl">1.3</span>),</span>
+<span id="cb4-28"><a></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span><span class="st">'black'</span>))</span>
+<span id="cb4-29"><a></a></span>
+<span id="cb4-30"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="boxplot-components-explained" class="slide level2">
+<h2>Boxplot Components Explained</h2>
+<h3 id="the-box">The Box:</h3>
+<ul>
+<li><strong>Left edge</strong>: Q1 (25th percentile)</li>
+<li><strong>Middle line</strong>: Median (Q2, 50th percentile)<br>
+</li>
+<li><strong>Right edge</strong>: Q3 (75th percentile)</li>
+<li><strong>Box width</strong>: IQR (contains middle 50% of data)</li>
+</ul>
+<h3 id="the-whiskers">The Whiskers:</h3>
+<ul>
+<li><strong>Extend to</strong>: Most extreme values within 1.5 × IQR from box edges</li>
+<li><strong>Lower whisker</strong>: Minimum value within Q1 - 1.5×IQR</li>
+<li><strong>Upper whisker</strong>: Maximum value within Q3 + 1.5×IQR</li>
+</ul>
+<h3 id="outliers">Outliers:</h3>
+<ul>
+<li><strong>Points beyond whiskers</strong>: Values &gt; Q3 + 1.5×IQR or &lt; Q1 - 1.5×IQR</li>
+</ul>
+</section>
+<section id="what-boxplots-tell-us" class="slide level2">
+<h2>What Boxplots Tell Us</h2>
+<h3 id="distribution-shape-1">Distribution Shape:</h3>
+<ul>
+<li><strong>Symmetric</strong>: Median in center of box, whiskers equal length</li>
+<li><strong>Right-skewed</strong>: Median closer to Q1, longer upper whisker</li>
+<li><strong>Left-skewed</strong>: Median closer to Q3, longer lower whisker</li>
+</ul>
+<h3 id="variability">Variability:</h3>
+<ul>
+<li><strong>Wide box</strong>: High variability in middle 50%</li>
+<li><strong>Long whiskers</strong>: High overall variability</li>
+<li><strong>Many outliers</strong>: Extreme variability</li>
+</ul>
+</section>
+<section id="comparing-groups-with-boxplots" class="slide level2">
+<h2>Comparing Groups with Boxplots</h2>
+<div id="fe9a95a1" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># Comparing multiple groups</span></span>
+<span id="cb5-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb5-4"><a></a></span>
+<span id="cb5-5"><a></a><span class="co"># Create sample data for different groups</span></span>
+<span id="cb5-6"><a></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb5-7"><a></a>group_a <span class="op">=</span> np.random.normal(<span class="dv">70</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
+<span id="cb5-8"><a></a>group_b <span class="op">=</span> np.random.normal(<span class="dv">75</span>, <span class="dv">15</span>, <span class="dv">100</span>)  </span>
+<span id="cb5-9"><a></a>group_c <span class="op">=</span> np.random.normal(<span class="dv">80</span>, <span class="dv">8</span>, <span class="dv">100</span>)</span>
+<span id="cb5-10"><a></a></span>
+<span id="cb5-11"><a></a><span class="co"># Combine into DataFrame</span></span>
+<span id="cb5-12"><a></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb5-13"><a></a>    <span class="st">'Score'</span>: np.concatenate([group_a, group_b, group_c]),</span>
+<span id="cb5-14"><a></a>    <span class="st">'Group'</span>: [<span class="st">'A'</span>]<span class="op">*</span><span class="dv">100</span> <span class="op">+</span> [<span class="st">'B'</span>]<span class="op">*</span><span class="dv">100</span> <span class="op">+</span> [<span class="st">'C'</span>]<span class="op">*</span><span class="dv">100</span></span>
+<span id="cb5-15"><a></a>})</span>
+<span id="cb5-16"><a></a></span>
+<span id="cb5-17"><a></a><span class="co"># Create comparative boxplot</span></span>
+<span id="cb5-18"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb5-19"><a></a>sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'Group'</span>, y<span class="op">=</span><span class="st">'Score'</span>)</span>
+<span id="cb5-20"><a></a>plt.title(<span class="st">'Comparing Score Distributions Across Groups'</span>)</span>
+<span id="cb5-21"><a></a>plt.ylabel(<span class="st">'Test Score'</span>)</span>
+<span id="cb5-22"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="advanced-boxplot-interpretations" class="slide level2">
+<h2>Advanced Boxplot Interpretations</h2>
+</section>
+<section id="comparing-boxplots" class="slide level2">
+<h2>Comparing Boxplots:</h2>
+<ul>
+<li><strong>Median differences</strong>: Which group has higher typical values?</li>
+<li><strong>IQR differences</strong>: Which group is more consistent?</li>
+<li><strong>Outlier patterns</strong>: Which group has more extreme values?</li>
+<li><strong>Overlap</strong>: Do the groups have similar ranges?</li>
+</ul>
+</section>
+<section id="business-applications" class="slide level2">
+<h2>Business Applications:</h2>
+<ul>
+<li><strong>Quality control</strong>: Compare product batches</li>
+<li><strong>Performance analysis</strong>: Compare team/department performance<br>
+</li>
+<li><strong>Customer segmentation</strong>: Compare customer groups</li>
+<li><strong>A/B testing</strong>: Compare treatment effects</li>
+</ul>
+</section></section>
+<section>
+<section id="identifying-trends-and-patterns" class="title-slide slide level1 center">
+<h1>Identifying Trends and Patterns</h1>
+<p><em>5 minutes</em></p>
+</section>
+<section id="common-patterns-in-data" class="slide level2">
+<h2>Common Patterns in Data</h2>
+<h3 id="distribution-patterns">Distribution Patterns:</h3>
+<ol type="1">
+<li><strong>Normal/Bell-shaped</strong>: Symmetric, single peak</li>
+<li><strong>Uniform</strong>: All values equally likely</li>
+<li><strong>Bimodal</strong>: Two distinct peaks (suggests subgroups)</li>
+<li><strong>Multimodal</strong>: Multiple peaks</li>
+<li><strong>U-shaped</strong>: High values at extremes, low in middle</li>
+</ol>
+<h3 id="outlier-patterns">Outlier Patterns:</h3>
+<ul>
+<li><strong>Individual outliers</strong>: Data entry errors, measurement errors</li>
+<li><strong>Clustered outliers</strong>: Distinct subpopulation</li>
+<li><strong>Systematic outliers</strong>: May indicate process changes</li>
+</ul>
+</section>
+<section id="red-flags-in-data-visualization" class="slide level2">
+<h2>Red Flags in Data Visualization</h2>
+<h3 id="warning-signs">Warning Signs:</h3>
+<ol type="1">
+<li><strong>Gaps in histograms</strong>: Missing data or measurement limitations</li>
+<li><strong>Heaping</strong>: Values cluster at round numbers (10, 50, 100)</li>
+<li><strong>Truncation</strong>: Data cut off at certain values</li>
+<li><strong>Digit preference</strong>: People prefer certain ending digits</li>
+<li><strong>Multiple modes</strong>: Hidden subgroups in your data</li>
+</ol>
+</section>
+<section id="python-comprehensive-data-exploration" class="slide level2">
+<h2>Python: Comprehensive Data Exploration</h2>
+<div id="0674c088" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> comprehensive_eda(data, column_name<span class="op">=</span><span class="st">"Variable"</span>):</span>
+<span id="cb6-2"><a></a>    <span class="co">"""</span></span>
+<span id="cb6-3"><a></a><span class="co">    Comprehensive Exploratory Data Analysis</span></span>
+<span id="cb6-4"><a></a><span class="co">    """</span></span>
+<span id="cb6-5"><a></a>    <span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-6"><a></a>    <span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb6-7"><a></a>    <span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb6-8"><a></a>    </span>
+<span id="cb6-9"><a></a>    <span class="co"># Basic statistics</span></span>
+<span id="cb6-10"><a></a>    <span class="bu">print</span>(<span class="ss">f"=== </span><span class="sc">{</span>column_name<span class="sc">}</span><span class="ss"> Analysis ==="</span>)</span>
+<span id="cb6-11"><a></a>    <span class="bu">print</span>(<span class="ss">f"Count: </span><span class="sc">{</span><span class="bu">len</span>(data)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-12"><a></a>    <span class="bu">print</span>(<span class="ss">f"Mean: </span><span class="sc">{</span>np<span class="sc">.</span>mean(data)<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb6-13"><a></a>    <span class="bu">print</span>(<span class="ss">f"Median: </span><span class="sc">{</span>np<span class="sc">.</span>median(data)<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb6-14"><a></a>    <span class="bu">print</span>(<span class="ss">f"Std Dev: </span><span class="sc">{</span>np<span class="sc">.</span>std(data, ddof<span class="op">=</span><span class="dv">1</span>)<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb6-15"><a></a>    <span class="bu">print</span>(<span class="ss">f"Skewness: </span><span class="sc">{</span>stats<span class="sc">.</span>skew(data)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb6-16"><a></a>    <span class="bu">print</span>(<span class="ss">f"Kurtosis: </span><span class="sc">{</span>stats<span class="sc">.</span>kurtosis(data)<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb6-17"><a></a>    </span>
+<span id="cb6-18"><a></a>    <span class="co"># Create visualization</span></span>
+<span id="cb6-19"><a></a>    fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">10</span>))</span>
+<span id="cb6-20"><a></a>    </span>
+<span id="cb6-21"><a></a>    <span class="co"># Histogram with multiple bin choices</span></span>
+<span id="cb6-22"><a></a>    axes[<span class="dv">0</span>,<span class="dv">0</span>].hist(data, bins<span class="op">=</span><span class="dv">30</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb6-23"><a></a>    axes[<span class="dv">0</span>,<span class="dv">0</span>].axvline(np.mean(data), color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Mean'</span>)</span>
+<span id="cb6-24"><a></a>    axes[<span class="dv">0</span>,<span class="dv">0</span>].axvline(np.median(data), color<span class="op">=</span><span class="st">'blue'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Median'</span>)</span>
+<span id="cb6-25"><a></a>    axes[<span class="dv">0</span>,<span class="dv">0</span>].set_title(<span class="st">'Histogram'</span>)</span>
+<span id="cb6-26"><a></a>    axes[<span class="dv">0</span>,<span class="dv">0</span>].legend()</span>
+<span id="cb6-27"><a></a>    </span>
+<span id="cb6-28"><a></a>    <span class="co"># Boxplot</span></span>
+<span id="cb6-29"><a></a>    axes[<span class="dv">0</span>,<span class="dv">1</span>].boxplot(data, vert<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb6-30"><a></a>    axes[<span class="dv">0</span>,<span class="dv">1</span>].set_title(<span class="st">'Boxplot'</span>)</span>
+<span id="cb6-31"><a></a>    </span>
+<span id="cb6-32"><a></a>    <span class="co"># Q-Q plot (check normality)</span></span>
+<span id="cb6-33"><a></a>    stats.probplot(data, dist<span class="op">=</span><span class="st">"norm"</span>, plot<span class="op">=</span>axes[<span class="dv">1</span>,<span class="dv">0</span>])</span>
+<span id="cb6-34"><a></a>    axes[<span class="dv">1</span>,<span class="dv">0</span>].set_title(<span class="st">'Q-Q Plot (Normality Check)'</span>)</span>
+<span id="cb6-35"><a></a>    </span>
+<span id="cb6-36"><a></a>    <span class="co"># Density plot</span></span>
+<span id="cb6-37"><a></a>    axes[<span class="dv">1</span>,<span class="dv">1</span>].hist(data, bins<span class="op">=</span><span class="dv">30</span>, density<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb6-38"><a></a>    axes[<span class="dv">1</span>,<span class="dv">1</span>].set_title(<span class="st">'Density Plot'</span>)</span>
+<span id="cb6-39"><a></a>    </span>
+<span id="cb6-40"><a></a>    plt.tight_layout()</span>
+<span id="cb6-41"><a></a>    plt.show()</span>
+<span id="cb6-42"><a></a>    </span>
+<span id="cb6-43"><a></a>    <span class="cf">return</span> {</span>
+<span id="cb6-44"><a></a>        <span class="st">'mean'</span>: np.mean(data),</span>
+<span id="cb6-45"><a></a>        <span class="st">'median'</span>: np.median(data),</span>
+<span id="cb6-46"><a></a>        <span class="st">'std'</span>: np.std(data, ddof<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb6-47"><a></a>        <span class="st">'skewness'</span>: stats.skew(data),</span>
+<span id="cb6-48"><a></a>        <span class="st">'kurtosis'</span>: stats.kurtosis(data)</span>
+<span id="cb6-49"><a></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="key-takeaways" class="title-slide slide level1 center">
+<h1>Key Takeaways</h1>
+
+</section>
+<section id="essential-concepts-to-remember" class="slide level2">
+<h2>Essential Concepts to Remember</h2>
+<h3 id="variability-1">Variability:</h3>
+<ul>
+<li><strong>Standard deviation</strong> is preferred over range for most analyses</li>
+<li><strong>CV</strong> allows comparison across different scales</li>
+<li><strong>IQR</strong> is resistant to outliers</li>
+</ul>
+<h3 id="position">Position:</h3>
+<ul>
+<li><strong>Percentiles</strong> and <strong>quartiles</strong> provide relative position</li>
+<li><strong>Z-scores</strong> standardize across different distributions</li>
+<li><strong>Five-number summary</strong> gives complete overview</li>
+</ul>
+<h3 id="visualization">Visualization:</h3>
+<ul>
+<li><strong>Bin width choice</strong> is critical for histogram interpretation</li>
+<li><strong>Boxplots</strong> excel at comparing groups and identifying outliers</li>
+<li><strong>Multiple visualizations</strong> provide different insights</li>
+</ul>
+</section>
+<section id="practical-guidelines" class="slide level2">
+<h2>Practical Guidelines</h2>
+<ol type="1">
+<li><strong>Always visualize</strong> before calculating statistics</li>
+<li><strong>Use multiple measures</strong> - no single statistic tells the whole story</li>
+<li><strong>Consider the context</strong> - what makes sense for your data?</li>
+<li><strong>Check for outliers</strong> - they can drastically affect your analysis</li>
+<li><strong>Compare distributions</strong> using standardized measures when appropriate</li>
+</ol>
+</section>
+<section id="next-steps-in-your-data-journey" class="slide level2">
+<h2>Next Steps in Your Data Journey</h2>
+<h3 id="advanced-topics-to-explore">Advanced Topics to Explore:</h3>
+<ul>
+<li><strong>Correlation and association</strong> between variables</li>
+<li><strong>Time series analysis</strong> for temporal patterns</li>
+<li><strong>Multivariate descriptive statistics</strong></li>
+<li><strong>Interactive visualizations</strong> with plotly</li>
+<li><strong>Statistical inference</strong> based on descriptive findings</li>
+</ul>
+</section></section>
+<section>
+<section id="practice-problems" class="title-slide slide level1 center">
+<h1>Practice Problems</h1>
+
+</section>
+<section id="try-these-exercises" class="slide level2">
+<h2>Try These Exercises</h2>
+<ol type="1">
+<li><p><strong>Calculate</strong> the five-number summary for: 12, 15, 18, 22, 25, 28, 30, 35, 40, 45</p></li>
+<li><p><strong>Create histograms</strong> with 5, 15, and 50 bins for the same dataset. What patterns do you observe?</p></li>
+<li><p><strong>Interpret this scenario</strong>: Dataset A has mean=50, SD=5. Dataset B has mean=100, SD=10. Which is more variable?</p></li>
+<li><p><strong>A student scores 85</strong> on a test where the class mean is 78 and SD is 6. Calculate and interpret the z-score.</p></li>
+<li><p><strong>Design a boxplot comparison</strong> for three different customer segments in your business.</p></li>
+</ol>
+</section>
+<section id="additional-resources" class="slide level2">
+<h2>Additional Resources</h2>
+<ul>
+<li>Matplotlib gallery: Histogram and boxplot examples</li>
+<li>Seaborn documentation: Statistical visualizations</li>
+<li>NumPy/SciPy: Statistical functions reference</li>
+<li>Recommended reading: Chapter 4-5 in course textbook</li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section id="questions" class="title-slide slide level1 center">
+<h1>Questions?</h1>
+<p><strong>Thank you for your attention!</strong></p>
+<p><em>Remember: The goal of descriptive statistics is to understand your data story - let the visualizations guide your insights!</em></p>
+
+
+</section>
     </div>
-<!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../../../img/logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Understanding Data - Descriptive Statistics Part II © 2025 Narjes Mathlouthi</p>
+</div>
+</div></div>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
 
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
+  <script>
 
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
 
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
 
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
         }
       }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
         }
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
         }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
-        return note.innerHTML;
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
       }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
       }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
       }
-    }, function(instance) {
     });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
-      });
-    }
-  }
-});
-</script>
-</div> <!-- /content -->
-
-
-
+    </script>
+    
 
 </body></html>

@@ -1,0 +1,739 @@
+---
+title: "Descriptive Statistics Part II"
+subtitle: "Variability, Position, Shape & Visualization  Lecture"
+author: "Narjes Mathlouthi"
+date: today
+format: 
+  revealjs:
+    logo: /img/logo.png
+    theme: default
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Understanding Data - Descriptive Statistics Part II © 2025 Narjes Mathlouthi"
+    transition: slide
+    background-transition: fade
+    execute:
+        echo: false
+jupyter: python3
+---
+
+## Learning Objectives {.smaller}
+
+By the end of this lecture, you will be able to:
+
+- Calculate and interpret measures of variability (range, variance, standard deviation)
+- Understand and compute measures of position (percentiles, quartiles, z-scores)
+- Assess distribution shape using skewness and kurtosis
+- Create and interpret histograms with appropriate bin widths
+- Construct and analyze boxplots for data exploration
+- Identify trends, patterns, and outliers in data visualizations
+- Apply Python for comprehensive descriptive analysis and visualization
+
+## Lecture Outline {.smaller}
+
+1. **Measures of Variability** (25 minutes)
+   - Range, Variance, Standard Deviation (15 min)
+   - Coefficient of Variation (5 min)
+   - Python Implementation (5 min)
+2. **Measures of Position** (20 minutes)
+   - Percentiles and Quartiles (10 min)
+   - Z-scores and Standardization (10 min)
+3. **Distribution Shape** (10 minutes)
+   - Skewness and Kurtosis (10 min)
+4. **Data Visualization** (20 minutes)
+   - Histograms and Bin Width Selection (10 min)
+   - Boxplots and Interpretation (10 min)
+5. **Identifying Trends and Patterns** (5 minutes)
+
+# Measures of Variability
+*25 minutes*
+
+
+## What is Variability?
+
+**Variability** (or dispersion) measures how spread out or scattered the data points are around the center.
+
+. . .
+
+### Why Variability Matters
+
+- Two datasets can have the same mean but very different spreads
+- Variability indicates **consistency** and **predictability**
+- Essential for **risk assessment** and **quality control**
+- Helps determine **confidence** in our central tendency measures
+
+## Comparing Datasets with Same Mean
+
+- Dataset A: 98, 99, 100, 101, 102 (Mean = 100)
+
+- Dataset B: 80, 90, 100, 110, 120 (Mean = 100)
+
+. . .
+
+**Both have the same mean (100), but Dataset B is much more variable!**
+
+This is why we need measures of variability.
+
+# Range
+*5 minutes*
+
+## Definition and Calculation
+
+**Range** = Maximum value - Minimum value
+
+. . .
+
+### Example
+- Data: 12, 15, 18, 22, 25, 30, 35
+  
+:::{.fragment}  
+- Range = 35 - 12 = 23
+:::
+
+
+## Properties of Range
+:::{.fragment}
+- **Simple to calculate** and understand
+- **Uses only two values** (ignores all others)
+- **Sensitive to outliers**
+- **Limited information** about distribution
+:::
+
+## When to Use Range
+
+✅ **Use range when:**
+
+- Need a **quick, simple measure** of spread
+  
+- Working with **small datasets**
+  
+- Communicating to **non-technical audiences**
+
+❌ **Avoid range when:**
+
+- **Outliers** are present
+  
+- Need **detailed information** about variability
+  
+- Working with **large datasets**
+
+# Variance and Standard Deviation
+*15 minutes*
+
+## Variance Definition
+
+**Variance** measures the average squared deviation from the mean.
+
+### Sample Variance Formula
+$$s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}$$
+
+### Population Variance Formula  
+$$\sigma^2 = \frac{\sum(x_i - \mu)^2}{N}$$
+
+Where $s^2$ = sample variance, $\sigma^2$ = population variance
+
+## Standard Deviation Definition
+
+**Standard Deviation** is the square root of variance.
+
+### Sample Standard Deviation
+$$s = \sqrt{s^2} = \sqrt{\frac{\sum(x_i - \bar{x})^2}{n-1}}$$
+
+### Population Standard Deviation
+$$\sigma = \sqrt{\sigma^2} = \sqrt{\frac{\sum(x_i - \mu)^2}{N}}$$
+
+## Step-by-Step Calculation Example
+
+Data: 10, 12, 14, 16, 18 (Mean = 14)
+
+| $x_i$ | $x_i - \bar{x}$ | $(x_i - \bar{x})^2$ |
+|-------|-----------------|---------------------|
+| 10    | -4              | 16                  |
+| 12    | -2              | 4                   |
+| 14    | 0               | 0                   |
+| 16    | 2               | 4                   |
+| 18    | 4               | 16                  |
+| **Sum** |               | **40**              |
+
+## Completing the Calculation
+
+$$s^2 = \frac{40}{5-1} = \frac{40}{4} = 10$$
+
+$$s = \sqrt{10} = 3.16$$
+
+. . .
+
+**Interpretation:** On average, data points deviate from the mean by about 3.16 units.
+
+## Properties of Standard Deviation
+
+- **Same units** as the original data
+- **Always non-negative**
+- **Zero** only when all values are identical
+- **Larger values** indicate more variability
+- **Approximately 68%** of data within 1 SD of mean (for normal distributions)
+- **Approximately 95%** of data within 2 SD of mean
+
+## Empirical Rule (68-95-99.7 Rule)
+
+For **approximately normal distributions:**
+
+- **68%** of data falls within 1 standard deviation of the mean
+- **95%** of data falls within 2 standard deviations of the mean
+- **99.7%** of data falls within 3 standard deviations of the mean
+
+This rule helps us understand what constitutes "typical" vs "unusual" values.
+
+# Coefficient of Variation
+*5 minutes*
+
+## Definition and Purpose
+
+**Coefficient of Variation (CV)** = $\frac{\text{Standard Deviation}}{\text{Mean}} \times 100\%$
+
+. . .
+
+### Why Use CV?
+
+- **Compares variability** across different units or scales
+- **Relative measure** of variability
+- Useful when **means differ substantially**
+
+## Example: Comparing Variability
+
+**Stock A:** Mean return = $50, SD = $10, CV = 20%
+
+**Stock B:** Mean return = $500, SD = $50, CV = 10%
+
+. . .
+
+**Stock B has higher absolute variability ($50 vs $10) but lower relative variability (10% vs 20%)**
+
+Stock B is relatively less risky per dollar invested.
+
+## Python Implementation - Variability
+
+```{python}
+#| echo: true
+#| eval: false
+import numpy as np
+import pandas as pd
+
+# Sample data
+data = [10, 12, 14, 16, 18, 22, 25]
+
+# Calculate measures of variability
+range_val = np.max(data) - np.min(data)
+variance_sample = np.var(data, ddof=1)  # Sample variance
+std_sample = np.std(data, ddof=1)       # Sample standard deviation
+cv = (std_sample / np.mean(data)) * 100
+
+print(f"Range: {range_val}")
+print(f"Variance: {variance_sample:.2f}")
+print(f"Standard Deviation: {std_sample:.2f}")
+print(f"Coefficient of Variation: {cv:.1f}%")
+```
+
+# Measures of Position
+*20 minutes*
+
+## What are Measures of Position?
+
+**Measures of position** tell us where a particular value stands relative to the rest of the data.
+
+They answer questions like:
+
+- "What percentage of students scored below 85?"
+  
+- "Is this value typical or unusual?"
+  
+- "How does this observation compare to others?"
+
+# Percentiles and Quartiles
+*10 minutes*
+
+## Percentiles Definition
+
+The **k-th percentile** is the value below which k% of the data falls.
+
+### Examples:
+- **50th percentile** = Median (50% of data below this value)
+- **90th percentile** = 90% of data falls below this value
+- **25th percentile** = 25% of data falls below this value
+
+## Quartiles
+
+**Quartiles** divide the data into four equal parts:
+
+- **Q1 (First Quartile)** = 25th percentile
+- **Q2 (Second Quartile)** = 50th percentile = Median
+- **Q3 (Third Quartile)** = 75th percentile
+
+## Interquartile Range (IQR)
+
+**IQR = Q3 - Q1**
+
+. . .
+
+### Properties of IQR:
+- Contains the **middle 50%** of the data
+- **Resistant to outliers**
+- Used in **boxplot construction**
+- Useful for **outlier detection**
+
+## Five-Number Summary
+
+The **five-number summary** provides a complete picture of data distribution:
+
+1. **Minimum**
+2. **Q1 (25th percentile)**
+3. **Median (50th percentile)**
+4. **Q3 (75th percentile)**
+5. **Maximum**
+
+This forms the basis for boxplots!
+
+# Z-scores and Standardization
+*10 minutes*
+
+## Z-score Definition
+
+**Z-score** tells us how many standard deviations a value is from the mean.
+
+$$z = \frac{x - \mu}{\sigma} \text{ or } z = \frac{x - \bar{x}}{s}$$
+
+## Interpreting Z-scores
+
+- **z = 0**: Value equals the mean
+- **z = 1**: Value is 1 standard deviation above the mean
+- **z = -2**: Value is 2 standard deviations below the mean
+- **|z| > 2**: Often considered "unusual" (beyond 95% of data)
+- **|z| > 3**: Very unusual (beyond 99.7% of data)
+
+## Z-score Example
+
+Student's test score: 85
+Class mean: 78, Class standard deviation: 6
+
+$$z = \frac{85 - 78}{6} = \frac{7}{6} = 1.17$$
+
+**Interpretation:** This student scored 1.17 standard deviations above the class average.
+
+## Benefits of Standardization
+
+- **Compare across different scales** (test scores vs income)
+- **Identify outliers** systematically  
+- **Combine different variables** meaningfully
+- **Prepare data** for certain statistical methods
+
+# Distribution Shape
+*10 minutes*
+
+## Skewness
+
+**Skewness** measures the asymmetry of a distribution.
+
+### Types of Skewness:
+- **Symmetric (Skewness ≈ 0)**: Mean ≈ Median ≈ Mode
+- **Right-skewed (Positive skewness)**: Mean > Median, long tail to the right
+- **Left-skewed (Negative skewness)**: Mean < Median, long tail to the left
+
+## Visual Examples of Skewness {.smaller}
+
+**Right-skewed (Income data):**
+
+- Most people earn moderate amounts
+  
+- Few people earn very high amounts
+  
+- Mean > Median
+
+**Left-skewed (Test scores with ceiling effect):**
+
+- Most students score high
+  
+- Few students score very low  
+  
+- Mean < Median
+
+## Kurtosis
+
+**Kurtosis** measures the "tailedness" of a distribution.
+
+### Types:
+- **Mesokurtic (Normal-like)**: Kurtosis ≈ 3
+- **Leptokurtic (Heavy tails)**: Kurtosis > 3, more peaked
+- **Platykurtic (Light tails)**: Kurtosis < 3, flatter
+
+**Excess Kurtosis** = Kurtosis - 3 (makes normal distributions have excess kurtosis of 0)
+
+## Python Implementation - Position & Shape
+
+```{python}
+#| echo: true
+#| eval: false
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+data = [12, 15, 18, 22, 25, 28, 30, 35, 40, 45]
+
+# Percentiles and quartiles
+q1 = np.percentile(data, 25)
+median = np.percentile(data, 50)
+q3 = np.percentile(data, 75)
+iqr = q3 - q1
+
+# Z-scores
+z_scores = stats.zscore(data)
+
+# Shape measures
+skewness = stats.skew(data)
+kurt = stats.kurtosis(data)
+
+print(f"Q1: {q1}, Median: {median}, Q3: {q3}")
+print(f"IQR: {iqr}")
+print(f"Skewness: {skewness:.3f}")
+print(f"Kurtosis: {kurt:.3f}")
+```
+
+# Data Visualization
+*20 minutes*
+
+# Histograms and Bin Width Selection
+*10 minutes*
+
+## What is a Histogram?
+
+A **histogram** displays the distribution of a continuous variable by dividing data into bins and showing the frequency of observations in each bin.
+
+### Key Components:
+- **X-axis**: Variable values (continuous)
+- **Y-axis**: Frequency or density
+- **Bins**: Intervals that group the data
+- **Bars**: Height represents frequency in each bin
+
+## Choosing Bin Width: Critical Decision
+
+**Bin width dramatically affects histogram interpretation!**
+
+### Too Few Bins (Wide bins):
+- **Oversmoothing** - lose important details
+- May **hide multimodality**
+- Distribution appears simpler than it is
+
+### Too Many Bins (Narrow bins):
+- **Undersmoothing** - too much noise
+- May create **artificial gaps**
+- Hard to see overall pattern
+
+## Bin Width Guidelines
+
+### Rule of Thumb Methods:
+
+1. **Square Root Rule**: Number of bins ≈ $\sqrt{n}$
+2. **Sturges' Rule**: Number of bins = $1 + \log_2(n)$
+3. **Scott's Rule**: Bin width = $\frac{3.5 \times \text{SD}}{n^{1/3}}$
+4. **Freedman-Diaconis Rule**: Bin width = $\frac{2 \times \text{IQR}}{n^{1/3}}$
+
+**Best practice:** Try multiple bin widths and choose based on the story your data tells!
+
+## Python Histogram Examples
+
+```{python}
+#| echo: true
+#| eval: false
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate sample data
+np.random.seed(42)
+data = np.random.normal(100, 15, 1000)
+
+# Create subplots with different bin counts
+fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+
+# Different bin counts
+bin_counts = [10, 30, 50, 100]
+titles = ['10 bins (too few)', '30 bins (good)', '50 bins (good)', '100 bins (too many)']
+
+for i, (bins, title) in enumerate(zip(bin_counts, titles)):
+    row, col = i // 2, i % 2
+    axes[row, col].hist(data, bins=bins, alpha=0.7, edgecolor='black')
+    axes[row, col].set_title(title)
+    axes[row, col].set_xlabel('Value')
+    axes[row, col].set_ylabel('Frequency')
+
+plt.tight_layout()
+plt.show()
+```
+
+## Interpreting Histograms
+
+### What to Look For:
+
+1. **Shape**: Normal, skewed, uniform, bimodal?
+2. **Center**: Where is the "typical" value?
+3. **Spread**: How variable is the data?
+4. **Outliers**: Any unusual values?
+5. **Gaps**: Are there missing values in certain ranges?
+6. **Multiple peaks**: Suggests multiple subgroups
+
+# Boxplots and Interpretation
+*10 minutes*
+
+## Anatomy of a Boxplot
+
+```{python}
+#| echo: true
+#| eval: false
+# Boxplot components illustration
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 20, 25]
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Create boxplot
+bp = ax.boxplot(data, vert=False, patch_artist=True)
+
+# Customize colors
+bp['boxes'][0].set_facecolor('lightblue')
+bp['medians'][0].set_color('red')
+bp['medians'][0].set_linewidth(2)
+
+# Add labels
+ax.set_xlabel('Values')
+ax.set_title('Anatomy of a Boxplot')
+
+# Add annotations
+ax.annotate('Q1 (25th percentile)', xy=(3.5, 1.1), xytext=(3.5, 1.3),
+            arrowprops=dict(arrowstyle='->', color='black'))
+ax.annotate('Median (Q2)', xy=(7, 1.1), xytext=(7, 1.3),
+            arrowprops=dict(arrowstyle='->', color='red'))
+ax.annotate('Q3 (75th percentile)', xy=(11, 1.1), xytext=(11, 1.3),
+            arrowprops=dict(arrowstyle='->', color='black'))
+
+plt.show()
+```
+
+## Boxplot Components Explained
+
+### The Box:
+- **Left edge**: Q1 (25th percentile)
+- **Middle line**: Median (Q2, 50th percentile)  
+- **Right edge**: Q3 (75th percentile)
+- **Box width**: IQR (contains middle 50% of data)
+
+### The Whiskers:
+- **Extend to**: Most extreme values within 1.5 × IQR from box edges
+- **Lower whisker**: Minimum value within Q1 - 1.5×IQR
+- **Upper whisker**: Maximum value within Q3 + 1.5×IQR
+
+### Outliers:
+- **Points beyond whiskers**: Values > Q3 + 1.5×IQR or < Q1 - 1.5×IQR
+
+## What Boxplots Tell Us
+
+### Distribution Shape:
+- **Symmetric**: Median in center of box, whiskers equal length
+- **Right-skewed**: Median closer to Q1, longer upper whisker
+- **Left-skewed**: Median closer to Q3, longer lower whisker
+
+### Variability:
+- **Wide box**: High variability in middle 50%
+- **Long whiskers**: High overall variability
+- **Many outliers**: Extreme variability
+
+## Comparing Groups with Boxplots
+
+```{python}
+#| echo: true
+#| eval: false
+# Comparing multiple groups
+import pandas as pd
+import seaborn as sns
+
+# Create sample data for different groups
+np.random.seed(42)
+group_a = np.random.normal(70, 10, 100)
+group_b = np.random.normal(75, 15, 100)  
+group_c = np.random.normal(80, 8, 100)
+
+# Combine into DataFrame
+df = pd.DataFrame({
+    'Score': np.concatenate([group_a, group_b, group_c]),
+    'Group': ['A']*100 + ['B']*100 + ['C']*100
+})
+
+# Create comparative boxplot
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=df, x='Group', y='Score')
+plt.title('Comparing Score Distributions Across Groups')
+plt.ylabel('Test Score')
+plt.show()
+```
+
+## Advanced Boxplot Interpretations
+
+## Comparing Boxplots:
+- **Median differences**: Which group has higher typical values?
+- **IQR differences**: Which group is more consistent?
+- **Outlier patterns**: Which group has more extreme values?
+- **Overlap**: Do the groups have similar ranges?
+
+## Business Applications:
+- **Quality control**: Compare product batches
+- **Performance analysis**: Compare team/department performance  
+- **Customer segmentation**: Compare customer groups
+- **A/B testing**: Compare treatment effects
+
+# Identifying Trends and Patterns
+*5 minutes*
+
+## Common Patterns in Data
+
+### Distribution Patterns:
+1. **Normal/Bell-shaped**: Symmetric, single peak
+2. **Uniform**: All values equally likely
+3. **Bimodal**: Two distinct peaks (suggests subgroups)
+4. **Multimodal**: Multiple peaks
+5. **U-shaped**: High values at extremes, low in middle
+
+### Outlier Patterns:
+- **Individual outliers**: Data entry errors, measurement errors
+- **Clustered outliers**: Distinct subpopulation
+- **Systematic outliers**: May indicate process changes
+
+## Red Flags in Data Visualization
+
+### Warning Signs:
+1. **Gaps in histograms**: Missing data or measurement limitations
+2. **Heaping**: Values cluster at round numbers (10, 50, 100)
+3. **Truncation**: Data cut off at certain values
+4. **Digit preference**: People prefer certain ending digits
+5. **Multiple modes**: Hidden subgroups in your data
+
+## Python: Comprehensive Data Exploration
+
+```{python}
+#| echo: true
+#| eval: false
+def comprehensive_eda(data, column_name="Variable"):
+    """
+    Comprehensive Exploratory Data Analysis
+    """
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    from scipy import stats
+    
+    # Basic statistics
+    print(f"=== {column_name} Analysis ===")
+    print(f"Count: {len(data)}")
+    print(f"Mean: {np.mean(data):.2f}")
+    print(f"Median: {np.median(data):.2f}")
+    print(f"Std Dev: {np.std(data, ddof=1):.2f}")
+    print(f"Skewness: {stats.skew(data):.3f}")
+    print(f"Kurtosis: {stats.kurtosis(data):.3f}")
+    
+    # Create visualization
+    fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+    
+    # Histogram with multiple bin choices
+    axes[0,0].hist(data, bins=30, alpha=0.7, edgecolor='black')
+    axes[0,0].axvline(np.mean(data), color='red', linestyle='--', label='Mean')
+    axes[0,0].axvline(np.median(data), color='blue', linestyle='--', label='Median')
+    axes[0,0].set_title('Histogram')
+    axes[0,0].legend()
+    
+    # Boxplot
+    axes[0,1].boxplot(data, vert=False)
+    axes[0,1].set_title('Boxplot')
+    
+    # Q-Q plot (check normality)
+    stats.probplot(data, dist="norm", plot=axes[1,0])
+    axes[1,0].set_title('Q-Q Plot (Normality Check)')
+    
+    # Density plot
+    axes[1,1].hist(data, bins=30, density=True, alpha=0.7, edgecolor='black')
+    axes[1,1].set_title('Density Plot')
+    
+    plt.tight_layout()
+    plt.show()
+    
+    return {
+        'mean': np.mean(data),
+        'median': np.median(data),
+        'std': np.std(data, ddof=1),
+        'skewness': stats.skew(data),
+        'kurtosis': stats.kurtosis(data)
+    }
+```
+
+# Key Takeaways
+
+## Essential Concepts to Remember
+
+### Variability:
+- **Standard deviation** is preferred over range for most analyses
+- **CV** allows comparison across different scales
+- **IQR** is resistant to outliers
+
+### Position:
+- **Percentiles** and **quartiles** provide relative position
+- **Z-scores** standardize across different distributions
+- **Five-number summary** gives complete overview
+
+### Visualization:
+- **Bin width choice** is critical for histogram interpretation
+- **Boxplots** excel at comparing groups and identifying outliers
+- **Multiple visualizations** provide different insights
+
+## Practical Guidelines
+
+1. **Always visualize** before calculating statistics
+2. **Use multiple measures** - no single statistic tells the whole story
+3. **Consider the context** - what makes sense for your data?
+4. **Check for outliers** - they can drastically affect your analysis
+5. **Compare distributions** using standardized measures when appropriate
+
+## Next Steps in Your Data Journey
+
+### Advanced Topics to Explore:
+- **Correlation and association** between variables
+- **Time series analysis** for temporal patterns
+- **Multivariate descriptive statistics**
+- **Interactive visualizations** with plotly
+- **Statistical inference** based on descriptive findings
+
+# Practice Problems
+
+## Try These Exercises
+
+1. **Calculate** the five-number summary for: 12, 15, 18, 22, 25, 28, 30, 35, 40, 45
+
+2. **Create histograms** with 5, 15, and 50 bins for the same dataset. What patterns do you observe?
+
+3. **Interpret this scenario**: Dataset A has mean=50, SD=5. Dataset B has mean=100, SD=10. Which is more variable?
+
+4. **A student scores 85** on a test where the class mean is 78 and SD is 6. Calculate and interpret the z-score.
+
+5. **Design a boxplot comparison** for three different customer segments in your business.
+
+## Additional Resources
+
+- Matplotlib gallery: Histogram and boxplot examples
+- Seaborn documentation: Statistical visualizations
+- NumPy/SciPy: Statistical functions reference
+- Recommended reading: Chapter 4-5 in course textbook
+
+---
+
+# Questions?
+
+**Thank you for your attention!**
+
+*Remember: The goal of descriptive statistics is to understand your data story - let the visualizations guide your insights!*

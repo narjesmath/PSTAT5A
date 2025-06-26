@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Narjes Mathlouthi">
-  <meta name="dcterms.date" content="2025-06-25">
+  <meta name="dcterms.date" content="2025-06-26">
   <title>PSTAT5A – Lecture 2: Descriptive Statistics I</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -209,7 +209,7 @@ Narjes Mathlouthi
 </div>
 </div>
 
-  <p class="date">2025-06-25</p>
+  <p class="date">2025-06-26</p>
 </section>
 <section id="todays-agenda" class="slide level2 smaller">
 <h2>Today’s Agenda</h2>
@@ -489,14 +489,23 @@ Narjes Mathlouthi
 </section>
 
 <section>
-<section id="section" class="title-slide slide level1 center">
-<h1></h1>
+<section id="overview" class="title-slide slide level1 smaller center">
+<h1>Overview</h1>
+<p><br></p>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">%%{init: {'flowchart': {'nodeSpacing': 150, 'rankSpacing': 200}, 'width': 800, 'height': 600}}%%
+<pre class="mermaid mermaid-js">%%{init: {
+  "flowchart": { "nodeSpacing": 300, "rankSpacing": 300 },
+  "themeVariables": {
+    "fontSize": "50px",      /* &lt;-- bump this up as needed */
+    "fontFamily": "Arial"
+  },
+  "width": 1200,
+  "height": 900
+}}%%
 graph TD
     A["Measures of Central Tendency"]
     A --&gt; B["Mean (Average)"]
@@ -515,11 +524,11 @@ graph TD
     D --&gt; D2["Best for:&lt;br/&gt;Categorical data"]
     D --&gt; D3["Can have: Multiple modes&lt;br/&gt;or no mode"]
     
-    classDef main fill:#e3f2fd,stroke:#0d47a1,stroke-width:3px
-    classDef mean fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    classDef median fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-    classDef mode fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef details fill:#fafafa,stroke:#616161,stroke-width:1px
+    classDef main fill:#e3f2fd,stroke:#0d47a1,stroke-width:4px
+    classDef mean fill:#fff3e0,stroke:#e65100,stroke-width:4px
+    classDef median fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px
+    classDef mode fill:#f3e5f5,stroke:#7b1fa2,stroke-width:4px
+    classDef details fill:#fafafa,stroke:#616161,stroke-width:4px
     
     class A main
     class B mean
@@ -532,6 +541,7 @@ graph TD
 </div>
 </div>
 </div>
+<p><br></p>
 </section>
 <section id="what-is-central-tendency" class="slide level2">
 <h2>What is Central Tendency?</h2>
@@ -691,16 +701,6 @@ graph TD
 <section id="definition-1" class="slide level2">
 <h2>Definition</h2>
 <p>The <strong>mode</strong> is the value that appears most frequently in a dataset.</p>
-</section>
-<section id="types-of-distributions-by-mode" class="slide level2">
-<h2>Types of Distributions by Mode</h2>
-<ul>
-<li><strong>Unimodal</strong>: One mode</li>
-<li><strong>Bimodal</strong>: Two modes<br>
-</li>
-<li><strong>Multimodal</strong>: More than two modes</li>
-<li><strong>No mode</strong>: All values appear with equal frequency</li>
-</ul>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -725,6 +725,16 @@ graph TD
 </div>
 </div>
 </div>
+</section>
+<section id="types-of-distributions-by-mode" class="slide level2">
+<h2>Types of Distributions by Mode</h2>
+<ul>
+<li><strong>Unimodal</strong>: One mode</li>
+<li><strong>Bimodal</strong>: Two modes<br>
+</li>
+<li><strong>Multimodal</strong>: More than two modes</li>
+<li><strong>No mode</strong>: All values appear with equal frequency</li>
+</ul>
 </section></section>
 <section>
 <section id="mode-examples" class="title-slide slide level1 center">
@@ -863,108 +873,221 @@ graph TD
 <h1>Python Implementation</h1>
 <p><em>15 minutes</em></p>
 </section>
-<section id="essential-libraries" class="slide level2">
-<h2>Essential Libraries</h2>
-<div id="19aee3ea" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-3"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
-<span id="cb1-4"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="calculating-the-mean" class="slide level2">
-<h2>Calculating the Mean</h2>
-<div id="14894e5f" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># Sample data</span></span>
-<span id="cb2-2"><a></a>data <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>]</span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="co"># Using NumPy</span></span>
-<span id="cb2-5"><a></a>mean_np <span class="op">=</span> np.mean(data)</span>
-<span id="cb2-6"><a></a><span class="bu">print</span>(<span class="ss">f"Mean (NumPy): </span><span class="sc">{</span>mean_np<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-7"><a></a></span>
-<span id="cb2-8"><a></a><span class="co"># Using Pandas</span></span>
-<span id="cb2-9"><a></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'scores'</span>: data})</span>
-<span id="cb2-10"><a></a>mean_pd <span class="op">=</span> df[<span class="st">'scores'</span>].mean()</span>
-<span id="cb2-11"><a></a><span class="bu">print</span>(<span class="ss">f"Mean (Pandas): </span><span class="sc">{</span>mean_pd<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Output:</p>
-<pre><code>Mean (NumPy): 86.6
-Mean (Pandas): 86.6</code></pre>
-</section>
-<section id="calculating-the-median" class="slide level2">
-<h2>Calculating the Median</h2>
-<div id="a88cb090" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># Using NumPy</span></span>
-<span id="cb4-2"><a></a>median_np <span class="op">=</span> np.median(data)</span>
-<span id="cb4-3"><a></a><span class="bu">print</span>(<span class="ss">f"Median (NumPy): </span><span class="sc">{</span>median_np<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-4"><a></a></span>
-<span id="cb4-5"><a></a><span class="co"># Using Pandas</span></span>
-<span id="cb4-6"><a></a>median_pd <span class="op">=</span> df[<span class="st">'scores'</span>].median()</span>
-<span id="cb4-7"><a></a><span class="bu">print</span>(<span class="ss">f"Median (Pandas): </span><span class="sc">{</span>median_pd<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Output:</p>
-<pre><code>Median (NumPy): 88.0
-Median (Pandas): 88.0</code></pre>
-</section>
-<section id="calculating-the-mode" class="slide level2">
-<h2>Calculating the Mode</h2>
-<div id="1a277c33" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># Using SciPy</span></span>
-<span id="cb6-2"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
-<span id="cb6-3"><a></a>mode_result <span class="op">=</span> stats.mode(data)</span>
-<span id="cb6-4"><a></a><span class="bu">print</span>(<span class="ss">f"Mode: </span><span class="sc">{</span>mode_result<span class="sc">.</span>mode<span class="sc">}</span><span class="ss">, Count: </span><span class="sc">{</span>mode_result<span class="sc">.</span>count<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a><span class="co"># Using Pandas</span></span>
-<span id="cb6-7"><a></a>mode_pd <span class="op">=</span> df[<span class="st">'scores'</span>].mode()</span>
-<span id="cb6-8"><a></a><span class="bu">print</span>(<span class="ss">f"Mode (Pandas): </span><span class="sc">{</span>mode_pd<span class="sc">.</span>values<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="comprehensive-analysis-function" class="slide level2 smaller">
-<h2>Comprehensive Analysis Function</h2>
-<div id="d9508f90" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">def</span> descriptive_summary(data, column_name<span class="op">=</span><span class="st">"Data"</span>):</span>
-<span id="cb7-2"><a></a>    <span class="co">"""Calculate comprehensive descriptive statistics"""</span></span>
-<span id="cb7-3"><a></a>    df <span class="op">=</span> pd.DataFrame({column_name: data})</span>
-<span id="cb7-4"><a></a>    </span>
-<span id="cb7-5"><a></a>    <span class="bu">print</span>(<span class="ss">f"Descriptive Statistics for </span><span class="sc">{</span>column_name<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb7-6"><a></a>    <span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">40</span>)</span>
-<span id="cb7-7"><a></a>    <span class="bu">print</span>(<span class="ss">f"Count: </span><span class="sc">{</span><span class="bu">len</span>(data)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb7-8"><a></a>    <span class="bu">print</span>(<span class="ss">f"Mean: </span><span class="sc">{</span>np<span class="sc">.</span>mean(data)<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb7-9"><a></a>    <span class="bu">print</span>(<span class="ss">f"Median: </span><span class="sc">{</span>np<span class="sc">.</span>median(data)<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb7-10"><a></a>    </span>
-<span id="cb7-11"><a></a>    <span class="cf">try</span>:</span>
-<span id="cb7-12"><a></a>        mode_result <span class="op">=</span> stats.mode(data)</span>
-<span id="cb7-13"><a></a>        <span class="bu">print</span>(<span class="ss">f"Mode: </span><span class="sc">{</span>mode_result<span class="sc">.</span>mode[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> (appears </span><span class="sc">{</span>mode_result<span class="sc">.</span>count[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> times)"</span>)</span>
-<span id="cb7-14"><a></a>    <span class="cf">except</span>:</span>
-<span id="cb7-15"><a></a>        <span class="bu">print</span>(<span class="st">"Mode: No unique mode"</span>)</span>
-<span id="cb7-16"><a></a>    </span>
-<span id="cb7-17"><a></a>    <span class="cf">return</span> df.describe()</span>
-<span id="cb7-18"><a></a></span>
-<span id="cb7-19"><a></a><span class="co"># Example usage</span></span>
-<span id="cb7-20"><a></a>test_scores <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">91</span>, <span class="dv">85</span>, <span class="dv">87</span>, <span class="dv">89</span>, <span class="dv">86</span>]</span>
-<span id="cb7-21"><a></a>summary <span class="op">=</span> descriptive_summary(test_scores, <span class="st">"Test Scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="handling-categorical-data" class="slide level2">
-<h2>Handling Categorical Data</h2>
-<div id="0048cfc2" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="co"># Categorical data example</span></span>
-<span id="cb8-2"><a></a>categories <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'A'</span>, <span class="st">'C'</span>, <span class="st">'B'</span>, <span class="st">'B'</span>]</span>
-<span id="cb8-3"><a></a>cat_series <span class="op">=</span> pd.Series(categories)</span>
-<span id="cb8-4"><a></a></span>
-<span id="cb8-5"><a></a><span class="bu">print</span>(<span class="st">"Categorical Data Analysis:"</span>)</span>
-<span id="cb8-6"><a></a><span class="bu">print</span>(<span class="ss">f"Mode: </span><span class="sc">{</span>cat_series<span class="sc">.</span>mode()<span class="sc">.</span>values[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb8-7"><a></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Value Counts:"</span>)</span>
-<span id="cb8-8"><a></a><span class="bu">print</span>(cat_series.value_counts())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Output:</p>
-<pre><code>Categorical Data Analysis:
-Mode: B
+<section class="slide level2">
 
-Value Counts:
-B    5
-A    3
-C    2</code></pre>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Important Python Libraries</a></li><li><a href="#tabset-1-2">Library Overview</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div id="2aa3680a" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># for data manipulation </span></span>
+<span id="cb1-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># for data manipulation </span></span>
+<span id="cb1-3"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats <span class="co"># for advanced statistics</span></span>
+<span id="cb1-4"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># for visulization</span></span>
+<span id="cb1-5"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co"># for advanced visulization</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="smaller">
+<table class="caption-top">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 25%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Library</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Key Functions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>NumPy</strong></td>
+<td style="text-align: left;">Numerical computing</td>
+<td style="text-align: left;"><code>np.mean()</code>, <code>np.median()</code>, <code>np.std()</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Pandas</strong></td>
+<td style="text-align: left;">Data manipulation</td>
+<td style="text-align: left;"><code>df.describe()</code>, <code>df.mean()</code>, <code>df.median()</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>SciPy</strong></td>
+<td style="text-align: left;">Scientific computing</td>
+<td style="text-align: left;"><code>stats.mode()</code>, <code>stats.describe()</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Matplotlib</strong></td>
+<td style="text-align: left;">Basic plotting</td>
+<td style="text-align: left;"><code>plt.plot()</code>, <code>plt.hist()</code>, <code>plt.boxplot()</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Seaborn</strong></td>
+<td style="text-align: left;">Statistical viz</td>
+<td style="text-align: left;"><code>sns.histplot()</code>, <code>sns.boxplot()</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="central-measures" class="slide level2">
+<h2>Central Measures</h2>
+<style>
+/* shrink the entire tabset content */
+.smaller .panel-tabset {
+  font-size: 0.8em;    /* adjust this */
+}
+/* shrink just the tab labels */
+.smaller .panel-tabset > .tabset-nav .nav-link {
+  font-size: 0.75em;   /* adjust this too if you like */
+  padding: 0.25rem 0.5rem;
+}
+</style>
+<div class="smaller">
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Mean Calculation</a></li><li><a href="#tabset-2-2">Median Calculation</a></li><li><a href="#tabset-2-3">Mode Calculation</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div id="fa65adcd" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># Import numpy library for numeric operations</span></span>
+<span id="cb2-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a><span class="co"># Import pandas library for data structures</span></span>
+<span id="cb2-5"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a><span class="co"># Define sample data as a list of test scores</span></span>
+<span id="cb2-8"><a></a>data <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">91</span>, <span class="dv">85</span>, <span class="dv">87</span>, <span class="dv">89</span>, <span class="dv">86</span>]</span>
+<span id="cb2-9"><a></a></span>
+<span id="cb2-10"><a></a><span class="co"># Compute the arithmetic mean using NumPy</span></span>
+<span id="cb2-11"><a></a>mean_np <span class="op">=</span> np.mean(data)</span>
+<span id="cb2-12"><a></a><span class="bu">print</span>(<span class="ss">f"Mean (NumPy): </span><span class="sc">{</span>mean_np<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb2-13"><a></a></span>
+<span id="cb2-14"><a></a><span class="co"># Convert the data list into a pandas DataFrame</span></span>
+<span id="cb2-15"><a></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'scores'</span>: data})</span>
+<span id="cb2-16"><a></a></span>
+<span id="cb2-17"><a></a><span class="co"># Compute the arithmetic mean using Pandas</span></span>
+<span id="cb2-18"><a></a>mean_pd <span class="op">=</span> df[<span class="st">'scores'</span>].mean()</span>
+<span id="cb2-19"><a></a><span class="bu">print</span>(<span class="ss">f"Mean (Pandas): </span><span class="sc">{</span>mean_pd<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb2-20"><a></a></span>
+<span id="cb2-21"><a></a><span class="co"># Manually sum all scores and divide by count</span></span>
+<span id="cb2-22"><a></a>manual_mean <span class="op">=</span> <span class="bu">sum</span>(data) <span class="op">/</span> <span class="bu">len</span>(data)</span>
+<span id="cb2-23"><a></a><span class="bu">print</span>(<span class="ss">f"Mean (Manual): </span><span class="sc">{</span>manual_mean<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mean (NumPy): 87.10
+Mean (Pandas): 87.10
+Mean (Manual): 87.10</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div id="9e2ce216" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># Compute the median value using NumPy</span></span>
+<span id="cb4-2"><a></a>median_np <span class="op">=</span> np.median(data)</span>
+<span id="cb4-3"><a></a><span class="bu">print</span>(<span class="ss">f"Median (NumPy): </span><span class="sc">{</span>median_np<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a><span class="co"># Compute the median value using Pandas</span></span>
+<span id="cb4-6"><a></a>median_pd <span class="op">=</span> df[<span class="st">'scores'</span>].median()</span>
+<span id="cb4-7"><a></a><span class="bu">print</span>(<span class="ss">f"Median (Pandas): </span><span class="sc">{</span>median_pd<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb4-8"><a></a></span>
+<span id="cb4-9"><a></a><span class="co"># Sort the data list in ascending order</span></span>
+<span id="cb4-10"><a></a>sorted_data <span class="op">=</span> <span class="bu">sorted</span>(data)</span>
+<span id="cb4-11"><a></a></span>
+<span id="cb4-12"><a></a><span class="co"># Determine the number of elements</span></span>
+<span id="cb4-13"><a></a>n <span class="op">=</span> <span class="bu">len</span>(sorted_data)</span>
+<span id="cb4-14"><a></a></span>
+<span id="cb4-15"><a></a><span class="co"># If even count, average the two middle elements; else take middle element</span></span>
+<span id="cb4-16"><a></a><span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb4-17"><a></a>    manual_median <span class="op">=</span> (sorted_data[n<span class="op">//</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>] <span class="op">+</span> sorted_data[n<span class="op">//</span><span class="dv">2</span>]) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb4-18"><a></a><span class="cf">else</span>:</span>
+<span id="cb4-19"><a></a>    manual_median <span class="op">=</span> sorted_data[n<span class="op">//</span><span class="dv">2</span>]</span>
+<span id="cb4-20"><a></a></span>
+<span id="cb4-21"><a></a><span class="bu">print</span>(<span class="ss">f"Median (Manual): </span><span class="sc">{</span>manual_median<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Median (NumPy): 87.50
+Median (Pandas): 87.50
+Median (Manual): 87.50</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div id="cd3f0ec5" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># Import SciPy stats module to compute mode</span></span>
+<span id="cb6-2"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="co"># Use SciPy to find the most common value and its count</span></span>
+<span id="cb6-5"><a></a>mode_result <span class="op">=</span> stats.mode(data, keepdims<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-6"><a></a><span class="bu">print</span>(<span class="ss">f"Mode (SciPy): </span><span class="sc">{</span>mode_result<span class="sc">.</span>mode[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, Count: </span><span class="sc">{</span>mode_result<span class="sc">.</span>count[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-7"><a></a></span>
+<span id="cb6-8"><a></a><span class="co"># Use Pandas to get mode(s) from the DataFrame</span></span>
+<span id="cb6-9"><a></a>mode_pd <span class="op">=</span> df[<span class="st">'scores'</span>].mode()</span>
+<span id="cb6-10"><a></a><span class="bu">print</span>(<span class="ss">f"Mode (Pandas): </span><span class="sc">{</span>mode_pd<span class="sc">.</span>values<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-11"><a></a></span>
+<span id="cb6-12"><a></a><span class="co"># Import Counter for manual frequency counting</span></span>
+<span id="cb6-13"><a></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb6-14"><a></a></span>
+<span id="cb6-15"><a></a><span class="co"># Count occurrences of each score</span></span>
+<span id="cb6-16"><a></a>counter <span class="op">=</span> Counter(data)</span>
+<span id="cb6-17"><a></a></span>
+<span id="cb6-18"><a></a><span class="co"># Find the highest frequency</span></span>
+<span id="cb6-19"><a></a>max_count <span class="op">=</span> <span class="bu">max</span>(counter.values())</span>
+<span id="cb6-20"><a></a></span>
+<span id="cb6-21"><a></a><span class="co"># Identify all values that appear with that frequency</span></span>
+<span id="cb6-22"><a></a>modes <span class="op">=</span> [k <span class="cf">for</span> k, v <span class="kw">in</span> counter.items() <span class="cf">if</span> v <span class="op">==</span> max_count]</span>
+<span id="cb6-23"><a></a></span>
+<span id="cb6-24"><a></a><span class="bu">print</span>(<span class="ss">f"Mode (Manual): </span><span class="sc">{</span>modes<span class="sc">}</span><span class="ss">, Count: </span><span class="sc">{</span>max_count<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mode (SciPy): 85, Count: 2
+Mode (Pandas): [85]
+Mode (Manual): [85], Count: 2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="mean-mode-and-median-visualization" class="slide level2">
+<h2>Mean, Mode and Median Visualization</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code</a></li><li><a href="#tabset-3-2">Visualization</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div id="f541bfd2" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="co"># import libraries</span></span>
+<span id="cb8-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-4"><a></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb8-5"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-6"><a></a><span class="co"># define your data and compute statistics here</span></span>
+<span id="cb8-7"><a></a>data <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">91</span>, <span class="dv">85</span>, <span class="dv">87</span>, <span class="dv">89</span>, <span class="dv">86</span>]</span>
+<span id="cb8-8"><a></a>mean_np   <span class="op">=</span> np.mean(data)</span>
+<span id="cb8-9"><a></a>median_np <span class="op">=</span> np.median(data)</span>
+<span id="cb8-10"><a></a><span class="co"># for mode, use Counter</span></span>
+<span id="cb8-11"><a></a>counter   <span class="op">=</span> Counter(data)</span>
+<span id="cb8-12"><a></a>max_count <span class="op">=</span> <span class="bu">max</span>(counter.values())</span>
+<span id="cb8-13"><a></a>modes     <span class="op">=</span> [k <span class="cf">for</span> k,v <span class="kw">in</span> counter.items() <span class="cf">if</span> v<span class="op">==</span>max_count]</span>
+<span id="cb8-14"><a></a>mode_val  <span class="op">=</span> modes[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div id="abde1306" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="lecture2_files/figure-revealjs/cell-7-output-1.png"></p>
+<figcaption>Distribution of Test Scores with Central Tendency Measures</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="sec-real-world-ex" class="title-slide slide level1 center">
@@ -1047,14 +1170,13 @@ C    2</code></pre>
 <li><p>Create a Python function to identify the most appropriate measure of central tendency for a given dataset.</p></li>
 </ol>
 </section></section>
-<section>
 <section id="questions" class="title-slide slide level1 center">
 <h1>Questions?</h1>
 <p>Thank you for your attention!</p>
 </section>
-<section class="slide level2">
 
-<h3 id="references-further-reading">References &amp; Further Reading</h3>
+<section id="references-further-reading" class="title-slide slide level1 center">
+<h1>References &amp; Further Reading</h1>
 <ul>
 <li><p><a href="../../../files/Book/os4_for_screen_reader.pdf"><em>OpenIntro Statistics</em>, Ch. 1 &amp; 2</a></p></li>
 <li><p><a href="https://learning.oreilly.com/library/view/data-science-from/9781491901410/ch05.html#idp14953264"><em>Python for Data Analysis</em> (McKinney), Ch. 5</a></p></li>
@@ -1063,12 +1185,10 @@ C    2</code></pre>
 <li><p><a href="https://numpy.org/doc/2.1/reference/routines.statistics.html">NumPy statistical functions</a> ￼</p></li>
 <li><p><a href="https://docs.scipy.org/doc/scipy/reference/stats.html">SciPy stats module reference</a></p></li>
 </ul>
+
+
 </section>
-<section class="slide level2">
 
-
-
-</section></section>
 
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

@@ -1,5 +1,5 @@
 ---
-title: "Lecture 2: Descriptive Statistics II"
+title: "Lecture 2: Descriptive Statistics I "
 subtitle: "Understanding Data (PSTAT 5A) – Week 1"
 date: today
 author: "Narjes Mathlouthi"
@@ -14,13 +14,8 @@ format:
    theme: simple
    slide-number: true
    number-sections: false
-   fig-width: 8
-   fig-height: 6
-execute:
-  echo: true
-  warning: false
-  message: false
-jupyter: python3  
+jupyter: python3
+   
 ---
 
 ## Today's Agenda {.smaller}
@@ -215,9 +210,21 @@ Prompt: Which summary stat would you pick for “major”? For “gpa”?
 # Measures of Central Tendency {#sec-central-tendency}
 *35 minutes*
 
-# 
+# Overview {.smaller}
+
+<br>
+
+
 ```{mermaid}
-%%{init: {'flowchart': {'nodeSpacing': 150, 'rankSpacing': 200}, 'width': 800, 'height': 600}}%%
+%%{init: {
+  "flowchart": { "nodeSpacing": 300, "rankSpacing": 300 },
+  "themeVariables": {
+    "fontSize": "50px",      /* <-- bump this up as needed */
+    "fontFamily": "Arial"
+  },
+  "width": 1200,
+  "height": 900
+}}%%
 graph TD
     A["Measures of Central Tendency"]
     A --> B["Mean (Average)"]
@@ -236,11 +243,11 @@ graph TD
     D --> D2["Best for:<br/>Categorical data"]
     D --> D3["Can have: Multiple modes<br/>or no mode"]
     
-    classDef main fill:#e3f2fd,stroke:#0d47a1,stroke-width:3px
-    classDef mean fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    classDef median fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-    classDef mode fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef details fill:#fafafa,stroke:#616161,stroke-width:1px
+    classDef main fill:#e3f2fd,stroke:#0d47a1,stroke-width:4px
+    classDef mean fill:#fff3e0,stroke:#e65100,stroke-width:4px
+    classDef median fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px
+    classDef mode fill:#f3e5f5,stroke:#7b1fa2,stroke-width:4px
+    classDef details fill:#fafafa,stroke:#616161,stroke-width:4px
     
     class A main
     class B mean
@@ -248,6 +255,8 @@ graph TD
     class D mode
     class B1,B2,B3,C1,C2,C3,D1,D2,D3 details
  ```
+
+</br>
 
 ## What is Central Tendency?
 
@@ -391,6 +400,21 @@ Consider household incomes: $30,000, $32,000, $35,000, $38,000, $2,000,000
 
 The **mode** is the value that appears most frequently in a dataset.
 
+```{mermaid}
+%%{init: {'flowchart': {'nodeSpacing': 100, 'rankSpacing': 100}, 'width': 600, 'height': 400}}%%
+graph TD
+    A["Mode Types"]
+    A --> B["Unimodal<br/>One peak"]
+    A --> C["Bimodal<br/>Two peaks"]
+    A --> D["Multimodal<br/>Multiple peaks"]
+    A --> E["No Mode<br/>No repeated values"]
+    
+    classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:3px,font-size:16px
+    classDef types fill:#f5f5f5,stroke:#424242,stroke-width:2px,font-size:14px
+    
+    class A main
+    class B,C,D,E types
+```
 ## Types of Distributions by Mode
 
 - **Unimodal**: One mode
@@ -502,6 +526,187 @@ Example: Heights grouped into ranges
 # Python Implementation {#sec-python-implementation}
 *15 minutes*
 
+---
+
+::: {.panel-tabset}
+
+### Important Python  Libraries
+
+```{python}
+#| echo: True
+import numpy as np # for data manipulation 
+import pandas as pd # for data manipulation 
+from scipy import stats # for advanced statistics
+import matplotlib.pyplot as plt # for visulization
+import seaborn as sns # for advanced visulization
+```
+
+### Library Overview 
+
+::: {.smaller}
+| Library     | Purpose               | Key Functions                                         |
+|:------------|:----------------------|:------------------------------------------------------|
+| **NumPy**   | Numerical computing   | `np.mean()`, `np.median()`, `np.std()`                |
+| **Pandas**  | Data manipulation     | `df.describe()`, `df.mean()`, `df.median()`           |
+| **SciPy**   | Scientific computing  | `stats.mode()`, `stats.describe()`                    |
+| **Matplotlib** | Basic plotting     | `plt.plot()`, `plt.hist()`, `plt.boxplot()`           |
+| **Seaborn** | Statistical viz       | `sns.histplot()`, `sns.boxplot()`                     |
+:::
+:::
+
+
+## Central Measures
+<style>
+/* shrink the entire tabset content */
+.smaller .panel-tabset {
+  font-size: 0.8em;    /* adjust this */
+}
+/* shrink just the tab labels */
+.smaller .panel-tabset > .tabset-nav .nav-link {
+  font-size: 0.75em;   /* adjust this too if you like */
+  padding: 0.25rem 0.5rem;
+}
+</style>
+
+:::{.smaller}
+
+::: {.panel-tabset}
+
+### Mean Calculation
+
+```{python}
+#| echo: True
+# Import numpy library for numeric operations
+import numpy as np 
+
+# Import pandas library for data structures
+import pandas as pd
+
+# Define sample data as a list of test scores
+data = [85, 90, 78, 92, 88, 91, 85, 87, 89, 86]
+
+# Compute the arithmetic mean using NumPy
+mean_np = np.mean(data)
+print(f"Mean (NumPy): {mean_np:.2f}")
+
+# Convert the data list into a pandas DataFrame
+df = pd.DataFrame({'scores': data})
+
+# Compute the arithmetic mean using Pandas
+mean_pd = df['scores'].mean()
+print(f"Mean (Pandas): {mean_pd:.2f}")
+
+# Manually sum all scores and divide by count
+manual_mean = sum(data) / len(data)
+print(f"Mean (Manual): {manual_mean:.2f}")
+```
+
+### Median Calculation
+
+```{python}
+#| echo: True
+# Compute the median value using NumPy
+median_np = np.median(data)
+print(f"Median (NumPy): {median_np:.2f}")
+
+# Compute the median value using Pandas
+median_pd = df['scores'].median()
+print(f"Median (Pandas): {median_pd:.2f}")
+
+# Sort the data list in ascending order
+sorted_data = sorted(data)
+
+# Determine the number of elements
+n = len(sorted_data)
+
+# If even count, average the two middle elements; else take middle element
+if n % 2 == 0:
+    manual_median = (sorted_data[n//2 - 1] + sorted_data[n//2]) / 2
+else:
+    manual_median = sorted_data[n//2]
+
+print(f"Median (Manual): {manual_median:.2f}")
+```
+
+### Mode Calculation
+
+```{python}
+#| echo: True
+# Import SciPy stats module to compute mode
+from scipy import stats
+
+# Use SciPy to find the most common value and its count
+mode_result = stats.mode(data, keepdims=True)
+print(f"Mode (SciPy): {mode_result.mode[0]}, Count: {mode_result.count[0]}")
+
+# Use Pandas to get mode(s) from the DataFrame
+mode_pd = df['scores'].mode()
+print(f"Mode (Pandas): {mode_pd.values}")
+
+# Import Counter for manual frequency counting
+from collections import Counter
+
+# Count occurrences of each score
+counter = Counter(data)
+
+# Find the highest frequency
+max_count = max(counter.values())
+
+# Identify all values that appear with that frequency
+modes = [k for k, v in counter.items() if v == max_count]
+
+print(f"Mode (Manual): {modes}, Count: {max_count}")
+```
+
+:::
+::: 
+
+## Mean, Mode and Median Visualization
+::: {.panel-tabset}
+
+### Code
+```{python}
+#| echo: true
+# import libraries
+import numpy as np
+import pandas as pd
+from collections import Counter
+import matplotlib.pyplot as plt
+# define your data and compute statistics here
+data = [85, 90, 78, 92, 88, 91, 85, 87, 89, 86]
+mean_np   = np.mean(data)
+median_np = np.median(data)
+# for mode, use Counter
+counter   = Counter(data)
+max_count = max(counter.values())
+modes     = [k for k,v in counter.items() if v==max_count]
+mode_val  = modes[0]
+```
+### Visualization
+```{python}
+#| echo: false
+#| fig-cap: "Distribution of Test Scores with Central Tendency Measures"
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# Histogram with central tendencies
+ax1.hist(data, bins=8, alpha=0.7, edgecolor='black')
+ax1.axvline(mean_np,   color='red',    linestyle='--', linewidth=2, label=f'Mean: {mean_np:.1f}')
+ax1.axvline(median_np, color='green',  linestyle='--', linewidth=2, label=f'Median: {median_np:.1f}')
+ax1.axvline(mode_val,  color='orange', linestyle='--', linewidth=2, label=f'Mode: {mode_val}')
+ax1.set(title='Distribution with Central Tendency', xlabel='Test Scores', ylabel='Frequency')
+ax1.legend(); ax1.grid(alpha=0.3)
+
+# Box plot
+ax2.boxplot(data, patch_artist=True,
+            boxprops=dict(facecolor='lightblue', alpha=0.7),
+            medianprops=dict(color='red', linewidth=2))
+ax2.set(title='Box Plot of Test Scores', ylabel='Test Scores')
+ax2.grid(alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+:::
 
 
 # Real-world Applications{#sec-real-world-ex}
@@ -565,12 +770,15 @@ Example: Heights grouped into ranges
 
 4. Create a Python function to identify the most appropriate measure of central tendency for a given dataset.
 
+
+
+
 # Questions?
 
 Thank you for your attention!
----
 
-### References & Further Reading
+
+# References & Further Reading
 
 - [*OpenIntro Statistics*, Ch. 1 & 2](/files/Book/os4_for_screen_reader.pdf)
   
@@ -585,4 +793,3 @@ Thank you for your attention!
 
 
 
----
