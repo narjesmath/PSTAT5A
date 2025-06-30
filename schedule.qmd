@@ -106,6 +106,8 @@ Lecture Materials
 :::
 ::: {.topic}
 [Descriptive Statistics II](/files/lecture_notes/lecture3/lecture3.qmd)
+
+[Linear Transformations (Worksheet 1 Q3)](/files/lecture_notes/lecture3/q3_worksheet.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 -
