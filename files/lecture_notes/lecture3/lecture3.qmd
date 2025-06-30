@@ -1191,7 +1191,7 @@ plt.show()
 
 # Key Takeaways
 
-## Essential Concepts to Remember
+## Essential Concepts to Remember {.smaller}
 
 ### Variability:
 - **Standard deviation** is preferred over range for most analyses
@@ -1231,12 +1231,21 @@ plt.show()
 
 5. **Design a boxplot comparison** for three different customer segments in your business.
 
-## Additional Resources
+## Additional Resources {.smaller}
 
-- Matplotlib gallery: Histogram and boxplot examples
-- Seaborn documentation: Statistical visualizations
-- NumPy/SciPy: Statistical functions reference
-- Recommended reading: Chapter 4-5 in course textbook
+- [Matplotlib Gallery: Histogram and Boxplot Examples](https://matplotlib.org/stable/gallery/index.html)  
+Explore examples of histograms, boxplots, and other visualizations using Matplotlib.
+
+- [Seaborn Documentation: Statistical Visualizations](https://seaborn.pydata.org/examples/index.html)  
+Find examples and documentation for statistical visualizations, including distribution plots, categorical plots, and regression plots.
+
+- [NumPy Statistical Functions Reference](https://numpy.org/doc/stable/reference/routines.statistics.html)  
+Official reference for NumPy's statistical functions such as mean, median, variance, and standard deviation.
+
+- [SciPy Statistical Functions Reference](https://docs.scipy.org/doc/scipy/reference/stats.html)  
+Comprehensive documentation for statistical functions in `scipy.stats`, including probability distributions, hypothesis tests, and descriptive statistics.
+
+- [Recommended reading: Continue reading Chapter 2 in course textbook]((/files/Book/os4_for_screen_reader.pdf))
 
 ---
 

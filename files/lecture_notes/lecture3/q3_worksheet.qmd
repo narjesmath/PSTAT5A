@@ -343,7 +343,7 @@ $$S_Y^2 = a^2 \cdot \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{X})^2 = a^2 S_X^2$$
 
 ---
 
-## Practical Implications
+## Practical Implications{.smaller}
 
 ::: {.two-columns}
 ::: {}
@@ -362,6 +362,7 @@ $$S_Y^2 = a^2 \cdot \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{X})^2 = a^2 S_X^2$$
 
 ::: {}
 **Scaling Down (0 < a < 1):**
+
 - Sums and means decrease by factor $a$
   
 - Variance decreases by factor $a^2$

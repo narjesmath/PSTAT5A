@@ -1600,7 +1600,7 @@
     "href": "files/lecture_notes/lecture3/lecture3.html#additional-resources",
     "title": "Descriptive Statistics Part II",
     "section": "Additional Resources",
-    "text": "Additional Resources\n\nMatplotlib gallery: Histogram and boxplot examples\nSeaborn documentation: Statistical visualizations\nNumPy/SciPy: Statistical functions reference\nRecommended reading: Chapter 4-5 in course textbook"
+    "text": "Additional Resources\n\nMatplotlib Gallery: Histogram and Boxplot Examples\nExplore examples of histograms, boxplots, and other visualizations using Matplotlib.\nSeaborn Documentation: Statistical Visualizations\nFind examples and documentation for statistical visualizations, including distribution plots, categorical plots, and regression plots.\nNumPy Statistical Functions Reference\nOfficial reference for NumPy’s statistical functions such as mean, median, variance, and standard deviation.\nSciPy Statistical Functions Reference\nComprehensive documentation for statistical functions in scipy.stats, including probability distributions, hypothesis tests, and descriptive statistics.\nRecommended reading: Continue reading Chapter 2 in course textbook"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#lecture-outline",
@@ -4463,7 +4463,7 @@
     "href": "files/lecture_notes/lecture3/q3_worksheet.html#practical-implications",
     "title": "Linear Transformation Properties",
     "section": "Practical Implications",
-    "text": "Practical Implications\n\n\nScaling Up (a &gt; 1):\n\nSums and means increase by factor \\(a\\)\nVariance increases by factor \\(a^2\\)\nData becomes more spread out\n\nExample: Converting inches to feet\n\nIf \\(a = 12\\), variance increases by \\(12^2 = 144\\)\n\n\n\nScaling Down (0 &lt; a &lt; 1): - Sums and means decrease by factor \\(a\\)\n\nVariance decreases by factor \\(a^2\\)\nData becomes less spread out\n\nExample: Converting dollars to cents\n\nIf \\(a = 0.01\\), variance decreases by \\((0.01)^2 = 0.0001\\)"
+    "text": "Practical Implications\n\n\nScaling Up (a &gt; 1):\n\nSums and means increase by factor \\(a\\)\nVariance increases by factor \\(a^2\\)\nData becomes more spread out\n\nExample: Converting inches to feet\n\nIf \\(a = 12\\), variance increases by \\(12^2 = 144\\)\n\n\n\nScaling Down (0 &lt; a &lt; 1):\n\nSums and means decrease by factor \\(a\\)\nVariance decreases by factor \\(a^2\\)\nData becomes less spread out\n\nExample: Converting dollars to cents\n\nIf \\(a = 0.01\\), variance decreases by \\((0.01)^2 = 0.0001\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#real-world-applications",
