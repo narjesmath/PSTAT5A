@@ -29,7 +29,7 @@ $$\sum_{i=1}^{n} y_i = a \sum_{i=1}^{n} x_i, \quad \bar{Y} = a \bar{X}, \quad S_
 
 ---
 
-## Understanding the Notation
+## Understanding the Notation{.smaller}
 
 ### Set Notation
 ::: {.definition-box}
@@ -157,8 +157,10 @@ $$\sum_{i=1}^{n} y_i = a x_1 + a x_2 + a x_3 + \cdots + a x_n$$
 
 ---
 
-## Proof 1: Sum Relationship (continued)
+## Proof 1: Sum Relationship (continued){.smaller}
 
+:::{.columns}
+::: {.column}
 ::: {.proof-box}
 **Step 4:** Factor out the constant $a$
 $$\sum_{i=1}^{n} y_i = a(x_1 + x_2 + x_3 + \cdots + x_n)$$
@@ -168,11 +170,18 @@ $$\sum_{i=1}^{n} y_i = a \sum_{i=1}^{n} x_i$$
 
 **Therefore:** $\sum_{i=1}^{n} y_i = a \sum_{i=1}^{n} x_i$ ✓
 :::
+:::
 
+::: {.column}
 ::: {.formula-box}
 **Key Property Used:** Constants can be factored out of sums
 $$\sum_{i=1}^{n} (c \cdot x_i) = c \sum_{i=1}^{n} x_i$$
 :::
+:::
+::: 
+<!-- end columns -->
+
+
 
 ---
 
@@ -201,7 +210,7 @@ $$\sum_{i=1}^{n} (c \cdot x_i) = c \sum_{i=1}^{n} x_i$$
 
 ---
 
-## Proof 2: Sample Mean Relationship
+## Proof 2: Sample Mean Relationship{.smaller}
 
 ::: {.proof-box}
 **Step 1:** Start with the definition of sample mean
@@ -216,7 +225,10 @@ $$\bar{Y} = \frac{1}{n} \cdot a \sum_{i=1}^{n} x_i$$
 
 ---
 
-## Proof 2: Sample Mean Relationship (continued)
+## Proof 2: Sample Mean Relationship (continued){.smaller}
+
+:::{.columns}
+:::{column}
 
 ::: {.proof-box}
 **Step 4:** Rearrange the constants
@@ -227,15 +239,18 @@ $$\bar{Y} = a \bar{X}$$
 
 **Therefore:** $\bar{Y} = a \bar{X}$ ✓
 :::
+:::
 
+:::{column}
 ::: {.formula-box}
 **Key Property Used:** Constants can be moved outside of fractions
 $$\frac{1}{n} \cdot a \sum_{i=1}^{n} x_i = a \cdot \frac{1}{n} \sum_{i=1}^{n} x_i$$
 :::
+:::
+:::
 
----
 
-## Example: Sample Mean Relationship
+## Example: Sample Mean Relationship{.smaller}
 
 ::: {.example-box}
 **Given:** $X = \{2, 4, 6\}$ and $a = 5$
@@ -253,14 +268,14 @@ $$\frac{1}{n} \cdot a \sum_{i=1}^{n} x_i = a \cdot \frac{1}{n} \sum_{i=1}^{n} x_
 **Verification:** $20 = 20$ ✓
 :::
 
----
+
 
 # Proof 3: Sample Variance Relationship
 **Prove:** $S_Y^2 = a^2 S_X^2$
 
 ---
 
-## Proof 3: Sample Variance Relationship
+## Proof 3: Sample Variance Relationship {.smaller}
 
 ::: {.proof-box}
 **Step 1:** Start with the definition of sample variance
@@ -275,7 +290,7 @@ $$S_Y^2 = \frac{1}{n-1} \sum_{i=1}^{n} [a(x_i - \bar{X})]^2$$
 
 ---
 
-## Proof 3: Sample Variance Relationship (continued)
+## Proof 3: Sample Variance Relationship (continued){.smaller}
 
 ::: {.proof-box}
 **Step 4:** Use the property $(ab)^2 = a^2 b^2$

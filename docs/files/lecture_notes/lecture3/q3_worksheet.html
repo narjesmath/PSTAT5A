@@ -152,7 +152,7 @@ Worksheet 1 Problem 3 Solution
 <p><span class="math display">\[\sum_{i=1}^{n} y_i = a \sum_{i=1}^{n} x_i, \quad \bar{Y} = a \bar{X}, \quad S_Y^2 = a^2 S_X^2\]</span></p>
 </div>
 </section>
-<section id="understanding-the-notation" class="slide level2">
+<section id="understanding-the-notation" class="slide level2 smaller">
 <h2>Understanding the Notation</h2>
 <h3 id="set-notation">Set Notation</h3>
 <div class="definition-box">
@@ -247,16 +247,21 @@ Worksheet 1 Problem 3 Solution
 <p><strong>Step 3:</strong> Substitute the definition <span class="math inline">\(y_i = a x_i\)</span> <span class="math display">\[\sum_{i=1}^{n} y_i = a x_1 + a x_2 + a x_3 + \cdots + a x_n\]</span></p>
 </div>
 </section>
-<section id="proof-1-sum-relationship-continued" class="slide level2">
+<section id="proof-1-sum-relationship-continued" class="slide level2 smaller">
 <h2>Proof 1: Sum Relationship (continued)</h2>
+<div class="columns">
+<div class="column">
 <div class="proof-box">
 <p><strong>Step 4:</strong> Factor out the constant <span class="math inline">\(a\)</span> <span class="math display">\[\sum_{i=1}^{n} y_i = a(x_1 + x_2 + x_3 + \cdots + x_n)\]</span></p>
 <p><strong>Step 5:</strong> Recognize the sum notation <span class="math display">\[\sum_{i=1}^{n} y_i = a \sum_{i=1}^{n} x_i\]</span></p>
 <p><strong>Therefore:</strong> <span class="math inline">\(\sum_{i=1}^{n} y_i = a \sum_{i=1}^{n} x_i\)</span> ✓</p>
 </div>
+</div><div class="column">
 <div class="formula-box">
 <p><strong>Key Property Used:</strong> Constants can be factored out of sums <span class="math display">\[\sum_{i=1}^{n} (c \cdot x_i) = c \sum_{i=1}^{n} x_i\]</span></p>
 </div>
+</div></div>
+<!-- end columns -->
 </section>
 <section id="example-sum-relationship" class="slide level2">
 <h2>Example: Sum Relationship</h2>
@@ -280,7 +285,7 @@ Worksheet 1 Problem 3 Solution
 <h1>Proof 2: Sample Mean Relationship</h1>
 <p><strong>Prove:</strong> <span class="math inline">\(\bar{Y} = a \bar{X}\)</span></p>
 </section>
-<section id="proof-2-sample-mean-relationship-1" class="slide level2">
+<section id="proof-2-sample-mean-relationship-1" class="slide level2 smaller">
 <h2>Proof 2: Sample Mean Relationship</h2>
 <div class="proof-box">
 <p><strong>Step 1:</strong> Start with the definition of sample mean <span class="math display">\[\bar{Y} = \frac{1}{n} \sum_{i=1}^{n} y_i\]</span></p>
@@ -288,18 +293,23 @@ Worksheet 1 Problem 3 Solution
 <p><strong>Step 3:</strong> Substitute this result <span class="math display">\[\bar{Y} = \frac{1}{n} \cdot a \sum_{i=1}^{n} x_i\]</span></p>
 </div>
 </section>
-<section id="proof-2-sample-mean-relationship-continued" class="slide level2">
+<section id="proof-2-sample-mean-relationship-continued" class="slide level2 smaller">
 <h2>Proof 2: Sample Mean Relationship (continued)</h2>
+<div class="columns">
+<div class="{column}">
 <div class="proof-box">
 <p><strong>Step 4:</strong> Rearrange the constants <span class="math display">\[\bar{Y} = a \cdot \frac{1}{n} \sum_{i=1}^{n} x_i\]</span></p>
 <p><strong>Step 5:</strong> Recognize the definition of <span class="math inline">\(\bar{X}\)</span> <span class="math display">\[\bar{Y} = a \bar{X}\]</span></p>
 <p><strong>Therefore:</strong> <span class="math inline">\(\bar{Y} = a \bar{X}\)</span> ✓</p>
 </div>
+</div><div class="{column}">
 <div class="formula-box">
 <p><strong>Key Property Used:</strong> Constants can be moved outside of fractions <span class="math display">\[\frac{1}{n} \cdot a \sum_{i=1}^{n} x_i = a \cdot \frac{1}{n} \sum_{i=1}^{n} x_i\]</span></p>
 </div>
+</div>
+</div>
 </section>
-<section id="example-sample-mean-relationship" class="slide level2">
+<section id="example-sample-mean-relationship" class="slide level2 smaller">
 <h2>Example: Sample Mean Relationship</h2>
 <div class="example-box">
 <p><strong>Given:</strong> <span class="math inline">\(X = \{2, 4, 6\}\)</span> and <span class="math inline">\(a = 5\)</span></p>
@@ -312,16 +322,13 @@ Worksheet 1 Problem 3 Solution
 </ul>
 <p><strong>Verification:</strong> <span class="math inline">\(20 = 20\)</span> ✓</p>
 </div>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="proof-3-sample-variance-relationship" class="title-slide slide level1 center">
 <h1>Proof 3: Sample Variance Relationship</h1>
 <p><strong>Prove:</strong> <span class="math inline">\(S_Y^2 = a^2 S_X^2\)</span></p>
 </section>
-<section id="proof-3-sample-variance-relationship-1" class="slide level2">
+<section id="proof-3-sample-variance-relationship-1" class="slide level2 smaller">
 <h2>Proof 3: Sample Variance Relationship</h2>
 <div class="proof-box">
 <p><strong>Step 1:</strong> Start with the definition of sample variance <span class="math display">\[S_Y^2 = \frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{Y})^2\]</span></p>
@@ -329,7 +336,7 @@ Worksheet 1 Problem 3 Solution
 <p><strong>Step 3:</strong> Factor out <span class="math inline">\(a\)</span> from the parentheses <span class="math display">\[S_Y^2 = \frac{1}{n-1} \sum_{i=1}^{n} [a(x_i - \bar{X})]^2\]</span></p>
 </div>
 </section>
-<section id="proof-3-sample-variance-relationship-continued" class="slide level2">
+<section id="proof-3-sample-variance-relationship-continued" class="slide level2 smaller">
 <h2>Proof 3: Sample Variance Relationship (continued)</h2>
 <div class="proof-box">
 <p><strong>Step 4:</strong> Use the property <span class="math inline">\((ab)^2 = a^2 b^2\)</span> <span class="math display">\[S_Y^2 = \frac{1}{n-1} \sum_{i=1}^{n} a^2 (x_i - \bar{X})^2\]</span></p>

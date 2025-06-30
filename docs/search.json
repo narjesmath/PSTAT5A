@@ -4393,7 +4393,7 @@
     "href": "files/lecture_notes/lecture3/q3_worksheet.html#proof-1-sum-relationship-continued",
     "title": "Linear Transformation Properties",
     "section": "Proof 1: Sum Relationship (continued)",
-    "text": "Proof 1: Sum Relationship (continued)\n\nStep 4: Factor out the constant \\(a\\) \\[\\sum_{i=1}^{n} y_i = a(x_1 + x_2 + x_3 + \\cdots + x_n)\\]\nStep 5: Recognize the sum notation \\[\\sum_{i=1}^{n} y_i = a \\sum_{i=1}^{n} x_i\\]\nTherefore: \\(\\sum_{i=1}^{n} y_i = a \\sum_{i=1}^{n} x_i\\) ✓\n\n\nKey Property Used: Constants can be factored out of sums \\[\\sum_{i=1}^{n} (c \\cdot x_i) = c \\sum_{i=1}^{n} x_i\\]"
+    "text": "Proof 1: Sum Relationship (continued)\n\n\n\nStep 4: Factor out the constant \\(a\\) \\[\\sum_{i=1}^{n} y_i = a(x_1 + x_2 + x_3 + \\cdots + x_n)\\]\nStep 5: Recognize the sum notation \\[\\sum_{i=1}^{n} y_i = a \\sum_{i=1}^{n} x_i\\]\nTherefore: \\(\\sum_{i=1}^{n} y_i = a \\sum_{i=1}^{n} x_i\\) ✓\n\n\n\nKey Property Used: Constants can be factored out of sums \\[\\sum_{i=1}^{n} (c \\cdot x_i) = c \\sum_{i=1}^{n} x_i\\]"
   },
   {
     "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#example-sum-relationship",
@@ -4414,7 +4414,7 @@
     "href": "files/lecture_notes/lecture3/q3_worksheet.html#proof-2-sample-mean-relationship-continued",
     "title": "Linear Transformation Properties",
     "section": "Proof 2: Sample Mean Relationship (continued)",
-    "text": "Proof 2: Sample Mean Relationship (continued)\n\nStep 4: Rearrange the constants \\[\\bar{Y} = a \\cdot \\frac{1}{n} \\sum_{i=1}^{n} x_i\\]\nStep 5: Recognize the definition of \\(\\bar{X}\\) \\[\\bar{Y} = a \\bar{X}\\]\nTherefore: \\(\\bar{Y} = a \\bar{X}\\) ✓\n\n\nKey Property Used: Constants can be moved outside of fractions \\[\\frac{1}{n} \\cdot a \\sum_{i=1}^{n} x_i = a \\cdot \\frac{1}{n} \\sum_{i=1}^{n} x_i\\]"
+    "text": "Proof 2: Sample Mean Relationship (continued)\n\n\n\nStep 4: Rearrange the constants \\[\\bar{Y} = a \\cdot \\frac{1}{n} \\sum_{i=1}^{n} x_i\\]\nStep 5: Recognize the definition of \\(\\bar{X}\\) \\[\\bar{Y} = a \\bar{X}\\]\nTherefore: \\(\\bar{Y} = a \\bar{X}\\) ✓\n\n\n\nKey Property Used: Constants can be moved outside of fractions \\[\\frac{1}{n} \\cdot a \\sum_{i=1}^{n} x_i = a \\cdot \\frac{1}{n} \\sum_{i=1}^{n} x_i\\]"
   },
   {
     "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#example-sample-mean-relationship",
