@@ -1,6 +1,6 @@
 ---
 title: "Descriptive Statistics Part II"
-subtitle: "Variability, Position, Shape & Visualization  Lecture"
+subtitle: "Variability, Position, Shape & Visualization"
 author: "Narjes Mathlouthi"
 date: today
 format: 
@@ -14,6 +14,8 @@ format:
     footer: "Understanding Data - Descriptive Statistics Part II © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
+    execute:
+        eval: false
 jupyter: python3
 ---
 
@@ -29,51 +31,42 @@ By the end of this lecture, you will be able to:
 - Identify trends, patterns, and outliers in data visualizations
 - Apply Python for comprehensive descriptive analysis and visualization
 
-
+---
 
 ## Lecture Outline {.smaller}
 
 ::: {.two-columns}
 ::: {}
 **Part I: Measures of Variability (25 min)**
-
 - Range, Variance, Standard Deviation
-  
 - Coefficient of Variation
-  
 - Python Implementation
 
 **Part II: Measures of Position (20 min)**
-
 - Percentiles and Quartiles
-  
 - Z-scores and Standardization
 :::
 
 ::: {}
 **Part III: Distribution Shape (10 min)**
-
 - Skewness and Kurtosis
 
 **Part IV: Data Visualization (20 min)**
-
 - Histograms and Bin Width Selection
-  
 - Boxplots and Interpretation
 
 **Part V: Identifying Patterns (5 min)**
 :::
 :::
 
-
-
+---
 
 # Measures of Variability
 *25 minutes*
 
----
 
-## What is Variability? {.smaller}
+
+## What is Variability?{.smaller}
 
 ::: {.concept-box}
 #### 🎯 Definition
@@ -87,9 +80,9 @@ By the end of this lecture, you will be able to:
 - Essential for **risk assessment** and **quality control**
 - Helps determine **confidence** in our central tendency measures
 
+---
 
-
-# Comparing Datasets with Same Mean{.smaller}
+## Comparing Datasets with Same Mean
 
 ::: {.example}
 **Dataset A:** 98, 99, 100, 101, 102 (Mean = 100)
@@ -122,86 +115,126 @@ This is why we need measures of variability.
 
 ---
 
-## When to Use Range
+## Properties of Range
 
-✅ **Use range when:**
+::: {.two-columns}
+::: {.example}
+#### ✅ Advantages
+- **Simple to calculate** and understand
+- **Quick measure** of spread
+- **Easy to communicate**
+:::
 
-- Need a **quick, simple measure** of spread
-  
-- Working with **small datasets**
-  
-- Communicating to **non-technical audiences**
-
-❌ **Avoid range when:**
-
-- **Outliers** are present
-  
-- Need **detailed information** about variability
-  
-- Working with **large datasets**
-
-
-
-
-# Variance and Standard Deviation
-*15 minutes*
+::: {.important}
+#### ❌ Disadvantages
+- **Uses only two values** (ignores all others)
+- **Sensitive to outliers**
+- **Limited information** about distribution
+:::
+:::
 
 ---
 
-## Variance Definition {.smaller}
+## When to Use Range
+
+::: {.concept-box}
+#### Use range when:
+- Need a **quick, simple measure** of spread
+- Working with **small datasets**
+- Communicating to **non-technical audiences**
+
+#### Avoid range when:
+- **Outliers** are present
+- Need **detailed information** about variability
+- Working with **large datasets**
+:::
+
+---
+
+# Variance and Standard Deviation
+
+---
+
+## Variance Definition
+
 ::: {.concept-box}
 #### 🎯 Definition
 **Variance** measures the average squared deviation from the mean.
 :::
 
-
 ![](/files/lecture_notes/lecture3/img/variance.png)
 
+---
 
-# Population vs Sample Variance {.center}
+## Population vs Sample Variance {.center}
 
 Understanding the mathematical foundations
 
-## Recall
+---
+
+## Recall: Population vs Sample
 
 ![](/files/lecture_notes/lecture3/img/sampling.png)
 
+---
 
-## Side-by-Side Comparison {.smaller}
+## Side-by-Side Comparison
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+::: {.variance-container}
 
-<div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
-<div style="background: #dc3545; color: white; text-align: center; padding: 15px; font-weight: bold; margin: -20px -20px 20px -20px; border-radius: 10px 10px 0 0;">
+::: {.variance-section}
+::: {.variance-header}
 Population Variance
-</div>
+:::
 
 ::: {.formula-box}
 $$\sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}$$
 :::
 
-$\sigma^2$ = population variance  
-$x_i$ = value of $i^{th}$ element  
-$\mu$ = population mean  
+::: {.definitions}
+::: {.definition-item}
+$\sigma^2$ = population variance
+:::
+::: {.definition-item}
+$x_i$ = value of $i^{th}$ element
+:::
+::: {.definition-item}
+$\mu$ = population mean
+:::
+::: {.definition-item}
 $N$ = population size
-</div>
+:::
+:::
+:::
 
-<div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
-<div style="background: #dc3545; color: white; text-align: center; padding: 15px; font-weight: bold; margin: -20px -20px 20px -20px; border-radius: 10px 10px 0 0;">
+::: {.variance-section}
+::: {.variance-header}
 Sample Variance
-</div>
+:::
 
 ::: {.formula-box}
 $$s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}$$
 :::
 
-$s^2$ = sample variance  
-$x_i$ = value of $i^{th}$ element  
-$\bar{x}$ = sample mean  
+::: {.definitions}
+::: {.definition-item}
+$s^2$ = sample variance
+:::
+::: {.definition-item}
+$x_i$ = value of $i^{th}$ element
+:::
+::: {.definition-item}
+$\bar{x}$ = sample mean
+:::
+::: {.definition-item}
 $n$ = sample size
-</div>
+:::
+:::
+:::
 
-</div>
+:::
+
+---
 
 ## Key Differences
 
@@ -210,37 +243,34 @@ $n$ = sample size
 :::
 
 **Why $(n-1)$?**
-
 - When we use sample mean $\bar{x}$ to estimate population mean $\mu$
-  
 - We lose one **degree of freedom**
-  
 - Called **Bessel's correction**
-  
 - Makes sample variance an **unbiased estimator**
 
+---
 
-## When to Use Each Formula {.smaller}
+## When to Use Each Formula
 
+::: {.two-columns}
 ::: {.concept-box}
 #### Population Variance ($\sigma^2$)
-
 - You have data for the **entire population**
-  
 - You know the true population mean $\mu$
-  
 - Example: Test scores for all students in a small class
 :::
+
 ::: {.concept-box}
 #### Sample Variance ($s^2$)
 - You have data from a **sample only**
 - Want to estimate population variance
 - Example: Survey responses from 100 people out of 10,000
 :::
+:::
 
+---
 
-
-# Degrees of Freedom Concept {.center}
+## Degrees of Freedom Concept
 
 ::: {.concept-box}
 #### 🎯 Definition
@@ -249,13 +279,12 @@ $n$ = sample size
 
 ---
 
-## Understanding Degrees of Freedom{.smaller}
+## Understanding Degrees of Freedom
 
 ::: {.two-columns}
 
 ::: {.example}
-#### 📊 Population Case {.smaller}
-
+#### 📊 Population Case
 **All observations are independent**
 
 - We know the true population mean $\mu$
@@ -268,8 +297,7 @@ $$\text{Degrees of Freedom} = N$$
 :::
 
 ::: {.important}
-#### 📈 Sample Case{.smaller}
-
+#### 📈 Sample Case
 **Constraint introduced by sample mean**
 
 - We must estimate $\mu$ using $\bar{x}$
@@ -280,9 +308,12 @@ $$\text{Degrees of Freedom} = N$$
 $$\text{Degrees of Freedom} = n-1$$
 :::
 :::
+
 :::
 
-# Why Does This Matter?
+---
+
+## Why Does This Matter?
 
 ::: {.key-difference}
 **Key Insight:** Using $\bar{x}$ instead of $\mu$ creates dependency among observations
@@ -290,15 +321,11 @@ $$\text{Degrees of Freedom} = n-1$$
 
 ::: {.concept-box}
 #### 🧠 Intuitive Explanation
-
 Imagine you have 5 numbers that must average to 10:
 
 **If the mean is fixed at 10:**
-
 - Choose any 4 numbers freely: 8, 12, 7, 15
-  
 - The 5th number is forced: $5 \times 10 - (8+12+7+15) = 8$
-  
 - Only 4 degrees of freedom, not 5!
 
 **This is exactly what happens with sample variance**
@@ -306,60 +333,60 @@ Imagine you have 5 numbers that must average to 10:
 
 ---
 
-##  {.smaller}
+## Mathematical Consequences
 
-::: {.formula-box}
-#### Sample Mean Constraint
+::: {.two-columns}
 
-$$\bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n}$$
+::: {.theorem}
+#### ✅ With $(n-1)$: Unbiased
+$$E[s^2] = E\left[\frac{\sum(x_i - \bar{x})^2}{n-1}\right] = \sigma^2$$
 
-**Rearranging:**
-$$x_n = n\bar{x} - (x_1 + x_2 + \cdots + x_{n-1})$$
-
-Once we know $\bar{x}$ and the first $(n-1)$ values, $x_n$ is completely determined!
+Sample variance is an **unbiased estimator** of population variance
 :::
 
+::: {.note}
+#### ❌ With $n$: Biased
+$$E\left[\frac{\sum(x_i - \bar{x})^2}{n}\right] = \frac{n-1}{n}\sigma^2$$
 
-
-
-# Degrees of Freedom in Other Contexts
-
-::: {.definition}
-#### 📚 General Pattern
-
-**Degrees of Freedom = Sample Size - Number of Parameters Estimated**
-
-**Examples:**
-
-- **Sample mean:** $df = n - 0 = n$ (no parameters estimated from data)
-  
-- **Sample variance:** $df = n - 1$ (estimate $\mu$ with $\bar{x}$)  
-  
-- **Linear regression:** $df = n - p - 1$ (estimate $p$ coefficients + intercept)
-  
-- **Chi-square test:** $df = (rows-1) \times (cols-1)$
+Systematically **underestimates** the true variance by factor $\frac{n-1}{n}$
 :::
 
+:::
 
+---
 
-# Common Questions
+## Practical Impact
+
+::: {.variance-container}
+
+::: {.variance-section}
+::: {.variance-header}
+Small Samples (n = 5)
+:::
+
+**Bias factor:** $\frac{n-1}{n} = \frac{4}{5} = 0.8$
+
+**20% underestimation** if using $n$
+
+::: {.key-difference}
+**Large impact on inference!**
+:::
+:::
+
+::: {.variance-section}
+::: {.variance-header}
+Large Samples (n = 100)
+:::
+
+**Bias factor:** $\frac{n-1}{n} = \frac{99}{100} = 0.99$
+
+**1% underestimation** if using $n$
 
 ::: {.concept-box}
-#### ❓ "Why can't we just use the population mean?"
-
-**Answer:** In practice, we rarely know $\mu$. We're estimating it from the same data we're using to calculate variance.
+**Minimal practical difference**
+:::
 :::
 
-::: {.concept-box}
-#### ❓ "When does the difference matter most?"
-
-**Answer:** Small samples! The correction becomes negligible as $n$ increases.
-:::
-
-::: {.concept-box}
-#### ❓ "What if I know the true population mean?"
-
-**Answer:** Then you can use $n$ in the denominator: $\frac{\sum(x_i - \mu)^2}{n}$
 :::
 
 ---
@@ -368,206 +395,63 @@ Once we know $\bar{x}$ and the first $(n-1)$ values, $x_n$ is completely determi
 
 **Data:** 3, 7, 2, 8, 5
 
-**If this is the entire population:**
-
+::: {.two-columns}
+::: {.example}
+#### If this is the entire population:
 - $\mu = \frac{3+7+2+8+5}{5} = 5$
-  
 - $\sigma^2 = \frac{(3-5)^2+(7-5)^2+(2-5)^2+(8-5)^2+(5-5)^2}{5} = \frac{22}{5} = 4.4$
+:::
 
-**If this is a sample:**
-
+::: {.solution}
+#### If this is a sample:
 - $\bar{x} = 5$ (same calculation)
-  
 - $s^2 = \frac{22}{5-1} = \frac{22}{4} = 5.5$
-
----
-
-## Variance Properties
-
-**Variance measures:**
-
-- Average squared deviation from the mean
-  
-- Always non-negative: $\sigma^2 \geq 0$, $s^2 \geq 0$
-  
-- Units: (original units)²
-
-**Standard Deviation:**
-
-- $\sigma = \sqrt{\sigma^2}$ (population)
-  
-- $s = \sqrt{s^2}$ (sample)
-  
-- Same units as original data
-
----
-
-## Bias and Unbiasedness {.smaller}
-
-**Population variance:** 
-
-- True parameter value
-  
-- No estimation involved
-  
-
-**Sample variance with $(n-1)$:**
-
-- $E[s^2] = \sigma^2$ (unbiased)
-  
-- On average, equals population variance
-
-**Sample variance with $n$:**
-
-- $E\left[\frac{\sum(x_i - \bar{x})^2}{n}\right] = \frac{n-1}{n}\sigma^2$ (biased)
-  
-- Systematically underestimates population variance
-
-
-
-# Common Questions
-
-::: {.concept-box}
-#### ❓ "Why not just use $n$ for sample variance?"
-
-**Answer:**  It would systematically underestimate the true variance
-
 :::
-
-::: {.concept-box}
-#### ❓ "When does it matter?"
-
-**Answer:**  More important for small samples; less difference as $n$ increases
-
-:::
-
-
-::: {.concept-box}
-#### ❓ "What if I know the population mean?"
-
-**Answer:**  Then you can use $n$ in denominator: $\frac{\sum(x_i - \mu)^2}{n}$
-
-:::
-
-
-
-## Implementation
-
-**Calculators:**
-
-- Most use $(n-1)$ by default for sample standard deviation
-  
-- Check your calculator's documentation
-
-**Software:**
-
-- **R:** `var()` uses $(n-1)$, `sd()` uses $(n-1)$
-  
-- **Excel:** `VAR.S()` uses $(n-1)$, `VAR.P()` uses $n$
-  
-- **Python:** `np.var(ddof=1)` uses $(n-1)$
-
----
-
-## Practice Problem
-
-**Dataset:** Number of hours studied by 6 students: 2, 4, 3, 5, 6, 4
-
-Calculate both:
-
-1. Population variance (assuming this is the entire population)
-   
-2. Sample variance (assuming this is a sample)
-
-:::{.fragment}
-**Solution:**
-
-- Mean: $\bar{x} = \frac{24}{6} = 4$
-  
-- Population variance: $\sigma^2 = \frac{10}{6} = 1.67$
-  
-- Sample variance: $s^2 = \frac{10}{5} = 2.0$
 :::
 
 ---
 
-## Summary
-
-::: {.concept-box}
-#### Key Takeaways
-- **Population variance** uses $N$ (entire population)
-- **Sample variance** uses $(n-1)$ (Bessel's correction)
-- Sample variance is **unbiased estimator** of population variance
-- Difference matters more for **small samples**
-- Always check which formula your software uses!
-:::
-
-
-
-
-
-# Standard Deviation Definition
+## Standard Deviation Definition
 
 ::: {.concept-box}
 #### 🎯 Definition
 **Standard Deviation** is the square root of variance.
 :::
 
+::: {.two-columns}
 ::: {.formula-box}
-### Sample Standard Deviation
+#### Sample Standard Deviation
 $$s = \sqrt{s^2} = \sqrt{\frac{\sum(x_i - \bar{x})^2}{n-1}}$$
 :::
 
 ::: {.formula-box}
-### Population Standard Deviation
+#### Population Standard Deviation
 $$\sigma = \sqrt{\sigma^2} = \sqrt{\frac{\sum(x_i - \mu)^2}{N}}$$
 :::
+:::
 
-## Example {.smaller}
+---
+
+## Step-by-Step Standard Deviation Example
+
+### Given Data
 
 ::: {.concept-box}
-:::{.smaller}
-#### 📊 Complete Population Data (Test Scores)
-We have test scores from 100 students arranged in a grid:
-:::
-:::
-
-<div style="font-family: monospace; font-size: 0.5em; border: 2px solid #2c3e50; background: white; padding: 1em; margin: 1em 0; overflow-x: auto;">
-
-|   | **A** | **B** | **C** | **D** | **E** | **F** | **G** | **H** | **I** | **J** | **K** | **L** | **M** | **N** | **O** | **P** | **Q** | **R** | **S** | **T** |
-|---|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
-| **1** | 24 | 96 | 30 | 69 | 85 |<span style="background-color: #ffeb3b; font-weight: bold; border: 2px solid #f57f17; padding: 2px;">**60**</span> | 55 | 18 | 30 | 66 | 64 | 99 | 92 | 95 | 84 | 55 | 72 | 38 | 86 | 32 |
-| **2** | 53 | 81 | 30 | 89 | 42 | 94 | 31 | 26 | 53 | 78 | 38 | 60 | 93 | 90 | <span style="background-color: #ffeb3b; font-weight: bold; border: 2px solid #f57f17; padding: 2px;">**82**</span> | 85 | 89 | 54 | 30 | 58 |
-| **3** | 62 | 67 | 75 | 47 | 99 | 25 | 32 | 63 | 49 | 45 | 30 | 97 | 57 | 32 | 37 | 62 | 33 | 16 | 11 | 41 |
-| **4** | 95 | 74 | 28 | 73 | 82 | 97 | 65 | 88 | 56 | <span style="background-color: #ffeb3b; font-weight: bold; border: 2px solid #f57f17; padding: 2px;">**95**</span> | 85 | 44 | 70 | 65 | 34 | 85 | 58 | 15 | 64 | 84 |
-| **5** | 76 | 46 | <span style="background-color: #ffeb3b; font-weight: bold; border: 2px solid #f57f17; padding: 2px;">**83**</span> | 56 | 98 | 16 | 76 | 77 | 35 | 19 | 97 | 42 | 90 | 79 | 73 | 28 | 82 | <span style="background-color: #ffeb3b; font-weight: bold; border: 2px solid #f57f17; padding: 2px;">**92**</span> | 90 | 22 |
-
-</div>
-
-::: {.important} 
-:::{.smaller}
-#### 🎯 Random Sample Selection
-We randomly select 5 scores from different positions in our population:
-
-**Our Sample:** 82, 95, 83, 60, 92
-  
-:::
-:::
-
-# Detailed Calculation 
-
-::: {.formula-box}
+#### Sample Data: 82, 95, 83, 60, 92
 #### Sample Size: n = 5
-These 5 values will be used for our standard deviation calculation
 :::
+
+---
+
+## Step 1: Calculate the Sample Mean
 
 ::: {.formula-box}
-#### Sample Mean Calculation
-$$\bar{x} = \frac{82 + 95 + 83 + 60 + 92}{5} = \frac{412}{5} = 82.4$$
+$$\bar{x} = \frac{\sum x_i}{n} = \frac{82 + 95 + 83 + 60 + 92}{5} = \frac{412}{5} = 82.4$$
 :::
 
+---
 
-# 
+## Step 2: Calculate Deviations and Squared Deviations
 
 | $x_i$ | $x_i - \bar{x}$ | $(x_i - \bar{x})^2$ |
 |-------|-----------------|---------------------|
@@ -578,105 +462,112 @@ $$\bar{x} = \frac{82 + 95 + 83 + 60 + 92}{5} = \frac{412}{5} = 82.4$$
 | 92    | $92 - 82.4 = 9.6$   | $(9.6)^2 = 92.16$      |
 | **Sum** |               | $\sum = 753.2$         |
 
+---
+
+## Step 3: Calculate Sample Variance
+
+::: {.formula-box}
+$$s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1} = \frac{753.2}{5-1} = \frac{753.2}{4} = 188.3$$
+:::
 
 ---
 
-##  Final Calculations{.smaller}
-
-::: {.variance-container}
-
-::: {.variance-section}
-
-::: {.variance-header}
-Sample Variance
-:::
+## Step 4: Calculate Sample Standard Deviation
 
 ::: {.formula-box}
-$$s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}$$
-$$s^2 = \frac{753.2}{5-1} = \frac{753.2}{4} = 188.3$$
+$$s = \sqrt{s^2} = \sqrt{188.3} = 13.72$$
 :::
-
-:::
-
-::: {.variance-section}
-::: {.variance-header}
-Sample Standard Deviation
-:::
-
-::: {.formula-box}
-$$s = \sqrt{s^2}$$
-$$s = \sqrt{188.3} = 13.72$$
-:::
-:::
-
-:::
-
 
 ---
 
-## Properties of Standard Deviation {.smaller}
+## Final Answer
 
+::: {.key-difference}
+**Sample Standard Deviation = 13.72**
+:::
+
+::: {.concept-box}
+#### Summary of Results:
+- **Sample Mean:** $\bar{x} = 82.4$
+- **Sample Variance:** $s^2 = 188.3$  
+- **Sample Standard Deviation:** $s = 13.72$
+:::
+
+---
+
+## Properties of Standard Deviation
+
+::: {.concept-box}
+#### Key Properties:
 - **Same units** as the original data
 - **Always non-negative**
 - **Zero** only when all values are identical
 - **Larger values** indicate more variability
 - **Approximately 68%** of data within 1 SD of mean (for normal distributions)
 - **Approximately 95%** of data within 2 SD of mean
+:::
 
 ---
 
-## Empirical Rule (68-95-99.7 Rule) {.smaller}
+## Empirical Rule (68-95-99.7 Rule)
 
-For **approximately normal distributions:**
-
+::: {.important}
+#### For approximately normal distributions:
 - **68%** of data falls within 1 standard deviation of the mean
 - **95%** of data falls within 2 standard deviations of the mean
 - **99.7%** of data falls within 3 standard deviations of the mean
 
 This rule helps us understand what constitutes "typical" vs "unusual" values.
+:::
 
-![](/files/lecture_notes/lecture3/img/empirical_rule.png)
+---
 
-# Coefficient of Variation
-*5 minutes*
+## Coefficient of Variation
 
-## Definition and Purpose
-::: {.concept-box}
-#### 🎯 Definition
+::: {.formula-box}
 **Coefficient of Variation (CV)** = $\frac{\text{Standard Deviation}}{\text{Mean}} \times 100\%$
 :::
-. . .
 
 ### Why Use CV?
-
 - **Compares variability** across different units or scales
 - **Relative measure** of variability
 - Useful when **means differ substantially**
 
-# Example: Comparing Variability{.smaller}
+---
 
-**Stock A:** Mean return = $50, SD = $10, CV = 20%
+## CV Example: Comparing Variability
 
-**Stock B:** Mean return = $500, SD = $50, CV = 10%
+::: {.two-columns}
+::: {.example}
+#### Stock A
+- Mean return = $50
+- SD = $10
+- **CV = 20%**
+:::
 
-. . .
+::: {.example}
+#### Stock B
+- Mean return = $500
+- SD = $50
+- **CV = 10%**
+:::
+:::
 
-::: {.callout-important}
+:::{.fragment}
+::: {.key-difference}
 **Stock B has higher absolute variability ($50 vs $10) but lower relative variability (10% vs 20%)**
 
 Stock B is relatively less risky per dollar invested.
 :::
+:::
 
+---
 
-## Python Implementation - Variability {.smaller}
-
-::: panel-tabset
-
-### Code
+## Python Implementation - Variability
 
 ```{python}
 #| echo: true
-#| eval: true
+#| eval: false
 import numpy as np
 import pandas as pd
 
@@ -695,119 +586,71 @@ print(f"Standard Deviation: {std_sample:.2f}")
 print(f"Coefficient of Variation: {cv:.1f}%")
 ```
 
-### Visualization
-
-```{python}
-#| echo: false
-#| eval: true
-import matplotlib.pyplot as plt
-
-# pack the metrics into a dict
-metrics = {
-    'Range' : range_val,
-    'Variance': variance_sample,
-    'Std Dev': std_sample,
-    'CV (%)' : cv
-}
-
-# simple bar chart
-fig, ax = plt.subplots()
-ax.bar(metrics.keys(), metrics.values())
-ax.set_ylabel('Value')
-ax.set_title('Measures of Variability')
-plt.xticks(rotation=30, ha='right')
-plt.tight_layout()
-plt.show()
-
-
-```
-:::
+---
 
 # Measures of Position
 *20 minutes*
 
-## What are Measures of Position? {.smaller}
+---
 
-:::{.columns}
-::: {.column}
+## What are Measures of Position?
+
+::: {.concept-box}
+#### 🎯 Purpose
 **Measures of position** tell us where a particular value stands relative to the rest of the data.
+:::
 
 They answer questions like:
-
 - "What percentage of students scored below 85?"
-  
 - "Is this value typical or unusual?"
-  
 - "How does this observation compare to others?"
+
+---
+
+## Percentiles Definition
+
+::: {.definition}
+#### The k-th percentile
+The value below which k% of the data falls.
 :::
-
-::: {.column}
-![](/files/lecture_notes/lecture3/img/measures_pos.png)
-:::
-
-::: 
- <!-- end columns -->
-
-
-
-
-# Percentiles and Quartiles
-*10 minutes*
-
-## Percentiles Definition{.smaller}
-The **k-th percentile** is the value below which k% of the data falls.
 
 ### Examples:
 - **50th percentile** = Median (50% of data below this value)
 - **90th percentile** = 90% of data falls below this value
 - **25th percentile** = 25% of data falls below this value
-  
-![](/files/lecture_notes/lecture3/img/percentiles.png)
+
+---
 
 ## Quartiles
 
-**Quartiles** divide the data into four equal parts:
+::: {.concept-box}
+#### Quartiles divide the data into four equal parts:
 
 - **Q1 (First Quartile)** = 25th percentile
 - **Q2 (Second Quartile)** = 50th percentile = Median
 - **Q3 (Third Quartile)** = 75th percentile
+:::
 
-![](/files/lecture_notes/lecture3/img/quartiles.png)
+---
 
 ## Interquartile Range (IQR)
 
+::: {.formula-box}
 **IQR = Q3 - Q1**
+:::
 
-. . .
-
-
-:::{.columns}
-
-::: {.column}
-
-:::{.smaller}
-### Properties of IQR: 
+### Properties of IQR:
 - Contains the **middle 50%** of the data
 - **Resistant to outliers**
 - Used in **boxplot construction**
 - Useful for **outlier detection**
-:::
-:::
-
-::: {.column}
-![](/files/lecture_notes/lecture3/img/iqr.png)
-:::
-::: 
-<!-- end columns -->
-
-
-
-
-# Five-Number Summary
 
 ---
 
-The **five-number summary** provides a complete picture of data distribution:
+## Five-Number Summary
+
+::: {.concept-box}
+#### The five-number summary provides a complete picture of data distribution:
 
 1. **Minimum**
 2. **Q1 (25th percentile)**
@@ -816,35 +659,24 @@ The **five-number summary** provides a complete picture of data distribution:
 5. **Maximum**
 
 This forms the basis for boxplots!
-
-# Z-scores and Standardization
-*10 minutes*
-
-## Z-score Definition {.smaller}
-
-:::{.columns}
-::: {.column}
-::: {.concept-box}
-#### 🎯 Definition
-**Z-score** tells us how many standard deviations a value is from the mean.
 :::
 
-:::{.formula-box}
+---
+
+## Z-scores and Standardization
+
+::: {.formula-box}
+**Z-score** tells us how many standard deviations a value is from the mean.
+
 $$z = \frac{x - \mu}{\sigma} \text{ or } z = \frac{x - \bar{x}}{s}$$
 :::
-:::
-::: {.column}
-![](/files/lecture_notes/lecture3/img/z-score.png){.full-width}
-:::
-::: 
-<!-- end columns -->
 
+---
 
+## Interpreting Z-scores
 
-
-
-#  Interpreting Z-scores
 ::: {.concept-box}
+#### Z-score Interpretation:
 - **z = 0**: Value equals the mean
 - **z = 1**: Value is 1 standard deviation above the mean
 - **z = -2**: Value is 2 standard deviations below the mean
@@ -852,81 +684,39 @@ $$z = \frac{x - \mu}{\sigma} \text{ or } z = \frac{x - \bar{x}}{s}$$
 - **|z| > 3**: Very unusual (beyond 99.7% of data)
 :::
 
+---
+
 ## Z-score Example
 
-Student's test score: 85
+::: {.example}
+#### Problem:
+Student's test score: 85  
 Class mean: 78, Class standard deviation: 6
 
-:::{.formula-box}
 $$z = \frac{85 - 78}{6} = \frac{7}{6} = 1.17$$
-:::
 
 **Interpretation:** This student scored 1.17 standard deviations above the class average.
+:::
+
+---
 
 ## Benefits of Standardization
 
+::: {.concept-box}
+#### Why use z-scores?
 - **Compare across different scales** (test scores vs income)
 - **Identify outliers** systematically  
 - **Combine different variables** meaningfully
 - **Prepare data** for certain statistical methods
-
-# Distribution Shape
-*10 minutes*
-
-## Skewness{.smaller}
-
-**Skewness** measures the asymmetry of a distribution.
-
-### Types of Skewness:
-:::{.columns}
-::: {.column}
-:::{.smaller}
-- **Symmetric (Skewness ≈ 0)**: Mean ≈ Median ≈ Mode
-- **Right-skewed (Positive skewness)**: Mean > Median, long tail to the right
-- **Left-skewed (Negative skewness)**: Mean < Median, long tail to the left
-:::
-:::
-::: {.column}
-![](/files/lecture_notes/lecture3/img/skew.png){.full-width}
-:::
 :::
 
-## Examples of Skewness {.smaller}
+---
 
-**Right-skewed (Income data):**
-
-- Most people earn moderate amounts
-  
-- Few people earn very high amounts
-  
-- Mean > Median
-
-**Left-skewed (Test scores with ceiling effect):**
-
-- Most students score high
-  
-- Few students score very low  
-  
-- Mean < Median
-
-## Kurtosis{.smaller}
-
-**Kurtosis** measures the "tailedness" of a distribution. It measures the degree of peaked Ness or flatness of a distribution compared to the normal distribution.
-
-### Types:
-- **Mesokurtic (Normal-like)**: Kurtosis ≈ 3
-- **Leptokurtic (Heavy tails)**: Kurtosis > 3, more peaked
-- **Platykurtic (Light tails)**: Kurtosis < 3, flatter
-
-**Excess Kurtosis** = Kurtosis - 3 (makes normal distributions have excess kurtosis of 0)
-
-![](/files/lecture_notes/lecture3/img/kurtosis.png){.full-width}
-
-## Python Implementation - Position & Shape{.smaller}
+## Python Implementation - Position & Shape
 
 ```{python}
 #| echo: true
-#| eval: true
+#| eval: false
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -952,15 +742,74 @@ print(f"Skewness: {skewness:.3f}")
 print(f"Kurtosis: {kurt:.3f}")
 ```
 
+---
+
+# Distribution Shape
+*10 minutes*
+
+---
+
+## Skewness
+
+::: {.concept-box}
+#### 🎯 Definition
+**Skewness** measures the asymmetry of a distribution.
+:::
+
+### Types of Skewness:
+- **Symmetric (Skewness ≈ 0)**: Mean ≈ Median ≈ Mode
+- **Right-skewed (Positive skewness)**: Mean > Median, long tail to the right
+- **Left-skewed (Negative skewness)**: Mean < Median, long tail to the left
+
+---
+
+## Visual Examples of Skewness
+
+::: {.two-columns}
+::: {.example}
+#### Right-skewed (Income data):
+- Most people earn moderate amounts
+- Few people earn very high amounts
+- Mean > Median
+:::
+
+::: {.example}
+#### Left-skewed (Test scores with ceiling effect):
+- Most students score high
+- Few students score very low  
+- Mean < Median
+:::
+:::
+
+---
+
+## Kurtosis
+
+::: {.concept-box}
+#### 🎯 Definition
+**Kurtosis** measures the "tailedness" of a distribution.
+:::
+
+### Types:
+- **Mesokurtic (Normal-like)**: Kurtosis ≈ 3
+- **Leptokurtic (Heavy tails)**: Kurtosis > 3, more peaked
+- **Platykurtic (Light tails)**: Kurtosis < 3, flatter
+
+**Excess Kurtosis** = Kurtosis - 3 (makes normal distributions have excess kurtosis of 0)
+
+---
+
 # Data Visualization
 *20 minutes*
 
-# Histograms and Bin Width Selection
-*10 minutes*
+---
 
 ## What is a Histogram?
 
+::: {.concept-box}
+#### 🎯 Definition
 A **histogram** displays the distribution of a continuous variable by dividing data into bins and showing the frequency of observations in each bin.
+:::
 
 ### Key Components:
 - **X-axis**: Variable values (continuous)
@@ -968,23 +817,36 @@ A **histogram** displays the distribution of a continuous variable by dividing d
 - **Bins**: Intervals that group the data
 - **Bars**: Height represents frequency in each bin
 
-## Choosing Bin Width: Critical Decision{.smaller}
+---
 
-**Bin width dramatically affects histogram interpretation!**
+## Choosing Bin Width: Critical Decision
 
-### Too Few Bins (Wide bins):
+::: {.important}
+#### Bin width dramatically affects histogram interpretation!
+:::
+
+::: {.two-columns}
+::: {.note}
+#### Too Few Bins (Wide bins):
 - **Oversmoothing** - lose important details
 - May **hide multimodality**
 - Distribution appears simpler than it is
+:::
 
-### Too Many Bins (Narrow bins):
+::: {.note}
+#### Too Many Bins (Narrow bins):
 - **Undersmoothing** - too much noise
 - May create **artificial gaps**
 - Hard to see overall pattern
+:::
+:::
+
+---
 
 ## Bin Width Guidelines
 
-### Rule of Thumb Methods:
+::: {.concept-box}
+#### Rule of Thumb Methods:
 
 1. **Square Root Rule**: Number of bins ≈ $\sqrt{n}$
 2. **Sturges' Rule**: Number of bins = $1 + \log_2(n)$
@@ -992,52 +854,14 @@ A **histogram** displays the distribution of a continuous variable by dividing d
 4. **Freedman-Diaconis Rule**: Bin width = $\frac{2 \times \text{IQR}}{n^{1/3}}$
 
 **Best practice:** Try multiple bin widths and choose based on the story your data tells!
-
-## Python Histogram Examples{.smaller}
-
-::: {.panel-tabset}
-
-### Code
-
-```{python}
-#| echo: true
-#| eval: true
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Generate sample data
-np.random.seed(42)
-data = np.random.normal(100, 15, 1000)
-
-
-
-```
-
-### Visualization
-
-```{python}
-# Create subplots with different bin counts
-fig, axes = plt.subplots(2, 2, figsize=(10, 5))
-
-# Different bin counts
-bin_counts = [10, 30, 50, 100]
-titles = ['10 bins (too few)', '30 bins (good)', '50 bins (good)', '100 bins (too many)']
-for i, (bins, title) in enumerate(zip(bin_counts, titles)):
-    row, col = i // 2, i % 2
-    axes[row, col].hist(data, bins=bins, alpha=0.7, edgecolor='black')
-    axes[row, col].set_title(title)
-    axes[row, col].set_xlabel('Value')
-    axes[row, col].set_ylabel('Frequency')
-
-plt.tight_layout()
-plt.show()
-```
-
 :::
+
+---
 
 ## Interpreting Histograms
 
-### What to Look For:
+::: {.concept-box}
+#### What to Look For:
 
 1. **Shape**: Normal, skewed, uniform, bimodal?
 2. **Center**: Where is the "typical" value?
@@ -1045,87 +869,59 @@ plt.show()
 4. **Outliers**: Any unusual values?
 5. **Gaps**: Are there missing values in certain ranges?
 6. **Multiple peaks**: Suggests multiple subgroups
+:::
 
-# Boxplots and Interpretation
-*10 minutes*
+---
 
-## Anatomy of a Boxplot{.smaller}
+## Anatomy of a Boxplot
 
+::: {.concept-box}
+#### Boxplot Components:
 
-
-```{python}
-#| echo: false
-#| eval: true
-
-# Boxplot components illustration
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Sample data
-data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 20, 25]
-
-fig, ax = plt.subplots(figsize=(10, 6))
-
-# Create boxplot
-bp = ax.boxplot(data, vert=False, patch_artist=True)
-
-# Customize colors
-bp['boxes'][0].set_facecolor('lightblue')
-bp['medians'][0].set_color('red')
-bp['medians'][0].set_linewidth(2)
-
-# Add labels
-ax.set_xlabel('Values')
-ax.set_title('Anatomy of a Boxplot')
-
-# Add annotations
-ax.annotate('Q1 (25th percentile)', xy=(4, 1.1), xytext=(1, 1.3),
-            arrowprops=dict(arrowstyle='->', color='black'))
-ax.annotate('Median (Q2)', xy=(8, 1.1), xytext=(6, 1.3),
-            arrowprops=dict(arrowstyle='->', color='red'))
-ax.annotate('Q3 (75th percentile)', xy=(12, 1.1), xytext=(11, 1.3),
-            arrowprops=dict(arrowstyle='->', color='black'))
-
-plt.show()
-```
-
-
-## Boxplot Components Explained{.smaller}
-
-### The Box:
+**The Box:**
 - **Left edge**: Q1 (25th percentile)
 - **Middle line**: Median (Q2, 50th percentile)  
 - **Right edge**: Q3 (75th percentile)
 - **Box width**: IQR (contains middle 50% of data)
 
-### The Whiskers:
+**The Whiskers:**
 - **Extend to**: Most extreme values within 1.5 × IQR from box edges
-- **Lower whisker**: Minimum value within Q1 - 1.5×IQR
-- **Upper whisker**: Maximum value within Q3 + 1.5×IQR
 
-### Outliers:
+**Outliers:**
 - **Points beyond whiskers**: Values > Q3 + 1.5×IQR or < Q1 - 1.5×IQR
+:::
+
+---
 
 ## What Boxplots Tell Us
 
-### Distribution Shape:
+::: {.two-columns}
+::: {.concept-box}
+#### Distribution Shape:
 - **Symmetric**: Median in center of box, whiskers equal length
 - **Right-skewed**: Median closer to Q1, longer upper whisker
 - **Left-skewed**: Median closer to Q3, longer lower whisker
+:::
 
-### Variability:
+::: {.concept-box}
+#### Variability:
 - **Wide box**: High variability in middle 50%
 - **Long whiskers**: High overall variability
 - **Many outliers**: Extreme variability
+:::
+:::
 
-## Comparing Groups with Boxplots {.smaller}
+---
+
+## Comparing Groups with Boxplots
 
 ```{python}
-#| echo: false
-#| eval: true
+#| echo: true
+#| eval: false
 # Comparing multiple groups
 import pandas as pd
 import seaborn as sns
+import matplotlib.pyplot as plt
 
 # Create sample data for different groups
 np.random.seed(42)
@@ -1147,79 +943,81 @@ plt.ylabel('Test Score')
 plt.show()
 ```
 
-## Advanced Boxplot Interpretations
-
-## Comparing Boxplots:
-- **Median differences**: Which group has higher typical values?
-- **IQR differences**: Which group is more consistent?
-- **Outlier patterns**: Which group has more extreme values?
-- **Overlap**: Do the groups have similar ranges?
-
-## Business Applications:
-- **Quality control**: Compare product batches
-- **Performance analysis**: Compare team/department performance  
-- **Customer segmentation**: Compare customer groups
-
+---
 
 # Identifying Trends and Patterns
 *5 minutes*
 
-## Common Patterns in Data {.smaller}
+---
 
-### Distribution Patterns:
+## Common Patterns in Data
+
+::: {.concept-box}
+#### Distribution Patterns:
 1. **Normal/Bell-shaped**: Symmetric, single peak
 2. **Uniform**: All values equally likely
 3. **Bimodal**: Two distinct peaks (suggests subgroups)
 4. **Multimodal**: Multiple peaks
 5. **U-shaped**: High values at extremes, low in middle
 
-### Outlier Patterns:
+#### Outlier Patterns:
 - **Individual outliers**: Data entry errors, measurement errors
 - **Clustered outliers**: Distinct subpopulation
 - **Systematic outliers**: May indicate process changes
+:::
+
+---
 
 ## Red Flags in Data Visualization
 
-### Warning Signs:
+::: {.important}
+#### Warning Signs:
 1. **Gaps in histograms**: Missing data or measurement limitations
 2. **Heaping**: Values cluster at round numbers (10, 50, 100)
 3. **Truncation**: Data cut off at certain values
 4. **Digit preference**: People prefer certain ending digits
 5. **Multiple modes**: Hidden subgroups in your data
+:::
 
-
+---
 
 # Key Takeaways
 
+---
+
 ## Essential Concepts to Remember
 
-### Variability:
+::: {.two-columns}
+::: {.concept-box}
+#### Variability:
 - **Standard deviation** is preferred over range for most analyses
 - **CV** allows comparison across different scales
 - **IQR** is resistant to outliers
 
-### Position:
+#### Position:
 - **Percentiles** and **quartiles** provide relative position
 - **Z-scores** standardize across different distributions
 - **Five-number summary** gives complete overview
+:::
 
-### Visualization:
+::: {.concept-box}
+#### Visualization:
 - **Bin width choice** is critical for histogram interpretation
 - **Boxplots** excel at comparing groups and identifying outliers
 - **Multiple visualizations** provide different insights
 
-## Practical Guidelines
+#### General:
+- **Always visualize** before calculating statistics
+- **Use multiple measures** - no single statistic tells the whole story
+:::
+:::
 
-1. **Always visualize** before calculating statistics
-2. **Use multiple measures** - no single statistic tells the whole story
-3. **Consider the context** - what makes sense for your data?
-4. **Check for outliers** - they can drastically affect your analysis
-5. **Compare distributions** using standardized measures when appropriate
+---
 
+## Practice Problems
 
-# Practice Problems
-
-## Try These Exercises
+::: {.problem}
+#### Try These Exercises
 
 1. **Calculate** the five-number summary for: 12, 15, 18, 22, 25, 28, 30, 35, 40, 45
 
@@ -1230,18 +1028,29 @@ plt.show()
 4. **A student scores 85** on a test where the class mean is 78 and SD is 6. Calculate and interpret the z-score.
 
 5. **Design a boxplot comparison** for three different customer segments in your business.
-
-## Additional Resources
-
-- Matplotlib gallery: Histogram and boxplot examples
-- Seaborn documentation: Statistical visualizations
-- NumPy/SciPy: Statistical functions reference
-- Recommended reading: Chapter 4-5 in course textbook
+:::
 
 ---
 
-# Questions?
+## Questions? {.center}
 
 **Thank you for your attention!**
 
 *Remember: The goal of descriptive statistics is to understand your data story - let the visualizations guide your insights!*
+
+---
+
+## Additional Resources
+
+::: {.concept-box}
+#### For Further Learning:
+- **Matplotlib gallery**: Histogram and boxplot examples
+- **Seaborn documentation**: Statistical visualizations
+- **NumPy/SciPy**: Statistical functions reference
+- **Recommended reading**: Chapter 4-5 in course textbook
+
+#### Next Steps:
+- **Correlation and association** between variables
+- **Time series analysis** for temporal patterns
+- **Statistical inference** based on descriptive findings
+:::

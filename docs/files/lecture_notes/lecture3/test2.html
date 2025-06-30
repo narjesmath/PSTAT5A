@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Narjes Mathlouthi">
-  <meta name="dcterms.date" content="2025-06-30">
+  <meta name="dcterms.date" content="2025-06-29">
   <title>PSTAT5A – Descriptive Statistics Part II</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -197,7 +197,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Descriptive Statistics Part II</h1>
-  <p class="subtitle">Variability, Position, Shape &amp; Visualization Lecture</p>
+  <p class="subtitle">Variability, Position, Shape &amp; Visualization</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -207,7 +207,7 @@ Narjes Mathlouthi
 </div>
 </div>
 
-  <p class="date">2025-06-30</p>
+  <p class="date">2025-06-29</p>
 </section>
 <section id="learning-objectives" class="slide level2 smaller">
 <h2>Learning Objectives</h2>
@@ -226,31 +226,18 @@ Narjes Mathlouthi
 <h2>Lecture Outline</h2>
 <div class="two-columns">
 <div>
-<p><strong>Part I: Measures of Variability (25 min)</strong></p>
-<ul>
-<li><p>Range, Variance, Standard Deviation</p></li>
-<li><p>Coefficient of Variation</p></li>
-<li><p>Python Implementation</p></li>
-</ul>
-<p><strong>Part II: Measures of Position (20 min)</strong></p>
-<ul>
-<li><p>Percentiles and Quartiles</p></li>
-<li><p>Z-scores and Standardization</p></li>
-</ul>
+<p><strong>Part I: Measures of Variability (25 min)</strong> - Range, Variance, Standard Deviation - Coefficient of Variation - Python Implementation</p>
+<p><strong>Part II: Measures of Position (20 min)</strong> - Percentiles and Quartiles - Z-scores and Standardization</p>
 </div>
 <div>
-<p><strong>Part III: Distribution Shape (10 min)</strong></p>
-<ul>
-<li>Skewness and Kurtosis</li>
-</ul>
-<p><strong>Part IV: Data Visualization (20 min)</strong></p>
-<ul>
-<li><p>Histograms and Bin Width Selection</p></li>
-<li><p>Boxplots and Interpretation</p></li>
-</ul>
+<p><strong>Part III: Distribution Shape (10 min)</strong> - Skewness and Kurtosis</p>
+<p><strong>Part IV: Data Visualization (20 min)</strong> - Histograms and Bin Width Selection - Boxplots and Interpretation</p>
 <p><strong>Part V: Identifying Patterns (5 min)</strong></p>
 </div>
 </div>
+</section>
+<section class="slide level2">
+
 </section>
 <section>
 <section id="measures-of-variability" class="title-slide slide level1 center">
@@ -270,10 +257,9 @@ Narjes Mathlouthi
 <li>Essential for <strong>risk assessment</strong> and <strong>quality control</strong></li>
 <li>Helps determine <strong>confidence</strong> in our central tendency measures</li>
 </ul>
-</section></section>
-<section>
-<section id="comparing-datasets-with-same-mean" class="title-slide slide level1 smaller center">
-<h1>Comparing Datasets with Same Mean</h1>
+</section>
+<section id="comparing-datasets-with-same-mean" class="slide level2">
+<h2>Comparing Datasets with Same Mean</h2>
 <div class="example">
 <p><strong>Dataset A:</strong> 98, 99, 100, 101, 102 (Mean = 100)</p>
 <p><strong>Dataset B:</strong> 80, 90, 100, 110, 120 (Mean = 100)</p>
@@ -296,69 +282,114 @@ Narjes Mathlouthi
 <p><strong>Range</strong> = 35 - 12 = 23</p>
 </div>
 </section>
+<section id="properties-of-range" class="slide level2">
+<h2>Properties of Range</h2>
+<div class="two-columns">
+<section id="advantages" class="example">
+<h4>✅ Advantages</h4>
+<ul>
+<li><strong>Simple to calculate</strong> and understand</li>
+<li><strong>Quick measure</strong> of spread</li>
+<li><strong>Easy to communicate</strong></li>
+</ul>
+</section>
+<section id="disadvantages" class="important">
+<h4>❌ Disadvantages</h4>
+<ul>
+<li><strong>Uses only two values</strong> (ignores all others)</li>
+<li><strong>Sensitive to outliers</strong></li>
+<li><strong>Limited information</strong> about distribution</li>
+</ul>
+</section>
+</div>
+</section>
 <section id="when-to-use-range" class="slide level2">
 <h2>When to Use Range</h2>
-<p>✅ <strong>Use range when:</strong></p>
+<div class="concept-box">
+<h4 id="use-range-when">Use range when:</h4>
 <ul>
-<li><p>Need a <strong>quick, simple measure</strong> of spread</p></li>
-<li><p>Working with <strong>small datasets</strong></p></li>
-<li><p>Communicating to <strong>non-technical audiences</strong></p></li>
+<li>Need a <strong>quick, simple measure</strong> of spread</li>
+<li>Working with <strong>small datasets</strong></li>
+<li>Communicating to <strong>non-technical audiences</strong></li>
 </ul>
-<p>❌ <strong>Avoid range when:</strong></p>
+<h4 id="avoid-range-when">Avoid range when:</h4>
 <ul>
-<li><p><strong>Outliers</strong> are present</p></li>
-<li><p>Need <strong>detailed information</strong> about variability</p></li>
-<li><p>Working with <strong>large datasets</strong></p></li>
+<li><strong>Outliers</strong> are present</li>
+<li>Need <strong>detailed information</strong> about variability</li>
+<li>Working with <strong>large datasets</strong></li>
 </ul>
+</div>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
 <section id="variance-and-standard-deviation" class="title-slide slide level1 center">
 <h1>Variance and Standard Deviation</h1>
-<p><em>15 minutes</em></p>
+
 </section>
-<section id="variance-definition" class="slide level2 smaller">
+<section id="variance-definition" class="slide level2">
 <h2>Variance Definition</h2>
 <section id="definition-1" class="concept-box">
 <h4>🎯 Definition</h4>
 <p><strong>Variance</strong> measures the average squared deviation from the mean.</p>
 </section>
 
-<img data-src="../../../files/lecture_notes/lecture3/img/variance.png" class="r-stretch"></section></section>
-<section>
-<section id="population-vs-sample-variance" class="title-slide slide level1 center">
-<h1>Population vs Sample Variance</h1>
+<img data-src="../../../files/lecture_notes/lecture3/img/variance.png" class="r-stretch"></section>
+<section id="population-vs-sample-variance" class="slide level2 center">
+<h2>Population vs Sample Variance</h2>
 <p>Understanding the mathematical foundations</p>
 </section>
-<section id="recall" class="slide level2">
-<h2>Recall</h2>
+<section id="recall-population-vs-sample" class="slide level2">
+<h2>Recall: Population vs Sample</h2>
 
 <img data-src="../../../files/lecture_notes/lecture3/img/sampling.png" class="r-stretch"></section>
-<section id="side-by-side-comparison" class="slide level2 smaller">
+<section id="side-by-side-comparison" class="slide level2">
 <h2>Side-by-Side Comparison</h2>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-<div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
-<div style="background: #dc3545; color: white; text-align: center; padding: 15px; font-weight: bold; margin: -20px -20px 20px -20px; border-radius: 10px 10px 0 0;">
+<div class="variance-container">
+<div class="variance-section">
+<div class="variance-header">
 <p>Population Variance</p>
 </div>
 <div class="formula-box">
 <p><span class="math display">\[\sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}\]</span></p>
 </div>
-<p><span class="math inline">\(\sigma^2\)</span> = population variance<br>
-<span class="math inline">\(x_i\)</span> = value of <span class="math inline">\(i^{th}\)</span> element<br>
-<span class="math inline">\(\mu\)</span> = population mean<br>
-<span class="math inline">\(N\)</span> = population size</p>
+<div class="definitions">
+<div class="definition-item">
+<p><span class="math inline">\(\sigma^2\)</span> = population variance</p>
 </div>
-<div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
-<div style="background: #dc3545; color: white; text-align: center; padding: 15px; font-weight: bold; margin: -20px -20px 20px -20px; border-radius: 10px 10px 0 0;">
+<div class="definition-item">
+<p><span class="math inline">\(x_i\)</span> = value of <span class="math inline">\(i^{th}\)</span> element</p>
+</div>
+<div class="definition-item">
+<p><span class="math inline">\(\mu\)</span> = population mean</p>
+</div>
+<div class="definition-item">
+<p><span class="math inline">\(N\)</span> = population size</p>
+</div>
+</div>
+</div>
+<div class="variance-section">
+<div class="variance-header">
 <p>Sample Variance</p>
 </div>
 <div class="formula-box">
 <p><span class="math display">\[s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}\]</span></p>
 </div>
-<p><span class="math inline">\(s^2\)</span> = sample variance<br>
-<span class="math inline">\(x_i\)</span> = value of <span class="math inline">\(i^{th}\)</span> element<br>
-<span class="math inline">\(\bar{x}\)</span> = sample mean<br>
-<span class="math inline">\(n\)</span> = sample size</p>
+<div class="definitions">
+<div class="definition-item">
+<p><span class="math inline">\(s^2\)</span> = sample variance</p>
+</div>
+<div class="definition-item">
+<p><span class="math inline">\(x_i\)</span> = value of <span class="math inline">\(i^{th}\)</span> element</p>
+</div>
+<div class="definition-item">
+<p><span class="math inline">\(\bar{x}\)</span> = sample mean</p>
+</div>
+<div class="definition-item">
+<p><span class="math inline">\(n\)</span> = sample size</p>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -367,22 +398,17 @@ Narjes Mathlouthi
 <div class="key-difference">
 <p><strong>Key Difference:</strong> Sample variance uses <span class="math inline">\((n-1)\)</span> instead of <span class="math inline">\(N\)</span> in the denominator</p>
 </div>
-<p><strong>Why <span class="math inline">\((n-1)\)</span>?</strong></p>
-<ul>
-<li><p>When we use sample mean <span class="math inline">\(\bar{x}\)</span> to estimate population mean <span class="math inline">\(\mu\)</span></p></li>
-<li><p>We lose one <strong>degree of freedom</strong></p></li>
-<li><p>Called <strong>Bessel’s correction</strong></p></li>
-<li><p>Makes sample variance an <strong>unbiased estimator</strong></p></li>
-</ul>
+<p><strong>Why <span class="math inline">\((n-1)\)</span>?</strong> - When we use sample mean <span class="math inline">\(\bar{x}\)</span> to estimate population mean <span class="math inline">\(\mu\)</span> - We lose one <strong>degree of freedom</strong> - Called <strong>Bessel’s correction</strong> - Makes sample variance an <strong>unbiased estimator</strong></p>
 </section>
-<section id="when-to-use-each-formula" class="slide level2 smaller">
+<section id="when-to-use-each-formula" class="slide level2">
 <h2>When to Use Each Formula</h2>
+<div class="two-columns">
 <section id="population-variance-sigma2" class="concept-box">
 <h4>Population Variance (<span class="math inline">\(\sigma^2\)</span>)</h4>
 <ul>
-<li><p>You have data for the <strong>entire population</strong></p></li>
-<li><p>You know the true population mean <span class="math inline">\(\mu\)</span></p></li>
-<li><p>Example: Test scores for all students in a small class</p></li>
+<li>You have data for the <strong>entire population</strong></li>
+<li>You know the true population mean <span class="math inline">\(\mu\)</span></li>
+<li>Example: Test scores for all students in a small class</li>
 </ul>
 </section>
 <section id="sample-variance-s2" class="concept-box">
@@ -393,21 +419,20 @@ Narjes Mathlouthi
 <li>Example: Survey responses from 100 people out of 10,000</li>
 </ul>
 </section>
-</section></section>
-<section>
-<section id="degrees-of-freedom-concept" class="title-slide slide level1 center">
-<h1>Degrees of Freedom Concept</h1>
-
+</div>
 </section>
+<section id="degrees-of-freedom-concept" class="slide level2">
+<h2>Degrees of Freedom Concept</h2>
 <section id="definition-2" class="concept-box">
 <h4>🎯 Definition</h4>
 <p><strong>Degrees of Freedom</strong> = Number of independent pieces of information available for estimating a parameter</p>
 </section>
-<section id="understanding-degrees-of-freedom" class="slide level2 smaller">
+</section>
+<section id="understanding-degrees-of-freedom" class="slide level2">
 <h2>Understanding Degrees of Freedom</h2>
 <div class="two-columns">
-<section id="population-case" class="smaller example">
-<h4 class="smaller">📊 Population Case</h4>
+<section id="population-case" class="example">
+<h4>📊 Population Case</h4>
 <p><strong>All observations are independent</strong></p>
 <ul>
 <li>We know the true population mean <span class="math inline">\(\mu\)</span></li>
@@ -418,8 +443,8 @@ Narjes Mathlouthi
 <p><span class="math display">\[\text{Degrees of Freedom} = N\]</span></p>
 </div>
 </section>
-<section id="sample-case" class="smaller important">
-<h4 class="smaller">📈 Sample Case</h4>
+<section id="sample-case" class="important">
+<h4>📈 Sample Case</h4>
 <p><strong>Constraint introduced by sample mean</strong></p>
 <ul>
 <li>We must estimate <span class="math inline">\(\mu\)</span> using <span class="math inline">\(\bar{x}\)</span></li>
@@ -431,393 +456,112 @@ Narjes Mathlouthi
 </div>
 </section>
 </div>
-</section></section>
-<section>
-<section id="why-does-this-matter" class="title-slide slide level1 center">
-<h1>Why Does This Matter?</h1>
+</section>
+<section id="why-does-this-matter" class="slide level2">
+<h2>Why Does This Matter?</h2>
 <div class="key-difference">
 <p><strong>Key Insight:</strong> Using <span class="math inline">\(\bar{x}\)</span> instead of <span class="math inline">\(\mu\)</span> creates dependency among observations</p>
 </div>
-</section>
 <section id="intuitive-explanation" class="concept-box">
 <h4>🧠 Intuitive Explanation</h4>
 <p>Imagine you have 5 numbers that must average to 10:</p>
-<p><strong>If the mean is fixed at 10:</strong></p>
-<ul>
-<li><p>Choose any 4 numbers freely: 8, 12, 7, 15</p></li>
-<li><p>The 5th number is forced: <span class="math inline">\(5 \times 10 - (8+12+7+15) = 8\)</span></p></li>
-<li><p>Only 4 degrees of freedom, not 5!</p></li>
-</ul>
+<p><strong>If the mean is fixed at 10:</strong> - Choose any 4 numbers freely: 8, 12, 7, 15 - The 5th number is forced: <span class="math inline">\(5 \times 10 - (8+12+7+15) = 8\)</span> - Only 4 degrees of freedom, not 5!</p>
 <p><strong>This is exactly what happens with sample variance</strong></p>
 </section>
-<section id="section" class="slide level2 smaller">
-<h2></h2>
-<section id="sample-mean-constraint" class="formula-box">
-<h4>Sample Mean Constraint</h4>
-<p><span class="math display">\[\bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n}\]</span></p>
-<p><strong>Rearranging:</strong> <span class="math display">\[x_n = n\bar{x} - (x_1 + x_2 + \cdots + x_{n-1})\]</span></p>
-<p>Once we know <span class="math inline">\(\bar{x}\)</span> and the first <span class="math inline">\((n-1)\)</span> values, <span class="math inline">\(x_n\)</span> is completely determined!</p>
 </section>
-</section></section>
-<section>
-<section id="degrees-of-freedom-in-other-contexts" class="title-slide slide level1 center">
-<h1>Degrees of Freedom in Other Contexts</h1>
-
+<section id="mathematical-consequences" class="slide level2">
+<h2>Mathematical Consequences</h2>
+<div class="two-columns">
+<section id="with-n-1-unbiased" class="theorem">
+<h4>✅ With <span class="math inline">\((n-1)\)</span>: Unbiased</h4>
+<p><span class="math display">\[E[s^2] = E\left[\frac{\sum(x_i - \bar{x})^2}{n-1}\right] = \sigma^2\]</span></p>
+<p>Sample variance is an <strong>unbiased estimator</strong> of population variance</p>
 </section>
-<section id="general-pattern" class="definition">
-<h4>📚 General Pattern</h4>
-<p><strong>Degrees of Freedom = Sample Size - Number of Parameters Estimated</strong></p>
-<p><strong>Examples:</strong></p>
-<ul>
-<li><p><strong>Sample mean:</strong> <span class="math inline">\(df = n - 0 = n\)</span> (no parameters estimated from data)</p></li>
-<li><p><strong>Sample variance:</strong> <span class="math inline">\(df = n - 1\)</span> (estimate <span class="math inline">\(\mu\)</span> with <span class="math inline">\(\bar{x}\)</span>)</p></li>
-<li><p><strong>Linear regression:</strong> <span class="math inline">\(df = n - p - 1\)</span> (estimate <span class="math inline">\(p\)</span> coefficients + intercept)</p></li>
-<li><p><strong>Chi-square test:</strong> <span class="math inline">\(df = (rows-1) \times (cols-1)\)</span></p></li>
-</ul>
-</section></section>
-<section>
-<section id="common-questions" class="title-slide slide level1 center">
-<h1>Common Questions</h1>
-
+<section id="with-n-biased" class="note">
+<h4>❌ With <span class="math inline">\(n\)</span>: Biased</h4>
+<p><span class="math display">\[E\left[\frac{\sum(x_i - \bar{x})^2}{n}\right] = \frac{n-1}{n}\sigma^2\]</span></p>
+<p>Systematically <strong>underestimates</strong> the true variance by factor <span class="math inline">\(\frac{n-1}{n}\)</span></p>
 </section>
-<section id="why-cant-we-just-use-the-population-mean" class="concept-box">
-<h4>❓ “Why can’t we just use the population mean?”</h4>
-<p><strong>Answer:</strong> In practice, we rarely know <span class="math inline">\(\mu\)</span>. We’re estimating it from the same data we’re using to calculate variance.</p>
+</div>
 </section>
-<section id="when-does-the-difference-matter-most" class="concept-box">
-<h4>❓ “When does the difference matter most?”</h4>
-<p><strong>Answer:</strong> Small samples! The correction becomes negligible as <span class="math inline">\(n\)</span> increases.</p>
-</section>
-<section id="what-if-i-know-the-true-population-mean" class="concept-box">
-<h4>❓ “What if I know the true population mean?”</h4>
-<p><strong>Answer:</strong> Then you can use <span class="math inline">\(n\)</span> in the denominator: <span class="math inline">\(\frac{\sum(x_i - \mu)^2}{n}\)</span></p>
+<section id="practical-impact" class="slide level2">
+<h2>Practical Impact</h2>
+<div class="variance-container">
+<div class="variance-section">
+<div class="variance-header">
+<p>Small Samples (n = 5)</p>
+</div>
+<p><strong>Bias factor:</strong> <span class="math inline">\(\frac{n-1}{n} = \frac{4}{5} = 0.8\)</span></p>
+<p><strong>20% underestimation</strong> if using <span class="math inline">\(n\)</span></p>
+<div class="key-difference">
+<p><strong>Large impact on inference!</strong></p>
+</div>
+</div>
+<div class="variance-section">
+<div class="variance-header">
+<p>Large Samples (n = 100)</p>
+</div>
+<p><strong>Bias factor:</strong> <span class="math inline">\(\frac{n-1}{n} = \frac{99}{100} = 0.99\)</span></p>
+<p><strong>1% underestimation</strong> if using <span class="math inline">\(n\)</span></p>
+<div class="concept-box">
+<p><strong>Minimal practical difference</strong></p>
+</div>
+</div>
+</div>
 </section>
 <section id="example-calculation" class="slide level2">
 <h2>Example Calculation</h2>
 <p><strong>Data:</strong> 3, 7, 2, 8, 5</p>
-<p><strong>If this is the entire population:</strong></p>
+<div class="two-columns">
+<section id="if-this-is-the-entire-population" class="example">
+<h4>If this is the entire population:</h4>
 <ul>
-<li><p><span class="math inline">\(\mu = \frac{3+7+2+8+5}{5} = 5\)</span></p></li>
-<li><p><span class="math inline">\(\sigma^2 = \frac{(3-5)^2+(7-5)^2+(2-5)^2+(8-5)^2+(5-5)^2}{5} = \frac{22}{5} = 4.4\)</span></p></li>
-</ul>
-<p><strong>If this is a sample:</strong></p>
-<ul>
-<li><p><span class="math inline">\(\bar{x} = 5\)</span> (same calculation)</p></li>
-<li><p><span class="math inline">\(s^2 = \frac{22}{5-1} = \frac{22}{4} = 5.5\)</span></p></li>
+<li><span class="math inline">\(\mu = \frac{3+7+2+8+5}{5} = 5\)</span></li>
+<li><span class="math inline">\(\sigma^2 = \frac{(3-5)^2+(7-5)^2+(2-5)^2+(8-5)^2+(5-5)^2}{5} = \frac{22}{5} = 4.4\)</span></li>
 </ul>
 </section>
-<section id="variance-properties" class="slide level2">
-<h2>Variance Properties</h2>
-<p><strong>Variance measures:</strong></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (If this is a sample:). </span></p>
 <ul>
-<li><p>Average squared deviation from the mean</p></li>
-<li><p>Always non-negative: <span class="math inline">\(\sigma^2 \geq 0\)</span>, <span class="math inline">\(s^2 \geq 0\)</span></p></li>
-<li><p>Units: (original units)²</p></li>
-</ul>
-<p><strong>Standard Deviation:</strong></p>
-<ul>
-<li><p><span class="math inline">\(\sigma = \sqrt{\sigma^2}\)</span> (population)</p></li>
-<li><p><span class="math inline">\(s = \sqrt{s^2}\)</span> (sample)</p></li>
-<li><p>Same units as original data</p></li>
-</ul>
-</section>
-<section id="bias-and-unbiasedness" class="slide level2 smaller">
-<h2>Bias and Unbiasedness</h2>
-<p><strong>Population variance:</strong></p>
-<ul>
-<li><p>True parameter value</p></li>
-<li><p>No estimation involved</p></li>
-</ul>
-<p><strong>Sample variance with <span class="math inline">\((n-1)\)</span>:</strong></p>
-<ul>
-<li><p><span class="math inline">\(E[s^2] = \sigma^2\)</span> (unbiased)</p></li>
-<li><p>On average, equals population variance</p></li>
-</ul>
-<p><strong>Sample variance with <span class="math inline">\(n\)</span>:</strong></p>
-<ul>
-<li><p><span class="math inline">\(E\left[\frac{\sum(x_i - \bar{x})^2}{n}\right] = \frac{n-1}{n}\sigma^2\)</span> (biased)</p></li>
-<li><p>Systematically underestimates population variance</p></li>
-</ul>
-</section></section>
-<section>
-<section id="common-questions-1" class="title-slide slide level1 center">
-<h1>Common Questions</h1>
-
-</section>
-<section id="why-not-just-use-n-for-sample-variance" class="concept-box">
-<h4>❓ “Why not just use <span class="math inline">\(n\)</span> for sample variance?”</h4>
-<p><strong>Answer:</strong> It would systematically underestimate the true variance</p>
-</section>
-<section id="when-does-it-matter" class="concept-box">
-<h4>❓ “When does it matter?”</h4>
-<p><strong>Answer:</strong> More important for small samples; less difference as <span class="math inline">\(n\)</span> increases</p>
-</section>
-<section id="what-if-i-know-the-population-mean" class="concept-box">
-<h4>❓ “What if I know the population mean?”</h4>
-<p><strong>Answer:</strong> Then you can use <span class="math inline">\(n\)</span> in denominator: <span class="math inline">\(\frac{\sum(x_i - \mu)^2}{n}\)</span></p>
-</section>
-<section id="implementation" class="slide level2">
-<h2>Implementation</h2>
-<p><strong>Calculators:</strong></p>
-<ul>
-<li><p>Most use <span class="math inline">\((n-1)\)</span> by default for sample standard deviation</p></li>
-<li><p>Check your calculator’s documentation</p></li>
-</ul>
-<p><strong>Software:</strong></p>
-<ul>
-<li><p><strong>R:</strong> <code>var()</code> uses <span class="math inline">\((n-1)\)</span>, <code>sd()</code> uses <span class="math inline">\((n-1)\)</span></p></li>
-<li><p><strong>Excel:</strong> <code>VAR.S()</code> uses <span class="math inline">\((n-1)\)</span>, <code>VAR.P()</code> uses <span class="math inline">\(n\)</span></p></li>
-<li><p><strong>Python:</strong> <code>np.var(ddof=1)</code> uses <span class="math inline">\((n-1)\)</span></p></li>
-</ul>
-</section>
-<section id="practice-problem" class="slide level2">
-<h2>Practice Problem</h2>
-<p><strong>Dataset:</strong> Number of hours studied by 6 students: 2, 4, 3, 5, 6, 4</p>
-<p>Calculate both:</p>
-<ol type="1">
-<li><p>Population variance (assuming this is the entire population)</p></li>
-<li><p>Sample variance (assuming this is a sample)</p></li>
-</ol>
-<div class="fragment">
-<p><strong>Solution:</strong></p>
-<ul>
-<li><p>Mean: <span class="math inline">\(\bar{x} = \frac{24}{6} = 4\)</span></p></li>
-<li><p>Population variance: <span class="math inline">\(\sigma^2 = \frac{10}{6} = 1.67\)</span></p></li>
-<li><p>Sample variance: <span class="math inline">\(s^2 = \frac{10}{5} = 2.0\)</span></p></li>
+<li><span class="math inline">\(\bar{x} = 5\)</span> (same calculation)</li>
+<li><span class="math inline">\(s^2 = \frac{22}{5-1} = \frac{22}{4} = 5.5\)</span></li>
 </ul>
 </div>
+</div>
 </section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
-<section id="key-takeaways" class="concept-box">
-<h4>Key Takeaways</h4>
-<ul>
-<li><strong>Population variance</strong> uses <span class="math inline">\(N\)</span> (entire population)</li>
-<li><strong>Sample variance</strong> uses <span class="math inline">\((n-1)\)</span> (Bessel’s correction)</li>
-<li>Sample variance is <strong>unbiased estimator</strong> of population variance</li>
-<li>Difference matters more for <strong>small samples</strong></li>
-<li>Always check which formula your software uses!</li>
-</ul>
-</section>
-</section></section>
-<section>
-<section id="standard-deviation-definition" class="title-slide slide level1 center">
-<h1>Standard Deviation Definition</h1>
-
-</section>
+<section id="standard-deviation-definition" class="slide level2">
+<h2>Standard Deviation Definition</h2>
 <section id="definition-3" class="concept-box">
 <h4>🎯 Definition</h4>
 <p><strong>Standard Deviation</strong> is the square root of variance.</p>
 </section>
+<div class="two-columns">
 <section id="sample-standard-deviation" class="formula-box">
-<h3>Sample Standard Deviation</h3>
+<h4>Sample Standard Deviation</h4>
 <p><span class="math display">\[s = \sqrt{s^2} = \sqrt{\frac{\sum(x_i - \bar{x})^2}{n-1}}\]</span></p>
 </section>
 <section id="population-standard-deviation" class="formula-box">
-<h3>Population Standard Deviation</h3>
+<h4>Population Standard Deviation</h4>
 <p><span class="math display">\[\sigma = \sqrt{\sigma^2} = \sqrt{\frac{\sum(x_i - \mu)^2}{N}}\]</span></p>
 </section>
-<section id="example-1" class="slide level2 smaller">
-<h2>Example</h2>
+</div>
+</section>
+<section id="step-by-step-standard-deviation-example" class="slide level2">
+<h2>Step-by-Step Standard Deviation Example</h2>
+<h3 id="given-data">Given Data</h3>
 <div class="concept-box">
-<section id="complete-population-data-test-scores" class="smaller">
-<h4>📊 Complete Population Data (Test Scores)</h4>
-<p>We have test scores from 100 students arranged in a grid:</p>
-</section>
+<h4 id="sample-data-82-95-83-60-92">Sample Data: 82, 95, 83, 60, 92</h4>
+<h4 id="sample-size-n-5">Sample Size: n = 5</h4>
 </div>
-<div style="font-family: monospace; font-size: 0.5em; border: 2px solid #2c3e50; background: white; padding: 1em; margin: 1em 0; overflow-x: auto;">
-<table class="caption-top">
-<colgroup>
-<col style="width: 2%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>A</strong></th>
-<th><strong>B</strong></th>
-<th><strong>C</strong></th>
-<th><strong>D</strong></th>
-<th><strong>E</strong></th>
-<th><strong>F</strong></th>
-<th><strong>G</strong></th>
-<th><strong>H</strong></th>
-<th><strong>I</strong></th>
-<th><strong>J</strong></th>
-<th><strong>K</strong></th>
-<th><strong>L</strong></th>
-<th><strong>M</strong></th>
-<th><strong>N</strong></th>
-<th><strong>O</strong></th>
-<th><strong>P</strong></th>
-<th><strong>Q</strong></th>
-<th><strong>R</strong></th>
-<th><strong>S</strong></th>
-<th><strong>T</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>1</strong></td>
-<td>24</td>
-<td>96</td>
-<td>30</td>
-<td>69</td>
-<td>85</td>
-<td><span style="background-color: #ffeb3b; font-weight: bold; border: 2px solid #f57f17; padding: 2px;"><strong>60</strong></span></td>
-<td>55</td>
-<td>18</td>
-<td>30</td>
-<td>66</td>
-<td>64</td>
-<td>99</td>
-<td>92</td>
-<td>95</td>
-<td>84</td>
-<td>55</td>
-<td>72</td>
-<td>38</td>
-<td>86</td>
-<td>32</td>
-</tr>
-<tr class="even">
-<td><strong>2</strong></td>
-<td>53</td>
-<td>81</td>
-<td>30</td>
-<td>89</td>
-<td>42</td>
-<td>94</td>
-<td>31</td>
-<td>26</td>
-<td>53</td>
-<td>78</td>
-<td>38</td>
-<td>60</td>
-<td>93</td>
-<td>90</td>
-<td><span style="background-color: #ffeb3b; font-weight: bold; border: 2px solid #f57f17; padding: 2px;"><strong>82</strong></span></td>
-<td>85</td>
-<td>89</td>
-<td>54</td>
-<td>30</td>
-<td>58</td>
-</tr>
-<tr class="odd">
-<td><strong>3</strong></td>
-<td>62</td>
-<td>67</td>
-<td>75</td>
-<td>47</td>
-<td>99</td>
-<td>25</td>
-<td>32</td>
-<td>63</td>
-<td>49</td>
-<td>45</td>
-<td>30</td>
-<td>97</td>
-<td>57</td>
-<td>32</td>
-<td>37</td>
-<td>62</td>
-<td>33</td>
-<td>16</td>
-<td>11</td>
-<td>41</td>
-</tr>
-<tr class="even">
-<td><strong>4</strong></td>
-<td>95</td>
-<td>74</td>
-<td>28</td>
-<td>73</td>
-<td>82</td>
-<td>97</td>
-<td>65</td>
-<td>88</td>
-<td>56</td>
-<td><span style="background-color: #ffeb3b; font-weight: bold; border: 2px solid #f57f17; padding: 2px;"><strong>95</strong></span></td>
-<td>85</td>
-<td>44</td>
-<td>70</td>
-<td>65</td>
-<td>34</td>
-<td>85</td>
-<td>58</td>
-<td>15</td>
-<td>64</td>
-<td>84</td>
-</tr>
-<tr class="odd">
-<td><strong>5</strong></td>
-<td>76</td>
-<td>46</td>
-<td><span style="background-color: #ffeb3b; font-weight: bold; border: 2px solid #f57f17; padding: 2px;"><strong>83</strong></span></td>
-<td>56</td>
-<td>98</td>
-<td>16</td>
-<td>76</td>
-<td>77</td>
-<td>35</td>
-<td>19</td>
-<td>97</td>
-<td>42</td>
-<td>90</td>
-<td>79</td>
-<td>73</td>
-<td>28</td>
-<td>82</td>
-<td><span style="background-color: #ffeb3b; font-weight: bold; border: 2px solid #f57f17; padding: 2px;"><strong>92</strong></span></td>
-<td>90</td>
-<td>22</td>
-</tr>
-</tbody>
-</table>
+</section>
+<section id="step-1-calculate-the-sample-mean" class="slide level2">
+<h2>Step 1: Calculate the Sample Mean</h2>
+<div class="formula-box">
+<p><span class="math display">\[\bar{x} = \frac{\sum x_i}{n} = \frac{82 + 95 + 83 + 60 + 92}{5} = \frac{412}{5} = 82.4\]</span></p>
 </div>
-<div class="important">
-<section id="random-sample-selection" class="smaller">
-<h4>🎯 Random Sample Selection</h4>
-<p>We randomly select 5 scores from different positions in our population:</p>
-<p><strong>Our Sample:</strong> 82, 95, 83, 60, 92</p>
 </section>
-</div>
-</section></section>
-<section>
-<section id="detailed-calculation" class="title-slide slide level1 center">
-<h1>Detailed Calculation</h1>
-
-</section>
-<section id="sample-size-n-5" class="formula-box">
-<h4>Sample Size: n = 5</h4>
-<p>These 5 values will be used for our standard deviation calculation</p>
-</section>
-<section id="sample-mean-calculation" class="formula-box">
-<h4>Sample Mean Calculation</h4>
-<p><span class="math display">\[\bar{x} = \frac{82 + 95 + 83 + 60 + 92}{5} = \frac{412}{5} = 82.4\]</span></p>
-</section></section>
-<section>
-<section id="section-1" class="title-slide slide level1 center">
-<h1></h1>
+<section id="step-2-calculate-deviations-and-squared-deviations" class="slide level2">
+<h2>Step 2: Calculate Deviations and Squared Deviations</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -860,29 +604,37 @@ Narjes Mathlouthi
 </tbody>
 </table>
 </section>
-<section id="final-calculations" class="slide level2 smaller">
-<h2>Final Calculations</h2>
-<div class="variance-container">
-<div class="variance-section">
-<div class="variance-header">
-<p>Sample Variance</p>
-</div>
+<section id="step-3-calculate-sample-variance" class="slide level2">
+<h2>Step 3: Calculate Sample Variance</h2>
 <div class="formula-box">
-<p><span class="math display">\[s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}\]</span> <span class="math display">\[s^2 = \frac{753.2}{5-1} = \frac{753.2}{4} = 188.3\]</span></p>
-</div>
-</div>
-<div class="variance-section">
-<div class="variance-header">
-<p>Sample Standard Deviation</p>
-</div>
-<div class="formula-box">
-<p><span class="math display">\[s = \sqrt{s^2}\]</span> <span class="math display">\[s = \sqrt{188.3} = 13.72\]</span></p>
-</div>
-</div>
+<p><span class="math display">\[s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1} = \frac{753.2}{5-1} = \frac{753.2}{4} = 188.3\]</span></p>
 </div>
 </section>
-<section id="properties-of-standard-deviation" class="slide level2 smaller">
+<section id="step-4-calculate-sample-standard-deviation" class="slide level2">
+<h2>Step 4: Calculate Sample Standard Deviation</h2>
+<div class="formula-box">
+<p><span class="math display">\[s = \sqrt{s^2} = \sqrt{188.3} = 13.72\]</span></p>
+</div>
+</section>
+<section id="final-answer" class="slide level2">
+<h2>Final Answer</h2>
+<div class="key-difference">
+<p><strong>Sample Standard Deviation = 13.72</strong></p>
+</div>
+<section id="summary-of-results" class="concept-box">
+<h4>Summary of Results:</h4>
+<ul>
+<li><strong>Sample Mean:</strong> <span class="math inline">\(\bar{x} = 82.4\)</span></li>
+<li><strong>Sample Variance:</strong> <span class="math inline">\(s^2 = 188.3\)</span><br>
+</li>
+<li><strong>Sample Standard Deviation:</strong> <span class="math inline">\(s = 13.72\)</span></li>
+</ul>
+</section>
+</section>
+<section id="properties-of-standard-deviation" class="slide level2">
 <h2>Properties of Standard Deviation</h2>
+<section id="key-properties" class="concept-box">
+<h4>Key Properties:</h4>
 <ul>
 <li><strong>Same units</strong> as the original data</li>
 <li><strong>Always non-negative</strong></li>
@@ -892,66 +644,61 @@ Narjes Mathlouthi
 <li><strong>Approximately 95%</strong> of data within 2 SD of mean</li>
 </ul>
 </section>
-<section id="empirical-rule-68-95-99.7-rule" class="slide level2 smaller">
+</section>
+<section id="empirical-rule-68-95-99.7-rule" class="slide level2">
 <h2>Empirical Rule (68-95-99.7 Rule)</h2>
-<p>For <strong>approximately normal distributions:</strong></p>
+<section id="for-approximately-normal-distributions" class="important">
+<h4>For approximately normal distributions:</h4>
 <ul>
 <li><strong>68%</strong> of data falls within 1 standard deviation of the mean</li>
 <li><strong>95%</strong> of data falls within 2 standard deviations of the mean</li>
 <li><strong>99.7%</strong> of data falls within 3 standard deviations of the mean</li>
 </ul>
 <p>This rule helps us understand what constitutes “typical” vs “unusual” values.</p>
-
-<img data-src="../../../files/lecture_notes/lecture3/img/empirical_rule.png" class="r-stretch"></section></section>
-<section>
-<section id="coefficient-of-variation" class="title-slide slide level1 center">
-<h1>Coefficient of Variation</h1>
-<p><em>5 minutes</em></p>
 </section>
-<section id="definition-and-purpose" class="slide level2">
-<h2>Definition and Purpose</h2>
-<section id="definition-4" class="concept-box">
-<h4>🎯 Definition</h4>
+</section>
+<section id="coefficient-of-variation" class="slide level2">
+<h2>Coefficient of Variation</h2>
+<div class="formula-box">
 <p><strong>Coefficient of Variation (CV)</strong> = <span class="math inline">\(\frac{\text{Standard Deviation}}{\text{Mean}} \times 100\%\)</span></p>
-</section>
-<div class="fragment">
+</div>
 <h3 id="why-use-cv">Why Use CV?</h3>
 <ul>
 <li><strong>Compares variability</strong> across different units or scales</li>
 <li><strong>Relative measure</strong> of variability</li>
 <li>Useful when <strong>means differ substantially</strong></li>
 </ul>
+</section>
+<section id="cv-example-comparing-variability" class="slide level2">
+<h2>CV Example: Comparing Variability</h2>
+<div class="two-columns">
+<section id="stock-a" class="example">
+<h4>Stock A</h4>
+<ul>
+<li>Mean return = $50</li>
+<li>SD = $10</li>
+<li><strong>CV = 20%</strong></li>
+</ul>
+</section>
+<section id="stock-b" class="example">
+<h4>Stock B</h4>
+<ul>
+<li>Mean return = $500</li>
+<li>SD = $50</li>
+<li><strong>CV = 10%</strong></li>
+</ul>
+</section>
 </div>
-</section></section>
-<section>
-<section id="example-comparing-variability" class="title-slide slide level1 smaller center">
-<h1>Example: Comparing Variability</h1>
-<p><strong>Stock A:</strong> Mean return = $50, SD = $10, CV = 20%</p>
-<p><strong>Stock B:</strong> Mean return = $500, SD = $50, CV = 10%</p>
 <div class="fragment">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
+<div class="key-difference">
 <p><strong>Stock B has higher absolute variability ($50 vs $10) but lower relative variability (10% vs 20%)</strong></p>
 <p>Stock B is relatively less risky per dollar invested.</p>
 </div>
 </div>
-</div>
-</div>
 </section>
-<section id="python-implementation---variability" class="slide level2 smaller">
+<section id="python-implementation---variability" class="slide level2">
 <h2>Python Implementation - Variability</h2>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Visualization</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<div id="ef3105b0" class="cell" data-execution_count="1">
+<div id="54a23618" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a></a></span>
@@ -968,83 +715,54 @@ Narjes Mathlouthi
 <span id="cb1-14"><a></a><span class="bu">print</span>(<span class="ss">f"Variance: </span><span class="sc">{</span>variance_sample<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
 <span id="cb1-15"><a></a><span class="bu">print</span>(<span class="ss">f"Standard Deviation: </span><span class="sc">{</span>std_sample<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
 <span id="cb1-16"><a></a><span class="bu">print</span>(<span class="ss">f"Coefficient of Variation: </span><span class="sc">{</span>cv<span class="sc">:.1f}</span><span class="ss">%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Range: 15
-Variance: 28.90
-Standard Deviation: 5.38
-Coefficient of Variation: 32.2%</code></pre>
 </div>
-</div>
-</div>
-<div id="tabset-1-2">
-<div id="bb9b33fb" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture3_files/figure-revealjs/cell-3-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
 <section id="measures-of-position" class="title-slide slide level1 center">
 <h1>Measures of Position</h1>
 <p><em>20 minutes</em></p>
 </section>
-<section id="what-are-measures-of-position" class="slide level2 smaller">
+<section id="what-are-measures-of-position" class="slide level2">
 <h2>What are Measures of Position?</h2>
-<div class="columns">
-<div class="column">
+<section id="purpose" class="concept-box">
+<h4>🎯 Purpose</h4>
 <p><strong>Measures of position</strong> tell us where a particular value stands relative to the rest of the data.</p>
-<p>They answer questions like:</p>
-<ul>
-<li><p>“What percentage of students scored below 85?”</p></li>
-<li><p>“Is this value typical or unusual?”</p></li>
-<li><p>“How does this observation compare to others?”</p></li>
-</ul>
-</div><div class="column">
-<p><img data-src="../../../files/lecture_notes/lecture3/img/measures_pos.png"></p>
-</div></div>
-<p><!-- end columns --></p>
-</section></section>
-<section>
-<section id="percentiles-and-quartiles" class="title-slide slide level1 center">
-<h1>Percentiles and Quartiles</h1>
-<p><em>10 minutes</em></p>
 </section>
-<section id="percentiles-definition" class="slide level2 smaller">
+<p>They answer questions like: - “What percentage of students scored below 85?” - “Is this value typical or unusual?” - “How does this observation compare to others?”</p>
+</section>
+<section id="percentiles-definition" class="slide level2">
 <h2>Percentiles Definition</h2>
-<p>The <strong>k-th percentile</strong> is the value below which k% of the data falls.</p>
+<section id="the-k-th-percentile" class="definition">
+<h4>The k-th percentile</h4>
+<p>The value below which k% of the data falls.</p>
+</section>
 <h3 id="examples">Examples:</h3>
 <ul>
 <li><strong>50th percentile</strong> = Median (50% of data below this value)</li>
 <li><strong>90th percentile</strong> = 90% of data falls below this value</li>
 <li><strong>25th percentile</strong> = 25% of data falls below this value</li>
 </ul>
-
-<img data-src="../../../files/lecture_notes/lecture3/img/percentiles.png" class="r-stretch"></section>
+</section>
 <section id="quartiles" class="slide level2">
 <h2>Quartiles</h2>
-<p><strong>Quartiles</strong> divide the data into four equal parts:</p>
+<section id="quartiles-divide-the-data-into-four-equal-parts" class="concept-box">
+<h4>Quartiles divide the data into four equal parts:</h4>
 <ul>
 <li><strong>Q1 (First Quartile)</strong> = 25th percentile</li>
 <li><strong>Q2 (Second Quartile)</strong> = 50th percentile = Median</li>
 <li><strong>Q3 (Third Quartile)</strong> = 75th percentile</li>
 </ul>
-
-<img data-src="../../../files/lecture_notes/lecture3/img/quartiles.png" class="r-stretch"></section>
+</section>
+</section>
 <section id="interquartile-range-iqr" class="slide level2">
 <h2>Interquartile Range (IQR)</h2>
+<div class="formula-box">
 <p><strong>IQR = Q3 - Q1</strong></p>
-<div class="fragment">
-<div class="columns">
-<div class="column">
-<section id="properties-of-iqr" class="smaller">
-<h3>Properties of IQR:</h3>
+</div>
+<h3 id="properties-of-iqr">Properties of IQR:</h3>
 <ul>
 <li>Contains the <strong>middle 50%</strong> of the data</li>
 <li><strong>Resistant to outliers</strong></li>
@@ -1052,20 +770,10 @@ Coefficient of Variation: 32.2%</code></pre>
 <li>Useful for <strong>outlier detection</strong></li>
 </ul>
 </section>
-</div><div class="column">
-<p><img data-src="../../../files/lecture_notes/lecture3/img/iqr.png"></p>
-</div></div>
-<!-- end columns -->
-</div>
-</section></section>
-<section>
-<section id="five-number-summary" class="title-slide slide level1 center">
-<h1>Five-Number Summary</h1>
-
-</section>
-<section class="slide level2">
-
-<p>The <strong>five-number summary</strong> provides a complete picture of data distribution:</p>
+<section id="five-number-summary" class="slide level2">
+<h2>Five-Number Summary</h2>
+<section id="the-five-number-summary-provides-a-complete-picture-of-data-distribution" class="concept-box">
+<h4>The five-number summary provides a complete picture of data distribution:</h4>
 <ol type="1">
 <li><strong>Minimum</strong></li>
 <li><strong>Q1 (25th percentile)</strong></li>
@@ -1074,32 +782,19 @@ Coefficient of Variation: 32.2%</code></pre>
 <li><strong>Maximum</strong></li>
 </ol>
 <p>This forms the basis for boxplots!</p>
-</section></section>
-<section>
-<section id="z-scores-and-standardization" class="title-slide slide level1 center">
-<h1>Z-scores and Standardization</h1>
-<p><em>10 minutes</em></p>
 </section>
-<section id="z-score-definition" class="slide level2 smaller">
-<h2>Z-score Definition</h2>
-<div class="columns">
-<div class="column">
-<section id="definition-5" class="concept-box">
-<h4>🎯 Definition</h4>
-<p><strong>Z-score</strong> tells us how many standard deviations a value is from the mean.</p>
 </section>
+<section id="z-scores-and-standardization" class="slide level2">
+<h2>Z-scores and Standardization</h2>
 <div class="formula-box">
+<p><strong>Z-score</strong> tells us how many standard deviations a value is from the mean.</p>
 <p><span class="math display">\[z = \frac{x - \mu}{\sigma} \text{ or } z = \frac{x - \bar{x}}{s}\]</span></p>
 </div>
-</div><div class="column">
-<p><img data-src="../../../files/lecture_notes/lecture3/img/z-score.png" class="full-width"></p>
-</div></div>
-<!-- end columns -->
-</section></section>
-<section>
-<section id="interpreting-z-scores" class="title-slide slide level1 center">
-<h1>Interpreting Z-scores</h1>
-<div class="concept-box">
+</section>
+<section id="interpreting-z-scores" class="slide level2">
+<h2>Interpreting Z-scores</h2>
+<section id="z-score-interpretation" class="concept-box">
+<h4>Z-score Interpretation:</h4>
 <ul>
 <li><strong>z = 0</strong>: Value equals the mean</li>
 <li><strong>z = 1</strong>: Value is 1 standard deviation above the mean</li>
@@ -1107,18 +802,22 @@ Coefficient of Variation: 32.2%</code></pre>
 <li><strong>|z| &gt; 2</strong>: Often considered “unusual” (beyond 95% of data)</li>
 <li><strong>|z| &gt; 3</strong>: Very unusual (beyond 99.7% of data)</li>
 </ul>
-</div>
+</section>
 </section>
 <section id="z-score-example" class="slide level2">
 <h2>Z-score Example</h2>
-<p>Student’s test score: 85 Class mean: 78, Class standard deviation: 6</p>
-<div class="formula-box">
+<section id="problem" class="example">
+<h4>Problem:</h4>
+<p>Student’s test score: 85<br>
+Class mean: 78, Class standard deviation: 6</p>
 <p><span class="math display">\[z = \frac{85 - 78}{6} = \frac{7}{6} = 1.17\]</span></p>
-</div>
 <p><strong>Interpretation:</strong> This student scored 1.17 standard deviations above the class average.</p>
+</section>
 </section>
 <section id="benefits-of-standardization" class="slide level2">
 <h2>Benefits of Standardization</h2>
+<section id="why-use-z-scores" class="concept-box">
+<h4>Why use z-scores?</h4>
 <ul>
 <li><strong>Compare across different scales</strong> (test scores vs income)</li>
 <li><strong>Identify outliers</strong> systematically<br>
@@ -1126,47 +825,85 @@ Coefficient of Variation: 32.2%</code></pre>
 <li><strong>Combine different variables</strong> meaningfully</li>
 <li><strong>Prepare data</strong> for certain statistical methods</li>
 </ul>
+</section>
+</section>
+<section id="python-implementation---position-shape" class="slide level2">
+<h2>Python Implementation - Position &amp; Shape</h2>
+<div id="1affe0e3" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb2-4"><a></a></span>
+<span id="cb2-5"><a></a>data <span class="op">=</span> [<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>]</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a><span class="co"># Percentiles and quartiles</span></span>
+<span id="cb2-8"><a></a>q1 <span class="op">=</span> np.percentile(data, <span class="dv">25</span>)</span>
+<span id="cb2-9"><a></a>median <span class="op">=</span> np.percentile(data, <span class="dv">50</span>)</span>
+<span id="cb2-10"><a></a>q3 <span class="op">=</span> np.percentile(data, <span class="dv">75</span>)</span>
+<span id="cb2-11"><a></a>iqr <span class="op">=</span> q3 <span class="op">-</span> q1</span>
+<span id="cb2-12"><a></a></span>
+<span id="cb2-13"><a></a><span class="co"># Z-scores</span></span>
+<span id="cb2-14"><a></a>z_scores <span class="op">=</span> stats.zscore(data)</span>
+<span id="cb2-15"><a></a></span>
+<span id="cb2-16"><a></a><span class="co"># Shape measures</span></span>
+<span id="cb2-17"><a></a>skewness <span class="op">=</span> stats.skew(data)</span>
+<span id="cb2-18"><a></a>kurt <span class="op">=</span> stats.kurtosis(data)</span>
+<span id="cb2-19"><a></a></span>
+<span id="cb2-20"><a></a><span class="bu">print</span>(<span class="ss">f"Q1: </span><span class="sc">{</span>q1<span class="sc">}</span><span class="ss">, Median: </span><span class="sc">{</span>median<span class="sc">}</span><span class="ss">, Q3: </span><span class="sc">{</span>q3<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-21"><a></a><span class="bu">print</span>(<span class="ss">f"IQR: </span><span class="sc">{</span>iqr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-22"><a></a><span class="bu">print</span>(<span class="ss">f"Skewness: </span><span class="sc">{</span>skewness<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb2-23"><a></a><span class="bu">print</span>(<span class="ss">f"Kurtosis: </span><span class="sc">{</span>kurt<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
 <section id="distribution-shape" class="title-slide slide level1 center">
 <h1>Distribution Shape</h1>
 <p><em>10 minutes</em></p>
 </section>
-<section id="skewness" class="slide level2 smaller">
+<section id="skewness" class="slide level2">
 <h2>Skewness</h2>
+<section id="definition-4" class="concept-box">
+<h4>🎯 Definition</h4>
 <p><strong>Skewness</strong> measures the asymmetry of a distribution.</p>
+</section>
 <h3 id="types-of-skewness">Types of Skewness:</h3>
-<div class="columns">
-<div class="column">
-<div class="smaller">
 <ul>
 <li><strong>Symmetric (Skewness ≈ 0)</strong>: Mean ≈ Median ≈ Mode</li>
 <li><strong>Right-skewed (Positive skewness)</strong>: Mean &gt; Median, long tail to the right</li>
 <li><strong>Left-skewed (Negative skewness)</strong>: Mean &lt; Median, long tail to the left</li>
 </ul>
+</section>
+<section id="visual-examples-of-skewness" class="slide level2">
+<h2>Visual Examples of Skewness</h2>
+<div class="two-columns">
+<section id="right-skewed-income-data" class="example">
+<h4>Right-skewed (Income data):</h4>
+<ul>
+<li>Most people earn moderate amounts</li>
+<li>Few people earn very high amounts</li>
+<li>Mean &gt; Median</li>
+</ul>
+</section>
+<section id="left-skewed-test-scores-with-ceiling-effect" class="example">
+<h4>Left-skewed (Test scores with ceiling effect):</h4>
+<ul>
+<li>Most students score high</li>
+<li>Few students score very low<br>
+</li>
+<li>Mean &lt; Median</li>
+</ul>
+</section>
 </div>
-</div><div class="column">
-<p><img data-src="../../../files/lecture_notes/lecture3/img/skew.png" class="full-width"></p>
-</div></div>
 </section>
-<section id="examples-of-skewness" class="slide level2 smaller">
-<h2>Examples of Skewness</h2>
-<p><strong>Right-skewed (Income data):</strong></p>
-<ul>
-<li><p>Most people earn moderate amounts</p></li>
-<li><p>Few people earn very high amounts</p></li>
-<li><p>Mean &gt; Median</p></li>
-</ul>
-<p><strong>Left-skewed (Test scores with ceiling effect):</strong></p>
-<ul>
-<li><p>Most students score high</p></li>
-<li><p>Few students score very low</p></li>
-<li><p>Mean &lt; Median</p></li>
-</ul>
-</section>
-<section id="kurtosis" class="slide level2 smaller">
+<section id="kurtosis" class="slide level2">
 <h2>Kurtosis</h2>
-<p><strong>Kurtosis</strong> measures the “tailedness” of a distribution. It measures the degree of peaked Ness or flatness of a distribution compared to the normal distribution.</p>
+<section id="definition-5" class="concept-box">
+<h4>🎯 Definition</h4>
+<p><strong>Kurtosis</strong> measures the “tailedness” of a distribution.</p>
+</section>
 <h3 id="types">Types:</h3>
 <ul>
 <li><strong>Mesokurtic (Normal-like)</strong>: Kurtosis ≈ 3</li>
@@ -1174,55 +911,21 @@ Coefficient of Variation: 32.2%</code></pre>
 <li><strong>Platykurtic (Light tails)</strong>: Kurtosis &lt; 3, flatter</li>
 </ul>
 <p><strong>Excess Kurtosis</strong> = Kurtosis - 3 (makes normal distributions have excess kurtosis of 0)</p>
+</section>
+<section class="slide level2">
 
-<img data-src="../../../files/lecture_notes/lecture3/img/kurtosis.png" class="full-width r-stretch"></section>
-<section id="python-implementation---position-shape" class="slide level2 smaller">
-<h2>Python Implementation - Position &amp; Shape</h2>
-<div id="a4a15501" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-3"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
-<span id="cb3-4"><a></a></span>
-<span id="cb3-5"><a></a>data <span class="op">=</span> [<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">18</span>, <span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>]</span>
-<span id="cb3-6"><a></a></span>
-<span id="cb3-7"><a></a><span class="co"># Percentiles and quartiles</span></span>
-<span id="cb3-8"><a></a>q1 <span class="op">=</span> np.percentile(data, <span class="dv">25</span>)</span>
-<span id="cb3-9"><a></a>median <span class="op">=</span> np.percentile(data, <span class="dv">50</span>)</span>
-<span id="cb3-10"><a></a>q3 <span class="op">=</span> np.percentile(data, <span class="dv">75</span>)</span>
-<span id="cb3-11"><a></a>iqr <span class="op">=</span> q3 <span class="op">-</span> q1</span>
-<span id="cb3-12"><a></a></span>
-<span id="cb3-13"><a></a><span class="co"># Z-scores</span></span>
-<span id="cb3-14"><a></a>z_scores <span class="op">=</span> stats.zscore(data)</span>
-<span id="cb3-15"><a></a></span>
-<span id="cb3-16"><a></a><span class="co"># Shape measures</span></span>
-<span id="cb3-17"><a></a>skewness <span class="op">=</span> stats.skew(data)</span>
-<span id="cb3-18"><a></a>kurt <span class="op">=</span> stats.kurtosis(data)</span>
-<span id="cb3-19"><a></a></span>
-<span id="cb3-20"><a></a><span class="bu">print</span>(<span class="ss">f"Q1: </span><span class="sc">{</span>q1<span class="sc">}</span><span class="ss">, Median: </span><span class="sc">{</span>median<span class="sc">}</span><span class="ss">, Q3: </span><span class="sc">{</span>q3<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-21"><a></a><span class="bu">print</span>(<span class="ss">f"IQR: </span><span class="sc">{</span>iqr<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-22"><a></a><span class="bu">print</span>(<span class="ss">f"Skewness: </span><span class="sc">{</span>skewness<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
-<span id="cb3-23"><a></a><span class="bu">print</span>(<span class="ss">f"Kurtosis: </span><span class="sc">{</span>kurt<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Q1: 19.0, Median: 26.5, Q3: 33.75
-IQR: 14.75
-Skewness: 0.243
-Kurtosis: -1.023</code></pre>
-</div>
-</div>
 </section></section>
+<section>
 <section id="data-visualization" class="title-slide slide level1 center">
 <h1>Data Visualization</h1>
 <p><em>20 minutes</em></p>
 </section>
-
-<section>
-<section id="histograms-and-bin-width-selection" class="title-slide slide level1 center">
-<h1>Histograms and Bin Width Selection</h1>
-<p><em>10 minutes</em></p>
-</section>
 <section id="what-is-a-histogram" class="slide level2">
 <h2>What is a Histogram?</h2>
+<section id="definition-6" class="concept-box">
+<h4>🎯 Definition</h4>
 <p>A <strong>histogram</strong> displays the distribution of a continuous variable by dividing data into bins and showing the frequency of observations in each bin.</p>
+</section>
 <h3 id="key-components">Key Components:</h3>
 <ul>
 <li><strong>X-axis</strong>: Variable values (continuous)</li>
@@ -1231,25 +934,34 @@ Kurtosis: -1.023</code></pre>
 <li><strong>Bars</strong>: Height represents frequency in each bin</li>
 </ul>
 </section>
-<section id="choosing-bin-width-critical-decision" class="slide level2 smaller">
+<section id="choosing-bin-width-critical-decision" class="slide level2">
 <h2>Choosing Bin Width: Critical Decision</h2>
-<p><strong>Bin width dramatically affects histogram interpretation!</strong></p>
-<h3 id="too-few-bins-wide-bins">Too Few Bins (Wide bins):</h3>
+<section id="bin-width-dramatically-affects-histogram-interpretation" class="important">
+<h4>Bin width dramatically affects histogram interpretation!</h4>
+</section>
+<div class="two-columns">
+<section id="too-few-bins-wide-bins" class="note">
+<h4>Too Few Bins (Wide bins):</h4>
 <ul>
 <li><strong>Oversmoothing</strong> - lose important details</li>
 <li>May <strong>hide multimodality</strong></li>
 <li>Distribution appears simpler than it is</li>
 </ul>
-<h3 id="too-many-bins-narrow-bins">Too Many Bins (Narrow bins):</h3>
+</section>
+<section id="too-many-bins-narrow-bins" class="note">
+<h4>Too Many Bins (Narrow bins):</h4>
 <ul>
 <li><strong>Undersmoothing</strong> - too much noise</li>
 <li>May create <strong>artificial gaps</strong></li>
 <li>Hard to see overall pattern</li>
 </ul>
 </section>
+</div>
+</section>
 <section id="bin-width-guidelines" class="slide level2">
 <h2>Bin Width Guidelines</h2>
-<h3 id="rule-of-thumb-methods">Rule of Thumb Methods:</h3>
+<section id="rule-of-thumb-methods" class="concept-box">
+<h4>Rule of Thumb Methods:</h4>
 <ol type="1">
 <li><strong>Square Root Rule</strong>: Number of bins ≈ <span class="math inline">\(\sqrt{n}\)</span></li>
 <li><strong>Sturges’ Rule</strong>: Number of bins = <span class="math inline">\(1 + \log_2(n)\)</span></li>
@@ -1258,38 +970,11 @@ Kurtosis: -1.023</code></pre>
 </ol>
 <p><strong>Best practice:</strong> Try multiple bin widths and choose based on the story your data tells!</p>
 </section>
-<section id="python-histogram-examples" class="slide level2 smaller">
-<h2>Python Histogram Examples</h2>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Code</a></li><li><a href="#tabset-2-2">Visualization</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
-<div id="6f146699" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb5-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-3"><a></a></span>
-<span id="cb5-4"><a></a><span class="co"># Generate sample data</span></span>
-<span id="cb5-5"><a></a>np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb5-6"><a></a>data <span class="op">=</span> np.random.normal(<span class="dv">100</span>, <span class="dv">15</span>, <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div id="tabset-2-2">
-<div id="208b94d1" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture3_files/figure-revealjs/cell-6-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="interpreting-histograms" class="slide level2">
 <h2>Interpreting Histograms</h2>
-<h3 id="what-to-look-for">What to Look For:</h3>
+<section id="what-to-look-for" class="concept-box">
+<h4>What to Look For:</h4>
 <ol type="1">
 <li><strong>Shape</strong>: Normal, skewed, uniform, bimodal?</li>
 <li><strong>Center</strong>: Where is the “typical” value?</li>
@@ -1298,85 +983,79 @@ Kurtosis: -1.023</code></pre>
 <li><strong>Gaps</strong>: Are there missing values in certain ranges?</li>
 <li><strong>Multiple peaks</strong>: Suggests multiple subgroups</li>
 </ol>
-</section></section>
-<section>
-<section id="boxplots-and-interpretation" class="title-slide slide level1 center">
-<h1>Boxplots and Interpretation</h1>
-<p><em>10 minutes</em></p>
 </section>
-<section id="anatomy-of-a-boxplot" class="slide level2 smaller">
+</section>
+<section id="anatomy-of-a-boxplot" class="slide level2">
 <h2>Anatomy of a Boxplot</h2>
-
-<img data-src="lecture3_files/figure-revealjs/cell-7-output-1.png" class="r-stretch"></section>
-<section id="boxplot-components-explained" class="slide level2 smaller">
-<h2>Boxplot Components Explained</h2>
-<h3 id="the-box">The Box:</h3>
-<ul>
-<li><strong>Left edge</strong>: Q1 (25th percentile)</li>
-<li><strong>Middle line</strong>: Median (Q2, 50th percentile)<br>
-</li>
-<li><strong>Right edge</strong>: Q3 (75th percentile)</li>
-<li><strong>Box width</strong>: IQR (contains middle 50% of data)</li>
-</ul>
-<h3 id="the-whiskers">The Whiskers:</h3>
-<ul>
-<li><strong>Extend to</strong>: Most extreme values within 1.5 × IQR from box edges</li>
-<li><strong>Lower whisker</strong>: Minimum value within Q1 - 1.5×IQR</li>
-<li><strong>Upper whisker</strong>: Maximum value within Q3 + 1.5×IQR</li>
-</ul>
-<h3 id="outliers">Outliers:</h3>
-<ul>
-<li><strong>Points beyond whiskers</strong>: Values &gt; Q3 + 1.5×IQR or &lt; Q1 - 1.5×IQR</li>
-</ul>
+<section id="boxplot-components" class="concept-box">
+<h4>Boxplot Components:</h4>
+<p><strong>The Box:</strong> - <strong>Left edge</strong>: Q1 (25th percentile) - <strong>Middle line</strong>: Median (Q2, 50th percentile)<br>
+- <strong>Right edge</strong>: Q3 (75th percentile) - <strong>Box width</strong>: IQR (contains middle 50% of data)</p>
+<p><strong>The Whiskers:</strong> - <strong>Extend to</strong>: Most extreme values within 1.5 × IQR from box edges</p>
+<p><strong>Outliers:</strong> - <strong>Points beyond whiskers</strong>: Values &gt; Q3 + 1.5×IQR or &lt; Q1 - 1.5×IQR</p>
+</section>
 </section>
 <section id="what-boxplots-tell-us" class="slide level2">
 <h2>What Boxplots Tell Us</h2>
-<h3 id="distribution-shape-1">Distribution Shape:</h3>
+<div class="two-columns">
+<section id="distribution-shape-1" class="concept-box">
+<h4>Distribution Shape:</h4>
 <ul>
 <li><strong>Symmetric</strong>: Median in center of box, whiskers equal length</li>
 <li><strong>Right-skewed</strong>: Median closer to Q1, longer upper whisker</li>
 <li><strong>Left-skewed</strong>: Median closer to Q3, longer lower whisker</li>
 </ul>
-<h3 id="variability">Variability:</h3>
+</section>
+<section id="variability" class="concept-box">
+<h4>Variability:</h4>
 <ul>
 <li><strong>Wide box</strong>: High variability in middle 50%</li>
 <li><strong>Long whiskers</strong>: High overall variability</li>
 <li><strong>Many outliers</strong>: Extreme variability</li>
 </ul>
 </section>
-<section id="comparing-groups-with-boxplots" class="slide level2 smaller">
+</div>
+</section>
+<section id="comparing-groups-with-boxplots" class="slide level2">
 <h2>Comparing Groups with Boxplots</h2>
+<div id="9c700a72" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># Comparing multiple groups</span></span>
+<span id="cb3-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-3"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb3-4"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-5"><a></a></span>
+<span id="cb3-6"><a></a><span class="co"># Create sample data for different groups</span></span>
+<span id="cb3-7"><a></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb3-8"><a></a>group_a <span class="op">=</span> np.random.normal(<span class="dv">70</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
+<span id="cb3-9"><a></a>group_b <span class="op">=</span> np.random.normal(<span class="dv">75</span>, <span class="dv">15</span>, <span class="dv">100</span>)  </span>
+<span id="cb3-10"><a></a>group_c <span class="op">=</span> np.random.normal(<span class="dv">80</span>, <span class="dv">8</span>, <span class="dv">100</span>)</span>
+<span id="cb3-11"><a></a></span>
+<span id="cb3-12"><a></a><span class="co"># Combine into DataFrame</span></span>
+<span id="cb3-13"><a></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb3-14"><a></a>    <span class="st">'Score'</span>: np.concatenate([group_a, group_b, group_c]),</span>
+<span id="cb3-15"><a></a>    <span class="st">'Group'</span>: [<span class="st">'A'</span>]<span class="op">*</span><span class="dv">100</span> <span class="op">+</span> [<span class="st">'B'</span>]<span class="op">*</span><span class="dv">100</span> <span class="op">+</span> [<span class="st">'C'</span>]<span class="op">*</span><span class="dv">100</span></span>
+<span id="cb3-16"><a></a>})</span>
+<span id="cb3-17"><a></a></span>
+<span id="cb3-18"><a></a><span class="co"># Create comparative boxplot</span></span>
+<span id="cb3-19"><a></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb3-20"><a></a>sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'Group'</span>, y<span class="op">=</span><span class="st">'Score'</span>)</span>
+<span id="cb3-21"><a></a>plt.title(<span class="st">'Comparing Score Distributions Across Groups'</span>)</span>
+<span id="cb3-22"><a></a>plt.ylabel(<span class="st">'Test Score'</span>)</span>
+<span id="cb3-23"><a></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section class="slide level2">
 
-<img data-src="lecture3_files/figure-revealjs/cell-8-output-1.png" class="r-stretch"></section>
-<section id="advanced-boxplot-interpretations" class="slide level2">
-<h2>Advanced Boxplot Interpretations</h2>
-</section>
-<section id="comparing-boxplots" class="slide level2">
-<h2>Comparing Boxplots:</h2>
-<ul>
-<li><strong>Median differences</strong>: Which group has higher typical values?</li>
-<li><strong>IQR differences</strong>: Which group is more consistent?</li>
-<li><strong>Outlier patterns</strong>: Which group has more extreme values?</li>
-<li><strong>Overlap</strong>: Do the groups have similar ranges?</li>
-</ul>
-</section>
-<section id="business-applications" class="slide level2">
-<h2>Business Applications:</h2>
-<ul>
-<li><strong>Quality control</strong>: Compare product batches</li>
-<li><strong>Performance analysis</strong>: Compare team/department performance<br>
-</li>
-<li><strong>Customer segmentation</strong>: Compare customer groups</li>
-</ul>
 </section></section>
 <section>
 <section id="identifying-trends-and-patterns" class="title-slide slide level1 center">
 <h1>Identifying Trends and Patterns</h1>
 <p><em>5 minutes</em></p>
 </section>
-<section id="common-patterns-in-data" class="slide level2 smaller">
+<section id="common-patterns-in-data" class="slide level2">
 <h2>Common Patterns in Data</h2>
-<h3 id="distribution-patterns">Distribution Patterns:</h3>
+<div class="concept-box">
+<h4 id="distribution-patterns">Distribution Patterns:</h4>
 <ol type="1">
 <li><strong>Normal/Bell-shaped</strong>: Symmetric, single peak</li>
 <li><strong>Uniform</strong>: All values equally likely</li>
@@ -1384,16 +1063,18 @@ Kurtosis: -1.023</code></pre>
 <li><strong>Multimodal</strong>: Multiple peaks</li>
 <li><strong>U-shaped</strong>: High values at extremes, low in middle</li>
 </ol>
-<h3 id="outlier-patterns">Outlier Patterns:</h3>
+<h4 id="outlier-patterns">Outlier Patterns:</h4>
 <ul>
 <li><strong>Individual outliers</strong>: Data entry errors, measurement errors</li>
 <li><strong>Clustered outliers</strong>: Distinct subpopulation</li>
 <li><strong>Systematic outliers</strong>: May indicate process changes</li>
 </ul>
+</div>
 </section>
 <section id="red-flags-in-data-visualization" class="slide level2">
 <h2>Red Flags in Data Visualization</h2>
-<h3 id="warning-signs">Warning Signs:</h3>
+<section id="warning-signs" class="important">
+<h4>Warning Signs:</h4>
 <ol type="1">
 <li><strong>Gaps in histograms</strong>: Missing data or measurement limitations</li>
 <li><strong>Heaping</strong>: Values cluster at round numbers (10, 50, 100)</li>
@@ -1401,50 +1082,52 @@ Kurtosis: -1.023</code></pre>
 <li><strong>Digit preference</strong>: People prefer certain ending digits</li>
 <li><strong>Multiple modes</strong>: Hidden subgroups in your data</li>
 </ol>
+</section>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
-<section id="key-takeaways-1" class="title-slide slide level1 center">
+<section id="key-takeaways" class="title-slide slide level1 center">
 <h1>Key Takeaways</h1>
 
 </section>
 <section id="essential-concepts-to-remember" class="slide level2">
 <h2>Essential Concepts to Remember</h2>
-<h3 id="variability-1">Variability:</h3>
+<div class="two-columns">
+<div class="concept-box">
+<h4 id="variability-1">Variability:</h4>
 <ul>
 <li><strong>Standard deviation</strong> is preferred over range for most analyses</li>
 <li><strong>CV</strong> allows comparison across different scales</li>
 <li><strong>IQR</strong> is resistant to outliers</li>
 </ul>
-<h3 id="position">Position:</h3>
+<h4 id="position">Position:</h4>
 <ul>
 <li><strong>Percentiles</strong> and <strong>quartiles</strong> provide relative position</li>
 <li><strong>Z-scores</strong> standardize across different distributions</li>
 <li><strong>Five-number summary</strong> gives complete overview</li>
 </ul>
-<h3 id="visualization-2">Visualization:</h3>
+</div>
+<div class="concept-box">
+<h4 id="visualization">Visualization:</h4>
 <ul>
 <li><strong>Bin width choice</strong> is critical for histogram interpretation</li>
 <li><strong>Boxplots</strong> excel at comparing groups and identifying outliers</li>
 <li><strong>Multiple visualizations</strong> provide different insights</li>
 </ul>
-</section>
-<section id="practical-guidelines" class="slide level2">
-<h2>Practical Guidelines</h2>
-<ol type="1">
+<h4 id="general">General:</h4>
+<ul>
 <li><strong>Always visualize</strong> before calculating statistics</li>
 <li><strong>Use multiple measures</strong> - no single statistic tells the whole story</li>
-<li><strong>Consider the context</strong> - what makes sense for your data?</li>
-<li><strong>Check for outliers</strong> - they can drastically affect your analysis</li>
-<li><strong>Compare distributions</strong> using standardized measures when appropriate</li>
-</ol>
-</section></section>
-<section>
-<section id="practice-problems" class="title-slide slide level1 center">
-<h1>Practice Problems</h1>
-
+</ul>
+</div>
+</div>
 </section>
-<section id="try-these-exercises" class="slide level2">
-<h2>Try These Exercises</h2>
+<section id="practice-problems" class="slide level2">
+<h2>Practice Problems</h2>
+<section id="try-these-exercises" class="problem">
+<h4>Try These Exercises</h4>
 <ol type="1">
 <li><p><strong>Calculate</strong> the five-number summary for: 12, 15, 18, 22, 25, 28, 30, 35, 40, 45</p></li>
 <li><p><strong>Create histograms</strong> with 5, 15, and 50 bins for the same dataset. What patterns do you observe?</p></li>
@@ -1453,25 +1136,32 @@ Kurtosis: -1.023</code></pre>
 <li><p><strong>Design a boxplot comparison</strong> for three different customer segments in your business.</p></li>
 </ol>
 </section>
-<section id="additional-resources" class="slide level2">
-<h2>Additional Resources</h2>
-<ul>
-<li>Matplotlib gallery: Histogram and boxplot examples</li>
-<li>Seaborn documentation: Statistical visualizations</li>
-<li>NumPy/SciPy: Statistical functions reference</li>
-<li>Recommended reading: Chapter 4-5 in course textbook</li>
-</ul>
 </section>
-<section class="slide level2">
-
-</section></section>
-<section id="questions" class="title-slide slide level1 center">
-<h1>Questions?</h1>
+<section id="questions" class="slide level2 center">
+<h2>Questions?</h2>
 <p><strong>Thank you for your attention!</strong></p>
 <p><em>Remember: The goal of descriptive statistics is to understand your data story - let the visualizations guide your insights!</em></p>
-
-
 </section>
+<section id="additional-resources" class="slide level2">
+<h2>Additional Resources</h2>
+<div class="concept-box">
+<h4 id="for-further-learning">For Further Learning:</h4>
+<ul>
+<li><strong>Matplotlib gallery</strong>: Histogram and boxplot examples</li>
+<li><strong>Seaborn documentation</strong>: Statistical visualizations</li>
+<li><strong>NumPy/SciPy</strong>: Statistical functions reference</li>
+<li><strong>Recommended reading</strong>: Chapter 4-5 in course textbook</li>
+</ul>
+<h4 id="next-steps">Next Steps:</h4>
+<ul>
+<li><strong>Correlation and association</strong> between variables</li>
+<li><strong>Time series analysis</strong> for temporal patterns</li>
+<li><strong>Statistical inference</strong> based on descriptive findings</li>
+</ul>
+</div>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../../img/logo.png" class="slide-logo"></p>

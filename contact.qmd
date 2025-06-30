@@ -91,6 +91,24 @@ Summer Le
 [sle@ucsb.edu](mailto:sle@ucsb.edu)
 :::
 :::
+::: {.contact-item}
+::: {.contact-icon}
+🕐
+:::
+::: {.contact-text}
+Friday 1:00 PM – 2:00 PM
+:::
+:::
+
+::: {.contact-item}
+::: {.contact-icon}
+💻
+:::
+::: {.contact-text}
+Via Zoom (links on Canvas)
+:::
+:::
+:::
 :::
 :::
 
@@ -133,7 +151,7 @@ Via Zoom (links on Canvas)
 :::
 :::
 :::
-:::
+
 
 
 

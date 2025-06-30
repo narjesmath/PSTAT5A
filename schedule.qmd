@@ -105,10 +105,10 @@ Lecture Materials
 6/26
 :::
 ::: {.topic}
-Descriptive Statistics II
+[Descriptive Statistics II](/files/lecture_notes/lecture3/lecture3.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
-—
+-
 :::
 ::: {.worksheet .empty-cell}
 —
@@ -133,7 +133,8 @@ Descriptive Statistics II
 Intro to Probability
 :::
 ::: {.lab-quiz}
-Lab 2
+[Lab2](/files/labs/lab2/lab2.qmd)
+[Lab2 Notebook](/files/labs/lab2/lab2.ipynb)
 :::
 ::: {.worksheet}
 Worksheet 2
