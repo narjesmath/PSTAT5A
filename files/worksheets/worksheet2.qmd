@@ -10,21 +10,14 @@ format:
     number-sections: true
     theme: cosmo
     css: /files/lecture_notes/theme/lecture-styles.css
-  pdf:
-    toc: true
-    number-sections: true
-    geometry: margin=1in
-    fontsize: 11pt
-    documentclass: article
-  docx:
-    toc: true
-    number-sections: true
-    highlight-style: github
 execute:
   echo: false
   warning: false
 ---
 
+::: {.download-section}
+[Download PDF](/files/worksheets/worksheet_2.pdf){.download-btn}
+::: 
 # Instructions and Overview
 
 ::: {.time-box}
