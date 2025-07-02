@@ -1,7 +1,8 @@
 project:
   type: website
   output-dir: docs
-
+# global favicon (works for browsers & Google)
+favicon: /img/logo.png
 website:
   title: "PSTAT5A"
   favicon: /img/logo.png
