@@ -53,50 +53,61 @@ execute:
 ::: {.formula-box}
 **📚 Key Formulas Reference:**
 
+
 **DESCRIPTIVE STATISTICS:**
 
+::: {.formula-box}
 **1. Mean Formulas:**
 
-- Sample Mean: $\bar x = \frac{\sum x_i}{n}$
+**Sample Mean:** $\bar x = \frac{\sum x_i}{n}$
   
-- Population Mean: $\mu = \frac{\sum x_i}{N}$
-  
+**Population Mean:** $\mu = \frac{\sum x_i}{N}$
+:::
 
 
+::: {.formula-box}
 **2. Variance Formulas:**
 
-- Population Variance: $\sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}$
+**Population Variance:** $\sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}$
   
-- Sample Variance: $s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}$
+**Sample Variance:** $s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}$
+:::
 
+::: {.formula-box}
 
 **3. Standard Deviations Formulas:**
 
-- Sample Standard Deviation: $s = \sqrt \frac{\sum (x_i - \bar x)^2}{(n-1)}$
+**Sample Standard Deviation:** $s = \sqrt \frac{\sum (x_i - \bar x)^2}{(n-1)}$
   
-- Population Standard Deviation: $\sigma = \sqrt \frac{\sum (x_i - \mu)^2}{N}$
+**Population Standard Deviation:** $\sigma = \sqrt \frac{\sum (x_i - \mu)^2}{N}$
+:::
 
+::: {.formula-box}
 
 **MEASURES OF POSITION:**
 
-- Percentile: Value below which a certain percentage of data falls
+**Percentile:** Value below which a certain percentage of data falls
   
-- Quartiles: Q1 (25th percentile), Q2 = Median (50th percentile), Q3 (75th percentile)
+**Quartiles:** Q1 (25th percentile), Q2 = Median (50th percentile), Q3 (75th percentile)
   
-- Interquartile Range (IQR): Q3 - Q1
+**Interquartile Range (IQR):** Q3 - Q1
   
-- Range: Maximum - Minimum
+**Range:** Maximum - Minimum
+  
+:::
 
+::: {.formula-box}
 **DISTRIBUTION SHAPES:**
 
-- Symmetric: Mean ≈ Median
+Symmetric: Mean ≈ Median
   
-- Right-skewed: Mean > Median (tail extends to the right)
+Right-skewed: Mean > Median (tail extends to the right)
   
-- Left-skewed: Mean < Median (tail extends to the left)
+Left-skewed: Mean < Median (tail extends to the left)
   
-- Outliers affect the mean more than the median
+Outliers affect the mean more than the median
   
+:::
 :::
 
 # Section A: Basic Descriptive Statistics
