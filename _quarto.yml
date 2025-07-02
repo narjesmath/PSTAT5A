@@ -1,36 +1,36 @@
 project:
   type: website
   output-dir: docs
-# global favicon (works for browsers & Google)
-favicon: /img/logo.png
+
 website:
   title: "PSTAT5A"
-  favicon: /img/logo.png
+  site-url: "https://pstat5a.com"
   navbar:
-    logo: /img/logo.png
+    logo: "img/logo.png"
     left:
       - icon: house
         href: index.qmd
         text: Home
-      - text: "Class Schedule"
-        icon: calendar
+      - icon: calendar
         href: schedule.qmd
-      - text: "Syllabus"
-        icon: file-earmark-text
+        text: "Class Schedule"
+      - icon: file-earmark-text
         href: syllabus.qmd
-      - text: "Resources"
-        icon: book
+        text: "Syllabus"
+      - icon: book
         href: resources.qmd
-      - text: "Contact"
-        icon: envelope
+        text: "Resources"
+      - icon: envelope
         href: contact.qmd
+        text: "Contact"
+
 format:
   html:
+    favicon: "img/logo.png"
+    resources:
+      - "img/logo.png"
     theme:
       - cosmo
       - brand
     css: styles.css
     toc: true
-
-
-
