@@ -514,8 +514,8 @@
     "objectID": "files/lecture_notes/lecture4/lecture4.html#welcome-to-lecture-4",
     "href": "files/lecture_notes/lecture4/lecture4.html#welcome-to-lecture-4",
     "title": "PSTAT 5A: Introduction to Probability",
-    "section": "",
-    "text": "Introduction to Probability\nUnderstanding uncertainty through statistics"
+    "section": "Welcome to Lecture 4",
+    "text": "Welcome to Lecture 4\nIntroduction to Probability\nUnderstanding uncertainty through statistics"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#sec-objectives",
@@ -578,14 +578,14 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#sample-space-examples",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Sample Space Examples",
-    "text": "Sample Space Examples\n\nCoin flip: \\(S = \\{H, T\\}\\)\nTwo coin flips: \\(S = \\{HH, HT, TH, TT\\}\\)\n\n\n\n\n\n\n\n\n🎲 Die roll: \\(S = \\{1, 2, 3, 4, 5, 6\\}\\)\nTwo die rolls \n\n\n\n\\(S = \\{A\\heartsuit,\\ 2\\heartsuit,\\ \\dots,\\ K\\heartsuit,\\\\\n\\phantom{S = \\{}A\\diamondsuit,\\ 2\\diamondsuit,\\ \\dots,\\ K\\diamondsuit,\\\\\n\\phantom{S = \\{}A\\clubsuit,\\ 2\\clubsuit,\\ \\dots,\\ K\\clubsuit,\\\\\n\\phantom{S = \\{}A\\spadesuit,\\ 2\\spadesuit,\\ \\dots,\\ K\\spadesuit\\}\\)"
+    "text": "Sample Space Examples\n\nCoin flip: \\(S = \\{H, T\\}\\)\nTwo coin flips: \\(S = \\{HH, HT, TH, TT\\}\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#types-of-sample-spaces",
     "href": "files/lecture_notes/lecture4/lecture4.html#types-of-sample-spaces",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Types of Sample Spaces",
-    "text": "Types of Sample Spaces\n\n\nFinite Sample Space\n\nLimited number of outcomes\n\nExample: Rolling a die\n\n\n\n\n\n\n\n\n\n\n\n\nInfinite Sample Space\n\nUnlimited outcomes (countable or uncountable)\n\nExample: Measuring exact height of students"
+    "text": "Types of Sample Spaces\n\n\nFinite Sample Space\n\nLimited number of outcomes\n\nExample: Rolling a die\n\n\n\n\n\n\n\n\n\n\n\nInfinite Sample Space\n\nUnlimited outcomes (countable or uncountable)\n\nExample: Measuring exact height of students"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#events",
@@ -599,14 +599,14 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#event-notation",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Event Notation",
-    "text": "Event Notation\nFor a die roll with \\(S = \\{1, 2, 3, 4, 5, 6\\}\\):\n\n\\(A = \\{1, 3, 5\\}\\) (rolling an odd number)\n\\(B = \\{4, 5, 6\\}\\) (rolling 4 or higher)\n\\(C = \\{6\\}\\) (rolling a six)\n\n\n\n\n\n\n\nWe can describe events in words or using set notation"
+    "text": "Event Notation\nFor a die roll with \\(S = \\{1, 2, 3, 4, 5, 6\\}\\):\n\n\\(A = \\{1, 3, 5\\}\\) (rolling an odd number)\n\\(B = \\{4, 5, 6\\}\\) (rolling 4 or higher)\n\\(C = \\{6\\}\\) (rolling a six)\n\n\n\nWe can describe events in words or using set notation"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#set-operations-overview",
     "href": "files/lecture_notes/lecture4/lecture4.html#set-operations-overview",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Set Operations Overview",
-    "text": "Set Operations Overview\n\n🎯 Definition\n\nKey Concepts:\n\nSet: Collection of distinct objects\nUnion: A OR B occurs\n\nIntersection: A AND B occurs\nComplement: A does NOT occur\nSample Space: All possible outcomes\n\n\n\n\n\nKey Concepts:\n\nSet: Collection of distinct objects\nUnion: A OR B occurs\n\nIntersection: A AND B occurs\nComplement: A does NOT occur\nSample Space: All possible outcomes"
+    "text": "Set Operations Overview\n\n\n\n\n🎯 Definition:\n\nSet: Collection of distinct objects\nUnion: A OR B occurs\n\nIntersection: A AND B occurs\nComplement: A does NOT occur\nSample Space: All possible outcomes"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#what-is-a-set",
@@ -676,7 +676,7 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#practice-examples",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Practice Examples",
-    "text": "Practice Examples\n\nExample 1: In a class of students:\n\nSet A = Students who like Math\nSet B = Students who like Science\n\nWhat does A ∪ B represent?\n\n\n\nSolution. Students who like Math OR Science (or both)\n\n\n\n\nExample 2: What does A ∩ B represent?\n\n\n\nSolution. Students who like BOTH Math AND Science\n\n\n\n\nExample 3: What does \\(A^c\\) represent?\n\n\n\nSolution. Students who do NOT like Math"
+    "text": "Practice Examples\n\nExample 1: In a class of students:\n\nSet A = Students who like Math\nSet B = Students who like Science\n\nWhat does A ∪ B represent?\n\n\n\nSolution. Students who like Math OR Science (or both)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#example-set-operations",
@@ -949,7 +949,7 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#questions",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Questions?",
-    "text": "Questions?\nOffice Hours: [Your office hours] Email: [Your email] Next Class: Random Variables and Distributions\nRemember: Homework due [date]"
+    "text": "Questions?\nOffice Hours: [Your office hours] Email: [Your email] Next Class: Random Variables and Distributions"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#bonus-probability-paradoxes",
@@ -2714,5 +2714,12 @@
     "title": "PSTAT 5A Practice Worksheet 2",
     "section": "4.1 Understanding Variance: Population vs Sample",
     "text": "4.1 Understanding Variance: Population vs Sample\n\n🎯 Key Variance Concepts:\nPopulation Variance (when you have ALL data): \\[\\sigma^2 = \\frac{\\sum_{i=1}^{N} (x_i - \\mu)^2}{N}\\]\nSample Variance (when you have a sample): \\[s^2 = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^2}{n-1}\\]\nWhy (n-1)? Using the sample mean to estimate deviations “uses up” one degree of freedom.\n\n\nProblem C1: Basic Variance Calculations\nThe following data represents the number of customer complaints per day for a small business over 8 days:\nData: 3, 7, 2, 8, 5, 6, 4, 9\nPart (a) : Calculate the sample mean \\(\\bar{x}\\).\nPart (b) : Calculate the sample variance \\(s^2\\) using the formula with \\((n-1)\\) in the denominator.\nPart (c) : Calculate the sample standard deviation \\(s\\).\nPart (d) : If this were treated as a complete population, what would the population variance \\(\\sigma^2\\) be?\nPart (e) : Explain why we divide by \\((n-1)\\) for sample variance instead of \\(n\\).\nAnswer:\n\n\n\nProblem C2: Comparing Variability\nConsider two data sets:\n\nSet A: 10, 12, 14, 16, 18\nSet B: 5, 10, 14, 18, 23\n\n\nCalculate the mean for each set.\nCalculate the sample variance for each set.\nWhich set has greater variability?\nCalculate the coefficient of variation \\((CV = s/x̄)\\) for each set. Which has greater relative variability?\n\nAnswer:"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#resources",
+    "href": "files/lecture_notes/lecture4/lecture4.html#resources",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Resources",
+    "text": "Resources\n\nRead Chapter 3 in course textbook\n\n\n\nElements of Set Theory for Probability\n\n\nProbability Models and Axioms"
   }
 ]

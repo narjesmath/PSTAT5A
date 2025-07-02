@@ -5,6 +5,7 @@ project:
 website:
   title: "PSTAT5A"
   site-url: "https://pstat5a.com"
+  page-navigation: true
   navbar:
     logo: "img/logo.png"
     left:
@@ -27,6 +28,8 @@ website:
 format:
   html:
     favicon: "img/logo.png"
+    title-block-banner: false
+    title-prefix: "PSTAT5A"
     resources:
       - "img/logo.png"
     theme:

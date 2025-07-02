@@ -234,29 +234,23 @@ For a die roll with $S = \{1, 2, 3, 4, 5, 6\}$:
 
 ## Set Operations Overview{.smaller}
 
-::: {.concept-box}
-#### 🎯 Definition
-:::{.smaller}
-**Key Concepts:**
 
-- **Set**: Collection of distinct objects
-- **Union**: A OR B occurs  
-- **Intersection**: A AND B occurs
-- **Complement**: A does NOT occur
-- **Sample Space**: All possible outcomes
-:::
-:::
 
 :::: {.columns}
 
 ::: {.column width="60%"}
-**Key Concepts:**
+
+::: {.definition}
+:::{.smaller}
+**🎯 Definition:**
 
 - **Set**: Collection of distinct objects
 - **Union**: A OR B occurs  
 - **Intersection**: A AND B occurs
 - **Complement**: A does NOT occur
 - **Sample Space**: All possible outcomes
+:::
+:::
 :::
 
 ::: {.column width="40%"}
@@ -1469,7 +1463,7 @@ Probability is the foundation of statistics:
 **Email**: [Your email]
 **Next Class**: Random Variables and Distributions
 
-*Remember: Homework due [date]*
+
 
 ---
 
@@ -1482,3 +1476,12 @@ Probability is the foundation of statistics:
 **Simpson's Paradox**: When aggregate data reverses subgroup trends
 
 *Explore these to deepen your probability intuition!*
+
+
+## Resources
+
+- [Read Chapter 3 in course textbook]((/files/Book/os4_for_screen_reader.pdf))
+  
+- ![Elements of Set Theory for Probability](https://bookdown.org/daniel_flores_agreda/Prob1-GSEM-UNIGE/settheory.html#the-venn-diagram)
+
+- [Probability Models and Axioms](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/resources/mitres_6_012s18_l01as/)
