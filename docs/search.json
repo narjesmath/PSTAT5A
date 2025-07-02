@@ -2041,7 +2041,7 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#what-is-probability",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "What is Probability?",
-    "text": "What is Probability?\nProbability is a measure of the likelihood that an event will occur\n\nRanges from 0 to 1 (or 0% to 100%)\n0: Event will never occur\n1: Event will certainly occur\n0.5: Event has equal chance of occurring or not\n\n\nExample: The probability of getting heads when flipping a fair coin is 0.5"
+    "text": "What is Probability?\n\n🎯 Definition\nProbability is a measure of the likelihood that an event will occur\n\nRanges from 0 to 1 (or 0% to 100%)\n0: Event will never occur\n1: Event will certainly occur\n0.5: Event has equal chance of occurring or not\n\n\n\nExample: The probability of getting heads when flipping a fair coin is 0.5"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#why-study-probability",
@@ -2055,70 +2055,70 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#random-experiments",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Random Experiments",
-    "text": "Random Experiments\nA random experiment is a process that:\n\nCan be repeated under similar conditions\nHas multiple possible outcomes\nThe outcome cannot be predicted with certainty\n\n\nExamples: - Flipping a coin - Rolling a die - Drawing a card from a deck - Measuring the lifetime of a light bulb"
+    "text": "Random Experiments\nA random experiment is a process that:\n\nCan be repeated under similar conditions\nHas multiple possible outcomes\nThe outcome cannot be predicted with certainty\n\n\n\nExamples\n\n🪙 Flipping a coin\n🎲 Rolling a die\n🃏 Drawing a card from a deck\n💡 Measuring the lifetime of a light bulb"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#sample-space",
     "href": "files/lecture_notes/lecture4/lecture4.html#sample-space",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Sample Space",
-    "text": "Sample Space\nThe sample space (denoted \\(S\\) or \\(\\Omega\\)) is the set of all possible outcomes of a random experiment\n\nExamples:\n\nCoin flip: \\(S = \\{H, T\\}\\)\nDie roll: \\(S = \\{1, 2, 3, 4, 5, 6\\}\\)\nTwo coin flips: \\(S = \\{HH, HT, TH, TT\\}\\)"
+    "text": "Sample Space\n\n🎯 Definition\nThe sample space (denoted \\(S\\) or \\(\\Omega\\)) is the set of all possible outcomes of a random experiment"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#types-of-sample-spaces",
     "href": "files/lecture_notes/lecture4/lecture4.html#types-of-sample-spaces",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Types of Sample Spaces",
-    "text": "Types of Sample Spaces\n\nFinite Sample Space\n\nLimited number of outcomes\n\n\nExample: Rolling a die\n\nInfinite Sample Space\n\nUnlimited outcomes (countable or uncountable)\n\n\nExample: Measuring exact height of students"
+    "text": "Types of Sample Spaces\n\n\nFinite Sample Space\n\nLimited number of outcomes\n\nExample: Rolling a die\n\n\n\n\n\n\n\n\n\n\n\nInfinite Sample Space\n\nUnlimited outcomes (countable or uncountable)\n\nExample: Measuring exact height of students"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#events",
     "href": "files/lecture_notes/lecture4/lecture4.html#events",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Events",
-    "text": "Events\nAn event is a subset of the sample space\n\nSimple event: Contains exactly one outcome\nCompound event: Contains multiple outcomes\n\n\nExample (rolling a die): - Simple event: \\(A = \\{3\\}\\) (rolling a 3) - Compound event: \\(B = \\{2, 4, 6\\}\\) (rolling an even number)"
+    "text": "Events\n\n🎯 Definition\n\nAn event is a subset of the sample space\n\nSimple event: Contains exactly one outcome (Ex: \\(A = \\{3\\}\\) (rolling a 3))\nCompound event: Contains multiple outcomes (Ex: \\(B = \\{2, 4, 6\\}\\) (rolling an even number))"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#event-notation",
     "href": "files/lecture_notes/lecture4/lecture4.html#event-notation",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Event Notation",
-    "text": "Event Notation\nFor a die roll with \\(S = \\{1, 2, 3, 4, 5, 6\\}\\):\n\n\\(A = \\{1, 3, 5\\}\\) (rolling an odd number)\n\\(B = \\{4, 5, 6\\}\\) (rolling 4 or higher)\n\\(C = \\{6\\}\\) (rolling a six)\n\n\nWe can describe events in words or using set notation"
+    "text": "Event Notation\nFor a die roll with \\(S = \\{1, 2, 3, 4, 5, 6\\}\\):\n\n\\(A = \\{1, 3, 5\\}\\) (rolling an odd number)\n\\(B = \\{4, 5, 6\\}\\) (rolling 4 or higher)\n\\(C = \\{6\\}\\) (rolling a six)\n\n\n\nWe can describe events in words or using set notation"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#set-operations-with-events",
     "href": "files/lecture_notes/lecture4/lecture4.html#set-operations-with-events",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Set Operations with Events",
-    "text": "Set Operations with Events\nUnion (\\(A \\cup B\\)): Event that \\(A\\) OR \\(B\\) occurs\nIntersection (\\(A \\cap B\\)): Event that \\(A\\) AND \\(B\\) occurs\nComplement (\\(A^c\\) or \\(\\bar{A}\\)): Event that \\(A\\) does NOT occur"
+    "text": "Set Operations with Events\nSet A collection of things that share common characteristics. They can be elements, members, objects or similar terms.\n\n\n\n\n\n\n\n\n\n\n==================================================\nINDIVIDUAL DIAGRAMS\n==================================================\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnion (\\(A \\cup B\\)): Event that \\(A\\) OR \\(B\\) occurs. The union of events A and B, denoted by \\(A \\cup B\\) , consists of all outcomes that are in A or in B or in both A and B.\n\n\nText(0.5, 1.0, 'Union: A ∪ B (A OR B)')"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#visual-representation-venn-diagrams",
     "href": "files/lecture_notes/lecture4/lecture4.html#visual-representation-venn-diagrams",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Visual Representation: Venn Diagrams",
-    "text": "Visual Representation: Venn Diagrams\n\n\n\n\n\ngraph LR\n    subgraph S [\"Sample Space S\"]\n        subgraph A [\"Event A\"]\n            a1[\" \"]\n        end\n        subgraph B [\"Event B\"]\n            b1[\" \"]\n        end\n        s1[\" \"]\n        s2[\" \"]\n    end\n\n\n\n\n\n\nUnion, intersection, and complement can be visualized using Venn diagrams"
+    "text": "Visual Representation: Venn Diagrams\n\n\n\n\n\n\n\n\n\nUnion, intersection, and complement can be visualized using Venn diagrams"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#example-set-operations",
     "href": "files/lecture_notes/lecture4/lecture4.html#example-set-operations",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Example: Set Operations",
-    "text": "Example: Set Operations\nFor die roll \\(S = \\{1, 2, 3, 4, 5, 6\\}\\): - \\(A = \\{1, 3, 5\\}\\) (odd numbers) - \\(B = \\{4, 5, 6\\}\\) (4 or higher)\n\nFind: - \\(A \\cup B = \\{1, 3, 4, 5, 6\\}\\) - \\(A \\cap B = \\{5\\}\\) - \\(A^c = \\{2, 4, 6\\}\\)"
+    "text": "Example: Set Operations\n\n\nFor die roll \\(S = \\{1, 2, 3, 4, 5, 6\\}\\):\n\n\\(A = \\{1, 3, 5\\}\\) (odd numbers)\n\\(B = \\{4, 5, 6\\}\\) (4 or higher)\n\n\n\n\n\n\n\n\n\n\n\n\n\nFind:\n\n\\(A \\cup B\\)\n\\(A \\cap B\\)\n\\(A^c\\)\n\n\n\n\n\nSolution. \n\n\\(A \\cup B = \\{1, 3, 4, 5, 6\\}\\)\n\\(A \\cap B = \\{5\\}\\)\n\\(A^c = \\{2, 4, 6\\}\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#mutually-exclusive-events",
     "href": "files/lecture_notes/lecture4/lecture4.html#mutually-exclusive-events",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Mutually Exclusive Events",
-    "text": "Mutually Exclusive Events\nEvents \\(A\\) and \\(B\\) are mutually exclusive (or disjoint) if they cannot occur simultaneously\n\\[A \\cap B = \\emptyset\\]\n\nExample: When rolling a die - \\(A = \\{1, 3, 5\\}\\) (odd) - \\(B = \\{2, 4, 6\\}\\) (even)\n\\(A\\) and \\(B\\) are mutually exclusive"
+    "text": "Mutually Exclusive Events\n\n\nEvents \\(A\\) and \\(B\\) are mutually exclusive (or disjoint) if they cannot occur simultaneously\n\\[A \\cap B = \\emptyset\\]\n\n\n\n\n\n\n\n\n\n\n\n\nWhen rolling a die\n\n\\(A = \\{1, 3, 5\\}\\) (odd)\n\\(B = \\{2, 4, 6\\}\\) (even)\n\n\\(A\\) and \\(B\\) are mutually exclusive"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#the-classical-definition-of-probability",
     "href": "files/lecture_notes/lecture4/lecture4.html#the-classical-definition-of-probability",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "The Classical Definition of Probability",
-    "text": "The Classical Definition of Probability\nFor equally likely outcomes:\n\\[P(A) = \\frac{\\text{Number of outcomes in } A}{\\text{Total number of outcomes in } S}\\]\n\nExample: Probability of rolling an even number on a fair die\n\\[P(\\text{even}) = \\frac{3}{6} = \\frac{1}{2}\\]"
+    "text": "The Classical Definition of Probability\nFor equally likely outcomes:\n\\[P(A) = \\frac{\\text{Number of outcomes in } A}{\\text{Total number of outcomes in } S}\\]\n\nProbability of rolling an even number on a fair die\n\n\n\\[P(\\text{even}) = \\frac{3}{6} = \\frac{1}{2}\\]"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#properties-of-probability",
@@ -2132,35 +2132,35 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#the-complement-rule",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "The Complement Rule",
-    "text": "The Complement Rule\n\\[P(A^c) = 1 - P(A)\\]\n\nExample: If the probability of rain is 0.3, what’s the probability of no rain?\n\\[P(\\text{no rain}) = 1 - P(\\text{rain}) = 1 - 0.3 = 0.7\\]"
+    "text": "The Complement Rule\n\\[P(A^c) = 1 - P(A)\\]\n\n\nIf the probability of rain is 0.3, what’s the probability of no rain?\n\n\n\n\\[P(\\text{no rain}) = 1 - P(\\text{rain}) = 1 - 0.3 = 0.7\\]"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#practice-problem-1",
     "href": "files/lecture_notes/lecture4/lecture4.html#practice-problem-1",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Practice Problem 1",
-    "text": "Practice Problem 1\nA standard deck has 52 cards. What is the probability of drawing:\n\nA heart?\nA face card (Jack, Queen, King)?\nThe ace of spades?\n\n\nSolutions: a) \\(P(\\text{heart}) = \\frac{13}{52} = \\frac{1}{4}\\) b) \\(P(\\text{face card}) = \\frac{12}{52} = \\frac{3}{13}\\) c) \\(P(\\text{ace of spades}) = \\frac{1}{52}\\)"
+    "text": "Practice Problem 1\n\n\n\n\nA standard deck has 52 cards. What is the probability of drawing:\n\nA heart?\nA face card (Jack, Queen, King)?\nThe ace of spades?\n\n\n\n\n\n\nSolution. \n\n\\(P(\\text{heart}) = \\frac{13}{52} = \\frac{1}{4}\\)\n\\(P(\\text{face card}) = \\frac{12}{52} = \\frac{3}{13}\\)\n\\(P(\\text{ace of spades}) = \\frac{1}{52}\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#the-addition-rule",
     "href": "files/lecture_notes/lecture4/lecture4.html#the-addition-rule",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "The Addition Rule",
-    "text": "The Addition Rule\nFor any two events \\(A\\) and \\(B\\):\n\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\]\n\nWhy subtract \\(P(A \\cap B)\\)?\nWe don’t want to double-count outcomes that are in both events"
+    "text": "The Addition Rule\nFor any two events \\(A\\) and \\(B\\):\n\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\]\n\nWhy subtract \\(P(A \\cap B)\\)?\n\n\nWe don’t want to double-count outcomes that are in both events"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#addition-rule-example",
     "href": "files/lecture_notes/lecture4/lecture4.html#addition-rule-example",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Addition Rule Example",
-    "text": "Addition Rule Example\nDrawing from a standard deck: - \\(A\\): Drawing a heart (\\(P(A) = \\frac{13}{52}\\)) - \\(B\\): Drawing a face card (\\(P(B) = \\frac{12}{52}\\))\nWhat’s \\(P(A \\cup B)\\) (heart OR face card)?\n\n\\(P(A \\cap B) = \\frac{3}{52}\\) (face cards that are hearts)\n\\(P(A \\cup B) = \\frac{13}{52} + \\frac{12}{52} - \\frac{3}{52} = \\frac{22}{52} = \\frac{11}{26}\\)"
+    "text": "Addition Rule Example\nDrawing from a standard deck:\n\n\\(A\\): Drawing a heart (\\(P(A) = \\frac{13}{52}\\))\n\\(B\\): Drawing a face card (\\(P(B) = \\frac{12}{52}\\))\n\n\n\n\n\n\n\n\n\n\nWhat’s \\(P(A \\cup B)\\) (heart OR face card)?\n\n\\(P(A \\cap B) = \\frac{3}{52}\\) (face cards that are hearts)\n\\(P(A \\cup B) = \\frac{13}{52} + \\frac{12}{52} - \\frac{3}{52} = \\frac{22}{52} = \\frac{11}{26}\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#conditional-probability",
     "href": "files/lecture_notes/lecture4/lecture4.html#conditional-probability",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Conditional Probability",
-    "text": "Conditional Probability\nConditional probability is the probability of event \\(A\\) given that event \\(B\\) has occurred\n\\[P(A|B) = \\frac{P(A \\cap B)}{P(B)}\\]\nprovided \\(P(B) &gt; 0\\)"
+    "text": "Conditional Probability\n\n🎯 Definition\nConditional probability is the probability of event \\(A\\) given that event \\(B\\) has occurred\n\\[P(A|B) = \\frac{P(A \\cap B)}{P(B)}\\]\nprovided \\(P(B) &gt; 0\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#conditional-probability-interpretation",
@@ -2174,14 +2174,14 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#conditional-probability-example",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Conditional Probability Example",
-    "text": "Conditional Probability Example\nDrawing a card from a standard deck: - \\(A\\): Card is a heart - \\(B\\): Card is red\nFind \\(P(A|B)\\)\n\n\\(P(A \\cap B) = P(\\text{heart}) = \\frac{13}{52}\\)\n\\(P(B) = P(\\text{red}) = \\frac{26}{52}\\)\n\\(P(A|B) = \\frac{13/52}{26/52} = \\frac{13}{26} = \\frac{1}{2}\\)"
+    "text": "Conditional Probability Example\nDrawing a card from a standard deck: - \\(A\\): Card is a heart - \\(B\\): Card is red\n\n\n\n\n\n\n\n\n\nFind \\(P(A|B)\\)\n\n\\(P(A \\cap B) = P(\\text{heart}) = \\frac{13}{52}\\)\n\\(P(B) = P(\\text{red}) = \\frac{26}{52}\\)\n\\(P(A|B) = \\frac{13/52}{26/52} = \\frac{13}{26} = \\frac{1}{2}\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#independence",
     "href": "files/lecture_notes/lecture4/lecture4.html#independence",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Independence",
-    "text": "Independence\nEvents \\(A\\) and \\(B\\) are independent if:\n\\[P(A|B) = P(A)\\]\nor equivalently:\n\\[P(A \\cap B) = P(A) \\times P(B)\\]\n\nKnowing that \\(B\\) occurred doesn’t change the probability of \\(A\\)"
+    "text": "Independence\n\n🎯 Definition\nEvents \\(A\\) and \\(B\\) are independent if:\n\\[P(A|B) = P(A)\\]\nor equivalently:\n\\[P(A \\cap B) = P(A) \\times P(B)\\]\n\n\nKnowing that \\(B\\) occurred doesn’t change the probability of \\(A\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#independence-example",
@@ -2223,7 +2223,7 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#bayes-theorem",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Bayes’ Theorem",
-    "text": "Bayes’ Theorem\n\\[P(A|B) = \\frac{P(B|A) \\times P(A)}{P(B)}\\]\nThis allows us to “reverse” conditional probabilities\n\nNamed after Thomas Bayes (1701-1761)"
+    "text": "Bayes’ Theorem\n\n🎯 Definition\n\\[P(A|B) = \\frac{P(B|A) \\times P(A)}{P(B)}\\]\nThis allows us to “reverse” conditional probabilities\nNamed after Thomas Bayes (1701-1761)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#bayes-theorem-components",
@@ -2356,7 +2356,7 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#looking-ahead",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Looking Ahead",
-    "text": "Looking Ahead\nNext lecture: Random Variables and Probability Distributions - Discrete vs. continuous random variables - Expected value and variance - Binomial and normal distributions\nHomework: Problems on basic probability, conditional probability, and independence"
+    "text": "Looking Ahead\nNext lecture: Random Variables and Probability Distributions - Discrete vs. continuous random variables - Expected value and variance - Binomial and normal distributions"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#final-thoughts",
@@ -2753,16 +2753,16 @@
   {
     "objectID": "files/worksheets/worksheet2.html",
     "href": "files/worksheets/worksheet2.html",
-    "title": "PSTAT 5A Practice Worksheet",
+    "title": "PSTAT 5A Practice Worksheet 2",
     "section": "",
-    "text": "⏰ Time Allocation: - Section A (Warm-up): 15 minutes\n\nSection B (Intermediate): 25 minutes\nSection C (Advanced): 20 minutes\nSection D (Variance Practice): 20 minutes\nTotal: 60 minutes\n\n\n\n📝 Important Instructions:\n\nShow all work clearly for full credit\nPartial credit awarded for correct methodology\nRound final answers to 4 decimal places unless otherwise specified\nIdentify your approach before calculating\nUse calculator and probability tables as needed\n\n\n\n📚 Key Formulas Reference:\nBasic Probability:\n\nConditional Probability: \\(P(A|B) = \\frac{P(A \\cap B)}{P(B)}\\)\nBayes’ Theorem: \\(P(A|B) = \\frac{P(B|A) \\cdot P(A)}{P(B)}\\)\nLaw of Total Probability: \\(P(A) = \\sum P(A|B_i) \\cdot P(B_i)\\)\n\nCounting:\n\nPermutations: \\(P(n,r) = \\frac{n!}{(n-r)!}\\)\nCombinations: \\(C(n,r) = \\binom{n}{r} = \\frac{n!}{r!(n-r)!}\\)\n\nDiscrete Random Variables:\n\nBinomial PMF: \\(P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\)\nPoisson PMF: \\(P(X = k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}\\)\nExpected Value: \\(E[X] = \\sum x \\cdot P(X = x)\\)\nVariance: \\(\\text{Var}(X) = E[X^2] - (E[X])^2\\)\n\nVariance Formulas:\n\nPopulation Variance: \\(\\sigma^2 = \\frac{\\sum_{i=1}^{N} (x_i - \\mu)^2}{N}\\)\nSample Variance: \\(s^2 = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^2}{n-1}\\)\nVariance of Sample Mean: \\(\\text{Var}(\\bar{X}) = \\frac{\\sigma^2}{n}\\)\nStandard Error: \\(SE(\\bar{X}) = \\frac{\\sigma}{\\sqrt{n}}\\)"
+    "text": "⏰ Time Allocation: - Section A (Warm-up): 15 minutes\n\nSection B (Intermediate): 25 minutes\nSection C (Wrap-Up): 10 minutes\nTotal: 50 minutes\n\n\n\n📝 Important Instructions:\n\nUse the formulas provided for guidance\nRound final answers to 4 decimal places unless otherwise specified\nIdentify your approach before calculating\nUse calculator as needed\n\n\n\n📚 Key Formulas Reference:\nDESCRIPTIVE STATISTICS:\n1. Mean Formulas:\n\nSample Mean: \\(\\bar x = \\frac{\\sum x_i}{n}\\)\nPopulation Mean: \\(\\mu = \\frac{\\sum x_i}{N}\\)\n\n2. Variance Formulas:\n\nPopulation Variance: \\(\\sigma^2 = \\frac{\\sum_{i=1}^{N} (x_i - \\mu)^2}{N}\\)\nSample Variance: \\(s^2 = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^2}{n-1}\\)\n\n3. Standard Deviations Formulas:\n\nSample Standard Deviation: \\(s = \\sqrt \\frac{\\sum (x_i - \\bar x)^2}{(n-1)}\\)\nPopulation Standard Deviation: \\(\\sigma = \\sqrt \\frac{\\sum (x_i - \\mu)^2}{N}\\)\n\nMEASURES OF POSITION:\n\nPercentile: Value below which a certain percentage of data falls\nQuartiles: Q1 (25th percentile), Q2 = Median (50th percentile), Q3 (75th percentile)\nInterquartile Range (IQR): Q3 - Q1\nRange: Maximum - Minimum\n\nDISTRIBUTION SHAPES:\n\nSymmetric: Mean ≈ Median\nRight-skewed: Mean &gt; Median (tail extends to the right)\nLeft-skewed: Mean &lt; Median (tail extends to the left)\nOutliers affect the mean more than the median"
   },
   {
     "objectID": "files/worksheets/worksheet2.html#understanding-variance-population-vs-sample",
     "href": "files/worksheets/worksheet2.html#understanding-variance-population-vs-sample",
-    "title": "PSTAT 5A Practice Worksheet",
-    "section": "5.1 Understanding Variance: Population vs Sample",
-    "text": "5.1 Understanding Variance: Population vs Sample\n\n🎯 Key Variance Concepts:\nPopulation Variance (when you have ALL data): \\[\\sigma^2 = \\frac{\\sum_{i=1}^{N} (x_i - \\mu)^2}{N}\\]\nSample Variance (when you have a sample): \\[s^2 = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^2}{n-1}\\]\nWhy (n-1)? Using the sample mean to estimate deviations “uses up” one degree of freedom.\nVariance of Sample Mean: \\[\\text{Var}(\\bar{X}) = \\frac{\\sigma^2}{n}\\]\nStandard Error (Standard Deviation of Sample Mean): \\[SE(\\bar{X}) = \\frac{\\sigma}{\\sqrt{n}}\\]\n\n\nProblem D1: Basic Variance Calculations (6 points)\nThe following data represents the number of customer complaints per day for a small business over 8 days:\nData: 3, 7, 2, 8, 5, 6, 4, 9\nPart (a) [1 point]: Calculate the sample mean \\(\\bar{x}\\).\nPart (b) [2 points]: Calculate the sample variance \\(s^2\\) using the formula with \\((n-1)\\) in the denominator.\nPart (c) [1 point]: Calculate the sample standard deviation \\(s\\).\nPart (d) [1 point]: If this were treated as a complete population, what would the population variance \\(\\sigma^2\\) be?\nPart (e) [1 point]: Explain why we divide by \\((n-1)\\) for sample variance instead of \\(n\\).\nWork Space:\n\n\n\nProblem D2: Sample Mean Distribution (8 points)\nA factory produces bolts with a mean length of 5.0 cm and standard deviation of 0.2 cm. Quality control takes random samples to monitor production.\nPart (a) [1 point]: If a sample of 16 bolts is taken, what is the expected value of the sample mean \\(\\bar{X}\\)?\nPart (b) [1.5 points]: What is the variance of the sample mean \\(\\text{Var}(\\bar{X})\\)?\nPart (c) [1 point]: What is the standard error of the sample mean?\nPart (d) [1.5 points]: If the sample size is increased to 64 bolts, how does this change the standard error?\nPart (e) [1.5 points - Conceptual]: Explain why the variance of the sample mean decreases as sample size increases.\nPart (f) [1.5 points - Application]: What sample size would be needed to reduce the standard error to 0.025 cm?\nWork Space:\n\n\n\nProblem D3: Variance Properties with Random Variables (6 points)\nConsider two independent random variables: - \\(X \\sim \\text{Binomial}(20, 0.3)\\)\n- \\(Y \\sim \\text{Poisson}(4)\\)\nDefine \\(Z = 2X + 3Y - 5\\).\nPart (a) [2 points]: Find \\(E[X]\\), \\(\\text{Var}(X)\\), \\(E[Y]\\), and \\(\\text{Var}(Y)\\).\nPart (b) [1.5 points]: Calculate \\(E[Z]\\) using properties of expectation.\nPart (c) [2 points]: Calculate \\(\\text{Var}(Z)\\) using properties of variance.\nPart (d) [0.5 points]: What is the standard deviation of \\(Z\\)?\nWork Space:\n\n\n\nProblem D4: Real-World Variance Application (7 points)\nA pharmaceutical company tests the effectiveness of a new drug. They measure the reduction in symptoms (in points) for patients taking the drug. Historical data shows that symptom reduction follows a distribution with mean μ = 12 points and standard deviation σ = 4 points.\nPart (a) [1 point]: If they test the drug on a sample of 25 patients, what is the expected value of the average symptom reduction?\nPart (b) [1.5 points]: What is the standard error of the sample mean?\nPart (c) [1.5 points]: The company wants the standard error to be no more than 0.5 points. What minimum sample size is required?\nPart (d) [2 points - Practical Interpretation]: If the company observes a sample mean of 13.2 points from 25 patients, calculate how many standard errors this is above the expected value. Is this result likely due to random variation?\nPart (e) [1 point - Study Design]: The company is designing a larger study. If they want to detect a true difference of 1 point from the historical mean with a standard error of 0.3, what sample size should they use?\nWork Space:"
+    "title": "PSTAT 5A Practice Worksheet 2",
+    "section": "4.1 Understanding Variance: Population vs Sample",
+    "text": "4.1 Understanding Variance: Population vs Sample\n\n🎯 Key Variance Concepts:\nPopulation Variance (when you have ALL data): \\[\\sigma^2 = \\frac{\\sum_{i=1}^{N} (x_i - \\mu)^2}{N}\\]\nSample Variance (when you have a sample): \\[s^2 = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^2}{n-1}\\]\nWhy (n-1)? Using the sample mean to estimate deviations “uses up” one degree of freedom.\n\n\nProblem C1: Basic Variance Calculations\nThe following data represents the number of customer complaints per day for a small business over 8 days:\nData: 3, 7, 2, 8, 5, 6, 4, 9\nPart (a) : Calculate the sample mean \\(\\bar{x}\\).\nPart (b) : Calculate the sample variance \\(s^2\\) using the formula with \\((n-1)\\) in the denominator.\nPart (c) : Calculate the sample standard deviation \\(s\\).\nPart (d) : If this were treated as a complete population, what would the population variance \\(\\sigma^2\\) be?\nPart (e) : Explain why we divide by \\((n-1)\\) for sample variance instead of \\(n\\).\nAnswer:\n\n\n\nProblem C2: Comparing Variability\nConsider two data sets:\n\nSet A: 10, 12, 14, 16, 18\nSet B: 5, 10, 14, 18, 23\n\n\nCalculate the mean for each set.\nCalculate the sample variance for each set.\nWhich set has greater variability?\nCalculate the coefficient of variation \\((CV = s/x̄)\\) for each set. Which has greater relative variability?\n\nAnswer:"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html",
@@ -4520,5 +4520,292 @@
     "title": "Linear Transformation Properties",
     "section": "References and Further Reading",
     "text": "References and Further Reading\n\nKey Topics for Further Study:\n\nProbability Theory: How these properties extend to random variables\nLinear Algebra: Matrix representations of linear transformations\n\nStatistics: Applications in regression and ANOVA\nData Science: Standardization and normalization techniques\n\nMathematical Foundation: These results form the basis for understanding how statistical measures behave under transformations."
+  },
+  {
+    "objectID": "files/worksheets/worksheet3.html",
+    "href": "files/worksheets/worksheet3.html",
+    "title": "PSTAT 5A Practice Worksheet",
+    "section": "",
+    "text": "⏰ Time Allocation: - Section A (Warm-up): 15 minutes\n\nSection B (Intermediate): 25 minutes\nSection C (Advanced): 20 minutes\nSection D (Variance Practice): 20 minutes\nTotal: 60 minutes\n\n\n\n📝 Important Instructions:\n\nShow all work clearly for full credit\nPartial credit awarded for correct methodology\nRound final answers to 4 decimal places unless otherwise specified\nIdentify your approach before calculating\nUse calculator and probability tables as needed\n\n\n\n📚 Key Formulas Reference:\nBasic Probability:\n\nConditional Probability: \\(P(A|B) = \\frac{P(A \\cap B)}{P(B)}\\)\nBayes’ Theorem: \\(P(A|B) = \\frac{P(B|A) \\cdot P(A)}{P(B)}\\)\nLaw of Total Probability: \\(P(A) = \\sum P(A|B_i) \\cdot P(B_i)\\)\n\nCounting:\n\nPermutations: \\(P(n,r) = \\frac{n!}{(n-r)!}\\)\nCombinations: \\(C(n,r) = \\binom{n}{r} = \\frac{n!}{r!(n-r)!}\\)\n\nDiscrete Random Variables:\n\nBinomial PMF: \\(P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\)\nPoisson PMF: \\(P(X = k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}\\)\nExpected Value: \\(E[X] = \\sum x \\cdot P(X = x)\\)\nVariance: \\(\\text{Var}(X) = E[X^2] - (E[X])^2\\)\n\nVariance Formulas:\n\nPopulation Variance: \\(\\sigma^2 = \\frac{\\sum_{i=1}^{N} (x_i - \\mu)^2}{N}\\)\nSample Variance: \\(s^2 = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^2}{n-1}\\)\nVariance of Sample Mean: \\(\\text{Var}(\\bar{X}) = \\frac{\\sigma^2}{n}\\)\nStandard Error: \\(SE(\\bar{X}) = \\frac{\\sigma}{\\sqrt{n}}\\)"
+  },
+  {
+    "objectID": "files/worksheets/worksheet3.html#understanding-variance-population-vs-sample",
+    "href": "files/worksheets/worksheet3.html#understanding-variance-population-vs-sample",
+    "title": "PSTAT 5A Practice Worksheet",
+    "section": "5.1 Understanding Variance: Population vs Sample",
+    "text": "5.1 Understanding Variance: Population vs Sample\n\n🎯 Key Variance Concepts:\nPopulation Variance (when you have ALL data): \\[\\sigma^2 = \\frac{\\sum_{i=1}^{N} (x_i - \\mu)^2}{N}\\]\nSample Variance (when you have a sample): \\[s^2 = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^2}{n-1}\\]\nWhy (n-1)? Using the sample mean to estimate deviations “uses up” one degree of freedom.\nVariance of Sample Mean: \\[\\text{Var}(\\bar{X}) = \\frac{\\sigma^2}{n}\\]\nStandard Error (Standard Deviation of Sample Mean): \\[SE(\\bar{X}) = \\frac{\\sigma}{\\sqrt{n}}\\]\n\n\nProblem D1: Basic Variance Calculations (6 points)\nThe following data represents the number of customer complaints per day for a small business over 8 days:\nData: 3, 7, 2, 8, 5, 6, 4, 9\nPart (a) [1 point]: Calculate the sample mean \\(\\bar{x}\\).\nPart (b) [2 points]: Calculate the sample variance \\(s^2\\) using the formula with \\((n-1)\\) in the denominator.\nPart (c) [1 point]: Calculate the sample standard deviation \\(s\\).\nPart (d) [1 point]: If this were treated as a complete population, what would the population variance \\(\\sigma^2\\) be?\nPart (e) [1 point]: Explain why we divide by \\((n-1)\\) for sample variance instead of \\(n\\).\nWork Space:\n\n\n\nProblem D2: Sample Mean Distribution (8 points)\nA factory produces bolts with a mean length of 5.0 cm and standard deviation of 0.2 cm. Quality control takes random samples to monitor production.\nPart (a) [1 point]: If a sample of 16 bolts is taken, what is the expected value of the sample mean \\(\\bar{X}\\)?\nPart (b) [1.5 points]: What is the variance of the sample mean \\(\\text{Var}(\\bar{X})\\)?\nPart (c) [1 point]: What is the standard error of the sample mean?\nPart (d) [1.5 points]: If the sample size is increased to 64 bolts, how does this change the standard error?\nPart (e) [1.5 points - Conceptual]: Explain why the variance of the sample mean decreases as sample size increases.\nPart (f) [1.5 points - Application]: What sample size would be needed to reduce the standard error to 0.025 cm?\nWork Space:\n\n\n\nProblem D3: Variance Properties with Random Variables (6 points)\nConsider two independent random variables: - \\(X \\sim \\text{Binomial}(20, 0.3)\\)\n- \\(Y \\sim \\text{Poisson}(4)\\)\nDefine \\(Z = 2X + 3Y - 5\\).\nPart (a) [2 points]: Find \\(E[X]\\), \\(\\text{Var}(X)\\), \\(E[Y]\\), and \\(\\text{Var}(Y)\\).\nPart (b) [1.5 points]: Calculate \\(E[Z]\\) using properties of expectation.\nPart (c) [2 points]: Calculate \\(\\text{Var}(Z)\\) using properties of variance.\nPart (d) [0.5 points]: What is the standard deviation of \\(Z\\)?\nWork Space:\n\n\n\nProblem D4: Real-World Variance Application (7 points)\nA pharmaceutical company tests the effectiveness of a new drug. They measure the reduction in symptoms (in points) for patients taking the drug. Historical data shows that symptom reduction follows a distribution with mean μ = 12 points and standard deviation σ = 4 points.\nPart (a) [1 point]: If they test the drug on a sample of 25 patients, what is the expected value of the average symptom reduction?\nPart (b) [1.5 points]: What is the standard error of the sample mean?\nPart (c) [1.5 points]: The company wants the standard error to be no more than 0.5 points. What minimum sample size is required?\nPart (d) [2 points - Practical Interpretation]: If the company observes a sample mean of 13.2 points from 25 patients, calculate how many standard errors this is above the expected value. Is this result likely due to random variation?\nPart (e) [1 point - Study Design]: The company is designing a larger study. If they want to detect a true difference of 1 point from the historical mean with a standard error of 0.3, what sample size should they use?\nWork Space:"
+  },
+  {
+    "objectID": "files/worksheets/worksheet2_sln.html",
+    "href": "files/worksheets/worksheet2_sln.html",
+    "title": "PSTAT 5A Practice Worksheet 2 Solutions",
+    "section": "",
+    "text": "Given:\n\n24 students: average = 74, standard deviation = 8.9\n1 makeup student: score = 64\n\n\n\nSolution: DECREASE\nSince 64 &lt; 74 (the current average), adding this score will pull the average down.\n\n\n\nSolution:\nNew average = (Sum of all 25 scores) / 25\nSum of first 24 scores = 24 × 74 = 1,776\nTotal sum = 1,776 + 64 = 1,840\nNew average = 1,840 / 25 = 73.6 points\n\n\n\nSolution: INCREASE\nThe score of 64 is more than one standard deviation below the original mean (74 - 8.9 = 65.1). This adds more variability to the dataset, increasing the standard deviation.\n\n\n\n\nGiven: - TV watching hours per week - Mean = 4.71 hours - Standard deviation = 4.18 hours\nQuestion: Is the distribution symmetric? What shape? Explain reasoning.\nSolution: NOT SYMMETRIC - RIGHT-SKEWED\nReasoning: 1. The standard deviation (4.18) is nearly as large as the mean (4.71)\n\nSince hours cannot be negative, there’s a natural lower bound at 0\nSome students likely watch much more TV than others, creating a long right tail\nThe large standard deviation relative to the mean suggests high variability\nIn a right-skewed distribution, a few high values (heavy TV watchers) pull the mean higher"
+  },
+  {
+    "objectID": "files/worksheets/worksheet2_sln.html#problem-a1-mean-and-standard-deviation",
+    "href": "files/worksheets/worksheet2_sln.html#problem-a1-mean-and-standard-deviation",
+    "title": "PSTAT 5A Practice Worksheet 2 Solutions",
+    "section": "",
+    "text": "Given:\n\n24 students: average = 74, standard deviation = 8.9\n1 makeup student: score = 64\n\n\n\nSolution: DECREASE\nSince 64 &lt; 74 (the current average), adding this score will pull the average down.\n\n\n\nSolution:\nNew average = (Sum of all 25 scores) / 25\nSum of first 24 scores = 24 × 74 = 1,776\nTotal sum = 1,776 + 64 = 1,840\nNew average = 1,840 / 25 = 73.6 points\n\n\n\nSolution: INCREASE\nThe score of 64 is more than one standard deviation below the original mean (74 - 8.9 = 65.1). This adds more variability to the dataset, increasing the standard deviation."
+  },
+  {
+    "objectID": "files/worksheets/worksheet2_sln.html#problem-a2-distribution-shape-analysis",
+    "href": "files/worksheets/worksheet2_sln.html#problem-a2-distribution-shape-analysis",
+    "title": "PSTAT 5A Practice Worksheet 2 Solutions",
+    "section": "",
+    "text": "Given: - TV watching hours per week - Mean = 4.71 hours - Standard deviation = 4.18 hours\nQuestion: Is the distribution symmetric? What shape? Explain reasoning.\nSolution: NOT SYMMETRIC - RIGHT-SKEWED\nReasoning: 1. The standard deviation (4.18) is nearly as large as the mean (4.71)\n\nSince hours cannot be negative, there’s a natural lower bound at 0\nSome students likely watch much more TV than others, creating a long right tail\nThe large standard deviation relative to the mean suggests high variability\nIn a right-skewed distribution, a few high values (heavy TV watchers) pull the mean higher"
+  },
+  {
+    "objectID": "files/worksheets/worksheet2_sln.html#problem-b1-interpreting-histograms",
+    "href": "files/worksheets/worksheet2_sln.html#problem-b1-interpreting-histograms",
+    "title": "PSTAT 5A Practice Worksheet 2 Solutions",
+    "section": "2.1 Problem B1: Interpreting Histograms",
+    "text": "2.1 Problem B1: Interpreting Histograms\nContext: Infant mortality histogram shows right-skewed distribution with:\n\nHighest bar at 0-10 range (about 38% of countries)\nDecreasing bars: 10-20 (23%), 20-30 (11%)\nLong right tail with few countries having high rates\n\n\n2.1.1 Part (a): Estimate Q1, the median, and Q3 from the histogram.\nSolution: Looking at cumulative percentages:\n\nQ1 (25th percentile) ≈ 8 deaths per 1,000 live births\nMedian (50th percentile) ≈ 15 deaths per 1,000 live births\nQ3 (75th percentile) ≈ 35 deaths per 1,000 live births\n\n\n\n2.1.2 Part (b): Would you expect the mean to be smaller or larger than the median? Explain.\nSolution: MEAN &gt; MEDIAN\nReasoning: - The distribution is right-skewed\n\nThe long right tail contains countries with very high infant mortality rates\nThese extreme values pull the mean higher than the median\nIn right-skewed distributions, the mean is always greater than the median\nThe median is resistant to outliers, but the mean is affected by them"
+  },
+  {
+    "objectID": "files/worksheets/worksheet2_sln.html#problem-b2-comparing-distributions",
+    "href": "files/worksheets/worksheet2_sln.html#problem-b2-comparing-distributions",
+    "title": "PSTAT 5A Practice Worksheet 2 Solutions",
+    "section": "2.2 Problem B2: Comparing Distributions",
+    "text": "2.2 Problem B2: Comparing Distributions\nBased on the plots showing Gain vs No Gain counties:\n\n2.2.1 Center:\n\nGain group has higher median household income (~$55,000)\nNo Gain group has lower median household income (~$45,000)\n\n\n\n2.2.2 Variability:\n\nGain group shows less variability (tighter distribution)\nNo Gain group shows greater variability (wider spread)\n\n\n\n2.2.3 Shape:\n\nBoth groups are right-skewed\nShape is relatively consistent between groups\nBoth have longer right tails\n\n\n\n2.2.4 Modes:\n\nEach group has one prominent mode\nGain group: mode around $50,000-$55,000\nNo Gain group: mode around $40,000-$45,000"
+  },
+  {
+    "objectID": "files/worksheets/worksheet2_sln.html#problem-c1-basic-variance-calculations",
+    "href": "files/worksheets/worksheet2_sln.html#problem-c1-basic-variance-calculations",
+    "title": "PSTAT 5A Practice Worksheet 2 Solutions",
+    "section": "3.1 Problem C1: Basic Variance Calculations",
+    "text": "3.1 Problem C1: Basic Variance Calculations\nData: 3, 7, 2, 8, 5, 6, 4, 9\n\n3.1.1 Part (a): Calculate the sample mean x̄.\nSolution:\nx̄ = (3 + 7 + 2 + 8 + 5 + 6 + 4 + 9) / 8\nx̄ = 44 / 8 = 5.5\n\n\n3.1.2 Part (b): Calculate the sample variance s² using (n-1).\nSolution:\ns² = Σ(xi - x̄)² / (n-1)\n\nDeviations from mean:\n(3-5.5)² = (-2.5)² = 6.25\n(7-5.5)² = (1.5)² = 2.25  \n(2-5.5)² = (-3.5)² = 12.25\n(8-5.5)² = (2.5)² = 6.25\n(5-5.5)² = (-0.5)² = 0.25\n(6-5.5)² = (0.5)² = 0.25\n(4-5.5)² = (-1.5)² = 2.25\n(9-5.5)² = (3.5)² = 12.25\n\nSum = 6.25 + 2.25 + 12.25 + 6.25 + 0.25 + 0.25 + 2.25 + 12.25 = 42\n\ns² = 42 / (8-1) = 42 / 7 = 6.0\n\n\n3.1.3 Part (c): Calculate the sample standard deviation s.\nSolution:\ns = √s² = √6 = 2.4495\n\n\n3.1.4 Part (d): Population variance σ² if treated as complete population.\nSolution:\nσ² = Σ(xi - μ)² / N\nσ² = 42 / 8 = 5.25\n\n\n3.1.5 Part (e): Why divide by (n-1) for sample variance instead of n?\nSolution: We use (n-1) because of degrees of freedom. When we use the sample mean x̄ to calculate deviations, we “use up” one degree of freedom. The sample mean constrains the data - if we know (n-1) deviations and the sample mean, the last deviation is determined. This makes s² an unbiased estimator of the population variance σ²."
+  },
+  {
+    "objectID": "files/worksheets/worksheet2_sln.html#problem-c2-comparing-variability",
+    "href": "files/worksheets/worksheet2_sln.html#problem-c2-comparing-variability",
+    "title": "PSTAT 5A Practice Worksheet 2 Solutions",
+    "section": "3.2 Problem C2: Comparing Variability",
+    "text": "3.2 Problem C2: Comparing Variability\nData Sets: - Set A: 10, 12, 14, 16, 18 - Set B: 5, 10, 14, 18, 23\n\n3.2.1 Part (a): Calculate the mean for each set.\nSolution:\nSet A: x̄_A = (10 + 12 + 14 + 16 + 18) / 5 = 70 / 5 = 14\nSet B: x̄_B = (5 + 10 + 14 + 18 + 23) / 5 = 70 / 5 = 14\n\n\n3.2.2 Part (b): Calculate the sample variance for each set.\nSolution:\nSet A:\nDeviations: (10-14)²=16, (12-14)²=4, (14-14)²=0, (16-14)²=4, (18-14)²=16\nSum = 16 + 4 + 0 + 4 + 16 = 40\ns²_A = 40 / (5-1) = 40 / 4 = 10\nSet B:\nDeviations: (5-14)²=81, (10-14)²=16, (14-14)²=0, (18-14)²=16, (23-14)²=81  \nSum = 81 + 16 + 0 + 16 + 81 = 194\ns²_B = 194 / (5-1) = 194 / 4 = 48.5\n\n\n3.2.3 Part (c): Which set has greater variability?\nSolution: SET B has greater variability\nSet B has variance = 48.5 vs Set A variance = 10\n\n\n3.2.4 Part (d): Calculate coefficient of variation for each set. Which has greater relative variability?\nSolution:\nCV_A = s_A / x̄_A = √10 / 14 = 3.162 / 14 = 0.2259\nCV_B = s_B / x̄_B = √48.5 / 14 = 6.964 / 14 = 0.4974\nSET B has greater relative variability (CV_B = 0.4974 &gt; CV_A = 0.2259)\nNote: The coefficient of variation measures variability relative to the mean, making it useful for comparing datasets with different units or scales."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#welcome-to-lecture-4",
+    "href": "files/lecture_notes/lecture4/lecture4.html#welcome-to-lecture-4",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Welcome to Lecture 4",
+    "text": "Welcome to Lecture 4\nIntroduction to Probability\nUnderstanding uncertainty through statistics"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#set-operations-visualization",
+    "href": "files/lecture_notes/lecture4/lecture4.html#set-operations-visualization",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Set Operations Visualization",
+    "text": "Set Operations Visualization\n\n\n\n\n\ngraph LR\n    subgraph \"Set Operations\"\n        subgraph \"A ∪ B (Union)\"\n            A1[\"A OR B\"]\n        end\n        subgraph \"A ∩ B (Intersection)\"\n            A2[\"A AND B\"]\n        end\n        subgraph \"A^c (Complement)\"\n            A3[\"NOT A\"]\n        end\n    end\n    \n    style A1 fill:#e1f5fe,stroke:#01579b,stroke-width:2px\n    style A2 fill:#f3e5f5,stroke:#4a148c,stroke-width:2px\n    style A3 fill:#fff3e0,stroke:#e65100,stroke-width:2px"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#what-is-probability-sec-prob",
+    "href": "files/lecture_notes/lecture4/lecture4.html#what-is-probability-sec-prob",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "What is Probability? (#sec-prob)",
+    "text": "What is Probability? (#sec-prob)\n\n🎯 Definition\nProbability is a measure of the likelihood that an event will occur\n\nRanges from 0 to 1 (or 0% to 100%)\n0: Event will never occur\n1: Event will certainly occur\n0.5: Event has equal chance of occurring or not\n\n\n\nExample: The probability of getting heads when flipping a fair coin is 0.5"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#sec-prob",
+    "href": "files/lecture_notes/lecture4/lecture4.html#sec-prob",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "What is Probability?",
+    "text": "What is Probability?\n\n🎯 Definition\nProbability is a measure of the likelihood that an event will occur"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#examples",
+    "href": "files/lecture_notes/lecture4/lecture4.html#examples",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Examples",
+    "text": "Examples\n\n\nExamples:\n\nCoin flip: \\(S = \\{H, T\\}\\)\nDie roll: \\(S = \\{1, 2, 3, 4, 5, 6\\}\\)\nTwo coin flips: \\(S = \\{HH, HT, TH, TT\\}\\)\n\n\n\n\n\nTypes of Sample Spaces\n\nFinite Sample Space\n\nLimited number of outcomes\n\n\nExample: Rolling a die\n\nInfinite Sample Space\n\nUnlimited outcomes (countable or uncountable)\n\n\nExample: Measuring exact height of students\n\n\n\n\nEvents\nAn event is a subset of the sample space\n\nSimple event: Contains exactly one outcome\nCompound event: Contains multiple outcomes\n\n\nExample (rolling a die): - Simple event: \\(A = \\{3\\}\\) (rolling a 3) - Compound event: \\(B = \\{2, 4, 6\\}\\) (rolling an even number)\n\n\n\nEvent Notation\nFor a die roll with \\(S = \\{1, 2, 3, 4, 5, 6\\}\\):\n\n\\(A = \\{1, 3, 5\\}\\) (rolling an odd number)\n\\(B = \\{4, 5, 6\\}\\) (rolling 4 or higher)\n\\(C = \\{6\\}\\) (rolling a six)\n\n\nWe can describe events in words or using set notation\n\n\n\nSet Operations with Events\nUnion (\\(A \\cup B\\)): Event that \\(A\\) OR \\(B\\) occurs\nIntersection (\\(A \\cap B\\)): Event that \\(A\\) AND \\(B\\) occurs\nComplement (\\(A^c\\) or \\(\\bar{A}\\)): Event that \\(A\\) does NOT occur\n\n\nVisual Representation: Venn Diagrams\n\n\n\n\n\n\n\n\n\nUnion, intersection, and complement can be visualized using Venn diagrams\n\n\nExample: Set Operations\nFor die roll \\(S = \\{1, 2, 3, 4, 5, 6\\}\\): - \\(A = \\{1, 3, 5\\}\\) (odd numbers) - \\(B = \\{4, 5, 6\\}\\) (4 or higher)\n\n\n\n\n\n\n\n\n\n\nFind: - \\(A \\cup B = \\{1, 3, 4, 5, 6\\}\\) - \\(A \\cap B = \\{5\\}\\) - \\(A^c = \\{2, 4, 6\\}\\)\n\n\n\nMutually Exclusive Events\nEvents \\(A\\) and \\(B\\) are mutually exclusive (or disjoint) if they cannot occur simultaneously\n\\[A \\cap B = \\emptyset\\]\n\n\n\n\n\n\n\n\n\n\nExample: When rolling a die - \\(A = \\{1, 3, 5\\}\\) (odd) - \\(B = \\{2, 4, 6\\}\\) (even)\n\\(A\\) and \\(B\\) are mutually exclusive\n\n\n\nThe Classical Definition of Probability\nFor equally likely outcomes:\n\\[P(A) = \\frac{\\text{Number of outcomes in } A}{\\text{Total number of outcomes in } S}\\]\n\nExample: Probability of rolling an even number on a fair die\n\\[P(\\text{even}) = \\frac{3}{6} = \\frac{1}{2}\\]\n\n\n\nProperties of Probability\n\nNon-negativity: \\(P(A) \\geq 0\\) for any event \\(A\\)\nNormalization: \\(P(S) = 1\\)\nAdditivity: If \\(A\\) and \\(B\\) are mutually exclusive, then \\[P(A \\cup B) = P(A) + P(B)\\]\n\n\n\nThe Complement Rule\n\\[P(A^c) = 1 - P(A)\\]\n\nExample: If the probability of rain is 0.3, what’s the probability of no rain?\n\\[P(\\text{no rain}) = 1 - P(\\text{rain}) = 1 - 0.3 = 0.7\\]\n\n\n\nPractice Problem 1\n\nA standard deck has 52 cards. What is the probability of drawing:\n\nA heart?\nA face card (Jack, Queen, King)?\nThe ace of spades?\n\n\n\nSolutions: a) \\(P(\\text{heart}) = \\frac{13}{52} = \\frac{1}{4}\\) b) \\(P(\\text{face card}) = \\frac{12}{52} = \\frac{3}{13}\\) c) \\(P(\\text{ace of spades}) = \\frac{1}{52}\\)\n\n\n\nThe Addition Rule\nFor any two events \\(A\\) and \\(B\\):\n\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\]\n\nWhy subtract \\(P(A \\cap B)\\)?\nWe don’t want to double-count outcomes that are in both events\n\n\n\nAddition Rule Example\nDrawing from a standard deck: - \\(A\\): Drawing a heart (\\(P(A) = \\frac{13}{52}\\)) - \\(B\\): Drawing a face card (\\(P(B) = \\frac{12}{52}\\))\n\n\n\n\n\n\n\n\n\nWhat’s \\(P(A \\cup B)\\) (heart OR face card)?\n\n\\(P(A \\cap B) = \\frac{3}{52}\\) (face cards that are hearts)\n\\(P(A \\cup B) = \\frac{13}{52} + \\frac{12}{52} - \\frac{3}{52} = \\frac{22}{52} = \\frac{11}{26}\\)\n\n\n\nConditional Probability\nConditional probability is the probability of event \\(A\\) given that event \\(B\\) has occurred\n\\[P(A|B) = \\frac{P(A \\cap B)}{P(B)}\\]\nprovided \\(P(B) &gt; 0\\)\n\n\nConditional Probability Interpretation\n\\(P(A|B)\\) means: - We know event \\(B\\) has occurred - What’s the probability that \\(A\\) also occurred? - We “restrict” our sample space to only outcomes in \\(B\\)\n\n\nConditional Probability Example\nDrawing a card from a standard deck: - \\(A\\): Card is a heart - \\(B\\): Card is red\n\n\n\n\n\n\n\n\n\nFind \\(P(A|B)\\)\n\n\\(P(A \\cap B) = P(\\text{heart}) = \\frac{13}{52}\\)\n\\(P(B) = P(\\text{red}) = \\frac{26}{52}\\)\n\\(P(A|B) = \\frac{13/52}{26/52} = \\frac{13}{26} = \\frac{1}{2}\\)\n\n\n\nIndependence\nEvents \\(A\\) and \\(B\\) are independent if:\n\\[P(A|B) = P(A)\\]\nor equivalently:\n\\[P(A \\cap B) = P(A) \\times P(B)\\]\n\nKnowing that \\(B\\) occurred doesn’t change the probability of \\(A\\)\n\n\n\nIndependence Example\nTwo coin flips: - \\(A\\): First flip is heads - \\(B\\): Second flip is heads\nAre \\(A\\) and \\(B\\) independent?\n\n\\(P(A) = \\frac{1}{2}\\), \\(P(B) = \\frac{1}{2}\\)\n\\(P(A \\cap B) = P(\\text{HH}) = \\frac{1}{4}\\)\n\\(P(A) \\times P(B) = \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}\\)\nYes, they are independent!\n\n\n\nMultiplication Rule\nGeneral case: \\(P(A \\cap B) = P(A) \\times P(B|A)\\)\nIndependent events: \\(P(A \\cap B) = P(A) \\times P(B)\\)\n\n\nPractice Problem 2\nA jar contains 5 red balls and 3 blue balls. Two balls are drawn without replacement.\n\nWhat’s the probability both balls are red?\nWhat’s the probability the first is red and second is blue?\n\n\n\n\\(P(\\text{both red}) = \\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}\\)\n\\(P(\\text{red then blue}) = \\frac{5}{8} \\times \\frac{3}{7} = \\frac{15}{56}\\)\n\n\n\n\nLaw of Total Probability\nIf events \\(B_1, B_2, \\ldots, B_n\\) form a partition of the sample space, then:\n\\[P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + \\cdots + P(A|B_n)P(B_n)\\]\n\n\nLaw of Total Probability Example\nA factory has two machines: - Machine 1: Produces 60% of items, 5% defective - Machine 2: Produces 40% of items, 3% defective\nWhat’s the overall probability an item is defective?\n\n\\(P(\\text{defective}) = P(D|M_1)P(M_1) + P(D|M_2)P(M_2)\\)\n\\(= 0.05 \\times 0.6 + 0.03 \\times 0.4 = 0.03 + 0.012 = 0.042\\)\n\n\n\nBayes’ Theorem\n\\[P(A|B) = \\frac{P(B|A) \\times P(A)}{P(B)}\\]\nThis allows us to “reverse” conditional probabilities\n\nNamed after Thomas Bayes (1701-1761)\n\n\n\nBayes’ Theorem Components\n\n\\(P(A|B)\\): Posterior probability - what we want to find\n\\(P(B|A)\\): Likelihood - given \\(A\\), probability of observing \\(B\\)\n\\(P(A)\\): Prior probability - initial probability of \\(A\\)\n\\(P(B)\\): Marginal probability - total probability of \\(B\\)\n\n\n\nBayes’ Theorem Example\nMedical test for a disease: - Disease affects 1% of population - Test is 95% accurate for sick people - Test is 90% accurate for healthy people\nIf someone tests positive, what’s the probability they have the disease?\n\n\nBayes’ Theorem Solution\nLet: - \\(D\\): Person has disease - \\(T^+\\): Test is positive\nGiven: - \\(P(D) = 0.01\\) - \\(P(T^+|D) = 0.95\\) - \\(P(T^-|D^c) = 0.90\\), so \\(P(T^+|D^c) = 0.10\\)\n\n\\(P(T^+) = P(T^+|D)P(D) + P(T^+|D^c)P(D^c)\\) \\(= 0.95 \\times 0.01 + 0.10 \\times 0.99 = 0.1085\\)\n\n\n\nBayes’ Theorem Solution (cont.)\n\\[P(D|T^+) = \\frac{P(T^+|D) \\times P(D)}{P(T^+)} = \\frac{0.95 \\times 0.01}{0.1085} \\approx 0.088\\]\n\nSurprising result: Even with a positive test, there’s only an 8.8% chance of having the disease!\nThis is due to the low base rate of the disease\n\n\n\nCommon Probability Mistakes\n\nConfusing \\(P(A|B)\\) with \\(P(B|A)\\)\n\nProsecutor’s fallacy\n\nAssuming independence when events are dependent\nIgnoring base rates (as in the medical test example)\nDouble counting in union calculations\n\n\n\nTree Diagrams\nTree diagrams help visualize sequential events and calculate probabilities\n                    0.6   Red\n            0.7 ──┐\n                    0.4   Blue\n    \n                    0.3   Red  \n            0.3 ──┐\n                    0.7   Blue\nExample: Drawing from different urns\n\n\nPractice Problem 3\nTwo fair dice are rolled. Find:\n\n\\(P(\\text{sum} = 7)\\)\n\\(P(\\text{sum} = 7 | \\text{first die shows 3})\\)\nAre these events independent?\n\n\n\n6 ways out of 36: \\(P(\\text{sum} = 7) = \\frac{6}{36} = \\frac{1}{6}\\)\nGiven first die is 3, need second die to be 4: \\(P(\\text{sum} = 7 | \\text{first} = 3) = \\frac{1}{6}\\)\nYes, they’re independent since \\(P(A|B) = P(A)\\)\n\n\n\n\nCounting and Probability\nSometimes we need to count outcomes:\nMultiplication Principle: If task 1 can be done in \\(m\\) ways and task 2 in \\(n\\) ways, both can be done in \\(m \\times n\\) ways\nPermutations: Arrangements where order matters \\[P(n,r) = \\frac{n!}{(n-r)!}\\]\nCombinations: Selections where order doesn’t matter \\[C(n,r) = \\binom{n}{r} = \\frac{n!}{r!(n-r)!}\\]\n\n\nCounting Example\nHow many ways can you arrange 5 people in a row?\n\nThis is a permutation: \\(P(5,5) = 5! = 120\\) ways\n\n\nHow many ways can you choose 3 people from 5 for a committee?\nThis is a combination: \\(C(5,3) = \\binom{5}{3} = \\frac{5!}{3!2!} = 10\\) ways\n\n\n\nProbability with Counting\nExample: A committee of 3 people is chosen from 8 people (5 women, 3 men). What’s the probability all 3 are women?\n\nTotal ways to choose 3 from 8: \\(\\binom{8}{3} = 56\\)\nWays to choose 3 women from 5: \\(\\binom{5}{3} = 10\\)\nProbability: \\(\\frac{10}{56} = \\frac{5}{28}\\)\n\n\n\nProbability Distributions Preview\nA probability distribution assigns probabilities to all possible outcomes\nFor discrete random variables: - Probability mass function (PMF) - Cumulative distribution function (CDF)\nWe’ll explore this more in future lectures\n\n\nCommon Discrete Distributions\nUniform Distribution: All outcomes equally likely\nBinomial Distribution: Number of successes in fixed trials\nGeometric Distribution: Number of trials until first success\nExamples and details coming in later lectures\n\n\nReal-World Applications\nMedical Diagnosis: Using Bayes’ theorem for test interpretation\nQuality Control: Probability of defective items\nFinance: Risk assessment and portfolio theory\nSports: Probability of wins, fantasy sports\nInsurance: Calculating premiums based on risk\n\n\nKey Formulas Summary\n\nBasic probability: \\(P(A) = \\frac{\\text{favorable outcomes}}{\\text{total outcomes}}\\)\nComplement: \\(P(A^c) = 1 - P(A)\\)\nAddition: \\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\)\nConditional: \\(P(A|B) = \\frac{P(A \\cap B)}{P(B)}\\)\nIndependence: \\(P(A \\cap B) = P(A) \\times P(B)\\)\nBayes’: \\(P(A|B) = \\frac{P(B|A) \\times P(A)}{P(B)}\\)\n\n\n\nProblem-Solving Strategy\n\nIdentify the sample space and events\nDetermine if events are independent or mutually exclusive\nChoose the appropriate rule or formula\nCalculate step by step\nCheck if your answer makes sense\n\n\n\nPractice Problem 4\nA bag contains 4 red, 3 blue, and 2 green marbles. Three marbles are drawn without replacement.\nFind the probability that: a) All three are red b) No two are the same color c) At least one is blue\n\n\nPractice Problem 4 Solutions\n\nAll red: \\(\\frac{4}{9} \\times \\frac{3}{8} \\times \\frac{2}{7} = \\frac{24}{504} = \\frac{1}{21}\\)\nDifferent colors: \\(\\frac{4 \\times 3 \\times 2}{9 \\times 8 \\times 7} \\times 3! = \\frac{24 \\times 6}{504} = \\frac{144}{504} = \\frac{2}{7}\\)\nAt least one blue: \\(1 - P(\\text{no blue}) = 1 - \\frac{6 \\times 5 \\times 4}{9 \\times 8 \\times 7} = 1 - \\frac{120}{504} = \\frac{384}{504} = \\frac{16}{21}\\)\n\n\n\nCommon Student Questions\nQ: “Why isn’t \\(P(A \\cup B) = P(A) + P(B)\\) always?” A: We’d double-count outcomes in both events\nQ: “How do I know if events are independent?” A: Check if \\(P(A|B) = P(A)\\) or if \\(P(A \\cap B) = P(A) \\times P(B)\\)\nQ: “When do I use Bayes’ theorem?” A: When you want to “reverse” a conditional probability\n\n\nLooking Ahead\nNext lecture: Random Variables and Probability Distributions - Discrete vs. continuous random variables - Expected value and variance - Binomial and normal distributions\n\n\nFinal Thoughts\nProbability is the foundation of statistics: - Helps us quantify uncertainty - Provides tools for making decisions with incomplete information - Essential for understanding statistical inference\n\nPractice: The key to mastering probability is working through many problems!\n\n\n\nQuestions?\nOffice Hours: [Your office hours] Email: [Your email] Next Class: Random Variables and Distributions\nRemember: Homework due [date]\n\n\nBonus: Probability Paradoxes\nMonty Hall Problem: Should you switch doors?\nBirthday Paradox: How many people needed for 50% chance of shared birthday?\nSimpson’s Paradox: When aggregate data reverses subgroup trends\nExplore these to deepen your probability intuition!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#examples-1",
+    "href": "files/lecture_notes/lecture4/lecture4.html#examples-1",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Examples",
+    "text": "Examples\n\n\nExamples:\n\nCoin flip: \\(S = \\{H, T\\}\\)\nDie roll: \\(S = \\{1, 2, 3, 4, 5, 6\\}\\)\nTwo coin flips: \\(S = \\{HH, HT, TH, TT\\}\\)\n\n\n\n\n\nTypes of Sample Spaces\n\nFinite Sample Space\n\nLimited number of outcomes\n\n\nExample: Rolling a die\n\nInfinite Sample Space\n\nUnlimited outcomes (countable or uncountable)\n\n\nExample: Measuring exact height of students\n\n\n\n\nEvents\nAn event is a subset of the sample space\n\nSimple event: Contains exactly one outcome\nCompound event: Contains multiple outcomes\n\n\nExample (rolling a die): - Simple event: \\(A = \\{3\\}\\) (rolling a 3) - Compound event: \\(B = \\{2, 4, 6\\}\\) (rolling an even number)\n\n\n\nEvent Notation\nFor a die roll with \\(S = \\{1, 2, 3, 4, 5, 6\\}\\):\n\n\\(A = \\{1, 3, 5\\}\\) (rolling an odd number)\n\\(B = \\{4, 5, 6\\}\\) (rolling 4 or higher)\n\\(C = \\{6\\}\\) (rolling a six)\n\n\nWe can describe events in words or using set notation\n\n\n\nSet Operations with Events\nUnion (\\(A \\cup B\\)): Event that \\(A\\) OR \\(B\\) occurs\nIntersection (\\(A \\cap B\\)): Event that \\(A\\) AND \\(B\\) occurs\nComplement (\\(A^c\\) or \\(\\bar{A}\\)): Event that \\(A\\) does NOT occur\n\n\nVisual Representation: Venn Diagrams\n\n\n\n\n\n\n\n\n\nUnion, intersection, and complement can be visualized using Venn diagrams\n\n\nExample: Set Operations\nFor die roll \\(S = \\{1, 2, 3, 4, 5, 6\\}\\): - \\(A = \\{1, 3, 5\\}\\) (odd numbers) - \\(B = \\{4, 5, 6\\}\\) (4 or higher)\n\n\n\n\n\n\n\n\n\n\nFind: - \\(A \\cup B = \\{1, 3, 4, 5, 6\\}\\) - \\(A \\cap B = \\{5\\}\\) - \\(A^c = \\{2, 4, 6\\}\\)\n\n\n\nMutually Exclusive Events\nEvents \\(A\\) and \\(B\\) are mutually exclusive (or disjoint) if they cannot occur simultaneously\n\\[A \\cap B = \\emptyset\\]\n\n\n\n\n\n\n\n\n\n\nExample: When rolling a die - \\(A = \\{1, 3, 5\\}\\) (odd) - \\(B = \\{2, 4, 6\\}\\) (even)\n\\(A\\) and \\(B\\) are mutually exclusive\n\n\n\nThe Classical Definition of Probability\nFor equally likely outcomes:\n\\[P(A) = \\frac{\\text{Number of outcomes in } A}{\\text{Total number of outcomes in } S}\\]\n\nExample: Probability of rolling an even number on a fair die\n\\[P(\\text{even}) = \\frac{3}{6} = \\frac{1}{2}\\]\n\n\n\nProperties of Probability\n\nNon-negativity: \\(P(A) \\geq 0\\) for any event \\(A\\)\nNormalization: \\(P(S) = 1\\)\nAdditivity: If \\(A\\) and \\(B\\) are mutually exclusive, then \\[P(A \\cup B) = P(A) + P(B)\\]\n\n\n\nThe Complement Rule\n\\[P(A^c) = 1 - P(A)\\]\n\nExample: If the probability of rain is 0.3, what’s the probability of no rain?\n\\[P(\\text{no rain}) = 1 - P(\\text{rain}) = 1 - 0.3 = 0.7\\]\n\n\n\nPractice Problem 1\n\nA standard deck has 52 cards. What is the probability of drawing:\n\nA heart?\nA face card (Jack, Queen, King)?\nThe ace of spades?\n\n\n\nSolutions: a) \\(P(\\text{heart}) = \\frac{13}{52} = \\frac{1}{4}\\) b) \\(P(\\text{face card}) = \\frac{12}{52} = \\frac{3}{13}\\) c) \\(P(\\text{ace of spades}) = \\frac{1}{52}\\)\n\n\n\nThe Addition Rule\nFor any two events \\(A\\) and \\(B\\):\n\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\]\n\nWhy subtract \\(P(A \\cap B)\\)?\nWe don’t want to double-count outcomes that are in both events\n\n\n\nAddition Rule Example\nDrawing from a standard deck: - \\(A\\): Drawing a heart (\\(P(A) = \\frac{13}{52}\\)) - \\(B\\): Drawing a face card (\\(P(B) = \\frac{12}{52}\\))\n\n\n\n\n\n\n\n\n\nWhat’s \\(P(A \\cup B)\\) (heart OR face card)?\n\n\\(P(A \\cap B) = \\frac{3}{52}\\) (face cards that are hearts)\n\\(P(A \\cup B) = \\frac{13}{52} + \\frac{12}{52} - \\frac{3}{52} = \\frac{22}{52} = \\frac{11}{26}\\)\n\n\n\nConditional Probability\nConditional probability is the probability of event \\(A\\) given that event \\(B\\) has occurred\n\\[P(A|B) = \\frac{P(A \\cap B)}{P(B)}\\]\nprovided \\(P(B) &gt; 0\\)\n\n\nConditional Probability Interpretation\n\\(P(A|B)\\) means: - We know event \\(B\\) has occurred - What’s the probability that \\(A\\) also occurred? - We “restrict” our sample space to only outcomes in \\(B\\)\n\n\nConditional Probability Example\nDrawing a card from a standard deck: - \\(A\\): Card is a heart - \\(B\\): Card is red\n\n\n\n\n\n\n\n\n\nFind \\(P(A|B)\\)\n\n\\(P(A \\cap B) = P(\\text{heart}) = \\frac{13}{52}\\)\n\\(P(B) = P(\\text{red}) = \\frac{26}{52}\\)\n\\(P(A|B) = \\frac{13/52}{26/52} = \\frac{13}{26} = \\frac{1}{2}\\)\n\n\n\nIndependence\nEvents \\(A\\) and \\(B\\) are independent if:\n\\[P(A|B) = P(A)\\]\nor equivalently:\n\\[P(A \\cap B) = P(A) \\times P(B)\\]\n\nKnowing that \\(B\\) occurred doesn’t change the probability of \\(A\\)\n\n\n\nIndependence Example\nTwo coin flips: - \\(A\\): First flip is heads - \\(B\\): Second flip is heads\nAre \\(A\\) and \\(B\\) independent?\n\n\\(P(A) = \\frac{1}{2}\\), \\(P(B) = \\frac{1}{2}\\)\n\\(P(A \\cap B) = P(\\text{HH}) = \\frac{1}{4}\\)\n\\(P(A) \\times P(B) = \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}\\)\nYes, they are independent!\n\n\n\nMultiplication Rule\nGeneral case: \\(P(A \\cap B) = P(A) \\times P(B|A)\\)\nIndependent events: \\(P(A \\cap B) = P(A) \\times P(B)\\)\n\n\nPractice Problem 2\nA jar contains 5 red balls and 3 blue balls. Two balls are drawn without replacement.\n\nWhat’s the probability both balls are red?\nWhat’s the probability the first is red and second is blue?\n\n\n\n\\(P(\\text{both red}) = \\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}\\)\n\\(P(\\text{red then blue}) = \\frac{5}{8} \\times \\frac{3}{7} = \\frac{15}{56}\\)\n\n\n\n\nLaw of Total Probability\nIf events \\(B_1, B_2, \\ldots, B_n\\) form a partition of the sample space, then:\n\\[P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + \\cdots + P(A|B_n)P(B_n)\\]\n\n\nLaw of Total Probability Example\nA factory has two machines: - Machine 1: Produces 60% of items, 5% defective - Machine 2: Produces 40% of items, 3% defective\nWhat’s the overall probability an item is defective?\n\n\\(P(\\text{defective}) = P(D|M_1)P(M_1) + P(D|M_2)P(M_2)\\)\n\\(= 0.05 \\times 0.6 + 0.03 \\times 0.4 = 0.03 + 0.012 = 0.042\\)\n\n\n\nBayes’ Theorem\n\\[P(A|B) = \\frac{P(B|A) \\times P(A)}{P(B)}\\]\nThis allows us to “reverse” conditional probabilities\n\nNamed after Thomas Bayes (1701-1761)\n\n\n\nBayes’ Theorem Components\n\n\\(P(A|B)\\): Posterior probability - what we want to find\n\\(P(B|A)\\): Likelihood - given \\(A\\), probability of observing \\(B\\)\n\\(P(A)\\): Prior probability - initial probability of \\(A\\)\n\\(P(B)\\): Marginal probability - total probability of \\(B\\)\n\n\n\nBayes’ Theorem Example\nMedical test for a disease: - Disease affects 1% of population - Test is 95% accurate for sick people - Test is 90% accurate for healthy people\nIf someone tests positive, what’s the probability they have the disease?\n\n\nBayes’ Theorem Solution\nLet: - \\(D\\): Person has disease - \\(T^+\\): Test is positive\nGiven: - \\(P(D) = 0.01\\) - \\(P(T^+|D) = 0.95\\) - \\(P(T^-|D^c) = 0.90\\), so \\(P(T^+|D^c) = 0.10\\)\n\n\\(P(T^+) = P(T^+|D)P(D) + P(T^+|D^c)P(D^c)\\) \\(= 0.95 \\times 0.01 + 0.10 \\times 0.99 = 0.1085\\)\n\n\n\nBayes’ Theorem Solution (cont.)\n\\[P(D|T^+) = \\frac{P(T^+|D) \\times P(D)}{P(T^+)} = \\frac{0.95 \\times 0.01}{0.1085} \\approx 0.088\\]\n\nSurprising result: Even with a positive test, there’s only an 8.8% chance of having the disease!\nThis is due to the low base rate of the disease\n\n\n\nCommon Probability Mistakes\n\nConfusing \\(P(A|B)\\) with \\(P(B|A)\\)\n\nProsecutor’s fallacy\n\nAssuming independence when events are dependent\nIgnoring base rates (as in the medical test example)\nDouble counting in union calculations\n\n\n\nTree Diagrams\nTree diagrams help visualize sequential events and calculate probabilities\n                    0.6   Red\n            0.7 ──┐\n                    0.4   Blue\n    \n                    0.3   Red  \n            0.3 ──┐\n                    0.7   Blue\nExample: Drawing from different urns\n\n\nPractice Problem 3\nTwo fair dice are rolled. Find:\n\n\\(P(\\text{sum} = 7)\\)\n\\(P(\\text{sum} = 7 | \\text{first die shows 3})\\)\nAre these events independent?\n\n\n\n6 ways out of 36: \\(P(\\text{sum} = 7) = \\frac{6}{36} = \\frac{1}{6}\\)\nGiven first die is 3, need second die to be 4: \\(P(\\text{sum} = 7 | \\text{first} = 3) = \\frac{1}{6}\\)\nYes, they’re independent since \\(P(A|B) = P(A)\\)\n\n\n\n\nCounting and Probability\nSometimes we need to count outcomes:\nMultiplication Principle: If task 1 can be done in \\(m\\) ways and task 2 in \\(n\\) ways, both can be done in \\(m \\times n\\) ways\nPermutations: Arrangements where order matters \\[P(n,r) = \\frac{n!}{(n-r)!}\\]\nCombinations: Selections where order doesn’t matter \\[C(n,r) = \\binom{n}{r} = \\frac{n!}{r!(n-r)!}\\]\n\n\nCounting Example\nHow many ways can you arrange 5 people in a row?\n\nThis is a permutation: \\(P(5,5) = 5! = 120\\) ways\n\n\nHow many ways can you choose 3 people from 5 for a committee?\nThis is a combination: \\(C(5,3) = \\binom{5}{3} = \\frac{5!}{3!2!} = 10\\) ways\n\n\n\nProbability with Counting\nExample: A committee of 3 people is chosen from 8 people (5 women, 3 men). What’s the probability all 3 are women?\n\nTotal ways to choose 3 from 8: \\(\\binom{8}{3} = 56\\)\nWays to choose 3 women from 5: \\(\\binom{5}{3} = 10\\)\nProbability: \\(\\frac{10}{56} = \\frac{5}{28}\\)\n\n\n\nProbability Distributions Preview\nA probability distribution assigns probabilities to all possible outcomes\nFor discrete random variables: - Probability mass function (PMF) - Cumulative distribution function (CDF)\nWe’ll explore this more in future lectures\n\n\nCommon Discrete Distributions\nUniform Distribution: All outcomes equally likely\nBinomial Distribution: Number of successes in fixed trials\nGeometric Distribution: Number of trials until first success\nExamples and details coming in later lectures\n\n\nReal-World Applications\nMedical Diagnosis: Using Bayes’ theorem for test interpretation\nQuality Control: Probability of defective items\nFinance: Risk assessment and portfolio theory\nSports: Probability of wins, fantasy sports\nInsurance: Calculating premiums based on risk\n\n\nKey Formulas Summary\n\nBasic probability: \\(P(A) = \\frac{\\text{favorable outcomes}}{\\text{total outcomes}}\\)\nComplement: \\(P(A^c) = 1 - P(A)\\)\nAddition: \\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\)\nConditional: \\(P(A|B) = \\frac{P(A \\cap B)}{P(B)}\\)\nIndependence: \\(P(A \\cap B) = P(A) \\times P(B)\\)\nBayes’: \\(P(A|B) = \\frac{P(B|A) \\times P(A)}{P(B)}\\)\n\n\n\nProblem-Solving Strategy\n\nIdentify the sample space and events\nDetermine if events are independent or mutually exclusive\nChoose the appropriate rule or formula\nCalculate step by step\nCheck if your answer makes sense\n\n\n\nPractice Problem 4\nA bag contains 4 red, 3 blue, and 2 green marbles. Three marbles are drawn without replacement.\nFind the probability that: a) All three are red b) No two are the same color c) At least one is blue\n\n\nPractice Problem 4 Solutions\n\nAll red: \\(\\frac{4}{9} \\times \\frac{3}{8} \\times \\frac{2}{7} = \\frac{24}{504} = \\frac{1}{21}\\)\nDifferent colors: \\(\\frac{4 \\times 3 \\times 2}{9 \\times 8 \\times 7} \\times 3! = \\frac{24 \\times 6}{504} = \\frac{144}{504} = \\frac{2}{7}\\)\nAt least one blue: \\(1 - P(\\text{no blue}) = 1 - \\frac{6 \\times 5 \\times 4}{9 \\times 8 \\times 7} = 1 - \\frac{120}{504} = \\frac{384}{504} = \\frac{16}{21}\\)\n\n\n\nCommon Student Questions\nQ: “Why isn’t \\(P(A \\cup B) = P(A) + P(B)\\) always?” A: We’d double-count outcomes in both events\nQ: “How do I know if events are independent?” A: Check if \\(P(A|B) = P(A)\\) or if \\(P(A \\cap B) = P(A) \\times P(B)\\)\nQ: “When do I use Bayes’ theorem?” A: When you want to “reverse” a conditional probability\n\n\nLooking Ahead\nNext lecture: Random Variables and Probability Distributions - Discrete vs. continuous random variables - Expected value and variance - Binomial and normal distributions\n\n\nFinal Thoughts\nProbability is the foundation of statistics: - Helps us quantify uncertainty - Provides tools for making decisions with incomplete information - Essential for understanding statistical inference\n\nPractice: The key to mastering probability is working through many problems!\n\n\n\nQuestions?\nOffice Hours: [Your office hours] Email: [Your email] Next Class: Random Variables and Distributions\nRemember: Homework due [date]\n\n\nBonus: Probability Paradoxes\nMonty Hall Problem: Should you switch doors?\nBirthday Paradox: How many people needed for 50% chance of shared birthday?\nSimpson’s Paradox: When aggregate data reverses subgroup trends\nExplore these to deepen your probability intuition!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#probability",
+    "href": "files/lecture_notes/lecture4/lecture4.html#probability",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Probability",
+    "text": "Probability\n\n\nProbability can be expressed in fraction, decimal, or percentage.\nIt Ranges from 0 to 1 (or 0% to 100%)\n0: Event will never occur\n1: Event will certainly occur\n0.5: Event has equal chance of occurring or not\n\n\n\nExample : The probability of getting heads when flipping a fair coin is 0.5"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-measure",
+    "href": "files/lecture_notes/lecture4/lecture4.html#probability-measure",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Probability Measure",
+    "text": "Probability Measure\n\n\nProbability can be expressed in fraction, decimal, or percentage.\nIt Ranges from 0 to 1 (or 0% to 100%)\n0: Event will never occur\n1: Event will certainly occur\n0.5: Event has equal chance of occurring or not\n\n\n :::{.fragment .concept-box-fragment} Example : The probability of getting heads when flipping a fair coin is 0.5 :::"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#example",
+    "href": "files/lecture_notes/lecture4/lecture4.html#example",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Example",
+    "text": "Example\nWhen we roll a die, there are six possible outcomes:\n1, 2, 3, 4, 5, 6.\nThe probability of any of them turning up is 1/6 or 16%."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#section",
+    "href": "files/lecture_notes/lecture4/lecture4.html#section",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "",
+    "text": "Probability can be expressed in fraction, decimal, or percentage.\nIt Ranges from 0 to 1 (or 0% to 100%)\n0: Event will never occur\n1: Event will certainly occur\n0.5: Event has equal chance of occurring or not\n\n\n :::{.fragment .concept-box-fragment} Example : The probability of getting heads when flipping a fair coin is 0.5 :::"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#how-is-probability-expressed",
+    "href": "files/lecture_notes/lecture4/lecture4.html#how-is-probability-expressed",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "How is Probability expressed?",
+    "text": "How is Probability expressed?\n\n:::{.column .width =40%} - Probability can be expressed in fraction, decimal, or percentage.\nIt Ranges from 0 to 1 (or 0% to 100%)\n0: Event will never occur\n1: Event will certainly occur\n0.5: Event has equal chance of occurring or not\n\n\n\n\n Example : The probability of getting heads when flipping a fair coin is 0.5\n\n:::"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#sample-space-examples",
+    "href": "files/lecture_notes/lecture4/lecture4.html#sample-space-examples",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Sample Space Examples",
+    "text": "Sample Space Examples\n\nCoin flip: \\(S = \\{H, T\\}\\)\nTwo coin flips: \\(S = \\{HH, HT, TH, TT\\}\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#venn-diagrams",
+    "href": "files/lecture_notes/lecture4/lecture4.html#venn-diagrams",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Venn Diagrams",
+    "text": "Venn Diagrams\n\n\n\n\n\n\n\n\n\nUnion, intersection, and complement can be visualized using Venn diagrams"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#set-operations-vocabulary",
+    "href": "files/lecture_notes/lecture4/lecture4.html#set-operations-vocabulary",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Set Operations Vocabulary",
+    "text": "Set Operations Vocabulary\n\n\nSet\nA collection of things that share common characteristics. They can be elements, members, objects or similar terms.\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntersection\nArea where two or more sets overlap, indicating elements that belong to all the sets involved simultaneously.\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnion\nContains all set elements, including intersections.\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbsolute complement\nAll elements that do not belong to the set."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#set-operations-overview",
+    "href": "files/lecture_notes/lecture4/lecture4.html#set-operations-overview",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Set Operations Overview",
+    "text": "Set Operations Overview\n\n🎯 Definition\n\nKey Concepts:\n\nSet: Collection of distinct objects\nUnion: A OR B occurs\n\nIntersection: A AND B occurs\nComplement: A does NOT occur\nSample Space: All possible outcomes\n\n\n\n\n\nKey Concepts:\n\nSet: Collection of distinct objects\nUnion: A OR B occurs\n\nIntersection: A AND B occurs\nComplement: A does NOT occur\nSample Space: All possible outcomes"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#what-is-a-set",
+    "href": "files/lecture_notes/lecture4/lecture4.html#what-is-a-set",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "What is a Set?",
+    "text": "What is a Set?\n\n\n\nDefinition: A collection of things that share common characteristics. They can be elements, members, objects or similar terms.\nExamples:\n\nSet of even numbers:\n\n{2, 4, 6, 8, …}\n\nSet of vowels: {a, e, i, o, u}"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#union-a-b",
+    "href": "files/lecture_notes/lecture4/lecture4.html#union-a-b",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Union: A ∪ B",
+    "text": "Union: A ∪ B\n\n\n\nDefinition: Contains all set elements, including intersections.\nIn Probability: The event that A OR B occurs (or both).\n\n\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\]"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#intersection-a-b",
+    "href": "files/lecture_notes/lecture4/lecture4.html#intersection-a-b",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Intersection: A ∩ B",
+    "text": "Intersection: A ∩ B\n\n\n\nDefinition: Area where two or more sets overlap.\nIn Probability: The event that A AND B occurs.\nProperties:\n\nAlways smaller than or equal to individual sets\nCan be empty (disjoint sets)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#absolute-complement-ac",
+    "href": "files/lecture_notes/lecture4/lecture4.html#absolute-complement-ac",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Absolute Complement: \\(A^c\\)",
+    "text": "Absolute Complement: \\(A^c\\)\n\n\nDefinition: All elements that do not belong to the set.\nIn Probability: The event that A does NOT occur.\n\n\\(P(A^c) = 1 - P(A)\\)\n\nKey Property: \\(A \\cup A^c = S\\) (Sample Space)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#summary-table",
+    "href": "files/lecture_notes/lecture4/lecture4.html#summary-table",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Summary Table",
+    "text": "Summary Table\n\n\n\n\n\n\n\n\n\nOperation\nSymbol\nMeaning\nProbability\n\n\n\n\nUnion\n\\(A \\cup B\\)\nOccurs if \\(A\\) or \\(B\\)\n\\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\)\n\n\nIntersection\n\\(A \\cap B\\)\nOccurs if \\(A\\) and \\(B\\)\n\\(P(A \\cap B)\\)\n\n\nComplement\n\\(A^c\\)\nOccurs if \\(A\\) does not occur\n\\(P(A^c) = 1 - P(A)\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#all-operations-visualized",
+    "href": "files/lecture_notes/lecture4/lecture4.html#all-operations-visualized",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "All Operations Visualized",
+    "text": "All Operations Visualized"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#practice-examples",
+    "href": "files/lecture_notes/lecture4/lecture4.html#practice-examples",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Practice Examples",
+    "text": "Practice Examples\n\nExample 1: In a class of students:\n\nSet A = Students who like Math\nSet B = Students who like Science\n\nWhat does A ∪ B represent?\n\n\n\nSolution. Students who like Math OR Science (or both)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-range",
+    "href": "files/lecture_notes/lecture4/lecture4.html#probability-range",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Probability Range",
+    "text": "Probability Range\n\n\n\nRanges from 0 to 1 (or 0% to 100%)\n0: Event will never occur (impossible)\n1: Event will certainly occur (certain)\n0.5: Event has equal chance of occurring or not"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#three-ways-to-express-probability",
+    "href": "files/lecture_notes/lecture4/lecture4.html#three-ways-to-express-probability",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Three Ways to Express Probability",
+    "text": "Three Ways to Express Probability\n\nFraction: \\(\\frac{1}{2}\\), \\(\\frac{3}{4}\\), \\(\\frac{2}{6}\\)\nDecimal: 0.5, 0.75, 0.33\nPercentage: 50%, 75%, 33%"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-axioms",
+    "href": "files/lecture_notes/lecture4/lecture4.html#probability-axioms",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Probability Axioms",
+    "text": "Probability Axioms\n\nCommutative\n\\(A \\cup B = B \\cup A\\)\n\\(A \\cap B = B \\cap A\\)\n\n\nAssociative\n\\((A \\cup B) \\cup C = A \\cup (B \\cup C)\\)\n\\((A \\cap B) \\cap C = A \\cap (B \\cap C)\\)\n\n\nDistributive\n\\(A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\\)\n\\(A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)\\)\n\n\nDe Morgan’s Laws\n\\((A \\cup B)^c = A^c \\cap B^c\\)\n\\((A \\cap B)^c = A^c \\cup B^c\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-1",
+    "href": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-1",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Probability Axioms",
+    "text": "Probability Axioms\nKey Laws:\n\nCommutative\n[ A B = B A, A B = B A ]\nAssociative\n[ (A B) C = A (B C), (A B) C = A (B C) ]\nDistributive\n[ A (B C) = (A B) (A C), A (B C) = (A B) (A C) ]\nDe Morgan’s\n[ (A B)^{c} = A^{c} B^{c}, (A B)^{c} = A^{c} B^{c} ]"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#example-1",
+    "href": "files/lecture_notes/lecture4/lecture4.html#example-1",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Example",
+    "text": "Example\n\nExample: When rolling a die\n\n\\(A = \\{1, 3, 5\\}\\) (odd)\n\\(B = \\{2, 4, 6\\}\\) (even)\n\n\\(A\\) and \\(B\\) are mutually exclusive"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#sec-objectives",
+    "href": "files/lecture_notes/lecture4/lecture4.html#sec-objectives",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Today’s Learning Objectives",
+    "text": "Today’s Learning Objectives\nBy the end of this lecture, you will be able to:\n\nDefine probability and understand its basic properties\nIdentify sample spaces and events\nApply fundamental probability rules\nCalculate conditional probabilities\nDetermine when events are independent\nUse Bayes’ theorem in simple applications"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-commutative",
+    "href": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-commutative",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Probability Axioms: Commutative",
+    "text": "Probability Axioms: Commutative\n\nCommutative\n\\(A \\cup B = B \\cup A\\)\n\\(A \\cap B = B \\cap A\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-associative",
+    "href": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-associative",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Probability Axioms: Associative",
+    "text": "Probability Axioms: Associative\n\nAssociative\n\\((A \\cup B) \\cup C = A \\cup (B \\cup C)\\)\n\\((A \\cap B) \\cap C = A \\cap (B \\cap C)\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-distributive",
+    "href": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-distributive",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Probability Axioms: Distributive",
+    "text": "Probability Axioms: Distributive\n\nDistributive\n\\(A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\\)\n\\(A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-de-morgans-laws",
+    "href": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-de-morgans-laws",
+    "title": "PSTAT 5A: Introduction to Probability",
+    "section": "Probability Axioms: De Morgan’s Laws",
+    "text": "Probability Axioms: De Morgan’s Laws\n\nDe Morgan’s Laws\n\\((A \\cup B)^c = A^c \\cap B^c\\)\n\\((A \\cap B)^c = A^c \\cup B^c\\)"
   }
 ]

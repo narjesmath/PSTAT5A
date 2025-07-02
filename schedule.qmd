@@ -139,7 +139,7 @@ Intro to Probability
 [Lab2 Notebook](/files/labs/lab2/lab2.ipynb){download="lab2.ipynb"}
 :::
 ::: {.worksheet}
-Worksheet 2
+[Worksheet 2](/files/worksheets/worksheet2.qmd)
 :::
 :::
 

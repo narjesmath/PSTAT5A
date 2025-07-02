@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Narjes Mathlouthi">
-  <meta name="dcterms.date" content="2025-06-29">
+  <meta name="dcterms.date" content="2025-07-02">
   <title>PSTAT5A – PSTAT 5A: Introduction to Probability</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,6 +31,7 @@
     }
   </style>
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
+  <link rel="stylesheet" href="../../../files/lecture_notes/theme/lecture-styles.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -124,9 +125,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -144,39 +142,68 @@ Narjes Mathlouthi
 </div>
 </div>
 
-  <p class="date">2025-06-29</p>
+  <p class="date">2025-07-02</p>
 </section>
-<section id="welcome-to-lecture-3" class="slide level2 center">
-<h2>Welcome to Lecture 3</h2>
+<section id="welcome-to-lecture-4" class="slide level2 center">
+<h2>Welcome to Lecture 4</h2>
 <p><strong>Introduction to Probability</strong></p>
-<p><em>Understanding the mathematics of uncertainty</em></p>
+<p><em>Understanding uncertainty through statistics</em></p>
 </section>
-<section id="todays-learning-objectives" class="slide level2">
+<section id="sec-objectives" class="slide level2 smaller">
 <h2>Today’s Learning Objectives</h2>
 <p>By the end of this lecture, you will be able to:</p>
 <ul>
-<li>Define probability and understand its basic properties</li>
-<li>Identify sample spaces and events</li>
-<li>Apply fundamental probability rules</li>
-<li>Calculate conditional probabilities</li>
-<li>Determine when events are independent</li>
-<li>Use Bayes’ theorem in simple applications</li>
+<li><a href="#/sec-prob">Define probability and understand its basic properties</a></li>
+<li><a href="#/sample-space">Identify sample spaces and events</a></li>
+<li><a href="#/set-operations-overview">Apply fundamental probability rules</a></li>
+<li><a href="#/conditional-probability">Calculate conditional probabilities</a></li>
+<li><a href="#/independence">Determine when events are independent</a></li>
+<li><a href="#/bayes-theorem">Use Bayes’ theorem in simple applications</a></li>
 </ul>
 </section>
-<section id="what-is-probability" class="slide level2">
+<section id="sec-prob" class="slide level2">
 <h2>What is Probability?</h2>
+<section id="definition" class="concept-box">
+<h4>🎯 Definition</h4>
 <p><strong>Probability</strong> is a measure of the likelihood that an event will occur</p>
-<ul>
-<li>Ranges from 0 to 1 (or 0% to 100%)</li>
-<li><strong>0</strong>: Event will never occur</li>
-<li><strong>1</strong>: Event will certainly occur</li>
-<li><strong>0.5</strong>: Event has equal chance of occurring or not</li>
-</ul>
-<div class="fragment">
-<p><em>Example</em>: The probability of getting heads when flipping a fair coin is 0.5</p>
-</div>
 </section>
-<section id="why-study-probability" class="slide level2">
+</section>
+<section id="probability-range" class="slide level2 smaller">
+<h2>Probability Range</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><p>Ranges from <strong>0 to 1</strong> (or <strong>0% to 100%</strong>)</p></li>
+<li><p><strong>0</strong>: Event will never occur (impossible)</p></li>
+<li><p><strong>1</strong>: Event will certainly occur (certain)</p></li>
+<li><p><strong>0.5</strong>: Event has equal chance of occurring or not</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="fragment">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="../../../files/lecture_notes/lecture4/img/prob.png" class="quarto-figure quarto-figure-right"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section id="three-ways-to-express-probability" class="slide level2">
+<h2>Three Ways to Express Probability</h2>
+<ul>
+<li><strong>Fraction</strong>: <span class="math inline">\(\frac{1}{2}\)</span>, <span class="math inline">\(\frac{3}{4}\)</span>, <span class="math inline">\(\frac{2}{6}\)</span></li>
+<li><strong>Decimal</strong>: 0.5, 0.75, 0.33</li>
+<li><strong>Percentage</strong>: 50%, 75%, 33%</li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p>When we roll a die, there are six possible outcomes:</p>
+<p>1, 2, 3, 4, 5, 6.</p>
+<p>The probability of any of them turning up is 1/6 or 16%.</p>
+
+<img data-src="../../../files/lecture_notes/lecture4/img/die.png" class="quarto-figure quarto-figure-right r-stretch" style="width:80.0%"></section>
+<section id="why-study-probability" class="slide level2 smaller">
 <h2>Why Study Probability?</h2>
 <p>Probability helps us:</p>
 <ul>
@@ -190,7 +217,7 @@ Narjes Mathlouthi
 <p><em>Applications</em>: Weather forecasting, medical diagnosis, finance, quality control, gaming, insurance</p>
 </div>
 </section>
-<section id="random-experiments" class="slide level2">
+<section id="random-experiments" class="slide level2 smaller">
 <h2>Random Experiments</h2>
 <p>A <strong>random experiment</strong> is a process that:</p>
 <ol type="1">
@@ -199,50 +226,96 @@ Narjes Mathlouthi
 <li>The outcome cannot be predicted with certainty</li>
 </ol>
 <div class="fragment">
-<p><strong>Examples:</strong> - Flipping a coin - Rolling a die - Drawing a card from a deck - Measuring the lifetime of a light bulb</p>
+<div class="example">
+<p><strong>Examples</strong></p>
+<ul>
+<li><p>🪙 Flipping a coin</p></li>
+<li><p>🎲 Rolling a die</p></li>
+<li><p>🃏 Drawing a card from a deck</p></li>
+<li><p>💡 Measuring the lifetime of a light bulb</p></li>
+</ul>
+</div>
 </div>
 </section>
 <section id="sample-space" class="slide level2">
 <h2>Sample Space</h2>
-<p>The <strong>sample space</strong> (denoted <span class="math inline">\(S\)</span> or <span class="math inline">\(\Omega\)</span>) is the set of all possible outcomes of a random experiment</p>
-<div class="fragment">
-<p><strong>Examples:</strong></p>
+<section id="definition-1" class="concept-box">
+<h4>🎯 Definition</h4>
+<p>The <strong>sample space</strong> (denoted <span class="math inline">\(S\)</span> or <span class="math inline">\(\Omega\)</span>) is the <strong>set</strong> of all possible outcomes of a random experiment</p>
+</section>
+</section>
+<section id="sample-space-examples" class="slide level2">
+<h2>Sample Space Examples</h2>
 <ul>
 <li>Coin flip: <span class="math inline">\(S = \{H, T\}\)</span></li>
-<li>Die roll: <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span></li>
 <li>Two coin flips: <span class="math inline">\(S = \{HH, HT, TH, TT\}\)</span></li>
 </ul>
-</div>
+
+<img data-src="../../../files/lecture_notes/lecture4/img/coin.png" class="quarto-figure quarto-figure-right r-stretch" style="width:80.0%"></section>
+<section class="slide level2">
+
+<ul>
+<li>🎲 Die roll: <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span></li>
+<li>Two die rolls <img data-src="../../../files/lecture_notes/lecture4/img/die_rolls.png" class="quarto-figure quarto-figure-right" style="width:80.0%"></li>
+</ul>
 </section>
-<section id="types-of-sample-spaces" class="slide level2">
+<section class="slide level2">
+
+<ul>
+<li><span class="math inline">\(S = \{A\heartsuit,\ 2\heartsuit,\ \dots,\ K\heartsuit,\\
+\phantom{S = \{}A\diamondsuit,\ 2\diamondsuit,\ \dots,\ K\diamondsuit,\\
+\phantom{S = \{}A\clubsuit,\ 2\clubsuit,\ \dots,\ K\clubsuit,\\
+\phantom{S = \{}A\spadesuit,\ 2\spadesuit,\ \dots,\ K\spadesuit\}\)</span></li>
+</ul>
+
+<img data-src="../../../files/lecture_notes/lecture4/img/card_deck.png" style="width:80.0%" class="r-stretch"></section>
+<section id="types-of-sample-spaces" class="slide level2 smaller">
 <h2>Types of Sample Spaces</h2>
-<dl>
-<dt><strong>Finite Sample Space</strong></dt>
-<dd>
-Limited number of outcomes
-</dd>
-<dd>
-Example: Rolling a die
-</dd>
-<dt><strong>Infinite Sample Space</strong></dt>
-<dd>
-Unlimited outcomes (countable or uncountable)
-</dd>
-<dd>
-Example: Measuring exact height of students
-</dd>
-</dl>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Finite Sample Space</strong></p>
+<ul>
+<li>Limited number of outcomes
+<ul>
+<li>Example: Rolling a die</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="../../../files/lecture_notes/lecture4/img/ss_die.png" class="quarto-figure quarto-figure-right" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Infinite Sample Space</strong></p>
+<ul>
+<li>Unlimited outcomes (countable or uncountable)
+<ul>
+<li>Example: Measuring exact height of students</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="../../../files/lecture_notes/lecture4/img/inf.jpg" class="quarto-figure quarto-figure-right" style="width:70.0%"></p>
+</figure>
+</div>
+</div></div>
 </section>
 <section id="events" class="slide level2">
 <h2>Events</h2>
+<section id="definition-2" class="concept-box">
+<h4>🎯 Definition</h4>
+<div class="smaller">
 <p>An <strong>event</strong> is a subset of the sample space</p>
 <ul>
-<li><strong>Simple event</strong>: Contains exactly one outcome</li>
-<li><strong>Compound event</strong>: Contains multiple outcomes</li>
+<li><p><strong>Simple event</strong>: Contains exactly one outcome (Ex: <span class="math inline">\(A = \{3\}\)</span> (rolling a 3))</p></li>
+<li><p><strong>Compound event</strong>: Contains multiple outcomes (Ex: <span class="math inline">\(B = \{2, 4, 6\}\)</span> (rolling an even number))</p></li>
 </ul>
-<div class="fragment">
-<p><strong>Example</strong> (rolling a die): - Simple event: <span class="math inline">\(A = \{3\}\)</span> (rolling a 3) - Compound event: <span class="math inline">\(B = \{2, 4, 6\}\)</span> (rolling an even number)</p>
 </div>
+</section>
 </section>
 <section id="event-notation" class="slide level2">
 <h2>Event Notation</h2>
@@ -252,64 +325,333 @@ Example: Measuring exact height of students
 <li><span class="math inline">\(B = \{4, 5, 6\}\)</span> (rolling 4 or higher)</li>
 <li><span class="math inline">\(C = \{6\}\)</span> (rolling a six)</li>
 </ul>
+
+<img data-src="../../../files/lecture_notes/lecture4/img/die.png" class="quarto-figure quarto-figure-right r-stretch" style="width:100.0%"><div class="fragment">
+<p><em>We can describe events in words or using set notation</em></p>
+</div>
+</section>
+<section id="set-operations-overview" class="slide level2 smaller">
+<h2>Set Operations Overview</h2>
+<section id="definition-3" class="concept-box">
+<h4>🎯 Definition</h4>
+<div class="smaller">
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><strong>Set</strong>: Collection of distinct objects</li>
+<li><strong>Union</strong>: A OR B occurs<br>
+</li>
+<li><strong>Intersection</strong>: A AND B occurs</li>
+<li><strong>Complement</strong>: A does NOT occur</li>
+<li><strong>Sample Space</strong>: All possible outcomes</li>
+</ul>
+</div>
+</section>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Key Concepts:</strong></p>
+<ul>
+<li><strong>Set</strong>: Collection of distinct objects</li>
+<li><strong>Union</strong>: A OR B occurs<br>
+</li>
+<li><strong>Intersection</strong>: A AND B occurs</li>
+<li><strong>Complement</strong>: A does NOT occur</li>
+<li><strong>Sample Space</strong>: All possible outcomes</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div id="89c022d0" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-2-output-1.png" width="315" height="336"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="what-is-a-set" class="slide level2">
+<h2>What is a Set?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="smaller">
+<p><strong>Definition:</strong> A collection of things that share common characteristics. They can be elements, members, objects or similar terms.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Set of even numbers:
+<ul>
+<li>{2, 4, 6, 8, …}</li>
+</ul></li>
+<li>Set of vowels: {a, e, i, o, u}</li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<div id="eb8692d9" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-3-output-1.png" width="320" height="336"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="union-a-b" class="slide level2">
+<h2>Union: A ∪ B</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="smaller">
+<p><strong>Definition:</strong> Contains all set elements, including intersections.</p>
+<p><strong>In Probability:</strong> The event that A <strong>OR</strong> B occurs (or both).</p>
+<div class="formula-box">
+<p><span class="math display">\[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]</span></p>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<div id="7cd07287" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-4-output-1.png" width="315" height="335"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="intersection-a-b" class="slide level2">
+<h2>Intersection: A ∩ B</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="smaller">
+<p><strong>Definition:</strong> Area where two or more sets overlap.</p>
+<p><strong>In Probability:</strong> The event that A <strong>AND</strong> B occurs.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><p>Always smaller than or equal to individual sets</p></li>
+<li><p>Can be empty (disjoint sets)</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<div id="93bcc32d" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-5-output-1.png" width="315" height="335"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="absolute-complement-ac" class="slide level2">
+<h2>Absolute Complement: <span class="math inline">\(A^c\)</span></h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Definition:</strong> All elements that do not belong to the set.</p>
+<p><strong>In Probability:</strong> The event that A does <strong>NOT</strong> occur.</p>
+<ul>
+<li><span class="math inline">\(P(A^c) = 1 - P(A)\)</span></li>
+</ul>
+<p><strong>Key Property:</strong> <span class="math inline">\(A \cup A^c = S\)</span> (Sample Space)</p>
+</div><div class="column" style="width:40%;">
+<div id="5c2cdffc" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-6-output-1.png" width="315" height="336"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="summary-table" class="slide level2">
+<h2>Summary Table</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 28%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operation</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: left;">Meaning</th>
+<th style="text-align: left;">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Union</strong></td>
+<td style="text-align: center;"><span class="math inline">\(A \cup B\)</span></td>
+<td style="text-align: left;">Occurs if <span class="math inline">\(A\)</span> <em>or</em> <span class="math inline">\(B\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Intersection</strong></td>
+<td style="text-align: center;"><span class="math inline">\(A \cap B\)</span></td>
+<td style="text-align: left;">Occurs if <span class="math inline">\(A\)</span> <em>and</em> <span class="math inline">\(B\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P(A \cap B)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Complement</strong></td>
+<td style="text-align: center;"><span class="math inline">\(A^c\)</span></td>
+<td style="text-align: left;">Occurs if <span class="math inline">\(A\)</span> <em>does <strong>not</strong></em> occur</td>
+<td style="text-align: left;"><span class="math inline">\(P(A^c) = 1 - P(A)\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="probability-axioms-commutative" class="slide level2 smaller">
+<h2>Probability Axioms: Commutative</h2>
+<div class="formula-box">
+<p><strong>Commutative</strong></p>
+<p><span class="math inline">\(A \cup B = B \cup A\)</span></p>
+<p><span class="math inline">\(A \cap B = B \cap A\)</span></p>
+</div>
+</section>
+<section id="probability-axioms-associative" class="slide level2 smaller">
+<h2>Probability Axioms: Associative</h2>
+<div class="formula-box">
+<p><strong>Associative</strong></p>
+<p><span class="math inline">\((A \cup B) \cup C = A \cup (B \cup C)\)</span></p>
+<p><span class="math inline">\((A \cap B) \cap C = A \cap (B \cap C)\)</span></p>
+</div>
+</section>
+<section id="probability-axioms-distributive" class="slide level2 smaller">
+<h2>Probability Axioms: Distributive</h2>
+<div class="formula-box">
+<p><strong>Distributive</strong></p>
+<p><span class="math inline">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span></p>
+<p><span class="math inline">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></p>
+</div>
+</section>
+<section id="probability-axioms-de-morgans-laws" class="slide level2 smaller">
+<h2>Probability Axioms: De Morgan’s Laws</h2>
+<div class="formula-box">
+<p><strong>De Morgan’s Laws</strong></p>
+<p><span class="math inline">\((A \cup B)^c = A^c \cap B^c\)</span></p>
+<p><span class="math inline">\((A \cap B)^c = A^c \cup B^c\)</span></p>
+</div>
+</section>
+<section id="practice-examples" class="slide level2 smaller">
+<h2>Practice Examples</h2>
+<div class="example">
+<p><strong>Example 1:</strong> In a class of students:</p>
+<ul>
+<li><p>Set A = Students who like Math</p></li>
+<li><p>Set B = Students who like Science</p></li>
+</ul>
+<p>What does A ∪ B represent?</p>
+</div>
 <div class="fragment">
-<p>We can describe events in words or using set notation</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>Students who like Math <strong>OR</strong> Science (or both)</p>
+</div>
 </div>
 </section>
-<section id="set-operations-with-events" class="slide level2">
-<h2>Set Operations with Events</h2>
-<p><strong>Union</strong> (<span class="math inline">\(A \cup B\)</span>): Event that <span class="math inline">\(A\)</span> OR <span class="math inline">\(B\)</span> occurs</p>
-<p><strong>Intersection</strong> (<span class="math inline">\(A \cap B\)</span>): Event that <span class="math inline">\(A\)</span> AND <span class="math inline">\(B\)</span> occurs</p>
-<p><strong>Complement</strong> (<span class="math inline">\(A^c\)</span> or <span class="math inline">\(\bar{A}\)</span>): Event that <span class="math inline">\(A\)</span> does NOT occur</p>
+<section class="slide level2">
+
+<div class="example">
+<p><strong>Example 2:</strong> What does A ∩ B represent?</p>
+</div>
+<div class="fragment">
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>Students who like <strong>BOTH</strong> Math <strong>AND</strong> Science</p>
+</div>
+</div>
 </section>
-<section id="visual-representation-venn-diagrams" class="slide level2">
-<h2>Visual Representation: Venn Diagrams</h2>
-<div class="cell" data-reveal="true" data-fig-width="8" data-fig-height="6" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-    subgraph S ["Sample Space S"]
-        subgraph A ["Event A"]
-            a1[" "]
-        end
-        subgraph B ["Event B"]
-            b1[" "]
-        end
-        s1[" "]
-        s2[" "]
-    end
-</pre>
+<section class="slide level2">
+
+<div class="example">
+<p><strong>Example 3:</strong> What does <span class="math inline">\(A^c\)</span> represent?</p>
 </div>
-<p></p></figure><p></p>
+<div class="fragment">
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>Students who do <strong>NOT</strong> like Math</p>
 </div>
 </div>
-</div>
-<p><em>Union, intersection, and complement can be visualized using Venn diagrams</em></p>
 </section>
-<section id="example-set-operations" class="slide level2">
+<section id="example-set-operations" class="slide level2 smaller">
 <h2>Example: Set Operations</h2>
-<p>For die roll <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span>: - <span class="math inline">\(A = \{1, 3, 5\}\)</span> (odd numbers) - <span class="math inline">\(B = \{4, 5, 6\}\)</span> (4 or higher)</p>
-<div class="fragment">
-<p><strong>Find:</strong> - <span class="math inline">\(A \cup B = \{1, 3, 4, 5, 6\}\)</span> - <span class="math inline">\(A \cap B = \{5\}\)</span> - <span class="math inline">\(A^c = \{2, 4, 6\}\)</span></p>
+<div class="columns">
+<div class="column">
+<p>For die roll <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span>:</p>
+<ul>
+<li><p><span class="math inline">\(A = \{1, 3, 5\}\)</span> (odd numbers)</p></li>
+<li><p><span class="math inline">\(B = \{4, 5, 6\}\)</span> (4 or higher)</p></li>
+</ul>
+<div id="a99f5bc7" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-7-output-1.png" width="315" height="335"></p>
+</figure>
 </div>
+</div>
+</div>
+</div><div class="column">
+<div class="fragment">
+<div class="example">
+<p>Find:</p>
+<ul>
+<li><p><span class="math inline">\(A \cup B\)</span></p></li>
+<li><p><span class="math inline">\(A \cap B\)</span></p></li>
+<li><p><span class="math inline">\(A^c\)</span></p></li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<ul>
+<li><p><span class="math inline">\(A \cup B = \{1, 3, 4, 5, 6\}\)</span></p></li>
+<li><p><span class="math inline">\(A \cap B = \{5\}\)</span></p></li>
+<li><p><span class="math inline">\(A^c = \{2, 4, 6\}\)</span></p></li>
+</ul>
+</div>
+</div>
+</div></div>
 </section>
-<section id="mutually-exclusive-events" class="slide level2">
+<section id="mutually-exclusive-events" class="slide level2 smaller">
 <h2>Mutually Exclusive Events</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>mutually exclusive</strong> (or disjoint) if they cannot occur simultaneously</p>
 <p><span class="math display">\[A \cap B = \emptyset\]</span></p>
+<div id="fbc033c2" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-8-output-1.png" width="315" height="335"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
 <div class="fragment">
-<p><strong>Example</strong>: When rolling a die - <span class="math inline">\(A = \{1, 3, 5\}\)</span> (odd) - <span class="math inline">\(B = \{2, 4, 6\}\)</span> (even)</p>
+<div class="example">
+<p>When rolling a die</p>
+<ul>
+<li><p><span class="math inline">\(A = \{1, 3, 5\}\)</span> (odd)</p></li>
+<li><p><span class="math inline">\(B = \{2, 4, 6\}\)</span> (even)</p></li>
+</ul>
 <p><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive</p>
 </div>
+</div>
+</div></div>
 </section>
-<section id="the-classical-definition-of-probability" class="slide level2">
+<section id="the-classical-definition-of-probability" class="slide level2 smaller">
 <h2>The Classical Definition of Probability</h2>
 <p>For equally likely outcomes:</p>
 <p><span class="math display">\[P(A) = \frac{\text{Number of outcomes in } A}{\text{Total number of outcomes in } S}\]</span></p>
+<div class="example">
+<p>Probability of rolling an even number on a fair die</p>
+</div>
 <div class="fragment">
-<p><strong>Example</strong>: Probability of rolling an even number on a fair die</p>
 <p><span class="math display">\[P(\text{even}) = \frac{3}{6} = \frac{1}{2}\]</span></p>
 </div>
 </section>
@@ -325,34 +667,68 @@ Example: Measuring exact height of students
 <h2>The Complement Rule</h2>
 <p><span class="math display">\[P(A^c) = 1 - P(A)\]</span></p>
 <div class="fragment">
-<p><strong>Example</strong>: If the probability of rain is 0.3, what’s the probability of no rain?</p>
+<div class="example">
+<p>If the probability of rain is 0.3, what’s the probability of no rain?</p>
+</div>
+</div>
+<div class="fragment">
 <p><span class="math display">\[P(\text{no rain}) = 1 - P(\text{rain}) = 1 - 0.3 = 0.7\]</span></p>
 </div>
 </section>
 <section id="practice-problem-1" class="slide level2">
 <h2>Practice Problem 1</h2>
+<div class="columns">
+<div class="column" style="width:70;">
+<div class="example">
+<div class="smaller">
 <p>A standard deck has 52 cards. What is the probability of drawing:</p>
 <ol type="a">
 <li>A heart?</li>
 <li>A face card (Jack, Queen, King)?</li>
 <li>The ace of spades?</li>
 </ol>
-<div class="fragment">
-<p><strong>Solutions:</strong> a) <span class="math inline">\(P(\text{heart}) = \frac{13}{52} = \frac{1}{4}\)</span> b) <span class="math inline">\(P(\text{face card}) = \frac{12}{52} = \frac{3}{13}\)</span> c) <span class="math inline">\(P(\text{ace of spades}) = \frac{1}{52}\)</span></p>
 </div>
+</div>
+</div><div class="column" style="width:30;">
+<div class="fragment">
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<ol type="a">
+<li><p><span class="math inline">\(P(\text{heart}) = \frac{13}{52} = \frac{1}{4}\)</span></p></li>
+<li><p><span class="math inline">\(P(\text{face card}) = \frac{12}{52} = \frac{3}{13}\)</span></p></li>
+<li><p><span class="math inline">\(P(\text{ace of spades}) = \frac{1}{52}\)</span></p></li>
+</ol>
+</div>
+</div>
+</div></div>
 </section>
 <section id="the-addition-rule" class="slide level2">
 <h2>The Addition Rule</h2>
 <p>For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:</p>
 <p><span class="math display">\[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]</span></p>
-<div class="fragment">
+<div class="example">
 <p><em>Why subtract <span class="math inline">\(P(A \cap B)\)</span>?</em></p>
+</div>
+<div class="fragment">
 <p>We don’t want to double-count outcomes that are in both events</p>
 </div>
 </section>
 <section id="addition-rule-example" class="slide level2">
 <h2>Addition Rule Example</h2>
-<p>Drawing from a standard deck: - <span class="math inline">\(A\)</span>: Drawing a heart (<span class="math inline">\(P(A) = \frac{13}{52}\)</span>) - <span class="math inline">\(B\)</span>: Drawing a face card (<span class="math inline">\(P(B) = \frac{12}{52}\)</span>)</p>
+<p>Drawing from a standard deck:</p>
+<ul>
+<li><p><span class="math inline">\(A\)</span>: Drawing a heart (<span class="math inline">\(P(A) = \frac{13}{52}\)</span>)</p></li>
+<li><p><span class="math inline">\(B\)</span>: Drawing a face card (<span class="math inline">\(P(B) = \frac{12}{52}\)</span>)</p></li>
+</ul>
+<div id="090da59b" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-9-output-1.png" width="462" height="335"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>What’s <span class="math inline">\(P(A \cup B)\)</span> (heart OR face card)?</p>
 <div class="fragment">
 <p><span class="math inline">\(P(A \cap B) = \frac{3}{52}\)</span> (face cards that are hearts)</p>
@@ -361,9 +737,12 @@ Example: Measuring exact height of students
 </section>
 <section id="conditional-probability" class="slide level2">
 <h2>Conditional Probability</h2>
+<section id="definition-4" class="concept-box">
+<h4>🎯 Definition</h4>
 <p><strong>Conditional probability</strong> is the probability of event <span class="math inline">\(A\)</span> given that event <span class="math inline">\(B\)</span> has occurred</p>
 <p><span class="math display">\[P(A|B) = \frac{P(A \cap B)}{P(B)}\]</span></p>
 <p>provided <span class="math inline">\(P(B) &gt; 0\)</span></p>
+</section>
 </section>
 <section id="conditional-probability-interpretation" class="slide level2">
 <h2>Conditional Probability Interpretation</h2>
@@ -372,6 +751,15 @@ Example: Measuring exact height of students
 <section id="conditional-probability-example" class="slide level2">
 <h2>Conditional Probability Example</h2>
 <p>Drawing a card from a standard deck: - <span class="math inline">\(A\)</span>: Card is a heart - <span class="math inline">\(B\)</span>: Card is red</p>
+<div id="e95e1e8c" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-10-output-1.png" width="466" height="242"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>Find <span class="math inline">\(P(A|B)\)</span></p>
 <div class="fragment">
 <p><span class="math inline">\(P(A \cap B) = P(\text{heart}) = \frac{13}{52}\)</span></p>
@@ -381,10 +769,13 @@ Example: Measuring exact height of students
 </section>
 <section id="independence" class="slide level2">
 <h2>Independence</h2>
+<section id="definition-5" class="concept-box">
+<h4>🎯 Definition</h4>
 <p>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>independent</strong> if:</p>
 <p><span class="math display">\[P(A|B) = P(A)\]</span></p>
 <p>or equivalently:</p>
 <p><span class="math display">\[P(A \cap B) = P(A) \times P(B)\]</span></p>
+</section>
 <div class="fragment">
 <p><em>Knowing that <span class="math inline">\(B\)</span> occurred doesn’t change the probability of <span class="math inline">\(A\)</span></em></p>
 </div>
@@ -435,11 +826,12 @@ Example: Measuring exact height of students
 </section>
 <section id="bayes-theorem" class="slide level2">
 <h2>Bayes’ Theorem</h2>
+<section id="definition-6" class="concept-box">
+<h4>🎯 Definition</h4>
 <p><span class="math display">\[P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}\]</span></p>
 <p>This allows us to “reverse” conditional probabilities</p>
-<div class="fragment">
 <p><em>Named after Thomas Bayes (1701-1761)</em></p>
-</div>
+</section>
 </section>
 <section id="bayes-theorem-components" class="slide level2">
 <h2>Bayes’ Theorem Components</h2>
@@ -602,7 +994,6 @@ Example: Measuring exact height of students
 <section id="looking-ahead" class="slide level2">
 <h2>Looking Ahead</h2>
 <p><strong>Next lecture</strong>: Random Variables and Probability Distributions - Discrete vs.&nbsp;continuous random variables - Expected value and variance - Binomial and normal distributions</p>
-<p><strong>Homework</strong>: Problems on basic probability, conditional probability, and independence</p>
 </section>
 <section id="final-thoughts" class="slide level2">
 <h2>Final Thoughts</h2>

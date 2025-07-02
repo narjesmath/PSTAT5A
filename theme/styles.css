@@ -1,5 +1,11 @@
 /* Custom CSS for enhanced styling */
 /* Style the default title  */
+/* css styles */
+/* styles.css */
+.site-logo img {
+  max-height: 2rem;  /* or whatever fits */
+}
+
 .quarto-title {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: white;
@@ -23,12 +29,17 @@
   margin-bottom: 0;
   color: white;
 }
+
 :root {
   --primary-color: #667eea;
   --secondary-color: #764ba2;
   --accent-color: #f093fb;
   --light-bg: #f8f9fa;
   --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --danger-color: #dc3545;
 }
 
 .hero-section {
@@ -202,21 +213,6 @@
   margin: 1.5rem 0;
 }
 
-@media (max-width: 768px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-  
-  .hero-section {
-    padding: 2rem 1rem;
-    margin: -1rem -1rem 2rem -1rem;
-  }
-  
-  .hero-section h1 {
-    font-size: 2rem;
-  }
-}
-
 /* Search functionality */
 .search-container {
   margin-bottom: 2rem;
@@ -244,4 +240,498 @@
   top: 50%;
   transform: translateY(-50%);
   color: #888;
-  font-size: 1.2rem;}
+  font-size: 1.2rem;
+}
+
+/* ============================================ */
+/* WORKSHEET-SPECIFIC STYLES */
+/* ============================================ */
+
+/* Worksheet Container */
+.worksheet-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Instructions Section */
+.instructions-box {
+  background: linear-gradient(135deg, #e3f2fd 0%, #f8f9fa 100%);
+  border: 2px solid var(--info-color);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.instructions-box::before {
+  content: "📝";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+.instructions-box h3 {
+  color: var(--info-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.instructions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.instructions-list li {
+  padding: 0.5rem 0;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.instructions-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--success-color);
+  font-weight: bold;
+}
+
+/* Formula Reference Box */
+.formula-box {
+  background: linear-gradient(135deg, #fff8e1 0%, #fffbf0 100%);
+  border: 2px solid var(--warning-color);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.formula-box::before {
+  content: "📚";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+.formula-box h3 {
+  color: #e65100;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.formula-category {
+  margin-bottom: 1.5rem;
+}
+
+.formula-category h4 {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.3rem;
+}
+
+.formula-item {
+  margin: 0.5rem 0;
+  padding: 0.3rem 0;
+  font-family: 'Courier New', monospace;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* Problem Containers */
+.problem-container {
+  background: #f8f9fa;
+  border: 2px solid #dee2e6;
+  border-left: 6px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.problem-container:hover {
+  border-left-color: var(--secondary-color);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Alternative gray problem box styles */
+.problem-container.light-gray {
+  background: #f1f3f4;
+  border-color: #dadce0;
+}
+
+.problem-container.medium-gray {
+  background: #e8eaed;
+  border-color: #c1c7cd;
+}
+
+.problem-container.dark-gray {
+  background: #e0e0e0;
+  border-color: #bdbdbd;
+}
+
+.problem-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.problem-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.problem-points {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.problem-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.problem-parts {
+  margin: 1.5rem 0;
+}
+
+.problem-part {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.part-label {
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-right: 0.5rem;
+}
+
+.part-points {
+  background: rgba(102, 126, 234, 0.1);
+  color: var(--primary-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* Work Space */
+.work-space {
+  background: white;
+  border: 2px dashed #ced4da;
+  border-radius: 10px;
+  min-height: 150px;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.work-space::before {
+  content: "Work Space";
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  background: white;
+  padding: 0 8px;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.work-space.large {
+  min-height: 250px;
+}
+
+/* Section Headers */
+.section-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  margin: 3rem 0 2rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.section-number {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+/* Answer Key Section */
+.answer-key {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 100%);
+  border: 2px solid var(--success-color);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.answer-key::before {
+  content: "🔑";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+.answer-key h3 {
+  color: var(--success-color);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.answer-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border-left: 4px solid var(--success-color);
+}
+
+.answer-section h4 {
+  color: var(--success-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.answer-item {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-family: 'Courier New', monospace;
+  background: white;
+  border-radius: 5px;
+  border-left: 3px solid #c8e6c9;
+}
+
+/* Simple Gray Boxes */
+.gray-box {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.gray-box.light {
+  background: #f1f3f4;
+  border-color: #dadce0;
+}
+
+.gray-box.medium {
+  background: #e8eaed;
+  border-color: #c1c7cd;
+}
+
+.gray-box.dark {
+  background: #e0e0e0;
+  border-color: #bdbdbd;
+}
+
+/* Data Display */
+.data-set {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+/* Mathematical Expressions */
+.math-expression {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  background: rgba(102, 126, 234, 0.05);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  margin: 0 0.2rem;
+}
+
+/* Note Boxes */
+.note-box {
+  background: #e1f5fe;
+  border-left: 4px solid var(--info-color);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+
+.note-box::before {
+  content: "Note: ";
+  font-weight: 600;
+  color: var(--info-color);
+  font-style: normal;
+}
+
+/* Worksheet Footer */
+.worksheet-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--light-bg) 0%, #e9ecef 100%);
+  border-radius: 15px;
+  border-top: 4px solid var(--primary-color);
+}
+
+.total-points {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.good-luck {
+  color: #666;
+  font-style: italic;
+}
+
+/* Print Styles */
+@media print {
+  .worksheet-container {
+    max-width: none;
+    padding: 1rem;
+  }
+  
+  .problem-container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    background: #f5f5f5 !important; /* Ensure gray shows in print */
+  }
+  
+  .section-header {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  .work-space {
+    border: 1px solid #ccc;
+    background: white !important;
+  }
+  
+  .answer-key {
+    page-break-before: always;
+    break-before: page;
+  }
+  
+  .gray-box {
+    background: #f0f0f0 !important;
+    border: 1px solid #ccc;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-section {
+    padding: 2rem 1rem;
+    margin: -1rem -1rem 2rem -1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .worksheet-container {
+    padding: 1rem;
+  }
+  
+  .problem-container {
+    padding: 1.5rem;
+  }
+  
+  .problem-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .section-header {
+    padding: 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .formula-box, .instructions-box, .answer-key {
+    padding: 1.5rem;
+  }
+}

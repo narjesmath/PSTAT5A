@@ -7,52 +7,97 @@ format:
   revealjs:
     logo: /img/logo.png
     theme: default
+    css: /files/lecture_notes/theme/lecture-styles.css
     slide-number: true
     chalkboard: true
     preview-links: auto
     footer: "Understanding Data - Introduction to Probability © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
-jupyter: python3
+jupyter: python312
 ---
 
-## Welcome to Lecture 3 {.center}
+
+
+## Welcome to Lecture 4 {.center}
 
 **Introduction to Probability**
 
-*Understanding the mathematics of uncertainty*
+*Understanding uncertainty through statistics*
 
 ---
 
-## Today's Learning Objectives
+## Today's Learning Objectives {#sec-objectives .smaller}
 
 By the end of this lecture, you will be able to:
 
-- Define probability and understand its basic properties
-- Identify sample spaces and events
-- Apply fundamental probability rules
-- Calculate conditional probabilities
-- Determine when events are independent
-- Use Bayes' theorem in simple applications
+- [Define probability and understand its basic properties](#sec-prob)
+- [Identify sample spaces and events](#sample-space)
+- [Apply fundamental probability rules](#set-operations-overview)
+- [Calculate conditional probabilities](#conditional-probability)
+- [Determine when events are independent](#independence)
+- [Use Bayes' theorem in simple applications](#bayes-theorem)
 
 ---
 
-## What is Probability?
+## What is Probability? {#sec-prob}
 
+::: {.concept-box}
+#### 🎯 Definition
 **Probability** is a measure of the likelihood that an event will occur
-
-- Ranges from 0 to 1 (or 0% to 100%)
-- **0**: Event will never occur
-- **1**: Event will certainly occur
-- **0.5**: Event has equal chance of occurring or not
-
-:::{.fragment}
-*Example*: The probability of getting heads when flipping a fair coin is 0.5
 :::
 
 ---
 
-## Why Study Probability?
+## Probability Range {.smaller}
+:::{.columns}
+:::{.column width="40%"}
+- Ranges from **0 to 1** (or **0% to 100%**)
+  
+- **0**: Event will never occur (impossible)
+  
+- **1**: Event will certainly occur (certain)
+  
+- **0.5**: Event has equal chance of occurring or not
+:::
+
+:::{.column width="60%"}
+:::{.fragment}
+
+![](/files/lecture_notes/lecture4/img/prob.png){fig-align="right"}
+:::
+
+
+:::
+:::
+  
+## Three Ways to Express Probability
+
+- **Fraction**: $\frac{1}{2}$, $\frac{3}{4}$, $\frac{2}{6}$
+- **Decimal**: 0.5, 0.75, 0.33
+- **Percentage**: 50%, 75%, 33%
+
+
+
+
+
+
+
+---
+
+
+
+## Example
+
+When we roll a die, there are six possible outcomes:
+
+1, 2, 3, 4, 5, 6.
+
+The probability of any of them turning up is 1/6 or 16%.
+
+![](/files/lecture_notes/lecture4/img/die.png){width="80%" fig-align="right" }
+
+## Why Study Probability?{.smaller}
 
 Probability helps us:
 
@@ -68,7 +113,7 @@ Probability helps us:
 
 ---
 
-## Random Experiments
+## Random Experiments {.smaller}
 
 A **random experiment** is a process that:
 
@@ -77,53 +122,97 @@ A **random experiment** is a process that:
 3. The outcome cannot be predicted with certainty
 
 :::{.fragment}
-**Examples:**
-- Flipping a coin
-- Rolling a die
-- Drawing a card from a deck
-- Measuring the lifetime of a light bulb
+:::{.example}
+**Examples**
+
+- 🪙 Flipping a coin
+  
+- 🎲 Rolling a die
+  
+- 🃏 Drawing a card from a deck
+  
+- 💡 Measuring the lifetime of a light bulb
+:::
 :::
 
 ---
 
 ## Sample Space
 
-The **sample space** (denoted $S$ or $\Omega$) is the set of all possible outcomes of a random experiment
-
-:::{.fragment}
-**Examples:**
-
-- Coin flip: $S = \{H, T\}$
-- Die roll: $S = \{1, 2, 3, 4, 5, 6\}$
-- Two coin flips: $S = \{HH, HT, TH, TT\}$
+::: {.concept-box}
+#### 🎯 Definition
+The **sample space** (denoted $S$ or $\Omega$) is the **set** of all possible outcomes of a random experiment
 :::
 
 ---
 
-## Types of Sample Spaces
+## Sample Space Examples
 
+- Coin flip: $S = \{H, T\}$
+- Two coin flips: $S = \{HH, HT, TH, TT\}$
+  
+![](/files/lecture_notes/lecture4/img/coin.png){width="80%" fig-align="right" } 
+
+---
+
+- 🎲 Die roll: $S = \{1, 2, 3, 4, 5, 6\}$
+- Two die rolls
+  ![](/files/lecture_notes/lecture4/img/die_rolls.png){width="80%" fig-align="right" }
+
+---
+
+- $S = \{A\heartsuit,\ 2\heartsuit,\ \dots,\ K\heartsuit,\\
+\phantom{S = \{}A\diamondsuit,\ 2\diamondsuit,\ \dots,\ K\diamondsuit,\\
+\phantom{S = \{}A\clubsuit,\ 2\clubsuit,\ \dots,\ K\clubsuit,\\
+\phantom{S = \{}A\spadesuit,\ 2\spadesuit,\ \dots,\ K\spadesuit\}$
+
+![](/files/lecture_notes/lecture4/img/card_deck.png){width="80%" }
+
+---
+
+## Types of Sample Spaces{.smaller}
+
+:::{.columns}
+:::{.column width="50%"}
 **Finite Sample Space**
-: Limited number of outcomes
-: Example: Rolling a die
 
-**Infinite Sample Space**
-: Unlimited outcomes (countable or uncountable)
-: Example: Measuring exact height of students
+- Limited number of outcomes  
+  - Example: Rolling a die
+
+
+:::
+:::{.column width="50%"}
+![](/files/lecture_notes/lecture4/img/ss_die.png){width="100%" fig-align="right"}
+:::
+:::
+
+:::{.columns}
+:::{.column width="50%"}
+**Infinite Sample Space** 
+
+- Unlimited outcomes (countable or uncountable)  
+  - Example: Measuring exact height of students
+
+:::
+:::{.column width="50%"}
+![](/files/lecture_notes/lecture4/img/inf.jpg){width="70%" fig-align="right"}
+:::
+:::
 
 ---
 
 ## Events
-
+:::{.concept-box}
+#### 🎯 Definition
+:::{.smaller}
 An **event** is a subset of the sample space
 
-- **Simple event**: Contains exactly one outcome
-- **Compound event**: Contains multiple outcomes
-
-:::{.fragment}
-**Example** (rolling a die):
-- Simple event: $A = \{3\}$ (rolling a 3)
-- Compound event: $B = \{2, 4, 6\}$ (rolling an even number)
+- **Simple event**: Contains exactly one outcome (Ex: $A = \{3\}$ (rolling a 3))
+  
+- **Compound event**: Contains multiple outcomes (Ex: $B = \{2, 4, 6\}$ (rolling an even number))
 :::
+:::
+
 
 ---
 
@@ -135,84 +224,725 @@ For a die roll with $S = \{1, 2, 3, 4, 5, 6\}$:
 - $B = \{4, 5, 6\}$ (rolling 4 or higher)
 - $C = \{6\}$ (rolling a six)
 
+![](/files/lecture_notes/lecture4/img/die.png){width="100%" fig-align="right" }
+
 :::{.fragment}
-We can describe events in words or using set notation
+*We can describe events in words or using set notation*
 :::
 
 ---
 
-## Set Operations with Events
+## Set Operations Overview{.smaller}
 
-**Union** ($A \cup B$): Event that $A$ OR $B$ occurs
+::: {.concept-box}
+#### 🎯 Definition
+:::{.smaller}
+**Key Concepts:**
 
-**Intersection** ($A \cap B$): Event that $A$ AND $B$ occurs
+- **Set**: Collection of distinct objects
+- **Union**: A OR B occurs  
+- **Intersection**: A AND B occurs
+- **Complement**: A does NOT occur
+- **Sample Space**: All possible outcomes
+:::
+:::
 
-**Complement** ($A^c$ or $\bar{A}$): Event that $A$ does NOT occur
+:::: {.columns}
 
----
+::: {.column width="60%"}
+**Key Concepts:**
 
-## Visual Representation: Venn Diagrams
+- **Set**: Collection of distinct objects
+- **Union**: A OR B occurs  
+- **Intersection**: A AND B occurs
+- **Complement**: A does NOT occur
+- **Sample Space**: All possible outcomes
+:::
 
-```{mermaid}
-%%| fig-width: 8
-%%| fig-height: 6
-graph LR
-    subgraph S ["Sample Space S"]
-        subgraph A ["Event A"]
-            a1[" "]
-        end
-        subgraph B ["Event B"]
-            b1[" "]
-        end
-        s1[" "]
-        s2[" "]
-    end
+::: {.column width="40%"}
+```{python}
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from matplotlib_venn import venn2
+
+fig, ax = plt.subplots(figsize=(6, 4))
+
+# 1) Draw the Venn, but format subset labels to be blank
+v = venn2(
+    subsets=(1, 1, 1),
+    set_labels=('A', 'B'),
+    ax=ax,
+    subset_label_formatter=lambda x: ""     # removes the "1" labels
+)
+
+# 2) Color each region (optional)
+v.get_patch_by_id('10').set_color('lightblue')
+v.get_patch_by_id('01').set_color('lightcoral')
+v.get_patch_by_id('11').set_color('lightgreen')
+
+# 3) Add a dashed universe rectangle around S, with high z‐order
+rect = patches.Rectangle(
+    (-1, -1),    # lower‐left corner
+    2, 2,        # width, height
+    linewidth=2,
+    edgecolor='black',
+    facecolor='none',
+    linestyle='--',
+    zorder=10     # put on top of the circles
+)
+ax.add_patch(rect)
+
+# 4) Label the universe "S"
+ax.text(-.95,  0.95, 'S', fontsize=14, fontweight='bold',
+        va='top', ha='left', zorder=11)
+
+# 5) Tidy up
+ax.set_xlim(-1.2, 1.2)
+ax.set_ylim(-1.2, 1.2)
+ax.set_aspect('equal')
+ax.set_axis_off()
+
+plt.title('Sample Space $S$ with Events $A$ and $B$')
+plt.show()
 ```
+:::
 
-*Union, intersection, and complement can be visualized using Venn diagrams*
+::::
 
 ---
 
-## Example: Set Operations
+## What is a Set?
 
+:::: {.columns}
+
+::: {.column width="60%"}
+:::{.smaller}
+**Definition:**
+A collection of things that share common characteristics. They can be elements, members, objects or similar terms.
+
+**Examples:**
+
+- Set of even numbers: 
+  - {2, 4, 6, 8, ...}
+  
+- Set of vowels: {a, e, i, o, u}
+:::
+:::
+
+::: {.column width="40%"}
+```{python}
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from matplotlib_venn import venn2
+
+# Create the figure and axes
+fig, ax = plt.subplots(figsize=(6, 4))
+
+# Draw the Venn with no default set labels and blank subset labels
+v = venn2(
+    subsets=(1, 0, 0),
+    set_labels=('', ''),                       # no set labels
+    subset_label_formatter=lambda x: "",       # hide subset‐size labels
+    ax=ax
+)
+
+# Color and shade the A region
+patch = v.get_patch_by_id('10')
+patch.set_color('lightblue')
+patch.set_alpha(0.7)
+
+# Add the dashed universe rectangle for S
+rect = patches.Rectangle(
+    (-1, -1),   # lower‐left corner
+    2,          # width
+    2,          # height
+    linewidth=2,
+    edgecolor='black',
+    facecolor='none',
+    linestyle='--',
+    zorder=2     # above the circles
+)
+ax.add_patch(rect)
+
+# Label the universe "S"
+ax.text(
+    -0.95, 0.95, 'S',
+    fontsize=14, fontweight='bold',
+    va='top', ha='left',
+    zorder=3
+)
+
+# Label set A inside the circle
+ax.text(
+    0, 0, 'SET A',
+    fontsize=14, fontweight='bold',
+    ha='center',
+    zorder=3
+)
+
+# Adjust limits and styling
+ax.set_xlim(-1.2, 1.2)
+ax.set_ylim(-1.2, 1.2)
+ax.set_aspect('equal')
+ax.axis('off')
+
+plt.title('A Single Set $A$ within Sample Space $S$')
+plt.show()
+```
+:::
+
+::::
+
+---
+
+## Union: A ∪ B
+
+:::: {.columns}
+
+::: {.column width="70%"}
+:::{.smaller}
+**Definition:**
+Contains all set elements, including intersections.
+
+**In Probability:**
+The event that A **OR** B occurs (or both).
+
+:::{.formula-box}
+$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+:::
+
+:::
+:::
+
+
+::: {.column width="30%"}
+```{python}
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from matplotlib_venn import venn2
+
+# Create figure and axes
+fig, ax = plt.subplots(figsize=(6, 4))
+
+# Draw Venn without subset‐size labels
+v = venn2(
+    subsets=(1, 1, 1),
+    set_labels=('A', 'B'),
+    subset_label_formatter=lambda x: "",  # hide the "1" labels
+    ax=ax
+)
+
+# Color the union regions
+for region in ('10', '01', '11'):
+    patch = v.get_patch_by_id(region)
+    patch.set_color('yellow')
+    patch.set_alpha(0.8)
+
+# Add the universe rectangle
+rect = patches.Rectangle(
+    (-1, -1),    # lower‐left corner
+    2,           # width
+    2,           # height
+    linewidth=2,
+    edgecolor='black',
+    facecolor='none',
+    linestyle='--',
+    zorder=2      # above circles
+)
+ax.add_patch(rect)
+
+# Label the universe "S"
+ax.text(
+    -0.95, 0.95, 'S',
+    fontsize=14, fontweight='bold',
+    va='top', ha='left',
+    zorder=3
+)
+
+# Label the union inside
+ax.text(
+    0, 0, 'A ∪ B',
+    fontsize=14, fontweight='bold',
+    ha='center', va='center',
+    zorder=3
+)
+
+# Tidy up
+ax.set_xlim(-1.2, 1.2)
+ax.set_ylim(-1.2, 1.2)
+ax.set_aspect('equal')
+ax.axis('off')
+
+plt.title('Union: $A \\cup B$ (A OR B)')
+plt.show()
+```
+:::
+
+::::
+
+---
+
+## Intersection: A ∩ B
+
+:::: {.columns}
+
+::: {.column width="60%"}
+:::{.smaller}
+**Definition:**
+Area where two or more sets overlap.
+
+**In Probability:**
+The event that A **AND** B occurs.
+
+**Properties:**
+
+- Always smaller than or equal to individual sets
+  
+- Can be empty (disjoint sets)
+:::
+:::
+
+::: {.column width="40%"}
+```{python}
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from matplotlib_venn import venn2
+
+# Create figure and axes
+fig, ax = plt.subplots(figsize=(6, 4))
+
+# Draw Venn without subset‐size labels
+v = venn2(
+    subsets=(1, 1, 1),
+    set_labels=('A', 'B'),
+    subset_label_formatter=lambda x: "",  # hide the "1" labels
+    ax=ax
+)
+
+# Shade the non‐intersection regions light gray
+for region in ('10', '01'):
+    patch = v.get_patch_by_id(region)
+    patch.set_color('lightgray')
+    patch.set_alpha(0.8)
+
+# Shade the intersection region red
+patch = v.get_patch_by_id('11')
+patch.set_color('red')
+patch.set_alpha(0.8)
+
+# Add the universe rectangle
+rect = patches.Rectangle(
+    (-1, -1),    # lower‐left corner
+    2,           # width
+    2,           # height
+    linewidth=2,
+    edgecolor='black',
+    facecolor='none',
+    linestyle='--',
+    zorder=2      # above circles
+)
+ax.add_patch(rect)
+
+# Label the universe "S"
+ax.text(
+    -0.95, 0.95, 'S',
+    fontsize=14, fontweight='bold',
+    va='top', ha='left',
+    zorder=3
+)
+
+# Label the intersection inside
+ax.text(
+    0, 0, 'A ∩ B',
+    fontsize=14, fontweight='bold',
+    ha='center', va='center',
+    zorder=3
+)
+
+# Tidy up
+ax.set_xlim(-1.2, 1.2)
+ax.set_ylim(-1.2, 1.2)
+ax.set_aspect('equal')
+ax.axis('off')
+
+plt.title('Intersection: $A \\cap B$ (A AND B)')
+plt.show()
+```
+:::
+
+::::
+
+---
+
+## Absolute Complement: $A^c$
+
+:::: {.columns}
+
+::: {.column width="60%"}
+**Definition:**
+All elements that do not belong to the set.
+
+**In Probability:**
+The event that A does **NOT** occur.
+  
+- $P(A^c) = 1 - P(A)$
+
+**Key Property:**
+$A \cup A^c = S$ (Sample Space)
+:::
+
+::: {.column width="40%"}
+```{python}
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from matplotlib_venn import venn2, venn2_circles
+
+# 1) Create figure and axes
+fig, ax = plt.subplots(figsize=(6, 4))
+
+# 2) Draw the universe rectangle (purple background)
+rect = patches.Rectangle(
+    (-1, -1),  # lower-left corner
+    2, 2,      # width, height
+    linewidth=2,
+    edgecolor='black',
+    facecolor='purple',
+    alpha=0.3,
+    zorder=1
+)
+ax.add_patch(rect)
+
+# 3) Draw Venn diagram with blank subset labels
+v = venn2(
+    subsets=(1, 1, 1),
+    set_labels=('A', 'B'),
+    subset_label_formatter=lambda x: "",
+    ax=ax
+)
+
+# 4) Mask out A (both A‐only and intersection) with white
+for region in ('10', '11'):
+    p = v.get_patch_by_id(region)
+    p.set_facecolor('white')
+    p.set_edgecolor('none')
+    p.set_alpha(1)
+
+# 5) Hide the B‐only region so purple shows through
+p_b = v.get_patch_by_id('01')
+p_b.set_facecolor('none')
+p_b.set_edgecolor('none')
+p_b.set_alpha(1)
+
+# 6) Draw crisp circle outlines on top
+venn2_circles((1, 1, 1), ax=ax, linestyle='solid', linewidth=2, color='black')
+
+# 7) Label universe and complement
+ax.text(-0.95, 0.95, 'S', fontsize=14, fontweight='bold', va='top', ha='left', zorder=3)
+ax.text(-.6, 0.75, r'$A^c$', fontsize=14, fontweight='bold', ha='center', va='center', zorder=3)
+
+# 8) Final styling
+ax.set_xlim(-1.2, 1.2)
+ax.set_ylim(-1.2, 1.2)
+ax.set_aspect('equal')
+ax.axis('off')
+plt.title('Complement: $A^c$ (NOT A)')
+plt.show()
+```
+:::
+
+::::
+
+---
+
+## Summary Table
+
+| Operation   | Symbol       | Meaning                     | Probability                             |
+|:-----------------|:----------------:|:--------------------------------|:--------------------------------------------|
+| **Union**        | $A \cup B$       | Occurs if $A$ *or* $B$          | $P(A \cup B) = P(A) + P(B) - P(A \cap B)$   |
+| **Intersection** | $A \cap B$       | Occurs if $A$ *and* $B$         | $P(A \cap B)$                               |
+| **Complement**   | $A^c$            | Occurs if $A$ *does **not*** occur | $P(A^c) = 1 - P(A)$                       |
+
+
+## Probability Axioms: Commutative {.smaller}
+
+::: {.formula-box}
+**Commutative**
+
+$A \cup B = B \cup A$
+
+$A \cap B = B \cap A$
+:::
+
+---
+
+## Probability Axioms: Associative {.smaller}
+
+::: {.formula-box}
+**Associative**
+
+$(A \cup B) \cup C = A \cup (B \cup C)$
+
+$(A \cap B) \cap C = A \cap (B \cap C)$
+:::
+
+---
+
+## Probability Axioms: Distributive {.smaller}
+
+::: {.formula-box}
+**Distributive**
+
+$A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+
+$A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+:::
+
+---
+
+## Probability Axioms: De Morgan's Laws {.smaller}
+
+::: {.formula-box}
+**De Morgan's Laws**
+
+$(A \cup B)^c = A^c \cap B^c$
+
+$(A \cap B)^c = A^c \cup B^c$
+:::
+
+---
+
+
+
+## Practice Examples{.smaller}
+
+:::{.example}
+**Example 1:** In a class of students:
+
+- Set A = Students who like Math
+  
+- Set B = Students who like Science
+
+What does A ∪ B represent?
+:::
+
+::: {.fragment}
+:::{.solution}
+Students who like Math **OR** Science (or both)
+:::
+:::
+
+---
+
+:::{.example}
+**Example 2:** What does A ∩ B represent?
+:::
+
+:::{.fragment}
+:::{.solution}
+Students who like **BOTH** Math **AND** Science
+:::
+:::
+
+---
+
+:::{.example}
+**Example 3:** What does $A^c$ represent?
+:::
+
+:::{.fragment}
+:::{.solution}
+Students who do **NOT** like Math
+:::
+:::
+
+---
+
+
+
+
+
+## Example: Set Operations {.smaller}
+:::{.columns}
+:::{.column}
 For die roll $S = \{1, 2, 3, 4, 5, 6\}$:
+
 - $A = \{1, 3, 5\}$ (odd numbers)
+  
 - $B = \{4, 5, 6\}$ (4 or higher)
 
+```{python}
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from matplotlib_venn import venn2
+
+# Create the figure and axes
+fig, ax = plt.subplots(figsize=(6, 4))
+
+# Correct subset sizes: A only = 2, B only = 2, A ∩ B = 1
+v = venn2(
+    subsets=(2, 2, 1),
+    set_labels=('A', 'B'),
+    subset_label_formatter=lambda x: "",  # hide the count labels
+    ax=ax
+)
+
+# Label each region
+v.get_label_by_id('10').set_text('A ∖ B\n{1, 3}')
+v.get_label_by_id('01').set_text('B ∖ A\n{4, 6}')
+v.get_label_by_id('11').set_text('A ∩ B\n{5}')
+
+# Draw the universe rectangle for S
+rect = patches.Rectangle(
+    (-1, -1),   # lower-left corner
+    2, 2,       # width, height
+    linewidth=2,
+    edgecolor='black',
+    facecolor='none',
+    linestyle='--',
+    zorder=1
+)
+ax.add_patch(rect)
+
+# Label the universe
+ax.text(
+    -0.95, 0.95, 'S = {1,2,3,4,5,6}',
+    fontsize=12, fontweight='bold',
+    va='top', ha='left',
+    zorder=2
+)
+
+# Final styling
+ax.set_xlim(-1.2, 1.2)
+ax.set_ylim(-1.2, 1.2)
+ax.set_aspect('equal')
+ax.axis('off')
+
+plt.title('Odd Numbers vs. 4 or Higher')
+plt.show()
+```
+:::
+
+:::{.column}
 :::{.fragment}
-**Find:**
+:::{.example}
+Find:
+
+- $A \cup B$
+  
+- $A \cap B$
+  
+- $A^c$
+:::
+:::
+
+:::{.fragment}
+:::{.solution}
+
 - $A \cup B = \{1, 3, 4, 5, 6\}$
+  
 - $A \cap B = \{5\}$
+  
 - $A^c = \{2, 4, 6\}$
+:::
+:::
+
+:::
 :::
 
 ---
 
-## Mutually Exclusive Events
-
+## Mutually Exclusive Events {.smaller}
+:::{.columns}
+:::{.column width="50%"}
 Events $A$ and $B$ are **mutually exclusive** (or disjoint) if they cannot occur simultaneously
 
 $$A \cap B = \emptyset$$
 
+```{python}
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from matplotlib_venn import venn2
+
+# Create figure and axes
+fig, ax = plt.subplots(figsize=(6, 4))
+
+# Draw Venn diagram with blank subset labels
+v = venn2(
+    subsets=(3, 3, 0),
+    set_labels=('A', 'B'),
+    subset_label_formatter=lambda x: "",
+    ax=ax
+)
+
+# Color and shade regions
+v.get_patch_by_id('10').set_color('lightblue')
+v.get_patch_by_id('01').set_color('lightcoral')
+v.get_patch_by_id('10').set_alpha(0.7)
+v.get_patch_by_id('01').set_alpha(0.7)
+
+# Label each region explicitly
+v.get_label_by_id('10').set_text('A: {1,3,5}')
+v.get_label_by_id('01').set_text('B: {2,4,6}')
+
+# Add universe rectangle for S
+rect = patches.Rectangle(
+    (-1, -1), 2, 2,
+    linewidth=2,
+    edgecolor='black',
+    facecolor='none',
+    linestyle='--',
+    zorder=1
+)
+ax.add_patch(rect)
+
+# Label the universe
+ax.text(
+    -0.95, 0.95, 'S = {1, 2, 3, 4, 5, 6}',
+    fontsize=12, fontweight='bold',
+    va='top', ha='left',
+    zorder=2
+)
+
+# Final styling
+ax.set_xlim(-1.2, 1.2)
+ax.set_ylim(-1.2, 1.2)
+ax.set_aspect('equal')
+ax.axis('off')
+
+plt.title('Mutually Exclusive: Odd vs. Even')
+plt.show()
+```
+:::
+
+
+:::{.column width="50%"}
 :::{.fragment}
-**Example**: When rolling a die
+:::{.example} 
+When rolling a die
+
 - $A = \{1, 3, 5\}$ (odd)
+  
 - $B = \{2, 4, 6\}$ (even)
 
 $A$ and $B$ are mutually exclusive
 :::
+:::
+:::
+:::
 
 ---
 
-## The Classical Definition of Probability
+## The Classical Definition of Probability{.smaller}
 
 For equally likely outcomes:
 
 $$P(A) = \frac{\text{Number of outcomes in } A}{\text{Total number of outcomes in } S}$$
 
-:::{.fragment}
-**Example**: Probability of rolling an even number on a fair die
+:::{.example}
+Probability of rolling an even number on a fair die
+:::
 
+:::{.fragment}
 $$P(\text{even}) = \frac{3}{6} = \frac{1}{2}$$
 :::
 
@@ -234,27 +964,46 @@ $$P(\text{even}) = \frac{3}{6} = \frac{1}{2}$$
 $$P(A^c) = 1 - P(A)$$
 
 :::{.fragment}
-**Example**: If the probability of rain is 0.3, what's the probability of no rain?
+:::{.example}
+If the probability of rain is 0.3, what's the probability of no rain?
+:::
+:::
 
+:::{.fragment}
 $$P(\text{no rain}) = 1 - P(\text{rain}) = 1 - 0.3 = 0.7$$
 :::
 
 ---
 
 ## Practice Problem 1
-
+::: {.columns}
+::: {.column width="70"}
+::: {.example}
+:::{.smaller}
 A standard deck has 52 cards. What is the probability of drawing:
 
 a) A heart?
 b) A face card (Jack, Queen, King)?
 c) The ace of spades?
-
+:::
+:::
+:::
+::: {.column width="30"}
 :::{.fragment}
-**Solutions:**
+:::{.solution}
+
 a) $P(\text{heart}) = \frac{13}{52} = \frac{1}{4}$
+
 b) $P(\text{face card}) = \frac{12}{52} = \frac{3}{13}$
+
 c) $P(\text{ace of spades}) = \frac{1}{52}$
 :::
+:::
+:::
+:::
+
+
+
 
 ---
 
@@ -264,9 +1013,11 @@ For any two events $A$ and $B$:
 
 $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
 
-:::{.fragment}
+:::{.example}
 *Why subtract $P(A \cap B)$?*
+:::
 
+:::{.fragment}
 We don't want to double-count outcomes that are in both events
 :::
 
@@ -275,8 +1026,22 @@ We don't want to double-count outcomes that are in both events
 ## Addition Rule Example
 
 Drawing from a standard deck:
+
 - $A$: Drawing a heart ($P(A) = \frac{13}{52}$)
+  
 - $B$: Drawing a face card ($P(B) = \frac{12}{52}$)
+
+```{python}
+from matplotlib import pyplot as plt
+from matplotlib_venn import venn2
+plt.figure(figsize=(6,4))
+v = venn2(subsets=(10, 9, 3))
+v.get_label_by_id('10').set_text('A: Hearts')
+v.get_label_by_id('01').set_text('B: Face Cards')
+v.get_label_by_id('11').set_text('A ∩ B')
+plt.title('Hearts vs. Face Cards')
+plt.show()
+```
 
 What's $P(A \cup B)$ (heart OR face card)?
 
@@ -290,11 +1055,14 @@ $P(A \cup B) = \frac{13}{52} + \frac{12}{52} - \frac{3}{52} = \frac{22}{52} = \f
 
 ## Conditional Probability
 
+::: {.concept-box}
+#### 🎯 Definition
 **Conditional probability** is the probability of event $A$ given that event $B$ has occurred
 
 $$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
 
 provided $P(B) > 0$
+:::
 
 ---
 
@@ -313,6 +1081,17 @@ Drawing a card from a standard deck:
 - $A$: Card is a heart
 - $B$: Card is red
 
+```{python}
+from matplotlib import pyplot as plt
+from matplotlib_venn import venn2
+plt.figure(figsize=(6,4))
+v = venn2(subsets=(13, 13, 0))
+v.get_label_by_id('10').set_text('A: Hearts')
+v.get_label_by_id('01').set_text('B: Red Cards')
+plt.title('Hearts vs. Red Cards')
+plt.show()
+```
+
 Find $P(A|B)$
 
 :::{.fragment}
@@ -327,6 +1106,8 @@ $P(A|B) = \frac{13/52}{26/52} = \frac{13}{26} = \frac{1}{2}$
 
 ## Independence
 
+::: {.concept-box}
+#### 🎯 Definition
 Events $A$ and $B$ are **independent** if:
 
 $$P(A|B) = P(A)$$
@@ -334,6 +1115,7 @@ $$P(A|B) = P(A)$$
 or equivalently:
 
 $$P(A \cap B) = P(A) \times P(B)$$
+:::
 
 :::{.fragment}
 *Knowing that $B$ occurred doesn't change the probability of $A$*
@@ -410,11 +1192,12 @@ $= 0.05 \times 0.6 + 0.03 \times 0.4 = 0.03 + 0.012 = 0.042$
 
 ## Bayes' Theorem
 
+::: {.concept-box}
+#### 🎯 Definition
 $$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$
 
 This allows us to "reverse" conditional probabilities
 
-:::{.fragment}
 *Named after Thomas Bayes (1701-1761)*
 :::
 
@@ -663,7 +1446,7 @@ c) At least one blue: $1 - P(\text{no blue}) = 1 - \frac{6 \times 5 \times 4}{9 
 - Expected value and variance
 - Binomial and normal distributions
 
-**Homework**: Problems on basic probability, conditional probability, and independence
+
 
 ---
 
