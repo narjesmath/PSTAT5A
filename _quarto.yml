@@ -4,16 +4,25 @@ project:
 
 website:
   title: "PSTAT5A"
+  favicon: /img/logo.png
   navbar:
     logo: /img/logo.png
     left:
-      - icon: home
+      - icon: house
         href: index.qmd
         text: Home
-      - schedule.qmd
-      - syllabus.qmd
-      - resources.qmd
-      - contact.qmd
+      - text: "Class Schedule"
+        icon: calendar
+        href: schedule.qmd
+      - text: "Syllabus"
+        icon: file-earmark-text
+        href: syllabus.qmd
+      - text: "Resources"
+        icon: book
+        href: resources.qmd
+      - text: "Contact"
+        icon: envelope
+        href: contact.qmd
 format:
   html:
     theme:
