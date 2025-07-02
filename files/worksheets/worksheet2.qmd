@@ -110,9 +110,9 @@ make-up exam the following day. The professor graded the first batch of 24 exams
 score of 74 points with a standard deviation of 8.9 points. The student who took the make-up the following
 day scored 64 points on the exam.
 
-(a) Does the new student’s score increase or decrease the average score?
+(a) Does the new student's score increase or decrease the average score?
 (b) What is the new average?
-(c) Does the new student’s score increase or decrease the standard deviation of the scores?
+(c) Does the new student's score increase or decrease the standard deviation of the scores?
 
 **Answer:**
 
