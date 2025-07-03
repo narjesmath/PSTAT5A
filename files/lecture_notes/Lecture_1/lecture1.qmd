@@ -8,7 +8,8 @@ format:
    footer: "© 2025 Narjes Mathlouthi"
    transition: slide
    background-transition: fade
-   theme: simple
+   theme: default
+   css: /files/lecture_notes/theme/lecture-styles.css
    slide-number: true
    include-in-header:
       text: |
@@ -66,7 +67,7 @@ format:
 :::
 
 ::: {.column width="40%"}
-![](/files/lecture_notes/img/qr_code.png){width="100%"  fig-align="right" }
+![](/files/lecture_notes/Lecture_1/img/qr_code.png){width="100%"  fig-align="right" }
 :::
 
 ::::
@@ -86,7 +87,7 @@ Access the lab environment at: [https://pstat5a.lsit.ucsb.edu](https://pstat5a.l
 :::
 
 ::: {.column width="40%"}
-![](/files/lecture_notes/img/jupyterlogo.png){ width="50%"  fig-align="right" }
+![](/files/lecture_notes/Lecture_1/img/jupyterlogo.png){ width="50%"  fig-align="right" }
 
 ::: aside
 > All relevant course material will be posted on the website. 
@@ -111,7 +112,7 @@ Access the lab environment at: [https://pstat5a.lsit.ucsb.edu](https://pstat5a.l
 :::
 
 ::: {.column width="40%"}
-![](/files/lecture_notes/img/email.png){ width="50%"  fig-align="right" }
+![](/files/lecture_notes/Lecture_1/img/email.png){ width="50%"  fig-align="right" }
 
 :::
 ::::
@@ -132,7 +133,7 @@ Access the lab environment at: [https://pstat5a.lsit.ucsb.edu](https://pstat5a.l
 :::
 
 ::: {.column width="40%"}
-![](/files/lecture_notes/img/data_science.png){ width="90%" fig-align="right"  }
+![](/files/lecture_notes/Lecture_1/img/data_science.png){ width="90%" fig-align="right"  }
 :::
 ::::
 
