@@ -135,11 +135,16 @@ Lecture Materials
 [Descriptive Statistics II (Continued)](/files/lecture_notes/lecture3/lecture3.qmd)
 :::
 ::: {.lab-quiz}
+
 [Lab2](/files/labs/lab2/lab2.qmd)
+
 [Lab2 Notebook](/files/labs/lab2/lab2.ipynb){download="lab2.ipynb"}
 :::
 ::: {.worksheet}
+
 [Worksheet 2](/files/worksheets/worksheet2.qmd)
+
+[Worksheet 2 Solutions](/files/worksheets/worksheet2_sln.qmd)
 :::
 :::
 
