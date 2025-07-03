@@ -257,7 +257,7 @@ Study Schedule
 
 **Day 5:** Interactive tutorials and hands-on practice
 
-**Day 6:** Documentation exploration and API familiarization
+**Day 6:** Get familiar with python documentation
 
 **Day 7:** Review and concept integration
 :::
