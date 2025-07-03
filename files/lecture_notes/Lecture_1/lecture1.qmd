@@ -5,7 +5,7 @@ author: "Narjes Mathlouthi"
 format:
   revealjs:
    logo: /img/logo.png
-   footer: "© 2025 Narjes Mathlouthi"
+   footer: " Understanding Data - Intro to Data Science © 2025 Narjes Mathlouthi"
    transition: slide
    background-transition: fade
    theme: default

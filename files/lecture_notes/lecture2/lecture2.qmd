@@ -6,7 +6,7 @@ author: "Narjes Mathlouthi"
 format:
   revealjs:
    logo: /img/logo.png
-   footer: "© 2025 Narjes Mathlouthi"
+   footer: "Understanding Data - Descriptive Statistics I © 2025 Narjes Mathlouthi"
    transition: slide
    chalkboard: true
    preview-links: auto
