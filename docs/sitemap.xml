@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pstat5a.com/schedule.html</loc>
-    <lastmod>2025-07-03T08:14:17.970Z</lastmod>
+    <lastmod>2025-07-03T17:48:00.300Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4.html</loc>
-    <lastmod>2025-07-03T08:04:45.902Z</lastmod>
+    <lastmod>2025-07-03T17:39:53.215Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/lecture3/lecture3.html</loc>
@@ -15,5 +15,37 @@
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/lecture2/lecture2.html</loc>
     <lastmod>2025-07-03T02:22:15.660Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4_part2.html</loc>
+    <lastmod>2025-07-03T16:50:51.786Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4_part3.html</loc>
+    <lastmod>2025-07-03T16:50:33.393Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4_part1.html</loc>
+    <lastmod>2025-07-03T17:36:54.089Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture9/lecture9.html</loc>
+    <lastmod>2025-06-29T21:28:10.331Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture6/lecture6.html</loc>
+    <lastmod>2025-07-03T17:38:57.224Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture5/lecture5.html</loc>
+    <lastmod>2025-07-03T17:47:00.105Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4-5-6.html</loc>
+    <lastmod>2025-07-03T08:04:45.902Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture8/lecture8.html</loc>
+    <lastmod>2025-06-29T21:27:43.075Z</lastmod>
   </url>
 </urlset>

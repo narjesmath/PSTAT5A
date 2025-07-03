@@ -1,5 +1,5 @@
 ---
-title: "PSTAT 5A: Conditional Probabilities"
+title: "PSTAT 5A: Conditional Probability Continued & Bayes’ Theorem"
 subtitle: "Lecture 6"
 author: "Narjes Mathlouthi"
 date: today
@@ -7,803 +7,960 @@ format:
   revealjs:
     logo: /img/logo.png
     theme: default
+    css: /files/lecture_notes/theme/lecture-styles.css
     slide-number: true
     chalkboard: true
     preview-links: auto
-    footer: "Understanding Data - Conditional Probabilities © 2025 Narjes Mathlouthi"
+    footer: "Understanding Data - Conditional Probability © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
 jupyter: python3
 ---
 
-## Welcome to Lecture 6 {.center}
+## Today's Learning Objectives {#sec-objectives .smaller}
 
-**Conditional Probabilities**
-
-*Understanding probability when information changes the game*
-
----
-
-## Today's Learning Objectives
 
 By the end of this lecture, you will be able to:
 
-- Define and calculate conditional probabilities
-- Apply the multiplication rule for dependent events
-- Use tree diagrams to solve multi-stage problems
-- Apply the law of total probability
-- Use Bayes' theorem to solve real-world problems
-- Distinguish between independence and conditional independence
-- Recognize and avoid common conditional probability fallacies
-
----
-
-## Motivation: Why Conditional Probability?
-
-In real life, we rarely make decisions with no information
-
-**Examples:**
-- Medical diagnosis with test results
-- Weather forecast with current conditions  
-- Investment decisions with market data
-- Sports betting with team statistics
-- Insurance premiums based on risk factors
-
-:::{.fragment}
-*Conditional probability helps us update our beliefs when we gain new information*
-:::
-
----
-
-## What is Conditional Probability?
-
-**Conditional Probability** is the probability of an event occurring, given that another event has already occurred
-
-**Notation**: $P(A|B)$ read as "probability of A given B"
-
-:::{.fragment}
-**Key insight**: When we know B has occurred, our sample space effectively "shrinks" to only outcomes where B is true
-:::
-
----
-
-## Intuitive Example
-
-You roll a fair six-sided die, but before revealing the result, someone tells you "the number is even"
-
-What's the probability it's a 4?
-
-:::{.fragment}
-**Without information**: $P(\text{rolling 4}) = \frac{1}{6}$
-
-**With information**: $P(\text{4 | even}) = ?$
-
-Given it's even, possible outcomes: $\{2, 4, 6\}$
-So $P(\text{4 | even}) = \frac{1}{3}$
-:::
-
----
-
-## Formal Definition
-
-For events A and B where $P(B) > 0$:
-
-$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
-
-:::{.fragment}
-**Interpretation**: 
-- Numerator: Outcomes where both A and B occur
-- Denominator: All outcomes where B occurs  
-- Ratio: Fraction of B-outcomes where A also occurs
-:::
-
----
-
-## Understanding the Formula
-
-$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
-
-**Why this formula makes sense:**
-- We restrict our attention to outcomes where B occurs
-- Among those outcomes, what fraction also have A?
-- This is exactly $\frac{P(A \cap B)}{P(B)}$
-
-:::{.fragment}
-**Rearranging**: $P(A \cap B) = P(A|B) \times P(B)$
-:::
-
----
-
-## Practice Problem 1
-
-A card is drawn from a standard 52-card deck. Find:
-
-a) $P(\text{King | Face card})$
-b) $P(\text{Heart | Red card})$  
-c) $P(\text{Ace | Black card})$
-
-:::{.fragment}
-**Solutions:**
-a) $P(\text{King | Face}) = \frac{4}{12} = \frac{1}{3}$ (4 kings among 12 face cards)
-b) $P(\text{Heart | Red}) = \frac{13}{26} = \frac{1}{2}$ (13 hearts among 26 red cards)
-c) $P(\text{Ace | Black}) = \frac{2}{26} = \frac{1}{13}$ (2 black aces among 26 black cards)
-:::
-
----
-
-## Two-Way Tables
-
-Two-way tables are excellent for conditional probability problems
-
-**Example**: Survey of 1000 people about coffee preference
-
-|          | Coffee | No Coffee | Total |
-|----------|--------|-----------|-------|
-| Morning  | 350    | 150       | 500   |
-| Evening  | 200    | 300       | 500   |
-| **Total**| 550    | 450       | 1000  |
-
----
-
-## Using Two-Way Tables
-
-Find: $P(\text{Coffee | Morning person})$
-
-From the table:
-- Morning people: 500
-- Morning people who drink coffee: 350
-
-:::{.fragment}
-$P(\text{Coffee | Morning}) = \frac{350}{500} = 0.7$
-
-**Compare to**: $P(\text{Coffee}) = \frac{550}{1000} = 0.55$
-
-Being a morning person increases coffee probability!
-:::
-
----
-
-## Practice Problem 2
-
-Using the coffee table, find:
-
-a) $P(\text{Morning | Coffee drinker})$
-b) $P(\text{No Coffee | Evening person})$
-c) $P(\text{Evening | No Coffee})$
-
-:::{.fragment}
-**Solutions:**
-a) $P(\text{Morning | Coffee}) = \frac{350}{550} = \frac{7}{11} \approx 0.636$
-b) $P(\text{No Coffee | Evening}) = \frac{300}{500} = 0.6$  
-c) $P(\text{Evening | No Coffee}) = \frac{300}{450} = \frac{2}{3} \approx 0.667$
-:::
-
----
-
-## Independence Revisited
-
-Events A and B are **independent** if knowing that B occurred doesn't change the probability of A
-
-$$P(A|B) = P(A)$$
-
-**Equivalently:**
-$$P(A \cap B) = P(A) \times P(B)$$
-
-:::{.fragment}
-**Example**: Two coin flips are independent because $P(\text{H}_2 | \text{H}_1) = P(\text{H}_2) = 0.5$
-:::
-
----
-
-## Testing for Independence
-
-**Method 1**: Check if $P(A|B) = P(A)$
-**Method 2**: Check if $P(A \cap B) = P(A) \times P(B)$  
-**Method 3**: Check if $P(B|A) = P(B)$
-
-:::{.fragment}
-**Coffee Example**: Are coffee preference and time preference independent?
-
-$P(\text{Coffee}) = 0.55$
-$P(\text{Coffee | Morning}) = 0.7$
-
-Since $0.7 \neq 0.55$, they are **not independent**
-:::
-
----
-
-## The Multiplication Rule
-
-**General Multiplication Rule**:
-$$P(A \cap B) = P(A) \times P(B|A) = P(B) \times P(A|B)$$
-
-**For Independent Events**:
-$$P(A \cap B) = P(A) \times P(B)$$
-
-:::{.fragment}
-**Extension to Multiple Events**:
-$$P(A_1 \cap A_2 \cap A_3) = P(A_1) \times P(A_2|A_1) \times P(A_3|A_1 \cap A_2)$$
-:::
-
----
-
-## Multiplication Rule Example
-
-A jar contains 5 red balls and 3 blue balls. Two balls are drawn **without replacement**. What's the probability both are red?
-
-:::{.fragment}
-Let $R_1$ = first ball is red, $R_2$ = second ball is red
-
-$P(R_1 \cap R_2) = P(R_1) \times P(R_2|R_1)$
-
-$= \frac{5}{8} \times \frac{4}{7} = \frac{20}{56} = \frac{5}{14}$
-:::
-
----
-
-## Practice Problem 3
-
-A box contains 4 defective and 6 working items. Three items are selected without replacement. Find the probability that:
-
-a) All three work
-b) The first two work and the third is defective
-c) Exactly two work
-
-:::{.fragment}
-**Solutions:**
-a) $P(\text{WWW}) = \frac{6}{10} \times \frac{5}{9} \times \frac{4}{8} = \frac{120}{720} = \frac{1}{6}$
-
-b) $P(\text{WWD}) = \frac{6}{10} \times \frac{5}{9} \times \frac{4}{8} = \frac{120}{720} = \frac{1}{6}$
-:::
-
----
-
-## Practice Problem 3 (continued)
-
-c) Exactly two work (three scenarios: WWD, WDW, DWW)
-
-$P(\text{WWD}) = \frac{6}{10} \times \frac{5}{9} \times \frac{4}{8} = \frac{1}{6}$
-
-$P(\text{WDW}) = \frac{6}{10} \times \frac{4}{9} \times \frac{5}{8} = \frac{1}{6}$
-
-$P(\text{DWW}) = \frac{4}{10} \times \frac{6}{9} \times \frac{5}{8} = \frac{1}{6}$
-
-:::{.fragment}
-Total: $\frac{1}{6} + \frac{1}{6} + \frac{1}{6} = \frac{1}{2}$
-:::
-
----
-
-## Tree Diagrams
-
-Tree diagrams help visualize sequential events and conditional probabilities
+- [Define probability and understand its basic properties](#sec-prob)
+- [Identify sample spaces and events](#sample-space)
+- [Apply fundamental probability rules](#set-operations-overview)
+- [Calculate conditional probabilities](#conditional-probability)
+- [Determine when events are independent](#independence)
+- [Use Bayes' theorem in simple applications](#bayes-theorem)
+
+--
+
+## Mutually Exclusive vs. Independent {.smaller}
+
+- **Mutually Exclusive (left):** the circles A and B do not overlap, so $P(A\cap B)=0$.
+
+- **Independent (right):** the circles overlap, and we’ve sized the intersection so that $P(A\cap B)=P(A)\,P(B)$.
+
+
+```{python}
+
+from matplotlib import pyplot as plt
+from matplotlib_venn import venn2
+
+# Create side-by-side Venn diagrams
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+# 1) Mutually Exclusive: no overlap
+venn2(
+    subsets=(1, 1, 0),
+    set_labels=('A', 'B'),
+    ax=axes[0],
+    subset_label_formatter=lambda x: ''
+)
+axes[0].set_title('Mutually Exclusive\nP(A∩B) = 0')
+
+# 2) Independent: overlap equals product of areas (e.g., 0.5 * 0.5 = 0.25)
+# Scale counts arbitrarily (25, 25, 25) to represent proportions
+venn2(
+    subsets=(25, 25, 25),
+    set_labels=('A', 'B'),
+    ax=axes[1],
+    subset_label_formatter=lambda x: ''
+)
+axes[1].set_title('Independent\nP(A∩B) = P(A)P(B)')
+
+plt.tight_layout()
+plt.show()
 
 ```
-                    0.5   Red
-            0.6 ──┐
-                    0.5   Blue
-Ball 1      
-                    0.4   Red  
-            0.4 ──┐
-                    0.6   Blue
-```
-
-*Each branch shows conditional probabilities*
 
 ---
 
-## Tree Diagram Example
+## Mutually Exclusive vs. Independent Example {.smaller}
 
-Medical test scenario:
-- 2% of population has disease
-- Test is 95% accurate for sick people  
-- Test is 90% accurate for healthy people
+:::{.columns}
+:::{.column}
+:::{.example}
+Draw a single card from a 52-card deck:
 
-What's the probability of testing positive?
+- Let A={“draw an Ace”}, so P(A)=4/52.
 
----
+- Let B={“draw a King”}, so P(B)=4/52.
 
-## Tree Diagram Solution
+**Q: What is $P(A\cap B)$ ?**
 
-```
-                    0.95   Test +
-            0.02 ──┐
-                    0.05   Test -
-Disease?    
-                    0.10   Test +
-            0.98 ──┐
-                    0.90   Test -
-```
-
-:::{.fragment}
-$P(\text{Test+}) = P(\text{Test+|Disease}) \times P(\text{Disease}) + P(\text{Test+|Healthy}) \times P(\text{Healthy})$
-
-$= 0.95 \times 0.02 + 0.10 \times 0.98 = 0.019 + 0.098 = 0.117$
+![](/files/lecture_notes/lecture4/img/cards.png)
+:::
 :::
 
----
+:::{.column}
 
-## Law of Total Probability
-
-If events $B_1, B_2, \ldots, B_n$ form a **partition** of the sample space (mutually exclusive and exhaustive), then:
-
-$$P(A) = \sum_{i=1}^{n} P(A|B_i) \times P(B_i)$$
 
 :::{.fragment}
-**Partition means**:
-- $B_i \cap B_j = \emptyset$ for $i \neq j$ (mutually exclusive)
-- $\bigcup_{i=1}^{n} B_i = S$ (exhaustive)
+:::{.solution}
+They’re disjoint (you can’t draw an Ace and a King), so
+$P(A\cap B) = 0$.
+
+But
+$P(A)\,P(B) = \frac{4}{52}\times\frac{4}{52} = \frac{16}{2704} \neq 0$.
+
+Hence, $P(A\cap B)\neq P(A)P(B)$, so they’re not independent.
+:::
 :::
 
+
+:::
+:::
+___
+
+## Multiplication Rule
+
+**General case**: $P(A \cap B) = P(A) \times P(B|A)$
+
+**Independent events**: $P(A \cap B) = P(A) \times P(B)$
+
+```{python}
+from matplotlib import pyplot as plt
+from matplotlib_venn import venn2
+
+# Define scaled subset sizes for illustration
+# General case: P(A)=40 (10+30), P(B|A)=0.75 so intersection=30, B-only=20 (if P(B)=50)
+# Independent case: P(A)=40, P(B)=50, intersection=P(A)*P(B)=20
+general_subsets = (10, 20, 30)   # (A-only, B-only, intersection)
+indep_subsets = (20, 30, 20)
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+
+# --- General Multiplication Rule ---
+venn2(subsets=general_subsets, set_labels=('A', 'B'), ax=axes[0])
+axes[0].set_title('General: P(A∩B) = P(A)·P(B|A)', fontsize=14)
+
+# --- Independent Events ---
+venn2(subsets=indep_subsets, set_labels=('A', 'B'), ax=axes[1])
+axes[1].set_title('Independent: P(A∩B) = P(A)·P(B)', fontsize=14)
+
+plt.tight_layout()
+plt.show()
+
+
+```
+
 ---
 
-## Law of Total Probability Example
+## Tree Diagrams{.smaller}
 
-A factory has three machines:
-- Machine A: 50% of production, 1% defective
-- Machine B: 30% of production, 2% defective  
-- Machine C: 20% of production, 3% defective
-
-What's the overall defect rate?
-
-:::{.fragment}
-$P(\text{Defective}) = P(D|A)P(A) + P(D|B)P(B) + P(D|C)P(C)$
-
-$= 0.01 \times 0.5 + 0.02 \times 0.3 + 0.03 \times 0.2$
-
-$= 0.005 + 0.006 + 0.006 = 0.017 = 1.7\%$
+::: {.definition}
+**🎯 Definition**
+Tree diagrams help visualize sequential events and calculate probabilities.
 :::
 
+```{python}
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle, FancyArrowPatch
+
+# Coordinates for nodes
+coords = {
+    'root': (0.1, 0.5),
+    'A': (0.4, 0.7),
+    'B': (0.4, 0.3),
+    'A_Red': (0.7, 0.8),
+    'A_Blue': (0.7, 0.6),
+    'B_Red': (0.7, 0.4),
+    'B_Blue': (0.7, 0.2),
+}
+
+# Probabilities
+p_A = 0.7
+p_B = 0.3
+p_R_A = 0.6
+p_B_A = 0.4
+p_R_B = 0.3
+p_B_B = 0.7
+
+# Create figure
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.axis('off')
+
+# Draw nodes
+for node, (x, y) in coords.items():
+    circle = Circle((x, y), 0.05, edgecolor='black', facecolor='white', linewidth=2)
+    ax.add_patch(circle)
+    label = node.replace('_', '\n')
+    if node == 'root':
+        label = 'Start'
+    ax.text(x, y, label, ha='center', va='center', fontsize=12, fontweight='bold')
+
+# Draw arrows and annotate probabilities
+def draw_branch(start, end, text):
+    x1, y1 = coords[start]
+    x2, y2 = coords[end]
+    arrow = FancyArrowPatch((x1+0.05, y1), (x2-0.05, y2), arrowstyle='->', mutation_scale=20)
+    ax.add_patch(arrow)
+    ax.text((x1+x2)/2, (y1+y2)/2, text, fontsize=12, backgroundcolor='white', ha='center')
+
+draw_branch('root', 'A', f'{p_A}')
+draw_branch('root', 'B', f'{p_B}')
+draw_branch('A', 'A_Red', f'{p_R_A}')
+draw_branch('A', 'A_Blue', f'{p_B_A}')
+draw_branch('B', 'B_Red', f'{p_R_B}')
+draw_branch('B', 'B_Blue', f'{p_B_B}')
+
+# Title
+ax.set_title('Tree Diagram: Drawing from Urn A (70%) or B (30%)', fontsize=14, pad=20)
+
+plt.show()
+```
+
+
+
 ---
 
-## Practice Problem 4
+## Tree Diagram Examples {.smaller}
+:::{.columns}
+:::{.column}
 
-A student studies for an exam with three possible outcomes based on study time:
-- Studies hard (40%): 90% chance of passing
-- Studies moderately (35%): 70% chance of passing  
-- Doesn't study (25%): 30% chance of passing
+```{python}
 
-What's the overall probability of passing?
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle, FancyArrowPatch
+
+# Coordinates for nodes in the full tree
+coords = {
+    'root':       (0.1, 0.5),
+    'A':          (0.35, 0.75),
+    'NotA':       (0.35, 0.25),
+    'A_B':        (0.7, 0.8),
+    'A_notB':     (0.7, 0.65),
+    'NotA_B':     (0.7, 0.35),
+    'NotA_notB':  (0.7, 0.2)
+}
+
+# Probabilities (example values)
+pA     = 0.4
+pNotA  = 0.6
+pB_A   = 0.75
+pNotB_A= 0.25
+pB_notA= 0.333
+pNotB_notA=0.667
+
+# Colors
+color_intersection = '#1f77b4'  # blue
+color_B            = '#ff7f0e'  # orange
+gray               = 'lightgray'
+
+def draw_tree(highlight_branches, branch_color, node_to_color):
+    fig, ax = plt.subplots(figsize=(6, 4))
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.axis('off')
+
+    # Draw nodes
+    node_patches = {}
+    for node, (x, y) in coords.items():
+        circ = Circle((x, y), 0.035, edgecolor='black', facecolor='white', lw=2)
+        ax.add_patch(circ)
+        node_patches[node] = circ
+        label = {
+            'root': 'Start',
+            'A': 'A',
+            'NotA': '¬A',
+            'A_B': 'B',
+            'A_notB': '¬B',
+            'NotA_B': 'B',
+            'NotA_notB': '¬B'
+        }[node]
+        ax.text(x, y, label, ha='center', va='center', fontsize=12)
+
+    # Function to draw a branch
+    def draw_branch(start, end, text, color, lw=1.5):
+        x1, y1 = coords[start]
+        x2, y2 = coords[end]
+        arr = FancyArrowPatch((x1+0.035, y1), (x2-0.035, y2),
+                              arrowstyle='-|>', mutation_scale=15,
+                              lw=lw, color=color)
+        ax.add_patch(arr)
+        ax.text((x1+x2)/2, (y1+y2)/2, text, ha='center', va='center',
+                backgroundcolor='white', fontsize=10)
+
+    # Draw all branches in gray
+    branches = [
+        ('root','A', f'{pA}'),
+        ('root','NotA', f'{pNotA}'),
+        ('A','A_B', f'{pB_A}'),
+        ('A','A_notB', f'{pNotB_A}'),
+        ('NotA','NotA_B', f'{pB_notA:.3f}'),
+        ('NotA','NotA_notB', f'{pNotB_notA:.3f}')
+    ]
+    for b in branches:
+        draw_branch(*b, color=gray)
+
+    # Highlight requested branches
+    for b in highlight_branches:
+        # find text label for branch
+        prob = {
+            ('root','A'): f'{pA}',
+            ('root','NotA'): f'{pNotA}',
+            ('A','A_B'): f'{pB_A}',
+            ('A','A_notB'): f'{pNotB_A}',
+            ('NotA','NotA_B'): f'{pB_notA:.3f}',
+            ('NotA','NotA_notB'): f'{pNotB_notA:.3f}'
+        }[b]
+        draw_branch(b[0], b[1], prob, color=branch_color, lw=3)
+    
+    # Color the end-node if desired
+    for node in node_to_color:
+        node_patches[node].set_facecolor(branch_color)
+
+    return fig, ax
+
+# Tree 1: highlight only the intersection branch root->A->A_B in blue
+fig1, ax1 = draw_tree(highlight_branches=[('root','A'),('A','A_B')],
+                      branch_color=color_intersection,
+                      node_to_color=['A_B'])
+ax1.set_title('Intersection Only (P(A∩B))', fontsize=14)
+plt.show()
+
+
+
+```
+:::
+
+:::{.column }
+```{python}
+
+# Tree 2: highlight both B branches (A->B and ¬A->B) in orange
+fig2, ax2 = draw_tree(highlight_branches=[('root','A'),('A','A_B'),
+                                          ('root','NotA'),('NotA','NotA_B')],
+                      branch_color=color_B,
+                      node_to_color=['A_B','NotA_B'])
+ax2.set_title('Event B Only (P(B))', fontsize=14)
+plt.show()
+
+```
+:::
+:::
+
+
+
+
+## Practice Problem 2{.smaller}
+
+:::{.columns}
+:::{.column}
+:::{.example}
+A jar contains 5 red balls and 3 blue balls. Two balls are drawn **without replacement**.
+
+a) What's the probability both balls are red?
+
+b) What's the probability the first is red and second is blue?
+:::
+:::
+
+:::{.column}
+:::{.fragment}
+
+```{python}
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle
+from matplotlib.lines import Line2D
+
+# Set up figure
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.axis('off')
+
+# Node positions
+positions = {
+    'root': (0.1, 0.5),
+    'R': (0.35, 0.7),
+    'B': (0.35, 0.3),
+    'RR': (0.7, 0.8),
+    'RB': (0.7, 0.6),
+    'BR': (0.7, 0.4),
+    'BB': (0.7, 0.2),
+}
+
+# Define colors
+color_root = '#ecf0f1'
+color_R = '#e74c3c'       # red for R or RR
+color_B = '#3498db'       # blue for B or BB
+color_mixed = '#ff7f0e'   # orange for mixed (RB, BR)
+edge_color = 'black'
+linewidth = 2
+text_fs = 12
+
+# Draw nodes with colored backgrounds and bold labels
+node_colors = {
+    'root': color_root,
+    'R': color_R,
+    'B': color_B,
+    'RR': color_R,
+    'RB': color_mixed,
+    'BR': color_mixed,
+    'BB': color_B
+}
+
+for name, (x, y) in positions.items():
+    circ = Circle((x, y), 0.05, facecolor=node_colors[name],
+                  edgecolor=edge_color, linewidth=linewidth, zorder=2)
+    ax.add_patch(circ)
+    ax.text(x, y, name, ha='center', va='center', fontsize=text_fs, fontweight='bold', zorder=3)
+
+# Function to draw an arrow and label
+def draw_arrow(src, dst, label):
+    x1, y1 = positions[src]
+    x2, y2 = positions[dst]
+    ax.annotate('', xy=(x2-0.05, y2), xytext=(x1+0.05, y1),
+                arrowprops=dict(arrowstyle='->', color=node_colors[dst], lw=linewidth), zorder=1)
+    ax.text((x1+x2)/2, (y1+y2)/2, label, ha='center', va='center',
+            backgroundcolor='white', fontsize=text_fs, fontweight='bold', zorder=3)
+
+# Draw branches with probabilities
+draw_arrow('root', 'R', '5/8')
+draw_arrow('root', 'B', '3/8')
+draw_arrow('R', 'RR', '4/7')
+draw_arrow('R', 'RB', '3/7')
+draw_arrow('B', 'BR', '5/7')
+draw_arrow('B', 'BB', '2/7')
+
+# Label leaves with final probabilities in bold
+leaf_probs = {
+    'RR': '20/56',
+    'RB': '15/56',
+    'BR': '15/56',
+    'BB': '6/56'
+}
+for leaf, prob in leaf_probs.items():
+    x, y = positions[leaf]
+    ax.text(x+0.12, y, prob, ha='left', va='center', fontsize=text_fs, fontweight='bold')
+
+# Legend
+legend_elements = [
+    Line2D([0], [0], marker='o', color='w', label='RR / R',
+           markerfacecolor=color_R, markersize=12, markeredgecolor=edge_color),
+    Line2D([0], [0], marker='o', color='w', label='BB / B',
+           markerfacecolor=color_B, markersize=12, markeredgecolor=edge_color),
+    Line2D([0], [0], marker='o', color='w', label='RB / BR',
+           markerfacecolor=color_mixed, markersize=12, markeredgecolor=edge_color),
+]
+ax.legend(handles=legend_elements, loc='upper left', bbox_to_anchor=(0.02, 0.95))
+
+plt.tight_layout()
+plt.show()
+
+```
+
+:::{.solution}
+a) $P(\text{both red}) = \frac{5}{8} \times \frac{4}{7} = \frac{20}{56} = \frac{5}{14}$
+
+b) $P(\text{red then blue}) = \frac{5}{8} \times \frac{3}{7} = \frac{15}{56}$
+:::
+:::
+:::
+
+:::
+---
+
+## Law of Total Probability {.smaller}
+
+:::{.definition}
+**🎯 Definition**
+
+If events $B_1, B_2, \ldots, B_n$ form a partition of the sample space, then:
+
+$$P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + \cdots + P(A|B_n)P(B_n)$$
+:::
+
+```{python}
+
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle, Ellipse, Rectangle
+
+# Example probabilities
+P_B = [0.3, 0.5, 0.2]
+P_A_given_B = [0.2, 0.6, 0.5]
+P_A_and_B = [P_B[i] * P_A_given_B[i] for i in range(3)]
+
+# Create figure
+fig, ax = plt.subplots(figsize=(9, 5))
+ax.set_aspect('equal')
+ax.axis('off')
+
+# Draw sample space rectangle
+rect = Rectangle((-1, -2), width=8, height=4, edgecolor='black', facecolor='none', linewidth=2)
+ax.add_patch(rect)
+ax.text(-0.9, 1.7, r'$\Omega$', fontsize=14, fontweight='bold', va='top', ha='left')
+
+# Draw B partitions as circles
+positions_B = [(1, 0), (3, 0), (5, 0)]
+colors_B = ['#ffcc00', '#ff6600', '#ff0066']
+
+for i, (x, y) in enumerate(positions_B):
+    circle = Circle((x, y), radius=1, facecolor=colors_B[i], edgecolor='black', alpha=0.3)
+    ax.add_patch(circle)
+    ax.text(x, y-1.3, f'$P(B_{i+1})={P_B[i]:.2f}$', ha='center', va='center', fontsize=12, fontweight='bold')
+
+# Draw A as a large ellipse overlapping all B's
+ellipse = Ellipse((3, 0), width=8, height=3, angle=0, facecolor='#1f77b4', edgecolor='black', alpha=0.2)
+ax.add_patch(ellipse)
+ax.text(3, 1.2, '$A$', ha='center', va='center', fontsize=14, fontweight='bold')
+
+# Annotate intersections P(A ∩ Bi)
+for i, (x, y) in enumerate(positions_B):
+    ax.text(x, 0, f'$P(A\\cap B_{i+1})={P_A_and_B[i]:.2f}$', ha='center', va='center', fontsize=12, color='black', fontweight='bold')
+
+ax.set_xlim(-1, 7)
+ax.set_ylim(-2, 2)
+plt.show()
+
+```
+
+---
+
+## Law of Total Probability Example{.smaller}
+
+:::{.example}
+
+A factory has two machines:
+
+- Machine 1: Produces 60% of items, 5% defective
+  
+- Machine 2: Produces 40% of items, 3% defective
+
+**Q: What's the overall probability an item is defective?**
+:::
+
 
 :::{.fragment}
-$P(\text{Pass}) = 0.9 \times 0.4 + 0.7 \times 0.35 + 0.3 \times 0.25$
+:::{.solution}
 
-$= 0.36 + 0.245 + 0.075 = 0.68$
+$P(\text{defective}) = P(D|M_1)P(M_1) + P(D|M_2)P(M_2)$ 
+
+$= 0.05 \times 0.6 + 0.03 \times 0.4 = 0.03 + 0.012 = 0.042$
+:::
 :::
 
 ---
 
 ## Bayes' Theorem
 
-**The Foundation**: We often want to "reverse" conditional probabilities
-
-Given: $P(B|A)$, $P(A)$, $P(B)$
-Want: $P(A|B)$
-
-**Bayes' Theorem**:
+::: {.definition}
+**🎯 Definition**
 $$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$
+
+This allows us to "reverse" conditional probabilities
+
+*Named after Thomas Bayes (1701-1761)*
+
+![](/files/lecture_notes/lecture4/img/bayes.gif){width="200" fig-align="right"}
+:::
+
+
+
 
 ---
 
 ## Bayes' Theorem Components
 
-$$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$
+- $A,B$: **Events**
+- $P(A|B)$: **Posterior probability** - what we want to find
+- $P(B|A)$: **Likelihood** - given $A$, probability of observing $B$
+- $P(A)$: **Prior probability** - initial probability of $A$
+- $P(B)$: **Marginal probability** - total probability of $B$
 
-- $P(A|B)$: **Posterior probability** (what we want)
-- $P(B|A)$: **Likelihood** (what we observe)  
-- $P(A)$: **Prior probability** (initial belief)
-- $P(B)$: **Evidence** (marginal probability)
+---
+
+## Bayes' Theorem Example {.smaller}
+
+:::{.columns}
+:::{.column width ="40%"}
+:::{.example}
+**Medical test for a disease:** ^[$P(\neg D \,\wedge\, \text{Negative})
+\;=\;P(\neg D)\times P(\text{Negative}\mid \neg D)
+\;=\;0.99\times0.90
+\;=\;0.891\;(89.1\%)$]
+
+- Disease affects 1% of population
+  
+- Test is 95% accurate for sick people
+  
+- Test is 90% accurate for healthy people
+
+
+
+**Q:If someone tests positive, what's the probability they have the disease?**
+
+:::
+:::
+
+:::{.column width="60%"}
+
+```{python}
+import plotly.express as px
+import pandas as pd
+
+# Given probabilities
+P_D = 0.01
+P_notD = 0.99
+P_pos_given_D = 0.95
+P_pos_given_notD = 0.10
+
+# Joint probabilities
+P_D_and_pos = P_D * P_pos_given_D       # True positives
+P_notD_and_pos = P_notD * P_pos_given_notD  # False positives
+P_D_and_neg = P_D * (1 - P_pos_given_D)     # False negatives
+P_notD_and_neg = P_notD * (1 - P_pos_given_notD)  # True negatives
+
+# Prepare DataFrame for treemap (mosaic)
+df = pd.DataFrame({
+    'Test Result': ['Positive', 'Positive', 'Negative', 'Negative'],
+    'Condition':   ['Disease',   'No Disease', 'Disease',   'No Disease'],
+    'Probability': [P_D_and_pos, P_notD_and_pos, P_D_and_neg, P_notD_and_neg]
+})
+
+# Create treemap mosaic plot
+fig = px.treemap(
+    df,
+    path=['Test Result', 'Condition'],
+    values='Probability',
+    color='Condition',
+    color_discrete_map={'Disease':'tomato', 'No Disease':'skyblue'}
+)
+fig.update_traces(textinfo='label+percent entry')
+fig.update_layout(
+    title='Bayes’ Theorem: Distribution by Test Result and Condition',
+    margin=dict(t=50, l=25, r=25, b=25)
+)
+fig.show()
+```
+
+
+:::
+:::
+---
+
+## Bayes' Theorem Solution {.smaller}
+
+Let:
+
+- $D$: Person has disease
+  
+- $T^+$: Test is positive
+
+Given:
+
+- $P(D) = 0.01$
+  
+- $P(T^+|D) = 0.95$
+  
+- $P(T^-|D^c) = 0.90$, so $P(T^+|D^c) = 0.10$
 
 :::{.fragment}
-*"In light of evidence B, how should we update our belief in A?"*
+:::{.solution}
+$P(T^+) = P(T^+|D)P(D) + P(T^+|D^c)P(D^c)$
+
+$= 0.95 \times 0.01 + 0.10 \times 0.99 = 0.1085$
+:::
 :::
 
 ---
 
-## Bayes' Theorem with Total Probability
+## Bayes' Theorem Solution (cont.) {.smaller}
 
-When we need to find $P(B)$:
+$$P(D|T^+) = \frac{P(T^+|D) \times P(D)}{P(T^+)} = \frac{0.95 \times 0.01}{0.1085} \approx 0.088$$
 
-$$P(A|B) = \frac{P(B|A) \times P(A)}{P(B|A) \times P(A) + P(B|A^c) \times P(A^c)}$$
+```{python}
+import matplotlib.pyplot as plt
 
-This is the most common form for applications
+# Posterior probabilities given a positive test
+P_D_and_pos = 0.0095
+P_notD_and_pos = 0.099
+P_positive = P_D_and_pos + P_notD_and_pos
 
----
+P_D_given_pos = P_D_and_pos / P_positive
+P_notD_given_pos = P_notD_and_pos / P_positive
 
-## Medical Diagnosis Example
+# Pie chart
+labels = ['Disease (P≈8.8%)', 'No Disease (P≈91.2%)']
+sizes = [P_D_given_pos, P_notD_given_pos]
+colors = ['tomato', 'skyblue']
 
-Revisiting our medical test:
-- 2% of population has disease (prior)
-- Test positive (evidence)  
-- Test is 95% accurate for sick, 90% accurate for healthy
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.pie(
+    sizes, labels=labels, colors=colors, autopct='%.1f%%',
+    startangle=90, textprops={'fontsize': 14, 'fontweight': 'bold'}
+)
+ax.set_title('Posterior Probability Given Positive Test', fontsize=16, fontweight='bold')
+ax.axis('equal')  # Equal aspect ensures pie is circular.
+plt.show()
 
-Given a positive test, what's the probability of having the disease?
-
----
-
-## Medical Diagnosis Solution
-
-Let D = disease, T+ = positive test
-
-$$P(D|T+) = \frac{P(T+|D) \times P(D)}{P(T+|D) \times P(D) + P(T+|D^c) \times P(D^c)}$$
-
-$$= \frac{0.95 \times 0.02}{0.95 \times 0.02 + 0.10 \times 0.98}$$
-
-$$= \frac{0.019}{0.019 + 0.098} = \frac{0.019}{0.117} \approx 0.162$$
+```
 
 :::{.fragment}
-**Surprising**: Only 16.2% chance of disease despite positive test!
+:::{.note}
+**Surprising result**: Even with a positive test, there's only an 8.8% chance of having the disease!
+
+*This is due to the low base rate of the disease*
+:::
 :::
 
 ---
 
-## Why the Low Probability?
+## Common Probability Mistakes {.smaller}
 
-**Base Rate Fallacy**: When disease is rare (2%), most positive tests are false positives
+- **Confusing $P(A|B)$ with $P(B|A)$**
+   
+:::{.note}
+[Prosecutor's fallacy](https://en.wikipedia.org/wiki/Base_rate_fallacy) is a specific error in interpreting conditional probabilities.
+Confusing 
 
-**Intuition**: Out of 10,000 people:
-- 200 have disease → 190 test positive  
-- 9,800 healthy → 980 test positive
-- Total positive tests: 1,170
-- True positives: 190
+$P(\text{Evidence}\mid\text{Innocent})
+\quad\text{with}\quad
+P(\text{Innocent}\mid\text{Evidence})$. 
 
-$P(\text{Disease | Positive}) = \frac{190}{1,170} \approx 0.162$ ✓
+Ex: OJ Simpson Case ^[the DNA evidence in the O. J. Simpson trial are a classic example of the prosecutor’s fallacy.  Prosecutors highlighted that the chance of a random person matching the crime-scene DNA was “one in 170 million,” then implied (or let the jury infer) that Simpson therefore had a 1 in 170 million chance of being innocent.]
+:::
+
 
 ---
 
-## Practice Problem 5
+## Common Probability Mistakes {.smaller}
 
-Email spam filter:
-- 60% of emails are spam
-- Filter catches 95% of spam
-- Filter incorrectly flags 8% of legitimate emails
+-  **Assuming independence when events are dependent**
 
-If an email is flagged as spam, what's the probability it's actually spam?
+-  **Ignoring base rates** (as in the medical test example)
+
+:::{.note}
+[Base rate fallacy](https://en.wikipedia.org/wiki/Base_rate_fallacy) is when you ignore or underweight the prior probability $P(H)$ of a hypothesis, focusing only on the new evidence $E$.
+:::
+
+-  **Double counting in union calculations**
+
+
+---
+
+## Practice Problem 3 {.smaller}
+:::{.example}
+Two fair dice are rolled. Find:
+
+a) $P(\text{sum} = 7)$
+b) $P(\text{sum} = 7 | \text{first die shows 3})$
+c) Are these events independent?
+:::
 
 :::{.fragment}
-$P(\text{Spam | Flagged}) = \frac{0.95 \times 0.6}{0.95 \times 0.6 + 0.08 \times 0.4}$
+:::{.solution}
+a) 6 ways out of 36: $P(\text{sum} = 7) = \frac{6}{36} = \frac{1}{6}$
 
-$= \frac{0.57}{0.57 + 0.032} = \frac{0.57}{0.602} \approx 0.947$
+b) Given first die is 3, need second die to be 4: $P(\text{sum} = 7 | \text{first} = 3) = \frac{1}{6}$
 
-The filter is quite reliable!
+c) Yes, they're independent since $P(A|B) = P(A)$
+:::
+:::
+
+
+---
+
+## Counting and Probability{.smaller}
+
+:::{.definition}
+Sometimes we need to count outcomes:
+
+:::{.formula-box}
+**Multiplication Principle**: If task 1 can be done in $m$ ways and task 2 in $n$ ways, both can be done in $m \times n$ ways
+:::
+
+:::{.formula-box}
+**Permutations**: Arrangements where order matters
+$$P(n,r) = \frac{n!}{(n-r)!}$$
+:::
+
+:::{.formula-box}
+**Combinations**: Selections where order doesn't matter
+$$C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$$
+:::
+:::
+---
+
+## Counting Example
+
+:::{.example}
+**Q: How many ways can you arrange 5 people in a row?**
+:::
+
+:::{.fragment}
+:::{.solution}
+This is a permutation: $P(5,5) = 5! = 120$ ways
+:::
 :::
 
 ---
 
-## Multiple Events and Bayes'
-
-**Extended Bayes' Theorem**: If $A_1, A_2, \ldots, A_n$ partition the sample space:
-
-$$P(A_i|B) = \frac{P(B|A_i) \times P(A_i)}{\sum_{j=1}^{n} P(B|A_j) \times P(A_j)}$$
-
-This allows us to update probabilities for multiple hypotheses
-
----
-
-## Three Machine Example Revisited
-
-A defective item is found. Which machine most likely produced it?
-
-From before:
-- Machine A: 50% production, 1% defective  
-- Machine B: 30% production, 2% defective
-- Machine C: 20% production, 3% defective
-- Overall defect rate: 1.7%
-
----
-
-## Three Machine Solution
-
-$$P(A|\text{Defective}) = \frac{0.01 \times 0.5}{0.017} = \frac{0.005}{0.017} \approx 0.294$$
-
-$$P(B|\text{Defective}) = \frac{0.02 \times 0.3}{0.017} = \frac{0.006}{0.017} \approx 0.353$$
-
-$$P(C|\text{Defective}) = \frac{0.03 \times 0.2}{0.017} = \frac{0.006}{0.017} \approx 0.353$$
+:::{.fragment}
+:::{.example}
+**Q:How many ways can you choose 3 people from 5 for a committee?**
+:::
+:::
 
 :::{.fragment}
-Machine B or C are most likely sources of the defective item
+:::{.solution}
+This is a combination: $C(5,3) = \binom{5}{3} = \frac{5!}{3!2!} = 10$ ways
+:::
 :::
 
 ---
 
-## Practice Problem 6
+## Probability with Counting
 
-Three boxes contain colored balls:
-- Box 1: 3 red, 2 blue (chosen 40% of time)
-- Box 2: 2 red, 3 blue (chosen 35% of time)  
-- Box 3: 1 red, 4 blue (chosen 25% of time)
-
-A red ball is drawn. Which box was it most likely from?
+:::{.example}
+**Example**: A committee of 3 people is chosen from 8 people (5 women, 3 men). What's the probability all 3 are women?
+:::
 
 :::{.fragment}
-$P(\text{Red}) = \frac{3}{5} \times 0.4 + \frac{2}{5} \times 0.35 + \frac{1}{5} \times 0.25 = 0.24 + 0.14 + 0.05 = 0.43$
+:::{.solution}
+Total ways to choose 3 from 8: $\binom{8}{3} = 56$
 
-$P(\text{Box 1 | Red}) = \frac{0.6 \times 0.4}{0.43} \approx 0.558$
-$P(\text{Box 2 | Red}) = \frac{0.4 \times 0.35}{0.43} \approx 0.326$  
-$P(\text{Box 3 | Red}) = \frac{0.2 \times 0.25}{0.43} \approx 0.116$
+Ways to choose 3 women from 5: $\binom{5}{3} = 10$
+
+Probability: $\frac{10}{56} = \frac{5}{28}$
+:::
 :::
 
 ---
 
-## Conditional Independence
-
-Events A and B are **conditionally independent** given C if:
-
-$$P(A \cap B | C) = P(A|C) \times P(B|C)$$
-
-**Important**: Conditional independence doesn't imply independence!
-
-:::{.fragment}
-**Example**: Weather in two cities may be independent normally, but conditionally dependent given a major weather system
-:::
-
----
-
-## Simpson's Paradox
-
-**Simpson's Paradox**: A trend in subgroups can reverse when groups are combined
-
-**Classic Example**: University admissions by gender
-
-|         | Men    | Women  |
-|---------|--------|--------|
-| Dept A  | 62% (825/1327) | 82% (108/131) |
-| Dept B  | 63% (560/893)  | 68% (25/37)   |
-| **Overall** | **44% (1385/2220)** | **30% (133/168)** |
-
-Women have higher rates in each department but lower overall!
-
----
-
-## Common Fallacies
-
-**1. Confusion of the Inverse**
-- Confusing $P(A|B)$ with $P(B|A)$
-- "If it rains, the ground is wet" ≠ "If the ground is wet, it rained"
-
-**2. Base Rate Neglect**  
-- Ignoring prior probabilities
-- Medical test example
-
-**3. Prosecutor's Fallacy**
-- $P(\text{Evidence | Innocent}) \neq P(\text{Innocent | Evidence})$
-
----
-
-## Prosecutor's Fallacy Example
-
-DNA evidence matches defendant with probability 1 in a million for random person
-
-**Wrong reasoning**: "Probability of innocence is 1 in a million"
-
-**Correct reasoning**: Need to consider:
-- How many people could have committed the crime?
-- What's the prior probability of guilt?
-- Possibility of lab error, planted evidence, etc.
-
----
-
-## Practice Problem 7
-
-Quality control: 5% of items are defective. A test detects 96% of defective items but has a 4% false positive rate.
-
-a) What's the probability an item testing positive is actually defective?
-b) What's the probability an item testing negative is actually good?
-
-:::{.fragment}
-a) $P(\text{Defective | Positive}) = \frac{0.96 \times 0.05}{0.96 \times 0.05 + 0.04 \times 0.95} = \frac{0.048}{0.086} \approx 0.558$
-
-b) $P(\text{Good | Negative}) = \frac{0.96 \times 0.95}{0.96 \times 0.95 + 0.04 \times 0.05} = \frac{0.912}{0.914} \approx 0.998$
-:::
-
----
 
 ## Real-World Applications
 
-**Medical Screening**:
-- Mammograms, COVID tests
-- Balancing sensitivity vs specificity
+**Medical Diagnosis**: Using Bayes' theorem for test interpretation
 
-**Machine Learning**:
-- Naive Bayes classifiers
-- Spam detection, recommendation systems
+**Quality Control**: Probability of defective items
 
-**Finance**:
-- Credit scoring
-- Fraud detection
+**Finance**: Risk assessment and portfolio theory
 
-**Legal System**:
-- DNA evidence interpretation
-- Probability of guilt/innocence
+**Sports**: Probability of wins, fantasy sports
 
----
-
-## Technology and Tools
-
-**Calculators**: 
-- Basic probability calculations
-- Watch for rounding errors
-
-**Software**:
-- R: conditional probability tables
-- Python: pandas for two-way tables
-- Excel: pivot tables for conditional analysis
-
-**Visualization**:
-- Tree diagrams  
-- Contingency tables
-- Bayes networks
-
----
-
-## Diagnostic Thinking
-
-**Questions to ask**:
-1. What information am I conditioning on?
-2. How does this information change the probability?
-3. What's the base rate or prior probability?
-4. Am I confusing $P(A|B)$ with $P(B|A)$?
-5. Are the events independent?
-
----
-
-## Problem-Solving Strategy
-
-1. **Identify the type**: Direct conditional, Bayes', or law of total probability?
-2. **Define events clearly**: Use precise notation
-3. **Organize information**: Two-way tables or tree diagrams
-4. **Check for independence**: Does additional info matter?
-5. **Apply appropriate formula**: Don't forget denominators!
-6. **Verify answer**: Does it make intuitive sense?
-
----
-
-## Practice Problem 8
-
-A survey shows:
-- 70% of people like pizza
-- 60% of people like movies  
-- 40% like both pizza and movies
-
-a) Are liking pizza and movies independent?
-b) What's $P(\text{Pizza | Movies})$?
-c) What's $P(\text{Movies | Pizza})$?
-
----
-
-## Practice Problem 8 Solutions
-
-a) Check independence: $P(\text{Pizza}) \times P(\text{Movies}) = 0.7 \times 0.6 = 0.42 \neq 0.4$
-   Not independent!
-
-b) $P(\text{Pizza | Movies}) = \frac{P(\text{Pizza} \cap \text{Movies})}{P(\text{Movies})} = \frac{0.4}{0.6} = \frac{2}{3}$
-
-c) $P(\text{Movies | Pizza}) = \frac{P(\text{Pizza} \cap \text{Movies})}{P(\text{Pizza})} = \frac{0.4}{0.7} = \frac{4}{7}$
-
----
-
-## Advanced Topics Preview
-
-**Markov Chains**: 
-- Sequences where future depends only on present
-- $P(X_{n+1} | X_n, X_{n-1}, \ldots, X_1) = P(X_{n+1} | X_n)$
-
-**Bayesian Statistics**:
-- Using Bayes' theorem for statistical inference
-- Updating beliefs with data
-
-**Information Theory**:
-- Conditional entropy
-- Mutual information
-
----
-
-## Historical Context
-
-**Thomas Bayes** (1701-1761):
-- Presbyterian minister and mathematician
-- Bayes' theorem published posthumously
-
-**Pierre-Simon Laplace** (1749-1827):
-- Developed and popularized Bayesian methods
-- "Probability is nothing but common sense reduced to calculation"
-
-**Modern Applications**: AI, machine learning, medical diagnosis, finance
-
----
-
-## Common Student Questions
-
-**Q**: "How do I know when to use Bayes' theorem?"
-**A**: When you want to "reverse" a conditional probability
-
-**Q**: "Why are medical test problems so counterintuitive?"  
-**A**: Base rates matter more than we intuitively expect
-
-**Q**: "What's the difference between independence and conditional independence?"
-**A**: Independence means no relationship; conditional independence means no relationship given specific information
+**Insurance**: Calculating premiums based on risk
 
 ---
 
 ## Key Formulas Summary
 
-- **Conditional Probability**: $P(A|B) = \frac{P(A \cap B)}{P(B)}$
-- **Multiplication Rule**: $P(A \cap B) = P(A) \times P(B|A)$
-- **Law of Total Probability**: $P(A) = \sum P(A|B_i) \times P(B_i)$
-- **Bayes' Theorem**: $P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$
-- **Independence**: $P(A|B) = P(A)$
+:::{.formula-box}
+- **Basic probability**: $P(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}}$
+- **Complement**: $P(A^c) = 1 - P(A)$
+- **Addition**: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+- **Conditional**: $P(A|B) = \frac{P(A \cap B)}{P(B)}$
+- **Independence**: $P(A \cap B) = P(A) \times P(B)$
+- **Bayes'**: $P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$
+:::
 
+---
+
+## Problem-Solving Strategy
+
+:::{.note}
+1. **Identify** the sample space and events
+2. **Determine** if events are independent or mutually exclusive
+3. **Choose** the appropriate rule or formula
+4. **Calculate** step by step
+5. **Check** if your answer makes sense
+:::
+---
+
+## Practice Problem 4
+
+:::{.example}
+A bag contains 4 red, 3 blue, and 2 green marbles. Three marbles are drawn without replacement.
+
+Find the probability that:
+a) All three are red
+b) No two are the same color
+c) At least one is blue
+
+:::
+---
+
+## Practice Problem 4 Solutions
+
+:::{.solution}
+a) All red: $\frac{4}{9} \times \frac{3}{8} \times \frac{2}{7} = \frac{24}{504} = \frac{1}{21}$
+
+b) Different colors: $\frac{4 \times 3 \times 2}{9 \times 8 \times 7} \times 3! = \frac{24 \times 6}{504} = \frac{144}{504} = \frac{2}{7}$
+
+c) At least one blue: $1 - P(\text{no blue}) = 1 - \frac{6 \times 5 \times 4}{9 \times 8 \times 7} = 1 - \frac{120}{504} = \frac{384}{504} = \frac{16}{21}$
+:::
+---
+
+## Common Questions {.smaller}
+
+:::{.example}
+**Q1.**: **"Why isn't $P(A \cup B) = P(A) + P(B)$ always?"**
+
+**A**: We'd double-count outcomes in both events
+
+**Q2.**: **"How do I know if events are independent?"**
+
+**A**: Check if $P(A|B) = P(A)$ or if $P(A \cap B) = P(A) \times P(B)$
+
+**Q3.**: **"When do I use Bayes' theorem?"**
+
+**A**: When you want to "reverse" a conditional probability
+
+:::
+
+:::{.note}
+*Q3 note (Bayes Example)*
+
+- Forward: I know my test picks up disease 95% of the time ⇒ $P(+\mid D)=0.95$.
+
+- Reverse: I want the chance I really have the disease when the test is positive ⇒ $P(D\mid +)$.
+:::
 ---
 
 ## Looking Ahead
 
-**Next lecture**: Discrete Random Variables
-- Random variables as functions
-- Probability mass functions
+**Next lecture**: 
+
+- Random Variables and Probability Distributions
+  
+- Discrete vs. continuous random variables
+  
 - Expected value and variance
-- Common discrete distributions (binomial, geometric, Poisson)
+  
 
-**Connection**: Conditional probability is essential for understanding dependence in random variables
 
----
-
-## Study Tips
-
-1. **Practice with real scenarios**: Medical tests, quality control
-2. **Draw diagrams**: Tree diagrams and two-way tables
-3. **Check your intuition**: Do answers make sense?
-4. **Master the basics**: Conditional probability formula
-5. **Watch for fallacies**: Don't confuse $P(A|B)$ and $P(B|A)$
 
 ---
 
 ## Final Thoughts
 
-Conditional probability is everywhere:
-- Updates beliefs with new information
-- Foundation of Bayesian thinking
-- Critical for proper statistical reasoning
-- Essential for machine learning and AI
+:::{.note}
+Probability is the foundation of statistics:
 
-:::{.fragment}
-**Key insight**: Information changes probability - embrace this uncertainty!
+- Helps us quantify uncertainty
+  
+- Provides tools for making decisions with incomplete information
+  
+- Essential for understanding statistical inference
 :::
 
----
+:::{.fragment}
+**Practice**: The key to mastering probability is working through many problems!
+:::
 
 ## Questions? {.center}
 
-**Office Hours**: [Your office hours]
-**Email**: [Your email]  
-**Next Class**: Discrete Random Variables
+**Office Hours**: Thursday's 11 AM On Zoom (Link on Canvas)
 
-*Remember: Homework due [date]*
+**Email**: nmathlouthi@ucsb.edu
 
----
+**Next Class**: Random Variables and Distributions
 
-## Bonus: Monty Hall Problem
 
-Three doors: one has a car, two have goats
-1. You choose a door
-2. Host opens a door with a goat
-3. Do you switch?
-
-:::{.fragment}
-**Answer**: Yes! Switch!
-- $P(\text{Car behind your door}) = \frac{1}{3}$
-- $P(\text{Car behind other remaining door}) = \frac{2}{3}$
-
-*Conditional probability in action!*
-:::
 
 ---
 
-## Bonus: Birthday Paradox Connection
+## Resources
 
-In a room of 23 people, probability of shared birthday ≈ 50%
+- [Read Chapter 3 in course textbook]((/files/Book/os4_for_screen_reader.pdf))
+  
+- [Elements of Set Theory for Probability](https://bookdown.org/daniel_flores_agreda/Prob1-GSEM-UNIGE/settheory.html#the-venn-diagram)
 
-**Conditional approach**: What's $P(\text{no match | first $k$ people have different birthdays})$?
-
-This helps build intuition for why the probability grows so quickly!
-
-*Surprising results often involve conditional probability!*
+- [Probability Models and Axioms](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/resources/mitres_6_012s18_l01as/)

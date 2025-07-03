@@ -132,7 +132,7 @@ Lecture Materials
 6/30
 :::
 ::: {.topic}
-[Intro to Probability](/files/lecture_notes/lecture4/lecture4.qmd)
+[Descriptive Statistics II (Continued)](/files/lecture_notes/lecture3/lecture3.qmd)
 :::
 ::: {.lab-quiz}
 [Lab2](/files/labs/lab2/lab2.qmd)
@@ -150,7 +150,7 @@ Lecture Materials
 7/01
 :::
 ::: {.topic}
-[Intro to Probability Cont.](/files/lecture_notes/lecture4/lecture4.qmd)
+[Intro to Probability](/files/lecture_notes/lecture4/lecture4.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -167,7 +167,7 @@ Lecture Materials
 7/02
 :::
 ::: {.topic}
-[Conditional Probability](/files/lecture_notes/lecture4/lecture4.qmd)
+[Intro to Probability (Continued)](/files/lecture_notes/lecture4/lecture4.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -184,7 +184,7 @@ Lecture Materials
 7/03
 :::
 ::: {.topic}
-Discrete Random Variables
+[Conditional Probability](/files/lecture_notes/lecture5/lecture5.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -209,7 +209,7 @@ Discrete Random Variables
 7/07
 :::
 ::: {.topic}
-Continuous Random Variables
+Random Variables
 :::
 ::: {.lab-quiz}
 Lab 3

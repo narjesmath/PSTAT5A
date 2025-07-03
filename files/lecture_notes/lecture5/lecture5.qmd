@@ -1,767 +1,420 @@
 ---
-title: "PSTAT 5A: Counting"
-subtitle: "Lecture 5"
+title: "PSTAT 5A: Introduction to Probability"
+subtitle: "Lecture 5 - Conditional Probability & Independence"
 author: "Narjes Mathlouthi"
 date: today
 format: 
   revealjs:
     logo: /img/logo.png
     theme: default
+    css: /files/lecture_notes/theme/lecture-styles.css
     slide-number: true
     chalkboard: true
     preview-links: auto
-    footer: "Understanding Data - Counting © 2025 Narjes Mathlouthi"
+    footer: "Understanding Data - Introduction to Probability © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
 jupyter: python3
 ---
 
-## Welcome to Lecture 5 {.center}
 
-**Counting**
 
-*The art and science of systematic enumeration*
-
----
-
-## Today's Learning Objectives
+## Today's Learning Objectives {#sec-objectives .smaller}
 
 By the end of this lecture, you will be able to:
 
-- Apply the fundamental counting principles
-- Calculate permutations with and without repetition
-- Calculate combinations and understand when to use them
-- Distinguish between permutations and combinations
-- Use counting techniques to solve probability problems
-- Apply the inclusion-exclusion principle
-- Solve complex counting problems systematically
+- [Define probability and understand its basic properties](#sec-prob)
+- [Identify sample spaces and events](#sample-space)
+- [Apply fundamental probability rules](#set-operations-overview)
+- [Calculate conditional probabilities](#conditional-probability)
 
 ---
 
-## Why Study Counting?
+## Practice Problem 1 {.smaller}
+::: {.columns}
+::: {.column width="70"}
+::: {.example}
+:::{.smaller}
+A standard deck has 52 cards. What is the probability of drawing:
 
-Counting helps us:
+a) A heart $\heartsuit$?
+b) A face card (Jack, Queen, King)?
+c) The ace of spades $\spadesuit$?
 
-- Calculate probabilities for complex events
-- Solve optimization problems
-- Understand combinations in genetics, computer science
-- Analyze algorithms and data structures
-- Make decisions involving arrangements and selections
-
+![](/files/lecture_notes/lecture4/img/cards.png)
+:::
+:::
+:::
+::: {.column width="30"}
 :::{.fragment}
-*Applications*: Cryptography, genetics, tournament brackets, lottery odds, password security
+:::{.solution}
+
+a) $P(\text{heart}) = \frac{13}{52} = \frac{1}{4}$
+
+b) $P(\text{face card}) = \frac{12}{52} = \frac{3}{13}$
+
+c) $P(\text{ace of spades}) = \frac{1}{52}$
+:::
+:::
+:::
 :::
 
 ---
 
-## The Fundamental Counting Principle
+## The Addition Rule {.smaller}
 
-**Multiplication Rule**: If a procedure consists of $k$ separate tasks where:
-- Task 1 can be performed in $n_1$ ways
-- Task 2 can be performed in $n_2$ ways
-- ...
-- Task $k$ can be performed in $n_k$ ways
+For any two events $A$ and $B$:
 
-Then the entire procedure can be performed in $n_1 \times n_2 \times \cdots \times n_k$ ways
+::: {.formula-box}
+$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+:::
 
----
-
-## Simple Counting Example
-
-**License Plates**: Format ABC-123
-- First position: 26 letters
-- Second position: 26 letters  
-- Third position: 26 letters
-- Fourth position: 10 digits
-- Fifth position: 10 digits
-- Sixth position: 10 digits
+:::{.example}
+*Why subtract $P(A \cap B)$?*
+:::
 
 :::{.fragment}
-Total possibilities: $26 \times 26 \times 26 \times 10 \times 10 \times 10 = 26^3 \times 10^3 = 17,576,000$
+:::{.solution}
+We don't want to double-count outcomes that are in both events
+:::
 :::
 
 ---
 
-## Restaurant Menu Example
+## Addition Rule Example {.smaller}
+:::{.columns}
+:::{.column}
+:::{.smaller}
+:::{.example}
+Drawing from a standard deck:
 
-A restaurant offers:
-- 4 appetizers
-- 6 main courses  
-- 3 desserts
+- $A$: Drawing a heart $\heartsuit$ ($P(A) = \frac{13}{52}$)
+  
+- $B$: Drawing a face card ($P(B) = \frac{12}{52}$)
+  
+- **What's $P(A \cup B)$ (heart OR face card)?**
 
-How many different three-course meals are possible?
 
-:::{.fragment}
-**Solution**: $4 \times 6 \times 3 = 72$ different meals
+![](/files/lecture_notes/lecture4/img/cards.png)
+:::
+:::
 :::
 
----
-
-## Practice Problem 1
-
-A password must contain:
-- Exactly 8 characters
-- Each character is either a letter (26 possibilities) or digit (10 possibilities)
-
-How many possible passwords are there?
-
-:::{.fragment}
-**Solution**: Each position has $26 + 10 = 36$ choices
-
-Total: $36^8 = 2,821,109,907,456$ passwords
-:::
-
----
-
-## What Are Permutations?
-
-**Permutation**: An arrangement of objects where **order matters**
-
-:::{.fragment}
-**Examples where order matters**:
-- Race finish positions (1st, 2nd, 3rd)
-- Seating arrangements
-- Passwords
-- DNA sequences
-:::
-
----
-
-## Permutations of $n$ Distinct Objects
-
-The number of ways to arrange $n$ distinct objects is:
-
-$$n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$$
-
-:::{.fragment}
-**Example**: How many ways can 5 people sit in a row?
-
-$5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ ways
-:::
-
----
-
-## Factorial Values
-
-| $n$ | $n!$ |
-|-----|------|
-| 0   | 1    |
-| 1   | 1    |
-| 2   | 2    |
-| 3   | 6    |
-| 4   | 24   |
-| 5   | 120  |
-| 10  | 3,628,800 |
-
-:::{.fragment}
-*Note*: $0! = 1$ by definition
-:::
-
----
-
-## Permutations of $r$ Objects from $n$
-
-**$P(n,r)$** or **$_nP_r$**: Number of ways to arrange $r$ objects selected from $n$ distinct objects
-
-$$P(n,r) = \frac{n!}{(n-r)!}$$
-
-:::{.fragment}
-**Example**: How many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary?
-
-$P(8,3) = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 8 \times 7 \times 6 = 336$
-:::
-
----
-
-## Understanding $P(n,r)$
-
-Why is $P(n,r) = \frac{n!}{(n-r)!}$?
-
-- First position: $n$ choices
-- Second position: $(n-1)$ choices  
-- Third position: $(n-2)$ choices
-- ...
-- $r$-th position: $(n-r+1)$ choices
-
-:::{.fragment}
-Total: $n \times (n-1) \times (n-2) \times \cdots \times (n-r+1) = \frac{n!}{(n-r)!}$
-:::
-
----
-
-## Practice Problem 2
-
-A baseball team has 15 players. How many ways can the coach:
-
-a) Arrange all 15 players in a line?
-b) Choose and arrange 9 players for the starting lineup (batting order matters)?
-
-:::{.fragment}
-**Solutions:**
-a) $15! = 1,307,674,368,000$
-b) $P(15,9) = \frac{15!}{6!} = 1,816,214,400$
-:::
-
----
-
-## Permutations with Repetition
-
-When some objects are identical, we have **fewer** distinct arrangements
-
-If we have $n$ objects where:
-- $n_1$ are of type 1
-- $n_2$ are of type 2  
-- ...
-- $n_k$ are of type $k$
-
-Number of distinct arrangements: $\frac{n!}{n_1! \times n_2! \times \cdots \times n_k!}$
-
----
-
-## Permutations with Repetition Example
-
-How many distinct arrangements are there of the letters in "STATISTICS"?
-
-**S-T-A-T-I-S-T-I-C-S**
-- Total letters: 10
-- S appears 3 times
-- T appears 3 times  
-- A appears 1 time
-- I appears 2 times
-- C appears 1 time
-
-:::{.fragment}
-$\frac{10!}{3! \times 3! \times 1! \times 2! \times 1!} = \frac{3,628,800}{6 \times 6 \times 1 \times 2 \times 1} = \frac{3,628,800}{72} = 50,400$
-:::
-
----
-
-## What Are Combinations?
-
-**Combination**: A selection of objects where **order does NOT matter**
-
-:::{.fragment}
-**Examples where order doesn't matter**:
-- Choosing committee members
-- Selecting pizza toppings
-- Forming study groups
-- Lottery number selection
-:::
-
----
-
-## Combinations Formula
-
-**$C(n,r)$** or **$\binom{n}{r}$**: Number of ways to choose $r$ objects from $n$ distinct objects (order doesn't matter)
-
-$$C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$$
-
-:::{.fragment}
-**Example**: How many ways can we choose 3 people from a group of 8 for a committee?
-
-$C(8,3) = \frac{8!}{3!(8-3)!} = \frac{8!}{3! \times 5!} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = 56$
-:::
-
----
-
-## Relationship: Permutations vs Combinations
-
-$$P(n,r) = C(n,r) \times r!$$
-
-**Why?** For each combination of $r$ objects, there are $r!$ ways to arrange them
-
-:::{.fragment}
-**Example**: $P(8,3) = C(8,3) \times 3! = 56 \times 6 = 336$ ✓
-:::
-
----
-
-## Key Decision: Permutation or Combination?
-
-**Ask yourself**: Does order matter?
-
-**Order matters** → Use **Permutations**
-- Arrangements, sequences, rankings
-
-**Order doesn't matter** → Use **Combinations**  
-- Selections, groups, subsets
-
----
-
-## Practice Problem 3
-
-From a class of 20 students:
-
-a) How many ways to choose 5 students for a study group?
-b) How many ways to choose a president, vice-president, and secretary?
-c) How many ways to arrange all 20 students in a circle?
-
-:::{.fragment}
-**Solutions:**
-a) $C(20,5) = \frac{20!}{5! \times 15!} = 15,504$ (order doesn't matter)
-b) $P(20,3) = \frac{20!}{17!} = 6,840$ (order matters)
-c) $(20-1)! = 19!$ (circular permutation)
-:::
-
----
-
-## Properties of Combinations
-
-1. **Symmetry**: $\binom{n}{r} = \binom{n}{n-r}$
-
-2. **Pascal's Identity**: $\binom{n}{r} = \binom{n-1}{r-1} + \binom{n-1}{r}$
-
-3. **Boundary conditions**: $\binom{n}{0} = \binom{n}{n} = 1$
-
-:::{.fragment}
-**Example**: $\binom{8}{3} = \binom{8}{5} = 56$ ✓
-:::
-
----
-
-## Pascal's Triangle
-
-```
-           1
-         1   1
-       1   2   1
-     1   3   3   1
-   1   4   6   4   1
- 1   5  10  10   5   1
-1   6  15  20  15   6   1
+:::{.column}
+
+```{python}
+from matplotlib import pyplot as plt
+from matplotlib_venn import venn2
+plt.figure(figsize=(6,4))
+v = venn2(subsets=(10, 9, 3))
+v.get_label_by_id('10').set_text('A: Hearts')
+v.get_label_by_id('01').set_text('B: Face Cards')
+v.get_label_by_id('11').set_text('A ∩ B')
+plt.title('Hearts vs. Face Cards')
+plt.show()
 ```
 
-Each number is $\binom{n}{r}$ where $n$ is the row and $r$ is the position
 
----
-
-## Binomial Theorem
-
-$$(x + y)^n = \sum_{r=0}^{n} \binom{n}{r} x^{n-r} y^r$$
-
-:::{.fragment}
-**Example**: $(x + y)^3 = \binom{3}{0}x^3 + \binom{3}{1}x^2y + \binom{3}{2}xy^2 + \binom{3}{3}y^3$
-
-$= x^3 + 3x^2y + 3xy^2 + y^3$
+:::
 :::
 
 ---
 
-## Counting and Probability
+```{python}
+from matplotlib import pyplot as plt
+from matplotlib_venn import venn2
 
-**Example**: A committee of 4 people is chosen from 7 women and 5 men. What's the probability that exactly 2 are women?
+# Compute region sizes
+only_hearts = 13 - 3
+only_face = 12 - 3
+intersection = 3
 
-Total ways to choose 4 from 12: $\binom{12}{4} = 495$
+plt.figure(figsize=(6,4))
+venn2(subsets=(only_hearts, only_face, intersection), set_labels=('Hearts', 'Face Cards'))
+plt.title('Hearts vs. Face Cards')
+plt.show()
 
-Ways to choose 2 women from 7: $\binom{7}{2} = 21$
-Ways to choose 2 men from 5: $\binom{5}{2} = 10$
+```
 
 :::{.fragment}
-Favorable outcomes: $\binom{7}{2} \times \binom{5}{2} = 21 \times 10 = 210$
+:::{.solution}
+$P(A \cap B) = \frac{3}{52}$ (face cards that are hearts)
 
-Probability: $\frac{210}{495} = \frac{14}{33}$
+$P(A \cup B) = \frac{13}{52} + \frac{12}{52} - \frac{3}{52} = \frac{22}{52} = \frac{11}{26}$
+:::
+:::
+
+
+
+---
+
+## Conditional Probability
+
+:::{.columns}
+:::{.column}
+
+::: {.definition}
+:::{.smaller}
+**🎯Conditional probability** is the probability of event $A$ given that event $B$ has occurred
+
+$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
+
+provided $P(B) > 0$
+:::
+:::
+:::
+
+
+:::{.column} 
+
+```{python}
+from matplotlib import pyplot as plt
+from matplotlib_venn import venn2
+
+# Define colors and edge style
+color_intersection = '#1f77b4'  # blue
+color_B = '#ff7f0e'             # orange
+edge_color = 'black'
+linewidth = 2
+text_fontsize = 20
+label_fontsize = 20
+title_fontsize = 20
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+
+# --- First plot: Intersection Only ---
+v1 = venn2(
+    subsets=(1, 1, 1),
+    set_labels=('A', 'B'),
+    ax=axes[0],
+    subset_label_formatter=lambda x: ''
+)
+# Style regions
+for region in ('10', '01'):
+    patch = v1.get_patch_by_id(region)
+    patch.set_facecolor('none')
+    patch.set_edgecolor(edge_color)
+    patch.set_linewidth(linewidth)
+patch_int1 = v1.get_patch_by_id('11')
+patch_int1.set_facecolor(color_intersection)
+patch_int1.set_alpha(0.5)
+patch_int1.set_edgecolor(edge_color)
+patch_int1.set_linewidth(linewidth)
+# Increase label font sizes
+v1.get_label_by_id('A').set_fontsize(label_fontsize)
+v1.get_label_by_id('B').set_fontsize(label_fontsize)
+# Add bolded P(A∩B) text
+x_int, y_int = v1.get_label_by_id('11').get_position()
+axes[0].text(x_int, y_int, r'$\mathbf{P(A\cap B)}$', 
+             ha='center', va='center', fontsize=text_fontsize)
+axes[0].set_title('Intersection Only', fontsize=title_fontsize)
+
+# --- Second plot: B Only (including intersection) ---
+v2 = venn2(
+    subsets=(1, 1, 1),
+    set_labels=('A', 'B'),
+    ax=axes[1],
+    subset_label_formatter=lambda x: ''
+)
+# Style regions
+patch_A2 = v2.get_patch_by_id('10')
+patch_A2.set_facecolor('none')
+patch_A2.set_edgecolor(edge_color)
+patch_A2.set_linewidth(linewidth)
+for region in ('01', '11'):
+    patch = v2.get_patch_by_id(region)
+    patch.set_facecolor(color_B)
+    patch.set_alpha(0.5)
+    patch.set_edgecolor(edge_color)
+    patch.set_linewidth(linewidth)
+# Increase label font sizes
+v2.get_label_by_id('A').set_fontsize(label_fontsize)
+v2.get_label_by_id('B').set_fontsize(label_fontsize)
+# Add bolded B text inside B circle
+x_B, y_B = v2.get_label_by_id('01').get_position()
+axes[1].text(x_B, y_B, r'$\mathbf{B}$', 
+             ha='center', va='center', fontsize=text_fontsize)
+axes[1].set_title('B Only', fontsize=title_fontsize)
+
+plt.tight_layout()
+plt.show()
+
+```
+
+:::
+:::
+---
+
+## Conditional Probability Interpretation
+
+$P(A|B)$ means:
+
+- We know event <u><b> $B$ has occurred </u></b>
+  
+- What's the probability that $A$ also occurred?
+  
+- We "restrict" our sample space to only outcomes in $B$
+
+![](/files/lecture_notes/lecture4/img/con_prob_2.png)
+
+---
+
+## Conditional Probability Example {.smaller}
+:::{.columns}
+:::{.column}
+:::{.example}
+Drawing a card from a standard deck:
+
+- $A$: Card is a heart $\heartsuit$
+  
+- $B$: Card is red
+  
+- **Q: Find $P(A|B)$**
+
+![](/files/lecture_notes/lecture4/img/cards.png)
+:::
+:::
+
+:::{.column}
+
+```{python}
+from matplotlib import pyplot as plt
+from matplotlib_venn import venn2
+plt.figure(figsize=(6,4))
+v = venn2(subsets=(13, 13, 0))
+v.get_label_by_id('10').set_text('A: Hearts')
+v.get_label_by_id('01').set_text('B: Red Cards')
+plt.title('Hearts vs. Red Cards')
+plt.show()
+```
+
+
+:::{.fragment}
+:::{.solution}
+$P(A \cap B) = P(\text{heart}) = \frac{13}{52}$
+
+$P(B) = P(\text{red}) = \frac{26}{52}$
+
+$P(A|B) = \frac{13/52}{26/52} = \frac{13}{26} = \frac{1}{2}$
+:::
+:::
+:::
+:::
+---
+
+## Independence {.smaller}
+
+:::{.columns}
+:::{.column}
+::: {.definition}
+**🎯 Definition**
+Events $A$ and $B$ are **independent** if:
+
+$$P(A|B) = P(A)$$
+
+or equivalently:
+
+$$P(A \cap B) = P(A) \times P(B)$$
+:::
+:::{.fragment}
+*Knowing that $B$ occurred doesn't change the probability of $A$*
+:::
+:::
+
+:::{.column}
+
+```{python}
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn2
+
+# Define probabilities for independent events
+P_A = 0.4
+P_B = 0.5
+P_AB = P_A * P_B  # 0.2
+
+# Subset sizes: only A, only B, intersection
+subsets = (P_A - P_AB, P_B - P_AB, P_AB)
+
+fig, ax = plt.subplots(figsize=(6, 6))
+v = venn2(subsets=subsets, set_labels=('A', 'B'), ax=ax)
+
+# Style regions
+v.get_patch_by_id('10').set_color('skyblue')    # A only
+v.get_patch_by_id('10').set_alpha(0.5)
+v.get_patch_by_id('01').set_color('lightgreen') # B only
+v.get_patch_by_id('01').set_alpha(0.5)
+v.get_patch_by_id('11').set_color('orange')     # Intersection
+v.get_patch_by_id('11').set_alpha(0.7)
+
+# Annotate margins and intersection inside
+v.get_label_by_id('10').set_text(f'{subsets[0]:.1f}')
+v.get_label_by_id('01').set_text(f'{subsets[1]:.1f}')
+v.get_label_by_id('11').set_text(f'{subsets[2]:.1f}')
+
+# Print P(A) and P(B) to the sides
+ax.text(-0.8, 0.6, f'$P(A)={P_A}$', fontsize=14, fontweight='bold')
+ax.text(0.8, 0.6, f'$P(B)={P_B}$', fontsize=14, fontweight='bold')
+
+plt.title('Independent Events\n$P(A\\cap B)=P(A)P(B)$', fontsize=16)
+ax.axis('equal')
+plt.show()
+
+```
+
+
+
+:::
 :::
 
 ---
 
-## Practice Problem 4
+## Independence Example{.smaller}
 
-A standard deck has 52 cards. What's the probability that a 5-card hand contains:
+:::{.example}
+Two coin flips:
 
-a) Exactly 3 aces?
-b) At least 1 ace?
+- $A$: First flip is heads
+  
+- $B$: Second flip is heads
 
-:::{.fragment}
-a) Ways to get 3 aces from 4: $\binom{4}{3} = 4$
-   Ways to get 2 non-aces from 48: $\binom{48}{2} = 1,128$
-   Total 5-card hands: $\binom{52}{5} = 2,598,960$
-   
-   Probability: $\frac{4 \times 1,128}{2,598,960} = \frac{4,512}{2,598,960} \approx 0.00174$
+**Q: Are $A$ and $B$ independent?**
 :::
 
----
 
-## Practice Problem 4 (continued)
-
-b) At least 1 ace = 1 - (no aces)
-
-Ways to choose 5 cards with no aces: $\binom{48}{5} = 1,712,304$
 
 :::{.fragment}
-$P(\text{at least 1 ace}) = 1 - \frac{\binom{48}{5}}{\binom{52}{5}} = 1 - \frac{1,712,304}{2,598,960} \approx 0.341$
+:::{.solution}
+$P(A) = \frac{1}{2}$, $P(B) = \frac{1}{2}$
+
+$P(A \cap B) = P(\text{HH}) = \frac{1}{4}$
+
+$P(A) \times P(B) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$
+
+Yes, they are independent!
+:::
 :::
 
----
 
-## Circular Permutations
 
-When arranging objects in a **circle**, we fix one object to eliminate rotational symmetry
-
-Number of circular permutations of $n$ objects: $(n-1)!$
-
-:::{.fragment}
-**Example**: How many ways can 6 people sit around a circular table?
-
-$(6-1)! = 5! = 120$ ways
-:::
-
----
-
-## Permutations with Restrictions
-
-**Example**: How many 6-letter "words" can be formed from the letters A, B, C, D, E, F if:
-- No letter is repeated
-- A and B must be adjacent
-
-:::{.fragment}
-**Solution**: Treat AB as a single unit
-- 5 units to arrange: (AB), C, D, E, F → $5! = 120$ ways
-- A and B can be arranged within their unit: $2! = 2$ ways
-- Total: $5! \times 2! = 240$ ways
-:::
-
----
-
-## The Inclusion-Exclusion Principle
-
-For two sets $A$ and $B$:
-$$|A \cup B| = |A| + |B| - |A \cap B|$$
-
-For three sets $A$, $B$, and $C$:
-$$|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$$
-
----
-
-## Inclusion-Exclusion Example
-
-How many integers from 1 to 100 are divisible by 2, 3, or 5?
-
-Let:
-- $A$ = divisible by 2: $|A| = 50$
-- $B$ = divisible by 3: $|B| = 33$  
-- $C$ = divisible by 5: $|C| = 20$
-
-:::{.fragment}
-$|A \cap B| = 16$ (divisible by 6)
-$|A \cap C| = 10$ (divisible by 10)
-$|B \cap C| = 6$ (divisible by 15)
-$|A \cap B \cap C| = 3$ (divisible by 30)
-:::
-
----
-
-## Inclusion-Exclusion Solution
-
-$$|A \cup B \cup C| = 50 + 33 + 20 - 16 - 10 - 6 + 3 = 74$$
-
-:::{.fragment}
-**Answer**: 74 integers from 1 to 100 are divisible by at least one of 2, 3, or 5
-:::
-
----
-
-## Derangements
-
-A **derangement** is a permutation where no object appears in its original position
-
-Number of derangements of $n$ objects:
-$$D_n = n! \sum_{k=0}^{n} \frac{(-1)^k}{k!} \approx \frac{n!}{e}$$
-
-:::{.fragment}
-**Example**: How many ways can 4 people return hats to the wrong owners?
-
-$D_4 = 4! \left(\frac{1}{0!} - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!}\right) = 24 \times \frac{9}{24} = 9$
-:::
-
----
-
-## Multinomial Coefficients
-
-Number of ways to divide $n$ objects into groups of sizes $n_1, n_2, \ldots, n_k$:
-
-$$\binom{n}{n_1, n_2, \ldots, n_k} = \frac{n!}{n_1! \times n_2! \times \cdots \times n_k!}$$
-
-:::{.fragment}
-**Example**: How many ways can 12 people be divided into 3 teams of 4?
-
-$\binom{12}{4,4,4} = \frac{12!}{4! \times 4! \times 4!} = 34,650$
-:::
-
----
-
-## Stars and Bars
-
-**Problem**: Number of ways to distribute $n$ identical objects into $k$ distinct bins
-
-**Solution**: $\binom{n+k-1}{k-1}$ or $\binom{n+k-1}{n}$
-
-:::{.fragment}
-**Example**: How many ways can you distribute 10 identical candies to 4 children?
-
-$\binom{10+4-1}{4-1} = \binom{13}{3} = 286$ ways
-:::
-
----
-
-## Practice Problem 5
-
-A pizza shop offers 12 toppings. How many different pizzas can you order if:
-
-a) You want exactly 4 toppings?
-b) You want at most 3 toppings?
-c) You want at least 1 topping?
-
-:::{.fragment}
-**Solutions:**
-a) $\binom{12}{4} = 495$
-b) $\binom{12}{0} + \binom{12}{1} + \binom{12}{2} + \binom{12}{3} = 1 + 12 + 66 + 220 = 299$
-c) $2^{12} - 1 = 4,095$ (all subsets except empty set)
-:::
-
----
-
-## Advanced Counting: Stirling Numbers
-
-**Stirling numbers of the second kind** $S(n,k)$: Number of ways to partition $n$ objects into $k$ non-empty subsets
-
-**Bell numbers** $B_n$: Total number of ways to partition $n$ objects
-$$B_n = \sum_{k=0}^{n} S(n,k)$$
-
-*These are advanced topics for further study*
-
----
-
-## Problem-Solving Strategy
-
-1. **Read carefully**: What exactly are we counting?
-2. **Identify the type**: Permutation, combination, or other?
-3. **Check for restrictions**: Are there constraints?
-4. **Does order matter?**: This determines permutation vs combination
-5. **Break down complex problems**: Use multiplication principle
-6. **Verify your answer**: Does it make sense?
-
----
-
-## Common Mistakes to Avoid
-
-1. **Confusing permutations and combinations**
-   - Always ask: "Does order matter?"
-
-2. **Forgetting about restrictions**
-   - Read the problem carefully
-
-3. **Double counting**
-   - Make sure you're not counting the same arrangement twice
-
-4. **Not considering the complement**
-   - Sometimes "at least" problems are easier using complements
-
----
-
-## Practice Problem 6
-
-A class has 15 students: 8 women and 7 men. How many ways can we:
-
-a) Form a committee of 5 people with exactly 3 women?
-b) Arrange 6 people in a row with alternating genders (starting with a woman)?
-
-:::{.fragment}
-**Solutions:**
-a) $\binom{8}{3} \times \binom{7}{2} = 56 \times 21 = 1,176$
-b) Choose 3 women from 8: $P(8,3) = 336$
-   Choose 3 men from 7: $P(7,3) = 210$
-   Total: $336 \times 210 = 70,560$
-:::
-
----
-
-## Counting in Computer Science
-
-**Password Security**: 
-- 8-character password with letters, digits, symbols
-- $(26 + 26 + 10 + 32)^8 = 94^8 \approx 6.1 \times 10^{15}$
-
-**Hash Functions**: 
-- Distributing data into buckets
-- Collision probability calculations
-
-**Algorithm Analysis**:
-- Counting operations, comparisons
-- Big O notation foundations
-
----
-
-## Counting in Genetics
-
-**DNA Sequences**: 
-- 4 bases (A, T, G, C)
-- Gene of length $n$: $4^n$ possible sequences
-
-**Protein Folding**:
-- Number of possible conformations
-- Combinatorial explosion
-
-**Population Genetics**:
-- Hardy-Weinberg calculations
-- Allele combinations
-
----
-
-## Real-World Applications
-
-**Lottery**: 
-- Powerball: Choose 5 from 69, then 1 from 26
-- Odds: $\frac{1}{\binom{69}{5} \times 26} \approx \frac{1}{292,000,000}$
-
-**Cryptography**:
-- Key space size determines security
-- RSA encryption relies on large number factorization
-
-**Sports Tournaments**:
-- March Madness bracket: $2^{63}$ possible outcomes
-- Round-robin tournaments: $\binom{n}{2}$ games
-
----
-
-## Key Formulas Summary
-
-- **Permutations**: $P(n,r) = \frac{n!}{(n-r)!}$
-- **Combinations**: $C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$
-- **With repetition**: $\frac{n!}{n_1! \times n_2! \times \cdots \times n_k!}$
-- **Circular**: $(n-1)!$
-- **Inclusion-Exclusion**: $|A \cup B| = |A| + |B| - |A \cap B|$
-
----
-
-## Technology and Counting
-
-**Calculators**: 
-- Use nPr and nCr functions
-- Be careful with large numbers
-
-**Software**:
-- R: `factorial()`, `choose()`, `combn()`
-- Python: `math.factorial()`, `math.comb()`
-- Excel: `FACT()`, `COMBIN()`, `PERMUT()`
-
-**Online Tools**:
-- Wolfram Alpha for complex calculations
-- Combination/permutation calculators
-
----
-
-## Practice Problem 7
-
-A standard deck of cards is shuffled. What's the probability that:
-
-a) The top 4 cards are all hearts?
-b) In a 13-card hand, you get exactly one card from each rank?
-
-:::{.fragment}
-**Solutions:**
-a) $\frac{13}{52} \times \frac{12}{51} \times \frac{11}{50} \times \frac{10}{49} = \frac{13 \times 12 \times 11 \times 10}{52 \times 51 \times 50 \times 49} \approx 0.0026$
-
-b) Choose 1 card from each of 13 ranks: $4^{13}$
-   Total 13-card hands: $\binom{52}{13}$
-   Probability: $\frac{4^{13}}{\binom{52}{13}} \approx 6.3 \times 10^{-6}$
-:::
-
----
-
-## Extending to Probability
-
-**Hypergeometric Distribution**:
-- Drawing without replacement
-- Uses combinations: $P(X = k) = \frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}$
-
-**Binomial Distribution**:
-- Drawing with replacement  
-- Uses combinations: $P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}$
-
-*We'll explore these distributions in detail in future lectures*
-
----
-
-## Historical Note
-
-**Blaise Pascal** (1623-1662) and **Pierre de Fermat** (1601-1665):
-- Founded probability theory through gambling problems
-- Pascal's triangle and combinations
-
-**Leonhard Euler** (1707-1783):
-- Advanced combinatorics
-- Graph theory connections
-
-Modern applications span computer science, biology, physics, and economics
-
----
-
-## Common Student Questions
-
-**Q**: "When do I use permutations vs combinations?"
-**A**: Ask "Does order matter?" Order matters → permutation
-
-**Q**: "How do I handle restrictions?"
-**A**: Break the problem into cases or use complementary counting
-
-**Q**: "What if objects are identical?"
-**A**: Use the formula for permutations with repetition
-
-**Q**: "How do I check my answer?"
-**A**: Verify with small examples or use different methods
-
----
-
-## Looking Ahead
-
-**Next lecture**: Discrete Probability Distributions
-- Binomial distribution (using combinations!)
-- Hypergeometric distribution  
-- Geometric distribution
-- Expected value and variance
-
-**Connection**: Today's counting techniques are essential for probability calculations
-
----
-
-## Study Tips
-
-1. **Practice, practice, practice**: Work through many examples
-2. **Identify patterns**: Learn to recognize problem types
-3. **Start simple**: Build up to complex problems
-4. **Check your work**: Use different approaches when possible
-5. **Understand concepts**: Don't just memorize formulas
-
----
-
-## Final Thoughts
-
-Counting is fundamental to:
-- Probability calculations
-- Statistical inference  
-- Computer algorithms
-- Scientific modeling
-
-:::{.fragment}
-**Master the basics**: Permutations and combinations are the building blocks for advanced statistical concepts
-:::
 
 ---
 
 ## Questions? {.center}
 
-**Office Hours**: [Your office hours]
-**Email**: [Your email]  
-**Next Class**: Discrete Probability Distributions
+**Office Hours**: Thursday's 11 AM On Zoom (Link on Canvas)
 
-*Remember: Homework due [date]*
+**Email**: nmathlouthi@ucsb.edu
+
+**Next Class**: Conditional Probability & Bayes Theorem
+
+
 
 ---
 
-## Bonus: Large Number Approximations
+## Resources
 
-**Stirling's Approximation**: $n! \approx \sqrt{2\pi n} \left(\frac{n}{e}\right)^n$
+- [Read Chapter 3 in course textbook]((/files/Book/os4_for_screen_reader.pdf))
+  
+- [Elements of Set Theory for Probability](https://bookdown.org/daniel_flores_agreda/Prob1-GSEM-UNIGE/settheory.html#the-venn-diagram)
 
-**Normal Approximation**: For large $n$, $\binom{n}{k} \approx \frac{1}{\sqrt{2\pi n p(1-p)}} \exp\left(-\frac{(k-np)^2}{2np(1-p)}\right)$
-
-*Useful for computational purposes when exact values are too large*
+- [Probability Models and Axioms](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/resources/mitres_6_012s18_l01as/)
