@@ -666,15 +666,19 @@ The event that A does **NOT** occur.
   
 - $P(A^c) = 1 - P(A)$
 
+
+:::{.important}
 **Key Property:**
 
-:::{.formula-box}
-$A \cup A^c = S$ (Sample Space)
+**$A \cup A^c = S$ (Sample Space**)
+
 :::
+
 :::
 :::
 
 ::: {.column width="40%"}
+
 ```{python}
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches

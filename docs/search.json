@@ -634,7 +634,7 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#absolute-complement-ac",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Absolute Complement: \\(A^c\\)",
-    "text": "Absolute Complement: \\(A^c\\)\n\n\n\n🎯 Definition: All elements that do not belong to the set.\nIn Probability: The event that A does NOT occur.\n\n\\(P(A^c) = 1 - P(A)\\)\n\nKey Property:\n\n\\(A \\cup A^c = S\\) (Sample Space)"
+    "text": "Absolute Complement: \\(A^c\\)\n\n\n\n🎯 Definition: All elements that do not belong to the set.\nIn Probability: The event that A does NOT occur.\n\n\\(P(A^c) = 1 - P(A)\\)\n\n\nKey Property:\n\\(A \\cup A^c = S\\) (Sample Space)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#summary-table",

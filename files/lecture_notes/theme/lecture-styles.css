@@ -110,14 +110,14 @@
 
 /* Body text improvements */
 .reveal p {
-  font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   font-weight: 400;
   color: #374151;
 }
 
 .reveal li {
-  font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   margin: 0.3em 0;
 }
@@ -1255,7 +1255,7 @@
 .example,
 .solution,
 .note {
-  font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Keep headers as Playfair Display */
@@ -1277,7 +1277,7 @@
 
 .reveal .author {
   color: #6baed6 !important;
-  font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.1em;
   font-weight: bold;
   text-align: center;
@@ -1288,7 +1288,7 @@
 
 .reveal .date {
   color: #6baed6;
-  font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
   text-align: center;
@@ -1299,7 +1299,7 @@
 
 .reveal [class*="author"] {
   color: #6baed6 !important;
-  font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.1em;
   font-weight: bold;
   text-align: center;
