@@ -132,7 +132,7 @@ Lecture Materials
 6/30
 :::
 ::: {.topic}
-Intro to Probability
+[Intro to Probability](/files/lecture_notes/lecture4/lecture4.qmd)
 :::
 ::: {.lab-quiz}
 [Lab2](/files/labs/lab2/lab2.qmd)
@@ -150,7 +150,7 @@ Intro to Probability
 7/01
 :::
 ::: {.topic}
-Counting
+[Intro to Probability Cont.](/files/lecture_notes/lecture4/lecture4.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -167,7 +167,7 @@ Counting
 7/02
 :::
 ::: {.topic}
-Conditional Probability
+[Conditional Probability](/files/lecture_notes/lecture4/lecture4.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —

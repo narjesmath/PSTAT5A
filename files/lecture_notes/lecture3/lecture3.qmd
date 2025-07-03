@@ -75,9 +75,8 @@ By the end of this lecture, you will be able to:
 
 ## What is Variability? {.smaller}
 
-::: {.concept-box}
-#### 🎯 Definition
-**Variability** (or dispersion) measures how spread out or scattered the data points are around the center.
+::: {.definition}
+**🎯 Definition:** **Variability** (or dispersion) measures how spread out or scattered the data points are around the center.
 :::
 
 ### Why Variability Matters
@@ -149,9 +148,8 @@ This is why we need measures of variability.
 ---
 
 ## Variance Definition {.smaller}
-::: {.concept-box}
-#### 🎯 Definition
-**Variance** measures the average squared deviation from the mean.
+::: {.definition}
+**🎯 Definition:** **Variance** measures the average squared deviation from the mean.
 :::
 
 
@@ -242,9 +240,8 @@ $n$ = sample size
 
 # Degrees of Freedom Concept {.center}
 
-::: {.concept-box}
-#### 🎯 Definition
-**Degrees of Freedom** = Number of independent pieces of information available for estimating a parameter
+::: {.definition}
+**🎯 Definition:** **Degrees of Freedom** = Number of independent pieces of information available for estimating a parameter
 :::
 
 ---
@@ -508,9 +505,8 @@ Calculate both:
 
 # Standard Deviation Definition
 
-::: {.concept-box}
-#### 🎯 Definition
-**Standard Deviation** is the square root of variance.
+::: {.definition}
+**🎯 Definition:** **Standard Deviation** is the square root of variance.
 :::
 
 ::: {.formula-box}
@@ -641,9 +637,8 @@ This rule helps us understand what constitutes "typical" vs "unusual" values.
 *5 minutes*
 
 ## Definition and Purpose
-::: {.concept-box}
-#### 🎯 Definition
-**Coefficient of Variation (CV)** = $\frac{\text{Standard Deviation}}{\text{Mean}} \times 100\%$
+::: {.definition}
+**🎯 Definition:** **Coefficient of Variation (CV)** = $\frac{\text{Standard Deviation}}{\text{Mean}} \times 100\%$
 :::
 . . .
 

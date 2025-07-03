@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Narjes Mathlouthi">
-  <meta name="dcterms.date" content="2025-07-02">
+  <meta name="dcterms.date" content="2025-07-03">
   <title>PSTAT5A – PSTAT 5A: Introduction to Probability</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -125,6 +125,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -142,7 +145,7 @@ Narjes Mathlouthi
 </div>
 </div>
 
-  <p class="date">2025-07-02</p>
+  <p class="date">2025-07-03</p>
 </section>
 <section id="welcome-to-lecture-4" class="slide level2 center">
 <h2>Welcome to Lecture 4</h2>
@@ -214,7 +217,9 @@ Narjes Mathlouthi
 <li>Assess risk and likelihood</li>
 </ul>
 <div class="fragment">
+<div class="note">
 <p><em>Applications</em>: Weather forecasting, medical diagnosis, finance, quality control, gaming, insurance</p>
+</div>
 </div>
 </section>
 <section id="random-experiments" class="slide level2 smaller">
@@ -239,10 +244,18 @@ Narjes Mathlouthi
 </section>
 <section id="sample-space" class="slide level2">
 <h2>Sample Space</h2>
-<section id="definition-1" class="concept-box">
-<h4>🎯 Definition</h4>
-<p>The <strong>sample space</strong> (denoted <span class="math inline">\(S\)</span> or <span class="math inline">\(\Omega\)</span>) is the <strong>set</strong> of all possible outcomes of a random experiment</p>
-</section>
+<div class="definition">
+<p><strong>🎯 Definition</strong> The <strong>sample space</strong> (denoted <span class="math inline">\(S\)</span> or <span class="math inline">\(\Omega\)</span>) is the <strong>set</strong> of all possible outcomes of a random experiment</p>
+</div>
+<div id="07463ef9" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-2-output-1.png" width="466" height="358"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="sample-space-examples" class="slide level2">
 <h2>Sample Space Examples</h2>
@@ -304,18 +317,24 @@ Narjes Mathlouthi
 </div>
 </div></div>
 </section>
-<section id="events" class="slide level2">
+<section id="events" class="slide level2 smaller">
 <h2>Events</h2>
-<section id="definition-2" class="concept-box">
-<h4>🎯 Definition</h4>
-<div class="smaller">
-<p>An <strong>event</strong> is a subset of the sample space</p>
+<div class="definition">
+<p><strong>🎯 Definition</strong> An <strong>event</strong> is a subset of the sample space</p>
 <ul>
 <li><p><strong>Simple event</strong>: Contains exactly one outcome (Ex: <span class="math inline">\(A = \{3\}\)</span> (rolling a 3))</p></li>
 <li><p><strong>Compound event</strong>: Contains multiple outcomes (Ex: <span class="math inline">\(B = \{2, 4, 6\}\)</span> (rolling an even number))</p></li>
 </ul>
 </div>
-</section>
+<div id="9e5618ff" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-3-output-1.png" width="614" height="440"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="event-notation" class="slide level2">
 <h2>Event Notation</h2>
@@ -348,11 +367,11 @@ Narjes Mathlouthi
 </div>
 </div>
 </div><div class="column" style="width:40%;">
-<div id="ff885b89" class="cell" data-execution_count="1">
+<div id="5bb15b15" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture4_files/figure-revealjs/cell-2-output-1.png" width="315" height="336"></p>
+<p><img data-src="lecture4_files/figure-revealjs/cell-4-output-1.png" width="315" height="336"></p>
 </figure>
 </div>
 </div>
@@ -363,8 +382,9 @@ Narjes Mathlouthi
 <h2>What is a Set?</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
+<div class="definition">
 <div class="smaller">
-<p><strong>Definition:</strong> A collection of things that share common characteristics. They can be elements, members, objects or similar terms.</p>
+<p><strong>🎯 Definition:</strong> A collection of things that share common characteristics. They can be elements, members, objects or similar terms.</p>
 <p><strong>Examples:</strong></p>
 <ul>
 <li>Set of even numbers:
@@ -374,12 +394,13 @@ Narjes Mathlouthi
 <li>Set of vowels: {a, e, i, o, u}</li>
 </ul>
 </div>
+</div>
 </div><div class="column" style="width:40%;">
-<div id="647ec272" class="cell" data-execution_count="2">
+<div id="1acdea89" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture4_files/figure-revealjs/cell-3-output-1.png" width="320" height="336"></p>
+<p><img data-src="lecture4_files/figure-revealjs/cell-5-output-1.png" width="320" height="336"></p>
 </figure>
 </div>
 </div>
@@ -390,19 +411,21 @@ Narjes Mathlouthi
 <h2>Union: A ∪ B</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
+<div class="definition">
 <div class="smaller">
-<p><strong>Definition:</strong> Contains all set elements, including intersections.</p>
+<p><strong>🎯 Definition:</strong> Contains all set elements, including intersections.</p>
 <p><strong>In Probability:</strong> The event that A <strong>OR</strong> B occurs (or both).</p>
 <div class="formula-box">
 <p><span class="math display">\[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]</span></p>
 </div>
 </div>
+</div>
 </div><div class="column" style="width:30%;">
-<div id="7414ca14" class="cell" data-execution_count="3">
+<div id="51127b26" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture4_files/figure-revealjs/cell-4-output-1.png" width="315" height="335"></p>
+<p><img data-src="lecture4_files/figure-revealjs/cell-6-output-1.png" width="463" height="506"></p>
 </figure>
 </div>
 </div>
@@ -413,8 +436,9 @@ Narjes Mathlouthi
 <h2>Intersection: A ∩ B</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
+<div class="definition">
 <div class="smaller">
-<p><strong>Definition:</strong> Area where two or more sets overlap.</p>
+<p><strong>🎯 Definition:</strong> Area where two or more sets overlap.</p>
 <p><strong>In Probability:</strong> The event that A <strong>AND</strong> B occurs.</p>
 <p><strong>Properties:</strong></p>
 <ul>
@@ -422,12 +446,13 @@ Narjes Mathlouthi
 <li><p>Can be empty (disjoint sets)</p></li>
 </ul>
 </div>
+</div>
 </div><div class="column" style="width:40%;">
-<div id="2e7ff86b" class="cell" data-execution_count="4">
+<div id="259dc63d" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture4_files/figure-revealjs/cell-5-output-1.png" width="315" height="335"></p>
+<p><img data-src="lecture4_files/figure-revealjs/cell-7-output-1.png" width="315" height="335"></p>
 </figure>
 </div>
 </div>
@@ -438,18 +463,23 @@ Narjes Mathlouthi
 <h2>Absolute Complement: <span class="math inline">\(A^c\)</span></h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><strong>Definition:</strong> All elements that do not belong to the set.</p>
+<div class="definition">
+<p><strong>🎯 Definition:</strong> All elements that do not belong to the set.</p>
 <p><strong>In Probability:</strong> The event that A does <strong>NOT</strong> occur.</p>
 <ul>
 <li><span class="math inline">\(P(A^c) = 1 - P(A)\)</span></li>
 </ul>
-<p><strong>Key Property:</strong> <span class="math inline">\(A \cup A^c = S\)</span> (Sample Space)</p>
+<p><strong>Key Property:</strong></p>
+<div class="formula-box">
+<p><span class="math inline">\(A \cup A^c = S\)</span> (Sample Space)</p>
+</div>
+</div>
 </div><div class="column" style="width:40%;">
-<div id="c20f6b8b" class="cell" data-execution_count="5">
+<div id="505b0936" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture4_files/figure-revealjs/cell-6-output-1.png" width="315" height="336"></p>
+<p><img data-src="lecture4_files/figure-revealjs/cell-8-output-1.png" width="315" height="336"></p>
 </figure>
 </div>
 </div>
@@ -535,7 +565,7 @@ Narjes Mathlouthi
 <li><p>Set A = Students who like Math</p></li>
 <li><p>Set B = Students who like Science</p></li>
 </ul>
-<p>What does A ∪ B represent?</p>
+<p><strong>Q: What does A ∪ B represent?</strong></p>
 </div>
 <div class="fragment">
 <div class="proof solution">
@@ -574,11 +604,11 @@ Narjes Mathlouthi
 <li><p><span class="math inline">\(A = \{1, 3, 5\}\)</span> (odd numbers)</p></li>
 <li><p><span class="math inline">\(B = \{4, 5, 6\}\)</span> (4 or higher)</p></li>
 </ul>
-<div id="14f5182d" class="cell" data-execution_count="6">
+<div id="1a3a9c5c" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture4_files/figure-revealjs/cell-7-output-1.png" width="315" height="335"></p>
+<p><img data-src="lecture4_files/figure-revealjs/cell-9-output-1.png" width="315" height="335"></p>
 </figure>
 </div>
 </div>
@@ -612,11 +642,11 @@ Narjes Mathlouthi
 <div class="column" style="width:50%;">
 <p>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>mutually exclusive</strong> (or disjoint) if they cannot occur simultaneously</p>
 <p><span class="math display">\[A \cap B = \emptyset\]</span></p>
-<div id="80dafd3b" class="cell" data-execution_count="7">
+<div id="6f98b9e2" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture4_files/figure-revealjs/cell-8-output-1.png" width="315" height="335"></p>
+<p><img data-src="lecture4_files/figure-revealjs/cell-10-output-1.png" width="315" height="335"></p>
 </figure>
 </div>
 </div>
@@ -636,8 +666,10 @@ Narjes Mathlouthi
 </section>
 <section id="the-classical-definition-of-probability" class="slide level2 smaller">
 <h2>The Classical Definition of Probability</h2>
-<p>For equally likely outcomes:</p>
+<div class="definition">
+<p><strong>🎯 Definition:</strong> For equally likely outcomes:</p>
 <p><span class="math display">\[P(A) = \frac{\text{Number of outcomes in } A}{\text{Total number of outcomes in } S}\]</span></p>
+</div>
 <div class="example">
 <p>Probability of rolling an even number on a fair die</p>
 </div>
@@ -650,22 +682,30 @@ Narjes Mathlouthi
 <ol type="1">
 <li><p><strong>Non-negativity</strong>: <span class="math inline">\(P(A) \geq 0\)</span> for any event <span class="math inline">\(A\)</span></p></li>
 <li><p><strong>Normalization</strong>: <span class="math inline">\(P(S) = 1\)</span></p></li>
-<li><p><strong>Additivity</strong>: If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive, then <span class="math display">\[P(A \cup B) = P(A) + P(B)\]</span></p></li>
+<li><p><strong>Additivity</strong>: If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are mutually exclusive, then</p></li>
 </ol>
+<div class="formula-box">
+<p><span class="math display">\[P(A \cup B) = P(A) + P(B)\]</span></p>
+</div>
 </section>
-<section id="the-complement-rule" class="slide level2">
+<section id="the-complement-rule" class="slide level2 smaller">
 <h2>The Complement Rule</h2>
+<div class="formula-box">
+<p><span class="math display">\[P(A) + P(A^c) = 1\]</span></p>
 <p><span class="math display">\[P(A^c) = 1 - P(A)\]</span></p>
+</div>
 <div class="fragment">
 <div class="example">
 <p>If the probability of rain is 0.3, what’s the probability of no rain?</p>
 </div>
 </div>
 <div class="fragment">
-<p><span class="math display">\[P(\text{no rain}) = 1 - P(\text{rain}) = 1 - 0.3 = 0.7\]</span></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math display">\[P(\text{no rain}) = 1 - P(\text{rain}) = 1 - 0.3 = 0.7\]</span></p>
+</div>
 </div>
 </section>
-<section id="practice-problem-1" class="slide level2">
+<section id="practice-problem-1" class="slide level2 smaller">
 <h2>Practice Problem 1</h2>
 <div class="columns">
 <div class="column" style="width:70;">
@@ -673,10 +713,11 @@ Narjes Mathlouthi
 <div class="smaller">
 <p>A standard deck has 52 cards. What is the probability of drawing:</p>
 <ol type="a">
-<li>A heart?</li>
+<li>A heart <span class="math inline">\(\heartsuit\)</span>?</li>
 <li>A face card (Jack, Queen, King)?</li>
-<li>The ace of spades?</li>
+<li>The ace of spades <span class="math inline">\(\spadesuit\)</span>?</li>
 </ol>
+<p><img data-src="../../../files/lecture_notes/lecture4/img/cards.png"></p>
 </div>
 </div>
 </div><div class="column" style="width:30;">
@@ -692,246 +733,551 @@ Narjes Mathlouthi
 </div>
 </div></div>
 </section>
-<section id="the-addition-rule" class="slide level2">
+<section id="the-addition-rule" class="slide level2 smaller">
 <h2>The Addition Rule</h2>
 <p>For any two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>:</p>
+<div class="formula-box">
 <p><span class="math display">\[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]</span></p>
+</div>
 <div class="example">
 <p><em>Why subtract <span class="math inline">\(P(A \cap B)\)</span>?</em></p>
 </div>
 <div class="fragment">
-<p>We don’t want to double-count outcomes that are in both events</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>We don’t want to double-count outcomes that are in both events</p>
+</div>
 </div>
 </section>
-<section id="addition-rule-example" class="slide level2">
+<section id="addition-rule-example" class="slide level2 smaller">
 <h2>Addition Rule Example</h2>
+<div class="columns">
+<div class="column">
+<div class="smaller">
+<div class="example">
 <p>Drawing from a standard deck:</p>
 <ul>
-<li><p><span class="math inline">\(A\)</span>: Drawing a heart (<span class="math inline">\(P(A) = \frac{13}{52}\)</span>)</p></li>
+<li><p><span class="math inline">\(A\)</span>: Drawing a heart <span class="math inline">\(\heartsuit\)</span> (<span class="math inline">\(P(A) = \frac{13}{52}\)</span>)</p></li>
 <li><p><span class="math inline">\(B\)</span>: Drawing a face card (<span class="math inline">\(P(B) = \frac{12}{52}\)</span>)</p></li>
+<li><p><strong>What’s <span class="math inline">\(P(A \cup B)\)</span> (heart OR face card)?</strong></p></li>
 </ul>
-<div id="cf2acd4f" class="cell" data-execution_count="8">
+<p><img data-src="../../../files/lecture_notes/lecture4/img/cards.png"></p>
+</div>
+</div>
+</div><div class="column">
+<div id="c656d403" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture4_files/figure-revealjs/cell-9-output-1.png" width="462" height="335"></p>
+<p><img data-src="lecture4_files/figure-revealjs/cell-11-output-1.png" width="462" height="335"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>What’s <span class="math inline">\(P(A \cup B)\)</span> (heart OR face card)?</p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div id="7df1e763" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-12-output-1.png" width="462" height="335"></p>
+</figure>
+</div>
+</div>
+</div>
 <div class="fragment">
-<p><span class="math inline">\(P(A \cap B) = \frac{3}{52}\)</span> (face cards that are hearts)</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(P(A \cap B) = \frac{3}{52}\)</span> (face cards that are hearts)</p>
 <p><span class="math inline">\(P(A \cup B) = \frac{13}{52} + \frac{12}{52} - \frac{3}{52} = \frac{22}{52} = \frac{11}{26}\)</span></p>
+</div>
 </div>
 </section>
 <section id="conditional-probability" class="slide level2">
 <h2>Conditional Probability</h2>
-<section id="definition-3" class="concept-box">
-<h4>🎯 Definition</h4>
-<p><strong>Conditional probability</strong> is the probability of event <span class="math inline">\(A\)</span> given that event <span class="math inline">\(B\)</span> has occurred</p>
+<div class="columns">
+<div class="column">
+<div class="definition">
+<div class="smaller">
+<p><strong>🎯Conditional probability</strong> is the probability of event <span class="math inline">\(A\)</span> given that event <span class="math inline">\(B\)</span> has occurred</p>
 <p><span class="math display">\[P(A|B) = \frac{P(A \cap B)}{P(B)}\]</span></p>
 <p>provided <span class="math inline">\(P(B) &gt; 0\)</span></p>
-</section>
-</section>
-<section id="conditional-probability-interpretation" class="slide level2">
-<h2>Conditional Probability Interpretation</h2>
-<p><span class="math inline">\(P(A|B)\)</span> means: - We know event <span class="math inline">\(B\)</span> has occurred - What’s the probability that <span class="math inline">\(A\)</span> also occurred? - We “restrict” our sample space to only outcomes in <span class="math inline">\(B\)</span></p>
-</section>
-<section id="conditional-probability-example" class="slide level2">
-<h2>Conditional Probability Example</h2>
-<p>Drawing a card from a standard deck: - <span class="math inline">\(A\)</span>: Card is a heart - <span class="math inline">\(B\)</span>: Card is red</p>
-<div id="c0dd66c8" class="cell" data-execution_count="9">
+</div>
+</div>
+</div><div class="column">
+<div id="c0b9cfb7" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lecture4_files/figure-revealjs/cell-10-output-1.png" width="466" height="242"></p>
+<p><img data-src="lecture4_files/figure-revealjs/cell-13-output-1.png" width="1334" height="539"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Find <span class="math inline">\(P(A|B)\)</span></p>
+</div></div>
+</section>
+<section id="conditional-probability-interpretation" class="slide level2">
+<h2>Conditional Probability Interpretation</h2>
+<p><span class="math inline">\(P(A|B)\)</span> means:</p>
+<ul>
+<li><p>We know event <u><b> <span class="math inline">\(B\)</span> has occurred </b></u></p></li>
+<li><p>What’s the probability that <span class="math inline">\(A\)</span> also occurred?</p></li>
+<li><p>We “restrict” our sample space to only outcomes in <span class="math inline">\(B\)</span></p></li>
+</ul>
+
+<img data-src="../../../files/lecture_notes/lecture4/img/con_prob_2.png" class="r-stretch"></section>
+<section id="conditional-probability-example" class="slide level2 smaller">
+<h2>Conditional Probability Example</h2>
+<div class="columns">
+<div class="column">
+<div class="example">
+<p>Drawing a card from a standard deck:</p>
+<ul>
+<li><p><span class="math inline">\(A\)</span>: Card is a heart <span class="math inline">\(\heartsuit\)</span></p></li>
+<li><p><span class="math inline">\(B\)</span>: Card is red</p></li>
+<li><p><strong>Q: Find <span class="math inline">\(P(A|B)\)</span></strong></p></li>
+</ul>
+<p><img data-src="../../../files/lecture_notes/lecture4/img/cards.png"></p>
+</div>
+</div><div class="column">
+<div id="71c6de1b" class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-14-output-1.png" width="466" height="242"></p>
+</figure>
+</div>
+</div>
+</div>
 <div class="fragment">
-<p><span class="math inline">\(P(A \cap B) = P(\text{heart}) = \frac{13}{52}\)</span></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(P(A \cap B) = P(\text{heart}) = \frac{13}{52}\)</span></p>
 <p><span class="math inline">\(P(B) = P(\text{red}) = \frac{26}{52}\)</span></p>
 <p><span class="math inline">\(P(A|B) = \frac{13/52}{26/52} = \frac{13}{26} = \frac{1}{2}\)</span></p>
 </div>
+</div>
+</div></div>
 </section>
-<section id="independence" class="slide level2">
+<section id="independence" class="slide level2 smaller">
 <h2>Independence</h2>
-<section id="definition-4" class="concept-box">
-<h4>🎯 Definition</h4>
-<p>Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>independent</strong> if:</p>
+<div class="columns">
+<div class="column">
+<div class="definition">
+<p><strong>🎯 Definition</strong> Events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>independent</strong> if:</p>
 <p><span class="math display">\[P(A|B) = P(A)\]</span></p>
 <p>or equivalently:</p>
 <p><span class="math display">\[P(A \cap B) = P(A) \times P(B)\]</span></p>
-</section>
+</div>
 <div class="fragment">
 <p><em>Knowing that <span class="math inline">\(B\)</span> occurred doesn’t change the probability of <span class="math inline">\(A\)</span></em></p>
 </div>
+</div><div class="column">
+<div id="ff18d0a9" class="cell" data-execution_count="14">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-15-output-1.png" width="606" height="512"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
 </section>
-<section id="independence-example" class="slide level2">
+<section id="independence-example" class="slide level2 smaller">
 <h2>Independence Example</h2>
-<p>Two coin flips: - <span class="math inline">\(A\)</span>: First flip is heads - <span class="math inline">\(B\)</span>: Second flip is heads</p>
-<p>Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent?</p>
+<div class="example">
+<p>Two coin flips:</p>
+<ul>
+<li><p><span class="math inline">\(A\)</span>: First flip is heads</p></li>
+<li><p><span class="math inline">\(B\)</span>: Second flip is heads</p></li>
+</ul>
+<p><strong>Q: Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent?</strong></p>
+</div>
 <div class="fragment">
-<p><span class="math inline">\(P(A) = \frac{1}{2}\)</span>, <span class="math inline">\(P(B) = \frac{1}{2}\)</span></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(P(A) = \frac{1}{2}\)</span>, <span class="math inline">\(P(B) = \frac{1}{2}\)</span></p>
 <p><span class="math inline">\(P(A \cap B) = P(\text{HH}) = \frac{1}{4}\)</span></p>
 <p><span class="math inline">\(P(A) \times P(B) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}\)</span></p>
 <p>Yes, they are independent!</p>
 </div>
+</div>
+</section>
+<section id="mutually-exclusive-vs.-independent" class="slide level2 smaller">
+<h2>Mutually Exclusive vs.&nbsp;Independent</h2>
+<ul>
+<li><p><strong>Mutually Exclusive (left):</strong> the circles A and B do not overlap, so <span class="math inline">\(P(A\cap B)=0\)</span>.</p></li>
+<li><p><strong>Independent (right):</strong> the circles overlap, and we’ve sized the intersection so that <span class="math inline">\(P(A\cap B)=P(A)\,P(B)\)</span>.</p></li>
+</ul>
+<div id="9c99d58c" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-16-output-1.png" width="1142" height="473"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="mutually-exclusive-vs.-independent-example" class="slide level2 smaller">
+<h2>Mutually Exclusive vs.&nbsp;Independent Example</h2>
+<div class="columns">
+<div class="column">
+<div class="example">
+<p>Draw a single card from a 52-card deck:</p>
+<ul>
+<li><p>Let A={“draw an Ace”}, so P(A)=4/52.</p></li>
+<li><p>Let B={“draw a King”}, so P(B)=4/52.</p></li>
+</ul>
+<p><strong>Q: What is <span class="math inline">\(P(A\cap B)\)</span> ?</strong></p>
+<p><img data-src="../../../files/lecture_notes/lecture4/img/cards.png"></p>
+</div>
+</div><div class="column">
+<div class="fragment">
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>They’re disjoint (you can’t draw an Ace and a King), so <span class="math inline">\(P(A\cap B) = 0\)</span>.</p>
+<p>But <span class="math inline">\(P(A)\,P(B) = \frac{4}{52}\times\frac{4}{52} = \frac{16}{2704} \neq 0\)</span>.</p>
+<p>Hence, <span class="math inline">\(P(A\cap B)\neq P(A)P(B)\)</span>, so they’re not independent.</p>
+</div>
+</div>
+</div></div>
 </section>
 <section id="multiplication-rule" class="slide level2">
 <h2>Multiplication Rule</h2>
 <p><strong>General case</strong>: <span class="math inline">\(P(A \cap B) = P(A) \times P(B|A)\)</span></p>
 <p><strong>Independent events</strong>: <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span></p>
+<div id="91b168a5" class="cell" data-execution_count="16">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-17-output-1.png" width="1324" height="584"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="practice-problem-2" class="slide level2">
+<section id="tree-diagrams" class="slide level2 smaller">
+<h2>Tree Diagrams</h2>
+<div class="definition">
+<p><strong>🎯 Definition</strong> Tree diagrams help visualize sequential events and calculate probabilities.</p>
+</div>
+<div id="a8bfcf29" class="cell" data-execution_count="17">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-18-output-1.png" width="614" height="504"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="tree-diagram-examples" class="slide level2 smaller">
+<h2>Tree Diagram Examples</h2>
+<div class="columns">
+<div class="column">
+<div id="b352720b" class="cell" data-execution_count="18">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-19-output-1.png" width="466" height="337"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div id="a607a7b8" class="cell" data-execution_count="19">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-20-output-1.png" width="466" height="337"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="practice-problem-2" class="slide level2 smaller">
 <h2>Practice Problem 2</h2>
-<p>A jar contains 5 red balls and 3 blue balls. Two balls are drawn without replacement.</p>
+<div class="columns">
+<div class="column">
+<div class="example">
+<p>A jar contains 5 red balls and 3 blue balls. Two balls are drawn <strong>without replacement</strong>.</p>
 <ol type="a">
-<li>What’s the probability both balls are red?</li>
-<li>What’s the probability the first is red and second is blue?</li>
+<li><p>What’s the probability both balls are red?</p></li>
+<li><p>What’s the probability the first is red and second is blue?</p></li>
 </ol>
+</div>
+</div><div class="column">
 <div class="fragment">
+<div id="e35bc3b5" class="cell" data-execution_count="20">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-21-output-1.png" width="950" height="566"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
 <ol type="a">
 <li><p><span class="math inline">\(P(\text{both red}) = \frac{5}{8} \times \frac{4}{7} = \frac{20}{56} = \frac{5}{14}\)</span></p></li>
 <li><p><span class="math inline">\(P(\text{red then blue}) = \frac{5}{8} \times \frac{3}{7} = \frac{15}{56}\)</span></p></li>
 </ol>
 </div>
+</div>
+</div></div>
 </section>
-<section id="law-of-total-probability" class="slide level2">
+<section id="law-of-total-probability" class="slide level2 smaller">
 <h2>Law of Total Probability</h2>
+<div class="definition">
+<p><strong>🎯 Definition</strong></p>
 <p>If events <span class="math inline">\(B_1, B_2, \ldots, B_n\)</span> form a partition of the sample space, then:</p>
 <p><span class="math display">\[P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + \cdots + P(A|B_n)P(B_n)\]</span></p>
+</div>
+<div id="d9bce425" class="cell" data-execution_count="21">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-22-output-1.png" width="689" height="354"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="law-of-total-probability-example" class="slide level2">
+<section id="law-of-total-probability-example" class="slide level2 smaller">
 <h2>Law of Total Probability Example</h2>
-<p>A factory has two machines: - Machine 1: Produces 60% of items, 5% defective - Machine 2: Produces 40% of items, 3% defective</p>
-<p>What’s the overall probability an item is defective?</p>
+<div class="example">
+<p>A factory has two machines:</p>
+<ul>
+<li><p>Machine 1: Produces 60% of items, 5% defective</p></li>
+<li><p>Machine 2: Produces 40% of items, 3% defective</p></li>
+</ul>
+<p><strong>Q: What’s the overall probability an item is defective?</strong></p>
+</div>
 <div class="fragment">
-<p><span class="math inline">\(P(\text{defective}) = P(D|M_1)P(M_1) + P(D|M_2)P(M_2)\)</span></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(P(\text{defective}) = P(D|M_1)P(M_1) + P(D|M_2)P(M_2)\)</span></p>
 <p><span class="math inline">\(= 0.05 \times 0.6 + 0.03 \times 0.4 = 0.03 + 0.012 = 0.042\)</span></p>
+</div>
 </div>
 </section>
 <section id="bayes-theorem" class="slide level2">
 <h2>Bayes’ Theorem</h2>
-<section id="definition-5" class="concept-box">
-<h4>🎯 Definition</h4>
-<p><span class="math display">\[P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}\]</span></p>
+<div class="definition">
+<p><strong>🎯 Definition</strong> <span class="math display">\[P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}\]</span></p>
 <p>This allows us to “reverse” conditional probabilities</p>
 <p><em>Named after Thomas Bayes (1701-1761)</em></p>
-</section>
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="../../../files/lecture_notes/lecture4/img/bayes.gif" class="quarto-figure quarto-figure-right" width="200"></p>
+</figure>
+</div>
+</div>
 </section>
 <section id="bayes-theorem-components" class="slide level2">
 <h2>Bayes’ Theorem Components</h2>
 <ul>
+<li><span class="math inline">\(A,B\)</span>: <strong>Events</strong></li>
 <li><span class="math inline">\(P(A|B)\)</span>: <strong>Posterior probability</strong> - what we want to find</li>
 <li><span class="math inline">\(P(B|A)\)</span>: <strong>Likelihood</strong> - given <span class="math inline">\(A\)</span>, probability of observing <span class="math inline">\(B\)</span></li>
 <li><span class="math inline">\(P(A)\)</span>: <strong>Prior probability</strong> - initial probability of <span class="math inline">\(A\)</span></li>
 <li><span class="math inline">\(P(B)\)</span>: <strong>Marginal probability</strong> - total probability of <span class="math inline">\(B\)</span></li>
 </ul>
 </section>
-<section id="bayes-theorem-example" class="slide level2">
+<section id="bayes-theorem-example" class="slide level2 smaller">
 <h2>Bayes’ Theorem Example</h2>
-<p>Medical test for a disease: - Disease affects 1% of population - Test is 95% accurate for sick people - Test is 90% accurate for healthy people</p>
-<p>If someone tests positive, what’s the probability they have the disease?</p>
-</section>
-<section id="bayes-theorem-solution" class="slide level2">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="example">
+<p><strong>Medical test for a disease:</strong> <sup>1</sup></p>
+<ul>
+<li><p>Disease affects 1% of population</p></li>
+<li><p>Test is 95% accurate for sick people</p></li>
+<li><p>Test is 90% accurate for healthy people</p></li>
+</ul>
+<p><strong>Q:If someone tests positive, what’s the probability they have the disease?</strong></p>
+</div>
+</div><div class="column" style="width:60%;">
+<div id="e1d8ae9b" class="cell" data-execution_count="22">
+<div class="cell-output cell-output-display">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.0.1.min"</script>
+        
+</div>
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="7b52ebc5-a630-43c3-9e5f-cbb5cbb1e759" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("7b52ebc5-a630-43c3-9e5f-cbb5cbb1e759")) {                    Plotly.newPlot(                        "7b52ebc5-a630-43c3-9e5f-cbb5cbb1e759",                        [{"branchvalues":"total","customdata":[["(?)"],["(?)"],["Disease"],["Disease"],["No Disease"],["No Disease"]],"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"hovertemplate":"labels=%{label}\u003cbr\u003eProbability=%{value}\u003cbr\u003eparent=%{parent}\u003cbr\u003eid=%{id}\u003cbr\u003eCondition=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","ids":["Positive","Negative","Positive\u002fDisease","Negative\u002fDisease","Positive\u002fNo Disease","Negative\u002fNo Disease"],"labels":["Positive","Negative","Disease","Disease","No Disease","No Disease"],"marker":{"colors":["#00cc96","#00cc96","tomato","tomato","skyblue","skyblue"]},"name":"","parents":["","","Positive","Negative","Positive","Negative"],"values":{"dtype":"f8","bdata":"LbKd76fGuz+6SQwCK4fsP9v5fmq8dIM\u002fAKrx0k1iQD\u002fy0k1iEFi5P1CNl24Sg+w\u002f"},"type":"treemap","textinfo":"label+percent entry"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"legend":{"tracegroupgap":0},"margin":{"t":50,"l":25,"r":25,"b":25},"title":{"text":"Bayes\u2019 Theorem: Distribution by Test Result and Condition"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('7b52ebc5-a630-43c3-9e5f-cbb5cbb1e759');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p><span class="math inline">\(P(\neg D \,\wedge\, \text{Negative})
+\;=\;P(\neg D)\times P(\text{Negative}\mid \neg D)
+\;=\;0.99\times0.90
+\;=\;0.891\;(89.1\%)\)</span></p></li></ol></aside></section>
+<section id="bayes-theorem-solution" class="slide level2 smaller">
 <h2>Bayes’ Theorem Solution</h2>
-<p>Let: - <span class="math inline">\(D\)</span>: Person has disease - <span class="math inline">\(T^+\)</span>: Test is positive</p>
-<p>Given: - <span class="math inline">\(P(D) = 0.01\)</span> - <span class="math inline">\(P(T^+|D) = 0.95\)</span> - <span class="math inline">\(P(T^-|D^c) = 0.90\)</span>, so <span class="math inline">\(P(T^+|D^c) = 0.10\)</span></p>
+<p>Let:</p>
+<ul>
+<li><p><span class="math inline">\(D\)</span>: Person has disease</p></li>
+<li><p><span class="math inline">\(T^+\)</span>: Test is positive</p></li>
+</ul>
+<p>Given:</p>
+<ul>
+<li><p><span class="math inline">\(P(D) = 0.01\)</span></p></li>
+<li><p><span class="math inline">\(P(T^+|D) = 0.95\)</span></p></li>
+<li><p><span class="math inline">\(P(T^-|D^c) = 0.90\)</span>, so <span class="math inline">\(P(T^+|D^c) = 0.10\)</span></p></li>
+</ul>
 <div class="fragment">
-<p><span class="math inline">\(P(T^+) = P(T^+|D)P(D) + P(T^+|D^c)P(D^c)\)</span> <span class="math inline">\(= 0.95 \times 0.01 + 0.10 \times 0.99 = 0.1085\)</span></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(P(T^+) = P(T^+|D)P(D) + P(T^+|D^c)P(D^c)\)</span></p>
+<p><span class="math inline">\(= 0.95 \times 0.01 + 0.10 \times 0.99 = 0.1085\)</span></p>
+</div>
 </div>
 </section>
-<section id="bayes-theorem-solution-cont." class="slide level2">
+<section id="bayes-theorem-solution-cont." class="slide level2 smaller">
 <h2>Bayes’ Theorem Solution (cont.)</h2>
 <p><span class="math display">\[P(D|T^+) = \frac{P(T^+|D) \times P(D)}{P(T^+)} = \frac{0.95 \times 0.01}{0.1085} \approx 0.088\]</span></p>
+<div id="6d5ab918" class="cell" data-execution_count="23">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lecture4_files/figure-revealjs/cell-24-output-1.png" width="562" height="490"></p>
+</figure>
+</div>
+</div>
+</div>
 <div class="fragment">
+<div class="note">
 <p><strong>Surprising result</strong>: Even with a positive test, there’s only an 8.8% chance of having the disease!</p>
 <p><em>This is due to the low base rate of the disease</em></p>
 </div>
+</div>
 </section>
-<section id="common-probability-mistakes" class="slide level2">
+<section id="common-probability-mistakes" class="slide level2 smaller">
 <h2>Common Probability Mistakes</h2>
-<ol type="1">
-<li><p><strong>Confusing <span class="math inline">\(P(A|B)\)</span> with <span class="math inline">\(P(B|A)\)</span></strong></p>
 <ul>
-<li>Prosecutor’s fallacy</li>
-</ul></li>
+<li><strong>Confusing <span class="math inline">\(P(A|B)\)</span> with <span class="math inline">\(P(B|A)\)</span></strong></li>
+</ul>
+<div class="note">
+<p><a href="https://en.wikipedia.org/wiki/Base_rate_fallacy">Prosecutor’s fallacy</a> is a specific error in interpreting conditional probabilities. Confusing</p>
+<p><span class="math inline">\(P(\text{Evidence}\mid\text{Innocent})
+\quad\text{with}\quad
+P(\text{Innocent}\mid\text{Evidence})\)</span>.</p>
+<p>Ex: OJ Simpson Case <sup>1</sup></p>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>the DNA evidence in the O. J. Simpson trial are a classic example of the prosecutor’s fallacy. Prosecutors highlighted that the chance of a random person matching the crime-scene DNA was “one in 170 million,” then implied (or let the jury infer) that Simpson therefore had a 1 in 170 million chance of being innocent.</p></li></ol></aside></section>
+<section id="common-probability-mistakes-1" class="slide level2 smaller">
+<h2>Common Probability Mistakes</h2>
+<ul>
 <li><p><strong>Assuming independence when events are dependent</strong></p></li>
 <li><p><strong>Ignoring base rates</strong> (as in the medical test example)</p></li>
-<li><p><strong>Double counting in union calculations</strong></p></li>
-</ol>
+</ul>
+<div class="note">
+<p><a href="https://en.wikipedia.org/wiki/Base_rate_fallacy">Base rate fallacy</a> is when you ignore or underweight the prior probability <span class="math inline">\(P(H)\)</span> of a hypothesis, focusing only on the new evidence <span class="math inline">\(E\)</span>.</p>
+</div>
+<ul>
+<li><strong>Double counting in union calculations</strong></li>
+</ul>
 </section>
-<section id="tree-diagrams" class="slide level2">
-<h2>Tree Diagrams</h2>
-<p>Tree diagrams help visualize sequential events and calculate probabilities</p>
-<pre><code>                    0.6   Red
-            0.7 ──┐
-                    0.4   Blue
-    
-                    0.3   Red  
-            0.3 ──┐
-                    0.7   Blue</code></pre>
-<p><em>Example: Drawing from different urns</em></p>
-</section>
-<section id="practice-problem-3" class="slide level2">
+<section id="practice-problem-3" class="slide level2 smaller">
 <h2>Practice Problem 3</h2>
+<div class="example">
 <p>Two fair dice are rolled. Find:</p>
 <ol type="a">
 <li><span class="math inline">\(P(\text{sum} = 7)\)</span></li>
 <li><span class="math inline">\(P(\text{sum} = 7 | \text{first die shows 3})\)</span></li>
 <li>Are these events independent?</li>
 </ol>
+</div>
 <div class="fragment">
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
 <ol type="a">
 <li><p>6 ways out of 36: <span class="math inline">\(P(\text{sum} = 7) = \frac{6}{36} = \frac{1}{6}\)</span></p></li>
 <li><p>Given first die is 3, need second die to be 4: <span class="math inline">\(P(\text{sum} = 7 | \text{first} = 3) = \frac{1}{6}\)</span></p></li>
 <li><p>Yes, they’re independent since <span class="math inline">\(P(A|B) = P(A)\)</span></p></li>
 </ol>
 </div>
+</div>
 </section>
-<section id="counting-and-probability" class="slide level2">
+<section id="counting-and-probability" class="slide level2 smaller">
 <h2>Counting and Probability</h2>
+<div class="definition">
 <p>Sometimes we need to count outcomes:</p>
+<div class="formula-box">
 <p><strong>Multiplication Principle</strong>: If task 1 can be done in <span class="math inline">\(m\)</span> ways and task 2 in <span class="math inline">\(n\)</span> ways, both can be done in <span class="math inline">\(m \times n\)</span> ways</p>
+</div>
+<div class="formula-box">
 <p><strong>Permutations</strong>: Arrangements where order matters <span class="math display">\[P(n,r) = \frac{n!}{(n-r)!}\]</span></p>
+</div>
+<div class="formula-box">
 <p><strong>Combinations</strong>: Selections where order doesn’t matter <span class="math display">\[C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}\]</span></p>
+</div>
+</div>
 </section>
 <section id="counting-example" class="slide level2">
 <h2>Counting Example</h2>
-<p>How many ways can you arrange 5 people in a row?</p>
-<div class="fragment">
-<p>This is a permutation: <span class="math inline">\(P(5,5) = 5! = 120\)</span> ways</p>
+<div class="example">
+<p><strong>Q: How many ways can you arrange 5 people in a row?</strong></p>
 </div>
 <div class="fragment">
-<p>How many ways can you choose 3 people from 5 for a committee?</p>
-<p>This is a combination: <span class="math inline">\(C(5,3) = \binom{5}{3} = \frac{5!}{3!2!} = 10\)</span> ways</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>This is a permutation: <span class="math inline">\(P(5,5) = 5! = 120\)</span> ways</p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="fragment">
+<div class="example">
+<p><strong>Q:How many ways can you choose 3 people from 5 for a committee?</strong></p>
+</div>
+</div>
+<div class="fragment">
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>This is a combination: <span class="math inline">\(C(5,3) = \binom{5}{3} = \frac{5!}{3!2!} = 10\)</span> ways</p>
+</div>
 </div>
 </section>
 <section id="probability-with-counting" class="slide level2">
 <h2>Probability with Counting</h2>
+<div class="example">
 <p><strong>Example</strong>: A committee of 3 people is chosen from 8 people (5 women, 3 men). What’s the probability all 3 are women?</p>
+</div>
 <div class="fragment">
-<p>Total ways to choose 3 from 8: <span class="math inline">\(\binom{8}{3} = 56\)</span></p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>Total ways to choose 3 from 8: <span class="math inline">\(\binom{8}{3} = 56\)</span></p>
 <p>Ways to choose 3 women from 5: <span class="math inline">\(\binom{5}{3} = 10\)</span></p>
 <p>Probability: <span class="math inline">\(\frac{10}{56} = \frac{5}{28}\)</span></p>
 </div>
-</section>
-<section id="probability-distributions-preview" class="slide level2">
-<h2>Probability Distributions Preview</h2>
-<p>A <strong>probability distribution</strong> assigns probabilities to all possible outcomes</p>
-<p>For discrete random variables: - <strong>Probability mass function</strong> (PMF) - <strong>Cumulative distribution function</strong> (CDF)</p>
-<p><em>We’ll explore this more in future lectures</em></p>
-</section>
-<section id="common-discrete-distributions" class="slide level2">
-<h2>Common Discrete Distributions</h2>
-<p><strong>Uniform Distribution</strong>: All outcomes equally likely</p>
-<p><strong>Binomial Distribution</strong>: Number of successes in fixed trials</p>
-<p><strong>Geometric Distribution</strong>: Number of trials until first success</p>
-<p><em>Examples and details coming in later lectures</em></p>
+</div>
 </section>
 <section id="real-world-applications" class="slide level2">
 <h2>Real-World Applications</h2>
@@ -943,6 +1289,7 @@ Narjes Mathlouthi
 </section>
 <section id="key-formulas-summary" class="slide level2">
 <h2>Key Formulas Summary</h2>
+<div class="formula-box">
 <ul>
 <li><strong>Basic probability</strong>: <span class="math inline">\(P(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}}\)</span></li>
 <li><strong>Complement</strong>: <span class="math inline">\(P(A^c) = 1 - P(A)\)</span></li>
@@ -951,9 +1298,11 @@ Narjes Mathlouthi
 <li><strong>Independence</strong>: <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span></li>
 <li><strong>Bayes’</strong>: <span class="math inline">\(P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}\)</span></li>
 </ul>
+</div>
 </section>
 <section id="problem-solving-strategy" class="slide level2">
 <h2>Problem-Solving Strategy</h2>
+<div class="note">
 <ol type="1">
 <li><strong>Identify</strong> the sample space and events</li>
 <li><strong>Determine</strong> if events are independent or mutually exclusive</li>
@@ -961,63 +1310,84 @@ Narjes Mathlouthi
 <li><strong>Calculate</strong> step by step</li>
 <li><strong>Check</strong> if your answer makes sense</li>
 </ol>
+</div>
 </section>
 <section id="practice-problem-4" class="slide level2">
 <h2>Practice Problem 4</h2>
+<div class="example">
 <p>A bag contains 4 red, 3 blue, and 2 green marbles. Three marbles are drawn without replacement.</p>
 <p>Find the probability that: a) All three are red b) No two are the same color c) At least one is blue</p>
+</div>
 </section>
 <section id="practice-problem-4-solutions" class="slide level2">
 <h2>Practice Problem 4 Solutions</h2>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
 <ol type="a">
 <li><p>All red: <span class="math inline">\(\frac{4}{9} \times \frac{3}{8} \times \frac{2}{7} = \frac{24}{504} = \frac{1}{21}\)</span></p></li>
 <li><p>Different colors: <span class="math inline">\(\frac{4 \times 3 \times 2}{9 \times 8 \times 7} \times 3! = \frac{24 \times 6}{504} = \frac{144}{504} = \frac{2}{7}\)</span></p></li>
 <li><p>At least one blue: <span class="math inline">\(1 - P(\text{no blue}) = 1 - \frac{6 \times 5 \times 4}{9 \times 8 \times 7} = 1 - \frac{120}{504} = \frac{384}{504} = \frac{16}{21}\)</span></p></li>
 </ol>
+</div>
 </section>
-<section id="common-student-questions" class="slide level2">
-<h2>Common Student Questions</h2>
-<p><strong>Q</strong>: “Why isn’t <span class="math inline">\(P(A \cup B) = P(A) + P(B)\)</span> always?” <strong>A</strong>: We’d double-count outcomes in both events</p>
-<p><strong>Q</strong>: “How do I know if events are independent?” <strong>A</strong>: Check if <span class="math inline">\(P(A|B) = P(A)\)</span> or if <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span></p>
-<p><strong>Q</strong>: “When do I use Bayes’ theorem?” <strong>A</strong>: When you want to “reverse” a conditional probability</p>
+<section id="common-questions" class="slide level2 smaller">
+<h2>Common Questions</h2>
+<div class="example">
+<p><strong>Q1.</strong>: <strong>“Why isn’t <span class="math inline">\(P(A \cup B) = P(A) + P(B)\)</span> always?”</strong></p>
+<p><strong>A</strong>: We’d double-count outcomes in both events</p>
+<p><strong>Q2.</strong>: <strong>“How do I know if events are independent?”</strong></p>
+<p><strong>A</strong>: Check if <span class="math inline">\(P(A|B) = P(A)\)</span> or if <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span></p>
+<p><strong>Q3.</strong>: <strong>“When do I use Bayes’ theorem?”</strong></p>
+<p><strong>A</strong>: When you want to “reverse” a conditional probability</p>
+</div>
+<div class="note">
+<p><em>Q3 note (Bayes Example)</em></p>
+<ul>
+<li><p>Forward: I know my test picks up disease 95% of the time ⇒ <span class="math inline">\(P(+\mid D)=0.95\)</span>.</p></li>
+<li><p>Reverse: I want the chance I really have the disease when the test is positive ⇒ <span class="math inline">\(P(D\mid +)\)</span>.</p></li>
+</ul>
+</div>
 </section>
 <section id="looking-ahead" class="slide level2">
 <h2>Looking Ahead</h2>
-<p><strong>Next lecture</strong>: Random Variables and Probability Distributions - Discrete vs.&nbsp;continuous random variables - Expected value and variance - Binomial and normal distributions</p>
+<p><strong>Next lecture</strong>:</p>
+<ul>
+<li><p>Random Variables and Probability Distributions</p></li>
+<li><p>Discrete vs.&nbsp;continuous random variables</p></li>
+<li><p>Expected value and variance</p></li>
+</ul>
 </section>
 <section id="final-thoughts" class="slide level2">
 <h2>Final Thoughts</h2>
-<p>Probability is the foundation of statistics: - Helps us quantify uncertainty - Provides tools for making decisions with incomplete information - Essential for understanding statistical inference</p>
+<div class="note">
+<p>Probability is the foundation of statistics:</p>
+<ul>
+<li><p>Helps us quantify uncertainty</p></li>
+<li><p>Provides tools for making decisions with incomplete information</p></li>
+<li><p>Essential for understanding statistical inference</p></li>
+</ul>
+</div>
 <div class="fragment">
 <p><strong>Practice</strong>: The key to mastering probability is working through many problems!</p>
 </div>
 </section>
 <section id="questions" class="slide level2 center">
 <h2>Questions?</h2>
-<p><strong>Office Hours</strong>: [Your office hours] <strong>Email</strong>: [Your email] <strong>Next Class</strong>: Random Variables and Distributions</p>
-</section>
-<section id="bonus-probability-paradoxes" class="slide level2">
-<h2>Bonus: Probability Paradoxes</h2>
-<p><strong>Monty Hall Problem</strong>: Should you switch doors?</p>
-<p><strong>Birthday Paradox</strong>: How many people needed for 50% chance of shared birthday?</p>
-<p><strong>Simpson’s Paradox</strong>: When aggregate data reverses subgroup trends</p>
-<p><em>Explore these to deepen your probability intuition!</em></p>
+<p><strong>Office Hours</strong>: Thursday’s 11 AM On Zoom (Link on Canvas)</p>
+<p><strong>Email</strong>: nmathlouthi@ucsb.edu</p>
+<p><strong>Next Class</strong>: Random Variables and Distributions</p>
 </section>
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
 <ul>
 <li><p><a href="(/files/Book/os4_for_screen_reader.pdf)">Read Chapter 3 in course textbook</a></p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure>
-<p><embed data-src="https://bookdown.org/daniel_flores_agreda/Prob1-GSEM-UNIGE/settheory.html#the-venn-diagram"></p>
-<figcaption>Elements of Set Theory for Probability</figcaption>
-</figure>
-</div></li>
+<li><p><a href="https://bookdown.org/daniel_flores_agreda/Prob1-GSEM-UNIGE/settheory.html#the-venn-diagram">Elements of Set Theory for Probability</a></p></li>
 <li><p><a href="https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/resources/mitres_6_012s18_l01as/">Probability Models and Axioms</a></p></li>
 </ul>
 
 
 </section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../../img/logo.png" class="slide-logo"></p>

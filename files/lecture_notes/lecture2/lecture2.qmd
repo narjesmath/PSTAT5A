@@ -269,7 +269,9 @@ It answers the question: **"What is a representative value for this data?"**
 
 ## Definition and Formula
 
-The **mean** is the sum of all values divided by the number of values.
+::: {.definition}
+**🎯 Definition:** The **mean** is the sum of all values divided by the number of values.
+:::
 
 . . .
 
@@ -334,7 +336,9 @@ Mean = $\frac{85 + 90 + 78 + 92 + 88}{5} = \frac{433}{5} = 86.6$
 
 ## Definition
 
-The **median** is the middle value when data is arranged in ascending or descending order.
+::: {.definition}
+**🎯 Definition:** The **median** is the middle value when data is arranged in ascending or descending order.
+:::
 
 ## Calculation Steps
 
@@ -398,7 +402,9 @@ Consider household incomes: $30,000, $32,000, $35,000, $38,000, $2,000,000
 
 ## Definition
 
-The **mode** is the value that appears most frequently in a dataset.
+::: {.definition}
+**🎯 Definition:** The **mode** is the value that appears most frequently in a dataset.
+:::
 
 ```{mermaid}
 %%{init: {'flowchart': {'nodeSpacing': 100, 'rankSpacing': 100}, 'width': 600, 'height': 400}}%%
