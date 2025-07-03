@@ -2,7 +2,7 @@
 title: "Descriptive Statistics Part II"
 subtitle: "Variability, Position, Shape & Visualization  Lecture"
 author: "Narjes Mathlouthi"
-date: today
+date: 2025-06-26
 format: 
   revealjs:
     logo: /img/logo.png
@@ -917,7 +917,7 @@ $$z = \frac{85 - 78}{6} = \frac{7}{6} = 1.17$$
 
 ![](/files/lecture_notes/lecture3/img/kurtosis.png){.full-width}
 
-## Python Implementation - Position & Shape{.smaller}
+## Python Implementation - Position & Shape {.smaller}
 
 ```{python}
 #| echo: true
@@ -1085,7 +1085,7 @@ plt.show()
 ```
 
 
-## Boxplot Components Explained{.smaller}
+## Boxplot Components Explained {.smaller}
 
 ### The Box:
 - **Left edge**: Q1 (25th percentile)
@@ -1097,6 +1097,8 @@ plt.show()
 - **Extend to**: Most extreme values within 1.5 × IQR from box edges
 - **Lower whisker**: Minimum value within Q1 - 1.5×IQR
 - **Upper whisker**: Maximum value within Q3 + 1.5×IQR
+
+---
 
 ### Outliers:
 - **Points beyond whiskers**: Values > Q3 + 1.5×IQR or < Q1 - 1.5×IQR
@@ -1186,7 +1188,7 @@ plt.show()
 
 # Key Takeaways
 
-## Essential Concepts to Remember {.smaller}
+## Essential Concepts to Remember{.smaller}
 
 ### Variability:
 - **Standard deviation** is preferred over range for most analyses
@@ -1197,6 +1199,8 @@ plt.show()
 - **Percentiles** and **quartiles** provide relative position
 - **Z-scores** standardize across different distributions
 - **Five-number summary** gives complete overview
+
+---
 
 ### Visualization:
 - **Bin width choice** is critical for histogram interpretation

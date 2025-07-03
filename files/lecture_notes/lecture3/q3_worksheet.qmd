@@ -2,7 +2,7 @@
 title: "Linear Transformation Properties"
 subtitle: "Proving Relationships Between X and Y = aX"
 author: "Worksheet 1 Problem 3 Solution"
-date: today
+date: "06/26/2025"
 format: 
   revealjs:
     theme: default
@@ -469,7 +469,7 @@ If we transform the data using $y_i = 3x_i - 2$, what are the new mean and varia
 
 ---
 
-## Conclusion
+## Conclusion {.smaller}
 
 ::: {.proof-box}
 **What We Proved:**
@@ -493,7 +493,7 @@ For the linear transformation $y_i = ax_i$ with constant $a \neq 0$:
 
 ---
 
-## Questions? {.center}
+## Questions? {.center .smaller}
 
 **Key Concepts Covered:**
 

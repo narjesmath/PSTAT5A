@@ -2159,8 +2159,8 @@
     "objectID": "files/lecture_notes/lecture3/lecture3.html#learning-objectives",
     "href": "files/lecture_notes/lecture3/lecture3.html#learning-objectives",
     "title": "Descriptive Statistics Part II",
-    "section": "",
-    "text": "By the end of this lecture, you will be able to:\n\nCalculate and interpret measures of variability (range, variance, standard deviation)\nUnderstand and compute measures of position (percentiles, quartiles, z-scores)\nAssess distribution shape using skewness and kurtosis\nCreate and interpret histograms with appropriate bin widths\nConstruct and analyze boxplots for data exploration\nIdentify trends, patterns, and outliers in data visualizations\nApply Python for comprehensive descriptive analysis and visualization"
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nBy the end of this lecture, you will be able to:\n\nCalculate and interpret measures of variability (range, variance, standard deviation)\nUnderstand and compute measures of position (percentiles, quartiles, z-scores)\nAssess distribution shape using skewness and kurtosis\nCreate and interpret histograms with appropriate bin widths\nConstruct and analyze boxplots for data exploration\nIdentify trends, patterns, and outliers in data visualizations\nApply Python for comprehensive descriptive analysis and visualization"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#lecture-outline",
@@ -2174,14 +2174,14 @@
     "href": "files/lecture_notes/lecture3/lecture3.html#what-is-variability",
     "title": "Descriptive Statistics Part II",
     "section": "What is Variability?",
-    "text": "What is Variability?\n\n🎯 Definition: Variability (or dispersion) measures how spread out or scattered the data points are around the center.\n\n\nWhy Variability Matters\n\nTwo datasets can have the same mean but very different spreads\nVariability indicates consistency and predictability\nEssential for risk assessment and quality control\nHelps determine confidence in our central tendency measures"
+    "text": "What is Variability?\n\n🎯 Definition: Variability (or dispersion) measures how spread out or scattered the data points are around the center.\n\nWhy Variability Matters\n\nTwo datasets can have the same mean but very different spreads\nVariability indicates consistency and predictability\nEssential for risk assessment and quality control\nHelps determine confidence in our central tendency measures"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#range",
     "href": "files/lecture_notes/lecture3/lecture3.html#range",
     "title": "Descriptive Statistics Part II",
     "section": "Range",
-    "text": "Range\n\nRange = Maximum value - Minimum value\n\n\nExample\nData: 12, 15, 18, 22, 25, 30, 35\n\nRange = 35 - 12 = 23"
+    "text": "Range\n\nRange = Maximum value - Minimum value\n\nExample\nData: 12, 15, 18, 22, 25, 30, 35\n\nRange = 35 - 12 = 23"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#when-to-use-range",
@@ -2314,7 +2314,7 @@
     "href": "files/lecture_notes/lecture3/lecture3.html#definition-and-purpose",
     "title": "Descriptive Statistics Part II",
     "section": "Definition and Purpose",
-    "text": "Definition and Purpose\n\n🎯 Definition: Coefficient of Variation (CV) = \\(\\frac{\\text{Standard Deviation}}{\\text{Mean}} \\times 100\\%\\)\n\n. . .\n\nWhy Use CV?\n\nCompares variability across different units or scales\nRelative measure of variability\nUseful when means differ substantially"
+    "text": "Definition and Purpose\n\n🎯 Definition: Coefficient of Variation (CV) = \\(\\frac{\\text{Standard Deviation}}{\\text{Mean}} \\times 100\\%\\)\n\n\nWhy Use CV?\n\nCompares variability across different units or scales\nRelative measure of variability\nUseful when means differ substantially"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#python-implementation---variability",
@@ -2335,7 +2335,7 @@
     "href": "files/lecture_notes/lecture3/lecture3.html#percentiles-definition",
     "title": "Descriptive Statistics Part II",
     "section": "Percentiles Definition",
-    "text": "Percentiles Definition\nThe k-th percentile is the value below which k% of the data falls.\n\nExamples:\n\n50th percentile = Median (50% of data below this value)\n90th percentile = 90% of data falls below this value\n25th percentile = 25% of data falls below this value"
+    "text": "Percentiles Definition\nThe k-th percentile is the value below which k% of the data falls.\nExamples:\n\n50th percentile = Median (50% of data below this value)\n90th percentile = 90% of data falls below this value\n25th percentile = 25% of data falls below this value"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#quartiles",
@@ -2349,7 +2349,7 @@
     "href": "files/lecture_notes/lecture3/lecture3.html#interquartile-range-iqr",
     "title": "Descriptive Statistics Part II",
     "section": "Interquartile Range (IQR)",
-    "text": "Interquartile Range (IQR)\nIQR = Q3 - Q1\n. . .\n\n\n\nProperties of IQR:\n\nContains the middle 50% of the data\nResistant to outliers\nUsed in boxplot construction\nUseful for outlier detection"
+    "text": "Interquartile Range (IQR)\nIQR = Q3 - Q1\n\n\n\n\nProperties of IQR:\n\nContains the middle 50% of the data\nResistant to outliers\nUsed in boxplot construction\nUseful for outlier detection"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#z-score-definition",
@@ -2377,7 +2377,7 @@
     "href": "files/lecture_notes/lecture3/lecture3.html#skewness",
     "title": "Descriptive Statistics Part II",
     "section": "Skewness",
-    "text": "Skewness\nSkewness measures the asymmetry of a distribution.\n\nTypes of Skewness:\n\n\n\n\nSymmetric (Skewness ≈ 0): Mean ≈ Median ≈ Mode\nRight-skewed (Positive skewness): Mean &gt; Median, long tail to the right\nLeft-skewed (Negative skewness): Mean &lt; Median, long tail to the left"
+    "text": "Skewness\nSkewness measures the asymmetry of a distribution.\nTypes of Skewness:\n\n\n\n\nSymmetric (Skewness ≈ 0): Mean ≈ Median ≈ Mode\nRight-skewed (Positive skewness): Mean &gt; Median, long tail to the right\nLeft-skewed (Negative skewness): Mean &lt; Median, long tail to the left"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#examples-of-skewness",
@@ -2391,7 +2391,7 @@
     "href": "files/lecture_notes/lecture3/lecture3.html#kurtosis",
     "title": "Descriptive Statistics Part II",
     "section": "Kurtosis",
-    "text": "Kurtosis\nKurtosis measures the “tailedness” of a distribution. It measures the degree of peaked Ness or flatness of a distribution compared to the normal distribution.\n\nTypes:\n\nMesokurtic (Normal-like): Kurtosis ≈ 3\nLeptokurtic (Heavy tails): Kurtosis &gt; 3, more peaked\nPlatykurtic (Light tails): Kurtosis &lt; 3, flatter\n\nExcess Kurtosis = Kurtosis - 3 (makes normal distributions have excess kurtosis of 0)"
+    "text": "Kurtosis\nKurtosis measures the “tailedness” of a distribution. It measures the degree of peaked Ness or flatness of a distribution compared to the normal distribution.\nTypes:\n\nMesokurtic (Normal-like): Kurtosis ≈ 3\nLeptokurtic (Heavy tails): Kurtosis &gt; 3, more peaked\nPlatykurtic (Light tails): Kurtosis &lt; 3, flatter\n\nExcess Kurtosis = Kurtosis - 3 (makes normal distributions have excess kurtosis of 0)"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#python-implementation---position-shape",
@@ -2405,35 +2405,35 @@
     "href": "files/lecture_notes/lecture3/lecture3.html#what-is-a-histogram",
     "title": "Descriptive Statistics Part II",
     "section": "What is a Histogram?",
-    "text": "What is a Histogram?\nA histogram displays the distribution of a continuous variable by dividing data into bins and showing the frequency of observations in each bin.\n\nKey Components:\n\nX-axis: Variable values (continuous)\nY-axis: Frequency or density\nBins: Intervals that group the data\nBars: Height represents frequency in each bin"
+    "text": "What is a Histogram?\nA histogram displays the distribution of a continuous variable by dividing data into bins and showing the frequency of observations in each bin.\nKey Components:\n\nX-axis: Variable values (continuous)\nY-axis: Frequency or density\nBins: Intervals that group the data\nBars: Height represents frequency in each bin"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#choosing-bin-width-critical-decision",
     "href": "files/lecture_notes/lecture3/lecture3.html#choosing-bin-width-critical-decision",
     "title": "Descriptive Statistics Part II",
     "section": "Choosing Bin Width: Critical Decision",
-    "text": "Choosing Bin Width: Critical Decision\nBin width dramatically affects histogram interpretation!\n\nToo Few Bins (Wide bins):\n\nOversmoothing - lose important details\nMay hide multimodality\nDistribution appears simpler than it is\n\n\n\nToo Many Bins (Narrow bins):\n\nUndersmoothing - too much noise\nMay create artificial gaps\nHard to see overall pattern"
+    "text": "Choosing Bin Width: Critical Decision\nBin width dramatically affects histogram interpretation!\nToo Few Bins (Wide bins):\n\nOversmoothing - lose important details\nMay hide multimodality\nDistribution appears simpler than it is\n\nToo Many Bins (Narrow bins):\n\nUndersmoothing - too much noise\nMay create artificial gaps\nHard to see overall pattern"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#bin-width-guidelines",
     "href": "files/lecture_notes/lecture3/lecture3.html#bin-width-guidelines",
     "title": "Descriptive Statistics Part II",
     "section": "Bin Width Guidelines",
-    "text": "Bin Width Guidelines\n\nRule of Thumb Methods:\n\nSquare Root Rule: Number of bins ≈ \\(\\sqrt{n}\\)\nSturges’ Rule: Number of bins = \\(1 + \\log_2(n)\\)\nScott’s Rule: Bin width = \\(\\frac{3.5 \\times \\text{SD}}{n^{1/3}}\\)\nFreedman-Diaconis Rule: Bin width = \\(\\frac{2 \\times \\text{IQR}}{n^{1/3}}\\)\n\nBest practice: Try multiple bin widths and choose based on the story your data tells!"
+    "text": "Bin Width Guidelines\nRule of Thumb Methods:\n\nSquare Root Rule: Number of bins ≈ \\(\\sqrt{n}\\)\nSturges’ Rule: Number of bins = \\(1 + \\log_2(n)\\)\nScott’s Rule: Bin width = \\(\\frac{3.5 \\times \\text{SD}}{n^{1/3}}\\)\nFreedman-Diaconis Rule: Bin width = \\(\\frac{2 \\times \\text{IQR}}{n^{1/3}}\\)\n\nBest practice: Try multiple bin widths and choose based on the story your data tells!"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#python-histogram-examples",
     "href": "files/lecture_notes/lecture3/lecture3.html#python-histogram-examples",
     "title": "Descriptive Statistics Part II",
     "section": "Python Histogram Examples",
-    "text": "Python Histogram Examples\n\nCodeVisualization\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Generate sample data\nnp.random.seed(42)\ndata = np.random.normal(100, 15, 1000)\n\n\n\n\n# Create subplots with different bin counts\nfig, axes = plt.subplots(2, 2, figsize=(10, 5))\n\n# Different bin counts\nbin_counts = [10, 30, 50, 100]\ntitles = ['10 bins (too few)', '30 bins (good)', '50 bins (good)', '100 bins (too many)']\nfor i, (bins, title) in enumerate(zip(bin_counts, titles)):\n    row, col = i // 2, i % 2\n    axes[row, col].hist(data, bins=bins, alpha=0.7, edgecolor='black')\n    axes[row, col].set_title(title)\n    axes[row, col].set_xlabel('Value')\n    axes[row, col].set_ylabel('Frequency')\n\nplt.tight_layout()\nplt.show()"
+    "text": "Python Histogram Examples\n\nCodeVisualization\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Generate sample data\nnp.random.seed(42)\ndata = np.random.normal(100, 15, 1000)"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#interpreting-histograms",
     "href": "files/lecture_notes/lecture3/lecture3.html#interpreting-histograms",
     "title": "Descriptive Statistics Part II",
     "section": "Interpreting Histograms",
-    "text": "Interpreting Histograms\n\nWhat to Look For:\n\nShape: Normal, skewed, uniform, bimodal?\nCenter: Where is the “typical” value?\nSpread: How variable is the data?\nOutliers: Any unusual values?\nGaps: Are there missing values in certain ranges?\nMultiple peaks: Suggests multiple subgroups"
+    "text": "Interpreting Histograms\nWhat to Look For:\n\nShape: Normal, skewed, uniform, bimodal?\nCenter: Where is the “typical” value?\nSpread: How variable is the data?\nOutliers: Any unusual values?\nGaps: Are there missing values in certain ranges?\nMultiple peaks: Suggests multiple subgroups"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#anatomy-of-a-boxplot",
@@ -2447,14 +2447,14 @@
     "href": "files/lecture_notes/lecture3/lecture3.html#boxplot-components-explained",
     "title": "Descriptive Statistics Part II",
     "section": "Boxplot Components Explained",
-    "text": "Boxplot Components Explained\n\nThe Box:\n\nLeft edge: Q1 (25th percentile)\nMiddle line: Median (Q2, 50th percentile)\n\nRight edge: Q3 (75th percentile)\nBox width: IQR (contains middle 50% of data)\n\n\n\nThe Whiskers:\n\nExtend to: Most extreme values within 1.5 × IQR from box edges\nLower whisker: Minimum value within Q1 - 1.5×IQR\nUpper whisker: Maximum value within Q3 + 1.5×IQR\n\n\n\nOutliers:\n\nPoints beyond whiskers: Values &gt; Q3 + 1.5×IQR or &lt; Q1 - 1.5×IQR"
+    "text": "Boxplot Components Explained\nThe Box:\n\nLeft edge: Q1 (25th percentile)\nMiddle line: Median (Q2, 50th percentile)\n\nRight edge: Q3 (75th percentile)\nBox width: IQR (contains middle 50% of data)\n\nThe Whiskers:\n\nExtend to: Most extreme values within 1.5 × IQR from box edges\nLower whisker: Minimum value within Q1 - 1.5×IQR\nUpper whisker: Maximum value within Q3 + 1.5×IQR"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#what-boxplots-tell-us",
     "href": "files/lecture_notes/lecture3/lecture3.html#what-boxplots-tell-us",
     "title": "Descriptive Statistics Part II",
     "section": "What Boxplots Tell Us",
-    "text": "What Boxplots Tell Us\n\nDistribution Shape:\n\nSymmetric: Median in center of box, whiskers equal length\nRight-skewed: Median closer to Q1, longer upper whisker\nLeft-skewed: Median closer to Q3, longer lower whisker\n\n\n\nVariability:\n\nWide box: High variability in middle 50%\nLong whiskers: High overall variability\nMany outliers: Extreme variability"
+    "text": "What Boxplots Tell Us\nDistribution Shape:\n\nSymmetric: Median in center of box, whiskers equal length\nRight-skewed: Median closer to Q1, longer upper whisker\nLeft-skewed: Median closer to Q3, longer lower whisker\n\nVariability:\n\nWide box: High variability in middle 50%\nLong whiskers: High overall variability\nMany outliers: Extreme variability"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#comparing-groups-with-boxplots",
@@ -2489,21 +2489,21 @@
     "href": "files/lecture_notes/lecture3/lecture3.html#common-patterns-in-data",
     "title": "Descriptive Statistics Part II",
     "section": "Common Patterns in Data",
-    "text": "Common Patterns in Data\n\nDistribution Patterns:\n\nNormal/Bell-shaped: Symmetric, single peak\nUniform: All values equally likely\nBimodal: Two distinct peaks (suggests subgroups)\nMultimodal: Multiple peaks\nU-shaped: High values at extremes, low in middle\n\n\n\nOutlier Patterns:\n\nIndividual outliers: Data entry errors, measurement errors\nClustered outliers: Distinct subpopulation\nSystematic outliers: May indicate process changes"
+    "text": "Common Patterns in Data\nDistribution Patterns:\n\nNormal/Bell-shaped: Symmetric, single peak\nUniform: All values equally likely\nBimodal: Two distinct peaks (suggests subgroups)\nMultimodal: Multiple peaks\nU-shaped: High values at extremes, low in middle\n\nOutlier Patterns:\n\nIndividual outliers: Data entry errors, measurement errors\nClustered outliers: Distinct subpopulation\nSystematic outliers: May indicate process changes"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#red-flags-in-data-visualization",
     "href": "files/lecture_notes/lecture3/lecture3.html#red-flags-in-data-visualization",
     "title": "Descriptive Statistics Part II",
     "section": "Red Flags in Data Visualization",
-    "text": "Red Flags in Data Visualization\n\nWarning Signs:\n\nGaps in histograms: Missing data or measurement limitations\nHeaping: Values cluster at round numbers (10, 50, 100)\nTruncation: Data cut off at certain values\nDigit preference: People prefer certain ending digits\nMultiple modes: Hidden subgroups in your data"
+    "text": "Red Flags in Data Visualization\nWarning Signs:\n\nGaps in histograms: Missing data or measurement limitations\nHeaping: Values cluster at round numbers (10, 50, 100)\nTruncation: Data cut off at certain values\nDigit preference: People prefer certain ending digits\nMultiple modes: Hidden subgroups in your data"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#essential-concepts-to-remember",
     "href": "files/lecture_notes/lecture3/lecture3.html#essential-concepts-to-remember",
     "title": "Descriptive Statistics Part II",
     "section": "Essential Concepts to Remember",
-    "text": "Essential Concepts to Remember\n\nVariability:\n\nStandard deviation is preferred over range for most analyses\nCV allows comparison across different scales\nIQR is resistant to outliers\n\n\n\nPosition:\n\nPercentiles and quartiles provide relative position\nZ-scores standardize across different distributions\nFive-number summary gives complete overview\n\n\n\nVisualization:\n\nBin width choice is critical for histogram interpretation\nBoxplots excel at comparing groups and identifying outliers\nMultiple visualizations provide different insights"
+    "text": "Essential Concepts to Remember\nVariability:\n\nStandard deviation is preferred over range for most analyses\nCV allows comparison across different scales\nIQR is resistant to outliers\n\nPosition:\n\nPercentiles and quartiles provide relative position\nZ-scores standardize across different distributions\nFive-number summary gives complete overview"
   },
   {
     "objectID": "files/lecture_notes/lecture3/lecture3.html#practical-guidelines",
@@ -4352,5 +4352,12 @@
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Resources",
     "text": "Resources\n\nRead Chapter 3 in course textbook\nElements of Set Theory for Probability\nProbability Models and Axioms"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#questions-.center",
+    "href": "files/lecture_notes/lecture3/q3_worksheet.html#questions-.center",
+    "title": "Linear Transformation Properties",
+    "section": "Questions? {.center}",
+    "text": "Questions? {.center}\nKey Concepts Covered:\n\nSummation notation and indexing\nLinear transformations\nProperties of means and variances\nStep-by-step mathematical proofs\n\nNext Steps:\n\nApply to real datasets\nExplore non-linear transformations\nPractice with different scaling factors"
   }
 ]
