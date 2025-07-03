@@ -2720,7 +2720,7 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#resources",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Resources",
-    "text": "Resources\n\nRead Chapter 3 in course textbook\nElements of Set Theory for Probability\nProbability Models and Axioms"
+    "text": "Resources\n\nRead Chapter 3 in course textbook\nElements of Set Theory for Probability\nProbability Models and Axioms\nProbability Animations"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#intersection-a-cup-b",
@@ -4351,7 +4351,7 @@
     "href": "files/lecture_notes/lecture5/lecture5.html#resources",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Resources",
-    "text": "Resources\n\nRead Chapter 3 in course textbook\nElements of Set Theory for Probability\nProbability Models and Axioms"
+    "text": "Resources\n\nRead Chapter 3 in course textbook\nElements of Set Theory for Probability\nProbability Models and Axioms\nInteractive Set Theory & Conditional Probability"
   },
   {
     "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#questions-.center",
@@ -4359,5 +4359,82 @@
     "title": "Linear Transformation Properties",
     "section": "Questions? {.center}",
     "text": "Questions? {.center}\nKey Concepts Covered:\n\nSummation notation and indexing\nLinear transformations\nProperties of means and variances\nStep-by-step mathematical proofs\n\nNext Steps:\n\nApply to real datasets\nExplore non-linear transformations\nPractice with different scaling factors"
+  },
+  {
+    "objectID": "resources.html#week-2-introduction-to-probability",
+    "href": "resources.html#week-2-introduction-to-probability",
+    "title": "Course Resources",
+    "section": "Week 2: Introduction to Probability",
+    "text": "Week 2: Introduction to Probability"
+  },
+  {
+    "objectID": "resources.html#understanding-uncertainty-through-statistics",
+    "href": "resources.html#understanding-uncertainty-through-statistics",
+    "title": "Course Resources",
+    "section": "Understanding Uncertainty Through Statistics",
+    "text": "Understanding Uncertainty Through Statistics\nThis week introduces fundamental concepts in probability theory, including sample spaces, events, conditional probability, independence, and Bayes’ theorem. You’ll learn to quantify uncertainty and make informed decisions with incomplete information."
+  },
+  {
+    "objectID": "resources.html#week-3-data-visualization",
+    "href": "resources.html#week-3-data-visualization",
+    "title": "Course Resources",
+    "section": "Week 3: Data Visualization",
+    "text": "Week 3: Data Visualization\n\n\n🚧\n\n\nWeek 3: Statistical Analysis\n\n\n📊\n\n\nStatistical Inference & Confidence Intervals (CI’s)\nWeek 3 will cover statistical inference,and confidence intervals. Materials will be posted by week 3."
+  },
+  {
+    "objectID": "resources.html#week-4-statistical-analysis",
+    "href": "resources.html#week-4-statistical-analysis",
+    "title": "Course Resources",
+    "section": "Week 4: Statistical Analysis",
+    "text": "Week 4: Statistical Analysis\n\n\n📊\n\n\nStatistical Inference & Confidence Intervals (CI’s)\nWeek 4 will cover statistical inference, and confidence intervals. Materials will be posted by week 4."
+  },
+  {
+    "objectID": "files/resources/prob_cheat_sheet.html",
+    "href": "files/resources/prob_cheat_sheet.html",
+    "title": "Probability Rules Cheat Sheet",
+    "section": "",
+    "text": "Download PDF"
+  },
+  {
+    "objectID": "files/resources/prob_cheat_sheet.html#basic-probability-concepts",
+    "href": "files/resources/prob_cheat_sheet.html#basic-probability-concepts",
+    "title": "Probability Rules Cheat Sheet",
+    "section": "Basic Probability Concepts",
+    "text": "Basic Probability Concepts\n\nProbability Definition: \\[P(A) = \\frac{\\text{Number of favorable outcomes}}{\\text{Total number of outcomes}}\\]\nProperties: - \\(0 \\leq P(A) \\leq 1\\) - \\(P(\\emptyset) = 0\\) (impossible event) - \\(P(S) = 1\\) (certain event, where \\(S\\) is sample space)\n\n\nExample: Rolling a fair die, probability of getting an even number:\n\\[P(\\text{even}) = \\frac{3}{6} = \\frac{1}{2} = 0.5\\]\n\n\nPractice: What is the probability of drawing a face card from a standard deck?\nAnswer: \\(P(\\text{face card}) = \\frac{12}{52} = \\frac{3}{13}\\)"
+  },
+  {
+    "objectID": "files/resources/prob_cheat_sheet.html#complement-rule",
+    "href": "files/resources/prob_cheat_sheet.html#complement-rule",
+    "title": "Probability Rules Cheat Sheet",
+    "section": "Complement Rule",
+    "text": "Complement Rule\n\nFormula: \\[P(A^c) = 1 - P(A)\\] Alternative notation: \\(P(A') = 1 - P(A)\\)\n\nExplanation: The probability that event \\(A\\) does not occur.\n\nIf the probability that Anya will graduate is 0.9, then the probability she will not graduate is:\n\\[P(\\text{not graduate}) = 1 - 0.9 = 0.1\\]\n\n\nIf \\(P(\\text{rain}) = 0.3\\), what is \\(P(\\text{no rain})\\)?\nAnswer: \\(P(\\text{no rain}) = 1 - 0.3 = 0.7\\)"
+  },
+  {
+    "objectID": "files/resources/prob_cheat_sheet.html#addition-rules",
+    "href": "files/resources/prob_cheat_sheet.html#addition-rules",
+    "title": "Probability Rules Cheat Sheet",
+    "section": "Addition Rules",
+    "text": "Addition Rules\n\nGeneral Addition Rule (For Any Two Events)\n\nFormula: \\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\]\n\nExplanation: We subtract \\(P(A \\cap B)\\) to avoid double-counting the overlap.\n\nIn a class of 24 students, 10 are girls, 11 are A students, and 6 are girls who are A students.\nProbability of selecting a girl or an A student:\n\\[P(\\text{girl or A}) = \\frac{10}{24} + \\frac{11}{24} - \\frac{6}{24} = \\frac{15}{24} = 0.625\\]\n\n\n\nAddition Rule for Mutually Exclusive Events\n\nFormula: \\[P(A \\cup B) = P(A) + P(B)\\] Condition: \\(P(A \\cap B) = 0\\) (events cannot occur simultaneously)\n\n\nProbability of rolling a 2 or 6 on a die:\n\\[P(2 \\text{ or } 6) = \\frac{1}{6} + \\frac{1}{6} = \\frac{2}{6} = 0.333\\]\n\n\nA bag contains 4 red, 3 blue, and 2 green marbles. What’s the probability of drawing a red or green marble?\nAnswer: \\(P(\\text{red or green}) = \\frac{4}{9} + \\frac{2}{9} = \\frac{6}{9} = \\frac{2}{3}\\)"
+  },
+  {
+    "objectID": "files/resources/prob_cheat_sheet.html#multiplication-rules",
+    "href": "files/resources/prob_cheat_sheet.html#multiplication-rules",
+    "title": "Probability Rules Cheat Sheet",
+    "section": "Multiplication Rules",
+    "text": "Multiplication Rules\n\nMultiplication Rule for Dependent Events\n\nFormula: \\[P(A \\cap B) = P(A) \\times P(B|A)\\] Alternative: \\(P(A \\cap B) = P(B) \\times P(A|B)\\)\n\n\nDrawing two red cards without replacement from a standard deck:\n\\[P(\\text{red and red}) = \\frac{26}{52} \\times \\frac{25}{51} = 0.245\\]\n\n\n\nMultiplication Rule for Independent Events\n\nFormula: \\[P(A \\cap B) = P(A) \\times P(B)\\] Condition: Events are independent if \\(P(A|B) = P(A)\\)\n\n\nDrawing two red cards with replacement:\n\\[P(\\text{red and red}) = \\frac{26}{52} \\times \\frac{26}{52} = 0.25\\]\n\n\nTwo fair coins are flipped. What’s the probability of getting two heads?\nAnswer: \\(P(HH) = \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}\\)"
+  },
+  {
+    "objectID": "files/resources/prob_cheat_sheet.html#conditional-probability",
+    "href": "files/resources/prob_cheat_sheet.html#conditional-probability",
+    "title": "Probability Rules Cheat Sheet",
+    "section": "Conditional Probability",
+    "text": "Conditional Probability\n\nFormula: \\[P(A|B) = \\frac{P(A \\cap B)}{P(B)}\\] Condition: \\(P(B) &gt; 0\\)\n\nExplanation: The probability of event \\(A\\) occurring given that event \\(B\\) has occurred.\n\nIn a group of 100 people, 60 are employed and 40 are unemployed. Of the employed, 45 are satisfied with their job.\nWhat’s the probability someone is satisfied given they are employed?\n\\[P(\\text{satisfied} | \\text{employed}) = \\frac{45}{60} = 0.75\\]\n\n\nA card is drawn from a deck. Given that it’s red, what’s the probability it’s a heart?\nAnswer: \\(P(\\text{heart} | \\text{red}) = \\frac{13}{26} = \\frac{1}{2}\\)"
+  },
+  {
+    "objectID": "files/resources/prob_cheat_sheet.html#set-operations-and-probability",
+    "href": "files/resources/prob_cheat_sheet.html#set-operations-and-probability",
+    "title": "Probability Rules Cheat Sheet",
+    "section": "Set Operations and Probability",
+    "text": "Set Operations and Probability\n\nUnion (OR): - Symbol: \\(A \\cup B\\) - Meaning: Event \\(A\\) OR event \\(B\\) (or both) occurs - Formula: \\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\)\n\n\nIntersection (AND): - Symbol: \\(A \\cap B\\) - Meaning: Both events \\(A\\) AND \\(B\\) occur - Formula: \\(P(A \\cap B) = P(A) \\times P(B|A)\\)\n\n\nComplement (NOT): - Symbol: \\(A^c\\) or \\(A'\\) - Meaning: Event \\(A\\) does NOT occur - Formula: \\(P(A^c) = 1 - P(A)\\)"
   }
 ]

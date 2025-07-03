@@ -418,3 +418,5 @@ Yes, they are independent!
 - [Elements of Set Theory for Probability](https://bookdown.org/daniel_flores_agreda/Prob1-GSEM-UNIGE/settheory.html#the-venn-diagram)
 
 - [Probability Models and Axioms](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/resources/mitres_6_012s18_l01as/)
+
+- [Interactive Set Theory & Conditional Probability](https://seeing-theory.brown.edu/compound-probability/index.html)

@@ -735,3 +735,68 @@
     padding: 1.5rem;
   }
 }
+
+/* Key Concepts Checklist Box */
+.key-concepts-box {
+  background: linear-gradient(135deg, #e3fcec 0%, #f8f9fa 100%);
+  border: 2px solid #28a745;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+.key-concepts-box::before {
+  content: "\1F3AF"; /* 🎯 */
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+/* Study Schedule Recommendation Box */
+.study-schedule-box {
+  background: linear-gradient(135deg, #e3e9fd 0%, #f8f9fa 100%);
+  border: 2px solid #667eea;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+.study-schedule-box::before {
+  content: "\1F4C5"; /* 📅 */
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+/* Additional Resources Box */
+.additional-resources-box {
+  background: linear-gradient(135deg, #e1f5fe 0%, #f8f9fa 100%);
+  border: 2px solid #17a2b8;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+.additional-resources-box::before {
+  content: "\1F50D"; /* 🔍 */
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .key-concepts-box,
+  .study-schedule-box,
+  .additional-resources-box {
+    padding: 1.5rem;
+  }
+}

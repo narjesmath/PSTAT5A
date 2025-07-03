@@ -37,12 +37,12 @@ execute:
 This week introduces fundamental concepts in data science, including data types, basic statistics, and essential Python tools for data manipulation and analysis.
 :::
 
-### 📚 Textbook Readings
+### 📚 Core Materials
 
 ::: {.grid-2}
 ::: {.resource-card}
 ::: {.resource-type}
-Core Reading
+Required Reading
 :::
 
 ::: {.resource-title}
@@ -50,83 +50,107 @@ Core Reading
 :::
 
 ::: {.resource-description}
-Essential foundations covering data types, variables, and descriptive statistics. This reading provides the theoretical foundation for understanding how data is structured and analyzed in statistical contexts.
+Essential foundations covering data types, variables, and descriptive statistics. Provides theoretical foundation for understanding how data is structured and analyzed.
 :::
 
 ::: {.resource-meta}
 ::: {.meta-item}
-📖 **Format:** PDF
-:::
-::: {.meta-item}
-⏱️ **Time:** 2-3 hours
-:::
-::: {.meta-item}
-🎯 **Level:** Beginner
+📖 PDF • ⏱️ 2-3 hours • 🎯 Beginner
 :::
 :::
 :::
 
 ::: {.resource-card}
 ::: {.resource-type}
-Supplementary
+Python for Statistics
 :::
 
 ::: {.resource-title}
-[**Python for Data Analysis** (McKinney), Ch. 5](https://learning.oreilly.com/library/view/data-science-from/9781491901410/ch05.html#idp14953264){target="_blank"}
+[**Think Stats: Exploratory Data Analysis**](https://learning.oreilly.com/library/view/think-stats/9781449308117/){target="_blank"}
 :::
 
 ::: {.resource-description}
-Deep dive into pandas operations including `describe()`, `groupby()`, and other essential aggregation functions. Critical for understanding how to summarize and manipulate real-world datasets.
+Perfect introduction to Python for statistics students. Covers probability, descriptive statistics, and statistical inference using Python with real datasets.
+
+**🎓 UCSB Access:** [Library Database](https://www.oreilly.com/library-access/) → Search "O'Reilly" → Login with NetID → Search "Think Stats"
 :::
 
 ::: {.resource-meta}
 ::: {.meta-item}
-💻 **Format:** Online
-:::
-::: {.meta-item}
-⏱️ **Time:** 1-2 hours
-:::
-::: {.meta-item}
-🎯 **Level:** Intermediate
+💻 Online via UCSB Library • ⏱️ 4-6 hours • 🐍 Python + Statistics
 :::
 :::
 :::
-:::
-
-### 💻 Interactive Tutorials
 
 ::: {.resource-card}
 ::: {.resource-type}
-Hands-on Practice
+Supplementary Reading
 :::
 
 ::: {.resource-title}
-[**UCSB Library Data Lab:** Data Types and Format](https://carpentry.library.ucsb.edu/2025-01-14-python-ecology-lesson/04-data-types-and-format.html){target="_blank"}
+[**Python for Data Analysis**, Ch. 5](https://learning.oreilly.com/library/view/data-science-from/9781491901410/ch05.html#idp14953264){target="_blank"}
 :::
 
 ::: {.resource-description}
-Comprehensive hands-on workshop covering Python data types, pandas DataFrame structures, and input/output operations. Includes downloadable datasets and step-by-step exercises.
+Deep dive into pandas operations including `describe()`, `groupby()`, and essential aggregation functions for real-world datasets.
+
+**🎓 UCSB Access:** [Library Database](https://www.library.ucsb.edu/research/db/211) → Search "O'Reilly" → Login with NetID → Search "Python for Data Analysis"
 :::
 
 ::: {.resource-meta}
 ::: {.meta-item}
-🛠️ **Format:** Interactive
-:::
-::: {.meta-item}
-⏱️ **Time:** 2-3 hours
-:::
-::: {.meta-item}
-📁 **Includes:** Sample datasets
+💻 Online via UCSB Library • ⏱️ 1-2 hours • 🎯 Intermediate
 :::
 :::
 :::
 
-### 📖 Documentation & References
+::: {.resource-card}
+::: {.resource-type}
+Library Access
+:::
+
+::: {.resource-title}
+[**O'Reilly Learning Platform**](https://www.library.ucsb.edu/research/db/211){target="_blank"}
+:::
+
+::: {.resource-description}
+Access thousands of technology and programming books including Python, statistics, and data science titles. Essential for supplementary reading and advanced topics.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🏛️ UCSB Library • 📖 50,000+ titles • 🔐 NetID Required
+:::
+:::
+:::
+:::
+
+### 💻 Interactive Tools & Practice
 
 ::: {.grid-2}
 ::: {.resource-card}
 ::: {.resource-type}
-Core Reference
+Hands-on Workshop
+:::
+
+::: {.resource-title}
+[**UCSB Data Lab: Data Types & Format**](https://carpentry.library.ucsb.edu/2025-01-14-python-ecology-lesson/04-data-types-and-format.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Comprehensive hands-on workshop covering Python data types, pandas DataFrame structures, and input/output operations with downloadable datasets.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🛠️ Interactive • ⏱️ 2-3 hours • 📁 Sample datasets
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+API Documentation
 :::
 
 ::: {.resource-title}
@@ -134,15 +158,12 @@ Core Reference
 :::
 
 ::: {.resource-description}
-Official documentation for descriptive statistics in pandas. Essential reference for understanding central tendency, dispersion, and shape analysis of your datasets.
+Official documentation for descriptive statistics in pandas. Essential reference for understanding central tendency, dispersion, and shape analysis.
 :::
 
 ::: {.resource-meta}
 ::: {.meta-item}
-📚 **Type:** API Docs
-:::
-::: {.meta-item}
-🔗 **Quick Reference**
+📚 API Docs • 🔗 Quick Reference • 🎯 All levels
 :::
 :::
 :::
@@ -162,10 +183,7 @@ Complete reference for NumPy's statistical toolkit including `mean()`, `median()
 
 ::: {.resource-meta}
 ::: {.meta-item}
-📚 **Type:** API Docs
-:::
-::: {.meta-item}
-🔧 **Functions:** 25+ methods
+📚 API Docs • 🔧 25+ methods • 🎯 Beginner-Advanced
 :::
 :::
 :::
@@ -185,24 +203,363 @@ Comprehensive statistical analysis toolkit covering probability distributions, h
 
 ::: {.resource-meta}
 ::: {.meta-item}
-📚 **Type:** API Docs
+📚 API Docs • 🎯 Advanced • 🔬 Research-grade
 :::
+:::
+:::
+:::
+
+### 🎯 Learning Objectives & Study Plan
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Mastery Checklist
+:::
+
+::: {.resource-title}
+**Week 1 Learning Goals**
+:::
+
+::: {.resource-description}
+After completing this week, you should be able to:
+
+- [ ] **Understand data types** (numerical, categorical, discrete, continuous)
+- [ ] **Calculate descriptive statistics** (mean, median, mode, standard deviation)
+- [ ] **Use pandas** for data manipulation and analysis
+- [ ] **Create basic visualizations** to explore data patterns
+- [ ] **Interpret statistical summaries** and identify data characteristics
+- [ ] **Apply Python tools** for statistical analysis
+:::
+
+::: {.resource-meta}
 ::: {.meta-item}
-🎯 **Level:** Advanced
+✅ Self-Assessment • 🎯 Beginner • 🐍 Python Focus
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Study Schedule
+:::
+
+::: {.resource-title}
+**Recommended Learning Path**
+:::
+
+::: {.resource-description}
+**Days 1-2:** Core Reading (OpenIntro Chapters 1-2)
+
+**Day 3:** Python for Statistics (Think Stats)
+
+**Day 4:** Supplementary Reading (Python for Data Analysis)
+
+**Day 5:** Interactive tutorials and hands-on practice
+
+**Day 6:** Documentation exploration and API familiarization
+
+**Day 7:** Review and concept integration
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📅 7-day plan • ⏱️ 2-3 hours daily • 🎯 Beginner-friendly
 :::
 :::
 :::
 :::
 
-## Week 2: Data Visualization {.panel-tabset}
+### 🔍 Additional Resources
 
-::: {.coming-soon}
-::: {.coming-soon-icon}
-🚧
+::: {.resource-card}
+::: {.resource-type}
+Extended Learning
 :::
-### Resources Coming Soon!
-Week 2 materials focusing on matplotlib, seaborn, and plotly will be available next week. Check back soon for visualization tutorials and interactive exercises.
+
+::: {.resource-title}
+**Supplementary Materials by Topic**
 :::
+
+::: {.resource-description}
+**Python Basics:** [Python.org Tutorial](https://docs.python.org/3/tutorial/) • [Codecademy Python](https://www.codecademy.com/learn/learn-python-3) • [Python for Everybody](https://www.py4e.com/)
+
+**Data Science Foundations:** [Kaggle Learn](https://www.kaggle.com/learn/python) • [DataCamp Intro to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science) • [Coursera Python for Data Science](https://www.coursera.org/learn/python-for-applied-data-science-ai)
+
+**Statistical Computing:** [Think Python](https://greenteapress.com/wp/think-python-2e/) • [Automate the Boring Stuff](https://automatetheboringstuff.com/) • [Real Python Tutorials](https://realpython.com/)
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎯 All skill levels • 📈 Beginner to Advanced • 🆓 Many free options
+:::
+:::
+:::
+
+## Week 2: Introduction to Probability {.panel-tabset}
+
+::: {.week-header}
+## Understanding Uncertainty Through Statistics
+This week introduces fundamental concepts in probability theory, including sample spaces, events, conditional probability, independence, and Bayes' theorem. You'll learn to quantify uncertainty and make informed decisions with incomplete information.
+:::
+
+### 📚 Core Materials
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Required Reading
+:::
+
+::: {.resource-title}
+[**OpenIntro Statistics**, Chapter 3](/files/Book/os4_for_screen_reader.pdf){target="_blank"}
+:::
+
+::: {.resource-description}
+Essential foundations covering probability definitions, sample spaces, events, conditional probability, and independence.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📖 PDF • ⏱️ 3-4 hours • 🎯 Beginner-Intermediate
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Supplementary Reading
+:::
+
+::: {.resource-title}
+[**Elements of Set Theory for Probability**](https://bookdown.org/daniel_flores_agreda/Prob1-GSEM-UNIGE/settheory.html#the-venn-diagram){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive guide to set theory operations with Venn diagrams and visual explanations of probability concepts.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🌐 Online Book • ⏱️ 1-2 hours • 📊 Interactive diagrams
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Video Lectures
+:::
+
+::: {.resource-title}
+[**MIT: Introduction to Probability**](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/){target="_blank"}
+:::
+
+::: {.resource-description}
+High-quality video lectures covering probability axioms, sample spaces, and basic probability rules with problem sets.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎬 Video + Notes • ⏱️ 1 hour • 🎓 University Level
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Quick Reference
+:::
+
+::: {.resource-title}
+[**Probability Formulas Cheat Sheet**](/files/resources/prob_cheat_sheet.qmd)
+:::
+
+::: {.resource-description}
+Comprehensive reference sheet covering all major probability formulas including conditional probability and independence.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📄 PDF • ⚡ Quick reference • 🎯 All levels
+:::
+:::
+:::
+:::
+
+### 💻 Interactive Tools & Practice
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Visualizations
+:::
+
+::: {.resource-title}
+[**Seeing Theory: Probability**](https://seeing-theory.brown.edu/basic-probability/index.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive visual introduction with animations for conditional probability, Bayes' theorem, and independence.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎮 Interactive Web App • ⏱️ 1-2 hours
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Simulations
+:::
+
+::: {.resource-title}
+[**StatKey: Probability Simulations**](https://www.lock5stat.com/statkey/){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive probability simulation tool with tree diagrams, conditional probability, and Bayes' theorem calculators.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🌳 Interactive Tool • ⏱️ 1 hour
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Practice Problems
+:::
+
+::: {.resource-title}
+[**Khan Academy: Probability**](https://www.khanacademy.org/math/statistics-probability/probability-library){target="_blank"}
+:::
+
+::: {.resource-description}
+Comprehensive practice problems covering basic probability, conditional probability, and independence with instant feedback.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📝 Interactive Problems • ⏱️ 3-4 hours
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Python Code
+:::
+
+::: {.resource-title}
+[**Matplotlib Statistical Gallery**](https://matplotlib.org/stable/gallery/statistics/index.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Gallery of statistical visualizations including probability distributions, Venn diagrams, and tree diagrams.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📊 Code Examples • 🛠️ Python, Matplotlib
+:::
+:::
+:::
+:::
+
+### 🎯 Learning Objectives & Study Plan
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Mastery Checklist
+:::
+
+::: {.resource-title}
+**Week 2 Learning Goals**
+:::
+
+::: {.resource-description}
+After completing this week, you should be able to:
+
+- [ ] **Define probability** and understand basic properties (0-1 range)
+- [ ] **Identify sample spaces** and events for random experiments
+- [ ] **Apply set operations** (union, intersection, complement)
+- [ ] **Calculate conditional probabilities** using P(A|B) = P(A∩B)/P(B)
+- [ ] **Determine independence** using P(A∩B) = P(A)×P(B)
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+✅ Self-Assessment • 🎯 Beginner-Intermediate
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Study Schedule
+:::
+
+::: {.resource-title}
+**Recommended Learning Path**
+:::
+
+::: {.resource-description}
+**Days 1-2:** Core Reading (OpenIntro Chapter 3)
+
+**Day 3:** Interactive tutorials and visualizations
+
+**Day 4:** Video lectures and supplementary readings
+
+**Day 5:** Practice problems and exercises
+
+**Day 6:** Review and concept integration
+
+**Day 7:** Assessment preparation
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📅 7-day plan • ⏱️ 2-3 hours daily
+:::
+:::
+:::
+:::
+
+### 🔍 Additional Resources
+
+::: {.resource-card}
+::: {.resource-type}
+Extended Learning
+:::
+
+::: {.resource-title}
+**Supplementary Materials by Learning Style**
+:::
+
+::: {.resource-description}
+**Visual Learners:** [Khan Academy Videos](https://www.khanacademy.org/math/statistics-probability/probability-library) • [GeoGebra Activities](https://www.geogebra.org/t/probability) • [Math is Fun Stats](https://www.mathsisfun.com/data/index.html#stats)
+
+**Practical Applications:** [Medical Diagnosis Examples](https://www.mathsisfun.com/data/probability-false-positives-negatives.html) • [Real-world Problems](https://www.khanacademy.org/math/statistics-probability/probability-library/basic-set-ops/a/probability-the-basics)
+
+**Advanced Study:** [MIT 6.041 Full Course](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/) • [Probability Fallacies Guide](https://en.wikipedia.org/wiki/Category:Probability_fallacies)
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎯 All learning styles • 📈 Beginner to Advanced
+:::
+:::
+:::
+
+
+
+
 
 ## Week 3: Statistical Analysis {.panel-tabset}
 
@@ -213,6 +570,8 @@ Week 2 materials focusing on matplotlib, seaborn, and plotly will be available n
 ### Statistical Inference & Confidence Intervals (CI's)
 Week 3 will cover statistical inference,and  confidence intervals. Materials will be posted by week 3.
 :::
+
+
 
 ## Week 4: Statistical Methods & Testing {.panel-tabset}
 
