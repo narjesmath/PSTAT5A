@@ -3694,5 +3694,89 @@
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Final Thoughts",
     "text": "Final Thoughts\n\nProbability is the foundation of statistics:\n\nHelps us quantify uncertainty\nProvides tools for making decisions with incomplete information\nEssential for understanding statistical inference\n\n\n\nPractice: The key to mastering probability is working through many problems!"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-1-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-1-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 1 Solutions",
+    "text": "Task 1 Solutions\n\nTask 1 Solutions:\n\nImport the numpy module as np, and check that np.sin(0) returns a value of 0.\nImport the datascience module as ds, and check the table creation works correctly.\n\n\n\n# Solution to Task 1\n\n# Part 1: Import numpy and test sin function\nimport numpy as np\nprint(\"np.sin(0) =\", np.sin(0))\n\n# Part 2: Import datascience and test table creation\nimport datascience as ds\n\ntable_result = ds.Table().with_columns(\n    \"Col1\", [1, 2, 3],\n    \"Col2\", [2, 3, 4]\n)\nprint(table_result)\n\nnp.sin(0) = 0.0\nCol1 | Col2\n1    | 2\n2    | 3\n3    | 4"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-2-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-2-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 2 Solutions",
+    "text": "Task 2 Solutions\n\nTask 2 Solutions: Create x_list and x_array containing elements 1, 2, and 3, then compute mean and median.\n\n\n# Solution to Task 2\n\n# Create x_list as a regular Python list\nx_list = [1, 2, 3]\n\n# Create x_array as a numpy array\nx_array = np.array([1, 2, 3])\n\n# Compute mean and median for x_list\nprint(\"x_list mean:\", np.mean(x_list))\nprint(\"x_list median:\", np.median(x_list))\n\n# Compute mean and median for x_array\nprint(\"x_array mean:\", np.mean(x_array))\nprint(\"x_array median:\", np.median(x_array))\n\n# Verify they give the same results\nprint(\"\\nBoth give the same results!\")\n\nx_list mean: 2.0\nx_list median: 2.0\nx_array mean: 2.0\nx_array median: 2.0\n\nBoth give the same results!"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-3-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-3-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 3 Solutions",
+    "text": "Task 3 Solutions\n\nTask 3 Solutions: Look up np.ptp() function and apply it to the data.\n\nAnswer: The np.ptp() function computes the range of values (maximum - minimum) along an axis. PTP stands for “Peak To Peak” - the difference between the maximum peak and minimum peak values.\n\n# Solution to Task 3\n\n# Apply np.ptp() to x_list and x_array from Task 2\nprint(\"Range of x_list using np.ptp():\", np.ptp(x_list))\nprint(\"Range of x_array using np.ptp():\", np.ptp(x_array))\n\n# Manual verification: max - min\nprint(\"Manual calculation: max - min =\", max(x_list) - min(x_list))\n\n# Both should give the same result: 3 - 1 = 2\n\nRange of x_list using np.ptp(): 2\nRange of x_array using np.ptp(): 2\nManual calculation: max - min = 2"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-4-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-4-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 4 Solutions",
+    "text": "Task 4 Solutions\n\nTask 4 Solutions: Compute standard deviation by hand and compare with np.std() function.\n\n\n# Solution to Task 4\n\nx_list = [1, 2, 3]  # From Task 2\n\n# Part (a): Calculate sample standard deviation by hand (using n-1)\n# Mean = (1 + 2 + 3) / 3 = 2\nmean_x = 2\n\n# Sample variance = [(1-2)² + (2-2)² + (3-2)²] / (3-1)\n# = [1 + 0 + 1] / 2 = 2/2 = 1\nsample_variance = ((1-2)**2 + (2-2)**2 + (3-2)**2) / (3-1)\nsample_std = np.sqrt(sample_variance)\n\nprint(\"Sample standard deviation (by hand):\", sample_std)\nprint(\"Sample standard deviation (by hand):\", np.sqrt(1))  # Should be 1.0\n\n# Part (b): Compare with np.std(x_list)\nprint(\"np.std(x_list) default:\", np.std(x_list))\nprint(\"Does this match part (a)?\", np.isclose(sample_std, np.std(x_list)))\n\n# Part (c): Calculate population standard deviation by hand (using n)\n# Population variance = [(1-2)² + (2-2)² + (3-2)²] / 3\n# = [1 + 0 + 1] / 3 = 2/3\npopulation_variance = ((1-2)**2 + (2-2)**2 + (3-2)**2) / 3\npopulation_std = np.sqrt(population_variance)\n\nprint(\"Population standard deviation (by hand):\", population_std)\nprint(\"This matches np.std(x_list):\", np.isclose(population_std, np.std(x_list)))\n\n# Part (d): Use ddof=1 to get sample standard deviation\nprint(\"np.std(x_list, ddof=1):\", np.std(x_list, ddof=1))\nprint(\"This matches part (a):\", np.isclose(sample_std, np.std(x_list, ddof=1)))\n\nSample standard deviation (by hand): 1.0\nSample standard deviation (by hand): 1.0\nnp.std(x_list) default: 0.816496580928\nDoes this match part (a)? False\nPopulation standard deviation (by hand): 0.816496580928\nThis matches np.std(x_list): True\nnp.std(x_list, ddof=1): 1.0\nThis matches part (a): True"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#optional-task-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#optional-task-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Optional Task Solutions",
+    "text": "Optional Task Solutions\n\nOptional Task Solutions: Create a custom IQR function.\n\n\n# Solution to Optional Task\n\ndef calculate_iqr(data):\n    \"\"\"\n    Calculate the Interquartile Range (IQR) of a dataset.\n    \n    Parameter:\n    data - a list or array of numbers\n    \n    Returns:\n    The IQR value (Q3 - Q1)\n    \"\"\"\n    # Calculate the IQR using the numpy method we learned\n    iqr_value = np.diff(np.percentile(data, [25, 75]))[0]\n    return iqr_value\n\n# Test the function\ntest_scores = [72, 85, 90, 78, 92, 88, 76, 94, 82, 89, 91, 77]\n\n# Use our custom function\nmy_iqr = calculate_iqr(test_scores)\nprint(f\"IQR using our function: {my_iqr}\")\n\n# Compare with the direct method\ndirect_iqr = np.diff(np.percentile(test_scores, [25, 75]))[0]\nprint(f\"IQR using direct method: {direct_iqr}\")\n\n# They should be the same!\nprint(f\"Results match: {np.isclose(my_iqr, direct_iqr)}\")\n\nIQR using our function: 12.5\nIQR using direct method: 12.5\nResults match: True"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-5-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-5-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 5 Solutions",
+    "text": "Task 5 Solutions\n\nTask 5 Solutions: Create boxplots with various customizations.\n\n\n# Solution to Task 5\n\n# Import matplotlib for plotting\nimport matplotlib.pyplot as plt\n%matplotlib inline\nplt.style.use('seaborn-v0_8-whitegrid')\n\n# Step 1: Create the list y\ny = [1, 2, 3, 4, 5, 4, 3, 5, 4, 1, 2]\n\n# Step 2: Create basic vertical boxplot\nplt.figure(figsize=(8, 6))\nplt.subplot(2, 2, 1)\nplt.boxplot(y)\nplt.title(\"Basic Vertical Boxplot\")\n\n# Step 3: Create horizontal boxplot\nplt.subplot(2, 2, 2)\nplt.boxplot(y, orientation='horizontal')\nplt.title(\"Horizontal Boxplot\")\n\n# Step 4: Add color\nplt.subplot(2, 2, 3)\nplt.boxplot(y, orientation='horizontal', patch_artist=True, \n            boxprops=dict(facecolor=\"aquamarine\"))\nplt.title(\"Colored Horizontal Boxplot\")\n\n# Step 5: Final version with title\nplt.subplot(2, 2, 4)\nplt.boxplot(y, orientation='horizontal', patch_artist=True, \n            boxprops=dict(facecolor=\"aquamarine\"))\nplt.title(\"My First Python Boxplot\")\n\nplt.tight_layout()\nplt.show()\n\n# Answer the IQR question\nprint(\"\\nBased on the boxplot:\")\nprint(\"Q1 (25th percentile) appears to be around 2\")\nprint(\"Q3 (75th percentile) appears to be around 4.5\")\nprint(\"So IQR ≈ 4.5 - 2 = 2.5\")\n\n# Verify with Python calculation\niqr_calculated = np.diff(np.percentile(y, [25, 75]))[0]\nprint(f\"\\nActual IQR calculated by Python: {iqr_calculated}\")\n\n\n\n\n\n\n\n\n\nBased on the boxplot:\nQ1 (25th percentile) appears to be around 2\nQ3 (75th percentile) appears to be around 4.5\nSo IQR ≈ 4.5 - 2 = 2.5\n\nActual IQR calculated by Python: 2.0\n\n\n\n# Solution to Task 5\n\n# Import matplotlib for plotting\nimport matplotlib.pyplot as plt\n%matplotlib inline\nplt.style.use('seaborn-v0_8-whitegrid')\n\n# Step 1: Create the list y\ny = [1, 2, 3, 4, 5, 4, 3, 5, 4, 1, 2]\n\n# Step 2: Create basic vertical boxplot\nplt.figure(figsize=(8, 6))\nplt.subplot(2, 2, 1)\nplt.boxplot(y)\nplt.title(\"Basic Vertical Boxplot\")\n\n# Step 3: Create horizontal boxplot\nplt.subplot(2, 2, 2)\nplt.boxplot(y, orientation='horizontal')\nplt.title(\"Horizontal Boxplot\")\n\n# Step 4: Add color\nplt.subplot(2, 2, 3)\nplt.boxplot(y, orientation='horizontal', patch_artist=True, \n            boxprops=dict(facecolor=\"aquamarine\"))\nplt.title(\"Colored Horizontal Boxplot\")\n\n# Step 5: Final version with title\nplt.subplot(2, 2, 4)\nplt.boxplot(y, orientation='horizontal', patch_artist=True, \n            boxprops=dict(facecolor=\"aquamarine\"))\nplt.title(\"My First Python Boxplot\")\n\nplt.tight_layout()\nplt.show()\n\n# Answer the IQR question\nprint(\"\\nBased on the boxplot:\")\nprint(\"Q1 (25th percentile) appears to be around 2\")\nprint(\"Q3 (75th percentile) appears to be around 4.5\")\nprint(\"So IQR ≈ 4.5 - 2 = 2.5\")\n\n# Verify with Python calculation\niqr_calculated = np.diff(np.percentile(y, [25, 75]))[0]\nprint(f\"\\nActual IQR calculated by Python: {iqr_calculated}\")\n\n\n\n\n\n\n\n\n\nBased on the boxplot:\nQ1 (25th percentile) appears to be around 2\nQ3 (75th percentile) appears to be around 4.5\nSo IQR ≈ 4.5 - 2 = 2.5\n\nActual IQR calculated by Python: 2.0"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-6-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-6-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 6 Solutions",
+    "text": "Task 6 Solutions\n\nTask 6 Solutions: Create a histogram with appropriate bins and labels.\n\n\n# Solution to Task 6\n\ny = [1, 2, 3, 4, 5, 4, 3, 5, 4, 1, 2]  # From Task 5\n\n# Create histogram with appropriate bins\nplt.figure(figsize=(10, 6))\n\n# Method 1: Using explicit bin edges\nplt.subplot(1, 2, 1)\nplt.hist(y, bins=[0.5, 1.5, 2.5, 3.5, 4.5, 5.5], rwidth=0.9, edgecolor='black')\nplt.xlabel('Values')\nplt.ylabel('Frequency')\nplt.title('Histogram of y values (Method 1)')\n\n# Method 2: Using range and bins parameters\nplt.subplot(1, 2, 2)\nplt.hist(y, bins=5, range=(0.5, 5.5), rwidth=0.9, edgecolor='black')\nplt.xlabel('Values')\nplt.ylabel('Frequency')\nplt.title('Histogram of y values (Method 2)')\n\nplt.tight_layout()\nplt.show()\n\n# Show frequency count for verification\nunique, counts = np.unique(y, return_counts=True)\nprint(\"Value frequencies:\")\nfor value, count in zip(unique, counts):\n    print(f\"Value {value}: appears {count} times\")\n\n\n\n\n\n\n\n\nValue frequencies:\nValue 1: appears 2 times\nValue 2: appears 2 times\nValue 3: appears 2 times\nValue 4: appears 3 times\nValue 5: appears 2 times"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-7-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-7-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 7 Solutions",
+    "text": "Task 7 Solutions\n\nTask 7 Solutions: Create a scatterplot with proper labels.\n\n\n# Solution to Task 7\n\n# Part 1: Copy and run the provided code\nnp.random.seed(5)\n\nx1 = np.random.normal(0, 1, 100)\nx2 = x1 + np.random.normal(0, 1, 100)\n\nplt.figure(figsize=(8, 6))\nplt.scatter(x1, x2)\n\n# Part 2: Add labels and title\nplt.xlabel('x1')\nplt.ylabel('x2')\nplt.title('My First Python Scatterplot')\nplt.grid(True, alpha=0.3)\nplt.show()\n\n# Additional information about the plot\nprint(f\"Number of points plotted: {len(x1)}\")\nprint(f\"x1 range: {x1.min():.2f} to {x1.max():.2f}\")\nprint(f\"x2 range: {x2.min():.2f} to {x2.max():.2f}\")\n\n\n\n\n\n\n\n\nNumber of points plotted: 100\nx1 range: -2.86 to 2.43\nx2 range: -4.00 to 4.10"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-8-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-8-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 8 Solutions",
+    "text": "Task 8 Solutions\n\nTask 8 Solutions: Plot the function f(x) = x - x²sin(x) between x = -10 and x = 10.\n\n\n# Solution to Task 8\n\n# Create x values using linspace for a smooth plot\nx = np.linspace(-10, 10, 1000)  # 1000 points for smoothness\n\n# Define the function f(x) = x - x²sin(x)\ny = x - x**2 * np.sin(x)\n\n# Create the plot with red color\nplt.figure(figsize=(12, 8))\nplt.plot(x, y, color='red', linewidth=2)\nplt.xlabel('x')\nplt.ylabel('f(x)')\nplt.title('Plot of f(x) = x - x²sin(x)')\nplt.grid(True, alpha=0.3)  # Add a light grid for better readability\nplt.show()\n\n# Show what happens with fewer points for comparison\nplt.figure(figsize=(12, 4))\n\n# Fewer points - not smooth\nplt.subplot(1, 2, 1)\nx_few = np.linspace(-10, 10, 20)\ny_few = x_few - x_few**2 * np.sin(x_few)\nplt.plot(x_few, y_few, color='blue', linewidth=2, marker='o')\nplt.xlabel('x')\nplt.ylabel('f(x)')\nplt.title('With 20 points (not smooth)')\nplt.grid(True, alpha=0.3)\n\n# Many points - smooth\nplt.subplot(1, 2, 2)\nplt.plot(x, y, color='red', linewidth=2)\nplt.xlabel('x')\nplt.ylabel('f(x)')\nplt.title('With 1000 points (smooth)')\nplt.grid(True, alpha=0.3)\n\nplt.tight_layout()\nplt.show()\n\nprint(\"Notice how more points create a smoother curve!\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotice how more points create a smoother curve!"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#summary-of-key-learning-points",
+    "href": "files/labs/lab3/lab3_sln.html#summary-of-key-learning-points",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Summary of Key Learning Points",
+    "text": "Summary of Key Learning Points\n\nKey Functions Learned:\n\nnp.mean() - Calculate mean\nnp.median() - Calculate median\nnp.std() - Calculate standard deviation (use ddof=1 for sample std)\nnp.ptp() - Calculate range (peak-to-peak)\nnp.percentile() - Calculate percentiles\nnp.diff(np.percentile(data, [25,75]))[0] - Calculate IQR"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#key-plotting-functions",
+    "href": "files/labs/lab3/lab3_sln.html#key-plotting-functions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Key Plotting Functions:",
+    "text": "Key Plotting Functions:\n\nplt.boxplot() - Create boxplots\nplt.hist() - Create histograms\nplt.scatter() - Create scatterplots\nplt.plot() - Create line plots\nplt.xlabel(), plt.ylabel(), plt.title() - Add labels"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#important-concepts",
+    "href": "files/labs/lab3/lab3_sln.html#important-concepts",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Important Concepts:",
+    "text": "Important Concepts:\n\nSample vs Population Standard Deviation: Use ddof=1 for sample statistics\nFunction Parameters: Many plotting functions accept optional parameters for customization\nSmooth Plotting: Use more points in np.linspace() for smoother function plots\nModule Importing: import module as abbreviation saves typing\n\nThis concludes Lab 3 Solutions!"
   }
 ]
