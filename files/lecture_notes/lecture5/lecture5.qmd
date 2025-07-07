@@ -1161,29 +1161,6 @@ c) Yes, they're independent since $P(A|B) = P(A)$
 :::
 ---
 
-## Practice Problem 4
-
-:::{.example}
-A bag contains 4 red, 3 blue, and 2 green marbles. Three marbles are drawn without replacement.
-
-Find the probability that:
-a) All three are red
-b) No two are the same color
-c) At least one is blue
-
-:::
----
-
-## Practice Problem 4 Solutions
-
-:::{.solution}
-a) All red: $\frac{4}{9} \times \frac{3}{8} \times \frac{2}{7} = \frac{24}{504} = \frac{1}{21}$
-
-b) Different colors: $\frac{4 \times 3 \times 2}{9 \times 8 \times 7} \times 3! = \frac{24 \times 6}{504} = \frac{144}{504} = \frac{2}{7}$
-
-c) At least one blue: $1 - P(\text{no blue}) = 1 - \frac{6 \times 5 \times 4}{9 \times 8 \times 7} = 1 - \frac{120}{504} = \frac{384}{504} = \frac{16}{21}$
-:::
----
 
 ## Common Questions {.smaller}
 
