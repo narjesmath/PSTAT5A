@@ -220,6 +220,8 @@ Random Variables
 :::
 ::: {.lab-quiz}
 [Lab3](/files/labs/lab3/lab3.qmd)
+
+[Lab3 Solutions](/files/labs/lab3/lab3_sln.qmd)
 :::
 ::: {.worksheet}
 Worksheet 3

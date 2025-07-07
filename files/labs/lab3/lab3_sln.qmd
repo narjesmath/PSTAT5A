@@ -1,7 +1,7 @@
 ---
 title: "Lab 3: Descriptive Statistics - SOLUTIONS"
-subtitle: "PSTAT 5A - Summer Session A 2025"
-author: "Solution Key"
+subtitle: "PSTAT 5A - Summer Session A 2025 - Solution Key"
+author: "Narjes Mathlouthi"
 format: 
   html:
     toc: true
