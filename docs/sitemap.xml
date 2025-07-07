@@ -1,71 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://pstat5a.com/files/labs/lab3/lab3.html</loc>
+    <lastmod>2025-07-06T04:11:57.864Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/worksheets/worksheet3.html</loc>
+    <lastmod>2025-07-06T20:20:27.919Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/worksheets/worksheet3_sln.html</loc>
+    <lastmod>2025-07-07T00:25:28.969Z</lastmod>
+  </url>
+  <url>
     <loc>https://pstat5a.com/schedule.html</loc>
-    <lastmod>2025-07-03T21:14:24.317Z</lastmod>
+    <lastmod>2025-07-07T14:21:52.042Z</lastmod>
   </url>
   <url>
-    <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4.html</loc>
-    <lastmod>2025-07-03T19:24:14.728Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pstat5a.com/files/lecture_notes/lecture3/lecture3.html</loc>
-    <lastmod>2025-07-03T18:49:12.898Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pstat5a.com/files/lecture_notes/lecture2/lecture2.html</loc>
-    <lastmod>2025-07-03T18:52:39.031Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4_part2.html</loc>
-    <lastmod>2025-07-03T16:50:51.786Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4_part3.html</loc>
-    <lastmod>2025-07-03T16:50:33.393Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4_part1.html</loc>
-    <lastmod>2025-07-03T17:36:54.089Z</lastmod>
+    <loc>https://pstat5a.com/syllabus.html</loc>
+    <lastmod>2025-06-26T20:12:15.481Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/lecture9/lecture9.html</loc>
-    <lastmod>2025-06-29T21:28:10.331Z</lastmod>
+    <lastmod>2025-07-07T01:07:04.861Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/lecture6/lecture6.html</loc>
-    <lastmod>2025-07-03T17:38:57.224Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pstat5a.com/files/lecture_notes/lecture5/lecture5.html</loc>
-    <lastmod>2025-07-03T19:21:47.654Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4-5-6.html</loc>
-    <lastmod>2025-07-03T08:04:45.902Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pstat5a.com/files/lecture_notes/lecture8/lecture8.html</loc>
-    <lastmod>2025-06-29T21:27:43.075Z</lastmod>
-  </url>
-  <url>
-    <loc>https://pstat5a.com/files/lecture_notes/Lecture_1/lecture1.html</loc>
-    <lastmod>2025-07-03T18:35:42.681Z</lastmod>
+    <lastmod>2025-07-07T14:15:38.611Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/lecture3/q3_worksheet.html</loc>
     <lastmod>2025-07-03T18:51:52.963Z</lastmod>
   </url>
   <url>
-    <loc>https://pstat5a.com/resources.html</loc>
-    <lastmod>2025-07-03T21:20:33.940Z</lastmod>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4.html</loc>
+    <lastmod>2025-07-03T19:24:14.728Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture2/lecture2.html</loc>
+    <lastmod>2025-07-03T18:52:39.031Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/resources/prob_cheat_sheet.html</loc>
-    <lastmod>2025-07-03T20:24:57.745Z</lastmod>
+    <lastmod>2025-07-06T03:46:28.132Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/worksheets/worksheet2.html</loc>
+    <lastmod>2025-07-02T17:16:54.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/labs/lab2/lab2.html</loc>
+    <lastmod>2025-06-30T12:01:28.683Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/labs/lab2/lab2_sln.html</loc>
+    <lastmod>2025-07-07T14:22:08.075Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/worksheets/worksheet2_sln.html</loc>
     <lastmod>2025-07-03T21:12:55.570Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/Lecture_1/lecture1.html</loc>
+    <lastmod>2025-07-03T18:35:42.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture5/lecture5.html</loc>
+    <lastmod>2025-07-07T02:24:46.708Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture4/lecture4-5-6.html</loc>
+    <lastmod>2025-07-03T08:04:45.902Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture3/lecture3.html</loc>
+    <lastmod>2025-07-03T18:49:12.898Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture8/lecture8.html</loc>
+    <lastmod>2025-07-07T01:01:51.289Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture7/lecture7.html</loc>
+    <lastmod>2025-07-07T01:01:32.206Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/resources.html</loc>
+    <lastmod>2025-07-06T03:46:28.405Z</lastmod>
   </url>
 </urlset>

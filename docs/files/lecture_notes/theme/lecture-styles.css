@@ -352,29 +352,21 @@
   font-size: 1.1em;
 }
 
-/* Time management boxes */
+/* Time estimate box - modern pill style */
 .time-box {
-  background-color: #e7f3ff;
-  border: 2px solid #b3d9ff;
-  border-radius: 8px;
-  padding: 0.8em;
-  margin: 0.8em 0;
-  font-size: 0.8em;
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
-  box-sizing: border-box;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-}
-
-.time-box h4 {
-  color: #0066cc;
-  margin-top: 0;
-  margin-bottom: 0.4em;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  background: #fff4e6;
+  border-left: 5px solid #ff9800;
+  color: #b36b00;
   font-weight: 600;
   font-size: 1em;
+  padding: 0.5em 1.2em;
+  margin: 0.7em 0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.08);
+  gap: 0.5em;
 }
 
 /* Concept explanation boxes */
@@ -866,7 +858,7 @@
 
 /* Ensure all content boxes fit */
 .problem, .solution, .formula-box, .concept-box, .definition, .definitions, .definition-item,
-.important, .time-box, .example, .theorem, .note, .key-difference {
+.important, .time-box, .example, .theorem, .note, .key-difference, .task-box {
   max-width: 100%;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -915,7 +907,7 @@
   
   /* Content box adjustments */
   .problem, .solution, .formula-box, .concept-box, .definition, .definitions, .definition-item,
-  .important, .time-box, .example, .theorem, .note, .key-difference {
+  .important, .time-box, .example, .theorem, .note, .key-difference, .task-box {
     padding: 0.8em;
     font-size: 0.7em;
     margin: 0.8em 0;
@@ -959,7 +951,7 @@
   
   /* Further content box adjustments */
   .problem, .solution, .formula-box, .concept-box, .definition, .definitions, .definition-item,
-  .important, .time-box, .example, .theorem, .note, .key-difference {
+  .important, .time-box, .example, .theorem, .note, .key-difference, .task-box {
     padding: 0.6em;
     font-size: 0.65em;
     margin: 0.6em 0;
@@ -1004,7 +996,7 @@
   .reveal h4 { font-size: 0.7em; }
   
   .problem, .solution, .formula-box, .concept-box, .definition, .definitions, .definition-item,
-  .important, .time-box, .example, .theorem, .note, .key-difference {
+  .important, .time-box, .example, .theorem, .note, .key-difference, .task-box {
     padding: 0.5em;
     font-size: 0.6em;
     margin: 0.5em 0;
@@ -1022,7 +1014,7 @@
   }
   
   .problem, .solution, .formula-box, .concept-box, .definition, .definitions, .definition-item,
-  .important, .time-box, .example, .theorem, .note, .key-difference {
+  .important, .time-box, .example, .theorem, .note, .key-difference, .task-box {
     padding: 0.6em;
     margin: 0.6em 0;
   }
@@ -1229,7 +1221,8 @@
   .problem,
   .solution,
   .formula-box,
-  .concept-box {
+  .concept-box,
+  .task-box {
     break-inside: avoid;
     page-break-inside: avoid;
   }
@@ -1307,4 +1300,113 @@
   margin-top: 0.2em;
   letter-spacing: 0.01em;
 }
+
+/* Task boxes for lab exercises */
+.task-box {
+  background: linear-gradient(135deg, #e8f4fd 0%, #f8f9fa 100%);
+  border: 2px solid #3498db;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 0.3s ease;
+}
+
+div.task-box::before {
+  content: "📝" !important;
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  background: white;
+  padding: 0 8px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.task-box:hover {
+  border-color: #2980b9;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.task-box h2 {
+  color: #2980b9;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-bottom: 2px solid #bdd7e7;
+  padding-bottom: 0.5rem;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+.task-box h3 {
+  color: #3498db;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+/* Ensure task-box content is properly styled */
+.task-box p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.task-box ul, .task-box ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.task-box li {
+  margin: 0.3rem 0;
+}
+
+/* Section headers for lab organization */
+.section-header {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  margin: 2rem 0 1rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.section-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  color: white;
+  border: none;
+  padding: 0;
+}
+
+/* Quarto callout styles - using built-in Quarto callouts */
+/* Remove custom callout styles to avoid conflicts with Quarto's built-in callouts */
 

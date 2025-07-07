@@ -7,10 +7,11 @@ format:
   revealjs:
     logo: /img/logo.png
     theme: default
+    css: /files/lecture_notes/theme/lecture-styles.css
     slide-number: true
     chalkboard: true
     preview-links: auto
-    footer: "Understanding Data - Conditional Probabilities © 2025 Narjes Mathlouthi"
+    footer: "Understanding Data - Discrete Random Variables © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
 jupyter: python3

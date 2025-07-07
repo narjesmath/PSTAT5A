@@ -8,7 +8,7 @@ format:
     toc-depth: 3
     logo: /img/logo.png
     footer: "Understanding Data - Lab2 Solutions © 2025 Narjes Mathlouthi"
-    number-sections: true
+    number-sections: false
     code-fold: false
     theme: cosmo
     execute:

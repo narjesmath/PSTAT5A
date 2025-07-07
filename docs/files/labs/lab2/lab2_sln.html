@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Instructor: Narjes Mathlouthi">
-<meta name="dcterms.date" content="2025-07-02">
+<meta name="dcterms.date" content="2025-07-07">
 
 <title>Lab 2 Solutions: Data Classes and Programming Fundamentals – PSTAT5A</title>
 <style>
@@ -66,7 +66,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../..//img/logo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -172,49 +171,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="header-section-number">2</span> Lists</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a>
   <ul class="collapse">
-  <li><a href="#task-1-solution" id="toc-task-1-solution" class="nav-link" data-scroll-target="#task-1-solution"><span class="header-section-number">2.1</span> Task 1 Solution</a></li>
-  <li><a href="#task-1-contd-solution" id="toc-task-1-contd-solution" class="nav-link" data-scroll-target="#task-1-contd-solution"><span class="header-section-number">2.2</span> Task 1 (cont’d) Solution</a></li>
+  <li><a href="#task-1-solution" id="toc-task-1-solution" class="nav-link" data-scroll-target="#task-1-solution">Task 1 Solution</a></li>
+  <li><a href="#task-1-contd-solution" id="toc-task-1-contd-solution" class="nav-link" data-scroll-target="#task-1-contd-solution">Task 1 (cont’d) Solution</a></li>
   </ul></li>
-  <li><a href="#indexing" id="toc-indexing" class="nav-link" data-scroll-target="#indexing"><span class="header-section-number">3</span> Indexing</a>
+  <li><a href="#indexing" id="toc-indexing" class="nav-link" data-scroll-target="#indexing">Indexing</a>
   <ul class="collapse">
-  <li><a href="#task-2-solution" id="toc-task-2-solution" class="nav-link" data-scroll-target="#task-2-solution"><span class="header-section-number">3.1</span> Task 2 Solution</a></li>
-  <li><a href="#task-3-solution" id="toc-task-3-solution" class="nav-link" data-scroll-target="#task-3-solution"><span class="header-section-number">3.2</span> Task 3 Solution</a></li>
+  <li><a href="#task-2-solution" id="toc-task-2-solution" class="nav-link" data-scroll-target="#task-2-solution">Task 2 Solution</a></li>
+  <li><a href="#task-3-solution" id="toc-task-3-solution" class="nav-link" data-scroll-target="#task-3-solution">Task 3 Solution</a></li>
   </ul></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">4</span> Tables</a>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a>
   <ul class="collapse">
-  <li><a href="#task-4-solution" id="toc-task-4-solution" class="nav-link" data-scroll-target="#task-4-solution"><span class="header-section-number">4.1</span> Task 4 Solution</a></li>
-  <li><a href="#task-5-solution" id="toc-task-5-solution" class="nav-link" data-scroll-target="#task-5-solution"><span class="header-section-number">4.2</span> Task 5 Solution</a></li>
-  <li><a href="#filtering-tables-example" id="toc-filtering-tables-example" class="nav-link" data-scroll-target="#filtering-tables-example"><span class="header-section-number">4.3</span> Filtering Tables Example</a></li>
+  <li><a href="#task-4-solution" id="toc-task-4-solution" class="nav-link" data-scroll-target="#task-4-solution">Task 4 Solution</a></li>
+  <li><a href="#task-5-solution" id="toc-task-5-solution" class="nav-link" data-scroll-target="#task-5-solution">Task 5 Solution</a></li>
+  <li><a href="#filtering-tables-example" id="toc-filtering-tables-example" class="nav-link" data-scroll-target="#filtering-tables-example">Filtering Tables Example</a></li>
   </ul></li>
-  <li><a href="#arrays" id="toc-arrays" class="nav-link" data-scroll-target="#arrays"><span class="header-section-number">5</span> Arrays</a>
+  <li><a href="#arrays" id="toc-arrays" class="nav-link" data-scroll-target="#arrays">Arrays</a>
   <ul class="collapse">
-  <li><a href="#task-6-solution" id="toc-task-6-solution" class="nav-link" data-scroll-target="#task-6-solution"><span class="header-section-number">5.1</span> Task 6 Solution</a></li>
+  <li><a href="#task-6-solution" id="toc-task-6-solution" class="nav-link" data-scroll-target="#task-6-solution">Task 6 Solution</a></li>
   </ul></li>
-  <li><a href="#comparisons" id="toc-comparisons" class="nav-link" data-scroll-target="#comparisons"><span class="header-section-number">6</span> Comparisons</a>
+  <li><a href="#comparisons" id="toc-comparisons" class="nav-link" data-scroll-target="#comparisons">Comparisons</a>
   <ul class="collapse">
-  <li><a href="#task-7-solution" id="toc-task-7-solution" class="nav-link" data-scroll-target="#task-7-solution"><span class="header-section-number">6.1</span> Task 7 Solution</a></li>
-  <li><a href="#task-8-solution" id="toc-task-8-solution" class="nav-link" data-scroll-target="#task-8-solution"><span class="header-section-number">6.2</span> Task 8 Solution</a></li>
+  <li><a href="#task-7-solution" id="toc-task-7-solution" class="nav-link" data-scroll-target="#task-7-solution">Task 7 Solution</a></li>
+  <li><a href="#task-8-solution" id="toc-task-8-solution" class="nav-link" data-scroll-target="#task-8-solution">Task 8 Solution</a></li>
   </ul></li>
-  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals"><span class="header-section-number">7</span> Conditionals</a>
+  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals">Conditionals</a>
   <ul class="collapse">
-  <li><a href="#task-9-solution" id="toc-task-9-solution" class="nav-link" data-scroll-target="#task-9-solution"><span class="header-section-number">7.1</span> Task 9 Solution</a></li>
+  <li><a href="#task-9-solution" id="toc-task-9-solution" class="nav-link" data-scroll-target="#task-9-solution">Task 9 Solution</a></li>
   </ul></li>
-  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">8</span> Functions</a>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
   <ul class="collapse">
-  <li><a href="#task-10-solution" id="toc-task-10-solution" class="nav-link" data-scroll-target="#task-10-solution"><span class="header-section-number">8.1</span> Task 10 Solution</a></li>
-  <li><a href="#task-11-solution" id="toc-task-11-solution" class="nav-link" data-scroll-target="#task-11-solution"><span class="header-section-number">8.2</span> Task 11 Solution</a></li>
-  <li><a href="#task-12-solution" id="toc-task-12-solution" class="nav-link" data-scroll-target="#task-12-solution"><span class="header-section-number">8.3</span> Task 12 Solution</a></li>
+  <li><a href="#task-10-solution" id="toc-task-10-solution" class="nav-link" data-scroll-target="#task-10-solution">Task 10 Solution</a></li>
+  <li><a href="#task-11-solution" id="toc-task-11-solution" class="nav-link" data-scroll-target="#task-11-solution">Task 11 Solution</a></li>
+  <li><a href="#task-12-solution" id="toc-task-12-solution" class="nav-link" data-scroll-target="#task-12-solution">Task 12 Solution</a></li>
   </ul></li>
-  <li><a href="#complete-examples-and-additional-practice" id="toc-complete-examples-and-additional-practice" class="nav-link" data-scroll-target="#complete-examples-and-additional-practice"><span class="header-section-number">9</span> Complete Examples and Additional Practice</a>
+  <li><a href="#complete-examples-and-additional-practice" id="toc-complete-examples-and-additional-practice" class="nav-link" data-scroll-target="#complete-examples-and-additional-practice">Complete Examples and Additional Practice</a>
   <ul class="collapse">
-  <li><a href="#advanced-list-operations" id="toc-advanced-list-operations" class="nav-link" data-scroll-target="#advanced-list-operations"><span class="header-section-number">9.1</span> Advanced List Operations</a></li>
-  <li><a href="#table-operations" id="toc-table-operations" class="nav-link" data-scroll-target="#table-operations"><span class="header-section-number">9.2</span> Table Operations</a></li>
-  <li><a href="#array-operations" id="toc-array-operations" class="nav-link" data-scroll-target="#array-operations"><span class="header-section-number">9.3</span> Array Operations</a></li>
+  <li><a href="#advanced-list-operations" id="toc-advanced-list-operations" class="nav-link" data-scroll-target="#advanced-list-operations">Advanced List Operations</a></li>
+  <li><a href="#table-operations" id="toc-table-operations" class="nav-link" data-scroll-target="#table-operations">Table Operations</a></li>
+  <li><a href="#array-operations" id="toc-array-operations" class="nav-link" data-scroll-target="#array-operations">Array Operations</a></li>
   </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">10</span> Summary</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -241,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 2, 2025</p>
+      <p class="date">July 7, 2025</p>
     </div>
   </div>
   
@@ -256,16 +255,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p><img src="../../../img/logo.png" class="img-fluid" width="100"></p>
-</div></div><section id="introduction" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+</div></div><section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This document contains the complete solutions to Lab 2: Data Classes and Programming Fundamentals. Each task is solved with explanations to help you understand the concepts.</p>
 </section>
-<section id="lists" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="lists"><span class="header-section-number">2</span> Lists</h2>
-<section id="task-1-solution" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="task-1-solution"><span class="header-section-number">2.1</span> Task 1 Solution</h3>
+<section id="lists" class="level2">
+<h2 class="anchored" data-anchor-id="lists">Lists</h2>
+<section id="task-1-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-1-solution">Task 1 Solution</h3>
 <p>Create a list containing the elements <code>1</code>, <code>"hi"</code>, <code>3.4</code>, and <code>"PSTAT 5A"</code>. Assign this list to a variable called <code>list1</code>.</p>
-<div id="a2e33461" class="cell" data-execution_count="1">
+<div id="2288b618" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">"hi"</span>, <span class="fl">3.4</span>, <span class="st">"PSTAT 5A"</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -274,10 +273,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="task-1-contd-solution" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="task-1-contd-solution"><span class="header-section-number">2.2</span> Task 1 (cont’d) Solution</h3>
+<section id="task-1-contd-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-1-contd-solution">Task 1 (cont’d) Solution</h3>
 <p>Run the code <code>type(list1)</code>.</p>
-<div id="5ed3c3ea" class="cell" data-execution_count="2">
+<div id="9e5179cd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(list1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -287,12 +286,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Explanation:</strong> The output shows <code>&lt;class 'list'&gt;</code>, confirming that <code>list1</code> is indeed a list object.</p>
 </section>
 </section>
-<section id="indexing" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="indexing"><span class="header-section-number">3</span> Indexing</h2>
-<section id="task-2-solution" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="task-2-solution"><span class="header-section-number">3.1</span> Task 2 Solution</h3>
+<section id="indexing" class="level2">
+<h2 class="anchored" data-anchor-id="indexing">Indexing</h2>
+<section id="task-2-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-2-solution">Task 2 Solution</h3>
 <p>Create a list with the numbers 1 through 10, inclusive, and assign this to a variable called <code>x</code>.</p>
-<div id="07c3a062" class="cell" data-execution_count="3">
+<div id="b958b39c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternative using range:</span></span>
@@ -303,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Run the code <code>x[1]</code>.</p>
-<div id="beac5683" class="cell" data-execution_count="4">
+<div id="65f98648" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -311,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Run the code <code>x[0]</code>.</p>
-<div id="d61d8f8d" class="cell" data-execution_count="5">
+<div id="03498f5a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -320,10 +319,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><strong>Explanation:</strong> - <code>x[1]</code> returns <code>2</code> (the second element, since indexing starts at 0) - <code>x[0]</code> returns <code>1</code> (the first element)</p>
 </section>
-<section id="task-3-solution" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="task-3-solution"><span class="header-section-number">3.2</span> Task 3 Solution</h3>
+<section id="task-3-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-3-solution">Task 3 Solution</h3>
 <p>Create a list called <code>x</code> that contains the elements <code>1</code>, <code>"two"</code>, <code>3.5</code>, <code>"four"</code>, and <code>"five five"</code>. Answer the questions and verify.</p>
-<div id="d8e96aeb" class="cell" data-execution_count="6">
+<div id="9bbc5b21" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the list</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="st">"two"</span>, <span class="fl">3.5</span>, <span class="st">"four"</span>, <span class="st">"five five"</span>]</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -333,7 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. x[0] would output: 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now verify the answers:</p>
-<div id="51465564" class="cell" data-execution_count="7">
+<div id="fb4d2363" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify answers</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"1. type(x):"</span>, <span class="bu">type</span>(x))</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"2. type(x[1]):"</span>, <span class="bu">type</span>(x[<span class="dv">1</span>]))</span>
@@ -347,45 +346,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Explanation:</strong> 1. <code>type(x)</code> returns <code>&lt;class 'list'&gt;</code> because x is a list 2. <code>type(x[1])</code> returns <code>&lt;class 'str'&gt;</code> because x[1] is “two”, which is a string 3. <code>x[0]</code> returns <code>1</code>, the first element of the list</p>
 </section>
 </section>
-<section id="tables" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="tables"><span class="header-section-number">4</span> Tables</h2>
+<section id="tables" class="level2">
+<h2 class="anchored" data-anchor-id="tables">Tables</h2>
 <p>First, let’s install and import the datascience module:</p>
-<div id="92f3e0c8" class="cell" data-execution_count="8">
+<div id="852cefbb" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install datascience if needed (uncomment if necessary)</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install datascience</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datascience <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/lib/python3.13/site-packages/datascience/maps.py:13: UserWarning:
-
-pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools&lt;81.
-</code></pre>
 </div>
-</div>
-<section id="task-4-solution" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="task-4-solution"><span class="header-section-number">4.1</span> Task 4 Solution</h3>
+<section id="task-4-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-4-solution">Task 4 Solution</h3>
 <p>Read the list of methods for Table objects and write down three different methods:</p>
-<div id="40cc2f80" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Three Table methods with descriptions:</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># .with_columns(): adds specified columns to a table</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># .select(): selects specific columns from a table and returns a new table</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># .where(): filters rows based on a condition and returns a new table with matching rows</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># .num_rows: returns the number of rows in the table</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># .num_columns: returns the number of columns in the table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="521178e7" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Three Table methods with descriptions:</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># .with_columns(): adds specified columns to a table</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># .select(): selects specific columns from a table and returns a new table</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># .where(): filters rows based on a condition and returns a new table with matching rows</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># .num_rows: returns the number of rows in the table</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># .num_columns: returns the number of columns in the table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="task-5-solution" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="task-5-solution"><span class="header-section-number">4.2</span> Task 5 Solution</h3>
+<section id="task-5-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-5-solution">Task 5 Solution</h3>
 <p>Create the professor table:</p>
-<div id="6e7893a4" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>profs <span class="op">=</span> Table().with_columns(</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Professor"</span>, [<span class="st">"Dr. Swenson"</span>, <span class="st">"Dr. Wainwright"</span>, <span class="st">"Dr. Mouti"</span>],</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Office"</span>, [<span class="st">"South Hall"</span>, <span class="st">"Old Gym"</span>, <span class="st">"Old Gym"</span>],</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Course"</span>, [<span class="st">"PSTAT 130"</span>, <span class="st">"PSTAT 120A"</span>, <span class="st">"PSTAT 126"</span>]</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>profs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div id="f73d5904" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>profs <span class="op">=</span> Table().with_columns(</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Professor"</span>, [<span class="st">"Dr. Swenson"</span>, <span class="st">"Dr. Wainwright"</span>, <span class="st">"Dr. Mouti"</span>],</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Office"</span>, [<span class="st">"South Hall"</span>, <span class="st">"Old Gym"</span>, <span class="st">"Old Gym"</span>],</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Course"</span>, [<span class="st">"PSTAT 130"</span>, <span class="st">"PSTAT 120A"</span>, <span class="st">"PSTAT 126"</span>]</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>profs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="36">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
@@ -415,10 +408,10 @@ pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/
 </div>
 </div>
 <p>Select the column called <code>Course</code> from <code>profs</code>:</p>
-<div id="289dabc1" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>profs.select(<span class="st">"Course"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div id="f7502132" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>profs.select(<span class="st">"Course"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
@@ -440,11 +433,11 @@ pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/
 </div>
 </div>
 <p>Create a new table called <code>profs_new</code> with an additional row:</p>
-<div id="4b851250" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>profs_new <span class="op">=</span> profs.with_row([<span class="st">"Dr. Ravat"</span>, <span class="st">"South Hall"</span>, <span class="st">"PSTAT 120B"</span>])</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>profs_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div id="248f11ed" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>profs_new <span class="op">=</span> profs.with_row([<span class="st">"Dr. Ravat"</span>, <span class="st">"South Hall"</span>, <span class="st">"PSTAT 120B"</span>])</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>profs_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
@@ -480,19 +473,19 @@ pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/
 </div>
 <p><strong>Explanation:</strong> The <code>.with_row()</code> method adds a new row to the existing table. We provide the values in the same order as the columns.</p>
 </section>
-<section id="filtering-tables-example" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="filtering-tables-example"><span class="header-section-number">4.3</span> Filtering Tables Example</h3>
-<div id="5a864b5d" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create example table for filtering</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>table1 <span class="op">=</span> Table().with_columns(</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Course"</span>, [<span class="st">"PSTAT 5A"</span>, <span class="st">"PSTAT 120A"</span>, <span class="st">"PSTAT 130"</span>],</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Units"</span>, [<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>],</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Instructor"</span>, [<span class="st">"Mathlouthi"</span>, <span class="st">"Johnson"</span>, <span class="st">"Smith"</span>]</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for courses taught by Mathlouthi</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>table1.where(<span class="st">"Instructor"</span>, <span class="st">"Mathlouthi"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<section id="filtering-tables-example" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-tables-example">Filtering Tables Example</h3>
+<div id="91d8d9f3" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create example table for filtering</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>table1 <span class="op">=</span> Table().with_columns(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Course"</span>, [<span class="st">"PSTAT 5A"</span>, <span class="st">"PSTAT 120A"</span>, <span class="st">"PSTAT 130"</span>],</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Units"</span>, [<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>],</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Instructor"</span>, [<span class="st">"Mathlouthi"</span>, <span class="st">"Johnson"</span>, <span class="st">"Smith"</span>]</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for courses taught by Mathlouthi</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>table1.where(<span class="st">"Instructor"</span>, <span class="st">"Mathlouthi"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
@@ -511,10 +504,10 @@ pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/
 </table>
 </div>
 </div>
-<div id="07672e4e" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try filtering for an instructor that doesn't exist</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>table1.where(<span class="st">"Instructor"</span>, <span class="st">"Wilson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div id="187e8dd7" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try filtering for an instructor that doesn't exist</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>table1.where(<span class="st">"Instructor"</span>, <span class="st">"Wilson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
@@ -530,46 +523,46 @@ pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/
 </div>
 </section>
 </section>
-<section id="arrays" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="arrays"><span class="header-section-number">5</span> Arrays</h2>
-<section id="task-6-solution" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="task-6-solution"><span class="header-section-number">5.1</span> Task 6 Solution</h3>
+<section id="arrays" class="level2">
+<h2 class="anchored" data-anchor-id="arrays">Arrays</h2>
+<section id="task-6-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-6-solution">Task 6 Solution</h3>
 <p>Make a list and array with the same elements and compare operations:</p>
-<div id="8edecc8a" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create list and array</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">=</span> make_array(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"List:"</span>, my_list)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array:"</span>, my_array)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="bf8a60ba" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create list and array</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">=</span> make_array(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"List:"</span>, my_list)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array:"</span>, my_array)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List: [1, 2, 3]
 Array: [1 2 3]</code></pre>
 </div>
 </div>
-<div id="e9416029" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum operations</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"sum(my_list):"</span>, <span class="bu">sum</span>(my_list))</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"sum(my_array):"</span>, <span class="bu">sum</span>(my_array))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8c7b9400" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum operations</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"sum(my_list):"</span>, <span class="bu">sum</span>(my_list))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"sum(my_array):"</span>, <span class="bu">sum</span>(my_array))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>sum(my_list): 6
 sum(my_array): 6</code></pre>
 </div>
 </div>
-<div id="8db80413" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Addition with scalar - this will cause an error for lists</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> my_list <span class="op">+</span> <span class="dv">2</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"my_list + 2:"</span>, result)</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> e:</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Error with my_list + 2:"</span>, e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="66f98b86" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Addition with scalar - this will cause an error for lists</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> my_list <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"my_list + 2:"</span>, result)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> e:</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Error with my_list + 2:"</span>, e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Error with my_list + 2: can only concatenate list (not "int") to list</code></pre>
 </div>
 </div>
-<div id="cfe17bb8" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Addition with scalar works for arrays</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"my_array + 2:"</span>, my_array <span class="op">+</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f1f7f0e3" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Addition with scalar works for arrays</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"my_array + 2:"</span>, my_array <span class="op">+</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>my_array + 2: [3 4 5]</code></pre>
 </div>
@@ -577,19 +570,19 @@ sum(my_array): 6</code></pre>
 <p><strong>Explanation:</strong> Arrays support element-wise operations (like adding 2 to each element), while lists do not. Lists use <code>+</code> for concatenation, not arithmetic.</p>
 </section>
 </section>
-<section id="comparisons" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="comparisons"><span class="header-section-number">6</span> Comparisons</h2>
-<section id="task-7-solution" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="task-7-solution"><span class="header-section-number">6.1</span> Task 7 Solution</h3>
+<section id="comparisons" class="level2">
+<h2 class="anchored" data-anchor-id="comparisons">Comparisons</h2>
+<section id="task-7-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-7-solution">Task 7 Solution</h3>
 <p>Compare <code>"statistics"</code> and <code>"Statistics"</code>:</p>
-<div id="c6460b08" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'"statistics" &lt; "Statistics":'</span>, <span class="st">"statistics"</span> <span class="op">&lt;</span> <span class="st">"Statistics"</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'"Statistics" &lt; "statistics":'</span>, <span class="st">"Statistics"</span> <span class="op">&lt;</span> <span class="st">"statistics"</span>)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional comparisons to understand the pattern</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'ord("S"):'</span>, <span class="bu">ord</span>(<span class="st">"S"</span>))</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'ord("s"):'</span>, <span class="bu">ord</span>(<span class="st">"s"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="39f5a8a1" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'"statistics" &lt; "Statistics":'</span>, <span class="st">"statistics"</span> <span class="op">&lt;</span> <span class="st">"Statistics"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'"Statistics" &lt; "statistics":'</span>, <span class="st">"Statistics"</span> <span class="op">&lt;</span> <span class="st">"statistics"</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional comparisons to understand the pattern</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'ord("S"):'</span>, <span class="bu">ord</span>(<span class="st">"S"</span>))</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'ord("s"):'</span>, <span class="bu">ord</span>(<span class="st">"s"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>"statistics" &lt; "Statistics": False
 "Statistics" &lt; "statistics": True
@@ -599,17 +592,17 @@ ord("s"): 115</code></pre>
 </div>
 <p><strong>Answer:</strong> When Python compares strings, capital letters are given precedence (they have “lower” ASCII values). Capital letters come before lowercase letters in ASCII ordering, so <code>"Statistics" &lt; "statistics"</code> returns <code>True</code>.</p>
 </section>
-<section id="task-8-solution" class="level3" data-number="6.2">
-<h3 data-number="6.2" class="anchored" data-anchor-id="task-8-solution"><span class="header-section-number">6.2</span> Task 8 Solution</h3>
+<section id="task-8-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-8-solution">Task 8 Solution</h3>
 <p>Create arrays and compare element-wise:</p>
-<div id="f3ebdf55" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> make_array(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> make_array(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"x:"</span>, x)</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"y:"</span>, y)</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"x &lt; y:"</span>, x <span class="op">&lt;</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1108138f" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> make_array(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> make_array(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"x:"</span>, x)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"y:"</span>, y)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"x &lt; y:"</span>, x <span class="op">&lt;</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x: [1 2 3]
 y: [2 3 1]
@@ -620,26 +613,26 @@ x &lt; y: [ True  True False]</code></pre>
 - <code>3 &lt; 1</code> → <code>False</code></p>
 </section>
 </section>
-<section id="conditionals" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="conditionals"><span class="header-section-number">7</span> Conditionals</h2>
-<section id="task-9-solution" class="level3" data-number="7.1">
-<h3 data-number="7.1" class="anchored" data-anchor-id="task-9-solution"><span class="header-section-number">7.1</span> Task 9 Solution</h3>
+<section id="conditionals" class="level2">
+<h2 class="anchored" data-anchor-id="conditionals">Conditionals</h2>
+<section id="task-9-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-9-solution">Task 9 Solution</h3>
 <p>Predict and verify the conditional statement:</p>
-<div id="7175bb68" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prediction: x will be "goodbye"</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Reasoning: x = 2, so x &lt; 2 is False, but x &lt; 3 is True</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the code:</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">2</span>:</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"hello"</span></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">&lt;</span> <span class="dv">3</span>:</span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"goodbye"</span></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"take care"</span></span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Result:"</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="563a2ea8" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prediction: x will be "goodbye"</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Reasoning: x = 2, so x &lt; 2 is False, but x &lt; 3 is True</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the code:</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">2</span>:</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"hello"</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"goodbye"</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"take care"</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Result:"</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Result: goodbye</code></pre>
 </div>
@@ -647,30 +640,30 @@ x &lt; y: [ True  True False]</code></pre>
 <p><strong>Explanation:</strong> Since <code>x = 2</code>: - <code>x &lt; 2</code> is <code>False</code> (2 is not less than 2) - <code>x &lt; 3</code> is <code>True</code> (2 is less than 3) - So the <code>elif</code> condition executes, setting <code>x = "goodbye"</code></p>
 </section>
 </section>
-<section id="functions" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="functions"><span class="header-section-number">8</span> Functions</h2>
-<section id="task-10-solution" class="level3" data-number="8.1">
-<h3 data-number="8.1" class="anchored" data-anchor-id="task-10-solution"><span class="header-section-number">8.1</span> Task 10 Solution</h3>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<section id="task-10-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-10-solution">Task 10 Solution</h3>
 <p>Three functions we’ve used in this Lab:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Three functions used in this lab:</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. type() - returns the data type of an object</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. print() - displays output to the screen</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. make_array() - creates an array from the given elements</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional: sum(), len(), range()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Three functions used in this lab:</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. type() - returns the data type of an object</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. print() - displays output to the screen</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. make_array() - creates an array from the given elements</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional: sum(), len(), range()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="task-11-solution" class="level3" data-number="8.2">
-<h3 data-number="8.2" class="anchored" data-anchor-id="task-11-solution"><span class="header-section-number">8.2</span> Task 11 Solution</h3>
+<section id="task-11-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-11-solution">Task 11 Solution</h3>
 <p>Write a Celsius to Fahrenheit conversion function:</p>
-<div id="f82935fc" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cent_to_far(c):</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Convert Celsius to Fahrenheit using the formula F = (9/5) * C + 32"""</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    fahrenheit <span class="op">=</span> (<span class="dv">9</span><span class="op">/</span><span class="dv">5</span>) <span class="op">*</span> c <span class="op">+</span> <span class="dv">32</span></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fahrenheit</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the function</span></span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"cent_to_far(0):"</span>, cent_to_far(<span class="dv">0</span>))    <span class="co"># Should return 32</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"cent_to_far(20):"</span>, cent_to_far(<span class="dv">20</span>))  <span class="co"># Should return 68</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6ee256cf" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cent_to_far(c):</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Convert Celsius to Fahrenheit using the formula F = (9/5) * C + 32"""</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    fahrenheit <span class="op">=</span> (<span class="dv">9</span><span class="op">/</span><span class="dv">5</span>) <span class="op">*</span> c <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fahrenheit</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the function</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"cent_to_far(0):"</span>, cent_to_far(<span class="dv">0</span>))    <span class="co"># Should return 32</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"cent_to_far(20):"</span>, cent_to_far(<span class="dv">20</span>))  <span class="co"># Should return 68</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>cent_to_far(0): 32.0
 cent_to_far(20): 68.0</code></pre>
@@ -678,25 +671,25 @@ cent_to_far(20): 68.0</code></pre>
 </div>
 <p><strong>Explanation:</strong> The conversion formula is F = (9/5) × C + 32. Our function correctly implements this formula.</p>
 </section>
-<section id="task-12-solution" class="level3" data-number="8.3">
-<h3 data-number="8.3" class="anchored" data-anchor-id="task-12-solution"><span class="header-section-number">8.3</span> Task 12 Solution</h3>
+<section id="task-12-solution" class="level3">
+<h3 class="anchored" data-anchor-id="task-12-solution">Task 12 Solution</h3>
 <p>Write a parity function to determine if a number is even or odd:</p>
-<div id="b5f48ff2" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parity(x):</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Returns 'even' if x is even, 'odd' if x is odd"""</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"even"</span></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"odd"</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the function</span></span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"parity(2):"</span>, parity(<span class="dv">2</span>))  <span class="co"># Should return 'even'</span></span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"parity(3):"</span>, parity(<span class="dv">3</span>))  <span class="co"># Should return 'odd'</span></span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional tests</span></span>
-<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"parity(10):"</span>, parity(<span class="dv">10</span>))</span>
-<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"parity(15):"</span>, parity(<span class="dv">15</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5fffc9ed" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Solution</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parity(x):</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Returns 'even' if x is even, 'odd' if x is odd"""</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"even"</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"odd"</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the function</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"parity(2):"</span>, parity(<span class="dv">2</span>))  <span class="co"># Should return 'even'</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"parity(3):"</span>, parity(<span class="dv">3</span>))  <span class="co"># Should return 'odd'</span></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional tests</span></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"parity(10):"</span>, parity(<span class="dv">10</span>))</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"parity(15):"</span>, parity(<span class="dv">15</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>parity(2): even
 parity(3): odd
@@ -708,17 +701,17 @@ parity(15): odd</code></pre>
 <hr>
 </section>
 </section>
-<section id="complete-examples-and-additional-practice" class="level2" data-number="9">
-<h2 data-number="9" class="anchored" data-anchor-id="complete-examples-and-additional-practice"><span class="header-section-number">9</span> Complete Examples and Additional Practice</h2>
+<section id="complete-examples-and-additional-practice" class="level2">
+<h2 class="anchored" data-anchor-id="complete-examples-and-additional-practice">Complete Examples and Additional Practice</h2>
 <p>Here are some additional examples that demonstrate the concepts:</p>
-<section id="advanced-list-operations" class="level3" data-number="9.1">
-<h3 data-number="9.1" class="anchored" data-anchor-id="advanced-list-operations"><span class="header-section-number">9.1</span> Advanced List Operations</h3>
-<div id="d539a32f" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List slicing examples</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First 5 elements:"</span>, numbers[:<span class="dv">5</span>])</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last 3 elements:"</span>, numbers[<span class="op">-</span><span class="dv">3</span>:])</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Every other element:"</span>, numbers[::<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="advanced-list-operations" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-list-operations">Advanced List Operations</h3>
+<div id="84b77cf4" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List slicing examples</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First 5 elements:"</span>, numbers[:<span class="dv">5</span>])</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last 3 elements:"</span>, numbers[<span class="op">-</span><span class="dv">3</span>:])</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Every other element:"</span>, numbers[::<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>First 5 elements: [0, 1, 2, 3, 4]
 Last 3 elements: [7, 8, 9]
@@ -726,25 +719,25 @@ Every other element: [0, 2, 4, 6, 8]</code></pre>
 </div>
 </div>
 </section>
-<section id="table-operations" class="level3" data-number="9.2">
-<h3 data-number="9.2" class="anchored" data-anchor-id="table-operations"><span class="header-section-number">9.2</span> Table Operations</h3>
-<div id="04767f2c" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># More complex table operations</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> Table().with_columns(</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Name"</span>, [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"Diana"</span>],</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Grade"</span>, [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">96</span>],</span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Year"</span>, [<span class="st">"Sophomore"</span>, <span class="st">"Junior"</span>, <span class="st">"Freshman"</span>, <span class="st">"Senior"</span>]</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple operations</span></span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>high_performers <span class="op">=</span> students.where(<span class="st">"Grade"</span>, are.above(<span class="dv">90</span>))</span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"High performers:"</span>)</span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>high_performers.show()</span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by grade</span></span>
-<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>sorted_students <span class="op">=</span> students.sort(<span class="st">"Grade"</span>, descending<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Students sorted by grade:"</span>)</span>
-<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>sorted_students.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="table-operations" class="level3">
+<h3 class="anchored" data-anchor-id="table-operations">Table Operations</h3>
+<div id="5e2d19b5" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># More complex table operations</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> Table().with_columns(</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Name"</span>, [<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"Diana"</span>],</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Grade"</span>, [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">96</span>],</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Year"</span>, [<span class="st">"Sophomore"</span>, <span class="st">"Junior"</span>, <span class="st">"Freshman"</span>, <span class="st">"Senior"</span>]</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiple operations</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>high_performers <span class="op">=</span> students.where(<span class="st">"Grade"</span>, are.above(<span class="dv">90</span>))</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"High performers:"</span>)</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>high_performers.show()</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort by grade</span></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>sorted_students <span class="op">=</span> students.sort(<span class="st">"Grade"</span>, descending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Students sorted by grade:"</span>)</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>sorted_students.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>High performers:</code></pre>
 </div>
@@ -810,17 +803,17 @@ Students sorted by grade:</code></pre>
 </div>
 </div>
 </section>
-<section id="array-operations" class="level3" data-number="9.3">
-<h3 data-number="9.3" class="anchored" data-anchor-id="array-operations"><span class="header-section-number">9.3</span> Array Operations</h3>
-<div id="66ad9d47" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Array mathematical operations</span></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> make_array(<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">96</span>, <span class="dv">89</span>)</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original scores:"</span>, scores)</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Curved scores (+5):"</span>, scores <span class="op">+</span> <span class="dv">5</span>)</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Squared scores:"</span>, scores <span class="op">**</span> <span class="dv">2</span>)</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average score:"</span>, np.mean(scores))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="array-operations" class="level3">
+<h3 class="anchored" data-anchor-id="array-operations">Array Operations</h3>
+<div id="59c8085e" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Array mathematical operations</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> make_array(<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">96</span>, <span class="dv">89</span>)</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original scores:"</span>, scores)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Curved scores (+5):"</span>, scores <span class="op">+</span> <span class="dv">5</span>)</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Squared scores:"</span>, scores <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average score:"</span>, np.mean(scores))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Original scores: [85 92 78 96 89]
 Curved scores (+5): [ 90  97  83 101  94]
@@ -831,8 +824,8 @@ Average score: 88.0</code></pre>
 <hr>
 </section>
 </section>
-<section id="summary" class="level2" data-number="10">
-<h2 data-number="10" class="anchored" data-anchor-id="summary"><span class="header-section-number">10</span> Summary</h2>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <p>This lab covered fundamental Python data structures and programming concepts:</p>
 <ul>
 <li><strong>Lists</strong>: Mutable, mixed-type collections with zero-based indexing</li>
@@ -938,7 +931,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/pstat5a\.com");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
