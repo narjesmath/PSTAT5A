@@ -191,7 +191,7 @@ Lecture Materials
 7/03
 :::
 ::: {.topic}
-[Conditional Probability](/files/lecture_notes/lecture5/lecture5.qmd)
+[Conditional Probability, Independence, & Bayes Theorem](/files/lecture_notes/lecture5/lecture5.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
