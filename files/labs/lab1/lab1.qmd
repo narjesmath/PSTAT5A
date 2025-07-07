@@ -1,0 +1,134 @@
+---
+title: "PSTAT 5A Lab 1"
+subtitle: "Introduction to Python and JupyterHub"
+author: "Student Name: ________________________"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    theme: cosmo
+    css: /files/lecture_notes/theme/lecture-styles.css
+  pdf:
+    toc: true
+    number-sections: true
+    geometry: margin=1in
+    fontsize: 11pt
+    documentclass: article
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+execute:
+  echo: false
+  warning: false
+jupyter: python3
+---
+
+::: {.column-margin}
+![](/img/logo.png){width=150px}
+:::
+
+**Welcome to the first PSTAT 5A Lab!** As we will soon learn, computers play an integral part in effectively and efficiently performing statistical analyses. The primary goal of these Labs is to develop the skills to communicate with computers and learn the basic principles and language of programming.
+
+This first lab will introduce you to the JupyterHub environment, Python as a programming language, and some basic concepts of programming. You will also complete a series of tasks to familiarize yourself with the tools and concepts we will use throughout the course.
+
+This lab is designed to be completed during your first lab section of the week, and it will set the foundation for the rest of the course. Make sure to read through all the material carefully, as it will be essential for your success in PSTAT 5A.
+
+## Structure of Labs
+
+Every week we (the course staff) will publish a lab document, which is intended to be completed during your Lab Section (i.e., your first Section) of the week. Each lab document will consist of a combination of text, tips, and the occasional task for you to complete based on the text provided. Your TA will cover exactly what you need to turn in at the end of each lab in order to receive credit, but you should read all lab material carefully and thoroughly as content from labs will appear on quizzes and exams.
+
+## What Is Programming?
+
+Computers, though incredibly useful, are fairly complex machines. To communicate with them, we need to use a specific language, known as a **programming language**. There are a number of programming languages currently in use—R, Julia, MatLab, and the language we will use for this course, **Python**.
+
+Python programs can be written in many environments (e.g., text editors like VS Code or in a Terminal window). For this class we will use **Jupyter Notebook** (pronounced "Jew-pi-ter"), an interactive environment that's hosted online so you don't have to install anything to run Python code!
+
+## Getting Started
+
+1. Navigate to **[https://pstat5a.lsit.ucsb.edu](https://pstat5a.lsit.ucsb.edu/hub/login)**   
+   - If you are using a personal computer, you may want to bookmark this page for easy access later.
+
+2. Click **Sign in with your UCSB NetID**, and sign in.  
+   ![Sign In](/img/sign_in.png){width=500px}
+
+3. Navigate to the **Labs** folder on the left-hand side of the JupyterHub interface. 
+   ![Navigate to Labs](/img/navigate_to_labs.png){width=500px}
+
+4. Under **Notebook**, click **Python 3 (ipykernel)**.  
+   ![Select Notebook](/img/select_notebook.png){width=500px}
+
+Congratulations, you have just made your first Jupyter notebook! Now, it's time for our first task:
+
+## Task 1
+
+::: {.task-box}
+1. Find your new notebook in the left-hand file browser (it will be named `Untitled` or `Untitled1` by default).  
+
+2. Right-click the notebook and select → **Rename**.  
+   ![Right Click to Rename](/img/right_click_to_rename.png){width=500px}
+
+3. Rename it to `Lab1` and hit **Enter**.  
+   ![Rename Notebook](/img/rename_notebook.png){width=500px}
+
+4. Watch the title bar update to `Lab1.ipynb`.
+:::
+
+## The JupyterHub Environment
+
+Jupyter notebooks are built from **cells**—the shaded boxes you see on screen. Here's how to work with them:
+
+### Cell Activation
+
+- **Inactive cell**  
+  - Appearance: light grey background  
+  - Action: click anywhere inside the cell to activate  
+  ![Inactive Cell](/img/cell_color.png){width=400px}
+
+- **Active cell**  
+  - Appearance: colored border (green or blue)  
+  - You can now type code or Markdown here.   
+
+::: {.callout-tip}
+Only the **active** cell runs when you press Run.
+:::
+
+### Running Cells
+
+- Click the ▶️ **Run** button in the toolbar  
+- Or press **Shift + Enter** to run and advance to the next cell  
+![Run Button](/img/run_button.png){width=400px}
+
+## Cell Types
+
+You can switch any cell between **Code** and **Markdown**:
+
+### Code Cells
+
+- **Purpose:** write and execute Python code  
+- **Select:**  
+  1. Click the cell  
+  2. Choose **Code** from the toolbar dropdown  
+     ![Switch to Code Cell](/img/change_cell_type.png){width=400px}  
+- **Run:** ▶️ Run button or **Shift + Enter**  
+
+### Markdown Cells
+
+- **Purpose:** write formatted text, headings, lists, math, and embed images  
+- **Select:**  
+  1. Click the cell  
+  2. Choose **Markdown** from the toolbar dropdown  
+     ![Markdown Cell](/img/markdown_cell.png){width=400px} 
+- **Render:** ▶️ Run button or **Shift + Enter**  
+
+## Task 2
+
+::: {.task-box}
+1. Click into the initial cell (marked by `[ ]` on the left).  
+
+2. In the toolbar dropdown (that currently says **Code**), select **Markdown**.  
+
+3. Copy-paste the following (including the `#`):
+   ```markdown
+   # Task 2

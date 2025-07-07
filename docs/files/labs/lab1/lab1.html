@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Student Name: ________________________">
 
-<title>lab1 – PSTAT5A</title>
+<title>PSTAT 5A Lab 1 – PSTAT5A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -101,37 +68,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../files/lecture_notes/theme/lecture-styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -190,77 +129,113 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#structure-of-labs" id="toc-structure-of-labs" class="nav-link active" data-scroll-target="#structure-of-labs">Structure of Labs</a></li>
+  <li><a href="#what-is-programming" id="toc-what-is-programming" class="nav-link" data-scroll-target="#what-is-programming">What Is Programming?</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#task-1" id="toc-task-1" class="nav-link" data-scroll-target="#task-1">Task 1</a></li>
+  <li><a href="#the-jupyterhub-environment" id="toc-the-jupyterhub-environment" class="nav-link" data-scroll-target="#the-jupyterhub-environment">The JupyterHub Environment</a>
+  <ul class="collapse">
+  <li><a href="#cell-activation" id="toc-cell-activation" class="nav-link" data-scroll-target="#cell-activation">Cell Activation</a></li>
+  <li><a href="#running-cells" id="toc-running-cells" class="nav-link" data-scroll-target="#running-cells">Running Cells</a></li>
+  </ul></li>
+  <li><a href="#cell-types" id="toc-cell-types" class="nav-link" data-scroll-target="#cell-types">Cell Types</a>
+  <ul class="collapse">
+  <li><a href="#code-cells" id="toc-code-cells" class="nav-link" data-scroll-target="#code-cells">Code Cells</a></li>
+  <li><a href="#markdown-cells" id="toc-markdown-cells" class="nav-link" data-scroll-target="#markdown-cells">Markdown Cells</a></li>
+  </ul></li>
+  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lab1.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="lab1.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PSTAT 5A Lab 1</h1>
+<p class="subtitle lead">Introduction to Python and JupyterHub</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<div style="display:flex; align-items:flex-start;">
-<!-- MAIN CONTENT COLUMN -->
-<div style="flex: 1; padding-right: 2rem;">
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Student Name: ________________________ </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+
+<div class="no-row-height column-margin column-container"><div class="">
 <p><img src="../../../img/logo.png" class="img-fluid" width="150"></p>
-<section id="pstat-5a-lab-1" class="level1">
-<h1>PSTAT 5A Lab 1</h1>
-<p><strong>Welcome to the first PSTAT 5A Lab!</strong> As we will soon learn, computers play an integral part in effectively and efficiently performing statistical analyses. The primary goal of these Labs is to develop the skills to communicate with computers and learn the basic principles and language of programming.</p>
+</div></div><p><strong>Welcome to the first PSTAT 5A Lab!</strong> As we will soon learn, computers play an integral part in effectively and efficiently performing statistical analyses. The primary goal of these Labs is to develop the skills to communicate with computers and learn the basic principles and language of programming.</p>
 <p>This first lab will introduce you to the JupyterHub environment, Python as a programming language, and some basic concepts of programming. You will also complete a series of tasks to familiarize yourself with the tools and concepts we will use throughout the course.</p>
 <p>This lab is designed to be completed during your first lab section of the week, and it will set the foundation for the rest of the course. Make sure to read through all the material carefully, as it will be essential for your success in PSTAT 5A.</p>
-<hr>
 <section id="structure-of-labs" class="level2">
 <h2 class="anchored" data-anchor-id="structure-of-labs">Structure of Labs</h2>
 <p>Every week we (the course staff) will publish a lab document, which is intended to be completed during your Lab Section (i.e., your first Section) of the week. Each lab document will consist of a combination of text, tips, and the occasional task for you to complete based on the text provided. Your TA will cover exactly what you need to turn in at the end of each lab in order to receive credit, but you should read all lab material carefully and thoroughly as content from labs will appear on quizzes and exams.</p>
-<hr>
 </section>
 <section id="what-is-programming" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-programming">What Is Programming?</h2>
 <p>Computers, though incredibly useful, are fairly complex machines. To communicate with them, we need to use a specific language, known as a <strong>programming language</strong>. There are a number of programming languages currently in use—R, Julia, MatLab, and the language we will use for this course, <strong>Python</strong>.</p>
 <p>Python programs can be written in many environments (e.g., text editors like VS Code or in a Terminal window). For this class we will use <strong>Jupyter Notebook</strong> (pronounced “Jew-pi-ter”), an interactive environment that’s hosted online so you don’t have to install anything to run Python code!</p>
-<hr>
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <ol type="1">
-<li>Navigate to <strong>(<a href="https://pstat5a.lsit.ucsb.edu/hub/login">https://pstat5a.lsit.ucsb.edu</a>)</strong>
+<li><p>Navigate to <strong><a href="https://pstat5a.lsit.ucsb.edu/hub/login">https://pstat5a.lsit.ucsb.edu</a></strong></p>
 <ul>
 <li>If you are using a personal computer, you may want to bookmark this page for easy access later.</li>
 </ul></li>
-<li>Click <strong>Sign in with your UCSB NetID</strong>, and sign in.<br>
-<img src="../../../img/sign_in.png" class="img-fluid" width="500" alt="Sign In"></li>
-<li>Navigate to the <strong>Labs</strong> folder on the left-hand side of the JupyterHub interface. <img src="../../../img/navigate_to_labs.png" class="img-fluid" width="500"></li>
-<li>Under <strong>Notebook</strong>, click <strong>Python 3 (ipykernel)</strong>.<br>
-<img src="../../../img/select_notebook.png" class="img-fluid" width="500"></li>
+<li><p>Click <strong>Sign in with your UCSB NetID</strong>, and sign in.<br>
+<img src="../../../img/sign_in.png" class="img-fluid" width="500" alt="Sign In"></p></li>
+<li><p>Navigate to the <strong>Labs</strong> folder on the left-hand side of the JupyterHub interface. <img src="../../../img/navigate_to_labs.png" class="img-fluid" width="500" alt="Navigate to Labs"></p></li>
+<li><p>Under <strong>Notebook</strong>, click <strong>Python 3 (ipykernel)</strong>.<br>
+<img src="../../../img/select_notebook.png" class="img-fluid" width="500" alt="Select Notebook"></p></li>
 </ol>
 <p>Congratulations, you have just made your first Jupyter notebook! Now, it’s time for our first task:</p>
-<hr>
 </section>
 <section id="task-1" class="level2">
 <h2 class="anchored" data-anchor-id="task-1">Task 1</h2>
+<div class="task-box">
 <ol type="1">
-<li>Find your new notebook in the left-hand file browser (it will be named <code>Untitled</code> or <code>Untitled1</code> by default).<br>
-</li>
-<li>Right-click the notebook and select → <strong>Rename</strong>.<br>
-<img src="../../../img/right_click_to_rename.png" class="img-fluid" width="500" alt="Right Click to Rename"></li>
-<li>Rename it to <code>Lab1</code> and hit <strong>Enter</strong>.<br>
-<img src="../../../img/rename_notebook.png" class="img-fluid" width="500" alt="Title Bar Update"></li>
-<li>Watch the title bar update to <code>Lab1.ipynb</code>.</li>
+<li><p>Find your new notebook in the left-hand file browser (it will be named <code>Untitled</code> or <code>Untitled1</code> by default).</p></li>
+<li><p>Right-click the notebook and select → <strong>Rename</strong>.<br>
+<img src="../../../img/right_click_to_rename.png" class="img-fluid" width="500" alt="Right Click to Rename"></p></li>
+<li><p>Rename it to <code>Lab1</code> and hit <strong>Enter</strong>.<br>
+<img src="../../../img/rename_notebook.png" class="img-fluid" width="500" alt="Rename Notebook"></p></li>
+<li><p>Watch the title bar update to <code>Lab1.ipynb</code>.</p></li>
 </ol>
-<hr>
+</div>
 </section>
 <section id="the-jupyterhub-environment" class="level2">
 <h2 class="anchored" data-anchor-id="the-jupyterhub-environment">The JupyterHub Environment</h2>
 <p>Jupyter notebooks are built from <strong>cells</strong>—the shaded boxes you see on screen. Here’s how to work with them:</p>
 <section id="cell-activation" class="level3">
-<h3 class="anchored" data-anchor-id="cell-activation">1. Cell Activation</h3>
+<h3 class="anchored" data-anchor-id="cell-activation">Cell Activation</h3>
 <ul>
 <li><strong>Inactive cell</strong>
 <ul>
 <li>Appearance: light grey background<br>
 </li>
 <li>Action: click anywhere inside the cell to activate<br>
-<img src="../../../img/cell_color.png" class="img-fluid" width="400" alt="Inactive Cell (grey)"></li>
+<img src="../../../img/cell_color.png" class="img-fluid" width="400" alt="Inactive Cell"></li>
 </ul></li>
 <li><strong>Active cell</strong>
 <ul>
@@ -269,19 +244,28 @@ window.Quarto = {
 <li>You can now type code or Markdown here.</li>
 </ul></li>
 </ul>
-<blockquote class="blockquote">
-<p><strong>Tip:</strong> Only the <strong>active</strong> cell runs when you press Run.</p>
-</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Only the <strong>active</strong> cell runs when you press Run.</p>
+</div>
+</div>
 </section>
 <section id="running-cells" class="level3">
-<h3 class="anchored" data-anchor-id="running-cells">2. Running Cells</h3>
+<h3 class="anchored" data-anchor-id="running-cells">Running Cells</h3>
 <ul>
 <li>Click the ▶️ <strong>Run</strong> button in the toolbar<br>
 </li>
 <li>Or press <strong>Shift + Enter</strong> to run and advance to the next cell<br>
 <img src="../../../img/run_button.png" class="img-fluid" width="400" alt="Run Button"></li>
 </ul>
-<hr>
 </section>
 </section>
 <section id="cell-types" class="level2">
@@ -321,299 +305,16 @@ window.Quarto = {
 </section>
 <section id="task-2" class="level2">
 <h2 class="anchored" data-anchor-id="task-2">Task 2</h2>
+<div class="task-box">
 <ol type="1">
-<li><p>Click into the initial cell ( marked by <code>[ ]</code> on the left).<br>
-</p></li>
-<li><p>In the toolbar dropdown (that currently says <strong>Code</strong>), select <strong>Markdown</strong>.<br>
-</p></li>
-<li><p>Copy-paste the following (including the <code>#</code>):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Task 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Run the cell (▶️).</p></li>
-<li><p>Create a new code cell by clicking the <strong>+</strong> button in the toolbar.<br>
-<img src="../../../img/add_new_cell.png" class="img-fluid" width="400" alt="Add New Cell"></p>
-<ul>
-<li>Alternatively, you can press <strong>B</strong> to add a cell below the current one or <strong>A</strong> to add one above it.
-<ul>
-<li>This option preserves the previous cell type (Code or Markdown).</li>
-</ul></li>
-<li>You can also right-click the cell and select <strong>Insert Cell Below</strong> or <strong>Insert Cell Above</strong>.</li>
-<li>You can also use the <strong>Insert</strong> menu at the top of the page. &gt; <strong>Tip:</strong> Press <strong>Shift + Enter</strong> to run a cell and move to (or create) the next one.</li>
-</ul></li>
-<li><p>Enter and run:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Observe that a new cell appears under it automatically.</p></li>
+<li><p>Click into the initial cell (marked by <code>[ ]</code> on the left).</p></li>
+<li><p>In the toolbar dropdown (that currently says <strong>Code</strong>), select <strong>Markdown</strong>.</p></li>
+<li><p>Copy-paste the following (including the <code>#</code>): ```markdown # Task 2</p></li>
 </ol>
-<blockquote class="blockquote">
-<p><strong>Tip:</strong> Press <strong>Shift + Enter</strong> to run a cell and move to (or create) the next one.</p>
-</blockquote>
-</section>
-<section id="task-3" class="level2">
-<h2 class="anchored" data-anchor-id="task-3">Task 3</h2>
-<ol type="1">
-<li><p>Create a new Markdown cell labeled:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Task 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Create a new code cell and run:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> plus <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Observe the <strong>SyntaxError</strong> and note how Python points to the problem.</p></li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>Note:</strong> Always read error messages, they tell you what went wrong!</p>
-</blockquote>
-<hr>
-</section>
-<section id="python-as-a-calculator" class="level2">
-<h2 class="anchored" data-anchor-id="python-as-a-calculator">Python as a Calculator</h2>
-<p>Python follows the usual order of operations:</p>
-<ol type="1">
-<li>Parentheses<br>
-</li>
-<li>Exponents<br>
-</li>
-<li>Multiplication / Division<br>
-</li>
-<li>Addition / Subtraction</li>
-</ol>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Operation</th>
-<th>Python Syntax</th>
-<th>Example</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Addition</td>
-<td><code>+</code></td>
-<td><code>2 + 2</code></td>
-<td><code>4</code></td>
-</tr>
-<tr class="even">
-<td>Subtraction</td>
-<td><code>-</code></td>
-<td><code>2 - 2</code></td>
-<td><code>0</code></td>
-</tr>
-<tr class="odd">
-<td>Multiplication</td>
-<td><code>*</code></td>
-<td><code>2 * 2</code></td>
-<td><code>4</code></td>
-</tr>
-<tr class="even">
-<td>Division</td>
-<td><code>/</code></td>
-<td><code>2 / 2</code></td>
-<td><code>1.0</code></td>
-</tr>
-<tr class="odd">
-<td>Exponentiation</td>
-<td><code>**</code></td>
-<td><code>2 ** 2</code></td>
-<td><code>4</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="task-4" class="level2">
-<h2 class="anchored" data-anchor-id="task-4">Task 4</h2>
-<p>Compute the following in separate code cells:</p>
-<ol type="1">
-<li><span class="math display">\[\frac{2 + 3}{4 + 5^6}\]</span></li>
-<li><span class="math display">\[(1 - 3 \cdot 4^5)^6\]</span></li>
-</ol>
-<hr>
-</section>
-<section id="python-modules" class="level2">
-<h2 class="anchored" data-anchor-id="python-modules">Python Modules</h2>
-<p>In Python, a <strong>module</strong> is simply a file (with a <code>.py</code> extension) that contains related code, functions, classes, and variables—that you can reuse in other programs. Modules help you organize your code, avoid naming conflicts, and leverage functionality written by others.</p>
-<section id="why-use-modules" class="level3">
-<h3 class="anchored" data-anchor-id="why-use-modules">Why Use Modules?</h3>
-<ul>
-<li><strong>Reusability</strong>: Write a function once, then import it wherever you need it.<br>
-</li>
-<li><strong>Organization</strong>: Group related functionality into logical units (e.g., math operations).<br>
-</li>
-<li><strong>Namespace Management</strong>: Keep your global namespace clean by accessing code through the module’s name.</li>
-</ul>
-</section>
-<section id="importing-modules" class="level3">
-<h3 class="anchored" data-anchor-id="importing-modules">Importing Modules</h3>
-<p>There are several ways to bring module code into your current script or notebook:</p>
-<ol type="1">
-<li><p><strong>Import the entire module</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(math.sin(<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Import specific names</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> sin, pi</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sin(pi<span class="op">/</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Import with an alias</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-<blockquote class="blockquote">
-<p><strong>Tip:</strong> Use specific imports (<code>from module import name</code>) to keep your namespace tidy, or aliases (<code>import module as m</code>) for brevity.</p>
-</blockquote>
-<hr>
-</section>
-<section id="finding-and-installing-modules" class="level3">
-<h3 class="anchored" data-anchor-id="finding-and-installing-modules">Finding and Installing Modules</h3>
-<ul>
-<li><strong>Standard library</strong>: Modules like <code>math</code>, <code>random</code>, and <code>datetime</code> come with Python.<br>
-</li>
-<li><strong>Third-party</strong>: Install via <code>pip install package_name</code> (e.g.&nbsp;<code>pip install pandas</code>).<br>
-</li>
-<li><strong>Your own</strong>: Create <code>my_utils.py</code> and then <code>import my_utils</code> in your project.</li>
-</ul>
-<p>Modules are the building blocks of larger Python applications; get comfortable importing and exploring them!</p>
-<hr>
-</section>
-</section>
-<section id="task-5" class="level2">
-<h2 class="anchored" data-anchor-id="task-5">Task 5</h2>
-<ol type="1">
-<li><p>In a code cell, type:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sin(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Observe the <strong>NameError</strong>.<br>
-</p></li>
-<li><p>In the same (or a new) cell, load the module and retry:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sin(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-<hr>
-</section>
-<section id="variable-assignment" class="level2">
-<h2 class="anchored" data-anchor-id="variable-assignment">Variable Assignment</h2>
-<p>Variables in Python are used to store data values. You can think of them as labels for data that you want to use later in your program.</p>
-<ul>
-<li><p><strong>Assignment:</strong></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Printing:</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul>
-<p>Python is <strong>case-sensitive</strong>: <code>my_variable</code> ≠ <code>My_variable</code>.</p>
-<blockquote class="blockquote">
-<p>Behind the scenes, <code>print()</code> is a function that takes one or more values and displays them on the screen. We’ll learn what functions are and how to create our own functions soon.</p>
-</blockquote>
-<hr>
-</section>
-<section id="task-6" class="level2">
-<h2 class="anchored" data-anchor-id="task-6">Task 6</h2>
-<ol type="1">
-<li><p>Assign:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>my_variable <span class="op">=</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>In a new cell, run:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(My_variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>– observe the <strong>NameError</strong> due to wrong capitalization.</p>
-<pre class="text"><code>NameError: name 'My_variable' is not defined</code></pre></li>
-<li><p>In the same cell, run:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_variable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now you should see <code>5</code> printed without any errors.</p></li>
-</ol>
-<hr>
-</section>
-<section id="comments" class="level2">
-<h2 class="anchored" data-anchor-id="comments">Comments</h2>
-<p>Comments are notes in your code that Python ignores when running the program. They help you and others understand what your code does. Comments are essential for documenting your code, explaining complex logic, or leaving reminders for yourself or others. They do not affect the execution of your program.</p>
-<p>You can add comments anywhere in your code, and they can be on their own line or at the end of a line of code.</p>
-<p>In Python, comments start with a <code>#</code> symbol. Everything after the <code>#</code> on that line is considered a comment and will not be executed by Python. You can also use multi-line comments with triple quotes (<code>"""</code> or <code>'''</code>), which allows you to write longer explanations or block comments that span multiple lines. These are often used for documentation strings (docstrings) to describe functions, classes, or modules.</p>
-<p>You can add comments in two ways:</p>
-<ul>
-<li><p><strong>Inline comment:</strong> Use <code>#</code> to comment out a single line.</p></li>
-<li><p><strong>Example:</strong></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is an inline comment</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span>  <span class="co"># Assign 5 to x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Block comment:</strong> Use triple quotes <code>"""</code> or <code>'''</code> to comment out multiple lines.<br>
-</p></li>
-<li><p><strong>Example:</strong></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">Multiple lines</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">of comment here</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul>
-<hr>
-</section>
-<section id="task-7" class="level2">
-<h2 class="anchored" data-anchor-id="task-7">Task 7</h2>
-<p>Go back and add descriptive comments to some of your previous code cells.</p>
-<hr>
-</section>
-<section id="basic-data-types" class="level2">
-<h2 class="anchored" data-anchor-id="basic-data-types">Basic Data Types</h2>
-<p>Python has several basic data types, which are the building blocks for more complex data structures. The most common ones are: - <code>bool</code> — boolean (e.g.&nbsp;<code>True</code>, <code>False</code>)</p>
-<ul>
-<li><p><code>NoneType</code> — represents the absence of a value (e.g.&nbsp;<code>None</code>)</p></li>
-<li><p><code>list</code> — ordered collection (e.g.&nbsp;<code>[1, 2, 3]</code>)</p></li>
-<li><p><code>tuple</code> — immutable ordered collection (e.g.&nbsp;<code>(1, 2, 3)</code>)</p></li>
-<li><p><code>dict</code> — key-value pairs (e.g.&nbsp;`{“key”: “value”})</p></li>
-<li><p><code>set</code> — unordered collection of unique items (e.g.&nbsp;<code>{1, 2, 3}</code>)</p></li>
-</ul>
-<p>The most basic data types you will use in this course are:</p>
-<ul>
-<li><p><code>int</code> — integer (e.g.&nbsp;<code>1</code>, <code>42</code>)</p></li>
-<li><p><code>float</code> — real number (e.g.&nbsp;<code>1.0</code>, <code>3.14</code>)<br>
-</p></li>
-<li><p><code>str</code> — string/text (e.g.&nbsp;<code>"hello"</code>, <code>'abc'</code>)</p></li>
-</ul>
-<hr>
-</section>
-<section id="task-8" class="level2">
-<h2 class="anchored" data-anchor-id="task-8">Task 8</h2>
-<p>Run each in its own cell:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="dv">1</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="fl">1.1</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="st">"hello"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<hr>
-</section>
-<section id="using-variables-and-data-types" class="level2">
-<h2 class="anchored" data-anchor-id="using-variables-and-data-types">Using Variables and Data Types</h2>
-<p>You can assign values to variables and use them in expressions. Here’s an example:</p>
-<hr>
-</section>
-<section id="task-9" class="level2">
-<h2 class="anchored" data-anchor-id="task-9">Task 9</h2>
-<ol type="1">
-<li><p>Create a new Markdown cell labeled:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Task 9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>In a new code cell, perform the following variable assignments:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>course <span class="op">=</span> <span class="st">"PSTAT 5A"</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>num_sections <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>section_capacity <span class="op">=</span> <span class="dv">25</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>A new section has been added! Update the variable <code>num_sections</code> to be one more than when you initially defined it above. (Don’t just use <code>num_sections = 5</code>- think about our discussion on updating variables above!)</p></li>
-<li><p>Using comments, write down what you think the output of each of the following expressions will be:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(course)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(num_sections)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>num_sections <span class="op">*</span> section_capacity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then, run each expression in a separate code chunk and comment on the results.</p></li>
-<li><p>Create a new variable called <code>course_capacity</code> and assign it the value of the maximum capacity of the course. (Hint: there are only 5 sections, and each section has a maximum capacity of 25. Try to use your already-defined variables as much as possible!)</p></li>
-</ol>
-<hr>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>That wraps up Lab 1! You’ve successfully navigated the JupyterHub environment, learned how to switch between and run Code and Markdown cells, experimented with basic Python expressions, and practiced variable assignment. In Lab 2, we’ll dive deeper into Python functions, data structures, and more advanced programming concepts. Great work, see you next time!</p>
-</section>
-</section>
-</div>
-<p><!-- end main content --></p>
-<!-- RIGHT COLUMN: SIDEBAR TOC -->
-<div data-markdown="1" style="
-    width: 35%;
-    padding: 1rem;
-    background: #f9f9f9;
-    border-left: 1px solid #ddd;
-    position: sticky;
-    top: 1rem;
-  ">
-<p><strong>🔖 Table of Contents</strong><br>
-- <a href="#pstat-5a-lab-1">PSTAT 5A Lab 1</a> <br> - <a href="#structure-of-labs">Structure of Labs</a> <br> - <a href="#what-is-programming">What Is Programming?</a> <br> - <a href="#getting-started">Getting Started</a> <br> - <a href="#task-1">Task 1</a> <br> - <a href="#the-jupyterhub-environment">The JupyterHub Environment</a> <br> - <a href="#1-cell-activation">1. Cell Activation</a> <br> - <a href="#2-running-cells">2. Running Cells</a> <br> - <a href="#cell-types">Cell Types</a> <br> - <a href="#code-cells">Code Cells</a> <br> - <a href="#markdown-cells">Markdown Cells</a> <br> - <a href="#task-2">Task 2</a> <br> - <a href="#task-3">Task 3</a> <br> - <a href="#python-as-a-calculator">Python as a Calculator</a> <br> - <a href="#task-4">Task 4</a> <br> - <a href="#python-modules">Python Modules</a> <br> - <a href="#why-use-modules">Why Use Modules?</a> <br> - <a href="#importing-modules">Importing Modules</a> <br> - <a href="#finding-and-installing-modules">Finding and Installing Modules</a> <br> - <a href="#task-5">Task 5</a> <br> - <a href="#variable-assignment">Variable Assignment</a> <br> - <a href="#task-6">Task 6</a> <br> - <a href="#comments">Comments</a> <br> - <a href="#task-7">Task 7</a> <br> - <a href="#basic-data-types">Basic Data Types</a> <br> - <a href="#task-8">Task 8</a> <br> - <a href="#using-variables-and-data-types">Using Variables and Data Types</a> <br> - <a href="#task-9">Task 9</a> <br> - <a href="#conclusion">Conclusion</a></p>
-</div>
-<p><!-- end sidebar --></p>
-</div>
-<p><!-- end wrapper --></p>
 
 
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
