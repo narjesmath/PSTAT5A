@@ -17,6 +17,7 @@ format:
 jupyter: python3
 ---
 
+
 ## Today's Learning Objectives {#sec-objectives .smaller}
 
 
@@ -29,7 +30,7 @@ By the end of this lecture, you will be able to:
 - [Determine when events are independent](#independence)
 - [Use Bayes' theorem in simple applications](#bayes-theorem)
 
---
+---
 
 ## Mutually Exclusive vs. Independent {.smaller}
 

@@ -23,6 +23,9 @@ jupyter: python3
 
 *From outcomes to numbers: quantifying randomness*
 
+![](img/random_variable_mapping.png){width=350px}
+*Figure: A random variable maps outcomes (e.g., die rolls) to numbers.*
+
 ---
 
 ## Today's Learning Objectives
@@ -47,6 +50,9 @@ A **random variable** is a function that assigns a numerical value to each outco
 
 **Key insight**: Random variables transform outcomes into numbers, making mathematical analysis possible
 
+![](img/random_variable_die.png){width=320px}
+*Figure: Mapping die roll outcomes to values of $X$.*
+
 :::{.fragment}
 **Example**: Rolling a die
 - Outcomes: $\{1, 2, 3, 4, 5, 6\}$
@@ -66,6 +72,9 @@ Random variables allow us to:
 - **Make predictions** and decisions
 - **Compare** different random processes
 
+![](img/real_world_examples.png){width=340px}
+*Figure: Examples of random variables in real life (height, test scores, etc.).*
+
 :::{.fragment}
 **Examples**: Height, test scores, number of defects, wait times, stock prices
 :::
@@ -84,6 +93,12 @@ Random variables allow us to:
 - Cannot list all possible values  
 - Examples: height, weight, time, temperature
 
+```{mermaid}
+graph TD
+  A[Discrete: 0, 1, 2, ...] --|Gaps|--> D[Examples: Dice, Emails]
+  B[Continuous: Any real value] --|No gaps|--> C[Examples: Height, Time]
+```
+
 :::{.fragment}
 *Today we focus on discrete random variables*
 :::
@@ -101,6 +116,9 @@ Random variables allow us to:
 **$Z$ = Score on a 10-question quiz**
 - Possible values: $\{0, 1, 2, \ldots, 10\}$
 
+![](img/coin_flips_heads.png){width=320px}
+*Figure: Example of a discrete random variable: number of heads in coin flips.*
+
 :::{.fragment}
 Notice: All values are integers with gaps between them
 :::
@@ -117,6 +135,21 @@ $$P(X = x) = \text{probability that } X \text{ takes the value } x$$
 1. $P(X = x) \geq 0$ for all $x$
 2. $\sum_{\text{all } x} P(X = x) = 1$
 
+```{mermaid}
+%% Bar chart for PMF of a fair die
+%% (Use Quarto's mermaid bar chart for illustration)
+bar
+    title PMF of a Fair Die
+    x-axis 1 2 3 4 5 6
+    y-axis Probability
+    1: 0.1667
+    2: 0.1667
+    3: 0.1667
+    4: 0.1667
+    5: 0.1667
+    6: 0.1667
+```
+
 :::{.fragment}
 **Notation**: Sometimes written as $p(x)$ or $f(x)$
 :::
@@ -132,6 +165,9 @@ $$P(X = x) = \begin{cases}
 0 & \text{otherwise}
 \end{cases}$$
 
+![](img/pmf_fair_die.png){width=340px}
+*Figure: Bar chart of PMF for a fair die.*
+
 :::{.fragment}
 **Verification**: 
 - All probabilities ≥ 0 ✓
@@ -146,6 +182,16 @@ Let $X$ = number of heads in two coin flips
 
 Sample space: $\{HH, HT, TH, TT\}$
 
+```{mermaid}
+bar
+    title PMF: Number of Heads in 2 Coin Flips
+    x-axis 0 1 2
+    y-axis Probability
+    0: 0.25
+    1: 0.5
+    2: 0.25
+```
+
 :::{.fragment}
 | $x$ | Outcomes | $P(X = x)$ |
 |-----|----------|------------|
@@ -155,6 +201,185 @@ Sample space: $\{HH, HT, TH, TT\}$
 
 **Verification**: $\frac{1}{4} + \frac{1}{2} + \frac{1}{4} = 1$ ✓
 :::
+
+---
+
+## Cumulative Distribution Function (CDF)
+
+The **cumulative distribution function** of a random variable $X$ is:
+
+$$F(x) = P(X \leq x)$$
+
+**Properties of CDF**:
+1. $F(x)$ is non-decreasing
+2. $\lim_{x \to -\infty} F(x) = 0$
+3. $\lim_{x \to \infty} F(x) = 1$
+4. $F(x)$ is right-continuous
+
+```{mermaid}
+%% Step function for CDF of two coin flips
+%% (Mermaid doesn't support step plots, so use a line chart for illustration)
+line
+    title CDF: Number of Heads in 2 Coin Flips
+    x-axis -1 0 1 2 3
+    y-axis F(x)
+    -1: 0
+    0: 0.25
+    1: 0.75
+    2: 1
+    3: 1
+```
+
+---
+
+## Expected Value (Mean)
+
+The **expected value** of a discrete random variable $X$ is:
+
+$$E[X] = \mu = \sum_{\text{all } x} x \cdot P(X = x)$$
+
+![](img/expected_value_coins.png){width=320px}
+*Figure: Expected value as the long-run average of repeated coin flips.*
+
+---
+
+## Variance
+
+The **variance** of a random variable $X$ measures spread around the mean:
+
+$$\text{Var}(X) = \sigma^2 = E[(X - \mu)^2]$$
+
+![](img/variance_spread.png){width=320px}
+*Figure: Variance measures the spread of possible values around the mean.*
+
+---
+
+## Bernoulli Distribution
+
+A **Bernoulli random variable** models a single trial with two outcomes:
+
+- Success (1) with probability $p$
+- Failure (0) with probability $1-p$
+
+```{mermaid}
+bar
+    title Bernoulli PMF (p=0.7)
+    x-axis 0 1
+    y-axis Probability
+    0: 0.3
+    1: 0.7
+```
+
+---
+
+## Binomial Distribution
+
+A **binomial random variable** counts successes in $n$ independent Bernoulli trials, each with success probability $p$
+
+![](img/binomial_trials.png){width=340px}
+*Figure: Binomial experiment: sequence of independent trials.*
+
+```{mermaid}
+bar
+    title Binomial PMF (n=5, p=0.5)
+    x-axis 0 1 2 3 4 5
+    y-axis Probability
+    0: 0.031
+    1: 0.156
+    2: 0.312
+    3: 0.312
+    4: 0.156
+    5: 0.031
+```
+
+---
+
+## Geometric Distribution
+
+A **geometric random variable** counts the number of trials until the first success
+
+![](img/geometric_trials.png){width=320px}
+*Figure: Geometric experiment: waiting for the first success.*
+
+```{mermaid}
+bar
+    title Geometric PMF (p=0.3)
+    x-axis 1 2 3 4 5
+    y-axis Probability
+    1: 0.3
+    2: 0.21
+    3: 0.147
+    4: 0.1029
+    5: 0.072
+```
+
+---
+
+## Poisson Distribution
+
+A **Poisson random variable** counts events occurring in a fixed interval when events happen at a constant average rate
+
+![](img/poisson_events.png){width=320px}
+*Figure: Poisson process: random events in time.*
+
+```{mermaid}
+bar
+    title Poisson PMF (λ=3)
+    x-axis 0 1 2 3 4 5 6
+    y-axis Probability
+    0: 0.0498
+    1: 0.1494
+    2: 0.2240
+    3: 0.2240
+    4: 0.1680
+    5: 0.1008
+    6: 0.0504
+```
+
+---
+
+## Hypergeometric Distribution
+
+A **hypergeometric random variable** counts successes when sampling **without replacement** from a finite population
+
+![](img/hypergeometric_sampling.png){width=340px}
+*Figure: Hypergeometric sampling: drawing balls from a box without replacement.*
+
+---
+
+## Law of Large Numbers
+
+As $n$ increases, the sample mean approaches the expected value:
+
+$$\bar{X}_n = \frac{X_1 + X_2 + \cdots + X_n}{n} \to E[X]$$
+
+```{mermaid}
+line
+    title Law of Large Numbers Simulation
+    x-axis 0 100 200 300 400 500 600 700 800 900 1000
+    y-axis Sample Mean
+    0: 0.0
+    100: 0.48
+    200: 0.51
+    300: 0.49
+    400: 0.50
+    500: 0.51
+    600: 0.50
+    700: 0.50
+    800: 0.49
+    900: 0.50
+    1000: 0.50
+```
+*Figure: As the number of trials increases, the sample mean converges to the expected value.*
+
+---
+
+## Simulation/Monte Carlo
+
+**Monte Carlo Method**: Use computer simulation to estimate probabilities
+
+![](img/monte_carlo_simulation.png){width=340px}
+*Figure: Monte Carlo simulation: repeated random experiments to estimate probabilities.*
 
 ---
 
@@ -176,53 +401,6 @@ $P(X = 2) = \frac{\binom{3}{2}\binom{2}{0}}{\binom{5}{2}} = \frac{3 \times 1}{10
 
 ---
 
-## Cumulative Distribution Function (CDF)
-
-The **cumulative distribution function** of a random variable $X$ is:
-
-$$F(x) = P(X \leq x)$$
-
-**Properties of CDF**:
-1. $F(x)$ is non-decreasing
-2. $\lim_{x \to -\infty} F(x) = 0$
-3. $\lim_{x \to \infty} F(x) = 1$
-4. $F(x)$ is right-continuous
-
----
-
-## CDF Example: Two Coin Flips
-
-From our previous example where $X$ = number of heads:
-
-$$F(x) = \begin{cases}
-0 & \text{if } x < 0 \\
-\frac{1}{4} & \text{if } 0 \leq x < 1 \\
-\frac{3}{4} & \text{if } 1 \leq x < 2 \\
-1 & \text{if } x \geq 2
-\end{cases}$$
-
-:::{.fragment}
-**Key insight**: CDF is a step function for discrete random variables
-:::
-
----
-
-## Relationship Between PMF and CDF
-
-**From PMF to CDF**: $F(x) = \sum_{k \leq x} P(X = k)$
-
-**From CDF to PMF**: $P(X = k) = F(k) - F(k^-)$
-
-where $F(k^-)$ is the limit from the left
-
-:::{.fragment}
-**Useful CDF Properties**:
-- $P(X > x) = 1 - F(x)$
-- $P(a < X \leq b) = F(b) - F(a)$
-:::
-
----
-
 ## Practice Problem 2
 
 Using the red balls example from Problem 1, find:
@@ -238,34 +416,6 @@ a) $F(0.5) = P(X \leq 0.5) = P(X = 0) = \frac{1}{10}$
 b) $F(1) = P(X \leq 1) = P(X = 0) + P(X = 1) = \frac{1}{10} + \frac{6}{10} = \frac{7}{10}$
 c) $P(X > 1) = 1 - F(1) = 1 - \frac{7}{10} = \frac{3}{10}$
 d) $P(0.5 < X \leq 1.5) = F(1.5) - F(0.5) = \frac{7}{10} - \frac{1}{10} = \frac{6}{10}$
-:::
-
----
-
-## Expected Value (Mean)
-
-The **expected value** of a discrete random variable $X$ is:
-
-$$E[X] = \mu = \sum_{\text{all } x} x \cdot P(X = x)$$
-
-**Interpretation**: The long-run average value if the experiment is repeated many times
-
-:::{.fragment}
-**Also called**: Mean, expectation, average
-:::
-
----
-
-## Expected Value Example
-
-For two coin flips where $X$ = number of heads:
-
-$$E[X] = 0 \cdot P(X = 0) + 1 \cdot P(X = 1) + 2 \cdot P(X = 2)$$
-
-$$= 0 \cdot \frac{1}{4} + 1 \cdot \frac{1}{2} + 2 \cdot \frac{1}{4} = 0 + \frac{1}{2} + \frac{1}{2} = 1$$
-
-:::{.fragment}
-**Makes sense**: On average, we expect 1 head in 2 coin flips
 :::
 
 ---
@@ -315,47 +465,6 @@ $$E[X^2] = \sum_{\text{all } x} x^2 \cdot P(X = x)$$
 
 ---
 
-## Variance
-
-The **variance** of a random variable $X$ measures spread around the mean:
-
-$$\text{Var}(X) = \sigma^2 = E[(X - \mu)^2]$$
-
-**Alternative formula** (often easier to compute):
-$$\text{Var}(X) = E[X^2] - (E[X])^2$$
-
-**Standard deviation**: $\sigma = \sqrt{\text{Var}(X)}$
-
----
-
-## Variance Example
-
-For two coin flips where $X$ = number of heads, $E[X] = 1$:
-
-First, find $E[X^2]$:
-$$E[X^2] = 0^2 \cdot \frac{1}{4} + 1^2 \cdot \frac{1}{2} + 2^2 \cdot \frac{1}{4} = 0 + \frac{1}{2} + 1 = \frac{3}{2}$$
-
-:::{.fragment}
-Then: $\text{Var}(X) = E[X^2] - (E[X])^2 = \frac{3}{2} - 1^2 = \frac{1}{2}$
-
-Standard deviation: $\sigma = \sqrt{\frac{1}{2}} \approx 0.707$
-:::
-
----
-
-## Properties of Variance
-
-1. $\text{Var}(c) = 0$ (constants have no variability)
-2. $\text{Var}(cX) = c^2 \text{Var}(X)$ (scaling by $c$ scales variance by $c^2$)
-3. $\text{Var}(X + c) = \text{Var}(X)$ (shifting doesn't change spread)
-4. If $X$ and $Y$ are independent: $\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)$
-
-:::{.fragment}
-**Note**: Property 4 requires independence, unlike expectation!
-:::
-
----
-
 ## Practice Problem 4
 
 For the red balls example, find the variance and standard deviation.
@@ -369,84 +478,6 @@ $$= 0 + \frac{6}{10} + \frac{12}{10} = \frac{18}{10} = 1.8$$
 $$\text{Var}(X) = 1.8 - (1.2)^2 = 1.8 - 1.44 = 0.36$$
 
 $$\sigma = \sqrt{0.36} = 0.6$$
-:::
-
----
-
-## Bernoulli Distribution
-
-A **Bernoulli random variable** models a single trial with two outcomes:
-
-- Success (1) with probability $p$
-- Failure (0) with probability $1-p$
-
-**PMF**: $P(X = x) = p^x(1-p)^{1-x}$ for $x \in \{0, 1\}$
-
-**Parameters**: $p \in [0, 1]$
-
-:::{.fragment}
-**Examples**: Coin flip, single exam question (pass/fail), defective item
-:::
-
----
-
-## Bernoulli Properties
-
-For $X \sim \text{Bernoulli}(p)$:
-
-**Mean**: $E[X] = p$
-
-**Variance**: $\text{Var}(X) = p(1-p)$
-
-**Standard deviation**: $\sigma = \sqrt{p(1-p)}$
-
-:::{.fragment}
-**Intuition**: 
-- Mean $p$ makes sense: probability of success
-- Variance maximized when $p = 0.5$ (most uncertainty)
-:::
-
----
-
-## Binomial Distribution
-
-A **binomial random variable** counts successes in $n$ independent Bernoulli trials, each with success probability $p$
-
-**PMF**: $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$ for $k = 0, 1, 2, \ldots, n$
-
-**Parameters**: $n$ (number of trials), $p$ (success probability)
-
-**Notation**: $X \sim \text{Binomial}(n, p)$ or $X \sim B(n, p)$
-
----
-
-## Binomial Properties
-
-For $X \sim \text{Binomial}(n, p)$:
-
-**Mean**: $E[X] = np$
-
-**Variance**: $\text{Var}(X) = np(1-p)$
-
-**Standard deviation**: $\sigma = \sqrt{np(1-p)}$
-
-:::{.fragment}
-**Derivation**: Sum of $n$ independent Bernoulli$(p)$ random variables
-:::
-
----
-
-## Binomial Example
-
-A multiple choice quiz has 10 questions, each with 4 options. A student guesses randomly on each question. Let $X$ = number of correct answers.
-
-$X \sim \text{Binomial}(10, 0.25)$
-
-What's the probability of getting exactly 3 correct?
-
-:::{.fragment}
-$$P(X = 3) = \binom{10}{3} (0.25)^3 (0.75)^7$$
-$$= 120 \times 0.015625 \times 0.1335 \approx 0.250$$
 :::
 
 ---
@@ -469,52 +500,6 @@ c) $P(X \geq 4) = 1 - P(X \leq 3) = 1 - [P(X=0) + P(X=1) + P(X=2) + P(X=3)]$
 
 ---
 
-## Geometric Distribution
-
-A **geometric random variable** counts the number of trials until the first success
-
-**PMF**: $P(X = k) = (1-p)^{k-1} p$ for $k = 1, 2, 3, \ldots$
-
-**Parameters**: $p$ (success probability per trial)
-
-**Notation**: $X \sim \text{Geometric}(p)$
-
-:::{.fragment}
-**Examples**: Number of coin flips until heads, number of shots until goal, number of calls until sale
-:::
-
----
-
-## Geometric Properties
-
-For $X \sim \text{Geometric}(p)$:
-
-**Mean**: $E[X] = \frac{1}{p}$
-
-**Variance**: $\text{Var}(X) = \frac{1-p}{p^2}$
-
-**Memoryless property**: $P(X > s + t | X > s) = P(X > t)$
-
-:::{.fragment}
-**Intuition**: If $p = 0.1$, expect to wait $\frac{1}{0.1} = 10$ trials on average
-:::
-
----
-
-## Geometric Example
-
-A basketball player has a 60% free throw percentage. What's the probability they make their first shot on the 3rd attempt?
-
-$X \sim \text{Geometric}(0.6)$
-
-:::{.fragment}
-$$P(X = 3) = (1-0.6)^{3-1} \times 0.6 = (0.4)^2 \times 0.6 = 0.16 \times 0.6 = 0.096$$
-
-**Expected number of attempts**: $E[X] = \frac{1}{0.6} \approx 1.67$
-:::
-
----
-
 ## Practice Problem 6
 
 A quality control inspector tests items until finding the first defective one. If 5% of items are defective:
@@ -528,52 +513,6 @@ c) What's the probability of testing more than 20 items?
 a) $P(X = 10) = (0.95)^9 \times 0.05 \approx 0.0315$
 b) $E[X] = \frac{1}{0.05} = 20$ items
 c) $P(X > 20) = (0.95)^{20} \approx 0.358$
-:::
-
----
-
-## Poisson Distribution
-
-A **Poisson random variable** counts events occurring in a fixed interval when events happen at a constant average rate
-
-**PMF**: $P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}$ for $k = 0, 1, 2, \ldots$
-
-**Parameters**: $\lambda > 0$ (average rate)
-
-**Notation**: $X \sim \text{Poisson}(\lambda)$
-
-:::{.fragment}
-**Examples**: Emails per hour, accidents per day, mutations per genome
-:::
-
----
-
-## Poisson Properties
-
-For $X \sim \text{Poisson}(\lambda)$:
-
-**Mean**: $E[X] = \lambda$
-
-**Variance**: $\text{Var}(X) = \lambda$
-
-**Standard deviation**: $\sigma = \sqrt{\lambda}$
-
-:::{.fragment}
-**Unique property**: Mean equals variance!
-
-**Approximation**: Binomial$(n, p)$ ≈ Poisson$(np)$ when $n$ large, $p$ small
-:::
-
----
-
-## Poisson Example
-
-A call center receives an average of 3 calls per minute. What's the probability of receiving exactly 5 calls in the next minute?
-
-$X \sim \text{Poisson}(3)$
-
-:::{.fragment}
-$$P(X = 5) = \frac{3^5 e^{-3}}{5!} = \frac{243 \times e^{-3}}{120} \approx \frac{243 \times 0.0498}{120} \approx 0.101$$
 :::
 
 ---
@@ -595,48 +534,6 @@ c) For 2 minutes: $Y \sim \text{Poisson}(6)$, so $E[Y] = 6$ calls
 
 ---
 
-## Hypergeometric Distribution
-
-A **hypergeometric random variable** counts successes when sampling **without replacement** from a finite population
-
-**Setup**: Population of $N$ items, $K$ are successes, draw $n$ items
-
-**PMF**: $P(X = k) = \frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}$
-
-**Notation**: $X \sim \text{Hypergeometric}(N, K, n)$
-
-:::{.fragment}
-**Examples**: Defective items in a batch, aces in a card hand, tagged fish in a sample
-:::
-
----
-
-## Hypergeometric Properties
-
-For $X \sim \text{Hypergeometric}(N, K, n)$:
-
-**Mean**: $E[X] = n \cdot \frac{K}{N}$
-
-**Variance**: $\text{Var}(X) = n \cdot \frac{K}{N} \cdot \frac{N-K}{N} \cdot \frac{N-n}{N-1}$
-
-:::{.fragment}
-**Connection to Binomial**: When $N$ is large relative to $n$, hypergeometric ≈ binomial$(n, K/N)$
-:::
-
----
-
-## Hypergeometric Example
-
-A batch of 20 light bulbs contains 3 defective ones. If 5 bulbs are randomly selected, what's the probability exactly 1 is defective?
-
-$X \sim \text{Hypergeometric}(20, 3, 5)$
-
-:::{.fragment}
-$$P(X = 1) = \frac{\binom{3}{1}\binom{17}{4}}{\binom{20}{5}} = \frac{3 \times 2380}{15504} = \frac{7140}{15504} \approx 0.461$$
-:::
-
----
-
 ## Practice Problem 8
 
 For the light bulb example:
@@ -651,66 +548,6 @@ a) $E[X] = 5 \times \frac{3}{20} = 0.75$ bulbs
 b) $P(X = 0) = \frac{\binom{3}{0}\binom{17}{5}}{\binom{20}{5}} = \frac{6188}{15504} \approx 0.399$
 c) $P(X \geq 2) = 1 - P(X = 0) - P(X = 1) \approx 1 - 0.399 - 0.461 = 0.140$
 :::
-
----
-
-## Comparing Distributions
-
-| Distribution | Parameters | Mean | Variance | Use Case |
-|--------------|------------|------|----------|----------|
-| Bernoulli | $p$ | $p$ | $p(1-p)$ | Single trial |
-| Binomial | $n, p$ | $np$ | $np(1-p)$ | Fixed trials |
-| Geometric | $p$ | $1/p$ | $(1-p)/p^2$ | Wait for success |
-| Poisson | $\lambda$ | $\lambda$ | $\lambda$ | Count events |
-| Hypergeometric | $N, K, n$ | $n(K/N)$ | Complex | Sample w/o replacement |
-
----
-
-## Technology and Software
-
-**Calculators**:
-- Binomial: binompdf(), binomcdf()
-- Poisson: poissonpdf(), poissoncdf()
-
-**R**:
-- `dbinom()`, `pbinom()`, `rbinom()`
-- `dpois()`, `ppois()`, `rpois()`
-- `dgeom()`, `pgeom()`, `rgeom()`
-
-**Python**:
-- `scipy.stats.binom`, `scipy.stats.poisson`
-- `numpy.random` for simulation
-
----
-
-## Problem-Solving Strategy
-
-1. **Identify the scenario**: What type of process?
-2. **Check assumptions**: Independence, constant probability, etc.
-3. **Choose distribution**: Match scenario to distribution
-4. **Identify parameters**: $n$, $p$, $\lambda$, etc.
-5. **Calculate probabilities**: Use PMF, CDF, or technology
-6. **Interpret results**: Does the answer make sense?
-
----
-
-## Real-World Applications
-
-**Quality Control**: 
-- Binomial for defect rates
-- Hypergeometric for batch sampling
-
-**Reliability Engineering**:
-- Geometric for time to failure
-- Poisson for system failures
-
-**Epidemiology**:
-- Binomial for disease spread
-- Poisson for rare events
-
-**Finance**:
-- Poisson for market events
-- Binomial for option pricing
 
 ---
 

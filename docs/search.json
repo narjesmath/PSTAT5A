@@ -144,7 +144,7 @@
     "href": "files/lecture_notes/lecture9/lecture9.html#welcome-to-lecture-7",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Welcome to Lecture 7",
-    "text": "Welcome to Lecture 7\nDiscrete Random Variables\nFrom outcomes to numbers: quantifying randomness"
+    "text": "Welcome to Lecture 7\nDiscrete Random Variables\nFrom outcomes to numbers: quantifying randomness\n Figure: A random variable maps outcomes (e.g., die rolls) to numbers."
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#todays-learning-objectives",
@@ -158,49 +158,49 @@
     "href": "files/lecture_notes/lecture9/lecture9.html#what-is-a-random-variable",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "What is a Random Variable?",
-    "text": "What is a Random Variable?\nA random variable is a function that assigns a numerical value to each outcome of a random experiment\nNotation: Usually denoted by capital letters \\(X\\), \\(Y\\), \\(Z\\)\nKey insight: Random variables transform outcomes into numbers, making mathematical analysis possible\n\nExample: Rolling a die - Outcomes: \\(\\{1, 2, 3, 4, 5, 6\\}\\) - Random variable \\(X\\): the number shown - \\(X\\) can take values \\(\\{1, 2, 3, 4, 5, 6\\}\\)"
+    "text": "What is a Random Variable?\nA random variable is a function that assigns a numerical value to each outcome of a random experiment\nNotation: Usually denoted by capital letters \\(X\\), \\(Y\\), \\(Z\\)\nKey insight: Random variables transform outcomes into numbers, making mathematical analysis possible\n Figure: Mapping die roll outcomes to values of \\(X\\).\n\nExample: Rolling a die - Outcomes: \\(\\{1, 2, 3, 4, 5, 6\\}\\) - Random variable \\(X\\): the number shown - \\(X\\) can take values \\(\\{1, 2, 3, 4, 5, 6\\}\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#why-use-random-variables",
     "href": "files/lecture_notes/lecture9/lecture9.html#why-use-random-variables",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Why Use Random Variables?",
-    "text": "Why Use Random Variables?\nRandom variables allow us to:\n\nQuantify outcomes numerically\nCalculate means, variances, and other statistics\nModel real-world phenomena mathematically\nMake predictions and decisions\nCompare different random processes\n\n\nExamples: Height, test scores, number of defects, wait times, stock prices"
+    "text": "Why Use Random Variables?\nRandom variables allow us to:\n\nQuantify outcomes numerically\nCalculate means, variances, and other statistics\nModel real-world phenomena mathematically\nMake predictions and decisions\nCompare different random processes\n\n Figure: Examples of random variables in real life (height, test scores, etc.).\n\nExamples: Height, test scores, number of defects, wait times, stock prices"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#types-of-random-variables",
     "href": "files/lecture_notes/lecture9/lecture9.html#types-of-random-variables",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Types of Random Variables",
-    "text": "Types of Random Variables\nDiscrete Random Variable: - Takes on a countable number of values - Can list all possible values - Examples: dice rolls, number of emails, quiz scores\nContinuous Random Variable: - Takes on uncountably many values (intervals) - Cannot list all possible values\n- Examples: height, weight, time, temperature\n\nToday we focus on discrete random variables"
+    "text": "Types of Random Variables\nDiscrete Random Variable: - Takes on a countable number of values - Can list all possible values - Examples: dice rolls, number of emails, quiz scores\nContinuous Random Variable: - Takes on uncountably many values (intervals) - Cannot list all possible values\n- Examples: height, weight, time, temperature\n\n\n\n\n\ngraph TD\n  A[Discrete: 0, 1, 2, ...] --|Gaps|--&gt; D[Examples: Dice, Emails]\n  B[Continuous: Any real value] --|No gaps|--&gt; C[Examples: Height, Time]\n\n\n\n\n\n\n\nToday we focus on discrete random variables"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#examples-of-discrete-random-variables",
     "href": "files/lecture_notes/lecture9/lecture9.html#examples-of-discrete-random-variables",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Examples of Discrete Random Variables",
-    "text": "Examples of Discrete Random Variables\n\\(X\\) = Number of heads in 3 coin flips - Possible values: \\(\\{0, 1, 2, 3\\}\\)\n\\(Y\\) = Number of customers in an hour - Possible values: \\(\\{0, 1, 2, 3, \\ldots\\}\\)\n\\(Z\\) = Score on a 10-question quiz - Possible values: \\(\\{0, 1, 2, \\ldots, 10\\}\\)\n\nNotice: All values are integers with gaps between them"
+    "text": "Examples of Discrete Random Variables\n\\(X\\) = Number of heads in 3 coin flips - Possible values: \\(\\{0, 1, 2, 3\\}\\)\n\\(Y\\) = Number of customers in an hour - Possible values: \\(\\{0, 1, 2, 3, \\ldots\\}\\)\n\\(Z\\) = Score on a 10-question quiz - Possible values: \\(\\{0, 1, 2, \\ldots, 10\\}\\)\n Figure: Example of a discrete random variable: number of heads in coin flips.\n\nNotice: All values are integers with gaps between them"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#probability-mass-function-pmf",
     "href": "files/lecture_notes/lecture9/lecture9.html#probability-mass-function-pmf",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Probability Mass Function (PMF)",
-    "text": "Probability Mass Function (PMF)\nThe probability mass function of a discrete random variable \\(X\\) is:\n\\[P(X = x) = \\text{probability that } X \\text{ takes the value } x\\]\nProperties of PMF: 1. \\(P(X = x) \\geq 0\\) for all \\(x\\) 2. \\(\\sum_{\\text{all } x} P(X = x) = 1\\)\n\nNotation: Sometimes written as \\(p(x)\\) or \\(f(x)\\)"
+    "text": "Probability Mass Function (PMF)\nThe probability mass function of a discrete random variable \\(X\\) is:\n\\[P(X = x) = \\text{probability that } X \\text{ takes the value } x\\]\nProperties of PMF: 1. \\(P(X = x) \\geq 0\\) for all \\(x\\) 2. \\(\\sum_{\\text{all } x} P(X = x) = 1\\)\n\n\n\n\n\n%% Bar chart for PMF of a fair die\n%% (Use Quarto's mermaid bar chart for illustration)\nbar\n    title PMF of a Fair Die\n    x-axis 1 2 3 4 5 6\n    y-axis Probability\n    1: 0.1667\n    2: 0.1667\n    3: 0.1667\n    4: 0.1667\n    5: 0.1667\n    6: 0.1667\n\n\n\n\n\n\n\nNotation: Sometimes written as \\(p(x)\\) or \\(f(x)\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#pmf-example-fair-die",
     "href": "files/lecture_notes/lecture9/lecture9.html#pmf-example-fair-die",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "PMF Example: Fair Die",
-    "text": "PMF Example: Fair Die\nLet \\(X\\) = outcome of rolling a fair six-sided die\n\\[P(X = x) = \\begin{cases}\n\\frac{1}{6} & \\text{if } x \\in \\{1, 2, 3, 4, 5, 6\\} \\\\\n0 & \\text{otherwise}\n\\end{cases}\\]\n\nVerification: - All probabilities ≥ 0 ✓ - Sum = \\(6 \\times \\frac{1}{6} = 1\\) ✓"
+    "text": "PMF Example: Fair Die\nLet \\(X\\) = outcome of rolling a fair six-sided die\n\\[P(X = x) = \\begin{cases}\n\\frac{1}{6} & \\text{if } x \\in \\{1, 2, 3, 4, 5, 6\\} \\\\\n0 & \\text{otherwise}\n\\end{cases}\\]\n Figure: Bar chart of PMF for a fair die.\n\nVerification: - All probabilities ≥ 0 ✓ - Sum = \\(6 \\times \\frac{1}{6} = 1\\) ✓"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#pmf-example-two-coin-flips",
     "href": "files/lecture_notes/lecture9/lecture9.html#pmf-example-two-coin-flips",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "PMF Example: Two Coin Flips",
-    "text": "PMF Example: Two Coin Flips\nLet \\(X\\) = number of heads in two coin flips\nSample space: \\(\\{HH, HT, TH, TT\\}\\)\n\n\n\n\n\\(x\\)\nOutcomes\n\\(P(X = x)\\)\n\n\n\n\n0\nTT\n1/4\n\n\n1\nHT, TH\n2/4 = 1/2\n\n\n2\nHH\n1/4\n\n\n\nVerification: \\(\\frac{1}{4} + \\frac{1}{2} + \\frac{1}{4} = 1\\) ✓"
+    "text": "PMF Example: Two Coin Flips\nLet \\(X\\) = number of heads in two coin flips\nSample space: \\(\\{HH, HT, TH, TT\\}\\)\n\n\n\n\n\nbar\n    title PMF: Number of Heads in 2 Coin Flips\n    x-axis 0 1 2\n    y-axis Probability\n    0: 0.25\n    1: 0.5\n    2: 0.25\n\n\n\n\n\n\n\n\n\n\n\\(x\\)\nOutcomes\n\\(P(X = x)\\)\n\n\n\n\n0\nTT\n1/4\n\n\n1\nHT, TH\n2/4 = 1/2\n\n\n2\nHH\n1/4\n\n\n\nVerification: \\(\\frac{1}{4} + \\frac{1}{2} + \\frac{1}{4} = 1\\) ✓"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#practice-problem-1",
@@ -214,7 +214,7 @@
     "href": "files/lecture_notes/lecture9/lecture9.html#cumulative-distribution-function-cdf",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Cumulative Distribution Function (CDF)",
-    "text": "Cumulative Distribution Function (CDF)\nThe cumulative distribution function of a random variable \\(X\\) is:\n\\[F(x) = P(X \\leq x)\\]\nProperties of CDF: 1. \\(F(x)\\) is non-decreasing 2. \\(\\lim_{x \\to -\\infty} F(x) = 0\\) 3. \\(\\lim_{x \\to \\infty} F(x) = 1\\) 4. \\(F(x)\\) is right-continuous"
+    "text": "Cumulative Distribution Function (CDF)\nThe cumulative distribution function of a random variable \\(X\\) is:\n\\[F(x) = P(X \\leq x)\\]\nProperties of CDF: 1. \\(F(x)\\) is non-decreasing 2. \\(\\lim_{x \\to -\\infty} F(x) = 0\\) 3. \\(\\lim_{x \\to \\infty} F(x) = 1\\) 4. \\(F(x)\\) is right-continuous\n\n\n\n\n\n%% Step function for CDF of two coin flips\n%% (Mermaid doesn't support step plots, so use a line chart for illustration)\nline\n    title CDF: Number of Heads in 2 Coin Flips\n    x-axis -1 0 1 2 3\n    y-axis F(x)\n    -1: 0\n    0: 0.25\n    1: 0.75\n    2: 1\n    3: 1"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#cdf-example-two-coin-flips",
@@ -242,7 +242,7 @@
     "href": "files/lecture_notes/lecture9/lecture9.html#expected-value-mean",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Expected Value (Mean)",
-    "text": "Expected Value (Mean)\nThe expected value of a discrete random variable \\(X\\) is:\n\\[E[X] = \\mu = \\sum_{\\text{all } x} x \\cdot P(X = x)\\]\nInterpretation: The long-run average value if the experiment is repeated many times\n\nAlso called: Mean, expectation, average"
+    "text": "Expected Value (Mean)\nThe expected value of a discrete random variable \\(X\\) is:\n\\[E[X] = \\mu = \\sum_{\\text{all } x} x \\cdot P(X = x)\\]\n Figure: Expected value as the long-run average of repeated coin flips."
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#expected-value-example",
@@ -277,7 +277,7 @@
     "href": "files/lecture_notes/lecture9/lecture9.html#variance",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Variance",
-    "text": "Variance\nThe variance of a random variable \\(X\\) measures spread around the mean:\n\\[\\text{Var}(X) = \\sigma^2 = E[(X - \\mu)^2]\\]\nAlternative formula (often easier to compute): \\[\\text{Var}(X) = E[X^2] - (E[X])^2\\]\nStandard deviation: \\(\\sigma = \\sqrt{\\text{Var}(X)}\\)"
+    "text": "Variance\nThe variance of a random variable \\(X\\) measures spread around the mean:\n\\[\\text{Var}(X) = \\sigma^2 = E[(X - \\mu)^2]\\]\n Figure: Variance measures the spread of possible values around the mean."
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#variance-example",
@@ -305,7 +305,7 @@
     "href": "files/lecture_notes/lecture9/lecture9.html#bernoulli-distribution",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Bernoulli Distribution",
-    "text": "Bernoulli Distribution\nA Bernoulli random variable models a single trial with two outcomes:\n\nSuccess (1) with probability \\(p\\)\nFailure (0) with probability \\(1-p\\)\n\nPMF: \\(P(X = x) = p^x(1-p)^{1-x}\\) for \\(x \\in \\{0, 1\\}\\)\nParameters: \\(p \\in [0, 1]\\)\n\nExamples: Coin flip, single exam question (pass/fail), defective item"
+    "text": "Bernoulli Distribution\nA Bernoulli random variable models a single trial with two outcomes:\n\nSuccess (1) with probability \\(p\\)\nFailure (0) with probability \\(1-p\\)\n\n\n\n\n\n\nbar\n    title Bernoulli PMF (p=0.7)\n    x-axis 0 1\n    y-axis Probability\n    0: 0.3\n    1: 0.7"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#bernoulli-properties",
@@ -319,7 +319,7 @@
     "href": "files/lecture_notes/lecture9/lecture9.html#binomial-distribution",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Binomial Distribution",
-    "text": "Binomial Distribution\nA binomial random variable counts successes in \\(n\\) independent Bernoulli trials, each with success probability \\(p\\)\nPMF: \\(P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\) for \\(k = 0, 1, 2, \\ldots, n\\)\nParameters: \\(n\\) (number of trials), \\(p\\) (success probability)\nNotation: \\(X \\sim \\text{Binomial}(n, p)\\) or \\(X \\sim B(n, p)\\)"
+    "text": "Binomial Distribution\nA binomial random variable counts successes in \\(n\\) independent Bernoulli trials, each with success probability \\(p\\)\n Figure: Binomial experiment: sequence of independent trials.\n\n\n\n\n\nbar\n    title Binomial PMF (n=5, p=0.5)\n    x-axis 0 1 2 3 4 5\n    y-axis Probability\n    0: 0.031\n    1: 0.156\n    2: 0.312\n    3: 0.312\n    4: 0.156\n    5: 0.031"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#binomial-properties",
@@ -347,7 +347,7 @@
     "href": "files/lecture_notes/lecture9/lecture9.html#geometric-distribution",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Geometric Distribution",
-    "text": "Geometric Distribution\nA geometric random variable counts the number of trials until the first success\nPMF: \\(P(X = k) = (1-p)^{k-1} p\\) for \\(k = 1, 2, 3, \\ldots\\)\nParameters: \\(p\\) (success probability per trial)\nNotation: \\(X \\sim \\text{Geometric}(p)\\)\n\nExamples: Number of coin flips until heads, number of shots until goal, number of calls until sale"
+    "text": "Geometric Distribution\nA geometric random variable counts the number of trials until the first success\n Figure: Geometric experiment: waiting for the first success.\n\n\n\n\n\nbar\n    title Geometric PMF (p=0.3)\n    x-axis 1 2 3 4 5\n    y-axis Probability\n    1: 0.3\n    2: 0.21\n    3: 0.147\n    4: 0.1029\n    5: 0.072"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#geometric-properties",
@@ -375,7 +375,7 @@
     "href": "files/lecture_notes/lecture9/lecture9.html#poisson-distribution",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Poisson Distribution",
-    "text": "Poisson Distribution\nA Poisson random variable counts events occurring in a fixed interval when events happen at a constant average rate\nPMF: \\(P(X = k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}\\) for \\(k = 0, 1, 2, \\ldots\\)\nParameters: \\(\\lambda &gt; 0\\) (average rate)\nNotation: \\(X \\sim \\text{Poisson}(\\lambda)\\)\n\nExamples: Emails per hour, accidents per day, mutations per genome"
+    "text": "Poisson Distribution\nA Poisson random variable counts events occurring in a fixed interval when events happen at a constant average rate\n Figure: Poisson process: random events in time.\n\n\n\n\n\nbar\n    title Poisson PMF (λ=3)\n    x-axis 0 1 2 3 4 5 6\n    y-axis Probability\n    0: 0.0498\n    1: 0.1494\n    2: 0.2240\n    3: 0.2240\n    4: 0.1680\n    5: 0.1008\n    6: 0.0504"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#poisson-properties",
@@ -403,7 +403,7 @@
     "href": "files/lecture_notes/lecture9/lecture9.html#hypergeometric-distribution",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Hypergeometric Distribution",
-    "text": "Hypergeometric Distribution\nA hypergeometric random variable counts successes when sampling without replacement from a finite population\nSetup: Population of \\(N\\) items, \\(K\\) are successes, draw \\(n\\) items\nPMF: \\(P(X = k) = \\frac{\\binom{K}{k}\\binom{N-K}{n-k}}{\\binom{N}{n}}\\)\nNotation: \\(X \\sim \\text{Hypergeometric}(N, K, n)\\)\n\nExamples: Defective items in a batch, aces in a card hand, tagged fish in a sample"
+    "text": "Hypergeometric Distribution\nA hypergeometric random variable counts successes when sampling without replacement from a finite population\n Figure: Hypergeometric sampling: drawing balls from a box without replacement."
   },
   {
     "objectID": "files/lecture_notes/lecture9/lecture9.html#hypergeometric-properties",
@@ -564,7 +564,7 @@
     "href": "files/lecture_notes/lecture6/lecture6.html#sec-objectives",
     "title": "PSTAT 5A: Conditional Probability Continued & Bayes’ Theorem",
     "section": "Today’s Learning Objectives",
-    "text": "Today’s Learning Objectives\nBy the end of this lecture, you will be able to:\n\nDefine probability and understand its basic properties\nIdentify sample spaces and events\nApply fundamental probability rules\nCalculate conditional probabilities\nDetermine when events are independent\nUse Bayes’ theorem in simple applications\n\n–"
+    "text": "Today’s Learning Objectives\nBy the end of this lecture, you will be able to:\n\nDefine probability and understand its basic properties\nIdentify sample spaces and events\nApply fundamental probability rules\nCalculate conditional probabilities\nDetermine when events are independent\nUse Bayes’ theorem in simple applications"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6.html#mutually-exclusive-vs.-independent",
@@ -3491,5 +3491,19 @@
     "title": "Course Resources",
     "section": "Week 4: Statistical Methods & Testing",
     "text": "Week 4: Statistical Methods & Testing\n\n\n🔬\n\n\nHypothesis Testing Fundamentals\nWeek 4 will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 4."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#law-of-large-numbers",
+    "href": "files/lecture_notes/lecture9/lecture9.html#law-of-large-numbers",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Law of Large Numbers",
+    "text": "Law of Large Numbers\nAs \\(n\\) increases, the sample mean approaches the expected value:\n\\[\\bar{X}_n = \\frac{X_1 + X_2 + \\cdots + X_n}{n} \\to E[X]\\]\n\n\n\n\n\nline\n    title Law of Large Numbers Simulation\n    x-axis 0 100 200 300 400 500 600 700 800 900 1000\n    y-axis Sample Mean\n    0: 0.0\n    100: 0.48\n    200: 0.51\n    300: 0.49\n    400: 0.50\n    500: 0.51\n    600: 0.50\n    700: 0.50\n    800: 0.49\n    900: 0.50\n    1000: 0.50\n\n\n\n\n\n\nFigure: As the number of trials increases, the sample mean converges to the expected value."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#simulationmonte-carlo",
+    "href": "files/lecture_notes/lecture9/lecture9.html#simulationmonte-carlo",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Simulation/Monte Carlo",
+    "text": "Simulation/Monte Carlo\nMonte Carlo Method: Use computer simulation to estimate probabilities\n Figure: Monte Carlo simulation: repeated random experiments to estimate probabilities."
   }
 ]

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Narjes Mathlouthi">
-  <meta name="dcterms.date" content="2025-07-06">
+  <meta name="dcterms.date" content="2025-07-07">
   <title>PSTAT5A – PSTAT 5A: Discrete Random Variables</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -190,6 +190,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -207,12 +210,13 @@ Narjes Mathlouthi
 </div>
 </div>
 
-  <p class="date">2025-07-06</p>
+  <p class="date">2025-07-07</p>
 </section>
 <section id="welcome-to-lecture-7" class="slide level2 center">
 <h2>Welcome to Lecture 7</h2>
 <p><strong>Discrete Random Variables</strong></p>
 <p><em>From outcomes to numbers: quantifying randomness</em></p>
+<p><img data-src="img/random_variable_mapping.png" width="350"> <em>Figure: A random variable maps outcomes (e.g., die rolls) to numbers.</em></p>
 </section>
 <section id="todays-learning-objectives" class="slide level2">
 <h2>Today’s Learning Objectives</h2>
@@ -232,6 +236,7 @@ Narjes Mathlouthi
 <p>A <strong>random variable</strong> is a function that assigns a numerical value to each outcome of a random experiment</p>
 <p><strong>Notation</strong>: Usually denoted by capital letters <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span></p>
 <p><strong>Key insight</strong>: Random variables transform outcomes into numbers, making mathematical analysis possible</p>
+<p><img data-src="img/random_variable_die.png" width="320"> <em>Figure: Mapping die roll outcomes to values of <span class="math inline">\(X\)</span>.</em></p>
 <div class="fragment">
 <p><strong>Example</strong>: Rolling a die - Outcomes: <span class="math inline">\(\{1, 2, 3, 4, 5, 6\}\)</span> - Random variable <span class="math inline">\(X\)</span>: the number shown - <span class="math inline">\(X\)</span> can take values <span class="math inline">\(\{1, 2, 3, 4, 5, 6\}\)</span></p>
 </div>
@@ -246,6 +251,7 @@ Narjes Mathlouthi
 <li><strong>Make predictions</strong> and decisions</li>
 <li><strong>Compare</strong> different random processes</li>
 </ul>
+<p><img data-src="img/real_world_examples.png" width="340"> <em>Figure: Examples of random variables in real life (height, test scores, etc.).</em></p>
 <div class="fragment">
 <p><strong>Examples</strong>: Height, test scores, number of defects, wait times, stock prices</p>
 </div>
@@ -255,6 +261,20 @@ Narjes Mathlouthi
 <p><strong>Discrete Random Variable</strong>: - Takes on a countable number of values - Can list all possible values - Examples: dice rolls, number of emails, quiz scores</p>
 <p><strong>Continuous Random Variable</strong>: - Takes on uncountably many values (intervals) - Cannot list all possible values<br>
 - Examples: height, weight, time, temperature</p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+  A[Discrete: 0, 1, 2, ...] --|Gaps|--&gt; D[Examples: Dice, Emails]
+  B[Continuous: Any real value] --|No gaps|--&gt; C[Examples: Height, Time]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <div class="fragment">
 <p><em>Today we focus on discrete random variables</em></p>
 </div>
@@ -264,6 +284,7 @@ Narjes Mathlouthi
 <p><strong><span class="math inline">\(X\)</span> = Number of heads in 3 coin flips</strong> - Possible values: <span class="math inline">\(\{0, 1, 2, 3\}\)</span></p>
 <p><strong><span class="math inline">\(Y\)</span> = Number of customers in an hour</strong> - Possible values: <span class="math inline">\(\{0, 1, 2, 3, \ldots\}\)</span></p>
 <p><strong><span class="math inline">\(Z\)</span> = Score on a 10-question quiz</strong> - Possible values: <span class="math inline">\(\{0, 1, 2, \ldots, 10\}\)</span></p>
+<p><img data-src="img/coin_flips_heads.png" width="320"> <em>Figure: Example of a discrete random variable: number of heads in coin flips.</em></p>
 <div class="fragment">
 <p>Notice: All values are integers with gaps between them</p>
 </div>
@@ -273,6 +294,29 @@ Narjes Mathlouthi
 <p>The <strong>probability mass function</strong> of a discrete random variable <span class="math inline">\(X\)</span> is:</p>
 <p><span class="math display">\[P(X = x) = \text{probability that } X \text{ takes the value } x\]</span></p>
 <p><strong>Properties of PMF</strong>: 1. <span class="math inline">\(P(X = x) \geq 0\)</span> for all <span class="math inline">\(x\)</span> 2. <span class="math inline">\(\sum_{\text{all } x} P(X = x) = 1\)</span></p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%% Bar chart for PMF of a fair die
+%% (Use Quarto's mermaid bar chart for illustration)
+bar
+    title PMF of a Fair Die
+    x-axis 1 2 3 4 5 6
+    y-axis Probability
+    1: 0.1667
+    2: 0.1667
+    3: 0.1667
+    4: 0.1667
+    5: 0.1667
+    6: 0.1667
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <div class="fragment">
 <p><strong>Notation</strong>: Sometimes written as <span class="math inline">\(p(x)\)</span> or <span class="math inline">\(f(x)\)</span></p>
 </div>
@@ -284,6 +328,7 @@ Narjes Mathlouthi
 \frac{1}{6} &amp; \text{if } x \in \{1, 2, 3, 4, 5, 6\} \\
 0 &amp; \text{otherwise}
 \end{cases}\]</span></p>
+<p><img data-src="img/pmf_fair_die.png" width="340"> <em>Figure: Bar chart of PMF for a fair die.</em></p>
 <div class="fragment">
 <p><strong>Verification</strong>: - All probabilities ≥ 0 ✓ - Sum = <span class="math inline">\(6 \times \frac{1}{6} = 1\)</span> ✓</p>
 </div>
@@ -292,6 +337,24 @@ Narjes Mathlouthi
 <h2>PMF Example: Two Coin Flips</h2>
 <p>Let <span class="math inline">\(X\)</span> = number of heads in two coin flips</p>
 <p>Sample space: <span class="math inline">\(\{HH, HT, TH, TT\}\)</span></p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">bar
+    title PMF: Number of Heads in 2 Coin Flips
+    x-axis 0 1 2
+    y-axis Probability
+    0: 0.25
+    1: 0.5
+    2: 0.25
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <div class="fragment">
 <table class="caption-top">
 <thead>
@@ -322,6 +385,191 @@ Narjes Mathlouthi
 <p><strong>Verification</strong>: <span class="math inline">\(\frac{1}{4} + \frac{1}{2} + \frac{1}{4} = 1\)</span> ✓</p>
 </div>
 </section>
+<section id="cumulative-distribution-function-cdf" class="slide level2">
+<h2>Cumulative Distribution Function (CDF)</h2>
+<p>The <strong>cumulative distribution function</strong> of a random variable <span class="math inline">\(X\)</span> is:</p>
+<p><span class="math display">\[F(x) = P(X \leq x)\]</span></p>
+<p><strong>Properties of CDF</strong>: 1. <span class="math inline">\(F(x)\)</span> is non-decreasing 2. <span class="math inline">\(\lim_{x \to -\infty} F(x) = 0\)</span> 3. <span class="math inline">\(\lim_{x \to \infty} F(x) = 1\)</span> 4. <span class="math inline">\(F(x)\)</span> is right-continuous</p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%% Step function for CDF of two coin flips
+%% (Mermaid doesn't support step plots, so use a line chart for illustration)
+line
+    title CDF: Number of Heads in 2 Coin Flips
+    x-axis -1 0 1 2 3
+    y-axis F(x)
+    -1: 0
+    0: 0.25
+    1: 0.75
+    2: 1
+    3: 1
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="expected-value-mean" class="slide level2">
+<h2>Expected Value (Mean)</h2>
+<p>The <strong>expected value</strong> of a discrete random variable <span class="math inline">\(X\)</span> is:</p>
+<p><span class="math display">\[E[X] = \mu = \sum_{\text{all } x} x \cdot P(X = x)\]</span></p>
+<p><img data-src="img/expected_value_coins.png" width="320"> <em>Figure: Expected value as the long-run average of repeated coin flips.</em></p>
+</section>
+<section id="variance" class="slide level2">
+<h2>Variance</h2>
+<p>The <strong>variance</strong> of a random variable <span class="math inline">\(X\)</span> measures spread around the mean:</p>
+<p><span class="math display">\[\text{Var}(X) = \sigma^2 = E[(X - \mu)^2]\]</span></p>
+<p><img data-src="img/variance_spread.png" width="320"> <em>Figure: Variance measures the spread of possible values around the mean.</em></p>
+</section>
+<section id="bernoulli-distribution" class="slide level2">
+<h2>Bernoulli Distribution</h2>
+<p>A <strong>Bernoulli random variable</strong> models a single trial with two outcomes:</p>
+<ul>
+<li>Success (1) with probability <span class="math inline">\(p\)</span></li>
+<li>Failure (0) with probability <span class="math inline">\(1-p\)</span></li>
+</ul>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">bar
+    title Bernoulli PMF (p=0.7)
+    x-axis 0 1
+    y-axis Probability
+    0: 0.3
+    1: 0.7
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="binomial-distribution" class="slide level2">
+<h2>Binomial Distribution</h2>
+<p>A <strong>binomial random variable</strong> counts successes in <span class="math inline">\(n\)</span> independent Bernoulli trials, each with success probability <span class="math inline">\(p\)</span></p>
+<p><img data-src="img/binomial_trials.png" width="340"> <em>Figure: Binomial experiment: sequence of independent trials.</em></p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">bar
+    title Binomial PMF (n=5, p=0.5)
+    x-axis 0 1 2 3 4 5
+    y-axis Probability
+    0: 0.031
+    1: 0.156
+    2: 0.312
+    3: 0.312
+    4: 0.156
+    5: 0.031
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="geometric-distribution" class="slide level2">
+<h2>Geometric Distribution</h2>
+<p>A <strong>geometric random variable</strong> counts the number of trials until the first success</p>
+<p><img data-src="img/geometric_trials.png" width="320"> <em>Figure: Geometric experiment: waiting for the first success.</em></p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">bar
+    title Geometric PMF (p=0.3)
+    x-axis 1 2 3 4 5
+    y-axis Probability
+    1: 0.3
+    2: 0.21
+    3: 0.147
+    4: 0.1029
+    5: 0.072
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="poisson-distribution" class="slide level2">
+<h2>Poisson Distribution</h2>
+<p>A <strong>Poisson random variable</strong> counts events occurring in a fixed interval when events happen at a constant average rate</p>
+<p><img data-src="img/poisson_events.png" width="320"> <em>Figure: Poisson process: random events in time.</em></p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">bar
+    title Poisson PMF (λ=3)
+    x-axis 0 1 2 3 4 5 6
+    y-axis Probability
+    0: 0.0498
+    1: 0.1494
+    2: 0.2240
+    3: 0.2240
+    4: 0.1680
+    5: 0.1008
+    6: 0.0504
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="hypergeometric-distribution" class="slide level2">
+<h2>Hypergeometric Distribution</h2>
+<p>A <strong>hypergeometric random variable</strong> counts successes when sampling <strong>without replacement</strong> from a finite population</p>
+<p><img data-src="img/hypergeometric_sampling.png" width="340"> <em>Figure: Hypergeometric sampling: drawing balls from a box without replacement.</em></p>
+</section>
+<section id="law-of-large-numbers" class="slide level2">
+<h2>Law of Large Numbers</h2>
+<p>As <span class="math inline">\(n\)</span> increases, the sample mean approaches the expected value:</p>
+<p><span class="math display">\[\bar{X}_n = \frac{X_1 + X_2 + \cdots + X_n}{n} \to E[X]\]</span></p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">line
+    title Law of Large Numbers Simulation
+    x-axis 0 100 200 300 400 500 600 700 800 900 1000
+    y-axis Sample Mean
+    0: 0.0
+    100: 0.48
+    200: 0.51
+    300: 0.49
+    400: 0.50
+    500: 0.51
+    600: 0.50
+    700: 0.50
+    800: 0.49
+    900: 0.50
+    1000: 0.50
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><em>Figure: As the number of trials increases, the sample mean converges to the expected value.</em></p>
+</section>
+<section id="simulationmonte-carlo" class="slide level2">
+<h2>Simulation/Monte Carlo</h2>
+<p><strong>Monte Carlo Method</strong>: Use computer simulation to estimate probabilities</p>
+<p><img data-src="img/monte_carlo_simulation.png" width="340"> <em>Figure: Monte Carlo simulation: repeated random experiments to estimate probabilities.</em></p>
+</section>
 <section id="practice-problem-1" class="slide level2">
 <h2>Practice Problem 1</h2>
 <p>A box contains 3 red balls and 2 blue balls. Two balls are drawn without replacement. Let <span class="math inline">\(X\)</span> = number of red balls drawn.</p>
@@ -331,34 +579,6 @@ Narjes Mathlouthi
 <p><span class="math inline">\(P(X = 0) = \frac{\binom{3}{0}\binom{2}{2}}{\binom{5}{2}} = \frac{1 \times 1}{10} = \frac{1}{10}\)</span></p>
 <p><span class="math inline">\(P(X = 1) = \frac{\binom{3}{1}\binom{2}{1}}{\binom{5}{2}} = \frac{3 \times 2}{10} = \frac{6}{10}\)</span></p>
 <p><span class="math inline">\(P(X = 2) = \frac{\binom{3}{2}\binom{2}{0}}{\binom{5}{2}} = \frac{3 \times 1}{10} = \frac{3}{10}\)</span></p>
-</div>
-</section>
-<section id="cumulative-distribution-function-cdf" class="slide level2">
-<h2>Cumulative Distribution Function (CDF)</h2>
-<p>The <strong>cumulative distribution function</strong> of a random variable <span class="math inline">\(X\)</span> is:</p>
-<p><span class="math display">\[F(x) = P(X \leq x)\]</span></p>
-<p><strong>Properties of CDF</strong>: 1. <span class="math inline">\(F(x)\)</span> is non-decreasing 2. <span class="math inline">\(\lim_{x \to -\infty} F(x) = 0\)</span> 3. <span class="math inline">\(\lim_{x \to \infty} F(x) = 1\)</span> 4. <span class="math inline">\(F(x)\)</span> is right-continuous</p>
-</section>
-<section id="cdf-example-two-coin-flips" class="slide level2">
-<h2>CDF Example: Two Coin Flips</h2>
-<p>From our previous example where <span class="math inline">\(X\)</span> = number of heads:</p>
-<p><span class="math display">\[F(x) = \begin{cases}
-0 &amp; \text{if } x &lt; 0 \\
-\frac{1}{4} &amp; \text{if } 0 \leq x &lt; 1 \\
-\frac{3}{4} &amp; \text{if } 1 \leq x &lt; 2 \\
-1 &amp; \text{if } x \geq 2
-\end{cases}\]</span></p>
-<div class="fragment">
-<p><strong>Key insight</strong>: CDF is a step function for discrete random variables</p>
-</div>
-</section>
-<section id="relationship-between-pmf-and-cdf" class="slide level2">
-<h2>Relationship Between PMF and CDF</h2>
-<p><strong>From PMF to CDF</strong>: <span class="math inline">\(F(x) = \sum_{k \leq x} P(X = k)\)</span></p>
-<p><strong>From CDF to PMF</strong>: <span class="math inline">\(P(X = k) = F(k) - F(k^-)\)</span></p>
-<p>where <span class="math inline">\(F(k^-)\)</span> is the limit from the left</p>
-<div class="fragment">
-<p><strong>Useful CDF Properties</strong>: - <span class="math inline">\(P(X &gt; x) = 1 - F(x)\)</span> - <span class="math inline">\(P(a &lt; X \leq b) = F(b) - F(a)\)</span></p>
 </div>
 </section>
 <section id="practice-problem-2" class="slide level2">
@@ -373,24 +593,6 @@ Narjes Mathlouthi
 </ol>
 <div class="fragment">
 <p><strong>Solutions</strong>: a) <span class="math inline">\(F(0.5) = P(X \leq 0.5) = P(X = 0) = \frac{1}{10}\)</span> b) <span class="math inline">\(F(1) = P(X \leq 1) = P(X = 0) + P(X = 1) = \frac{1}{10} + \frac{6}{10} = \frac{7}{10}\)</span> c) <span class="math inline">\(P(X &gt; 1) = 1 - F(1) = 1 - \frac{7}{10} = \frac{3}{10}\)</span> d) <span class="math inline">\(P(0.5 &lt; X \leq 1.5) = F(1.5) - F(0.5) = \frac{7}{10} - \frac{1}{10} = \frac{6}{10}\)</span></p>
-</div>
-</section>
-<section id="expected-value-mean" class="slide level2">
-<h2>Expected Value (Mean)</h2>
-<p>The <strong>expected value</strong> of a discrete random variable <span class="math inline">\(X\)</span> is:</p>
-<p><span class="math display">\[E[X] = \mu = \sum_{\text{all } x} x \cdot P(X = x)\]</span></p>
-<p><strong>Interpretation</strong>: The long-run average value if the experiment is repeated many times</p>
-<div class="fragment">
-<p><strong>Also called</strong>: Mean, expectation, average</p>
-</div>
-</section>
-<section id="expected-value-example" class="slide level2">
-<h2>Expected Value Example</h2>
-<p>For two coin flips where <span class="math inline">\(X\)</span> = number of heads:</p>
-<p><span class="math display">\[E[X] = 0 \cdot P(X = 0) + 1 \cdot P(X = 1) + 2 \cdot P(X = 2)\]</span></p>
-<p><span class="math display">\[= 0 \cdot \frac{1}{4} + 1 \cdot \frac{1}{2} + 2 \cdot \frac{1}{4} = 0 + \frac{1}{2} + \frac{1}{2} = 1\]</span></p>
-<div class="fragment">
-<p><strong>Makes sense</strong>: On average, we expect 1 head in 2 coin flips</p>
 </div>
 </section>
 <section id="practice-problem-3" class="slide level2">
@@ -419,34 +621,6 @@ Narjes Mathlouthi
 <p><em>Note</em>: Generally <span class="math inline">\(E[g(X)] \neq g(E[X])\)</span></p>
 </div>
 </section>
-<section id="variance" class="slide level2">
-<h2>Variance</h2>
-<p>The <strong>variance</strong> of a random variable <span class="math inline">\(X\)</span> measures spread around the mean:</p>
-<p><span class="math display">\[\text{Var}(X) = \sigma^2 = E[(X - \mu)^2]\]</span></p>
-<p><strong>Alternative formula</strong> (often easier to compute): <span class="math display">\[\text{Var}(X) = E[X^2] - (E[X])^2\]</span></p>
-<p><strong>Standard deviation</strong>: <span class="math inline">\(\sigma = \sqrt{\text{Var}(X)}\)</span></p>
-</section>
-<section id="variance-example" class="slide level2">
-<h2>Variance Example</h2>
-<p>For two coin flips where <span class="math inline">\(X\)</span> = number of heads, <span class="math inline">\(E[X] = 1\)</span>:</p>
-<p>First, find <span class="math inline">\(E[X^2]\)</span>: <span class="math display">\[E[X^2] = 0^2 \cdot \frac{1}{4} + 1^2 \cdot \frac{1}{2} + 2^2 \cdot \frac{1}{4} = 0 + \frac{1}{2} + 1 = \frac{3}{2}\]</span></p>
-<div class="fragment">
-<p>Then: <span class="math inline">\(\text{Var}(X) = E[X^2] - (E[X])^2 = \frac{3}{2} - 1^2 = \frac{1}{2}\)</span></p>
-<p>Standard deviation: <span class="math inline">\(\sigma = \sqrt{\frac{1}{2}} \approx 0.707\)</span></p>
-</div>
-</section>
-<section id="properties-of-variance" class="slide level2">
-<h2>Properties of Variance</h2>
-<ol type="1">
-<li><span class="math inline">\(\text{Var}(c) = 0\)</span> (constants have no variability)</li>
-<li><span class="math inline">\(\text{Var}(cX) = c^2 \text{Var}(X)\)</span> (scaling by <span class="math inline">\(c\)</span> scales variance by <span class="math inline">\(c^2\)</span>)</li>
-<li><span class="math inline">\(\text{Var}(X + c) = \text{Var}(X)\)</span> (shifting doesn’t change spread)</li>
-<li>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent: <span class="math inline">\(\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)\)</span></li>
-</ol>
-<div class="fragment">
-<p><strong>Note</strong>: Property 4 requires independence, unlike expectation!</p>
-</div>
-</section>
 <section id="practice-problem-4" class="slide level2">
 <h2>Practice Problem 4</h2>
 <p>For the red balls example, find the variance and standard deviation.</p>
@@ -455,55 +629,6 @@ Narjes Mathlouthi
 <p><span class="math display">\[E[X^2] = 0^2 \cdot \frac{1}{10} + 1^2 \cdot \frac{6}{10} + 2^2 \cdot \frac{3}{10}\]</span> <span class="math display">\[= 0 + \frac{6}{10} + \frac{12}{10} = \frac{18}{10} = 1.8\]</span></p>
 <p><span class="math display">\[\text{Var}(X) = 1.8 - (1.2)^2 = 1.8 - 1.44 = 0.36\]</span></p>
 <p><span class="math display">\[\sigma = \sqrt{0.36} = 0.6\]</span></p>
-</div>
-</section>
-<section id="bernoulli-distribution" class="slide level2">
-<h2>Bernoulli Distribution</h2>
-<p>A <strong>Bernoulli random variable</strong> models a single trial with two outcomes:</p>
-<ul>
-<li>Success (1) with probability <span class="math inline">\(p\)</span></li>
-<li>Failure (0) with probability <span class="math inline">\(1-p\)</span></li>
-</ul>
-<p><strong>PMF</strong>: <span class="math inline">\(P(X = x) = p^x(1-p)^{1-x}\)</span> for <span class="math inline">\(x \in \{0, 1\}\)</span></p>
-<p><strong>Parameters</strong>: <span class="math inline">\(p \in [0, 1]\)</span></p>
-<div class="fragment">
-<p><strong>Examples</strong>: Coin flip, single exam question (pass/fail), defective item</p>
-</div>
-</section>
-<section id="bernoulli-properties" class="slide level2">
-<h2>Bernoulli Properties</h2>
-<p>For <span class="math inline">\(X \sim \text{Bernoulli}(p)\)</span>:</p>
-<p><strong>Mean</strong>: <span class="math inline">\(E[X] = p\)</span></p>
-<p><strong>Variance</strong>: <span class="math inline">\(\text{Var}(X) = p(1-p)\)</span></p>
-<p><strong>Standard deviation</strong>: <span class="math inline">\(\sigma = \sqrt{p(1-p)}\)</span></p>
-<div class="fragment">
-<p><strong>Intuition</strong>: - Mean <span class="math inline">\(p\)</span> makes sense: probability of success - Variance maximized when <span class="math inline">\(p = 0.5\)</span> (most uncertainty)</p>
-</div>
-</section>
-<section id="binomial-distribution" class="slide level2">
-<h2>Binomial Distribution</h2>
-<p>A <strong>binomial random variable</strong> counts successes in <span class="math inline">\(n\)</span> independent Bernoulli trials, each with success probability <span class="math inline">\(p\)</span></p>
-<p><strong>PMF</strong>: <span class="math inline">\(P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\)</span> for <span class="math inline">\(k = 0, 1, 2, \ldots, n\)</span></p>
-<p><strong>Parameters</strong>: <span class="math inline">\(n\)</span> (number of trials), <span class="math inline">\(p\)</span> (success probability)</p>
-<p><strong>Notation</strong>: <span class="math inline">\(X \sim \text{Binomial}(n, p)\)</span> or <span class="math inline">\(X \sim B(n, p)\)</span></p>
-</section>
-<section id="binomial-properties" class="slide level2">
-<h2>Binomial Properties</h2>
-<p>For <span class="math inline">\(X \sim \text{Binomial}(n, p)\)</span>:</p>
-<p><strong>Mean</strong>: <span class="math inline">\(E[X] = np\)</span></p>
-<p><strong>Variance</strong>: <span class="math inline">\(\text{Var}(X) = np(1-p)\)</span></p>
-<p><strong>Standard deviation</strong>: <span class="math inline">\(\sigma = \sqrt{np(1-p)}\)</span></p>
-<div class="fragment">
-<p><strong>Derivation</strong>: Sum of <span class="math inline">\(n\)</span> independent Bernoulli<span class="math inline">\((p)\)</span> random variables</p>
-</div>
-</section>
-<section id="binomial-example" class="slide level2">
-<h2>Binomial Example</h2>
-<p>A multiple choice quiz has 10 questions, each with 4 options. A student guesses randomly on each question. Let <span class="math inline">\(X\)</span> = number of correct answers.</p>
-<p><span class="math inline">\(X \sim \text{Binomial}(10, 0.25)\)</span></p>
-<p>What’s the probability of getting exactly 3 correct?</p>
-<div class="fragment">
-<p><span class="math display">\[P(X = 3) = \binom{10}{3} (0.25)^3 (0.75)^7\]</span> <span class="math display">\[= 120 \times 0.015625 \times 0.1335 \approx 0.250\]</span></p>
 </div>
 </section>
 <section id="practice-problem-5" class="slide level2">
@@ -518,35 +643,6 @@ Narjes Mathlouthi
 <p><strong>Solutions</strong>: a) <span class="math inline">\(E[X] = np = 10 \times 0.25 = 2.5\)</span> b) <span class="math inline">\(\sigma = \sqrt{np(1-p)} = \sqrt{10 \times 0.25 \times 0.75} = \sqrt{1.875} \approx 1.37\)</span> c) <span class="math inline">\(P(X \geq 4) = 1 - P(X \leq 3) = 1 - [P(X=0) + P(X=1) + P(X=2) + P(X=3)]\)</span> Use binomial table or calculator: <span class="math inline">\(P(X \geq 4) \approx 0.224\)</span></p>
 </div>
 </section>
-<section id="geometric-distribution" class="slide level2">
-<h2>Geometric Distribution</h2>
-<p>A <strong>geometric random variable</strong> counts the number of trials until the first success</p>
-<p><strong>PMF</strong>: <span class="math inline">\(P(X = k) = (1-p)^{k-1} p\)</span> for <span class="math inline">\(k = 1, 2, 3, \ldots\)</span></p>
-<p><strong>Parameters</strong>: <span class="math inline">\(p\)</span> (success probability per trial)</p>
-<p><strong>Notation</strong>: <span class="math inline">\(X \sim \text{Geometric}(p)\)</span></p>
-<div class="fragment">
-<p><strong>Examples</strong>: Number of coin flips until heads, number of shots until goal, number of calls until sale</p>
-</div>
-</section>
-<section id="geometric-properties" class="slide level2">
-<h2>Geometric Properties</h2>
-<p>For <span class="math inline">\(X \sim \text{Geometric}(p)\)</span>:</p>
-<p><strong>Mean</strong>: <span class="math inline">\(E[X] = \frac{1}{p}\)</span></p>
-<p><strong>Variance</strong>: <span class="math inline">\(\text{Var}(X) = \frac{1-p}{p^2}\)</span></p>
-<p><strong>Memoryless property</strong>: <span class="math inline">\(P(X &gt; s + t | X &gt; s) = P(X &gt; t)\)</span></p>
-<div class="fragment">
-<p><strong>Intuition</strong>: If <span class="math inline">\(p = 0.1\)</span>, expect to wait <span class="math inline">\(\frac{1}{0.1} = 10\)</span> trials on average</p>
-</div>
-</section>
-<section id="geometric-example" class="slide level2">
-<h2>Geometric Example</h2>
-<p>A basketball player has a 60% free throw percentage. What’s the probability they make their first shot on the 3rd attempt?</p>
-<p><span class="math inline">\(X \sim \text{Geometric}(0.6)\)</span></p>
-<div class="fragment">
-<p><span class="math display">\[P(X = 3) = (1-0.6)^{3-1} \times 0.6 = (0.4)^2 \times 0.6 = 0.16 \times 0.6 = 0.096\]</span></p>
-<p><strong>Expected number of attempts</strong>: <span class="math inline">\(E[X] = \frac{1}{0.6} \approx 1.67\)</span></p>
-</div>
-</section>
 <section id="practice-problem-6" class="slide level2">
 <h2>Practice Problem 6</h2>
 <p>A quality control inspector tests items until finding the first defective one. If 5% of items are defective:</p>
@@ -557,35 +653,6 @@ Narjes Mathlouthi
 </ol>
 <div class="fragment">
 <p><strong>Solutions</strong>: a) <span class="math inline">\(P(X = 10) = (0.95)^9 \times 0.05 \approx 0.0315\)</span> b) <span class="math inline">\(E[X] = \frac{1}{0.05} = 20\)</span> items c) <span class="math inline">\(P(X &gt; 20) = (0.95)^{20} \approx 0.358\)</span></p>
-</div>
-</section>
-<section id="poisson-distribution" class="slide level2">
-<h2>Poisson Distribution</h2>
-<p>A <strong>Poisson random variable</strong> counts events occurring in a fixed interval when events happen at a constant average rate</p>
-<p><strong>PMF</strong>: <span class="math inline">\(P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}\)</span> for <span class="math inline">\(k = 0, 1, 2, \ldots\)</span></p>
-<p><strong>Parameters</strong>: <span class="math inline">\(\lambda &gt; 0\)</span> (average rate)</p>
-<p><strong>Notation</strong>: <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span></p>
-<div class="fragment">
-<p><strong>Examples</strong>: Emails per hour, accidents per day, mutations per genome</p>
-</div>
-</section>
-<section id="poisson-properties" class="slide level2">
-<h2>Poisson Properties</h2>
-<p>For <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span>:</p>
-<p><strong>Mean</strong>: <span class="math inline">\(E[X] = \lambda\)</span></p>
-<p><strong>Variance</strong>: <span class="math inline">\(\text{Var}(X) = \lambda\)</span></p>
-<p><strong>Standard deviation</strong>: <span class="math inline">\(\sigma = \sqrt{\lambda}\)</span></p>
-<div class="fragment">
-<p><strong>Unique property</strong>: Mean equals variance!</p>
-<p><strong>Approximation</strong>: Binomial<span class="math inline">\((n, p)\)</span> ≈ Poisson<span class="math inline">\((np)\)</span> when <span class="math inline">\(n\)</span> large, <span class="math inline">\(p\)</span> small</p>
-</div>
-</section>
-<section id="poisson-example" class="slide level2">
-<h2>Poisson Example</h2>
-<p>A call center receives an average of 3 calls per minute. What’s the probability of receiving exactly 5 calls in the next minute?</p>
-<p><span class="math inline">\(X \sim \text{Poisson}(3)\)</span></p>
-<div class="fragment">
-<p><span class="math display">\[P(X = 5) = \frac{3^5 e^{-3}}{5!} = \frac{243 \times e^{-3}}{120} \approx \frac{243 \times 0.0498}{120} \approx 0.101\]</span></p>
 </div>
 </section>
 <section id="practice-problem-7" class="slide level2">
@@ -600,33 +667,6 @@ Narjes Mathlouthi
 <p><strong>Solutions</strong>: a) <span class="math inline">\(P(X = 0) = \frac{3^0 e^{-3}}{0!} = e^{-3} \approx 0.0498\)</span> b) <span class="math inline">\(P(X \leq 2) = P(X=0) + P(X=1) + P(X=2) \approx 0.0498 + 0.1494 + 0.2240 = 0.423\)</span> c) For 2 minutes: <span class="math inline">\(Y \sim \text{Poisson}(6)\)</span>, so <span class="math inline">\(E[Y] = 6\)</span> calls</p>
 </div>
 </section>
-<section id="hypergeometric-distribution" class="slide level2">
-<h2>Hypergeometric Distribution</h2>
-<p>A <strong>hypergeometric random variable</strong> counts successes when sampling <strong>without replacement</strong> from a finite population</p>
-<p><strong>Setup</strong>: Population of <span class="math inline">\(N\)</span> items, <span class="math inline">\(K\)</span> are successes, draw <span class="math inline">\(n\)</span> items</p>
-<p><strong>PMF</strong>: <span class="math inline">\(P(X = k) = \frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}\)</span></p>
-<p><strong>Notation</strong>: <span class="math inline">\(X \sim \text{Hypergeometric}(N, K, n)\)</span></p>
-<div class="fragment">
-<p><strong>Examples</strong>: Defective items in a batch, aces in a card hand, tagged fish in a sample</p>
-</div>
-</section>
-<section id="hypergeometric-properties" class="slide level2">
-<h2>Hypergeometric Properties</h2>
-<p>For <span class="math inline">\(X \sim \text{Hypergeometric}(N, K, n)\)</span>:</p>
-<p><strong>Mean</strong>: <span class="math inline">\(E[X] = n \cdot \frac{K}{N}\)</span></p>
-<p><strong>Variance</strong>: <span class="math inline">\(\text{Var}(X) = n \cdot \frac{K}{N} \cdot \frac{N-K}{N} \cdot \frac{N-n}{N-1}\)</span></p>
-<div class="fragment">
-<p><strong>Connection to Binomial</strong>: When <span class="math inline">\(N\)</span> is large relative to <span class="math inline">\(n\)</span>, hypergeometric ≈ binomial<span class="math inline">\((n, K/N)\)</span></p>
-</div>
-</section>
-<section id="hypergeometric-example" class="slide level2">
-<h2>Hypergeometric Example</h2>
-<p>A batch of 20 light bulbs contains 3 defective ones. If 5 bulbs are randomly selected, what’s the probability exactly 1 is defective?</p>
-<p><span class="math inline">\(X \sim \text{Hypergeometric}(20, 3, 5)\)</span></p>
-<div class="fragment">
-<p><span class="math display">\[P(X = 1) = \frac{\binom{3}{1}\binom{17}{4}}{\binom{20}{5}} = \frac{3 \times 2380}{15504} = \frac{7140}{15504} \approx 0.461\]</span></p>
-</div>
-</section>
 <section id="practice-problem-8" class="slide level2">
 <h2>Practice Problem 8</h2>
 <p>For the light bulb example:</p>
@@ -638,88 +678,6 @@ Narjes Mathlouthi
 <div class="fragment">
 <p><strong>Solutions</strong>: a) <span class="math inline">\(E[X] = 5 \times \frac{3}{20} = 0.75\)</span> bulbs b) <span class="math inline">\(P(X = 0) = \frac{\binom{3}{0}\binom{17}{5}}{\binom{20}{5}} = \frac{6188}{15504} \approx 0.399\)</span> c) <span class="math inline">\(P(X \geq 2) = 1 - P(X = 0) - P(X = 1) \approx 1 - 0.399 - 0.461 = 0.140\)</span></p>
 </div>
-</section>
-<section id="comparing-distributions" class="slide level2">
-<h2>Comparing Distributions</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 23%">
-<col style="width: 11%">
-<col style="width: 19%">
-<col style="width: 19%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Distribution</th>
-<th>Parameters</th>
-<th>Mean</th>
-<th>Variance</th>
-<th>Use Case</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Bernoulli</td>
-<td><span class="math inline">\(p\)</span></td>
-<td><span class="math inline">\(p\)</span></td>
-<td><span class="math inline">\(p(1-p)\)</span></td>
-<td>Single trial</td>
-</tr>
-<tr class="even">
-<td>Binomial</td>
-<td><span class="math inline">\(n, p\)</span></td>
-<td><span class="math inline">\(np\)</span></td>
-<td><span class="math inline">\(np(1-p)\)</span></td>
-<td>Fixed trials</td>
-</tr>
-<tr class="odd">
-<td>Geometric</td>
-<td><span class="math inline">\(p\)</span></td>
-<td><span class="math inline">\(1/p\)</span></td>
-<td><span class="math inline">\((1-p)/p^2\)</span></td>
-<td>Wait for success</td>
-</tr>
-<tr class="even">
-<td>Poisson</td>
-<td><span class="math inline">\(\lambda\)</span></td>
-<td><span class="math inline">\(\lambda\)</span></td>
-<td><span class="math inline">\(\lambda\)</span></td>
-<td>Count events</td>
-</tr>
-<tr class="odd">
-<td>Hypergeometric</td>
-<td><span class="math inline">\(N, K, n\)</span></td>
-<td><span class="math inline">\(n(K/N)\)</span></td>
-<td>Complex</td>
-<td>Sample w/o replacement</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="technology-and-software" class="slide level2">
-<h2>Technology and Software</h2>
-<p><strong>Calculators</strong>: - Binomial: binompdf(), binomcdf() - Poisson: poissonpdf(), poissoncdf()</p>
-<p><strong>R</strong>: - <code>dbinom()</code>, <code>pbinom()</code>, <code>rbinom()</code> - <code>dpois()</code>, <code>ppois()</code>, <code>rpois()</code> - <code>dgeom()</code>, <code>pgeom()</code>, <code>rgeom()</code></p>
-<p><strong>Python</strong>: - <code>scipy.stats.binom</code>, <code>scipy.stats.poisson</code> - <code>numpy.random</code> for simulation</p>
-</section>
-<section id="problem-solving-strategy" class="slide level2">
-<h2>Problem-Solving Strategy</h2>
-<ol type="1">
-<li><strong>Identify the scenario</strong>: What type of process?</li>
-<li><strong>Check assumptions</strong>: Independence, constant probability, etc.</li>
-<li><strong>Choose distribution</strong>: Match scenario to distribution</li>
-<li><strong>Identify parameters</strong>: <span class="math inline">\(n\)</span>, <span class="math inline">\(p\)</span>, <span class="math inline">\(\lambda\)</span>, etc.</li>
-<li><strong>Calculate probabilities</strong>: Use PMF, CDF, or technology</li>
-<li><strong>Interpret results</strong>: Does the answer make sense?</li>
-</ol>
-</section>
-<section id="real-world-applications" class="slide level2">
-<h2>Real-World Applications</h2>
-<p><strong>Quality Control</strong>: - Binomial for defect rates - Hypergeometric for batch sampling</p>
-<p><strong>Reliability Engineering</strong>: - Geometric for time to failure - Poisson for system failures</p>
-<p><strong>Epidemiology</strong>: - Binomial for disease spread - Poisson for rare events</p>
-<p><strong>Finance</strong>: - Poisson for market events - Binomial for option pricing</p>
 </section>
 <section id="practice-problem-9" class="slide level2">
 <h2>Practice Problem 9</h2>
