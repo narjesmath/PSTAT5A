@@ -33,9 +33,9 @@ execute:
   
 - **Section B (Intermediate):** 15 minutes  
   
-- **Section C (Advanced):** 15 minutes
+- **Section C (Advanced):** 12 minutes
   
-- **Section D (Review):** 12 minutes
+- **Section D (Review):** 15 minutes
   
 - **Total:** 50 minutes
 
@@ -61,8 +61,6 @@ execute:
 
 - **Conditional Probability:** $P(A|B) = \frac{P(A \cap B)}{P(B)}$
   
-- **Bayes' Theorem:** $P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$
-  
 - **Law of Total Probability:** $P(A) = \sum P(A|B_i) \cdot P(B_i)$
 
 - **Addition Rule:** $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
@@ -70,6 +68,10 @@ execute:
 - **Multiplication Rule:** $P(A \cap B) = P(A) \cdot P(B|A) = P(B) \cdot P(A|B)$
 
 **Counting:**
+
+- **Multiplication Rule:** If a procedure consists of $k$ steps, with $n_1$ ways for step 1, $n_2$ for step 2, ..., $n_k$ for step $k$, then total ways: $n_1 \times n_2 \times \cdots \times n_k$
+
+- **Factorial:** $n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$
 
 - **Permutations:** $P(n,r) = \frac{n!}{(n-r)!}$
   
@@ -143,26 +145,27 @@ Since order doesn't matter, this is a combination problem. Ask yourself:
 
 
 # Section C: Conditional Probability
-*⏱️ Estimated time: 15 minutes*
+*⏱️ Estimated time: 12 minutes*
 
 ::: {.problem}
-**Problem B1: Conditional Probability and Medical Testing**
+**Problem C1: Drawing Cards (Without Replacement)**
 
-A new COVID variant test has the following characteristics:
+You draw two cards, one after the other, from a standard 52-card deck without putting the first card back. 
+Let
 
-- The variant affects 3% of the tested population
-  
-- The test correctly identifies 95% of people with the variant (sensitivity)
-  
-- The test correctly identifies 92% of people without the variant (specificity)
+A = $\{\text{“first card is a heart”}\}$,
 
-**Part (a):** What is the probability that a randomly selected person tests positive?
+B = $\{\text{“second card is an ace”}\}$.
 
-**Part (b):** If someone tests positive, what is the probability they actually have the variant?
+1.	P(A)
 
-**Part (c):** If someone tests negative, what is the probability they actually don't have the variant?
+2.	$P\bigl(A\text{ and }B\bigr)$
 
-**Part (d) [Challenge]:** The health department wants to reduce false positives. They decide to require two consecutive positive tests for a positive diagnosis. Assuming test results are independent, what is the new probability that someone with two positive tests actually has the variant?
+3.	$P\bigl(B\mid A\bigr)$
+
+4.	P(B)
+
+5.	Compare your answers in (3) vs. (4).  Why are they different (or the same)?  What does this tell you about drawing cards without replacement?
 :::
 
 **Work Space:**
@@ -170,11 +173,11 @@ A new COVID variant test has the following characteristics:
 <br><br><br><br><br><br><br><br><br><br>
 
 
-# Section C: Conditional Probability
+# Section D: Conditional Probability
 *⏱️ Estimated time: 15 minutes*
 
 ::: {.problem}
-**Problem C1: Advanced Counting with Restrictions**
+**Problem D1: Advanced Counting with Restrictions**
 
 A restaurant offers a prix fixe menu where customers must choose:
 
@@ -198,23 +201,5 @@ However, there are restrictions:
 **Work Space:**
 
 <br><br><br><br><br><br><br><br>
-
-
-# Section D: Review
-*⏱️ Estimated time: 12 minutes*
-
-::: {.problem}
-**Problem B3: Daily Expenses**
-
-Sally gets a cup of coffee and a muffin every day for breakfast from one of the many coffee shops in her neighborhood. She picks a coffee shop each morning at random and independently of previous days. The average price of a cup of coffee is $1.40 with a standard deviation of 30¢ ($0.30), the average price of a muffin is $2.50 with a standard deviation of 15¢, and the two prices are independent of each other.
-
-**Part (a):** What is the mean and standard deviation of the amount she spends on breakfast daily?
-
-**Part (b):** What is the mean and standard deviation of the amount she spends on breakfast weekly (7 days)?
-:::
-
-**Work Space:**
-
-<br><br><br><br><br><br><br><br><br><br><br><br>
 
 

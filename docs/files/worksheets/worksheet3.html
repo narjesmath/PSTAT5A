@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Student Name: ________________________">
-<meta name="dcterms.date" content="2025-07-06">
+<meta name="dcterms.date" content="2025-07-08">
 
 <title>PSTAT 5A Practice Worksheet 3 – PSTAT5A</title>
 <style>
@@ -168,8 +168,7 @@ window.Quarto = {
   <li><a href="#section-a-probability" id="toc-section-a-probability" class="nav-link" data-scroll-target="#section-a-probability">Section A: Probability</a></li>
   <li><a href="#section-b-permutations-and-combination" id="toc-section-b-permutations-and-combination" class="nav-link" data-scroll-target="#section-b-permutations-and-combination">Section B: Permutations and Combination</a></li>
   <li><a href="#section-c-conditional-probability" id="toc-section-c-conditional-probability" class="nav-link" data-scroll-target="#section-c-conditional-probability">Section C: Conditional Probability</a></li>
-  <li><a href="#section-c-conditional-probability-1" id="toc-section-c-conditional-probability-1" class="nav-link" data-scroll-target="#section-c-conditional-probability-1">Section C: Conditional Probability</a></li>
-  <li><a href="#section-d-review" id="toc-section-d-review" class="nav-link" data-scroll-target="#section-d-review">Section D: Review</a></li>
+  <li><a href="#section-d-conditional-probability" id="toc-section-d-conditional-probability" class="nav-link" data-scroll-target="#section-d-conditional-probability">Section D: Conditional Probability</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="worksheet3.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="worksheet3.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
@@ -196,7 +195,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 6, 2025</p>
+      <p class="date">July 8, 2025</p>
     </div>
   </div>
   
@@ -214,8 +213,8 @@ window.Quarto = {
 <ul>
 <li><p><strong>Section A (Warm-up):</strong> 8 minutes</p></li>
 <li><p><strong>Section B (Intermediate):</strong> 15 minutes</p></li>
-<li><p><strong>Section C (Advanced):</strong> 15 minutes</p></li>
-<li><p><strong>Section D (Review):</strong> 12 minutes</p></li>
+<li><p><strong>Section C (Advanced):</strong> 12 minutes</p></li>
+<li><p><strong>Section D (Review):</strong> 15 minutes</p></li>
 <li><p><strong>Total:</strong> 50 minutes</p></li>
 </ul>
 <div class="important">
@@ -232,13 +231,14 @@ window.Quarto = {
 <p><strong>Basic Probability:</strong></p>
 <ul>
 <li><p><strong>Conditional Probability:</strong> <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></p></li>
-<li><p><strong>Bayes’ Theorem:</strong> <span class="math inline">\(P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}\)</span></p></li>
 <li><p><strong>Law of Total Probability:</strong> <span class="math inline">\(P(A) = \sum P(A|B_i) \cdot P(B_i)\)</span></p></li>
 <li><p><strong>Addition Rule:</strong> <span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span></p></li>
 <li><p><strong>Multiplication Rule:</strong> <span class="math inline">\(P(A \cap B) = P(A) \cdot P(B|A) = P(B) \cdot P(A|B)\)</span></p></li>
 </ul>
 <p><strong>Counting:</strong></p>
 <ul>
+<li><p><strong>Multiplication Rule:</strong> If a procedure consists of <span class="math inline">\(k\)</span> steps, with <span class="math inline">\(n_1\)</span> ways for step 1, <span class="math inline">\(n_2\)</span> for step 2, …, <span class="math inline">\(n_k\)</span> for step <span class="math inline">\(k\)</span>, then total ways: <span class="math inline">\(n_1 \times n_2 \times \cdots \times n_k\)</span></p></li>
+<li><p><strong>Factorial:</strong> <span class="math inline">\(n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1\)</span></p></li>
 <li><p><strong>Permutations:</strong> <span class="math inline">\(P(n,r) = \frac{n!}{(n-r)!}\)</span></p></li>
 <li><p><strong>Combinations:</strong> <span class="math inline">\(C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}\)</span></p></li>
 </ul>
@@ -365,28 +365,28 @@ Tip
 </section>
 <section id="section-c-conditional-probability" class="level1">
 <h1>Section C: Conditional Probability</h1>
-<p><em>⏱️ Estimated time: 15 minutes</em></p>
+<p><em>⏱️ Estimated time: 12 minutes</em></p>
 <div class="problem">
-<p><strong>Problem B1: Conditional Probability and Medical Testing</strong></p>
-<p>A new COVID variant test has the following characteristics:</p>
-<ul>
-<li><p>The variant affects 3% of the tested population</p></li>
-<li><p>The test correctly identifies 95% of people with the variant (sensitivity)</p></li>
-<li><p>The test correctly identifies 92% of people without the variant (specificity)</p></li>
-</ul>
-<p><strong>Part (a):</strong> What is the probability that a randomly selected person tests positive?</p>
-<p><strong>Part (b):</strong> If someone tests positive, what is the probability they actually have the variant?</p>
-<p><strong>Part (c):</strong> If someone tests negative, what is the probability they actually don’t have the variant?</p>
-<p><strong>Part (d) [Challenge]:</strong> The health department wants to reduce false positives. They decide to require two consecutive positive tests for a positive diagnosis. Assuming test results are independent, what is the new probability that someone with two positive tests actually has the variant?</p>
+<p><strong>Problem C1: Drawing Cards (Without Replacement)</strong></p>
+<p>You draw two cards, one after the other, from a standard 52-card deck without putting the first card back. Let</p>
+<p>A = <span class="math inline">\(\{\text{“first card is a heart”}\}\)</span>,</p>
+<p>B = <span class="math inline">\(\{\text{“second card is an ace”}\}\)</span>.</p>
+<ol type="1">
+<li><p>P(A)</p></li>
+<li><p><span class="math inline">\(P\bigl(A\text{ and }B\bigr)\)</span></p></li>
+<li><p><span class="math inline">\(P\bigl(B\mid A\bigr)\)</span></p></li>
+<li><p>P(B)</p></li>
+<li><p>Compare your answers in (3) vs.&nbsp;(4). Why are they different (or the same)? What does this tell you about drawing cards without replacement?</p></li>
+</ol>
 </div>
 <p><strong>Work Space:</strong></p>
 <p><br><br><br><br><br><br><br><br><br><br></p>
 </section>
-<section id="section-c-conditional-probability-1" class="level1">
-<h1>Section C: Conditional Probability</h1>
+<section id="section-d-conditional-probability" class="level1">
+<h1>Section D: Conditional Probability</h1>
 <p><em>⏱️ Estimated time: 15 minutes</em></p>
 <div class="problem">
-<p><strong>Problem C1: Advanced Counting with Restrictions</strong></p>
+<p><strong>Problem D1: Advanced Counting with Restrictions</strong></p>
 <p>A restaurant offers a prix fixe menu where customers must choose:</p>
 <ul>
 <li><p>1 appetizer from 6 options</p></li>
@@ -403,18 +403,6 @@ Tip
 </div>
 <p><strong>Work Space:</strong></p>
 <p><br><br><br><br><br><br><br><br></p>
-</section>
-<section id="section-d-review" class="level1">
-<h1>Section D: Review</h1>
-<p><em>⏱️ Estimated time: 12 minutes</em></p>
-<div class="problem">
-<p><strong>Problem B3: Daily Expenses</strong></p>
-<p>Sally gets a cup of coffee and a muffin every day for breakfast from one of the many coffee shops in her neighborhood. She picks a coffee shop each morning at random and independently of previous days. The average price of a cup of coffee is $1.40 with a standard deviation of 30¢ ($0.30), the average price of a muffin is $2.50 with a standard deviation of 15¢, and the two prices are independent of each other.</p>
-<p><strong>Part (a):</strong> What is the mean and standard deviation of the amount she spends on breakfast daily?</p>
-<p><strong>Part (b):</strong> What is the mean and standard deviation of the amount she spends on breakfast weekly (7 days)?</p>
-</div>
-<p><strong>Work Space:</strong></p>
-<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 
 
 </section>

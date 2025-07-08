@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Narjes Mathlouthi">
-  <meta name="dcterms.date" content="2025-07-07">
-  <title>PSTAT5A – PSTAT 5A: Conditional Probability Continued &amp; Bayes’ Theorem</title>
+  <meta name="dcterms.date" content="2025-07-08">
+  <title>PSTAT5A – PSTAT 5A: Counting</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -125,6 +125,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -134,8 +137,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">PSTAT 5A: Conditional Probability Continued &amp; Bayes’ Theorem</h1>
-  <p class="subtitle">Lecture 6</p>
+  <h1 class="title">PSTAT 5A: Counting</h1>
+  <p class="subtitle">Lecture 7</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -145,185 +148,203 @@ Narjes Mathlouthi
 </div>
 </div>
 
-  <p class="date">2025-07-07</p>
+  <p class="date">2025-07-08</p>
 </section>
-<section id="sec-objectives" class="slide level2 smaller">
+<section id="welcome-to-lecture-7" class="slide level2 center">
+<h2>Welcome to Lecture 7</h2>
+<p><em>The art and science of systematic enumeration</em></p>
+</section>
+<section id="learning-objectives" class="slide level2">
 <h2>Today’s Learning Objectives</h2>
+<div title="Learning Objectives">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Learning Objectives</strong></p>
+</div>
+<div class="callout-content">
 <p>By the end of this lecture, you will be able to:</p>
 <ul>
-<li><a href="#/sec-prob">Define probability and understand its basic properties</a></li>
-<li><a href="#/sample-space">Identify sample spaces and events</a></li>
-<li><a href="#/set-operations-overview">Apply fundamental probability rules</a></li>
-<li><a href="#/conditional-probability">Calculate conditional probabilities</a></li>
-<li><a href="#/independence">Determine when events are independent</a></li>
-<li><a href="#/bayes-theorem">Use Bayes’ theorem in simple applications</a></li>
+<li>Apply the fundamental counting principles (<a href="#/sec-fundamental-counting" class="quarto-xref">Section&nbsp;0.4</a>)</li>
+<li>Calculate permutations with and without repetition (<a href="#/sec-permutations" class="quarto-xref">Section&nbsp;0.8</a>, <a href="#/sec-permutations-r-from-n" class="quarto-xref">Section&nbsp;0.11</a>, <a href="#/sec-permutations-repetition" class="quarto-xref">Section&nbsp;0.14</a>)</li>
+<li>Calculate combinations and understand when to use them (<a href="#/sec-combinations" class="quarto-xref">Section&nbsp;0.16</a>, <a href="#/sec-combinations-formula" class="quarto-xref">Section&nbsp;0.17</a>)</li>
+<li>Distinguish between permutations and combinations (<a href="#/sec-permutation-vs-combination" class="quarto-xref">Section&nbsp;0.19</a>)</li>
+<li>Use counting techniques to solve probability problems (<a href="#/sec-counting-probability" class="quarto-xref">Section&nbsp;0.24</a>)</li>
+<li>Apply the inclusion-exclusion principle (<a href="#/sec-inclusion-exclusion" class="quarto-xref">Section&nbsp;0.28</a>)</li>
+<li>Solve complex counting problems systematically (<a href="#/sec-problem-solving-strategy" class="quarto-xref">Section&nbsp;0.32</a>)</li>
 </ul>
-</section>
-<section id="mutually-exclusive-vs.-independent" class="slide level2 smaller">
-<h2>Mutually Exclusive vs.&nbsp;Independent</h2>
-<ul>
-<li><p><strong>Mutually Exclusive (left):</strong> the circles A and B do not overlap, so <span class="math inline">\(P(A\cap B)=0\)</span>.</p></li>
-<li><p><strong>Independent (right):</strong> the circles overlap, and we’ve sized the intersection so that <span class="math inline">\(P(A\cap B)=P(A)\,P(B)\)</span>.</p></li>
-</ul>
-
-<img data-src="lecture6_files/figure-revealjs/cell-2-output-1.png" class="r-stretch"></section>
-<section id="mutually-exclusive-vs.-independent-example" class="slide level2 smaller">
-<h2>Mutually Exclusive vs.&nbsp;Independent Example</h2>
-<div class="columns">
-<div class="column">
-<div class="example">
-<p>Draw a single card from a 52-card deck:</p>
-<ul>
-<li><p>Let A={“draw an Ace”}, so P(A)=4/52.</p></li>
-<li><p>Let B={“draw a King”}, so P(B)=4/52.</p></li>
-</ul>
-<p><strong>Q: What is <span class="math inline">\(P(A\cap B)\)</span> ?</strong></p>
-<p><img data-src="../../../files/lecture_notes/lecture4/img/cards.png"></p>
 </div>
-</div><div class="column">
-<div class="fragment">
-<div class="proof solution">
-<p><span class="proof-title"><em>Solution</em>. </span>They’re disjoint (you can’t draw an Ace and a King), so <span class="math inline">\(P(A\cap B) = 0\)</span>.</p>
-<p>But <span class="math inline">\(P(A)\,P(B) = \frac{4}{52}\times\frac{4}{52} = \frac{16}{2704} \neq 0\)</span>.</p>
-<p>Hence, <span class="math inline">\(P(A\cap B)\neq P(A)P(B)\)</span>, so they’re not independent.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="why-study-counting" class="slide level2 smaller">
+<h2>Why Study Counting?</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="icon-section">
+<p><i class="fas fa-calculator"></i></p>
+</div>
+<p>Counting helps us:</p>
+<ul>
+<li>Calculate probabilities for complex events<br>
+</li>
+<li>Solve optimization problems<br>
+</li>
+<li>Understand combinations in genetics, computer science<br>
+</li>
+<li>Analyze algorithms and data structures<br>
+</li>
+<li>Make decisions involving arrangements and selections</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div class="callout-example" title="Applications">
+<p><strong>Real-world applications of counting include:</strong></p>
+<ul>
+<li><strong>Cryptography</strong>: Password strength and encryption key space</li>
+<li><strong>Genetics</strong>: DNA sequence analysis and gene combinations<br>
+</li>
+<li><strong>Tournament brackets</strong>: March Madness and sports competitions</li>
+<li><strong>Lottery odds</strong>: Probability calculations for games of chance</li>
+<li><strong>Password security</strong>: Character combinations and brute force protection</li>
+</ul>
+</div>
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="../../../files/lecture_notes/lecture7/img/counting_icon.png" class="quarto-figure quarto-figure-left" style="width:10.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="sec-fundamental-counting" class="slide level2">
+<h2>The Fundamental Counting Principle</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div title="Multiplication Rule">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Multiplication Rule</strong></p>
+</div>
+<div class="callout-content">
+<p>If a procedure consists of <strong><span class="math inline">\(k\)</span></strong> separate tasks where:</p>
+<ul>
+<li><p>Task 1 can be performed in <strong><span class="math inline">\(n_1\)</span></strong> ways</p></li>
+<li><p>Task 2 can be performed in <strong><span class="math inline">\(n_2\)</span></strong> ways</p></li>
+<li><p>…</p></li>
+<li><p>Task <strong><span class="math inline">\(k\)</span></strong> can be performed in <strong><span class="math inline">\(n_k\)</span></strong> ways</p></li>
+</ul>
+<p>Then, the entire procedure can be performed in <strong><span class="math inline">\(n_1 \times n_2 \times \cdots \times n_k\)</span></strong> ways</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout-example" title="Visual Demo: Task Tree">
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    Start([Start]) --&gt; T1["Task&nbsp;1:&nbsp;n₁&nbsp;ways"]
+    T1 --&gt; C1[Choice&nbsp;1]
+    T1 --&gt; C2[Choice&nbsp;2]
+    T1 --&gt; Cn1[Choice&nbsp;n₁]
+    C1 --&gt; T2["Task&nbsp;2:&nbsp;n₂&nbsp;ways"]
+    C2 --&gt; T2
+    Cn1 --&gt; T2
+    T2 --&gt; C21[Choice&nbsp;1]
+    T2 --&gt; C22[Choice&nbsp;2]
+    T2 --&gt; C2n[Choice&nbsp;n₂]
+    C21 --&gt; Total(("Total&nbsp;ways:\n&nbsp;n₁&nbsp;×&nbsp;n₂&nbsp;×&nbsp;...&nbsp;×&nbsp;nₖ"))
+    C22 --&gt; Total
+    C2n --&gt; Total
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
 </div>
 </div>
 </div></div>
 </section>
-<section id="multiplication-rule" class="slide level2">
-<h2>Multiplication Rule</h2>
-<p><strong>General case</strong>: <span class="math inline">\(P(A \cap B) = P(A) \times P(B|A)\)</span></p>
-<p><strong>Independent events</strong>: <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span></p>
-
-<img data-src="lecture6_files/figure-revealjs/cell-3-output-1.png" class="r-stretch"></section>
-<section id="tree-diagrams" class="slide level2 smaller">
-<h2>Tree Diagrams</h2>
-<div class="definition">
-<p><strong>🎯 Definition</strong> Tree diagrams help visualize sequential events and calculate probabilities.</p>
-</div>
-
-<img data-src="lecture6_files/figure-revealjs/cell-4-output-1.png" class="r-stretch"></section>
-<section id="tree-diagram-examples" class="slide level2 smaller">
-<h2>Tree Diagram Examples</h2>
-<div class="columns">
-<div class="column">
-<div id="fcee3d84" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture6_files/figure-revealjs/cell-5-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column">
-<div id="0780ccb0" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture6_files/figure-revealjs/cell-6-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="practice-problem-2" class="slide level2 smaller">
-<h2>Practice Problem 2</h2>
-<div class="columns">
-<div class="column">
+<section id="simple-counting-example" class="slide level2 smaller">
+<h2>Simple Counting Example</h2>
 <div class="example">
-<p>A jar contains 5 red balls and 3 blue balls. Two balls are drawn <strong>without replacement</strong>.</p>
-<ol type="a">
-<li><p>What’s the probability both balls are red?</p></li>
-<li><p>What’s the probability the first is red and second is blue?</p></li>
-</ol>
-</div>
-</div><div class="column">
-<div class="fragment">
-<div id="7777b71e" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display">
-<div>
-<figure>
-<p><img data-src="lecture6_files/figure-revealjs/cell-7-output-1.png"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="proof solution">
-<p><span class="proof-title"><em>Solution</em>. </span></p>
-<ol type="a">
-<li><p><span class="math inline">\(P(\text{both red}) = \frac{5}{8} \times \frac{4}{7} = \frac{20}{56} = \frac{5}{14}\)</span></p></li>
-<li><p><span class="math inline">\(P(\text{red then blue}) = \frac{5}{8} \times \frac{3}{7} = \frac{15}{56}\)</span></p></li>
-</ol>
-</div>
-</div>
-</div></div>
-</section>
-<section id="law-of-total-probability" class="slide level2 smaller">
-<h2>Law of Total Probability</h2>
-<div class="definition">
-<p><strong>🎯 Definition</strong></p>
-<p>If events <span class="math inline">\(B_1, B_2, \ldots, B_n\)</span> form a partition of the sample space, then:</p>
-<p><span class="math display">\[P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + \cdots + P(A|B_n)P(B_n)\]</span></p>
-</div>
-
-<img data-src="lecture6_files/figure-revealjs/cell-8-output-1.png" class="r-stretch"></section>
-<section id="law-of-total-probability-example" class="slide level2 smaller">
-<h2>Law of Total Probability Example</h2>
-<div class="example">
-<p>A factory has two machines:</p>
+<p>Format ABC-123</p>
 <ul>
-<li><p>Machine 1: Produces 60% of items, 5% defective</p></li>
-<li><p>Machine 2: Produces 40% of items, 3% defective</p></li>
+<li><p>First position: 26 letters</p></li>
+<li><p>Second position: 26 letters</p></li>
+<li><p>Third position: 26 letters</p></li>
+<li><p>Fourth position: 10 digits</p></li>
+<li><p>Fifth position: 10 digits</p></li>
+<li><p>Sixth position: 10 digits</p></li>
 </ul>
-<p><strong>Q: What’s the overall probability an item is defective?</strong></p>
+<p><img data-src="../../../files/lecture_notes/lecture7/img/count.png" width="70"></p>
 </div>
-<div class="fragment">
-<div class="proof solution">
-<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(P(\text{defective}) = P(D|M_1)P(M_1) + P(D|M_2)P(M_2)\)</span></p>
-<p><span class="math inline">\(= 0.05 \times 0.6 + 0.03 \times 0.4 = 0.03 + 0.012 = 0.042\)</span></p>
-</div>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>Total possibilities: <span class="math inline">\(26 \times 26 \times 26 \times 10 \times 10 \times 10 = 26^3 \times 10^3 = 17,576,000\)</span></p>
 </div>
 </section>
-<section id="bayes-theorem" class="slide level2">
-<h2>Bayes’ Theorem</h2>
-<div class="definition">
-<p><strong>🎯 Definition</strong> <span class="math display">\[P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}\]</span></p>
-<p>This allows us to “reverse” conditional probabilities</p>
-<p><em>Named after Thomas Bayes (1701-1761)</em></p>
+<section id="restaurant-menu-example" class="slide level2 smaller">
+<h2>Restaurant Menu Example</h2>
+<div class="example">
+<p>A restaurant offers:</p>
+<p>🍤 Appetizers: 4</p>
+<p>🍲 Main Courses: 6</p>
+<p>🍰 Desserts: 3</p>
+<p><strong>How many different three-course meals are possible?</strong></p>
+</div>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(4 \times 6 \times 3 = 72\)</span> different meals</p>
+</div>
+</section>
+<section id="practice-1" class="slide level2 smaller">
+<h2>Practice Problem 1</h2>
+<div class="example">
+<p>A password must contain:</p>
+<ul>
+<li><p><strong>Exactly 8 characters</strong></p></li>
+<li><p>Each character is either a <strong>letter</strong> (26 possibilities) or <strong>digit</strong> (10 possibilities)</p></li>
+</ul>
+<p><strong>How many possible passwords are there?</strong></p>
 <div class="quarto-figure quarto-figure-right">
 <figure>
-<p><img data-src="../../../files/lecture_notes/lecture4/img/bayes.gif" class="quarto-figure quarto-figure-right" width="200"></p>
+<p><img data-src="../../../files/lecture_notes/lecture7/img/login.png" class="quarto-figure quarto-figure-right" style="width:10.0%"></p>
 </figure>
 </div>
 </div>
-</section>
-<section id="bayes-theorem-components" class="slide level2">
-<h2>Bayes’ Theorem Components</h2>
-<ul>
-<li><span class="math inline">\(A,B\)</span>: <strong>Events</strong></li>
-<li><span class="math inline">\(P(A|B)\)</span>: <strong>Posterior probability</strong> - what we want to find</li>
-<li><span class="math inline">\(P(B|A)\)</span>: <strong>Likelihood</strong> - given <span class="math inline">\(A\)</span>, probability of observing <span class="math inline">\(B\)</span></li>
-<li><span class="math inline">\(P(A)\)</span>: <strong>Prior probability</strong> - initial probability of <span class="math inline">\(A\)</span></li>
-<li><span class="math inline">\(P(B)\)</span>: <strong>Marginal probability</strong> - total probability of <span class="math inline">\(B\)</span></li>
-</ul>
-</section>
-<section id="bayes-theorem-example" class="slide level2 smaller">
-<h2>Bayes’ Theorem Example</h2>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="example">
-<p><strong>Medical test for a disease:</strong> <sup>1</sup></p>
-<ul>
-<li><p>Disease affects 1% of population</p></li>
-<li><p>Test is 95% accurate for sick people</p></li>
-<li><p>Test is 90% accurate for healthy people</p></li>
-</ul>
-<p><strong>Q:If someone tests positive, what’s the probability they have the disease?</strong></p>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>Each position has <span class="math inline">\(26 + 10 = 36\)</span> choices.</p>
+<p>Total: <span class="math inline">\(36^8 = 2,821,109,907,456\)</span> passwords</p>
 </div>
-</div><div class="column" style="width:60%;">
-<div id="be15b08d" class="cell" data-execution_count="8">
+</section>
+<section id="sec-permutations" class="slide level2 smaller">
+<h2>What Are Permutations?</h2>
+<div title="Permutation">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Permutation</strong></p>
+</div>
+<div class="callout-content">
+<p>An arrangement of objects where <strong>order matters</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-example" title="Permutation Animation: Placing Objects in Boxes">
+<div id="18b99ce0" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
         <script type="text/javascript">
         window.PlotlyConfig = {MathJaxConfig: 'local'};
@@ -334,9 +355,451 @@ Narjes Mathlouthi
 </div>
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="8b349c52-0e44-4b7c-b514-bacba11a0a25" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("8b349c52-0e44-4b7c-b514-bacba11a0a25")) {                    Plotly.newPlot(                        "8b349c52-0e44-4b7c-b514-bacba11a0a25",                        [{"branchvalues":"total","customdata":[["(?)"],["(?)"],["Disease"],["Disease"],["No Disease"],["No Disease"]],"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"hovertemplate":"labels=%{label}\u003cbr\u003eProbability=%{value}\u003cbr\u003eparent=%{parent}\u003cbr\u003eid=%{id}\u003cbr\u003eCondition=%{customdata[0]}\u003cextra\u003e\u003c\u002fextra\u003e","ids":["Positive","Negative","Positive\u002fDisease","Negative\u002fDisease","Positive\u002fNo Disease","Negative\u002fNo Disease"],"labels":["Positive","Negative","Disease","Disease","No Disease","No Disease"],"marker":{"colors":["#00cc96","#00cc96","tomato","tomato","skyblue","skyblue"]},"name":"","parents":["","","Positive","Negative","Positive","Negative"],"values":{"dtype":"f8","bdata":"LbKd76fGuz+6SQwCK4fsP9v5fmq8dIM\u002fAKrx0k1iQD\u002fy0k1iEFi5P1CNl24Sg+w\u002f"},"type":"treemap","textinfo":"label+percent entry"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"legend":{"tracegroupgap":0},"margin":{"t":50,"l":25,"r":25,"b":25},"title":{"text":"Bayes\u2019 Theorem: Distribution by Test Result and Condition"}},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="b364194f-0901-4c2a-b19b-4ef7488e38fe" class="plotly-graph-div" style="height:300px; width:500px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("b364194f-0901-4c2a-b19b-4ef7488e38fe")) {                    Plotly.newPlot(                        "b364194f-0901-4c2a-b19b-4ef7488e38fe",                        [{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["","",""],"textposition":"inside","visible":false,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"},{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["A","",""],"textposition":"inside","visible":false,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"},{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["A","B",""],"textposition":"inside","visible":false,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"},{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["A","B","C"],"textposition":"inside","visible":true,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"yaxis":{"showticklabels":false,"range":[0,1.5]},"xaxis":{"showticklabels":true},"margin":{"l":10,"r":10,"t":40,"b":10},"title":{"text":"Permutation ABC: Step-by-Step Placement"},"height":300,"width":500},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('8b349c52-0e44-4b7c-b514-bacba11a0a25');
+var gd = document.getElementById('b364194f-0901-4c2a-b19b-4ef7488e38fe');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>All permutations of ABC:
+1. ABC
+2. ACB
+3. BAC
+4. BCA
+5. CAB
+6. CBA</code></pre>
+</div>
+</div>
+</div>
+<div class="callout-example" title="Examples where order matters">
+<ul>
+<li><p>Race finish positions (1st, 2nd, 3rd)</p></li>
+<li><p>Seating arrangements</p></li>
+<li><p>Passwords</p></li>
+<li><p>DNA sequences</p></li>
+</ul>
+</div>
+</section>
+<section id="permutations-of-n-distinct-objects" class="slide level2 smaller">
+<h2>Permutations of <span class="math inline">\(n\)</span> Distinct Objects</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div title="Key Formula">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Key Formula</strong></p>
+</div>
+<div class="callout-content">
+<p>The number of ways to arrange <span class="math inline">\(n\)</span> distinct objects is:</p>
+<p><span class="math display">\[n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="../../../files/lecture_notes/lecture7/img/numbers.png" class="quarto-figure quarto-figure-right" style="width:10.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="example">
+<p>Seating Process:</p>
+<p><strong>1st position:</strong> 5 choices (Alice, Bob, Carol, David, Eve)</p>
+<p><strong>2nd position:</strong> 4 choices (whoever is left)</p>
+<p><strong>3rd position:</strong> 3 choices (whoever is left)</p>
+<p><strong>4th position:</strong> 2 choices (whoever is left)</p>
+<p><strong>5th position:</strong> 1 choice (last person)</p>
+<p><strong>How many ways can 5 people sit in a row?</strong></p>
+</div>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(5! = 5 \times 4 \times 3 \times 2 \times 1 = 120\)</span> ways</p>
+</div>
+</div></div>
+</section>
+<section id="factorial-values" class="slide level2 smaller">
+<h2>Factorial Values</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(n\)</span></th>
+<th><span class="math inline">\(n!\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>24</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>120</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>3,628,800</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<div id="df011339" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="6f0bcbdd-d112-46ba-b5b2-2dbe835daa2a" class="plotly-graph-div" style="height:400px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("6f0bcbdd-d112-46ba-b5b2-2dbe835daa2a")) {                    Plotly.newPlot(                        "6f0bcbdd-d112-46ba-b5b2-2dbe835daa2a",                        [{"hovertemplate":"n=%{x}\u003cbr\u003en!=%{y:,}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"lightblue"},"name":"n!","x":[0,1,2,3,4,5,6,7,8,9,10],"y":[1,1,2,6,24,120,720,5040,40320,362880,3628800],"type":"bar"},{"hovertemplate":"n=%{x}\u003cbr\u003en!=%{y:,}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"red","width":2},"mode":"lines+markers","name":"Growth Trend","x":[0,1,2,3,4,5,6,7,8,9,10],"y":[1,1,2,6,24,120,720,5040,40320,362880,3628800],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"title":{"text":"Factorial Growth: n! vs n"},"xaxis":{"title":{"text":"n"},"tickmode":"linear","tick0":0,"dtick":1},"yaxis":{"title":{"text":"n! (log scale)"},"type":"log"},"height":400,"showlegend":true,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('6f0bcbdd-d112-46ba-b5b2-2dbe835daa2a');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+</div><div title="Note">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(0! = 1\)</span> by definition</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-permutations-r-from-n" class="slide level2 smaller">
+<h2>Permutations of <span class="math inline">\(r\)</span> Objects from <span class="math inline">\(n\)</span></h2>
+<div title="Key Formula">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Key Formula</strong></p>
+</div>
+<div class="callout-content">
+<p><strong><span class="math inline">\(P(n,r)\)</span></strong> or <strong><span class="math inline">\(_nP_r\)</span></strong>: Number of ways to arrange <strong><span class="math inline">\(r\)</span></strong> objects selected from <strong><span class="math inline">\(n\)</span></strong> distinct objects</p>
+<p><span class="math display">\[P(n,r) = \frac{n!}{(n-r)!}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<p><strong>How many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary?</strong></p>
+</div>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(P(8,3) = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 8 \times 7 \times 6 = 336\)</span></p>
+</div>
+</section>
+<section id="understanding-pnr" class="slide level2 smaller">
+<h2>Understanding <span class="math inline">\(P(n,r)\)</span></h2>
+<p>Why is <span class="math inline">\(P(n,r) = \frac{n!}{(n-r)!}\)</span>?</p>
+<ul>
+<li><strong>First position:</strong> <span class="math inline">\(n\)</span> choices</li>
+<li><strong>Second position:</strong> <span class="math inline">\((n-1)\)</span> choices<br>
+</li>
+<li><strong>Third position:</strong> <span class="math inline">\((n-2)\)</span> choices</li>
+<li>…</li>
+<li><strong><span class="math inline">\(r\)</span>-th position:</strong> <span class="math inline">\((n-r+1)\)</span> choices</li>
+</ul>
+<div class="formula-box">
+<p>Total: <span class="math inline">\(n \times (n-1) \times (n-2) \times \cdots \times (n-r+1) = \frac{n!}{(n-r)!}\)</span></p>
+</div>
+</section>
+<section id="practice-2" class="slide level2 smaller">
+<h2>Practice Problem 2</h2>
+<div class="example">
+<p>A baseball team has 15 players. How many ways can the coach:</p>
+<ol type="a">
+<li>Arrange all 15 players in a line?</li>
+<li>Choose and arrange 9 players for the starting lineup (batting order matters)?</li>
+</ol>
+</div>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<ol type="a">
+<li><span class="math inline">\(15! = 1,307,674,368,000\)</span></li>
+<li><span class="math inline">\(P(15,9) = \frac{15!}{6!} = 1,816,214,400\)</span></li>
+</ol>
+</div>
+</section>
+<section id="sec-permutations-repetition" class="slide level2">
+<h2>Permutations with Repetition</h2>
+<div title="Permutations with Repetition">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Permutations with Repetition</strong></p>
+</div>
+<div class="callout-content">
+<p>When some objects are identical, we have <strong>fewer</strong> distinct arrangements</p>
+<p>If we have <span class="math inline">\(n\)</span> objects where:</p>
+<ul>
+<li><p><span class="math inline">\(n_1\)</span> are of type 1</p></li>
+<li><p><span class="math inline">\(n_2\)</span> are of type 2</p></li>
+<li><p>…</p></li>
+<li><p><span class="math inline">\(n_k\)</span> are of type <span class="math inline">\(k\)</span></p></li>
+</ul>
+<p>Number of distinct arrangements: <span class="math inline">\(\frac{n!}{n_1! \times n_2! \times \cdots \times n_k!}\)</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="permutations-with-repetition-example" class="slide level2 smaller">
+<h2>Permutations with Repetition Example</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="example">
+<p><strong>How many distinct arrangements are there of the letters in “STATISTICS”?</strong></p>
+</div>
+<p><strong>S-T-A-T-I-S-T-I-C-S</strong></p>
+<ul>
+<li><p>Total letters: 10</p></li>
+<li><p><strong>S</strong> appears 3 times</p></li>
+<li><p><strong>T</strong> appears 3 times</p></li>
+<li><p><strong>A</strong> appears 1 time</p></li>
+<li><p><strong>I</strong> appears 2 times</p></li>
+<li><p><strong>C</strong> appears 1 time</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(\frac{10!}{3! \times 3! \times 1! \times 2! \times 1!} = \frac{3,628,800}{6 \times 6 \times 1 \times 2 \times 1} = \frac{3,628,800}{72} = 50,400\)</span></p>
+</div>
+</div></div>
+</section>
+<section id="sec-combinations" class="slide level2 smaller">
+<h2>What Are Combinations?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div title="Combination">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Combination</strong></p>
+</div>
+<div class="callout-content">
+<p>A selection of objects where <strong>order does NOT matter</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-example" title="Visual Demo: Order Doesn't Matter">
+<pre><code>Committee Selection:
+ABC, BAC, CAB → Same committee!
+
+Race Results:
+ABC, BAC, CAB → Different outcomes!
+
+Key Point: Order doesn't matter for combinations</code></pre>
+</div>
+<div class="callout-example" title="Examples where order doesn't matter">
+<ul>
+<li>Choosing committee members</li>
+<li>Selecting pizza toppings</li>
+<li>Forming study groups</li>
+<li>Lottery number selection</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout-example" title="Combination Animation: Selecting Objects">
+<div id="4be01f14" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="55a35808-0b97-47bd-80fd-1a29af61f950" class="plotly-graph-div" style="height:300px; width:500px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("55a35808-0b97-47bd-80fd-1a29af61f950")) {                    Plotly.newPlot(                        "55a35808-0b97-47bd-80fd-1a29af61f950",                        [{"hovertemplate":"%{text}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["lightgreen","lightgray"]},"name":"Combination 1","text":["A, B","C, D"],"textposition":"inside","visible":true,"x":["Selected","Not Selected"],"y":[2,2],"type":"bar"},{"hovertemplate":"%{text}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["lightgreen","lightgray"]},"name":"Combination 2","text":["A, C","B, D"],"textposition":"inside","visible":false,"x":["Selected","Not Selected"],"y":[2,2],"type":"bar"},{"hovertemplate":"%{text}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["lightgreen","lightgray"]},"name":"Combination 3","text":["A, D","B, C"],"textposition":"inside","visible":false,"x":["Selected","Not Selected"],"y":[2,2],"type":"bar"},{"hovertemplate":"%{text}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["lightgreen","lightgray"]},"name":"Combination 4","text":["B, C","A, D"],"textposition":"inside","visible":false,"x":["Selected","Not Selected"],"y":[2,2],"type":"bar"},{"hovertemplate":"%{text}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["lightgreen","lightgray"]},"name":"Combination 5","text":["B, D","A, C"],"textposition":"inside","visible":false,"x":["Selected","Not Selected"],"y":[2,2],"type":"bar"},{"hovertemplate":"%{text}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["lightgreen","lightgray"]},"name":"Combination 6","text":["C, D","A, B"],"textposition":"inside","visible":false,"x":["Selected","Not Selected"],"y":[2,2],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"yaxis":{"showticklabels":false,"range":[0,3]},"xaxis":{"showticklabels":true},"title":{"text":"Combinations of 4 items taken 2 at a time"},"height":300,"width":500,"showlegend":false},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('55a35808-0b97-47bd-80fd-1a29af61f950');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>All combinations of 4 items taken 2 at a time:
+1. A, B
+2. A, C
+3. A, D
+4. B, C
+5. B, D
+6. C, D</code></pre>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="sec-combinations-formula" class="slide level2">
+<h2>Combinations Formula</h2>
+<div title="Key Formula">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Key Formula</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(C(n,r)\)</span> or <span class="math inline">\(\binom{n}{r}\)</span>: Number of ways to choose <span class="math inline">\(r\)</span> objects from <span class="math inline">\(n\)</span> distinct objects (order doesn’t matter)</p>
+<p><span class="math display">\[C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-example" title="Example">
+<p>How many ways can we choose 3 people from a group of 8 for a committee?</p>
+<p><span class="math inline">\(C(8,3) = \frac{8!}{3!(8-3)!} = \frac{8!}{3! \times 5!} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = 56\)</span></p>
+</div>
+</section>
+<section id="relationship-permutations-vs-combinations" class="slide level2">
+<h2>Relationship: Permutations vs Combinations</h2>
+<div title="Relationship">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Relationship</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(P(n,r) = C(n,r) \times r!\)</span></p>
+<p><strong>Why?</strong> For each combination of <span class="math inline">\(r\)</span> objects, there are <span class="math inline">\(r!\)</span> ways to arrange them</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-example" title="Visual Demo: P vs C Relationship">
+<pre><code>Relationship: P(n,r) = C(n,r) × r!
+
+Example: Choose 3 from 8 people
+- C(8,3) = 56 combinations
+- For each combination, arrange 3 people: 3! = 6 ways
+- Total: 56 × 6 = 336 = P(8,3)
+
+Combination ABC → Permutations: ABC, ACB, BAC, BCA, CAB, CBA</code></pre>
+</div>
+<div class="callout-example" title="Example">
+<p><span class="math inline">\(P(8,3) = C(8,3) \times 3! = 56 \times 6 = 336\)</span> ✓</p>
+</div>
+</section>
+<section id="sec-permutation-vs-combination" class="slide level2">
+<h2>Key Decision: Permutation or Combination?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div title="How to Decide">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>How to Decide</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Ask yourself</strong>: Does order matter?</p>
+<p><strong>Order matters</strong> → Use <strong>Permutations</strong> - Arrangements, sequences, rankings</p>
+<p><strong>Order doesn’t matter</strong> → Use <strong>Combinations</strong><br>
+- Selections, groups, subsets</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="6f5dbbd0" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="e310189c-7d02-4cbb-87c3-35c648e61c66" class="plotly-graph-div" style="height:400px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("e310189c-7d02-4cbb-87c3-35c648e61c66")) {                    Plotly.newPlot(                        "e310189c-7d02-4cbb-87c3-35c648e61c66",                        [{"hovertemplate":"n=%{x}\u003cbr\u003eP(n,2)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"red","width":3},"mode":"lines+markers","name":"P(n,2)","x":[2,3,4,5,6,7,8,9,10],"y":[2,6,12,20,30,42,56,72,90],"type":"scatter"},{"hovertemplate":"n=%{x}\u003cbr\u003eC(n,2)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"blue","width":3},"mode":"lines+markers","name":"C(n,2)","x":[2,3,4,5,6,7,8,9,10],"y":[1,3,6,10,15,21,28,36,45],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"title":{"text":"P(n,2) vs C(n,2) Comparison"},"xaxis":{"title":{"text":"n"},"tickmode":"linear","tick0":2,"dtick":1},"yaxis":{"title":{"text":"Count"}},"height":400,"showlegend":true},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('e310189c-7d02-4cbb-87c3-35c648e61c66');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -362,254 +825,768 @@ if (outputEl) {{
 </div>
 </div>
 </div></div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p><span class="math inline">\(P(\neg D \,\wedge\, \text{Negative})
-\;=\;P(\neg D)\times P(\text{Negative}\mid \neg D)
-\;=\;0.99\times0.90
-\;=\;0.891\;(89.1\%)\)</span></p></li></ol></aside></section>
-<section id="bayes-theorem-solution" class="slide level2 smaller">
-<h2>Bayes’ Theorem Solution</h2>
-<p>Let:</p>
-<ul>
-<li><p><span class="math inline">\(D\)</span>: Person has disease</p></li>
-<li><p><span class="math inline">\(T^+\)</span>: Test is positive</p></li>
-</ul>
-<p>Given:</p>
-<ul>
-<li><p><span class="math inline">\(P(D) = 0.01\)</span></p></li>
-<li><p><span class="math inline">\(P(T^+|D) = 0.95\)</span></p></li>
-<li><p><span class="math inline">\(P(T^-|D^c) = 0.90\)</span>, so <span class="math inline">\(P(T^+|D^c) = 0.10\)</span></p></li>
-</ul>
-<div class="fragment">
-<div class="proof solution">
-<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(P(T^+) = P(T^+|D)P(D) + P(T^+|D^c)P(D^c)\)</span></p>
-<p><span class="math inline">\(= 0.95 \times 0.01 + 0.10 \times 0.99 = 0.1085\)</span></p>
-</div>
-</div>
 </section>
-<section id="bayes-theorem-solution-cont." class="slide level2 smaller">
-<h2>Bayes’ Theorem Solution (cont.)</h2>
-<p><span class="math display">\[P(D|T^+) = \frac{P(T^+|D) \times P(D)}{P(T^+)} = \frac{0.95 \times 0.01}{0.1085} \approx 0.088\]</span></p>
-
-<img data-src="lecture6_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"><div class="fragment">
-<div class="note">
-<p><strong>Surprising result</strong>: Even with a positive test, there’s only an 8.8% chance of having the disease!</p>
-<p><em>This is due to the low base rate of the disease</em></p>
-</div>
-</div>
-</section>
-<section id="common-probability-mistakes" class="slide level2 smaller">
-<h2>Common Probability Mistakes</h2>
-<ul>
-<li><strong>Confusing <span class="math inline">\(P(A|B)\)</span> with <span class="math inline">\(P(B|A)\)</span></strong></li>
-</ul>
-<div class="note">
-<p><a href="https://en.wikipedia.org/wiki/Base_rate_fallacy">Prosecutor’s fallacy</a> is a specific error in interpreting conditional probabilities. Confusing</p>
-<p><span class="math inline">\(P(\text{Evidence}\mid\text{Innocent})
-\quad\text{with}\quad
-P(\text{Innocent}\mid\text{Evidence})\)</span>.</p>
-<p>Ex: OJ Simpson Case <sup>1</sup></p>
-</div>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>the DNA evidence in the O. J. Simpson trial are a classic example of the prosecutor’s fallacy. Prosecutors highlighted that the chance of a random person matching the crime-scene DNA was “one in 170 million,” then implied (or let the jury infer) that Simpson therefore had a 1 in 170 million chance of being innocent.</p></li></ol></aside></section>
-<section id="common-probability-mistakes-1" class="slide level2 smaller">
-<h2>Common Probability Mistakes</h2>
-<ul>
-<li><p><strong>Assuming independence when events are dependent</strong></p></li>
-<li><p><strong>Ignoring base rates</strong> (as in the medical test example)</p></li>
-</ul>
-<div class="note">
-<p><a href="https://en.wikipedia.org/wiki/Base_rate_fallacy">Base rate fallacy</a> is when you ignore or underweight the prior probability <span class="math inline">\(P(H)\)</span> of a hypothesis, focusing only on the new evidence <span class="math inline">\(E\)</span>.</p>
-</div>
-<ul>
-<li><strong>Double counting in union calculations</strong></li>
-</ul>
-</section>
-<section id="practice-problem-3" class="slide level2 smaller">
+<section id="practice-3" class="slide level2 smaller">
 <h2>Practice Problem 3</h2>
 <div class="example">
-<p>Two fair dice are rolled. Find:</p>
+<p>From a class of 20 students:</p>
 <ol type="a">
-<li><span class="math inline">\(P(\text{sum} = 7)\)</span></li>
-<li><span class="math inline">\(P(\text{sum} = 7 | \text{first die shows 3})\)</span></li>
-<li>Are these events independent?</li>
+<li>How many ways to choose 5 students for a study group?</li>
+<li>How many ways to choose a president, vice-president, and secretary?</li>
+<li>How many ways to arrange all 20 students in a circle?</li>
 </ol>
 </div>
-<div class="fragment">
-<div class="proof solution">
+<div class="fragment proof solution">
 <p><span class="proof-title"><em>Solution</em>. </span></p>
 <ol type="a">
-<li><p>6 ways out of 36: <span class="math inline">\(P(\text{sum} = 7) = \frac{6}{36} = \frac{1}{6}\)</span></p></li>
-<li><p>Given first die is 3, need second die to be 4: <span class="math inline">\(P(\text{sum} = 7 | \text{first} = 3) = \frac{1}{6}\)</span></p></li>
-<li><p>Yes, they’re independent since <span class="math inline">\(P(A|B) = P(A)\)</span></p></li>
+<li><span class="math inline">\(C(20,5) = \frac{20!}{5! \times 15!} = 15,504\)</span> (order doesn’t matter)</li>
+<li><span class="math inline">\(P(20,3) = \frac{20!}{17!} = 6,840\)</span> (order matters)</li>
+<li><span class="math inline">\((20-1)! = 19!\)</span> (circular permutation)</li>
+</ol>
+</div>
+</section>
+<section id="properties-of-combinations" class="slide level2">
+<h2>Properties of Combinations</h2>
+<div title="Properties">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Properties</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><strong>Symmetry</strong>: <span class="math inline">\(\binom{n}{r} = \binom{n}{n-r}\)</span></li>
+<li><strong>Pascal’s Identity</strong>: <span class="math inline">\(\binom{n}{r} = \binom{n-1}{r-1} + \binom{n-1}{r}\)</span></li>
+<li><strong>Boundary conditions</strong>: <span class="math inline">\(\binom{n}{0} = \binom{n}{n} = 1\)</span></li>
 </ol>
 </div>
 </div>
-</section>
-<section id="counting-and-probability" class="slide level2 smaller">
-<h2>Counting and Probability</h2>
-<div class="definition">
-<p>Sometimes we need to count outcomes:</p>
-<div class="formula-box">
-<p><strong>Multiplication Principle</strong>: If task 1 can be done in <span class="math inline">\(m\)</span> ways and task 2 in <span class="math inline">\(n\)</span> ways, both can be done in <span class="math inline">\(m \times n\)</span> ways</p>
 </div>
-<div class="formula-box">
-<p><strong>Permutations</strong>: Arrangements where order matters <span class="math display">\[P(n,r) = \frac{n!}{(n-r)!}\]</span></p>
 </div>
-<div class="formula-box">
-<p><strong>Combinations</strong>: Selections where order doesn’t matter <span class="math display">\[C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}\]</span></p>
-</div>
+<div class="callout-example" title="Example">
+<p><span class="math inline">\(\binom{8}{3} = \binom{8}{5} = 56\)</span> ✓</p>
 </div>
 </section>
-<section id="counting-example" class="slide level2">
-<h2>Counting Example</h2>
-<div class="example">
-<p><strong>Q: How many ways can you arrange 5 people in a row?</strong></p>
+<section id="pascals-triangle" class="slide level2 smaller">
+<h2>Pascal’s Triangle</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="callout-example" title="Pascal's Triangle">
+<pre><code>           1
+         1   1
+       1   2   1
+     1   3   3   1
+   1   4   6   4   1
+ 1   5  10  10   5   1
+1   6  15  20  15   6   1</code></pre>
+<p><strong>Pattern</strong>: Each number is the sum of the two numbers above it.</p>
+<p><strong>Formula</strong>: <span class="math inline">\(\binom{n}{r} = \binom{n-1}{r-1} + \binom{n-1}{r}\)</span></p>
+<p><strong>Example</strong>: <span class="math inline">\(\binom{4}{2} = 6\)</span> (row 4, position 2)</p>
 </div>
-<div class="fragment">
-<div class="proof solution">
-<p><span class="proof-title"><em>Solution</em>. </span>This is a permutation: <span class="math inline">\(P(5,5) = 5! = 120\)</span> ways</p>
-</div>
-</div>
-</section>
-<section class="slide level2">
+</div><div class="column" style="width:60%;">
+<div class="callout-example" title="Pascal's Triangle Animation">
+<div id="90cb2001" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="ca8cdffd-8f3d-479e-b3dc-ef6ff5358633" class="plotly-graph-div" style="height:400px; width:500px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("ca8cdffd-8f3d-479e-b3dc-ef6ff5358633")) {                    Plotly.newPlot(                        "ca8cdffd-8f3d-479e-b3dc-ef6ff5358633",                        [{"colorscale":[[0.0,"rgb(247,251,255)"],[0.125,"rgb(222,235,247)"],[0.25,"rgb(198,219,239)"],[0.375,"rgb(158,202,225)"],[0.5,"rgb(107,174,214)"],[0.625,"rgb(66,146,198)"],[0.75,"rgb(33,113,181)"],[0.875,"rgb(8,81,156)"],[1.0,"rgb(8,48,107)"]],"hoverongaps":false,"showscale":true,"text":[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1],[1,5,10,10,5,1],[1,6,15,20,15,6,1],[1,7,21,35,35,21,7,1]],"textfont":{"size":12},"texttemplate":"%{text}","z":[[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1],[1,5,10,10,5,1],[1,6,15,20,15,6,1],[1,7,21,35,35,21,7,1]],"type":"heatmap"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"title":{"text":"Pascal's Triangle (Combination Values)"},"xaxis":{"title":{"text":"Position (r)"},"showticklabels":false},"yaxis":{"title":{"text":"Row (n)"},"showticklabels":false},"height":400,"width":500},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('ca8cdffd-8f3d-479e-b3dc-ef6ff5358633');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
 
-<div class="fragment">
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Pascal's Triangle (showing C(n,r) values):
+Row 0: [1]
+Row 1: [1, 1]
+Row 2: [1, 2, 1]
+Row 3: [1, 3, 3, 1]
+Row 4: [1, 4, 6, 4, 1]
+Row 5: [1, 5, 10, 10, 5, 1]
+Row 6: [1, 6, 15, 20, 15, 6, 1]
+Row 7: [1, 7, 21, 35, 35, 21, 7, 1]</code></pre>
+</div>
+</div>
+</div>
+</div><p>Each number is <span class="math inline">\(\binom{n}{r}\)</span> where <span class="math inline">\(n\)</span> is the row and <span class="math inline">\(r\)</span> is the position</p>
+</div>
+</section>
+<section id="binomial-theorem" class="slide level2">
+<h2>Binomial Theorem</h2>
+<div title="Key Formula">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Key Formula</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[(x + y)^n = \sum_{r=0}^{n} \binom{n}{r} x^{n-r} y^r\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout-example" title="Example">
+<p><span class="math inline">\((x + y)^3 = \binom{3}{0}x^3 + \binom{3}{1}x^2y + \binom{3}{2}xy^2 + \binom{3}{3}y^3\)</span></p>
+<p><span class="math inline">\(= x^3 + 3x^2y + 3xy^2 + y^3\)</span></p>
+</div>
+</section>
+<section id="sec-counting-probability" class="slide level2 smaller">
+<h2>Counting and Probability</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="example">
-<p><strong>Q:How many ways can you choose 3 people from 5 for a committee?</strong></p>
+<p>A committee of 4 people is chosen from 7 women and 5 men. What’s the probability that exactly 2 are women?</p>
+</div>
+<p>Total ways to choose 4 from 12: <span class="math inline">\(\binom{12}{4} = 495\)</span></p>
+<p>Ways to choose 2 women from 7: <span class="math inline">\(\binom{7}{2} = 21\)</span></p>
+<p>Ways to choose 2 men from 5: <span class="math inline">\(\binom{5}{2} = 10\)</span></p>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>Favorable outcomes: <span class="math inline">\(\binom{7}{2} \times \binom{5}{2} = 21 \times 10 = 210\)</span></p>
+<p>Probability: <span class="math inline">\(\frac{210}{495} = \frac{14}{33}\)</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="9fecf9dc" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="146be478-1320-48ca-afb8-e87ed69305a1" class="plotly-graph-div" style="height:400px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("146be478-1320-48ca-afb8-e87ed69305a1")) {                    Plotly.newPlot(                        "146be478-1320-48ca-afb8-e87ed69305a1",                        [{"hovertemplate":"Women: %{x}\u003cbr\u003eProbability: %{y:.3f}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["lightcoral","lightblue","lightgreen","lightyellow","lightpink"]},"x":[0,1,2,3,4],"y":[0.010101010101010102,0.1414141414141414,0.42424242424242425,0.35353535353535354,0.0707070707070707],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"title":{"text":"Probability Distribution: Women in Committee"},"xaxis":{"title":{"text":"Number of Women"},"tickmode":"linear","tick0":0,"dtick":1},"yaxis":{"title":{"text":"Probability"}},"height":400,"showlegend":false},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('146be478-1320-48ca-afb8-e87ed69305a1');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
 </div>
 </div>
-<div class="fragment">
-<div class="proof solution">
-<p><span class="proof-title"><em>Solution</em>. </span>This is a combination: <span class="math inline">\(C(5,3) = \binom{5}{3} = \frac{5!}{3!2!} = 10\)</span> ways</p>
+</div></div>
+</section>
+<section id="practice-4" class="slide level2 smaller">
+<h2>Practice Problem 4</h2>
+<div class="example">
+<p>A standard deck has 52 cards. What’s the probability that a 5-card hand contains:</p>
+<ol type="a">
+<li>Exactly 3 aces?</li>
+<li>At least 1 ace?</li>
+</ol>
+</div>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<ol type="a">
+<li><p>Ways to get 3 aces from 4: <span class="math inline">\(\binom{4}{3} = 4\)</span> Ways to get 2 non-aces from 48: <span class="math inline">\(\binom{48}{2} = 1,128\)</span> Total 5-card hands: <span class="math inline">\(\binom{52}{5} = 2,598,960\)</span></p>
+<p>Probability: <span class="math inline">\(\frac{4 \times 1,128}{2,598,960} = \frac{4,512}{2,598,960} \approx 0.00174\)</span></p></li>
+<li><p>Ways to choose 5 cards with no aces: <span class="math inline">\(\binom{48}{5} = 1,712,304\)</span></p>
+<p><span class="math inline">\(P(\text{at least 1 ace}) = 1 - \frac{\binom{48}{5}}{\binom{52}{5}} = 1 - \frac{1,712,304}{2,598,960} \approx 0.341\)</span></p></li>
+</ol>
+</div>
+</section>
+<section id="practice-problem-4-continued" class="slide level2 smaller">
+<h2>Practice Problem 4 (continued)</h2>
+<div class="example">
+<ol start="2" type="a">
+<li>At least 1 ace = 1 - (no aces)</li>
+</ol>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Ways to choose 5 cards with no aces: <span class="math inline">\(\binom{48}{5} = 1,712,304\)</span></p>
+</div>
+</div>
+</div>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(P(\text{at least 1 ace}) = 1 - \frac{\binom{48}{5}}{\binom{52}{5}} = 1 - \frac{1,712,304}{2,598,960} \approx 0.341\)</span></p>
+</div>
+</section>
+<section id="permutations-with-restrictions" class="slide level2 smaller">
+<h2>Permutations with Restrictions</h2>
+<div class="example">
+<p>How many 6-letter “words” can be formed from the letters A, B, C, D, E, F if:</p>
+<ul>
+<li><p>No letter is repeated</p></li>
+<li><p>A and B must be adjacent</p></li>
+</ul>
+</div>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span>Treat AB as a single unit</p>
+<ul>
+<li><p>5 units to arrange: (AB), C, D, E, F → <span class="math inline">\(5! = 120\)</span> ways</p></li>
+<li><p>A and B can be arranged within their unit: <span class="math inline">\(2! = 2\)</span> ways</p></li>
+<li><p>Total: <span class="math inline">\(5! \times 2! = 240\)</span> ways</p></li>
+</ul>
+</div>
+</section>
+<section id="sec-inclusion-exclusion" class="slide level2 smaller">
+<h2>The Inclusion-Exclusion Principle</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="formula-box">
+<p>For two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>: <span class="math display">\[|A \cup B| = |A| + |B| - |A \cap B|\]</span></p>
+<p>For three sets <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span>: <span class="math display">\[|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| \\
+- |A \cap C| - |B \cap C| + |A \cap B \cap C|\]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout-example" title="Visual Demo: Inclusion-Exclusion">
+<div id="5228339b" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="3cb31501-4b38-47fd-a998-399a8ec10afd" class="plotly-graph-div" style="height:400px; width:500px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("3cb31501-4b38-47fd-a998-399a8ec10afd")) {                    Plotly.newPlot(                        "3cb31501-4b38-47fd-a998-399a8ec10afd",                        [{"fill":"toself","fillcolor":"rgba(52, 152, 219, 0.3)","line":{"color":"rgba(52, 152, 219, 1)","width":3},"mode":"lines","name":"A","showlegend":false,"x":{"dtype":"f8","bdata":"NDMzMzMz0z+QZ5m2CCvTP4C6QlaLEtM\u002fqisLUsHp0j9UwZsStbDSP0KMwiZ1Z9I\u002fCKC7PxQO0j+q8mssqaTRP\u002f5aj9NOK9E\u002fIirbLCSi0D9wIBc5TAnQP4CEXfLbwc4\u002f7Kd6yGhSzT8YDy65nMTLP9RPpEfdGMo\u002fPJ+mm5dPyD8k8r9lQGnGP1DsdcFTZsQ\u002fqDedFVVHwj90WNHyzgzAPzAaMeClbrs\u002f+H55C\u002fOOtj\u002fgBcbMw3uxP1AyrlnHbKg\u002fwCAkDawAmz+ACU\u002fr6adxPwCSclnC5JK\u002fwGkw58typb9gwQJ0meSwv2iJAxo4Obe\u002fOH86VqS1vb9Em4Q4GyzCv2CvWXuej8W\u002f9Jj9kn4Eyb\u002fczo6w2YnMv21UROhkD9C\u002fldK6ejLh0b+4uNKx3rnTv4a96+7wmNW\u002faUVl8e5917+E29D1XGjZv8Zfh9W9V9u\u002fudqYJpNL3b+00A5cXUPfv6BsPPNNn+C\u002f\u002fJVdqmae4b\u002f8YYu6t57iv\u002fFVMbv\u002fn+O\u002f+fu2BP2h5L\u002fE9EDBbaTlv23Xff0Pp+a\u002f+ZV6uaGp578TG3r54Kvov5PUy9aLrem\u002fF9+ckGCu6r\u002fSh7+cHa7rv3zcZLiBrOy\u002f7gTE+Eup7b84JqvbO6TuvyiV9VcRne+\u002fa5LxdsZJ8L\u002fIMqbbt8Pwv97Y17s9PPG\u002f\u002f3cJVjmz8b+S\u002flpNjCjyvz\u002feSLEYnPK\u002fC+1PBcEN879lrHNIaH3zv3kKpfzx6vO\u002fYroHLkJW9L8iSBR6Pb\u002f0v3AWlRbJJfW\u002f2n182MqJ9b+QTpI6Kev1v64A92PLSfa\u002fg+l6Lpml9r+f18cse\u002f72vxiDW7BaVPe\u002fgEtRzyGn979Pyflpu\u002fb3v6LFPjATQ\u002fi\u002f9jfSphWM+L9e9yYssNH4v17aMf3QE\u002fm\u002f5A7yOWdS+b8wgr\u002fpYo35v2I\u002fXv+0xPm\u002fdrrVXE\u002f4+b+1DAvXJCj6v0Y3HTkpVPq\u002fW5CCR1F8+r+Ej+bCkqD6v9A9x2rkwPq\u002f\u002fJ7R\u002fz3d+r9yefxFmPX6v4jzYAbtCfu\u002fe43QEDca+7+AECg9cib7v3AcX2ybLvu\u002fvg5UibAy+7++DlSJsDL7v3AcX2ybLvu\u002fgBAoPXIm+798jdAQNxr7v4jzYAbtCfu\u002fcnn8RZj1+r\u002f8ntH\u002fPd36v9A9x2rkwPq\u002fhI\u002fmwpKg+r9ckIJHUXz6v0Y3HTkpVPq\u002ftgwL1yQo+r92utVcT\u002fj5v2I\u002fXv+0xPm\u002fMIK\u002f6WKN+b\u002fkDvI5Z1L5v17aMf3QE\u002fm\u002fXvcmLLDR+L\u002f3N9KmFYz4v6PFPjATQ\u002fi\u002fUMn5abv297+AS1HPIaf3vxqDW7BaVPe\u002foNfHLHv+9r+E6XoumaX2v68A92PLSfa\u002fjk6SOinr9b\u002fbfXzYyon1v3EWlRbJJfW\u002fIkgUej2\u002f9L9kugcuQlb0v3gKpfzx6vO\u002fZqxzSGh9878M7U8FwQ3zvz7eSLEYnPK\u002fk\u002f5aTYwo8r\u002f+dwlWObPxv+DY17s9PPG\u002fyTKm27fD8L9qkvF2xknwvyqV9VcRne+\u002fNiar2zuk7r\u002fyBMT4S6ntv3zcZLiBrOy\u002fzoe\u002fnB2u678Z35yQYK7qv5HUy9aLrem\u002fFRt6+eCr6L\u002f6lXq5oannv3HXff0Pp+a\u002fxvRAwW2k5b\u002f3+7YE\u002faHkv\u002fNVMbv\u002fn+O\u002f\u002fGGLuree4r8Bll2qZp7hv6JsPPNNn+C\u002fsdAOXF1D37++2pgmk0vdv8dfh9W9V9u\u002fjNvQ9Vxo2b9qRWXx7n3Xv4K96+7wmNW\u002fvLjSsd6507+S0rp6MuHRv3RUROhkD9C\u002f3M6OsNmJzL\u002fsmP2SfgTJv2ivWXuej8W\u002fQJuEOBsswr9QfzpWpLW9v2iJAxo4Obe\u002fUMECdJnksL\u002fgaTDny3Klv8CRclnC5JK\u002fgAhP6+mncT\u002fAICQNrACbPxAyrlnHbKg\u002f0AXGzMN7sT8Af3kL8462PyAaMeClbrs\u002fdFjR8s4MwD+gN50VVUfCP0zsdcFTZsQ\u002fKPK\u002fZUBpxj80n6abl0\u002fIP9RPpEfdGMo\u002fEA8uuZzEyz\u002fop3rIaFLNP4CEXfLbwc4\u002fbiAXOUwJ0D8iKtssJKLQP\u002fxaj9NOK9E\u002fqvJrLKmk0T8IoLs\u002fFA7SP0CMwiZ1Z9I\u002fVsGbErWw0j+oKwtSwenSP366QlaLEtM\u002fkGeZtggr0z80MzMzMzPTPw=="},"y":{"dtype":"f8","bdata":"AAAAAAAAAAB13qTBwCmgPw9urs6wJ7A\u002fTUBX3WE2uD9zmPCWch\u002fAP34VgvqWH8Q\u002fFKmDwJgayD+atpHfcw\u002fMP8wMHeAl\u002fc8\u002fcfovD1fx0T8a8e0Fh9\u002fTPxKGJ7ikyNU\u002fN68IVTOs1z+wKeR2t4nZPyu7sEK3YNs\u002fJr4hh7ow3T\u002fLCVPbSvneP9owgN75XOA\u002fzlsgVyE54T9d1F6p4xDiPwHhL8YJ5OI\u002fKB20y12y4z9Le\u002fgSq3vkP93pZT2+P+U\u002fMS3dQWX+5T8dlnt5b7fmPx1TBaytauc\u002f8jDyG\u002fIX6D+PtxmSEL\u002foP8So+2jeX+k\u002fk\u002f+hlzL66T8\u002fqRm85Y3qP\u002fdLfyXSGus\u002fmIqd3dOg6z83URqyyB\u002fsP9rSMD2Ql+w\u002fbf717QsI7T+5TiUQH3HtP+f3c9Ou0u0\u002f\u002f5NoUqIs7j9aj7WY4n7uPxa2FKlaye4\u002fxWOigvcL7z9\u002f97YlqEbvP4xPPZhdee8\u002fNDGF6Qqk7z8Xo5A1pcbvP1di26cj4e8\u002f8LybfX\u002fz7z8oPnwHtP3vP0a8zaq+\u002f+8\u002fhnkx4p757z\u002fdLLs9VuvvP9\u002fpimLo1O8\u002fyQHfCVu27z+EGp7\u002ftY\u002fvPwHbWSADYe8\u002f7a7KVk4q7z8WRsWYpevuP0aWquMYpe4\u002fKUhTOLpW7j\u002f2mXeWnQDuP9njlPfYou0\u002fmAtSSYQ97T\u002fHVWRnudDsP2Yj9hSUXOw\u002fBkuR9THh6z9I3I6Fsl7rP9E7DhI31eo\u002fgKR1sOJE6j83OX412q3pP\u002fXvzStEEOk\u002fRrwhykhs6D+mewrpEcLnPwtCP\u002fjKEec\u002faMCH86Bb5j8hmUFXwp\u002flP2aQgxRf3uQ\u002fY5\u002fhhKgX5D+UCdVd0UvjP8Kqy6MNe+I\u002fO8vhnJKl4T9G3UnDlsvgPw04y26j2t8\u002f+S8oY\u002fgV3j+yoHDnn0ncP9UV+HQPdto\u002fqVqlXL6b2D+k1X+oJbvWPxpSzPy\u002f1NQ\u002f\u002fBnBeAnp0j\u002fZW9mWf\u002fjQP7DlnxlCB84\u002fIXiTVtsVyj+Tc296zB3GP\u002fGu8s0YIMI\u002fz8QcFYo7vD9sQbsvri+0P1XSPiNXPag\u002f0ISzxEQqkD8JhbPERCqQvzLSPiNXPai\u002fWkG7L64vtL+9xBwViju8v\u002fiu8s0YIMK\u002fmnNveswdxr8ZeJNW2xXKv6flnxlCB86\u002f1VvZln\u002f40L\u002f4GcF4CenSvx5SzPy\u002f1NS\u002foNV\u002fqCW71r+kWqVcvpvYv9EV+HQPdtq\u002frqBw559J3L\u002f8Lyhj+BXevxA4y26j2t+\u002fRd1Jw5bL4L85y+GckqXhv8Gqy6MNe+K\u002fkgnVXdFL479kn+GEqBfkv2SQgxRf3uS\u002fIJlBV8Kf5b9mwIfzoFvmvwlCP\u002fjKEee\u002fp3sK6RHC579EvCHKSGzov\u002fPvzStEEOm\u002fODl+Ndqt6b9\u002fpHWw4kTqv9I7DhI31eq\u002fR9yOhbJe678FS5H1MeHrv2cj9hSUXOy\u002fxlVkZ7nQ7L+YC1JJhD3tv9fjlPfYou2\u002f9pl3lp0A7r8qSFM4ulbuv0WWquMYpe6\u002fF0bFmKXr7r\u002fsrspWTirvvwHbWSADYe+\u002fhBqe\u002f7WP77\u002fJAd8JW7bvv+DpimLo1O+\u002f3Sy7PVbr77+GeTHinvnvv0a8zaq+\u002f++\u002fKD58B7T977\u002fwvJt9f\u002fPvv1di26cj4e+\u002fF6OQNaXG7780MYXpCqTvv41PPZhdee+\u002ff\u002fe2JahG77\u002fFY6KC9wvvvxa2FKlaye6\u002fXI+1mOJ+7r\u002f\u002fk2hSoizuv+f3c9Ou0u2\u002fuU4lEB9x7b9s\u002fvXtCwjtv9zSMD2Ql+y\u002fN1Eassgf7L+Yip3d06Drv\u002fhLfyXSGuu\u002fP6kZvOWN6r+V\u002f6GXMvrpv8So+2jeX+m\u002fjbcZkhC\u002f6L\u002fzMPIb8hfovxxTBaytaue\u002fH5Z7eW+35r8xLd1BZf7lv+HpZT2+P+W\u002fTXv4Eqt75L8mHbTLXbLjvwThL8YJ5OK\u002fXdReqeMQ4r\u002fSWyBXITnhv9swgN75XOC\u002fyAlT20r53r8sviGHujDdvyu7sEK3YNu\u002fuCnkdreJ2b86rwhVM6zXvw+GJ7ikyNW\u002fH\u002fHtBYff079v+i8PV\u002fHRv9wMHeAl\u002fc+\u002fnraR33MPzL8LqYPAmBrIv4gVgvqWH8S\u002fcJjwlnIfwL9tQFfdYTa4vxRurs6wJ7C\u002fTN6kwcApoL8HXBQzJqaxvA=="},"type":"scatter"},{"fill":"toself","fillcolor":"rgba(231, 76, 60, 0.3)","line":{"color":"rgba(231, 76, 60, 1)","width":3},"mode":"lines","name":"B","showlegend":false,"x":{"dtype":"f8","bdata":"MzMzMzMz+z9KwAyUKDH7PwYV9zsJK\u002fs\u002fUDHputYg+z+7Vg2rkxL7P3YJF7BDAPs\u002faE5Vduvp+j8QY4GxkM\u002f6PyY9Shs6sfo\u002f7jCdce+O+j+CLqx0uWj6P\u002fYWsuShPvo\u002fZLt1f7MQ+j9JKIz9+d75P2DwWg+Cqfk\u002fTjrbWVlw+T+qZB5zjjP5P\u002fAjld4w8\u002fg\u002fWw0aCVGv+D90kcBEAGj4Pwl4acRQHfg\u002fVv4dl1XP9z\u002fExjKjIn73P\u002fjXM6HMKfc\u002f6faaFmnS9j9wtVFQDnj2Px6cAF3TGvY\u002fGOMsB9C69T9QOibPHFj1P9AtxuTS8vQ\u002fcr4CIQyL9D\u002f+0lX\u002f4iD0P3ow+5ZytPM\u002fSLMGlNZF8z+KjFQwK9XyP0tRVSyNYvI\u002fwbG3xxnu8T84uPG57nfxPwR3qyoqAPE\u002fDBUNquqG8D+FL\u002fIoTwzwP+kcCeLtIO8\u002fcF+AOQMn7j9yZMUeHivtPyxgkNl+Lew\u002f0DZvImYu6z\u002fQakESFS7qP9t2mxHNLOk\u002f09AVyM8q6D8I2IsLXyjnP1\u002f1Ts+8JeY\u002f0zZSEysj5T+5sVLT6yDkPzn4APZAH+M\u002fte0vPGwe4j\u002f6RA0wrx7hP1DwZxRLIOA\u002fvY8RqAFH3j8oTUPiIVHcP0hvrul2X9o\u002f7U\u002fTvX9y2D92zgAruorWPx82OqqiqNQ\u002fnblzQbTM0j9Pny1kaPfQPzpB7KhtUs4\u002f2sqzCCvFyj8I0JXv8EfHP2jfCk6j28M\u002fHGD1wiGBwD845CHFjnK6P2D\u002fFP3UCbQ\u002fgBE9vXGTqz+g9QX1Ss+ePwC4ZW8Cm3w\u002fgI5BCmSZj78gJy7MmAKjv1CWoz6Jvq2\u002foFGujrYLtL+QLjY5UAW5v8jzhZ3Myr2\u002fhIxeA3otwb+8hwQuTlrDv8SfW7ZUa8W\u002f9ENdnAZgx79Q3sga5DfJv+DHvsd08sq\u002fgKB6s0ePzL94MiWF8w3Ov\u002fyGtpUWbs+\u002f1KdwhKtX0L94pABysejQv6ZdgxH4adG\u002fWOKsZV7b0b8yTFh+xzzSv4g06n8ajtK\u002fVJyoqULP0r9qqAZbLwDTvybY4hfUINO\u002fYKG2iygx079gobaLKDHTvybY4hfUINO\u002faqgGWy8A079WnKipQs\u002fSv4g06n8ajtK\u002fMkxYfsc80r9a4qxlXtvRv6ZdgxH4adG\u002feqQAcrHo0L\u002fWp3CEq1fQv\u002fyGtpUWbs+\u002ffDIlhfMNzr+EoHqzR4\u002fMv+DHvsd08sq\u002fVN7IGuQ3yb\u002fwQ12cBmDHv8CfW7ZUa8W\u002fwIcELk5aw7+IjF4Dei3Bv9DzhZ3Myr2\u002foC42OVAFub+YUa6Otgu0v3CWoz6Jvq2\u002fMCcuzJgCo78Aj0EKZJmPvwC3ZW8Cm3w\u002f4PUF9UrPnj9gET29cZOrP1D\u002fFP3UCbQ\u002fSOQhxY5yuj8UYPXCIYHAP2zfCk6j28M\u002fANCV7\u002fBHxz\u002fSyrMIK8XKP0BB7KhtUs4\u002fS58tZGj30D+guXNBtMzSPxg2OqqiqNQ\u002fdc4AK7qK1j\u002fxT9O9f3LYP0Nvrul2X9o\u002fLE1D4iFR3D+1jxGoAUfeP1DwZxRLIOA\u002f\u002fkQNMK8e4T+z7S88bB7iPzv4APZAH+M\u002ft7FS0+sg5D\u002fSNlITKyPlP1v1Ts+8JeY\u002fBtiLC18o5z\u002fV0BXIzyroP9l2mxHNLOk\u002f0GpBEhUu6j\u002fLNm8iZi7rPypgkNl+Lew\u002fdGTFHh4r7T9tX4A5AyfuP+gcCeLtIO8\u002fgy\u002fyKE8M8D8MFQ2q6obwPwZ3qyoqAPE\u002fN7jxue538T\u002fCsbfHGe7xP0lRVSyNYvI\u002fioxUMCvV8j9IswaU1kXzP3kw+5ZytPM\u002f\u002ftJV\u002f+Ig9D9xvgIhDIv0P9AtxuTS8vQ\u002fUTomzxxY9T8X4ywH0Lr1Px+cAF3TGvY\u002fbrVRUA549j\u002fp9poWadL2P\u002fbXM6HMKfc\u002fw8YyoyJ+9z9W\u002fh2XVc\u002f3Pwh4acRQHfg\u002fdJHARABo+D9aDRoJUa\u002f4P\u002fAjld4w8\u002fg\u002fq2Qec44z+T9MOttZWXD5P2DwWg+Cqfk\u002fSCiM\u002ffne+T9ju3V\u002fsxD6P\u002fYWsuShPvo\u002fgi6sdLlo+j\u002fuMJ1x7476PyU9Shs6sfo\u002fEGOBsZDP+j9oTlV26+n6P3YJF7BDAPs\u002fvFYNq5MS+z9QMem61iD7PwYV9zsJK\u002fs\u002fSsAMlCgx+z8zMzMzMzP7Pw=="},"y":{"dtype":"f8","bdata":"AAAAAAAAAAB13qTBwCmgPw9urs6wJ7A\u002fTUBX3WE2uD9zmPCWch\u002fAP34VgvqWH8Q\u002fFKmDwJgayD+atpHfcw\u002fMP8wMHeAl\u002fc8\u002fcfovD1fx0T8a8e0Fh9\u002fTPxKGJ7ikyNU\u002fN68IVTOs1z+wKeR2t4nZPyu7sEK3YNs\u002fJr4hh7ow3T\u002fLCVPbSvneP9owgN75XOA\u002fzlsgVyE54T9d1F6p4xDiPwHhL8YJ5OI\u002fKB20y12y4z9Le\u002fgSq3vkP93pZT2+P+U\u002fMS3dQWX+5T8dlnt5b7fmPx1TBaytauc\u002f8jDyG\u002fIX6D+PtxmSEL\u002foP8So+2jeX+k\u002fk\u002f+hlzL66T8\u002fqRm85Y3qP\u002fdLfyXSGus\u002fmIqd3dOg6z83URqyyB\u002fsP9rSMD2Ql+w\u002fbf717QsI7T+5TiUQH3HtP+f3c9Ou0u0\u002f\u002f5NoUqIs7j9aj7WY4n7uPxa2FKlaye4\u002fxWOigvcL7z9\u002f97YlqEbvP4xPPZhdee8\u002fNDGF6Qqk7z8Xo5A1pcbvP1di26cj4e8\u002f8LybfX\u002fz7z8oPnwHtP3vP0a8zaq+\u002f+8\u002fhnkx4p757z\u002fdLLs9VuvvP9\u002fpimLo1O8\u002fyQHfCVu27z+EGp7\u002ftY\u002fvPwHbWSADYe8\u002f7a7KVk4q7z8WRsWYpevuP0aWquMYpe4\u002fKUhTOLpW7j\u002f2mXeWnQDuP9njlPfYou0\u002fmAtSSYQ97T\u002fHVWRnudDsP2Yj9hSUXOw\u002fBkuR9THh6z9I3I6Fsl7rP9E7DhI31eo\u002fgKR1sOJE6j83OX412q3pP\u002fXvzStEEOk\u002fRrwhykhs6D+mewrpEcLnPwtCP\u002fjKEec\u002faMCH86Bb5j8hmUFXwp\u002flP2aQgxRf3uQ\u002fY5\u002fhhKgX5D+UCdVd0UvjP8Kqy6MNe+I\u002fO8vhnJKl4T9G3UnDlsvgPw04y26j2t8\u002f+S8oY\u002fgV3j+yoHDnn0ncP9UV+HQPdto\u002fqVqlXL6b2D+k1X+oJbvWPxpSzPy\u002f1NQ\u002f\u002fBnBeAnp0j\u002fZW9mWf\u002fjQP7DlnxlCB84\u002fIXiTVtsVyj+Tc296zB3GP\u002fGu8s0YIMI\u002fz8QcFYo7vD9sQbsvri+0P1XSPiNXPag\u002f0ISzxEQqkD8JhbPERCqQvzLSPiNXPai\u002fWkG7L64vtL+9xBwViju8v\u002fiu8s0YIMK\u002fmnNveswdxr8ZeJNW2xXKv6flnxlCB86\u002f1VvZln\u002f40L\u002f4GcF4CenSvx5SzPy\u002f1NS\u002foNV\u002fqCW71r+kWqVcvpvYv9EV+HQPdtq\u002frqBw559J3L\u002f8Lyhj+BXevxA4y26j2t+\u002fRd1Jw5bL4L85y+GckqXhv8Gqy6MNe+K\u002fkgnVXdFL479kn+GEqBfkv2SQgxRf3uS\u002fIJlBV8Kf5b9mwIfzoFvmvwlCP\u002fjKEee\u002fp3sK6RHC579EvCHKSGzov\u002fPvzStEEOm\u002fODl+Ndqt6b9\u002fpHWw4kTqv9I7DhI31eq\u002fR9yOhbJe678FS5H1MeHrv2cj9hSUXOy\u002fxlVkZ7nQ7L+YC1JJhD3tv9fjlPfYou2\u002f9pl3lp0A7r8qSFM4ulbuv0WWquMYpe6\u002fF0bFmKXr7r\u002fsrspWTirvvwHbWSADYe+\u002fhBqe\u002f7WP77\u002fJAd8JW7bvv+DpimLo1O+\u002f3Sy7PVbr77+GeTHinvnvv0a8zaq+\u002f++\u002fKD58B7T977\u002fwvJt9f\u002fPvv1di26cj4e+\u002fF6OQNaXG7780MYXpCqTvv41PPZhdee+\u002ff\u002fe2JahG77\u002fFY6KC9wvvvxa2FKlaye6\u002fXI+1mOJ+7r\u002f\u002fk2hSoizuv+f3c9Ou0u2\u002fuU4lEB9x7b9s\u002fvXtCwjtv9zSMD2Ql+y\u002fN1Eassgf7L+Yip3d06Drv\u002fhLfyXSGuu\u002fP6kZvOWN6r+V\u002f6GXMvrpv8So+2jeX+m\u002fjbcZkhC\u002f6L\u002fzMPIb8hfovxxTBaytaue\u002fH5Z7eW+35r8xLd1BZf7lv+HpZT2+P+W\u002fTXv4Eqt75L8mHbTLXbLjvwThL8YJ5OK\u002fXdReqeMQ4r\u002fSWyBXITnhv9swgN75XOC\u002fyAlT20r53r8sviGHujDdvyu7sEK3YNu\u002fuCnkdreJ2b86rwhVM6zXvw+GJ7ikyNW\u002fH\u002fHtBYff079v+i8PV\u002fHRv9wMHeAl\u002fc+\u002fnraR33MPzL8LqYPAmBrIv4gVgvqWH8S\u002fcJjwlnIfwL9tQFfdYTa4vxRurs6wJ7C\u002fTN6kwcApoL8HXBQzJqaxvA=="},"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"annotations":[{"font":{"size":24},"showarrow":false,"text":"A","x":-1.2,"y":0},{"font":{"size":24},"showarrow":false,"text":"B","x":1.2,"y":0},{"font":{"color":"#333","size":20},"showarrow":false,"text":"A\u2229B","x":0,"y":0}],"xaxis":{"showticklabels":false,"showgrid":false,"zeroline":false,"range":[-2,2]},"yaxis":{"showticklabels":false,"showgrid":false,"zeroline":false,"range":[-1.5,1.5]},"margin":{"l":10,"r":10,"t":40,"b":10},"title":{"text":"Venn Diagram: Inclusion-Exclusion Principle"},"height":400,"width":500},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('3cb31501-4b38-47fd-a998-399a8ec10afd');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="inclusion-exclusion-example" class="slide level2 smaller">
+<h2>Inclusion-Exclusion Example</h2>
+<div class="example">
+<p>How many integers from 1 to 100 are divisible by 2, 3, or 5?</p>
+</div>
+<p>Let:</p>
+<ul>
+<li><p><span class="math inline">\(A\)</span> = divisible by 2: <span class="math inline">\(|A| = 50\)</span></p></li>
+<li><p><span class="math inline">\(B\)</span> = divisible by 3: <span class="math inline">\(|B| = 33\)</span></p></li>
+<li><p><span class="math inline">\(C\)</span> = divisible by 5: <span class="math inline">\(|C| = 20\)</span></p></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(|A \cap B| = 16\)</span> (divisible by 6)</p>
+<p><span class="math inline">\(|A \cap C| = 10\)</span> (divisible by 10)</p>
+<p><span class="math inline">\(|B \cap C| = 6\)</span> (divisible by 15)</p>
+<p><span class="math inline">\(|A \cap B \cap C| = 3\)</span> (divisible by 30)</p>
+</div>
 </div>
 </div>
 </section>
-<section id="probability-with-counting" class="slide level2">
-<h2>Probability with Counting</h2>
-<div class="example">
-<p><strong>Example</strong>: A committee of 3 people is chosen from 8 people (5 women, 3 men). What’s the probability all 3 are women?</p>
+<section id="inclusion-exclusion-solution" class="slide level2 smaller">
+<h2>Inclusion-Exclusion Solution</h2>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math display">\[|A \cup B \cup C| = 50 + 33 + 20 - 16 - 10 - 6 + 3 = 74\]</span></p>
+<p><strong>Answer</strong>: 74 integers from 1 to 100 are divisible by at least one of 2, 3, or 5</p>
 </div>
-<div class="fragment">
-<div class="proof solution">
-<p><span class="proof-title"><em>Solution</em>. </span>Total ways to choose 3 from 8: <span class="math inline">\(\binom{8}{3} = 56\)</span></p>
-<p>Ways to choose 3 women from 5: <span class="math inline">\(\binom{5}{3} = 10\)</span></p>
-<p>Probability: <span class="math inline">\(\frac{10}{56} = \frac{5}{28}\)</span></p>
+</section>
+<section id="multinomial-coefficients" class="slide level2 smaller">
+<h2>Multinomial Coefficients</h2>
+<div title="Multinomial Coefficient">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Multinomial Coefficient</strong></p>
+</div>
+<div class="callout-content">
+<p>Number of ways to divide <span class="math inline">\(n\)</span> objects into groups of sizes <span class="math inline">\(n_1, n_2, \ldots, n_k\)</span>:</p>
+<p><span class="math display">\[\binom{n}{n_1, n_2, \ldots, n_k} = \frac{n!}{n_1! \times n_2! \times \cdots \times n_k!}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="example">
+<p>How many ways can 12 people be divided into 3 teams of 4?</p>
+<p><span class="math inline">\(\binom{12}{4,4,4} = \frac{12!}{4! \times 4! \times 4!} = 34,650\)</span></p>
+</div>
+</section>
+<section id="sec-problem-solving-strategy" class="slide level2">
+<h2>Problem-Solving Strategy</h2>
+<div title="Strategy">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Strategy</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><strong>Read carefully</strong>: What exactly are we counting?</li>
+<li><strong>Identify the type</strong>: Permutation, combination, or other?</li>
+<li><strong>Check for restrictions</strong>: Are there constraints?</li>
+<li><strong>Does order matter?</strong>: This determines permutation vs combination</li>
+<li><strong>Break down complex problems</strong>: Use multiplication principle</li>
+<li><strong>Verify your answer</strong>: Does it make sense?</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 </section>
-<section id="real-world-applications" class="slide level2">
+<section id="common-mistakes-to-avoid" class="slide level2">
+<h2>Common Mistakes to Avoid</h2>
+<div title="Common Mistakes">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Common Mistakes</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><strong>Confusing permutations and combinations</strong>
+<ul>
+<li>Always ask: “Does order matter?”</li>
+</ul></li>
+<li><strong>Forgetting about restrictions</strong>
+<ul>
+<li>Read the problem carefully</li>
+</ul></li>
+<li><strong>Double counting</strong>
+<ul>
+<li>Make sure you’re not counting the same arrangement twice</li>
+</ul></li>
+<li><strong>Not considering the complement</strong>
+<ul>
+<li>Sometimes “at least” problems are easier using complements</li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="practice-6" class="slide level2 smaller">
+<h2>Practice Problem 6</h2>
+<div class="example">
+<p>A class has 15 students: 8 women and 7 men. How many ways can we:</p>
+<ol type="a">
+<li>Form a committee of 5 people with exactly 3 women?</li>
+<li>Arrange 6 people in a row with alternating genders (starting with a woman)?</li>
+</ol>
+</div>
+<div class="fragment proof solution">
+<p><span class="proof-title"><em>Solution</em>. </span></p>
+<ol type="a">
+<li><span class="math inline">\(\binom{8}{3} \times \binom{7}{2} = 56 \times 21 = 1,176\)</span></li>
+<li>Choose 3 women from 8: <span class="math inline">\(P(8,3) = 336\)</span> Choose 3 men from 7: <span class="math inline">\(P(7,3) = 210\)</span> Total: <span class="math inline">\(336 \times 210 = 70,560\)</span></li>
+</ol>
+</div>
+</section>
+<section id="counting-in-computer-science" class="slide level2 smaller">
+<h2>Counting in Computer Science</h2>
+<div class="callout-example" title="Applications">
+<p><strong>Password Security</strong>:</p>
+<ul>
+<li><p>8-character password with letters, digits, symbols</p></li>
+<li><p><span class="math inline">\((26 + 26 + 10 + 32)^8 = 94^8 \approx 6.1 \times 10^{15}\)</span></p></li>
+</ul>
+<p><strong>Hash Functions</strong>:</p>
+<ul>
+<li><p>Distributing data into buckets</p></li>
+<li><p>Collision probability calculations</p></li>
+</ul>
+<p><strong>Algorithm Analysis</strong>:</p>
+<ul>
+<li><p>Counting operations, comparisons</p></li>
+<li><p>Big O notation foundations</p></li>
+</ul>
+</div>
+</section>
+<section id="counting-in-genetics" class="slide level2 smaller">
+<h2>Counting in Genetics</h2>
+<div class="callout-example" title="Applications">
+<p><strong>DNA Sequences</strong>:</p>
+<ul>
+<li><p>4 bases (A, T, G, C)</p></li>
+<li><p>Gene of length <span class="math inline">\(n\)</span>: <span class="math inline">\(4^n\)</span> possible sequences</p></li>
+</ul>
+<p><strong>Protein Folding</strong>:</p>
+<ul>
+<li><p>Number of possible conformations</p></li>
+<li><p>Combinatorial explosion</p></li>
+</ul>
+<p><strong>Population Genetics</strong>:</p>
+<ul>
+<li><p>Hardy-Weinberg calculations</p></li>
+<li><p>Allele combinations</p></li>
+</ul>
+</div>
+</section>
+<section id="real-world-applications" class="slide level2 smaller">
 <h2>Real-World Applications</h2>
-<p><strong>Medical Diagnosis</strong>: Using Bayes’ theorem for test interpretation</p>
-<p><strong>Quality Control</strong>: Probability of defective items</p>
-<p><strong>Finance</strong>: Risk assessment and portfolio theory</p>
-<p><strong>Sports</strong>: Probability of wins, fantasy sports</p>
-<p><strong>Insurance</strong>: Calculating premiums based on risk</p>
+<div class="callout-example" title="Applications">
+<p><strong>Lottery</strong>:</p>
+<ul>
+<li><p>Powerball: Choose 5 from 69, then 1 from 26</p></li>
+<li><p>Odds: <span class="math inline">\(\frac{1}{\binom{69}{5} \times 26} \approx \frac{1}{292,000,000}\)</span></p></li>
+</ul>
+<p><strong>Cryptography</strong>:</p>
+<ul>
+<li><p>Key space size determines security</p></li>
+<li><p>RSA encryption relies on large number factorization</p></li>
+</ul>
+<p><strong>Sports Tournaments</strong>:</p>
+<ul>
+<li><p>March Madness bracket: <span class="math inline">\(2^{63}\)</span> possible outcomes</p></li>
+<li><p>Round-robin tournaments: <span class="math inline">\(\binom{n}{2}\)</span> games</p></li>
+</ul>
+</div>
 </section>
 <section id="key-formulas-summary" class="slide level2">
 <h2>Key Formulas Summary</h2>
-<div class="formula-box">
+<div class="columns">
+<div class="column" style="width:40%;">
+<div title="Summary of Key Formulas">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Summary of Key Formulas</strong></p>
+</div>
+<div class="callout-content">
 <ul>
-<li><strong>Basic probability</strong>: <span class="math inline">\(P(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}}\)</span></li>
-<li><strong>Complement</strong>: <span class="math inline">\(P(A^c) = 1 - P(A)\)</span></li>
-<li><strong>Addition</strong>: <span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span></li>
-<li><strong>Conditional</strong>: <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></li>
-<li><strong>Independence</strong>: <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span></li>
-<li><strong>Bayes’</strong>: <span class="math inline">\(P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}\)</span></li>
+<li><strong>Permutations</strong>: <span class="math inline">\(P(n,r) = \frac{n!}{(n-r)!}\)</span></li>
+<li><strong>Combinations</strong>: <span class="math inline">\(C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}\)</span></li>
+<li><strong>With repetition</strong>: <span class="math inline">\(\frac{n!}{n_1! \times n_2! \times \cdots \times n_k!}\)</span></li>
+<li><strong>Inclusion-Exclusion</strong>: <span class="math inline">\(|A \cup B| = |A| + |B| - |A \cap B|\)</span></li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<div id="8272efd0" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="de66ac56-bb5e-4678-be05-6beb0122ccdc" class="plotly-graph-div" style="height:400px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("de66ac56-bb5e-4678-be05-6beb0122ccdc")) {                    Plotly.newPlot(                        "de66ac56-bb5e-4678-be05-6beb0122ccdc",                        [{"hovertemplate":"n=%{x}\u003cbr\u003eP(n,2)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"red","width":3},"mode":"lines+markers","name":"P(n,2)","x":[2,3,4,5,6,7],"y":[2,6,12,20,30,42],"type":"scatter"},{"hovertemplate":"n=%{x}\u003cbr\u003eC(n,2)=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"blue","width":3},"mode":"lines+markers","name":"C(n,2)","x":[2,3,4,5,6,7],"y":[1,3,6,10,15,21],"type":"scatter"},{"hovertemplate":"n=%{x}\u003cbr\u003en!=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"green","width":3},"mode":"lines+markers","name":"n!","x":[2,3,4,5,6,7],"y":[2,6,24,120,720,5040],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"title":{"text":"Comparison of Counting Methods"},"xaxis":{"title":{"text":"n"},"tickmode":"linear","tick0":2,"dtick":1},"yaxis":{"title":{"text":"Count (log scale)"},"type":"log"},"height":400,"showlegend":true},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('de66ac56-bb5e-4678-be05-6beb0122ccdc');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+</div></div>
 </section>
-<section id="problem-solving-strategy" class="slide level2">
-<h2>Problem-Solving Strategy</h2>
-<div class="note">
-<ol type="1">
-<li><strong>Identify</strong> the sample space and events</li>
-<li><strong>Determine</strong> if events are independent or mutually exclusive</li>
-<li><strong>Choose</strong> the appropriate rule or formula</li>
-<li><strong>Calculate</strong> step by step</li>
-<li><strong>Check</strong> if your answer makes sense</li>
+<section id="technology-and-counting" class="slide level2 smaller">
+<h2>Technology and Counting</h2>
+<div title="Tools">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tools</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Calculators</strong>:</p>
+<ul>
+<li><p>Use nPr and nCr functions</p></li>
+<li><p>Be careful with large numbers</p></li>
+</ul>
+<p><strong>Software</strong>:</p>
+<ul>
+<li><p>R: <code>factorial()</code>, <code>choose()</code>, <code>combn()</code></p></li>
+<li><p>Python: <code>math.factorial()</code>, <code>math.comb()</code></p></li>
+<li><p>Excel: <code>FACT()</code>, <code>COMBIN()</code>, <code>PERMUT()</code></p></li>
+</ul>
+<p><strong>Online Tools</strong>:</p>
+<ul>
+<li><p>Wolfram Alpha for complex calculations</p></li>
+<li><p>Combination/permutation calculators</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="practice-7" class="slide level2 smaller">
+<h2>Practice Problem 7</h2>
+<div class="example">
+<p>A standard deck of cards is shuffled. What’s the probability that:</p>
+<ol type="a">
+<li>The top 4 cards are all hearts?</li>
+<li>In a 13-card hand, you get exactly one card from each rank?</li>
 </ol>
 </div>
-</section>
-<section id="practice-problem-4" class="slide level2">
-<h2>Practice Problem 4</h2>
-<div class="example">
-<p>A bag contains 4 red, 3 blue, and 2 green marbles. Three marbles are drawn without replacement.</p>
-<p>Find the probability that: a) All three are red b) No two are the same color c) At least one is blue</p>
-</div>
-</section>
-<section id="practice-problem-4-solutions" class="slide level2">
-<h2>Practice Problem 4 Solutions</h2>
-<div class="proof solution">
+<div class="fragment proof solution">
 <p><span class="proof-title"><em>Solution</em>. </span></p>
 <ol type="a">
-<li><p>All red: <span class="math inline">\(\frac{4}{9} \times \frac{3}{8} \times \frac{2}{7} = \frac{24}{504} = \frac{1}{21}\)</span></p></li>
-<li><p>Different colors: <span class="math inline">\(\frac{4 \times 3 \times 2}{9 \times 8 \times 7} \times 3! = \frac{24 \times 6}{504} = \frac{144}{504} = \frac{2}{7}\)</span></p></li>
-<li><p>At least one blue: <span class="math inline">\(1 - P(\text{no blue}) = 1 - \frac{6 \times 5 \times 4}{9 \times 8 \times 7} = 1 - \frac{120}{504} = \frac{384}{504} = \frac{16}{21}\)</span></p></li>
+<li><p><span class="math inline">\(\frac{13}{52} \times \frac{12}{51} \times \frac{11}{50} \times \frac{10}{49} = \frac{13 \times 12 \times 11 \times 10}{52 \times 51 \times 50 \times 49} \approx 0.0026\)</span></p></li>
+<li><p>Choose 1 card from each of 13 ranks: <span class="math inline">\(4^{13}\)</span> Total 13-card hands: <span class="math inline">\(\binom{52}{13}\)</span> Probability: <span class="math inline">\(\frac{4^{13}}{\binom{52}{13}} \approx 6.3 \times 10^{-6}\)</span></p></li>
 </ol>
 </div>
 </section>
-<section id="common-questions" class="slide level2 smaller">
-<h2>Common Questions</h2>
-<div class="example">
-<p><strong>Q1.</strong>: <strong>“Why isn’t <span class="math inline">\(P(A \cup B) = P(A) + P(B)\)</span> always?”</strong></p>
-<p><strong>A</strong>: We’d double-count outcomes in both events</p>
-<p><strong>Q2.</strong>: <strong>“How do I know if events are independent?”</strong></p>
-<p><strong>A</strong>: Check if <span class="math inline">\(P(A|B) = P(A)\)</span> or if <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span></p>
-<p><strong>Q3.</strong>: <strong>“When do I use Bayes’ theorem?”</strong></p>
-<p><strong>A</strong>: When you want to “reverse” a conditional probability</p>
+<section id="extending-to-probability" class="slide level2">
+<h2>Extending to Probability</h2>
+<div title="Distributions">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="note">
-<p><em>Q3 note (Bayes Example)</em></p>
+<p><strong>Distributions</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Hypergeometric Distribution</strong>:</p>
 <ul>
-<li><p>Forward: I know my test picks up disease 95% of the time ⇒ <span class="math inline">\(P(+\mid D)=0.95\)</span>.</p></li>
-<li><p>Reverse: I want the chance I really have the disease when the test is positive ⇒ <span class="math inline">\(P(D\mid +)\)</span>.</p></li>
+<li><p>Drawing without replacement</p></li>
+<li><p>Uses combinations: <span class="math inline">\(P(X = k) = \frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}\)</span></p></li>
 </ul>
+<p><strong>Binomial Distribution</strong>:</p>
+<ul>
+<li><p>Drawing with replacement</p></li>
+<li><p>Uses combinations: <span class="math inline">\(P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}\)</span></p></li>
+</ul>
+<p><em>We’ll explore these distributions in detail in future lectures</em></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="historical-note" class="slide level2">
+<h2>Historical Note</h2>
+<div title="History">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>History</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Blaise Pascal</strong> (1623-1662) and <strong>Pierre de Fermat</strong> (1601-1665): - Founded probability theory through gambling problems - Pascal’s triangle and combinations</p>
+<p><strong>Leonhard Euler</strong> (1707-1783): - Advanced combinatorics - Graph theory connections</p>
+<p>Modern applications span computer science, biology, physics, and economics</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="common-student-questions" class="slide level2">
+<h2>Common Student Questions</h2>
+<div class="callout-question" title="FAQ">
+<p><strong>Q</strong>: “When do I use permutations vs combinations?”</p>
+<p><strong>A</strong>: Ask “Does order matter?” Order matters → permutation</p>
+<p><strong>Q</strong>: “How do I handle restrictions?”</p>
+<p><strong>A</strong>: Break the problem into cases or use complementary counting</p>
+<p><strong>Q</strong>: “What if objects are identical?”</p>
+<p><strong>A</strong>: Use the formula for permutations with repetition</p>
+<p><strong>Q</strong>: “How do I check my answer?”</p>
+<p><strong>A</strong>: Verify with small examples or use different methods</p>
 </div>
 </section>
 <section id="looking-ahead" class="slide level2">
 <h2>Looking Ahead</h2>
-<p><strong>Next lecture</strong>:</p>
+<div title="Next Lecture">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Next Lecture</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Next lecture</strong>: Discrete Probability Distributions - Binomial distribution (using combinations!)</p>
 <ul>
-<li><p>Random Variables and Probability Distributions</p></li>
-<li><p>Discrete vs.&nbsp;continuous random variables</p></li>
+<li><p>Hypergeometric distribution</p></li>
+<li><p>Geometric distribution</p></li>
 <li><p>Expected value and variance</p></li>
 </ul>
+<p><strong>Connection</strong>: Today’s counting techniques are essential for probability calculations</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="study-tips" class="slide level2">
+<h2>Study Tips</h2>
+<div title="Tips">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tips</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><strong>Practice, practice, practice</strong>: Work through many examples</li>
+<li><strong>Identify patterns</strong>: Learn to recognize problem types</li>
+<li><strong>Start simple</strong>: Build up to complex problems</li>
+<li><strong>Check your work</strong>: Use different approaches when possible</li>
+<li><strong>Understand concepts</strong>: Don’t just memorize formulas</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="learning-summary" class="slide level2">
+<h2>Learning Objectives Summary</h2>
+<div title="What We've Covered">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>What We’ve Covered</strong></p>
+</div>
+<div class="callout-content">
+<p>In this lecture, we’ve addressed all the learning objectives:</p>
+<ul>
+<li>✅ <strong>Apply the fundamental counting principles</strong>: Covered in <a href="#/sec-fundamental-counting" class="quarto-xref">Section&nbsp;0.4</a></li>
+<li>✅ <strong>Calculate permutations with and without repetition</strong>: Covered in <a href="#/sec-permutations" class="quarto-xref">Section&nbsp;0.8</a>, <a href="#/sec-permutations-r-from-n" class="quarto-xref">Section&nbsp;0.11</a>, and <a href="#/sec-permutations-repetition" class="quarto-xref">Section&nbsp;0.14</a><br>
+</li>
+<li>✅ <strong>Calculate combinations and understand when to use them</strong>: Covered in <a href="#/sec-combinations" class="quarto-xref">Section&nbsp;0.16</a> and <a href="#/sec-combinations-formula" class="quarto-xref">Section&nbsp;0.17</a></li>
+<li>✅ <strong>Distinguish between permutations and combinations</strong>: Covered in <a href="#/sec-permutation-vs-combination" class="quarto-xref">Section&nbsp;0.19</a></li>
+<li>✅ <strong>Use counting techniques to solve probability problems</strong>: Covered in <a href="#/sec-counting-probability" class="quarto-xref">Section&nbsp;0.24</a></li>
+<li>✅ <strong>Apply the inclusion-exclusion principle</strong>: Covered in <a href="#/sec-inclusion-exclusion" class="quarto-xref">Section&nbsp;0.28</a></li>
+<li>✅ <strong>Solve complex counting problems systematically</strong>: Covered in <a href="#/sec-problem-solving-strategy" class="quarto-xref">Section&nbsp;0.32</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="final-thoughts" class="slide level2">
 <h2>Final Thoughts</h2>
-<div class="note">
-<p>Probability is the foundation of statistics:</p>
+<p>Counting is fundamental to:</p>
 <ul>
-<li><p>Helps us quantify uncertainty</p></li>
-<li><p>Provides tools for making decisions with incomplete information</p></li>
-<li><p>Essential for understanding statistical inference</p></li>
+<li><p>Probability calculations</p></li>
+<li><p>Statistical inference</p></li>
+<li><p>Computer algorithms</p></li>
+<li><p>Scientific modeling</p></li>
 </ul>
+<div title="Know the Basics">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="fragment">
-<p><strong>Practice</strong>: The key to mastering probability is working through many problems!</p>
+<p><strong>Know the Basics</strong></p>
+</div>
+<div class="callout-content">
+<p>Permutations and combinations are the building blocks for advanced statistical concepts</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="questions" class="slide level2 center">
 <h2>Questions?</h2>
+</section>
+<section id="questions-1" class="title-slide slide level1 center">
+<h1>Questions?</h1>
 <p><strong>Office Hours</strong>: Thursday’s 11 AM On Zoom (Link on Canvas)</p>
 <p><strong>Email</strong>: nmathlouthi@ucsb.edu</p>
-<p><strong>Next Class</strong>: Random Variables and Distributions</p>
-</section>
-<section id="resources" class="slide level2">
-<h2>Resources</h2>
-<ul>
-<li><p><a href="(/files/Book/os4_for_screen_reader.pdf)">Read Chapter 3 in course textbook</a></p></li>
-<li><p><a href="https://bookdown.org/daniel_flores_agreda/Prob1-GSEM-UNIGE/settheory.html#the-venn-diagram">Elements of Set Theory for Probability</a></p></li>
-<li><p><a href="https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/resources/mitres_6_012s18_l01as/">Probability Models and Axioms</a></p></li>
-</ul>
+<p><strong>Next Class</strong>: Discrete Probability Distributions</p>
 
 
 </section>
-
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../../img/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Understanding Data - Conditional Probability © 2025 Narjes Mathlouthi</p>
+<p>Understanding Data - Counting © 2025 Narjes Mathlouthi</p>
 </div>
 </div></div>
 

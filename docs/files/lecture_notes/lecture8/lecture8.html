@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Narjes Mathlouthi">
-  <meta name="dcterms.date" content="2025-07-06">
+  <meta name="dcterms.date" content="2025-07-08">
   <title>PSTAT5A – PSTAT 5A: Conditional Probabilities</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -142,7 +142,7 @@ Narjes Mathlouthi
 </div>
 </div>
 
-  <p class="date">2025-07-06</p>
+  <p class="date">2025-07-08</p>
 </section>
 <section id="welcome-to-lecture-6" class="slide level2 center">
 <h2>Welcome to Lecture 6</h2>
@@ -194,14 +194,23 @@ Narjes Mathlouthi
 <p>For events A and B where <span class="math inline">\(P(B) &gt; 0\)</span>:</p>
 <p><span class="math display">\[P(A|B) = \frac{P(A \cap B)}{P(B)}\]</span></p>
 <div class="fragment">
-<p><strong>Interpretation</strong>: - Numerator: Outcomes where both A and B occur - Denominator: All outcomes where B occurs<br>
-- Ratio: Fraction of B-outcomes where A also occurs</p>
+<p><strong>Interpretation</strong>:</p>
+<ul>
+<li><p><strong>Numerator:</strong> Outcomes where both A and B occur</p></li>
+<li><p><strong>Denominator:</strong> All outcomes where B occurs</p></li>
+<li><p><strong>Ratio:</strong> Fraction of B-outcomes where A also occurs</p></li>
+</ul>
 </div>
 </section>
 <section id="understanding-the-formula" class="slide level2">
 <h2>Understanding the Formula</h2>
 <p><span class="math display">\[P(A|B) = \frac{P(A \cap B)}{P(B)}\]</span></p>
-<p><strong>Why this formula makes sense:</strong> - We restrict our attention to outcomes where B occurs - Among those outcomes, what fraction also have A? - This is exactly <span class="math inline">\(\frac{P(A \cap B)}{P(B)}\)</span></p>
+<p><strong>Why this formula makes sense:</strong></p>
+<ul>
+<li><p>We restrict our attention to outcomes where B occurs</p></li>
+<li><p>Among those outcomes, what fraction also have A?</p></li>
+<li><p>This is exactly <span class="math inline">\(\frac{P(A \cap B)}{P(B)}\)</span></p></li>
+</ul>
 <div class="fragment">
 <p><strong>Rearranging</strong>: <span class="math inline">\(P(A \cap B) = P(A|B) \times P(B)\)</span></p>
 </div>
@@ -216,7 +225,12 @@ Narjes Mathlouthi
 <li><span class="math inline">\(P(\text{Ace | Black card})\)</span></li>
 </ol>
 <div class="fragment">
-<p><strong>Solutions:</strong> a) <span class="math inline">\(P(\text{King | Face}) = \frac{4}{12} = \frac{1}{3}\)</span> (4 kings among 12 face cards) b) <span class="math inline">\(P(\text{Heart | Red}) = \frac{13}{26} = \frac{1}{2}\)</span> (13 hearts among 26 red cards) c) <span class="math inline">\(P(\text{Ace | Black}) = \frac{2}{26} = \frac{1}{13}\)</span> (2 black aces among 26 black cards)</p>
+<p><strong>Solutions:</strong></p>
+<ol type="a">
+<li><p><span class="math inline">\(P(\text{King | Face}) = \frac{4}{12} = \frac{1}{3}\)</span> (4 kings among 12 face cards)</p></li>
+<li><p><span class="math inline">\(P(\text{Heart | Red}) = \frac{13}{26} = \frac{1}{2}\)</span> (13 hearts among 26 red cards)</p></li>
+<li><p><span class="math inline">\(P(\text{Ace | Black}) = \frac{2}{26} = \frac{1}{13}\)</span> (2 black aces among 26 black cards)</p></li>
+</ol>
 </div>
 </section>
 <section id="two-way-tables" class="slide level2">
@@ -257,7 +271,11 @@ Narjes Mathlouthi
 <section id="using-two-way-tables" class="slide level2">
 <h2>Using Two-Way Tables</h2>
 <p>Find: <span class="math inline">\(P(\text{Coffee | Morning person})\)</span></p>
-<p>From the table: - Morning people: 500 - Morning people who drink coffee: 350</p>
+<p>From the table:</p>
+<ul>
+<li><p>Morning people: 500</p></li>
+<li><p>Morning people who drink coffee: 350</p></li>
+</ul>
 <div class="fragment">
 <p><span class="math inline">\(P(\text{Coffee | Morning}) = \frac{350}{500} = 0.7\)</span></p>
 <p><strong>Compare to</strong>: <span class="math inline">\(P(\text{Coffee}) = \frac{550}{1000} = 0.55\)</span></p>
@@ -268,13 +286,17 @@ Narjes Mathlouthi
 <h2>Practice Problem 2</h2>
 <p>Using the coffee table, find:</p>
 <ol type="a">
-<li><span class="math inline">\(P(\text{Morning | Coffee drinker})\)</span></li>
-<li><span class="math inline">\(P(\text{No Coffee | Evening person})\)</span></li>
-<li><span class="math inline">\(P(\text{Evening | No Coffee})\)</span></li>
+<li><p><span class="math inline">\(P(\text{Morning | Coffee drinker})\)</span></p></li>
+<li><p><span class="math inline">\(P(\text{No Coffee | Evening person})\)</span></p></li>
+<li><p><span class="math inline">\(P(\text{Evening | No Coffee})\)</span></p></li>
 </ol>
 <div class="fragment">
-<p><strong>Solutions:</strong> a) <span class="math inline">\(P(\text{Morning | Coffee}) = \frac{350}{550} = \frac{7}{11} \approx 0.636\)</span> b) <span class="math inline">\(P(\text{No Coffee | Evening}) = \frac{300}{500} = 0.6\)</span><br>
-c) <span class="math inline">\(P(\text{Evening | No Coffee}) = \frac{300}{450} = \frac{2}{3} \approx 0.667\)</span></p>
+<p><strong>Solutions:</strong></p>
+<ol type="a">
+<li><p><span class="math inline">\(P(\text{Morning | Coffee}) = \frac{350}{550} = \frac{7}{11} \approx 0.636\)</span></p></li>
+<li><p><span class="math inline">\(P(\text{No Coffee | Evening}) = \frac{300}{500} = 0.6\)</span></p></li>
+<li><p><span class="math inline">\(P(\text{Evening | No Coffee}) = \frac{300}{450} = \frac{2}{3} \approx 0.667\)</span></p></li>
+</ol>
 </div>
 </section>
 <section id="independence-revisited" class="slide level2">
@@ -288,11 +310,13 @@ c) <span class="math inline">\(P(\text{Evening | No Coffee}) = \frac{300}{450} =
 </section>
 <section id="testing-for-independence" class="slide level2">
 <h2>Testing for Independence</h2>
-<p><strong>Method 1</strong>: Check if <span class="math inline">\(P(A|B) = P(A)\)</span> <strong>Method 2</strong>: Check if <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span><br>
-<strong>Method 3</strong>: Check if <span class="math inline">\(P(B|A) = P(B)\)</span></p>
+<p><strong>Method 1</strong>: Check if <span class="math inline">\(P(A|B) = P(A)\)</span></p>
+<p><strong>Method 2</strong>: Check if <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span></p>
+<p><strong>Method 3</strong>: Check if <span class="math inline">\(P(B|A) = P(B)\)</span></p>
 <div class="fragment">
 <p><strong>Coffee Example</strong>: Are coffee preference and time preference independent?</p>
-<p><span class="math inline">\(P(\text{Coffee}) = 0.55\)</span> <span class="math inline">\(P(\text{Coffee | Morning}) = 0.7\)</span></p>
+<p><span class="math inline">\(P(\text{Coffee}) = 0.55\)</span></p>
+<p><span class="math inline">\(P(\text{Coffee | Morning}) = 0.7\)</span></p>
 <p>Since <span class="math inline">\(0.7 \neq 0.55\)</span>, they are <strong>not independent</strong></p>
 </div>
 </section>
@@ -340,6 +364,10 @@ c) <span class="math inline">\(P(\text{Evening | No Coffee}) = \frac{300}{450} =
 <p>Total: <span class="math inline">\(\frac{1}{6} + \frac{1}{6} + \frac{1}{6} = \frac{1}{2}\)</span></p>
 </div>
 </section>
+<section class="slide level2">
+
+</section>
+<div class="hidden">
 <section id="tree-diagrams" class="slide level2">
 <h2>Tree Diagrams</h2>
 <p>Tree diagrams help visualize sequential events and conditional probabilities</p>
@@ -351,12 +379,14 @@ Ball 1
             0.4 ──┐
                     0.6   Blue</code></pre>
 <p><em>Each branch shows conditional probabilities</em></p>
+<hr>
 </section>
 <section id="tree-diagram-example" class="slide level2">
 <h2>Tree Diagram Example</h2>
 <p>Medical test scenario: - 2% of population has disease - Test is 95% accurate for sick people<br>
 - Test is 90% accurate for healthy people</p>
 <p>What’s the probability of testing positive?</p>
+<hr>
 </section>
 <section id="tree-diagram-solution" class="slide level2">
 <h2>Tree Diagram Solution</h2>
@@ -372,12 +402,17 @@ Disease?
 <p><span class="math inline">\(= 0.95 \times 0.02 + 0.10 \times 0.98 = 0.019 + 0.098 = 0.117\)</span></p>
 </div>
 </section>
+</div>
 <section id="law-of-total-probability" class="slide level2">
 <h2>Law of Total Probability</h2>
 <p>If events <span class="math inline">\(B_1, B_2, \ldots, B_n\)</span> form a <strong>partition</strong> of the sample space (mutually exclusive and exhaustive), then:</p>
 <p><span class="math display">\[P(A) = \sum_{i=1}^{n} P(A|B_i) \times P(B_i)\]</span></p>
 <div class="fragment">
-<p><strong>Partition means</strong>: - <span class="math inline">\(B_i \cap B_j = \emptyset\)</span> for <span class="math inline">\(i \neq j\)</span> (mutually exclusive) - <span class="math inline">\(\bigcup_{i=1}^{n} B_i = S\)</span> (exhaustive)</p>
+<p><strong>Partition means</strong>:</p>
+<ul>
+<li><p><span class="math inline">\(B_i \cap B_j = \emptyset\)</span> for <span class="math inline">\(i \neq j\)</span> (mutually exclusive)</p></li>
+<li><p><span class="math inline">\(\bigcup_{i=1}^{n} B_i = S\)</span> (exhaustive)</p></li>
+</ul>
 </div>
 </section>
 <section id="law-of-total-probability-example" class="slide level2">

@@ -300,7 +300,7 @@
   border-radius: 12px;
   padding: 1em;
   margin: 1em 0;
-  text-align: center;
+  text-align: left; /* changed from center to left */
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   max-width: 100%;
   overflow-wrap: break-word;
@@ -317,6 +317,11 @@
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
   font-weight: 600;
   font-size: 1.1em;
+}
+
+.formula-box strong, .formula-box b {
+  color: #08519c !important; /* strong blue for emphasis */
+  font-weight: bold;
 }
 
 .formula-large {
@@ -1409,4 +1414,56 @@ div.task-box::before {
 
 /* Quarto callout styles - using built-in Quarto callouts */
 /* Remove custom callout styles to avoid conflicts with Quarto's built-in callouts */
+
+/* Icon section styling */
+.section-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.icon-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5em;
+  height: 2.5em;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+  margin-right: 0.5em;
+  flex-shrink: 0;
+}
+
+.icon-section i {
+  font-size: 1.2em;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.icon-section:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+  transition: all 0.3s ease;
+}
+
+.key-concept-box {
+  background-color: #f3f0fa; /* light lavender */
+  border-left: 6px solid #6c3483; /* strong purple */
+  border-radius: 8px;
+  color: #2c3e50;
+  padding: 1em;
+  margin: 1em 0;
+  font-size: 0.95em;
+  line-height: 1.4;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(108, 52, 131, 0.08);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.key-concept-box strong, .key-concept-box b {
+  color: #6c3483 !important;
+  font-weight: bold;
+}
 

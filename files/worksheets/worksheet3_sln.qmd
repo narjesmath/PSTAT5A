@@ -1,7 +1,7 @@
 ---
 title: "PSTAT 5A Practice Worksheet 3 - SOLUTIONS"
 subtitle: "Comprehensive Review: Probability, Counting, and Conditional Probability"
-author: "Solution Key"
+author: "Narjes Mathlouthi"
 date: today
 format:
   html:
@@ -25,6 +25,32 @@ execute:
   warning: false
 ---
 
+
+
+::: {.formula-box}
+**📚 Key Formulas Reference:**
+
+**Basic Probability:**
+
+- **Conditional Probability:** $P(A|B) = \frac{P(A \cap B)}{P(B)}$
+  
+- **Law of Total Probability:** $P(A) = \sum P(A|B_i) \cdot P(B_i)$
+  
+- **Addition Rule:** $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+  
+- **Multiplication Rule:** $P(A \cap B) = P(A) \cdot P(B|A) = P(B) \cdot P(A|B)$
+
+**Counting:**
+
+- **Multiplication Rule:** If a procedure consists of $k$ steps, with $n_1$ ways for step 1, $n_2$ for step 2, ..., $n_k$ for step $k$, then total ways: $n_1 \times n_2 \times \cdots \times n_k$
+
+- **Factorial:** $n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$
+
+- **Permutations:** $P(n,r) = \frac{n!}{(n-r)!}$
+  
+- **Combinations:** $C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$
+:::
+
 # Section A: Probability - SOLUTIONS
 *⏱️ Estimated time: 8 minutes*
 
@@ -40,34 +66,28 @@ For a valid probability distribution, two conditions must be met:
 **Analysis:**
 
 **(a) Invalid** 
-
-- Sum = 0.3 + 0.3 + 0.3 + 0.2 + 0.1 = 1.2 > 1
-The probabilities sum to more than 1, violating the second condition.
+$$\text{Sum} = 0.3 + 0.3 + 0.3 + 0.2 + 0.1 = 1.2 > 1$$
+The probabilities sum to more than 1, violating condition 2.
 
 **(b) Valid** 
-
-- Sum = 0 + 0 + 1 + 0 + 0 = 1
+$$\text{Sum} = 0 + 0 + 1 + 0 + 0 = 1$$
 All probabilities are non-negative and sum to 1. This represents a class where everyone receives a C.
 
 **(c) Invalid** 
-
-- Sum = 0.3 + 0.3 + 0.3 + 0 + 0 = 0.9 < 1
-The probabilities sum to less than 1, violating the second condition.
+$$\text{Sum} = 0.3 + 0.3 + 0.3 + 0 + 0 = 0.9 < 1$$
+The probabilities sum to less than 1, violating condition 2.
 
 **(d) Invalid** 
-
-- Contains F = -0.1 < 0
-Although the sum would equal 1.0, the probability for grade F is negative, violating the first condition.
+Contains $P(F) = -0.1 < 0$
+Although the sum would equal 1.0, the probability for grade F is negative, violating condition 1.
 
 **(e) Valid** 
-
-- Sum = 0.2 + 0.4 + 0.2 + 0.1 + 0.1 = 1.0
+$$\text{Sum} = 0.2 + 0.4 + 0.2 + 0.1 + 0.1 = 1.0$$
 All probabilities are non-negative and sum to 1.
 
 **(f) Invalid** 
-
-- Contains B = -0.1 < 0
-Although the sum equals 1.0, the probability for grade B is negative, violating the first condition.
+Contains $P(B) = -0.1 < 0$
+Although the sum equals 1.0, the probability for grade B is negative, violating condition 1.
 :::
 
 # Section B: Permutations and Combinations - SOLUTIONS
@@ -79,174 +99,248 @@ Although the sum equals 1.0, the probability for grade B is negative, violating 
 **Part (a):** How many 6-character passwords can be formed using 3 specific letters and 3 specific digits if repetitions are not allowed and letters must come before digits?
 
 **Solution:**
-Since letters must come before digits, we have a fixed structure: LLL DDD
+Since letters must come before digits, we have a fixed structure: **LLL DDD**
 
-- Step 1: Arrange 3 letters in the first 3 positions
-  - This is a permutation: P(3,3) = 3! = 6 ways
+**Step 1:** Arrange 3 letters in the first 3 positions
 
-- Step 2: Arrange 3 digits in the last 3 positions  
-  - This is a permutation: P(3,3) = 3! = 6 ways
+- This is a permutation: $P(3,3) = \frac{3!}{(3-3)!} = \frac{3!}{0!} = 3! = 6$ ways
 
-- Step 3: Apply multiplication principle
-  - Total passwords = 6 × 6 = **36 passwords**
+**Step 2:** Arrange 3 digits in the last 3 positions  
+
+- This is a permutation: $P(3,3) = \frac{3!}{(3-3)!} = \frac{3!}{0!} = 3! = 6$ ways
+
+**Step 3:** Apply multiplication principle
+$$\text{Total passwords} = 6 \times 6 = \boxed{36 \text{ passwords}}$$
 
 **Part (b):** If the team wants to select 4 people from 12 employees to form a security committee where order doesn't matter, how many ways can this be done?
 
 **Solution:**
-Since order doesn't matter, this is a combination problem.
+Since order doesn't matter, this is a **combination** problem.
 
 $$C(12,4) = \binom{12}{4} = \frac{12!}{4!(12-4)!} = \frac{12!}{4! \cdot 8!}$$
 
-$$= \frac{12 \times 11 \times 10 \times 9}{4 \times 3 \times 2 \times 1} = \frac{11880}{24} = \textbf{495 ways}$$
+$$= \frac{12 \times 11 \times 10 \times 9}{4 \times 3 \times 2 \times 1} = \frac{11,880}{24} = \boxed{495 \text{ ways}}$$
 :::
 
 # Section C: Conditional Probability - SOLUTIONS
-*⏱️ Estimated time: 15 minutes*
+*⏱️ Estimated time: 12 minutes*
 
 ::: {.problem}
-**Problem B1: Conditional Probability and Medical Testing - SOLUTION**
+**Problem C1: Drawing Cards (Without Replacement) - SOLUTION**
 
 **Given Information:**
 
-- P(has variant) = 0.03
+- Standard 52-card deck
   
-- P(test positive | has variant) = 0.95 (sensitivity)
+- Drawing two cards without replacement
   
-- P(test negative | no variant) = 0.92 (specificity)
+- $A = \{\text{"first card is a heart"}\}$
   
-- Therefore: P(test positive | no variant) = 1 - 0.92 = 0.08
-
-**Part (a):** What is the probability that a randomly selected person tests positive?
+- $B = \{\text{"second card is an ace"}\}$
 
 **Solution:**
 
-Using the Law of Total Probability:
+**1. P(A)**
 
-$$P(\text{test positive}) = P(\text{test positive | has variant}) \times P(\text{has variant}) + P(\text{test positive | no variant}) \times P(\text{no variant})$$
+There are 13 hearts in a 52-card deck.
+$$P(A) = \frac{13}{52} = \boxed{\frac{1}{4} = 0.2500}$$
 
-$$P(\text{test positive}) = 0.95 \times 0.03 + 0.08 \times 0.97$$
-$$= 0.0285 + 0.0776 = \textbf{0.1061}$$
+**2. P(A and B)**
 
-**Part (b):** If someone tests positive, what is the probability they actually have the variant?
+We need both events to occur: first card is a heart AND second card is an ace.
 
-**Solution:**
-Using Bayes' Theorem:
+**Case 1:** First card is the Ace of Hearts
+- $P(\text{1st card is Ace of Hearts}) = \frac{1}{52}$
+  
+- $P(\text{2nd card is an ace | 1st card is Ace of Hearts}) = \frac{3}{51}$ (3 aces left)
+  
+- $P(\text{Case 1}) = \frac{1}{52} \times \frac{3}{51} = \frac{3}{2652}$
 
-$$P(\text{has variant | test positive}) = \frac{P(\text{test positive | has variant}) \times P(\text{has variant})}{P(\text{test positive})}$$
+**Case 2:** First card is a non-ace heart
+- $P(\text{1st card is non-ace heart}) = \frac{12}{52}$ (12 non-ace hearts)
+  
+- $P(\text{2nd card is an ace | 1st card is non-ace heart}) = \frac{4}{51}$ (4 aces left)
+  
+- $P(\text{Case 2}) = \frac{12}{52} \times \frac{4}{51} = \frac{48}{2652}$
 
-$$= \frac{0.95 \times 0.03}{0.1061} = \frac{0.0285}{0.1061} = \textbf{0.2686}$$
+$$P(A \text{ and } B) = \frac{3}{2652} + \frac{48}{2652} = \frac{51}{2652} = \boxed{\frac{1}{52} = 0.0192}$$
 
-**Part (c):** If someone tests negative, what is the probability they actually don't have the variant?
+**3. P(B|A)**
 
-**Solution:**
-First, find P(test negative):
-$$P(\text{test negative}) = 1 - P(\text{test positive}) = 1 - 0.1061 = 0.8939$$
+Using the definition of conditional probability:
+$$P(B|A) = \frac{P(A \text{ and } B)}{P(A)} = \frac{\frac{1}{52}}{\frac{1}{4}} = \frac{1}{52} \times \frac{4}{1} = \boxed{\frac{4}{52} = \frac{1}{13} = 0.0769}$$
 
-Using Bayes' Theorem:
-$$P(\text{no variant | test negative}) = \frac{P(\text{test negative | no variant}) \times P(\text{no variant})}{P(\text{test negative})}$$
+**Alternative approach:** Given that the first card is a heart:
 
-$$= \frac{0.92 \times 0.97}{0.8939} = \frac{0.8924}{0.8939} = \textbf{0.9983}$$
+- If it's the Ace of Hearts: 3 aces remain out of 51 cards
+  
+- If it's a non-ace heart: 4 aces remain out of 51 cards
+  
+- $P(B|A) = \frac{1}{13} \times \frac{3}{51} + \frac{12}{13} \times \frac{4}{51} = \frac{3 + 48}{13 \times 51} = \frac{51}{663} = \frac{4}{52} = \frac{1}{13}$
 
-**Part (d) [Challenge]:** Two consecutive positive tests - what is the probability they actually have the variant?
+**4. P(B)**
 
-**Solution:**
-Assuming independence between tests:
+Using the Law of Total Probability. Let $A^c$ = "first card is not a heart"
 
-$$P(\text{two positive | has variant}) = 0.95^2 = 0.9025$$
-$$P(\text{two positive | no variant}) = 0.08^2 = 0.0064$$
+$$P(B) = P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)$$
 
-$$P(\text{two positive}) = 0.9025 \times 0.03 + 0.0064 \times 0.97 = 0.027075 + 0.006208 = 0.033283$$
+We know:
 
-$$P(\text{has variant | two positive}) = \frac{0.027075}{0.033283} = \textbf{0.8134}$$
+- $P(A) = \frac{1}{4}$ and $P(A^c) = \frac{3}{4}$
+  
+- $P(B|A) = \frac{1}{13}$ (from part 3)
+  
+- $P(B|A^c) = \frac{4}{51}$ (if first card isn't a heart, all 4 aces remain)
+
+$$P(B) = \frac{1}{13} \times \frac{1}{4} + \frac{4}{51} \times \frac{3}{4} = \frac{1}{52} + \frac{12}{204} = \frac{1}{52} + \frac{3}{51}$$
+
+$$= \frac{51 + 156}{52 \times 51} = \frac{207}{2652} = \boxed{\frac{4}{51} = 0.0784}$$
+
+**5. Comparison of P(B|A) vs P(B)**
+
+$$P(B|A) = \frac{1}{13} = 0.0769$$
+$$P(B) = \frac{4}{51} = 0.0784$$
+
+**Analysis:** $P(B|A) < P(B)$
+
+**Explanation:** The probability of getting an ace on the second draw is slightly **lower** when we know the first card is a heart compared to when we don't know anything about the first card. This happens because:
+
+- When the first card is a heart, there's a $\frac{1}{13}$ chance it's the Ace of Hearts, removing one ace from the deck
+  
+- This makes it slightly less likely to draw an ace on the second draw
+  
+- This demonstrates **dependence** - the events are not independent because drawing without replacement creates dependence between successive draws
 :::
 
+# Section D: Advanced Counting with Restrictions - SOLUTIONS
+*⏱️ Estimated time: 15 minutes*
+
 ::: {.problem}
-**Problem C1: Advanced Counting with Restrictions - SOLUTION**
+**Problem D1: Advanced Counting with Restrictions - SOLUTION**
+
+**Given:**
+
+- 6 appetizer options (including 1 seafood)
+  
+- 8 main course options (including 1 vegetarian, and 3 that are beef or chicken)
+  
+- 5 dessert options (including 1 chocolate)
+
+**Restrictions:**
+
+1. Seafood appetizer → cannot choose vegetarian main course
+   
+2. Chocolate dessert → must choose beef or chicken main course (3 specific options)
 
 **Part (a):** How many valid meal combinations are possible?
 
-**Solution:**
-We need to consider cases based on the restrictions.
+**Solution using cases:**
 
 **Case 1: Seafood appetizer is chosen**
 
-- 1 appetizer option (seafood)
+- 1 appetizer choice (seafood)
   
-- 7 main course options (cannot choose vegetarian)
+- 7 main course choices (8 total minus 1 vegetarian)
   
-- 5 dessert options
+- 5 dessert choices (no restrictions)
   
-- Combinations: 1 × 7 × 5 = 35
+- Total: $1 \times 7 \times 5 = 35$ combinations
 
 **Case 2: Non-seafood appetizer + chocolate dessert**
 
-- 5 appetizer options (non-seafood)
+- 5 appetizer choices (6 total minus 1 seafood)
   
-- 3 main course options (only beef or chicken allowed with chocolate)
+- 3 main course choices (only beef or chicken allowed with chocolate)
   
-- 1 dessert option (chocolate)
+- 1 dessert choice (chocolate)
   
-- Combinations: 5 × 3 × 1 = 15
+- Total: $5 \times 3 \times 1 = 15$ combinations
 
 **Case 3: Non-seafood appetizer + non-chocolate dessert**
-- 5 appetizer options (non-seafood)
-  
-- 8 main course options (no restrictions)
-  
-- 4 dessert options (non-chocolate)
-  
-- Combinations: 5 × 8 × 4 = 160
 
-**Total valid combinations:** 35 + 15 + 160 = **210 combinations**
+- 5 appetizer choices (6 total minus 1 seafood)
+  
+- 8 main course choices (no restrictions since no seafood appetizer)
+  
+- 4 dessert choices (5 total minus 1 chocolate)
+  
+- Total: $5 \times 8 \times 4 = 160$ combinations
+
+**Total valid combinations:**
+$$35 + 15 + 160 = \boxed{210 \text{ combinations}}$$
+
+**Verification using complementary counting:**
+
+- Total unrestricted combinations: $6 \times 8 \times 5 = 240$
+  
+- Invalid combinations to subtract:
+  
+  - Seafood + vegetarian + any dessert: $1 \times 1 \times 5 = 5$
+  
+  - Non-seafood + chocolate + non-beef/chicken: $5 \times 5 \times 1 = 25$
+  
+- Valid combinations: $240 - 5 - 25 = 210$ ✓
 
 **Part (b):** If customers choose randomly among valid combinations, what is the probability someone chooses the chocolate dessert?
 
 **Solution:**
-Combinations with chocolate dessert: 15 (from Case 2 above)
-Total valid combinations: 210
+From our case analysis, combinations with chocolate dessert come only from Case 2:
 
-$$P(\text{chocolate dessert}) = \frac{15}{210} = \frac{1}{14} = \textbf{0.0714}$$
+- Combinations with chocolate dessert: 15
+  
+- Total valid combinations: 210
+
+$$P(\text{chocolate dessert}) = \frac{15}{210} = \frac{1}{14} = \boxed{0.0714}$$
+
+**Alternative verification:**
+
+We can also calculate this directly:
+
+- Non-seafood appetizers: 5 choices
+  
+- With chocolate dessert, must choose from 3 main courses
+  
+- Valid chocolate combinations: $5 \times 3 = 15$
+  
+- Probability: $\frac{15}{210} = \frac{1}{14} = 0.0714$ ✓
 :::
 
-# Section D: Review - SOLUTIONS
-*⏱️ Estimated time: 12 minutes*
+# Summary of Key Concepts
 
-::: {.problem}
-**Problem B3: Daily Expenses - SOLUTION**
+::: {.key-concept-box}
+**Probability Distributions**
 
-**Given:**
-
-- Coffee: Mean = $1.40, SD = $0.30
+- <strong>Valid distributions</strong> require: all probabilities $\geq 0$ and sum $= 1$
   
-- Muffin: Mean = $2.50, SD = $0.15
+- <strong>Check both conditions</strong> systematically
+:::
+
+::: {.key-concept-box}
+**Permutations vs Combinations**
+
+- <strong>Permutations:</strong> Order matters, use $P(n,r) = \frac{n!}{(n-r)!}$
   
-- Prices are independent
+- <strong>Combinations:</strong> Order doesn't matter, use $C(n,r) = \frac{n!}{r!(n-r)!}$
+  
+- <strong>Multiplication principle:</strong> Combine independent choices
+:::
 
-**Part (a):** What is the mean and standard deviation of the amount she spends on breakfast daily?
+::: {.key-concept-box}
+**Conditional Probability**
 
-**Solution:**
-For the sum of independent random variables:
+- <strong>Without replacement:</strong> Creates dependence between events
+  
+- <strong>Use definition:</strong> $P(B|A) = \frac{P(A \cap B)}{P(A)}$
+  
+- <strong>Law of Total Probability:</strong> For calculating marginal probabilities
+:::
 
-**Mean of daily expenses:**
-$$E[\text{Daily}] = E[\text{Coffee}] + E[\text{Muffin}] = \$1.40 + \$2.50 = \textbf{\$3.90}$$
+::: {.key-concept-box}
+**Advanced Counting**
 
-**Variance of daily expenses:**
-$$\text{Var}[\text{Daily}] = \text{Var}[\text{Coffee}] + \text{Var}[\text{Muffin}] = (0.30)^2 + (0.15)^2 = 0.09 + 0.0225 = 0.1125$$
-
-**Standard deviation of daily expenses:**
-$$SD[\text{Daily}] = \sqrt{0.1125} = \textbf{\$0.3354}$$
-
-**Part (b):** What is the mean and standard deviation of the amount she spends on breakfast weekly (7 days)?
-
-**Solution:**
-For the sum of 7 independent daily expenses:
-
-**Mean of weekly expenses:**
-$$E[\text{Weekly}] = 7 \times E[\text{Daily}] = 7 \times \$3.90 = \textbf{\$27.30}$$
-
-**Variance of weekly expenses:**
-$$\text{Var}[\text{Weekly}] = 7 \times \text{Var}[\text{Daily}] = 7 \times 0.1125 = 0.7875$$
-
-**Standard deviation of weekly expenses:**
-$$SD[\text{Weekly}] = \sqrt{0.7875} = \textbf{\$0.8874}$$
+- <strong>Case analysis:</strong> Break complex problems into manageable parts
+  
+- <strong>Handle restrictions:</strong> Consider what's allowed vs. not allowed
+  
+- <strong>Verification:</strong> Use complementary counting or direct calculation
 :::

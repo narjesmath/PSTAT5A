@@ -92,10 +92,14 @@ For events A and B where $P(B) > 0$:
 $$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
 
 :::{.fragment}
+
 **Interpretation**: 
-- Numerator: Outcomes where both A and B occur
-- Denominator: All outcomes where B occurs  
-- Ratio: Fraction of B-outcomes where A also occurs
+
+- **Numerator:** Outcomes where both A and B occur
+  
+- **Denominator:** All outcomes where B occurs
+    
+- **Ratio:** Fraction of B-outcomes where A also occurs
 :::
 
 ---
@@ -105,8 +109,11 @@ $$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
 $$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
 
 **Why this formula makes sense:**
+
 - We restrict our attention to outcomes where B occurs
+  
 - Among those outcomes, what fraction also have A?
+  
 - This is exactly $\frac{P(A \cap B)}{P(B)}$
 
 :::{.fragment}
@@ -125,8 +132,11 @@ c) $P(\text{Ace | Black card})$
 
 :::{.fragment}
 **Solutions:**
+
 a) $P(\text{King | Face}) = \frac{4}{12} = \frac{1}{3}$ (4 kings among 12 face cards)
+
 b) $P(\text{Heart | Red}) = \frac{13}{26} = \frac{1}{2}$ (13 hearts among 26 red cards)
+
 c) $P(\text{Ace | Black}) = \frac{2}{26} = \frac{1}{13}$ (2 black aces among 26 black cards)
 :::
 
@@ -151,7 +161,9 @@ Two-way tables are excellent for conditional probability problems
 Find: $P(\text{Coffee | Morning person})$
 
 From the table:
+
 - Morning people: 500
+  
 - Morning people who drink coffee: 350
 
 :::{.fragment}
@@ -169,13 +181,18 @@ Being a morning person increases coffee probability!
 Using the coffee table, find:
 
 a) $P(\text{Morning | Coffee drinker})$
+
 b) $P(\text{No Coffee | Evening person})$
+
 c) $P(\text{Evening | No Coffee})$
 
 :::{.fragment}
 **Solutions:**
+
 a) $P(\text{Morning | Coffee}) = \frac{350}{550} = \frac{7}{11} \approx 0.636$
+
 b) $P(\text{No Coffee | Evening}) = \frac{300}{500} = 0.6$  
+
 c) $P(\text{Evening | No Coffee}) = \frac{300}{450} = \frac{2}{3} \approx 0.667$
 :::
 
@@ -199,13 +216,16 @@ $$P(A \cap B) = P(A) \times P(B)$$
 ## Testing for Independence
 
 **Method 1**: Check if $P(A|B) = P(A)$
+
 **Method 2**: Check if $P(A \cap B) = P(A) \times P(B)$  
+
 **Method 3**: Check if $P(B|A) = P(B)$
 
 :::{.fragment}
 **Coffee Example**: Are coffee preference and time preference independent?
 
 $P(\text{Coffee}) = 0.55$
+
 $P(\text{Coffee | Morning}) = 0.7$
 
 Since $0.7 \neq 0.55$, they are **not independent**
@@ -275,6 +295,7 @@ Total: $\frac{1}{6} + \frac{1}{6} + \frac{1}{6} = \frac{1}{2}$
 
 ---
 
+:::{.hidden}
 ## Tree Diagrams
 
 Tree diagrams help visualize sequential events and conditional probabilities
@@ -321,7 +342,7 @@ $P(\text{Test+}) = P(\text{Test+|Disease}) \times P(\text{Disease}) + P(\text{Te
 
 $= 0.95 \times 0.02 + 0.10 \times 0.98 = 0.019 + 0.098 = 0.117$
 :::
-
+:::
 ---
 
 ## Law of Total Probability
@@ -332,7 +353,9 @@ $$P(A) = \sum_{i=1}^{n} P(A|B_i) \times P(B_i)$$
 
 :::{.fragment}
 **Partition means**:
+
 - $B_i \cap B_j = \emptyset$ for $i \neq j$ (mutually exclusive)
+  
 - $\bigcup_{i=1}^{n} B_i = S$ (exhaustive)
 :::
 

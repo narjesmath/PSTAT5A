@@ -161,7 +161,7 @@
 \subtitle{Comprehensive Review: Probability, Counting, and Conditional
 Probability}
 \author{Solution Key}
-\date{2025-07-06}
+\date{2025-07-08}
 
 \begin{document}
 \maketitle
@@ -180,33 +180,71 @@ SOLUTIONS}\label{section-a-probability---solutions}
 
 \textbf{Problem A1: Probability Distributions - SOLUTION}
 
-For a valid probability distribution, two conditions must be met: 1. All
-probabilities must be non-negative (≥ 0) 2. The sum of all probabilities
-must equal 1
+For a valid probability distribution, two conditions must be met:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  All probabilities must be non-negative (≥ 0)
+\item
+  The sum of all probabilities must equal 1
+\end{enumerate}
 
 \textbf{Analysis:}
 
-\textbf{(a) Invalid} - Sum = 0.3 + 0.3 + 0.3 + 0.2 + 0.1 = 1.2
-\textgreater{} 1 The probabilities sum to more than 1, violating the
-second condition.
+\textbf{(a) Invalid}
 
-\textbf{(b) Valid} - Sum = 0 + 0 + 1 + 0 + 0 = 1 All probabilities are
-non-negative and sum to 1. This represents a class where everyone
-receives a C.
+\begin{itemize}
+\tightlist
+\item
+  Sum = 0.3 + 0.3 + 0.3 + 0.2 + 0.1 = 1.2 \textgreater{} 1 The
+  probabilities sum to more than 1, violating the second condition.
+\end{itemize}
 
-\textbf{(c) Invalid} - Sum = 0.3 + 0.3 + 0.3 + 0 + 0 = 0.9 \textless{} 1
-The probabilities sum to less than 1, violating the second condition.
+\textbf{(b) Valid}
 
-\textbf{(d) Invalid} - Contains F = -0.1 \textless{} 0 Although the sum
-would equal 1.0, the probability for grade F is negative, violating the
-first condition.
+\begin{itemize}
+\tightlist
+\item
+  Sum = 0 + 0 + 1 + 0 + 0 = 1 All probabilities are non-negative and sum
+  to 1. This represents a class where everyone receives a C.
+\end{itemize}
 
-\textbf{(e) Valid} - Sum = 0.2 + 0.4 + 0.2 + 0.1 + 0.1 = 1.0 All
-probabilities are non-negative and sum to 1.
+\textbf{(c) Invalid}
 
-\textbf{(f) Invalid} - Contains B = -0.1 \textless{} 0 Although the sum
-equals 1.0, the probability for grade B is negative, violating the first
-condition.
+\begin{itemize}
+\tightlist
+\item
+  Sum = 0.3 + 0.3 + 0.3 + 0 + 0 = 0.9 \textless{} 1 The probabilities
+  sum to less than 1, violating the second condition.
+\end{itemize}
+
+\textbf{(d) Invalid}
+
+\begin{itemize}
+\tightlist
+\item
+  Contains F = -0.1 \textless{} 0 Although the sum would equal 1.0, the
+  probability for grade F is negative, violating the first condition.
+\end{itemize}
+
+\textbf{(e) Valid}
+
+\begin{itemize}
+\tightlist
+\item
+  Sum = 0.2 + 0.4 + 0.2 + 0.1 + 0.1 = 1.0 All probabilities are
+  non-negative and sum to 1.
+\end{itemize}
+
+\textbf{(f) Invalid}
+
+\begin{itemize}
+\tightlist
+\item
+  Contains B = -0.1 \textless{} 0 Although the sum equals 1.0, the
+  probability for grade B is negative, violating the first condition.
+\end{itemize}
 
 \section{Section B: Permutations and Combinations -
 SOLUTIONS}\label{section-b-permutations-and-combinations---solutions}
@@ -269,15 +307,25 @@ SOLUTIONS}\label{section-c-conditional-probability---solutions}
 \textbf{Problem B1: Conditional Probability and Medical Testing -
 SOLUTION}
 
-\textbf{Given Information:} - P(has variant) = 0.03 - P(test positive
-\textbar{} has variant) = 0.95 (sensitivity) - P(test negative
-\textbar{} no variant) = 0.92 (specificity) - Therefore: P(test positive
-\textbar{} no variant) = 1 - 0.92 = 0.08
+\textbf{Given Information:}
+
+\begin{itemize}
+\item
+  P(has variant) = 0.03
+\item
+  P(test positive \textbar{} has variant) = 0.95 (sensitivity)
+\item
+  P(test negative \textbar{} no variant) = 0.92 (specificity)
+\item
+  Therefore: P(test positive \textbar{} no variant) = 1 - 0.92 = 0.08
+\end{itemize}
 
 \textbf{Part (a):} What is the probability that a randomly selected
 person tests positive?
 
-\textbf{Solution:} Using the Law of Total Probability:
+\textbf{Solution:}
+
+Using the Law of Total Probability:
 
 \[P(\text{test positive}) = P(\text{test positive | has variant}) \times P(\text{has variant}) + P(\text{test positive | no variant}) \times P(\text{no variant})\]
 
@@ -322,19 +370,43 @@ is the probability they actually have the variant?
 
 \textbf{Solution:} We need to consider cases based on the restrictions.
 
-\textbf{Case 1: Seafood appetizer is chosen} - 1 appetizer option
-(seafood) - 7 main course options (cannot choose vegetarian) - 5 dessert
-options - Combinations: 1 × 7 × 5 = 35
+\textbf{Case 1: Seafood appetizer is chosen}
 
-\textbf{Case 2: Non-seafood appetizer + chocolate dessert} - 5 appetizer
-options (non-seafood) - 3 main course options (only beef or chicken
-allowed with chocolate) - 1 dessert option (chocolate) - Combinations: 5
-× 3 × 1 = 15
+\begin{itemize}
+\item
+  1 appetizer option (seafood)
+\item
+  7 main course options (cannot choose vegetarian)
+\item
+  5 dessert options
+\item
+  Combinations: 1 × 7 × 5 = 35
+\end{itemize}
+
+\textbf{Case 2: Non-seafood appetizer + chocolate dessert}
+
+\begin{itemize}
+\item
+  5 appetizer options (non-seafood)
+\item
+  3 main course options (only beef or chicken allowed with chocolate)
+\item
+  1 dessert option (chocolate)
+\item
+  Combinations: 5 × 3 × 1 = 15
+\end{itemize}
 
 \textbf{Case 3: Non-seafood appetizer + non-chocolate dessert} - 5
-appetizer options (non-seafood) - 8 main course options (no
-restrictions) - 4 dessert options (non-chocolate) - Combinations: 5 × 8
-× 4 = 160
+appetizer options (non-seafood)
+
+\begin{itemize}
+\item
+  8 main course options (no restrictions)
+\item
+  4 dessert options (non-chocolate)
+\item
+  Combinations: 5 × 8 × 4 = 160
+\end{itemize}
 
 \textbf{Total valid combinations:} 35 + 15 + 160 = \textbf{210
 combinations}
@@ -355,8 +427,16 @@ SOLUTIONS}\label{section-d-review---solutions}
 
 \textbf{Problem B3: Daily Expenses - SOLUTION}
 
-\textbf{Given:} - Coffee: Mean = \$1.40, SD = \$0.30 - Muffin: Mean =
-\$2.50, SD = \$0.15 - Prices are independent
+\textbf{Given:}
+
+\begin{itemize}
+\item
+  Coffee: Mean = \$1.40, SD = \$0.30
+\item
+  Muffin: Mean = \$2.50, SD = \$0.15
+\item
+  Prices are independent
+\end{itemize}
 
 \textbf{Part (a):} What is the mean and standard deviation of the amount
 she spends on breakfast daily?

@@ -6,8 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Solution Key">
-<meta name="dcterms.date" content="2025-07-06">
+<meta name="author" content="Narjes Mathlouthi">
+<meta name="dcterms.date" content="2025-07-08">
 
 <title>PSTAT 5A Practice Worksheet 3 - SOLUTIONS – PSTAT5A</title>
 <style>
@@ -167,7 +167,8 @@ window.Quarto = {
   <li><a href="#section-a-probability---solutions" id="toc-section-a-probability---solutions" class="nav-link active" data-scroll-target="#section-a-probability---solutions">Section A: Probability - SOLUTIONS</a></li>
   <li><a href="#section-b-permutations-and-combinations---solutions" id="toc-section-b-permutations-and-combinations---solutions" class="nav-link" data-scroll-target="#section-b-permutations-and-combinations---solutions">Section B: Permutations and Combinations - SOLUTIONS</a></li>
   <li><a href="#section-c-conditional-probability---solutions" id="toc-section-c-conditional-probability---solutions" class="nav-link" data-scroll-target="#section-c-conditional-probability---solutions">Section C: Conditional Probability - SOLUTIONS</a></li>
-  <li><a href="#section-d-review---solutions" id="toc-section-d-review---solutions" class="nav-link" data-scroll-target="#section-d-review---solutions">Section D: Review - SOLUTIONS</a></li>
+  <li><a href="#section-d-advanced-counting-with-restrictions---solutions" id="toc-section-d-advanced-counting-with-restrictions---solutions" class="nav-link" data-scroll-target="#section-d-advanced-counting-with-restrictions---solutions">Section D: Advanced Counting with Restrictions - SOLUTIONS</a></li>
+  <li><a href="#summary-of-key-concepts" id="toc-summary-of-key-concepts" class="nav-link" data-scroll-target="#summary-of-key-concepts">Summary of Key Concepts</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="worksheet3_sln.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="worksheet3_sln.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
@@ -187,14 +188,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Solution Key </p>
+             <p>Narjes Mathlouthi </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 6, 2025</p>
+      <p class="date">July 8, 2025</p>
     </div>
   </div>
   
@@ -206,6 +207,23 @@ window.Quarto = {
 </header>
 
 
+<div class="formula-box">
+<p><strong>📚 Key Formulas Reference:</strong></p>
+<p><strong>Basic Probability:</strong></p>
+<ul>
+<li><p><strong>Conditional Probability:</strong> <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></p></li>
+<li><p><strong>Law of Total Probability:</strong> <span class="math inline">\(P(A) = \sum P(A|B_i) \cdot P(B_i)\)</span></p></li>
+<li><p><strong>Addition Rule:</strong> <span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span></p></li>
+<li><p><strong>Multiplication Rule:</strong> <span class="math inline">\(P(A \cap B) = P(A) \cdot P(B|A) = P(B) \cdot P(A|B)\)</span></p></li>
+</ul>
+<p><strong>Counting:</strong></p>
+<ul>
+<li><p><strong>Multiplication Rule:</strong> If a procedure consists of <span class="math inline">\(k\)</span> steps, with <span class="math inline">\(n_1\)</span> ways for step 1, <span class="math inline">\(n_2\)</span> for step 2, …, <span class="math inline">\(n_k\)</span> for step <span class="math inline">\(k\)</span>, then total ways: <span class="math inline">\(n_1 \times n_2 \times \cdots \times n_k\)</span></p></li>
+<li><p><strong>Factorial:</strong> <span class="math inline">\(n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1\)</span></p></li>
+<li><p><strong>Permutations:</strong> <span class="math inline">\(P(n,r) = \frac{n!}{(n-r)!}\)</span></p></li>
+<li><p><strong>Combinations:</strong> <span class="math inline">\(C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}\)</span></p></li>
+</ul>
+</div>
 <section id="section-a-probability---solutions" class="level1">
 <h1>Section A: Probability - SOLUTIONS</h1>
 <p><em>⏱️ Estimated time: 8 minutes</em></p>
@@ -217,30 +235,12 @@ window.Quarto = {
 <li><p>The sum of all probabilities must equal 1</p></li>
 </ol>
 <p><strong>Analysis:</strong></p>
-<p><strong>(a) Invalid</strong></p>
-<ul>
-<li>Sum = 0.3 + 0.3 + 0.3 + 0.2 + 0.1 = 1.2 &gt; 1 The probabilities sum to more than 1, violating the second condition.</li>
-</ul>
-<p><strong>(b) Valid</strong></p>
-<ul>
-<li>Sum = 0 + 0 + 1 + 0 + 0 = 1 All probabilities are non-negative and sum to 1. This represents a class where everyone receives a C.</li>
-</ul>
-<p><strong>(c) Invalid</strong></p>
-<ul>
-<li>Sum = 0.3 + 0.3 + 0.3 + 0 + 0 = 0.9 &lt; 1 The probabilities sum to less than 1, violating the second condition.</li>
-</ul>
-<p><strong>(d) Invalid</strong></p>
-<ul>
-<li>Contains F = -0.1 &lt; 0 Although the sum would equal 1.0, the probability for grade F is negative, violating the first condition.</li>
-</ul>
-<p><strong>(e) Valid</strong></p>
-<ul>
-<li>Sum = 0.2 + 0.4 + 0.2 + 0.1 + 0.1 = 1.0 All probabilities are non-negative and sum to 1.</li>
-</ul>
-<p><strong>(f) Invalid</strong></p>
-<ul>
-<li>Contains B = -0.1 &lt; 0 Although the sum equals 1.0, the probability for grade B is negative, violating the first condition.</li>
-</ul>
+<p><strong>(a) Invalid</strong> <span class="math display">\[\text{Sum} = 0.3 + 0.3 + 0.3 + 0.2 + 0.1 = 1.2 &gt; 1\]</span> The probabilities sum to more than 1, violating condition 2.</p>
+<p><strong>(b) Valid</strong> <span class="math display">\[\text{Sum} = 0 + 0 + 1 + 0 + 0 = 1\]</span> All probabilities are non-negative and sum to 1. This represents a class where everyone receives a C.</p>
+<p><strong>(c) Invalid</strong> <span class="math display">\[\text{Sum} = 0.3 + 0.3 + 0.3 + 0 + 0 = 0.9 &lt; 1\]</span> The probabilities sum to less than 1, violating condition 2.</p>
+<p><strong>(d) Invalid</strong> Contains <span class="math inline">\(P(F) = -0.1 &lt; 0\)</span> Although the sum would equal 1.0, the probability for grade F is negative, violating condition 1.</p>
+<p><strong>(e) Valid</strong> <span class="math display">\[\text{Sum} = 0.2 + 0.4 + 0.2 + 0.1 + 0.1 = 1.0\]</span> All probabilities are non-negative and sum to 1.</p>
+<p><strong>(f) Invalid</strong> Contains <span class="math inline">\(P(B) = -0.1 &lt; 0\)</span> Although the sum equals 1.0, the probability for grade B is negative, violating condition 1.</p>
 </div>
 </section>
 <section id="section-b-permutations-and-combinations---solutions" class="level1">
@@ -249,109 +249,179 @@ window.Quarto = {
 <div class="problem">
 <p><strong>Problem B1: Permutations and Combinations - SOLUTION</strong></p>
 <p><strong>Part (a):</strong> How many 6-character passwords can be formed using 3 specific letters and 3 specific digits if repetitions are not allowed and letters must come before digits?</p>
-<p><strong>Solution:</strong> Since letters must come before digits, we have a fixed structure: LLL DDD</p>
+<p><strong>Solution:</strong> Since letters must come before digits, we have a fixed structure: <strong>LLL DDD</strong></p>
+<p><strong>Step 1:</strong> Arrange 3 letters in the first 3 positions</p>
 <ul>
-<li>Step 1: Arrange 3 letters in the first 3 positions
-<ul>
-<li>This is a permutation: P(3,3) = 3! = 6 ways</li>
-</ul></li>
-<li>Step 2: Arrange 3 digits in the last 3 positions
-<ul>
-<li>This is a permutation: P(3,3) = 3! = 6 ways</li>
-</ul></li>
-<li>Step 3: Apply multiplication principle
-<ul>
-<li>Total passwords = 6 × 6 = <strong>36 passwords</strong></li>
-</ul></li>
+<li>This is a permutation: <span class="math inline">\(P(3,3) = \frac{3!}{(3-3)!} = \frac{3!}{0!} = 3! = 6\)</span> ways</li>
 </ul>
+<p><strong>Step 2:</strong> Arrange 3 digits in the last 3 positions</p>
+<ul>
+<li>This is a permutation: <span class="math inline">\(P(3,3) = \frac{3!}{(3-3)!} = \frac{3!}{0!} = 3! = 6\)</span> ways</li>
+</ul>
+<p><strong>Step 3:</strong> Apply multiplication principle <span class="math display">\[\text{Total passwords} = 6 \times 6 = \boxed{36 \text{ passwords}}\]</span></p>
 <p><strong>Part (b):</strong> If the team wants to select 4 people from 12 employees to form a security committee where order doesn’t matter, how many ways can this be done?</p>
-<p><strong>Solution:</strong> Since order doesn’t matter, this is a combination problem.</p>
+<p><strong>Solution:</strong> Since order doesn’t matter, this is a <strong>combination</strong> problem.</p>
 <p><span class="math display">\[C(12,4) = \binom{12}{4} = \frac{12!}{4!(12-4)!} = \frac{12!}{4! \cdot 8!}\]</span></p>
-<p><span class="math display">\[= \frac{12 \times 11 \times 10 \times 9}{4 \times 3 \times 2 \times 1} = \frac{11880}{24} = \textbf{495 ways}\]</span></p>
+<p><span class="math display">\[= \frac{12 \times 11 \times 10 \times 9}{4 \times 3 \times 2 \times 1} = \frac{11,880}{24} = \boxed{495 \text{ ways}}\]</span></p>
 </div>
 </section>
 <section id="section-c-conditional-probability---solutions" class="level1">
 <h1>Section C: Conditional Probability - SOLUTIONS</h1>
-<p><em>⏱️ Estimated time: 15 minutes</em></p>
+<p><em>⏱️ Estimated time: 12 minutes</em></p>
 <div class="problem">
-<p><strong>Problem B1: Conditional Probability and Medical Testing - SOLUTION</strong></p>
+<p><strong>Problem C1: Drawing Cards (Without Replacement) - SOLUTION</strong></p>
 <p><strong>Given Information:</strong></p>
 <ul>
-<li><p>P(has variant) = 0.03</p></li>
-<li><p>P(test positive | has variant) = 0.95 (sensitivity)</p></li>
-<li><p>P(test negative | no variant) = 0.92 (specificity)</p></li>
-<li><p>Therefore: P(test positive | no variant) = 1 - 0.92 = 0.08</p></li>
+<li><p>Standard 52-card deck</p></li>
+<li><p>Drawing two cards without replacement</p></li>
+<li><p><span class="math inline">\(A = \{\text{"first card is a heart"}\}\)</span></p></li>
+<li><p><span class="math inline">\(B = \{\text{"second card is an ace"}\}\)</span></p></li>
 </ul>
-<p><strong>Part (a):</strong> What is the probability that a randomly selected person tests positive?</p>
 <p><strong>Solution:</strong></p>
-<p>Using the Law of Total Probability:</p>
-<p><span class="math display">\[P(\text{test positive}) = P(\text{test positive | has variant}) \times P(\text{has variant}) + P(\text{test positive | no variant}) \times P(\text{no variant})\]</span></p>
-<p><span class="math display">\[P(\text{test positive}) = 0.95 \times 0.03 + 0.08 \times 0.97\]</span> <span class="math display">\[= 0.0285 + 0.0776 = \textbf{0.1061}\]</span></p>
-<p><strong>Part (b):</strong> If someone tests positive, what is the probability they actually have the variant?</p>
-<p><strong>Solution:</strong> Using Bayes’ Theorem:</p>
-<p><span class="math display">\[P(\text{has variant | test positive}) = \frac{P(\text{test positive | has variant}) \times P(\text{has variant})}{P(\text{test positive})}\]</span></p>
-<p><span class="math display">\[= \frac{0.95 \times 0.03}{0.1061} = \frac{0.0285}{0.1061} = \textbf{0.2686}\]</span></p>
-<p><strong>Part (c):</strong> If someone tests negative, what is the probability they actually don’t have the variant?</p>
-<p><strong>Solution:</strong> First, find P(test negative): <span class="math display">\[P(\text{test negative}) = 1 - P(\text{test positive}) = 1 - 0.1061 = 0.8939\]</span></p>
-<p>Using Bayes’ Theorem: <span class="math display">\[P(\text{no variant | test negative}) = \frac{P(\text{test negative | no variant}) \times P(\text{no variant})}{P(\text{test negative})}\]</span></p>
-<p><span class="math display">\[= \frac{0.92 \times 0.97}{0.8939} = \frac{0.8924}{0.8939} = \textbf{0.9983}\]</span></p>
-<p><strong>Part (d) [Challenge]:</strong> Two consecutive positive tests - what is the probability they actually have the variant?</p>
-<p><strong>Solution:</strong> Assuming independence between tests:</p>
-<p><span class="math display">\[P(\text{two positive | has variant}) = 0.95^2 = 0.9025\]</span> <span class="math display">\[P(\text{two positive | no variant}) = 0.08^2 = 0.0064\]</span></p>
-<p><span class="math display">\[P(\text{two positive}) = 0.9025 \times 0.03 + 0.0064 \times 0.97 = 0.027075 + 0.006208 = 0.033283\]</span></p>
-<p><span class="math display">\[P(\text{has variant | two positive}) = \frac{0.027075}{0.033283} = \textbf{0.8134}\]</span></p>
+<p><strong>1. P(A)</strong></p>
+<p>There are 13 hearts in a 52-card deck. <span class="math display">\[P(A) = \frac{13}{52} = \boxed{\frac{1}{4} = 0.2500}\]</span></p>
+<p><strong>2. P(A and B)</strong></p>
+<p>We need both events to occur: first card is a heart AND second card is an ace.</p>
+<p><strong>Case 1:</strong> First card is the Ace of Hearts - <span class="math inline">\(P(\text{1st card is Ace of Hearts}) = \frac{1}{52}\)</span></p>
+<ul>
+<li><p><span class="math inline">\(P(\text{2nd card is an ace | 1st card is Ace of Hearts}) = \frac{3}{51}\)</span> (3 aces left)</p></li>
+<li><p><span class="math inline">\(P(\text{Case 1}) = \frac{1}{52} \times \frac{3}{51} = \frac{3}{2652}\)</span></p></li>
+</ul>
+<p><strong>Case 2:</strong> First card is a non-ace heart - <span class="math inline">\(P(\text{1st card is non-ace heart}) = \frac{12}{52}\)</span> (12 non-ace hearts)</p>
+<ul>
+<li><p><span class="math inline">\(P(\text{2nd card is an ace | 1st card is non-ace heart}) = \frac{4}{51}\)</span> (4 aces left)</p></li>
+<li><p><span class="math inline">\(P(\text{Case 2}) = \frac{12}{52} \times \frac{4}{51} = \frac{48}{2652}\)</span></p></li>
+</ul>
+<p><span class="math display">\[P(A \text{ and } B) = \frac{3}{2652} + \frac{48}{2652} = \frac{51}{2652} = \boxed{\frac{1}{52} = 0.0192}\]</span></p>
+<p><strong>3. P(B|A)</strong></p>
+<p>Using the definition of conditional probability: <span class="math display">\[P(B|A) = \frac{P(A \text{ and } B)}{P(A)} = \frac{\frac{1}{52}}{\frac{1}{4}} = \frac{1}{52} \times \frac{4}{1} = \boxed{\frac{4}{52} = \frac{1}{13} = 0.0769}\]</span></p>
+<p><strong>Alternative approach:</strong> Given that the first card is a heart:</p>
+<ul>
+<li><p>If it’s the Ace of Hearts: 3 aces remain out of 51 cards</p></li>
+<li><p>If it’s a non-ace heart: 4 aces remain out of 51 cards</p></li>
+<li><p><span class="math inline">\(P(B|A) = \frac{1}{13} \times \frac{3}{51} + \frac{12}{13} \times \frac{4}{51} = \frac{3 + 48}{13 \times 51} = \frac{51}{663} = \frac{4}{52} = \frac{1}{13}\)</span></p></li>
+</ul>
+<p><strong>4. P(B)</strong></p>
+<p>Using the Law of Total Probability. Let <span class="math inline">\(A^c\)</span> = “first card is not a heart”</p>
+<p><span class="math display">\[P(B) = P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)\]</span></p>
+<p>We know:</p>
+<ul>
+<li><p><span class="math inline">\(P(A) = \frac{1}{4}\)</span> and <span class="math inline">\(P(A^c) = \frac{3}{4}\)</span></p></li>
+<li><p><span class="math inline">\(P(B|A) = \frac{1}{13}\)</span> (from part 3)</p></li>
+<li><p><span class="math inline">\(P(B|A^c) = \frac{4}{51}\)</span> (if first card isn’t a heart, all 4 aces remain)</p></li>
+</ul>
+<p><span class="math display">\[P(B) = \frac{1}{13} \times \frac{1}{4} + \frac{4}{51} \times \frac{3}{4} = \frac{1}{52} + \frac{12}{204} = \frac{1}{52} + \frac{3}{51}\]</span></p>
+<p><span class="math display">\[= \frac{51 + 156}{52 \times 51} = \frac{207}{2652} = \boxed{\frac{4}{51} = 0.0784}\]</span></p>
+<p><strong>5. Comparison of P(B|A) vs P(B)</strong></p>
+<p><span class="math display">\[P(B|A) = \frac{1}{13} = 0.0769\]</span> <span class="math display">\[P(B) = \frac{4}{51} = 0.0784\]</span></p>
+<p><strong>Analysis:</strong> <span class="math inline">\(P(B|A) &lt; P(B)\)</span></p>
+<p><strong>Explanation:</strong> The probability of getting an ace on the second draw is slightly <strong>lower</strong> when we know the first card is a heart compared to when we don’t know anything about the first card. This happens because:</p>
+<ul>
+<li><p>When the first card is a heart, there’s a <span class="math inline">\(\frac{1}{13}\)</span> chance it’s the Ace of Hearts, removing one ace from the deck</p></li>
+<li><p>This makes it slightly less likely to draw an ace on the second draw</p></li>
+<li><p>This demonstrates <strong>dependence</strong> - the events are not independent because drawing without replacement creates dependence between successive draws</p></li>
+</ul>
 </div>
+</section>
+<section id="section-d-advanced-counting-with-restrictions---solutions" class="level1">
+<h1>Section D: Advanced Counting with Restrictions - SOLUTIONS</h1>
+<p><em>⏱️ Estimated time: 15 minutes</em></p>
 <div class="problem">
-<p><strong>Problem C1: Advanced Counting with Restrictions - SOLUTION</strong></p>
+<p><strong>Problem D1: Advanced Counting with Restrictions - SOLUTION</strong></p>
+<p><strong>Given:</strong></p>
+<ul>
+<li><p>6 appetizer options (including 1 seafood)</p></li>
+<li><p>8 main course options (including 1 vegetarian, and 3 that are beef or chicken)</p></li>
+<li><p>5 dessert options (including 1 chocolate)</p></li>
+</ul>
+<p><strong>Restrictions:</strong></p>
+<ol type="1">
+<li><p>Seafood appetizer → cannot choose vegetarian main course</p></li>
+<li><p>Chocolate dessert → must choose beef or chicken main course (3 specific options)</p></li>
+</ol>
 <p><strong>Part (a):</strong> How many valid meal combinations are possible?</p>
-<p><strong>Solution:</strong> We need to consider cases based on the restrictions.</p>
+<p><strong>Solution using cases:</strong></p>
 <p><strong>Case 1: Seafood appetizer is chosen</strong></p>
 <ul>
-<li><p>1 appetizer option (seafood)</p></li>
-<li><p>7 main course options (cannot choose vegetarian)</p></li>
-<li><p>5 dessert options</p></li>
-<li><p>Combinations: 1 × 7 × 5 = 35</p></li>
+<li><p>1 appetizer choice (seafood)</p></li>
+<li><p>7 main course choices (8 total minus 1 vegetarian)</p></li>
+<li><p>5 dessert choices (no restrictions)</p></li>
+<li><p>Total: <span class="math inline">\(1 \times 7 \times 5 = 35\)</span> combinations</p></li>
 </ul>
 <p><strong>Case 2: Non-seafood appetizer + chocolate dessert</strong></p>
 <ul>
-<li><p>5 appetizer options (non-seafood)</p></li>
-<li><p>3 main course options (only beef or chicken allowed with chocolate)</p></li>
-<li><p>1 dessert option (chocolate)</p></li>
-<li><p>Combinations: 5 × 3 × 1 = 15</p></li>
+<li><p>5 appetizer choices (6 total minus 1 seafood)</p></li>
+<li><p>3 main course choices (only beef or chicken allowed with chocolate)</p></li>
+<li><p>1 dessert choice (chocolate)</p></li>
+<li><p>Total: <span class="math inline">\(5 \times 3 \times 1 = 15\)</span> combinations</p></li>
 </ul>
-<p><strong>Case 3: Non-seafood appetizer + non-chocolate dessert</strong> - 5 appetizer options (non-seafood)</p>
+<p><strong>Case 3: Non-seafood appetizer + non-chocolate dessert</strong></p>
 <ul>
-<li><p>8 main course options (no restrictions)</p></li>
-<li><p>4 dessert options (non-chocolate)</p></li>
-<li><p>Combinations: 5 × 8 × 4 = 160</p></li>
+<li><p>5 appetizer choices (6 total minus 1 seafood)</p></li>
+<li><p>8 main course choices (no restrictions since no seafood appetizer)</p></li>
+<li><p>4 dessert choices (5 total minus 1 chocolate)</p></li>
+<li><p>Total: <span class="math inline">\(5 \times 8 \times 4 = 160\)</span> combinations</p></li>
 </ul>
-<p><strong>Total valid combinations:</strong> 35 + 15 + 160 = <strong>210 combinations</strong></p>
+<p><strong>Total valid combinations:</strong> <span class="math display">\[35 + 15 + 160 = \boxed{210 \text{ combinations}}\]</span></p>
+<p><strong>Verification using complementary counting:</strong></p>
+<ul>
+<li><p>Total unrestricted combinations: <span class="math inline">\(6 \times 8 \times 5 = 240\)</span></p></li>
+<li><p>Invalid combinations to subtract:</p>
+<ul>
+<li><p>Seafood + vegetarian + any dessert: <span class="math inline">\(1 \times 1 \times 5 = 5\)</span></p></li>
+<li><p>Non-seafood + chocolate + non-beef/chicken: <span class="math inline">\(5 \times 5 \times 1 = 25\)</span></p></li>
+</ul></li>
+<li><p>Valid combinations: <span class="math inline">\(240 - 5 - 25 = 210\)</span> ✓</p></li>
+</ul>
 <p><strong>Part (b):</strong> If customers choose randomly among valid combinations, what is the probability someone chooses the chocolate dessert?</p>
-<p><strong>Solution:</strong> Combinations with chocolate dessert: 15 (from Case 2 above) Total valid combinations: 210</p>
-<p><span class="math display">\[P(\text{chocolate dessert}) = \frac{15}{210} = \frac{1}{14} = \textbf{0.0714}\]</span></p>
+<p><strong>Solution:</strong> From our case analysis, combinations with chocolate dessert come only from Case 2:</p>
+<ul>
+<li><p>Combinations with chocolate dessert: 15</p></li>
+<li><p>Total valid combinations: 210</p></li>
+</ul>
+<p><span class="math display">\[P(\text{chocolate dessert}) = \frac{15}{210} = \frac{1}{14} = \boxed{0.0714}\]</span></p>
+<p><strong>Alternative verification:</strong></p>
+<p>We can also calculate this directly:</p>
+<ul>
+<li><p>Non-seafood appetizers: 5 choices</p></li>
+<li><p>With chocolate dessert, must choose from 3 main courses</p></li>
+<li><p>Valid chocolate combinations: <span class="math inline">\(5 \times 3 = 15\)</span></p></li>
+<li><p>Probability: <span class="math inline">\(\frac{15}{210} = \frac{1}{14} = 0.0714\)</span> ✓</p></li>
+</ul>
 </div>
 </section>
-<section id="section-d-review---solutions" class="level1">
-<h1>Section D: Review - SOLUTIONS</h1>
-<p><em>⏱️ Estimated time: 12 minutes</em></p>
-<div class="problem">
-<p><strong>Problem B3: Daily Expenses - SOLUTION</strong></p>
-<p><strong>Given:</strong></p>
+<section id="summary-of-key-concepts" class="level1">
+<h1>Summary of Key Concepts</h1>
+<div class="key-concept-box">
+<p><strong>Probability Distributions</strong></p>
 <ul>
-<li><p>Coffee: Mean = $1.40, SD = $0.30</p></li>
-<li><p>Muffin: Mean = $2.50, SD = $0.15</p></li>
-<li><p>Prices are independent</p></li>
+<li><p><strong>Valid distributions</strong> require: all probabilities <span class="math inline">\(\geq 0\)</span> and sum <span class="math inline">\(= 1\)</span></p></li>
+<li><p><strong>Check both conditions</strong> systematically</p></li>
 </ul>
-<p><strong>Part (a):</strong> What is the mean and standard deviation of the amount she spends on breakfast daily?</p>
-<p><strong>Solution:</strong> For the sum of independent random variables:</p>
-<p><strong>Mean of daily expenses:</strong> <span class="math display">\[E[\text{Daily}] = E[\text{Coffee}] + E[\text{Muffin}] = \$1.40 + \$2.50 = \textbf{\$3.90}\]</span></p>
-<p><strong>Variance of daily expenses:</strong> <span class="math display">\[\text{Var}[\text{Daily}] = \text{Var}[\text{Coffee}] + \text{Var}[\text{Muffin}] = (0.30)^2 + (0.15)^2 = 0.09 + 0.0225 = 0.1125\]</span></p>
-<p><strong>Standard deviation of daily expenses:</strong> <span class="math display">\[SD[\text{Daily}] = \sqrt{0.1125} = \textbf{\$0.3354}\]</span></p>
-<p><strong>Part (b):</strong> What is the mean and standard deviation of the amount she spends on breakfast weekly (7 days)?</p>
-<p><strong>Solution:</strong> For the sum of 7 independent daily expenses:</p>
-<p><strong>Mean of weekly expenses:</strong> <span class="math display">\[E[\text{Weekly}] = 7 \times E[\text{Daily}] = 7 \times \$3.90 = \textbf{\$27.30}\]</span></p>
-<p><strong>Variance of weekly expenses:</strong> <span class="math display">\[\text{Var}[\text{Weekly}] = 7 \times \text{Var}[\text{Daily}] = 7 \times 0.1125 = 0.7875\]</span></p>
-<p><strong>Standard deviation of weekly expenses:</strong> <span class="math display">\[SD[\text{Weekly}] = \sqrt{0.7875} = \textbf{\$0.8874}\]</span></p>
+</div>
+<div class="key-concept-box">
+<p><strong>Permutations vs Combinations</strong></p>
+<ul>
+<li><p><strong>Permutations:</strong> Order matters, use <span class="math inline">\(P(n,r) = \frac{n!}{(n-r)!}\)</span></p></li>
+<li><p><strong>Combinations:</strong> Order doesn’t matter, use <span class="math inline">\(C(n,r) = \frac{n!}{r!(n-r)!}\)</span></p></li>
+<li><p><strong>Multiplication principle:</strong> Combine independent choices</p></li>
+</ul>
+</div>
+<div class="key-concept-box">
+<p><strong>Conditional Probability</strong></p>
+<ul>
+<li><p><strong>Without replacement:</strong> Creates dependence between events</p></li>
+<li><p><strong>Use definition:</strong> <span class="math inline">\(P(B|A) = \frac{P(A \cap B)}{P(A)}\)</span></p></li>
+<li><p><strong>Law of Total Probability:</strong> For calculating marginal probabilities</p></li>
+</ul>
+</div>
+<div class="key-concept-box">
+<p><strong>Advanced Counting</strong></p>
+<ul>
+<li><p><strong>Case analysis:</strong> Break complex problems into manageable parts</p></li>
+<li><p><strong>Handle restrictions:</strong> Consider what’s allowed vs.&nbsp;not allowed</p></li>
+<li><p><strong>Verification:</strong> Use complementary counting or direct calculation</p></li>
+</ul>
 </div>
 
 

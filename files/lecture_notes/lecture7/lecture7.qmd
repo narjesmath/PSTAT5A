@@ -1,6 +1,6 @@
 ---
-title: "PSTAT 5A: Counting"
-subtitle: "Lecture 5"
+title: "PSTAT 5A: Discrete Random Variables"
+subtitle: "Lecture 7"
 author: "Narjes Mathlouthi"
 date: today
 format: 
@@ -11,17 +11,20 @@ format:
     slide-number: true
     chalkboard: true
     preview-links: auto
-    footer: "Understanding Data - Counting © 2025 Narjes Mathlouthi"
+    footer: "Understanding Data - Discrete Random Variables © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
 jupyter: python3
 ---
 
-## Welcome to Lecture 5 {.center}
+## Welcome to Lecture 7 {.center}
 
-**Counting**
+**Discrete Random Variables**
 
-*The art and science of systematic enumeration*
+*From outcomes to numbers: quantifying randomness*
+
+![](img/random_variable_mapping.png){width=350px}
+*Figure: A random variable maps outcomes (e.g., die rolls) to numbers.*
 
 ---
 
@@ -29,722 +32,673 @@ jupyter: python3
 
 By the end of this lecture, you will be able to:
 
-- Apply the fundamental counting principles
-- Calculate permutations with and without repetition
-- Calculate combinations and understand when to use them
-- Distinguish between permutations and combinations
-- Use counting techniques to solve probability problems
-- Apply the inclusion-exclusion principle
-- Solve complex counting problems systematically
+- Define random variables and distinguish discrete from continuous
+- Work with probability mass functions (PMFs) and cumulative distribution functions (CDFs)
+- Calculate expected values and variances for discrete random variables
+- Apply properties of expectation and variance
+- Work with common discrete distributions (Bernoulli, Binomial, Geometric, Poisson)
+- Solve real-world problems using discrete random variables
+- Use technology to compute probabilities and parameters
 
 ---
 
-## Why Study Counting?
+## What is a Random Variable?
 
-Counting helps us:
+A **random variable** is a function that assigns a numerical value to each outcome of a random experiment
 
-- Calculate probabilities for complex events
-- Solve optimization problems
-- Understand combinations in genetics, computer science
-- Analyze algorithms and data structures
-- Make decisions involving arrangements and selections
+**Notation**: Usually denoted by capital letters $X$, $Y$, $Z$
+
+**Key insight**: Random variables transform outcomes into numbers, making mathematical analysis possible
+
+![](img/random_variable_die.png){width=320px}
+*Figure: Mapping die roll outcomes to values of $X$.*
 
 :::{.fragment}
-*Applications*: Cryptography, genetics, tournament brackets, lottery odds, password security
+**Example**: Rolling a die
+- Outcomes: $\{1, 2, 3, 4, 5, 6\}$
+- Random variable $X$: the number shown
+- $X$ can take values $\{1, 2, 3, 4, 5, 6\}$
 :::
 
 ---
 
-## The Fundamental Counting Principle
+## Why Use Random Variables?
 
-**Multiplication Rule**: If a procedure consists of $k$ separate tasks where:
-- Task 1 can be performed in $n_1$ ways
-- Task 2 can be performed in $n_2$ ways
-- ...
-- Task $k$ can be performed in $n_k$ ways
+Random variables allow us to:
 
-Then the entire procedure can be performed in $n_1 \times n_2 \times \cdots \times n_k$ ways
+- **Quantify** outcomes numerically
+- **Calculate** means, variances, and other statistics
+- **Model** real-world phenomena mathematically
+- **Make predictions** and decisions
+- **Compare** different random processes
 
----
-
-## Simple Counting Example
-
-**License Plates**: Format ABC-123
-- First position: 26 letters
-- Second position: 26 letters  
-- Third position: 26 letters
-- Fourth position: 10 digits
-- Fifth position: 10 digits
-- Sixth position: 10 digits
+![](img/real_world_examples.png){width=340px}
+*Figure: Examples of random variables in real life (height, test scores, etc.).*
 
 :::{.fragment}
-Total possibilities: $26 \times 26 \times 26 \times 10 \times 10 \times 10 = 26^3 \times 10^3 = 17,576,000$
+**Examples**: Height, test scores, number of defects, wait times, stock prices
 :::
 
 ---
 
-## Restaurant Menu Example
+## Types of Random Variables
 
-A restaurant offers:
-- 4 appetizers
-- 6 main courses  
-- 3 desserts
+**Discrete Random Variable**: 
+- Takes on a countable number of values
+- Can list all possible values
+- Examples: dice rolls, number of emails, quiz scores
 
-How many different three-course meals are possible?
+**Continuous Random Variable**:
+- Takes on uncountably many values (intervals)
+- Cannot list all possible values  
+- Examples: height, weight, time, temperature
+
+```{mermaid}
+graph TD
+  A[Discrete: 0, 1, 2, ...] --|Gaps|--> D[Examples: Dice, Emails]
+  B[Continuous: Any real value] --|No gaps|--> C[Examples: Height, Time]
+```
 
 :::{.fragment}
-**Solution**: $4 \times 6 \times 3 = 72$ different meals
+*Today we focus on discrete random variables*
 :::
+
+---
+
+## Examples of Discrete Random Variables
+
+**$X$ = Number of heads in 3 coin flips**
+- Possible values: $\{0, 1, 2, 3\}$
+
+**$Y$ = Number of customers in an hour**
+- Possible values: $\{0, 1, 2, 3, \ldots\}$
+
+**$Z$ = Score on a 10-question quiz**
+- Possible values: $\{0, 1, 2, \ldots, 10\}$
+
+![](img/coin_flips_heads.png){width=320px}
+*Figure: Example of a discrete random variable: number of heads in coin flips.*
+
+:::{.fragment}
+Notice: All values are integers with gaps between them
+:::
+
+---
+
+## Probability Mass Function (PMF)
+
+The **probability mass function** of a discrete random variable $X$ is:
+
+$$P(X = x) = \text{probability that } X \text{ takes the value } x$$
+
+**Properties of PMF**:
+1. $P(X = x) \geq 0$ for all $x$
+2. $\sum_{\text{all } x} P(X = x) = 1$
+
+```{mermaid}
+%% Bar chart for PMF of a fair die
+%% (Use Quarto's mermaid bar chart for illustration)
+bar
+    title PMF of a Fair Die
+    x-axis 1 2 3 4 5 6
+    y-axis Probability
+    1: 0.1667
+    2: 0.1667
+    3: 0.1667
+    4: 0.1667
+    5: 0.1667
+    6: 0.1667
+```
+
+:::{.fragment}
+**Notation**: Sometimes written as $p(x)$ or $f(x)$
+:::
+
+---
+
+## PMF Example: Fair Die
+
+Let $X$ = outcome of rolling a fair six-sided die
+
+$$P(X = x) = \begin{cases}
+\frac{1}{6} & \text{if } x \in \{1, 2, 3, 4, 5, 6\} \\
+0 & \text{otherwise}
+\end{cases}$$
+
+![](img/pmf_fair_die.png){width=340px}
+*Figure: Bar chart of PMF for a fair die.*
+
+:::{.fragment}
+**Verification**: 
+- All probabilities ≥ 0 ✓
+- Sum = $6 \times \frac{1}{6} = 1$ ✓
+:::
+
+---
+
+## PMF Example: Two Coin Flips
+
+Let $X$ = number of heads in two coin flips
+
+Sample space: $\{HH, HT, TH, TT\}$
+
+```{mermaid}
+bar
+    title PMF: Number of Heads in 2 Coin Flips
+    x-axis 0 1 2
+    y-axis Probability
+    0: 0.25
+    1: 0.5
+    2: 0.25
+```
+
+:::{.fragment}
+| $x$ | Outcomes | $P(X = x)$ |
+|-----|----------|------------|
+| 0   | TT       | 1/4        |
+| 1   | HT, TH   | 2/4 = 1/2  |
+| 2   | HH       | 1/4        |
+
+**Verification**: $\frac{1}{4} + \frac{1}{2} + \frac{1}{4} = 1$ ✓
+:::
+
+---
+
+## Cumulative Distribution Function (CDF)
+
+The **cumulative distribution function** of a random variable $X$ is:
+
+$$F(x) = P(X \leq x)$$
+
+**Properties of CDF**:
+1. $F(x)$ is non-decreasing
+2. $\lim_{x \to -\infty} F(x) = 0$
+3. $\lim_{x \to \infty} F(x) = 1$
+4. $F(x)$ is right-continuous
+
+```{mermaid}
+%% Step function for CDF of two coin flips
+%% (Mermaid doesn't support step plots, so use a line chart for illustration)
+line
+    title CDF: Number of Heads in 2 Coin Flips
+    x-axis -1 0 1 2 3
+    y-axis F(x)
+    -1: 0
+    0: 0.25
+    1: 0.75
+    2: 1
+    3: 1
+```
+
+---
+
+## Expected Value (Mean)
+
+The **expected value** of a discrete random variable $X$ is:
+
+$$E[X] = \mu = \sum_{\text{all } x} x \cdot P(X = x)$$
+
+![](img/expected_value_coins.png){width=320px}
+*Figure: Expected value as the long-run average of repeated coin flips.*
+
+---
+
+## Variance
+
+The **variance** of a random variable $X$ measures spread around the mean:
+
+$$\text{Var}(X) = \sigma^2 = E[(X - \mu)^2]$$
+
+![](img/variance_spread.png){width=320px}
+*Figure: Variance measures the spread of possible values around the mean.*
+
+---
+
+## Bernoulli Distribution
+
+A **Bernoulli random variable** models a single trial with two outcomes:
+
+- Success (1) with probability $p$
+- Failure (0) with probability $1-p$
+
+```{mermaid}
+bar
+    title Bernoulli PMF (p=0.7)
+    x-axis 0 1
+    y-axis Probability
+    0: 0.3
+    1: 0.7
+```
+
+---
+
+## Binomial Distribution
+
+A **binomial random variable** counts successes in $n$ independent Bernoulli trials, each with success probability $p$
+
+![](img/binomial_trials.png){width=340px}
+*Figure: Binomial experiment: sequence of independent trials.*
+
+```{mermaid}
+bar
+    title Binomial PMF (n=5, p=0.5)
+    x-axis 0 1 2 3 4 5
+    y-axis Probability
+    0: 0.031
+    1: 0.156
+    2: 0.312
+    3: 0.312
+    4: 0.156
+    5: 0.031
+```
+
+---
+
+## Geometric Distribution
+
+A **geometric random variable** counts the number of trials until the first success
+
+![](img/geometric_trials.png){width=320px}
+*Figure: Geometric experiment: waiting for the first success.*
+
+```{mermaid}
+bar
+    title Geometric PMF (p=0.3)
+    x-axis 1 2 3 4 5
+    y-axis Probability
+    1: 0.3
+    2: 0.21
+    3: 0.147
+    4: 0.1029
+    5: 0.072
+```
+
+---
+
+## Poisson Distribution
+
+A **Poisson random variable** counts events occurring in a fixed interval when events happen at a constant average rate
+
+![](img/poisson_events.png){width=320px}
+*Figure: Poisson process: random events in time.*
+
+```{mermaid}
+bar
+    title Poisson PMF (λ=3)
+    x-axis 0 1 2 3 4 5 6
+    y-axis Probability
+    0: 0.0498
+    1: 0.1494
+    2: 0.2240
+    3: 0.2240
+    4: 0.1680
+    5: 0.1008
+    6: 0.0504
+```
+
+---
+
+## Hypergeometric Distribution
+
+A **hypergeometric random variable** counts successes when sampling **without replacement** from a finite population
+
+![](img/hypergeometric_sampling.png){width=340px}
+*Figure: Hypergeometric sampling: drawing balls from a box without replacement.*
+
+---
+
+## Law of Large Numbers
+
+As $n$ increases, the sample mean approaches the expected value:
+
+$$\bar{X}_n = \frac{X_1 + X_2 + \cdots + X_n}{n} \to E[X]$$
+
+```{mermaid}
+line
+    title Law of Large Numbers Simulation
+    x-axis 0 100 200 300 400 500 600 700 800 900 1000
+    y-axis Sample Mean
+    0: 0.0
+    100: 0.48
+    200: 0.51
+    300: 0.49
+    400: 0.50
+    500: 0.51
+    600: 0.50
+    700: 0.50
+    800: 0.49
+    900: 0.50
+    1000: 0.50
+```
+*Figure: As the number of trials increases, the sample mean converges to the expected value.*
+
+---
+
+## Simulation/Monte Carlo
+
+**Monte Carlo Method**: Use computer simulation to estimate probabilities
+
+![](img/monte_carlo_simulation.png){width=340px}
+*Figure: Monte Carlo simulation: repeated random experiments to estimate probabilities.*
 
 ---
 
 ## Practice Problem 1
 
-A password must contain:
-- Exactly 8 characters
-- Each character is either a letter (26 possibilities) or digit (10 possibilities)
+A box contains 3 red balls and 2 blue balls. Two balls are drawn without replacement. Let $X$ = number of red balls drawn.
 
-How many possible passwords are there?
+Find the PMF of $X$.
 
 :::{.fragment}
-**Solution**: Each position has $26 + 10 = 36$ choices
+**Solution**: $X$ can be 0, 1, or 2
 
-Total: $36^8 = 2,821,109,907,456$ passwords
-:::
+$P(X = 0) = \frac{\binom{3}{0}\binom{2}{2}}{\binom{5}{2}} = \frac{1 \times 1}{10} = \frac{1}{10}$
 
----
+$P(X = 1) = \frac{\binom{3}{1}\binom{2}{1}}{\binom{5}{2}} = \frac{3 \times 2}{10} = \frac{6}{10}$
 
-## What Are Permutations?
-
-**Permutation**: An arrangement of objects where **order matters**
-
-:::{.fragment}
-**Examples where order matters**:
-- Race finish positions (1st, 2nd, 3rd)
-- Seating arrangements
-- Passwords
-- DNA sequences
-:::
-
----
-
-## Permutations of $n$ Distinct Objects
-
-The number of ways to arrange $n$ distinct objects is:
-
-$$n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$$
-
-:::{.fragment}
-**Example**: How many ways can 5 people sit in a row?
-
-$5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ ways
-:::
-
----
-
-## Factorial Values
-
-| $n$ | $n!$ |
-|-----|------|
-| 0   | 1    |
-| 1   | 1    |
-| 2   | 2    |
-| 3   | 6    |
-| 4   | 24   |
-| 5   | 120  |
-| 10  | 3,628,800 |
-
-:::{.fragment}
-*Note*: $0! = 1$ by definition
-:::
-
----
-
-## Permutations of $r$ Objects from $n$
-
-**$P(n,r)$** or **$_nP_r$**: Number of ways to arrange $r$ objects selected from $n$ distinct objects
-
-$$P(n,r) = \frac{n!}{(n-r)!}$$
-
-:::{.fragment}
-**Example**: How many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary?
-
-$P(8,3) = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 8 \times 7 \times 6 = 336$
-:::
-
----
-
-## Understanding $P(n,r)$
-
-Why is $P(n,r) = \frac{n!}{(n-r)!}$?
-
-- First position: $n$ choices
-- Second position: $(n-1)$ choices  
-- Third position: $(n-2)$ choices
-- ...
-- $r$-th position: $(n-r+1)$ choices
-
-:::{.fragment}
-Total: $n \times (n-1) \times (n-2) \times \cdots \times (n-r+1) = \frac{n!}{(n-r)!}$
+$P(X = 2) = \frac{\binom{3}{2}\binom{2}{0}}{\binom{5}{2}} = \frac{3 \times 1}{10} = \frac{3}{10}$
 :::
 
 ---
 
 ## Practice Problem 2
 
-A baseball team has 15 players. How many ways can the coach:
+Using the red balls example from Problem 1, find:
 
-a) Arrange all 15 players in a line?
-b) Choose and arrange 9 players for the starting lineup (batting order matters)?
-
-:::{.fragment}
-**Solutions:**
-a) $15! = 1,307,674,368,000$
-b) $P(15,9) = \frac{15!}{6!} = 1,816,214,400$
-:::
-
----
-
-## Permutations with Repetition
-
-When some objects are identical, we have **fewer** distinct arrangements
-
-If we have $n$ objects where:
-- $n_1$ are of type 1
-- $n_2$ are of type 2  
-- ...
-- $n_k$ are of type $k$
-
-Number of distinct arrangements: $\frac{n!}{n_1! \times n_2! \times \cdots \times n_k!}$
-
----
-
-## Permutations with Repetition Example
-
-How many distinct arrangements are there of the letters in "STATISTICS"?
-
-**S-T-A-T-I-S-T-I-C-S**
-- Total letters: 10
-- S appears 3 times
-- T appears 3 times  
-- A appears 1 time
-- I appears 2 times
-- C appears 1 time
+a) $F(0.5)$
+b) $F(1)$  
+c) $P(X > 1)$
+d) $P(0.5 < X \leq 1.5)$
 
 :::{.fragment}
-$\frac{10!}{3! \times 3! \times 1! \times 2! \times 1!} = \frac{3,628,800}{6 \times 6 \times 1 \times 2 \times 1} = \frac{3,628,800}{72} = 50,400$
+**Solutions**:
+a) $F(0.5) = P(X \leq 0.5) = P(X = 0) = \frac{1}{10}$
+b) $F(1) = P(X \leq 1) = P(X = 0) + P(X = 1) = \frac{1}{10} + \frac{6}{10} = \frac{7}{10}$
+c) $P(X > 1) = 1 - F(1) = 1 - \frac{7}{10} = \frac{3}{10}$
+d) $P(0.5 < X \leq 1.5) = F(1.5) - F(0.5) = \frac{7}{10} - \frac{1}{10} = \frac{6}{10}$
 :::
-
----
-
-## What Are Combinations?
-
-**Combination**: A selection of objects where **order does NOT matter**
-
-:::{.fragment}
-**Examples where order doesn't matter**:
-- Choosing committee members
-- Selecting pizza toppings
-- Forming study groups
-- Lottery number selection
-:::
-
----
-
-## Combinations Formula
-
-**$C(n,r)$** or **$\binom{n}{r}$**: Number of ways to choose $r$ objects from $n$ distinct objects (order doesn't matter)
-
-$$C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$$
-
-:::{.fragment}
-**Example**: How many ways can we choose 3 people from a group of 8 for a committee?
-
-$C(8,3) = \frac{8!}{3!(8-3)!} = \frac{8!}{3! \times 5!} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = 56$
-:::
-
----
-
-## Relationship: Permutations vs Combinations
-
-$$P(n,r) = C(n,r) \times r!$$
-
-**Why?** For each combination of $r$ objects, there are $r!$ ways to arrange them
-
-:::{.fragment}
-**Example**: $P(8,3) = C(8,3) \times 3! = 56 \times 6 = 336$ ✓
-:::
-
----
-
-## Key Decision: Permutation or Combination?
-
-**Ask yourself**: Does order matter?
-
-**Order matters** → Use **Permutations**
-- Arrangements, sequences, rankings
-
-**Order doesn't matter** → Use **Combinations**  
-- Selections, groups, subsets
 
 ---
 
 ## Practice Problem 3
 
-From a class of 20 students:
-
-a) How many ways to choose 5 students for a study group?
-b) How many ways to choose a president, vice-president, and secretary?
-c) How many ways to arrange all 20 students in a circle?
+Find the expected value for the red balls example (Problem 1).
 
 :::{.fragment}
-**Solutions:**
-a) $C(20,5) = \frac{20!}{5! \times 15!} = 15,504$ (order doesn't matter)
-b) $P(20,3) = \frac{20!}{17!} = 6,840$ (order matters)
-c) $(20-1)! = 19!$ (circular permutation)
+**Solution**:
+$$E[X] = 0 \cdot \frac{1}{10} + 1 \cdot \frac{6}{10} + 2 \cdot \frac{3}{10}$$
+
+$$= 0 + \frac{6}{10} + \frac{6}{10} = \frac{12}{10} = 1.2$$
+
+On average, we expect to draw 1.2 red balls
 :::
 
 ---
 
-## Properties of Combinations
+## Properties of Expected Value
 
-1. **Symmetry**: $\binom{n}{r} = \binom{n}{n-r}$
-
-2. **Pascal's Identity**: $\binom{n}{r} = \binom{n-1}{r-1} + \binom{n-1}{r}$
-
-3. **Boundary conditions**: $\binom{n}{0} = \binom{n}{n} = 1$
+**Linearity of Expectation**:
+1. $E[c] = c$ (constant)
+2. $E[cX] = c \cdot E[X]$ (scaling)
+3. $E[X + Y] = E[X] + E[Y]$ (additivity)
+4. $E[aX + bY + c] = aE[X] + bE[Y] + c$
 
 :::{.fragment}
-**Example**: $\binom{8}{3} = \binom{8}{5} = 56$ ✓
+**Important**: Property 3 holds even if $X$ and $Y$ are dependent!
 :::
 
 ---
 
-## Pascal's Triangle
+## Expected Value of Functions
 
-```
-           1
-         1   1
-       1   2   1
-     1   3   3   1
-   1   4   6   4   1
- 1   5  10  10   5   1
-1   6  15  20  15   6   1
-```
+For a function $g(X)$ of a random variable $X$:
 
-Each number is $\binom{n}{r}$ where $n$ is the row and $r$ is the position
-
----
-
-## Binomial Theorem
-
-$$(x + y)^n = \sum_{r=0}^{n} \binom{n}{r} x^{n-r} y^r$$
+$$E[g(X)] = \sum_{\text{all } x} g(x) \cdot P(X = x)$$
 
 :::{.fragment}
-**Example**: $(x + y)^3 = \binom{3}{0}x^3 + \binom{3}{1}x^2y + \binom{3}{2}xy^2 + \binom{3}{3}y^3$
+**Common example**: $g(X) = X^2$
 
-$= x^3 + 3x^2y + 3xy^2 + y^3$
-:::
+$$E[X^2] = \sum_{\text{all } x} x^2 \cdot P(X = x)$$
 
----
-
-## Counting and Probability
-
-**Example**: A committee of 4 people is chosen from 7 women and 5 men. What's the probability that exactly 2 are women?
-
-Total ways to choose 4 from 12: $\binom{12}{4} = 495$
-
-Ways to choose 2 women from 7: $\binom{7}{2} = 21$
-Ways to choose 2 men from 5: $\binom{5}{2} = 10$
-
-:::{.fragment}
-Favorable outcomes: $\binom{7}{2} \times \binom{5}{2} = 21 \times 10 = 210$
-
-Probability: $\frac{210}{495} = \frac{14}{33}$
+*Note*: Generally $E[g(X)] \neq g(E[X])$
 :::
 
 ---
 
 ## Practice Problem 4
 
-A standard deck has 52 cards. What's the probability that a 5-card hand contains:
+For the red balls example, find the variance and standard deviation.
 
-a) Exactly 3 aces?
-b) At least 1 ace?
-
-:::{.fragment}
-a) Ways to get 3 aces from 4: $\binom{4}{3} = 4$
-   Ways to get 2 non-aces from 48: $\binom{48}{2} = 1,128$
-   Total 5-card hands: $\binom{52}{5} = 2,598,960$
-   
-   Probability: $\frac{4 \times 1,128}{2,598,960} = \frac{4,512}{2,598,960} \approx 0.00174$
-:::
-
----
-
-## Practice Problem 4 (continued)
-
-b) At least 1 ace = 1 - (no aces)
-
-Ways to choose 5 cards with no aces: $\binom{48}{5} = 1,712,304$
+We found $E[X] = 1.2$. First find $E[X^2]$:
 
 :::{.fragment}
-$P(\text{at least 1 ace}) = 1 - \frac{\binom{48}{5}}{\binom{52}{5}} = 1 - \frac{1,712,304}{2,598,960} \approx 0.341$
-:::
+$$E[X^2] = 0^2 \cdot \frac{1}{10} + 1^2 \cdot \frac{6}{10} + 2^2 \cdot \frac{3}{10}$$
+$$= 0 + \frac{6}{10} + \frac{12}{10} = \frac{18}{10} = 1.8$$
 
----
+$$\text{Var}(X) = 1.8 - (1.2)^2 = 1.8 - 1.44 = 0.36$$
 
-## Circular Permutations
-
-When arranging objects in a **circle**, we fix one object to eliminate rotational symmetry
-
-Number of circular permutations of $n$ objects: $(n-1)!$
-
-:::{.fragment}
-**Example**: How many ways can 6 people sit around a circular table?
-
-$(6-1)! = 5! = 120$ ways
-:::
-
----
-
-## Permutations with Restrictions
-
-**Example**: How many 6-letter "words" can be formed from the letters A, B, C, D, E, F if:
-- No letter is repeated
-- A and B must be adjacent
-
-:::{.fragment}
-**Solution**: Treat AB as a single unit
-- 5 units to arrange: (AB), C, D, E, F → $5! = 120$ ways
-- A and B can be arranged within their unit: $2! = 2$ ways
-- Total: $5! \times 2! = 240$ ways
-:::
-
----
-
-## The Inclusion-Exclusion Principle
-
-For two sets $A$ and $B$:
-$$|A \cup B| = |A| + |B| - |A \cap B|$$
-
-For three sets $A$, $B$, and $C$:
-$$|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$$
-
----
-
-## Inclusion-Exclusion Example
-
-How many integers from 1 to 100 are divisible by 2, 3, or 5?
-
-Let:
-- $A$ = divisible by 2: $|A| = 50$
-- $B$ = divisible by 3: $|B| = 33$  
-- $C$ = divisible by 5: $|C| = 20$
-
-:::{.fragment}
-$|A \cap B| = 16$ (divisible by 6)
-$|A \cap C| = 10$ (divisible by 10)
-$|B \cap C| = 6$ (divisible by 15)
-$|A \cap B \cap C| = 3$ (divisible by 30)
-:::
-
----
-
-## Inclusion-Exclusion Solution
-
-$$|A \cup B \cup C| = 50 + 33 + 20 - 16 - 10 - 6 + 3 = 74$$
-
-:::{.fragment}
-**Answer**: 74 integers from 1 to 100 are divisible by at least one of 2, 3, or 5
-:::
-
----
-
-## Derangements
-
-A **derangement** is a permutation where no object appears in its original position
-
-Number of derangements of $n$ objects:
-$$D_n = n! \sum_{k=0}^{n} \frac{(-1)^k}{k!} \approx \frac{n!}{e}$$
-
-:::{.fragment}
-**Example**: How many ways can 4 people return hats to the wrong owners?
-
-$D_4 = 4! \left(\frac{1}{0!} - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \frac{1}{4!}\right) = 24 \times \frac{9}{24} = 9$
-:::
-
----
-
-## Multinomial Coefficients
-
-Number of ways to divide $n$ objects into groups of sizes $n_1, n_2, \ldots, n_k$:
-
-$$\binom{n}{n_1, n_2, \ldots, n_k} = \frac{n!}{n_1! \times n_2! \times \cdots \times n_k!}$$
-
-:::{.fragment}
-**Example**: How many ways can 12 people be divided into 3 teams of 4?
-
-$\binom{12}{4,4,4} = \frac{12!}{4! \times 4! \times 4!} = 34,650$
-:::
-
----
-
-## Stars and Bars
-
-**Problem**: Number of ways to distribute $n$ identical objects into $k$ distinct bins
-
-**Solution**: $\binom{n+k-1}{k-1}$ or $\binom{n+k-1}{n}$
-
-:::{.fragment}
-**Example**: How many ways can you distribute 10 identical candies to 4 children?
-
-$\binom{10+4-1}{4-1} = \binom{13}{3} = 286$ ways
+$$\sigma = \sqrt{0.36} = 0.6$$
 :::
 
 ---
 
 ## Practice Problem 5
 
-A pizza shop offers 12 toppings. How many different pizzas can you order if:
+For the quiz example:
 
-a) You want exactly 4 toppings?
-b) You want at most 3 toppings?
-c) You want at least 1 topping?
+a) What's the expected number of correct answers?
+b) What's the standard deviation?
+c) What's the probability of getting at least 4 correct?
 
 :::{.fragment}
-**Solutions:**
-a) $\binom{12}{4} = 495$
-b) $\binom{12}{0} + \binom{12}{1} + \binom{12}{2} + \binom{12}{3} = 1 + 12 + 66 + 220 = 299$
-c) $2^{12} - 1 = 4,095$ (all subsets except empty set)
+**Solutions**:
+a) $E[X] = np = 10 \times 0.25 = 2.5$
+b) $\sigma = \sqrt{np(1-p)} = \sqrt{10 \times 0.25 \times 0.75} = \sqrt{1.875} \approx 1.37$
+c) $P(X \geq 4) = 1 - P(X \leq 3) = 1 - [P(X=0) + P(X=1) + P(X=2) + P(X=3)]$
+   Use binomial table or calculator: $P(X \geq 4) \approx 0.224$
 :::
-
----
-
-## Advanced Counting: Stirling Numbers
-
-**Stirling numbers of the second kind** $S(n,k)$: Number of ways to partition $n$ objects into $k$ non-empty subsets
-
-**Bell numbers** $B_n$: Total number of ways to partition $n$ objects
-$$B_n = \sum_{k=0}^{n} S(n,k)$$
-
-*These are advanced topics for further study*
-
----
-
-## Problem-Solving Strategy
-
-1. **Read carefully**: What exactly are we counting?
-2. **Identify the type**: Permutation, combination, or other?
-3. **Check for restrictions**: Are there constraints?
-4. **Does order matter?**: This determines permutation vs combination
-5. **Break down complex problems**: Use multiplication principle
-6. **Verify your answer**: Does it make sense?
-
----
-
-## Common Mistakes to Avoid
-
-1. **Confusing permutations and combinations**
-   - Always ask: "Does order matter?"
-
-2. **Forgetting about restrictions**
-   - Read the problem carefully
-
-3. **Double counting**
-   - Make sure you're not counting the same arrangement twice
-
-4. **Not considering the complement**
-   - Sometimes "at least" problems are easier using complements
 
 ---
 
 ## Practice Problem 6
 
-A class has 15 students: 8 women and 7 men. How many ways can we:
+A quality control inspector tests items until finding the first defective one. If 5% of items are defective:
 
-a) Form a committee of 5 people with exactly 3 women?
-b) Arrange 6 people in a row with alternating genders (starting with a woman)?
+a) What's the probability the first defective item is the 10th one tested?
+b) What's the expected number of items tested?
+c) What's the probability of testing more than 20 items?
 
 :::{.fragment}
-**Solutions:**
-a) $\binom{8}{3} \times \binom{7}{2} = 56 \times 21 = 1,176$
-b) Choose 3 women from 8: $P(8,3) = 336$
-   Choose 3 men from 7: $P(7,3) = 210$
-   Total: $336 \times 210 = 70,560$
+**Solutions**:
+a) $P(X = 10) = (0.95)^9 \times 0.05 \approx 0.0315$
+b) $E[X] = \frac{1}{0.05} = 20$ items
+c) $P(X > 20) = (0.95)^{20} \approx 0.358$
 :::
-
----
-
-## Counting in Computer Science
-
-**Password Security**: 
-- 8-character password with letters, digits, symbols
-- $(26 + 26 + 10 + 32)^8 = 94^8 \approx 6.1 \times 10^{15}$
-
-**Hash Functions**: 
-- Distributing data into buckets
-- Collision probability calculations
-
-**Algorithm Analysis**:
-- Counting operations, comparisons
-- Big O notation foundations
-
----
-
-## Counting in Genetics
-
-**DNA Sequences**: 
-- 4 bases (A, T, G, C)
-- Gene of length $n$: $4^n$ possible sequences
-
-**Protein Folding**:
-- Number of possible conformations
-- Combinatorial explosion
-
-**Population Genetics**:
-- Hardy-Weinberg calculations
-- Allele combinations
-
----
-
-## Real-World Applications
-
-**Lottery**: 
-- Powerball: Choose 5 from 69, then 1 from 26
-- Odds: $\frac{1}{\binom{69}{5} \times 26} \approx \frac{1}{292,000,000}$
-
-**Cryptography**:
-- Key space size determines security
-- RSA encryption relies on large number factorization
-
-**Sports Tournaments**:
-- March Madness bracket: $2^{63}$ possible outcomes
-- Round-robin tournaments: $\binom{n}{2}$ games
-
----
-
-## Key Formulas Summary
-
-- **Permutations**: $P(n,r) = \frac{n!}{(n-r)!}$
-- **Combinations**: $C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$
-- **With repetition**: $\frac{n!}{n_1! \times n_2! \times \cdots \times n_k!}$
-- **Circular**: $(n-1)!$
-- **Inclusion-Exclusion**: $|A \cup B| = |A| + |B| - |A \cap B|$
-
----
-
-## Technology and Counting
-
-**Calculators**: 
-- Use nPr and nCr functions
-- Be careful with large numbers
-
-**Software**:
-- R: `factorial()`, `choose()`, `combn()`
-- Python: `math.factorial()`, `math.comb()`
-- Excel: `FACT()`, `COMBIN()`, `PERMUT()`
-
-**Online Tools**:
-- Wolfram Alpha for complex calculations
-- Combination/permutation calculators
 
 ---
 
 ## Practice Problem 7
 
-A standard deck of cards is shuffled. What's the probability that:
+For the call center example:
 
-a) The top 4 cards are all hearts?
-b) In a 13-card hand, you get exactly one card from each rank?
+a) What's the probability of no calls in a minute?
+b) What's the probability of at most 2 calls?
+c) In a 2-minute period, what's the expected number of calls?
 
 :::{.fragment}
-**Solutions:**
-a) $\frac{13}{52} \times \frac{12}{51} \times \frac{11}{50} \times \frac{10}{49} = \frac{13 \times 12 \times 11 \times 10}{52 \times 51 \times 50 \times 49} \approx 0.0026$
-
-b) Choose 1 card from each of 13 ranks: $4^{13}$
-   Total 13-card hands: $\binom{52}{13}$
-   Probability: $\frac{4^{13}}{\binom{52}{13}} \approx 6.3 \times 10^{-6}$
+**Solutions**:
+a) $P(X = 0) = \frac{3^0 e^{-3}}{0!} = e^{-3} \approx 0.0498$
+b) $P(X \leq 2) = P(X=0) + P(X=1) + P(X=2) \approx 0.0498 + 0.1494 + 0.2240 = 0.423$
+c) For 2 minutes: $Y \sim \text{Poisson}(6)$, so $E[Y] = 6$ calls
 :::
 
 ---
 
-## Extending to Probability
+## Practice Problem 8
 
-**Hypergeometric Distribution**:
-- Drawing without replacement
-- Uses combinations: $P(X = k) = \frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}$
+For the light bulb example:
 
-**Binomial Distribution**:
-- Drawing with replacement  
-- Uses combinations: $P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}$
+a) What's the expected number of defective bulbs in the sample?
+b) What's the probability of no defective bulbs?
+c) What's the probability of at least 2 defective bulbs?
 
-*We'll explore these distributions in detail in future lectures*
+:::{.fragment}
+**Solutions**:
+a) $E[X] = 5 \times \frac{3}{20} = 0.75$ bulbs
+b) $P(X = 0) = \frac{\binom{3}{0}\binom{17}{5}}{\binom{20}{5}} = \frac{6188}{15504} \approx 0.399$
+c) $P(X \geq 2) = 1 - P(X = 0) - P(X = 1) \approx 1 - 0.399 - 0.461 = 0.140$
+:::
 
 ---
 
-## Historical Note
+## Practice Problem 9
 
-**Blaise Pascal** (1623-1662) and **Pierre de Fermat** (1601-1665):
-- Founded probability theory through gambling problems
-- Pascal's triangle and combinations
+A website receives an average of 2 orders per minute. Assuming orders follow a Poisson process:
 
-**Leonhard Euler** (1707-1783):
-- Advanced combinatorics
-- Graph theory connections
+a) What's the probability of exactly 3 orders in a minute?
+b) What's the probability of no orders in 30 seconds?
+c) What's the probability of more than 5 orders in 2 minutes?
 
-Modern applications span computer science, biology, physics, and economics
+:::{.fragment}
+**Solutions**:
+a) $X \sim \text{Poisson}(2)$: $P(X = 3) = \frac{2^3 e^{-2}}{3!} \approx 0.180$
+b) $Y \sim \text{Poisson}(1)$: $P(Y = 0) = e^{-1} \approx 0.368$
+c) $Z \sim \text{Poisson}(4)$: $P(Z > 5) = 1 - P(Z \leq 5) \approx 0.215$
+:::
+
+---
+
+## Central Limit Theorem Preview
+
+For large $n$, many discrete distributions approach normal:
+
+**Binomial**: $X \sim \text{Binomial}(n, p)$ → $N(np, np(1-p))$ when $np > 5$ and $n(1-p) > 5$
+
+**Poisson**: $X \sim \text{Poisson}(\lambda)$ → $N(\lambda, \lambda)$ when $\lambda > 10$
+
+:::{.fragment}
+*This connection will be crucial for hypothesis testing and confidence intervals*
+:::
+
+---
+
+## Common Mistakes
+
+1. **Wrong distribution choice**: Check assumptions carefully
+2. **Parameter confusion**: Is it $n$, $p$, or $\lambda$?
+3. **Inclusion errors**: "At least 3" vs "More than 3"
+4. **Independence assumption**: Sampling with/without replacement
+5. **Technology errors**: pdf vs cdf functions
+
+---
+
+## Practice Problem 10
+
+A multiple choice test has 20 questions with 5 options each. A student knows the answers to 12 questions and guesses on the rest.
+
+a) What's the expected score?
+b) What's the probability of scoring at least 15?
+c) What's the standard deviation of the score?
+
+:::{.fragment}
+**Solution**: Let $X$ = known correct, $Y$ = guessed correct
+- $X = 12$ (deterministic)
+- $Y \sim \text{Binomial}(8, 0.2)$
+- Total score $S = X + Y = 12 + Y$
+
+a) $E[S] = 12 + E[Y] = 12 + 8(0.2) = 13.6$
+b) $P(S \geq 15) = P(Y \geq 3) \approx 0.203$  
+c) $\sigma_S = \sigma_Y = \sqrt{8(0.2)(0.8)} = \sqrt{1.28} \approx 1.13$
+:::
+
+---
+
+## Extensions and Advanced Topics
+
+**Negative Binomial**: Number of trials to get $r$ successes
+
+**Multinomial**: Extension of binomial to more than 2 categories
+
+**Compound Distributions**: Sums of random variables
+
+**Generating Functions**: Advanced technique for deriving properties
+
+:::{.fragment}
+*These topics appear in advanced probability courses*
+:::
+
+---
+
+## Historical Context
+
+**Jacob Bernoulli** (1654-1705): Bernoulli trials and law of large numbers
+
+**Siméon Denis Poisson** (1781-1840): Poisson distribution and approximation
+
+**Abraham de Moivre** (1667-1754): Normal approximation to binomial
+
+**Modern Applications**: Computer science, machine learning, bioinformatics
 
 ---
 
 ## Common Student Questions
 
-**Q**: "When do I use permutations vs combinations?"
-**A**: Ask "Does order matter?" Order matters → permutation
+**Q**: "How do I choose between binomial and hypergeometric?"
+**A**: Use binomial for sampling with replacement, hypergeometric without
 
-**Q**: "How do I handle restrictions?"
-**A**: Break the problem into cases or use complementary counting
+**Q**: "When can I use Poisson approximation?"
+**A**: When $n$ is large, $p$ is small, and $np$ is moderate
 
-**Q**: "What if objects are identical?"
-**A**: Use the formula for permutations with repetition
+**Q**: "Why does Poisson have mean = variance?"
+**A**: Mathematical property arising from its derivation as a limit
 
-**Q**: "How do I check my answer?"
-**A**: Verify with small examples or use different methods
+**Q**: "How do I know if trials are independent?"
+**A**: Check if outcome of one trial affects others
+
+---
+
+## Key Formulas Summary
+
+- **Expected Value**: $E[X] = \sum x \cdot P(X = x)$
+- **Variance**: $\text{Var}(X) = E[X^2] - (E[X])^2$
+- **Binomial**: $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$
+- **Geometric**: $P(X = k) = (1-p)^{k-1} p$
+- **Poisson**: $P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}$
 
 ---
 
 ## Looking Ahead
 
-**Next lecture**: Discrete Probability Distributions
-- Binomial distribution (using combinations!)
-- Hypergeometric distribution  
-- Geometric distribution
-- Expected value and variance
+**Next lecture**: Continuous Random Variables
+- Probability density functions (PDFs)
+- Normal distribution
+- Exponential distribution  
+- Central Limit Theorem applications
 
-**Connection**: Today's counting techniques are essential for probability calculations
+**Connection**: Discrete distributions often approximate continuous ones, and vice versa
 
 ---
 
 ## Study Tips
 
-1. **Practice, practice, practice**: Work through many examples
-2. **Identify patterns**: Learn to recognize problem types
-3. **Start simple**: Build up to complex problems
-4. **Check your work**: Use different approaches when possible
-5. **Understand concepts**: Don't just memorize formulas
+1. **Master the basics**: PMF, CDF, expectation, variance
+2. **Learn distribution characteristics**: When to use each one
+3. **Practice with technology**: Get comfortable with calculators/software
+4. **Work real problems**: Apply distributions to actual scenarios
+5. **Check your intuition**: Do answers make practical sense?
 
 ---
 
 ## Final Thoughts
 
-Counting is fundamental to:
-- Probability calculations
-- Statistical inference  
-- Computer algorithms
-- Scientific modeling
+Discrete random variables are fundamental to:
+- Modeling real-world phenomena
+- Making statistical inferences
+- Understanding probability theory
+- Building more complex models
 
 :::{.fragment}
-**Master the basics**: Permutations and combinations are the building blocks for advanced statistical concepts
+**Key insight**: Random variables transform unpredictable outcomes into predictable patterns
 :::
 
 ---
@@ -753,16 +707,33 @@ Counting is fundamental to:
 
 **Office Hours**: [Your office hours]
 **Email**: [Your email]  
-**Next Class**: Discrete Probability Distributions
+**Next Class**: Continuous Random Variables
 
 *Remember: Homework due [date]*
 
 ---
 
-## Bonus: Large Number Approximations
+## Bonus: Law of Large Numbers
 
-**Stirling's Approximation**: $n! \approx \sqrt{2\pi n} \left(\frac{n}{e}\right)^n$
+As $n$ increases, the sample mean approaches the expected value:
 
-**Normal Approximation**: For large $n$, $\binom{n}{k} \approx \frac{1}{\sqrt{2\pi n p(1-p)}} \exp\left(-\frac{(k-np)^2}{2np(1-p)}\right)$
+$$\bar{X}_n = \frac{X_1 + X_2 + \cdots + X_n}{n} \to E[X]$$
 
-*Useful for computational purposes when exact values are too large*
+**Example**: Flip a coin 1000 times - proportion of heads will be close to 0.5
+
+*This justifies our interpretation of expected value as "long-run average"*
+
+---
+
+## Bonus: Simulation
+
+**Monte Carlo Method**: Use computer simulation to estimate probabilities
+
+```r
+# Simulate 10,000 binomial random variables
+X <- rbinom(10000, size=10, prob=0.3)
+mean(X)  # Should be close to 10*0.3 = 3
+var(X)   # Should be close to 10*0.3*0.7 = 2.1
+```
+
+*Simulation helps verify theoretical results and solve complex problems*
