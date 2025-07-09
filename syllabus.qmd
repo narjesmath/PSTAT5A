@@ -296,7 +296,7 @@ Quizzes
 Quiz 1: Weeks 1–2
 :::
 ::: {.quiz-date}
-July 10th
+July 11th
 :::
 ::: {.quiz-details}
 Covers introduction and descriptive statistics
@@ -313,7 +313,7 @@ Covers introduction and descriptive statistics
 Quiz 2: Weeks 3–4
 :::
 ::: {.quiz-date}
-July 24th
+July 25th
 :::
 ::: {.quiz-details}
 Covers probability and hypothesis testing
@@ -342,7 +342,7 @@ Covers ANOVA and regression analysis
 ::: {.info-item}
 ::: {.info-value}
 **Format:** Multiple choice & short answer (open book)  
-**Platform:** Gradescope  
+**Platform:** Canvas /-or Gradescope  
 **Availability:** Fridays 7 AM–12 AM (1‑hour limit)  
 **Make‑up policy:** Notify within 48 h; documentation required.
 :::
