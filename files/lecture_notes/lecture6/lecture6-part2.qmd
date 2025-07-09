@@ -544,7 +544,7 @@ fig.update_layout(
     title='Probability Distribution: Women in Committee',
     xaxis_title='Number of Women',
     yaxis_title='Probability',
-    height=400,
+    height=500,
     showlegend=False
 )
 
