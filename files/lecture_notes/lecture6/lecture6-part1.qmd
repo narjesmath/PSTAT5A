@@ -1,6 +1,6 @@
 ---
 title: "PSTAT 5A: Counting"
-subtitle: "Lecture 6 - Permutations"
+subtitle: "Lecture 7 - Permutations"
 author: "Narjes Mathlouthi"
 date: 7/07/2025
 format: 
