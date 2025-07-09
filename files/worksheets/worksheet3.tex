@@ -177,7 +177,7 @@
 \subtitle{Comprehensive Review: Probability, Counting, an Conditional
 Probability}
 \author{Student Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\date{2025-07-08}
+\date{2025-07-09}
 
 \begin{document}
 \maketitle
@@ -199,9 +199,9 @@ Probability}
 \item
   \textbf{Section B (Intermediate):} 15 minutes
 \item
-  \textbf{Section C (Advanced):} 15 minutes
+  \textbf{Section C (Advanced):} 12 minutes
 \item
-  \textbf{Section D (Review):} 12 minutes
+  \textbf{Section D (Review):} 15 minutes
 \item
   \textbf{Total:} 50 minutes
 \end{itemize}
@@ -228,8 +228,6 @@ Probability}
   \textbf{Conditional Probability:}
   \(P(A|B) = \frac{P(A \cap B)}{P(B)}\)
 \item
-  \textbf{Bayes' Theorem:} \(P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}\)
-\item
   \textbf{Law of Total Probability:}
   \(P(A) = \sum P(A|B_i) \cdot P(B_i)\)
 \item
@@ -242,6 +240,14 @@ Probability}
 \textbf{Counting:}
 
 \begin{itemize}
+\item
+  \textbf{Multiplication Rule:} If a procedure consists of \(k\) steps,
+  with \(n_1\) ways for step 1, \(n_2\) for step 2, \ldots, \(n_k\) for
+  step \(k\), then total ways:
+  \(n_1 \times n_2 \times \cdots \times n_k\)
+\item
+  \textbf{Factorial:}
+  \(n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1\)
 \item
   \textbf{Permutations:} \(P(n,r) = \frac{n!}{(n-r)!}\)
 \item
@@ -288,7 +294,7 @@ A cybersecurity team needs to create a secure access protocol.
 specific letters and 3 specific digits if repetitions are not allowed
 and letters must come before digits?
 
-\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomtitle=1mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, breakable, leftrule=.75mm, left=2mm, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, toptitle=1mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacityback=0, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, titlerule=0mm, toptitle=1mm, opacitybacktitle=0.6, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, breakable, colback=white, leftrule=.75mm]
 
 Since letters must come before digits, think of this as two separate
 arrangement problems:
@@ -308,7 +314,7 @@ arrangement problems:
 employees to form a security committee where order doesn't matter, how
 many ways can this be done?
 
-\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomtitle=1mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, colback=white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, breakable, leftrule=.75mm, left=2mm, colframe=quarto-callout-tip-color-frame, opacityback=0, toprule=.15mm, toptitle=1mm, titlerule=0mm]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, left=2mm, opacityback=0, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, titlerule=0mm, toptitle=1mm, opacitybacktitle=0.6, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, breakable, colback=white, leftrule=.75mm]
 
 Since order doesn't matter, this is a combination problem. Ask yourself:
 
@@ -327,46 +333,41 @@ Since order doesn't matter, this is a combination problem. Ask yourself:
 \section{Section C: Conditional
 Probability}\label{section-c-conditional-probability}
 
-\emph{⏱️ Estimated time: 15 minutes}
+\emph{⏱️ Estimated time: 12 minutes}
 
-\textbf{Problem B1: Conditional Probability and Medical Testing}
+\textbf{Problem C1: Drawing Cards (Without Replacement)}
 
-A new COVID variant test has the following characteristics:
+You draw two cards, one after the other, from a standard 52-card deck
+without putting the first card back. Let
 
-\begin{itemize}
+A = \(\{\text{“first card is a heart”}\}\),
+
+B = \(\{\text{“second card is an ace”}\}\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \item
-  The variant affects 3\% of the tested population
+  P(A)
 \item
-  The test correctly identifies 95\% of people with the variant
-  (sensitivity)
+  \(P\bigl(A\text{ and }B\bigr)\)
 \item
-  The test correctly identifies 92\% of people without the variant
-  (specificity)
-\end{itemize}
-
-\textbf{Part (a):} What is the probability that a randomly selected
-person tests positive?
-
-\textbf{Part (b):} If someone tests positive, what is the probability
-they actually have the variant?
-
-\textbf{Part (c):} If someone tests negative, what is the probability
-they actually don't have the variant?
-
-\textbf{Part (d) {[}Challenge{]}:} The health department wants to reduce
-false positives. They decide to require two consecutive positive tests
-for a positive diagnosis. Assuming test results are independent, what is
-the new probability that someone with two positive tests actually has
-the variant?
+  \(P\bigl(B\mid A\bigr)\)
+\item
+  P(B)
+\item
+  Compare your answers in (3) vs.~(4). Why are they different (or the
+  same)? What does this tell you about drawing cards without
+  replacement?
+\end{enumerate}
 
 \textbf{Work Space:}
 
-\section{Section C: Conditional
-Probability}\label{section-c-conditional-probability-1}
+\section{Section D: Conditional
+Probability}\label{section-d-conditional-probability}
 
 \emph{⏱️ Estimated time: 15 minutes}
 
-\textbf{Problem C1: Advanced Counting with Restrictions}
+\textbf{Problem D1: Advanced Counting with Restrictions}
 
 A restaurant offers a prix fixe menu where customers must choose:
 
@@ -395,27 +396,6 @@ However, there are restrictions:
 \textbf{Part (b):} If customers choose randomly among valid
 combinations, what is the probability someone chooses the chocolate
 dessert?
-
-\textbf{Work Space:}
-
-\section{Section D: Review}\label{section-d-review}
-
-\emph{⏱️ Estimated time: 12 minutes}
-
-\textbf{Problem B3: Daily Expenses}
-
-Sally gets a cup of coffee and a muffin every day for breakfast from one
-of the many coffee shops in her neighborhood. She picks a coffee shop
-each morning at random and independently of previous days. The average
-price of a cup of coffee is \$1.40 with a standard deviation of 30¢
-(\$0.30), the average price of a muffin is \$2.50 with a standard
-deviation of 15¢, and the two prices are independent of each other.
-
-\textbf{Part (a):} What is the mean and standard deviation of the amount
-she spends on breakfast daily?
-
-\textbf{Part (b):} What is the mean and standard deviation of the amount
-she spends on breakfast weekly (7 days)?
 
 \textbf{Work Space:}
 

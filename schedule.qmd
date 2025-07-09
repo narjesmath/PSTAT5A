@@ -219,7 +219,8 @@ Lecture Materials
 7/07
 :::
 ::: {.topic}
-Random Variables
+
+[Counting](/files/lecture_notes/lecture6/lecture6.qmd)
 :::
 ::: {.lab-quiz}
 [Lab3](/files/labs/lab3/lab3.qmd)
@@ -227,7 +228,7 @@ Random Variables
 [Lab3 Solutions](/files/labs/lab3/lab3_sln.qmd)
 :::
 ::: {.worksheet}
-Worksheet 3
+[Worksheet 3](/files/worksheets/worksheet3.qmd)
 :::
 :::
 
@@ -238,7 +239,7 @@ Worksheet 3
 7/08
 :::
 ::: {.topic}
-Introduction to Inference
+Random Variables
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -255,7 +256,7 @@ Introduction to Inference
 7/09
 :::
 ::: {.topic}
-Confidence Intervals (Proportions)
+Introduction to inference
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -272,7 +273,7 @@ Confidence Intervals (Proportions)
 7/10
 :::
 ::: {.topic}
-Confidence Intervals (Means)
+Confidence Intervals (Proportions & Means)
 :::
 ::: {.lab-quiz .empty-cell}
 —
