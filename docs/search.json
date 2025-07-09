@@ -4533,14 +4533,14 @@
     "href": "files/lecture_notes/lecture6/lecture6.html#sec-permutation-vs-combination",
     "title": "PSTAT 5A: Counting",
     "section": "Key Decision: Permutation or Combination?",
-    "text": "Key Decision: Permutation or Combination?\n\n\n\n\n\n\n\n\n\nHow to Decide\n\n\nAsk yourself: Does order matter?\nOrder matters → Use Permutations - Arrangements, sequences, rankings\nOrder doesn’t matter → Use Combinations\n- Selections, groups, subsets"
+    "text": "Key Decision: Permutation or Combination?\n\n\n\n\n\n\n\n\n\nHow to Decide\n\n\nAsk yourself: Does order matter?\nOrder matters → Use Permutations - Arrangements, sequences, rankings\nOrder doesn’t matter → Use Combinations\n- Selections, groups, subsets\n\n\n\n\n\n\n\n                            \n                                            \n\n\n\n\n\n\n\n\nTip\n\n\n✅ \\(P(n,r)\\) = counts both selection & arrangement → grows faster\n✅ \\(C(n,r)\\) = counts only selection → grows slower\n✅ The difference comes from \\(r!\\), which is big even for modest \\(r\\)."
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6.html#practice-3",
     "href": "files/lecture_notes/lecture6/lecture6.html#practice-3",
     "title": "PSTAT 5A: Counting",
     "section": "Practice Problem 3",
-    "text": "Practice Problem 3\n\nFrom a class of 20 students:\n\nHow many ways to choose 5 students for a study group?\nHow many ways to choose a president, vice-president, and secretary?\nHow many ways to arrange all 20 students in a circle?\n\n\n\nSolution. \n\n\\(C(20,5) = \\frac{20!}{5! \\times 15!} = 15,504\\) (order doesn’t matter)\n\\(P(20,3) = \\frac{20!}{17!} = 6,840\\) (order matters)\n\\((20-1)! = 19!\\) (circular permutation)"
+    "text": "Practice Problem 3\n\nFrom a class of 20 students:\n\nHow many ways to choose 5 students for a study group?\nHow many ways to choose a president, vice-president, and secretary?\n\n\n\nSolution. \n\n\\(C(20,5) = \\frac{20!}{5! \\times 15!} = 15,504\\) (order doesn’t matter)\n\\(P(20,3) = \\frac{20!}{17!} = 6,840\\) (order matters)"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6.html#properties-of-combinations",
@@ -4554,7 +4554,7 @@
     "href": "files/lecture_notes/lecture6/lecture6.html#pascals-triangle",
     "title": "PSTAT 5A: Counting",
     "section": "Pascal’s Triangle",
-    "text": "Pascal’s Triangle\n\n\n\n           1\n         1   1\n       1   2   1\n     1   3   3   1\n   1   4   6   4   1\n 1   5  10  10   5   1\n1   6  15  20  15   6   1\nPattern: Each number is the sum of the two numbers above it.\nFormula: \\(\\binom{n}{r} = \\binom{n-1}{r-1} + \\binom{n-1}{r}\\)\nExample: \\(\\binom{4}{2} = 6\\) (row 4, position 2)\n\n\n\n\n\n                            \n                                            \n\n\nPascal's Triangle (showing C(n,r) values):\nRow 0: [1]\nRow 1: [1, 1]\nRow 2: [1, 2, 1]\nRow 3: [1, 3, 3, 1]\nRow 4: [1, 4, 6, 4, 1]\nRow 5: [1, 5, 10, 10, 5, 1]\nRow 6: [1, 6, 15, 20, 15, 6, 1]\nRow 7: [1, 7, 21, 35, 35, 21, 7, 1]\n\n\n\nEach number is \\(\\binom{n}{r}\\) where \\(n\\) is the row and \\(r\\) is the position"
+    "text": "Pascal’s Triangle\n\n\n\n           1\n         1   1\n       1   2   1\n     1   3   3   1\n   1   4   6   4   1\n 1   5  10  10   5   1\n1   6  15  20  15   6   1\nPattern: Each number is the sum of the two numbers above it.\nFormula: \\(\\binom{n}{r} = \\binom{n-1}{r-1} + \\binom{n-1}{r}\\)\nEach number is \\(\\binom{n}{r}\\) where \\(n\\) is the row and \\(r\\) is the position\nExample: \\(\\binom{4}{2} = 6\\) (row 4, position 2)\nRow 3:       1   3   3   1\n            ↙ ↘ ↙ ↘ ↙ ↘ ↙ ↘\nRow 4:     1   4   6   4   1\n\n\n\n\n\n\n                            \n                                            \n\n\nPascal's Triangle (showing C(n,r) values):\nRow 0: [1]\nRow 1: [1, 1]\nRow 2: [1, 2, 1]\nRow 3: [1, 3, 3, 1]\nRow 4: [1, 4, 6, 4, 1]\nRow 5: [1, 5, 10, 10, 5, 1]\nRow 6: [1, 6, 15, 20, 15, 6, 1]\nRow 7: [1, 7, 21, 35, 35, 21, 7, 1]"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6.html#binomial-theorem",
