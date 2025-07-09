@@ -1,6 +1,6 @@
 ---
 title: "PSTAT 5A: Counting"
-subtitle: "Lecture 7"
+subtitle: "Lecture 6 - Combinations"
 author: "Narjes Mathlouthi"
 date: today
 format: 
@@ -26,470 +26,21 @@ import plotly.graph_objects as go
 import math
 ```
 
-## Welcome to Lecture 6 (Part 1) {.center}
+## Welcome to Lecture 6 (Part 2) {.center}
 
 *The art and science of systematic enumeration*
-
-
----
 
 ## Today's Learning Objectives {#learning-objectives}
 
 ::: {.callout-tip title="Learning Objectives"}
 By the end of this lecture, you will be able to:
 
-- Apply the fundamental counting principles ([@sec-fundamental-counting])
-- Calculate permutations with and without repetition ([@sec-permutations], [@sec-permutations-r-from-n], [@sec-permutations-repetition])
 - Calculate combinations and understand when to use them ([@sec-combinations], [@sec-combinations-formula])
 - Distinguish between permutations and combinations ([@sec-permutation-vs-combination])
 - Use counting techniques to solve probability problems ([@sec-counting-probability])
 - Apply the inclusion-exclusion principle ([@sec-inclusion-exclusion])
 - Solve complex counting problems systematically ([@sec-problem-solving-strategy])
-
 :::
-
----
-
-## Why Study Counting?{.smaller}
-
-::: {.columns}
-::: {.column width="55%"}
-
-::: {.icon-section}
-<i class="fas fa-calculator"></i>
-
-:::
-
-Counting helps us:
-
-- Calculate probabilities for complex events  
-- Solve optimization problems  
-- Understand combinations in genetics, computer science  
-- Analyze algorithms and data structures  
-- Make decisions involving arrangements and selections
-:::
-
-::: {.column width="45%"}
-::: {.callout-example title="Applications"}
-**Real-world applications of counting include:**
-
-- **Cryptography**: Password strength and encryption key space
-- **Genetics**: DNA sequence analysis and gene combinations  
-- **Tournament brackets**: March Madness and sports competitions
-- **Lottery odds**: Probability calculations for games of chance
-- **Password security**: Character combinations and brute force protection
-:::
-
-![](/files/lecture_notes/lecture7/img/counting_icon.png){fig-align="left" width="10%"}
-:::
-
-:::
-
----
-
-## The Fundamental Counting Principle {#sec-fundamental-counting} 
-
-::: {.columns}
-
-::: {.column width="50%"}
-::: {.callout-note title="Multiplication Rule"} 
-If a procedure consists of **$k$** separate tasks where:
-
-- Task 1 can be performed in **$n_1$** ways
-  
-- Task 2 can be performed in **$n_2$** ways
-  
-- ...
-  
-- Task **$k$** can be performed in **$n_k$** ways
-
-Then, the entire procedure can be performed in **$n_1 \times n_2 \times \cdots \times n_k$** ways
-:::
-:::
-
-::: {.column width="50%"}
-::: {.callout-example title="Visual Demo: Task Tree"}
-```{mermaid}
-flowchart LR
-    Start([Start]) --> T1["Task 1: n₁ ways"]
-    T1 --> C1[Choice 1]
-    T1 --> C2[Choice 2]
-    T1 --> Cn1[Choice n₁]
-    C1 --> T2["Task 2: n₂ ways"]
-    C2 --> T2
-    Cn1 --> T2
-    T2 --> C21[Choice 1]
-    T2 --> C22[Choice 2]
-    T2 --> C2n[Choice n₂]
-    C21 --> Total(("Total ways:\n n₁ × n₂ × ... × nₖ"))
-    C22 --> Total
-    C2n --> Total
-```
-:::
-:::
-:::
-
-
-
----
-
-## Simple Counting Example {.smaller}
-
-::: {.example}
-
-
-Format ABC-123
-
-- First position: 26 letters
-  
-- Second position: 26 letters  
-  
-- Third position: 26 letters
-  
-- Fourth position: 10 digits
-  
-- Fifth position: 10 digits
-  
-- Sixth position: 10 digits
-
-![](/files/lecture_notes/lecture7/img/count.png){width="70px"}
-:::
-
-
-
-::: {.solution .fragment}
-Total possibilities: $26 \times 26 \times 26 \times 10 \times 10 \times 10 = 26^3 \times 10^3 = 17,576,000$
-:::
-
----
-
-## Restaurant Menu Example{.smaller}
-
-::: {.example}
-A restaurant offers:
-
-🍤 Appetizers: 4
-
-🍲 Main Courses: 6
-
-🍰 Desserts: 3
-
-**How many different three-course meals are possible?**
-:::
-
-::: {.solution .fragment}
-$4 \times 6 \times 3 = 72$ different meals
-:::
-
----
-
-## Practice Problem 1 {#practice-1 .smaller}
-
-::: {.example}
-A password must contain:
-
-- **Exactly 8 characters**
-  
-- Each character is either a **letter** (26 possibilities) or **digit** (10 possibilities)
-
-**How many possible passwords are there?**
-
-![](/files/lecture_notes/lecture7/img/login.png){width="10%" fig-align="right"}
-:::
-
-::: {.solution .fragment}
-Each position has $26 + 10 = 36$ choices.
-
-Total: $36^8 = 2,821,109,907,456$ passwords
-:::
-
----
-
-## What Are Permutations? {#sec-permutations .smaller}
-
-::: {.callout-note title="Permutation"}
-An arrangement of objects where **order matters**
-:::
-
-::: {.callout-example title="Permutation Animation: Placing Objects in Boxes"}
-```{python}
-#| echo: false
-#| warning: false
-import plotly.graph_objects as go
-import itertools
-
-# Create permutation animation
-items = ['A', 'B', 'C']
-perms = list(itertools.permutations(items))
-
-# Show first permutation step by step
-perm = perms[0]  # ABC
-fig = go.Figure()
-
-# Create boxes with step-by-step filling
-for step in range(4):
-    boxes = [''] * 3
-    for i in range(step):
-        boxes[i] = perm[i]
-    
-    fig.add_trace(go.Bar(
-        x=['Box 1', 'Box 2', 'Box 3'],
-        y=[1, 1, 1],
-        text=boxes,
-        textposition='inside',
-        marker_color=['lightblue']*3,
-        hoverinfo='none',
-        showlegend=False,
-        visible=(step==3)  # Only show final step
-    ))
-
-fig.update_layout(
-    title='Permutation ABC: Step-by-Step Placement',
-    yaxis=dict(showticklabels=False, range=[0, 1.5]),
-    xaxis=dict(showticklabels=True),
-    height=300,
-    width=500,
-    margin=dict(l=10, r=10, t=40, b=10)
-)
-
-fig.show()
-
-# Show all permutations
-print("All permutations of ABC:")
-for i, perm in enumerate(perms):
-    print(f"{i+1}. {''.join(perm)}")
-```
-:::
-
-::: {.callout-example title="Examples where order matters"}
-- Race finish positions (1st, 2nd, 3rd)
-  
-- Seating arrangements
-  
-- Passwords
-  
-- DNA sequences
-:::
-
----
-
-## Permutations of $n$ Distinct Objects {.smaller}
-
-::: {.columns}
-::: {.column width="50%"}
-
-::: {.callout-important title="Key Formula"}
-The number of ways to arrange $n$ distinct objects is:
-
-$$n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$$
-:::
-
-![](/files/lecture_notes/lecture7/img/numbers.png){width="10%" fig-align="right"}
-:::
-
-::: {.column width="50%"}
-
-::: {.example}
-Seating Process:
-
-**1st position:** 5 choices (Alice, Bob, Carol, David, Eve)
-
-**2nd position:** 4 choices (whoever is left)
-
-**3rd position:** 3 choices (whoever is left)
-
-**4th position:** 2 choices (whoever is left)
-
-**5th position:** 1 choice (last person)
-
-**How many ways can 5 people sit in a row?**
-:::
-
-::: {.solution .fragment}
-$5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ ways
-:::
-
-:::
-:::
-
----
-
-## Factorial Values {.smaller}
-
-::: {.columns}
-::: {.column width="50%"}
-| $n$ | $n!$ |
-|-----|------|
-| 0   | 1    |
-| 1   | 1    |
-| 2   | 2    |
-| 3   | 6    |
-| 4   | 24   |
-| 5   | 120  |
-| 10  | 3,628,800 |
-
-
-:::
-
-::: {.column width="50%"}
-```{python}
-#| echo: false
-#| warning: false
-
-# Create factorial data
-n_values = list(range(11))
-factorials = [math.factorial(n) for n in n_values]
-
-# Create interactive plot
-fig = go.Figure()
-
-# Add bar chart
-fig.add_trace(go.Bar(
-    x=n_values,
-    y=factorials,
-    marker_color='lightblue',
-    name='n!',
-    hovertemplate='n=%{x}<br>n!=%{y:,}<extra></extra>'
-))
-
-# Add line for exponential growth
-fig.add_trace(go.Scatter(
-    x=n_values,
-    y=factorials,
-    mode='lines+markers',
-    line=dict(color='red', width=2),
-    name='Growth Trend',
-    hovertemplate='n=%{x}<br>n!=%{y:,}<extra></extra>'
-))
-
-fig.update_layout(
-    title='Factorial Growth: n! vs n',
-    xaxis_title='n',
-    yaxis_title='n!',
-    height=400,
-    showlegend=True,
-    hovermode='x unified'
-)
-
-fig.update_xaxes(tickmode='linear', tick0=0, dtick=1)
-fig.update_yaxes(type='log', title='n! (log scale)')
-
-fig.show()
-```
-:::
-
-::: {.callout-tip title="Note"}
-$0! = 1$ by definition
-:::
-:::
-
----
-
-## Permutations of $r$ Objects from $n$ {#sec-permutations-r-from-n .smaller}
-
-::: {.callout-important title="Key Formula"}
-**$P(n,r)$** or **$_nP_r$**: Number of ways to arrange **$r$** objects selected from **$n$** distinct objects
-
-$$P(n,r) = \frac{n!}{(n-r)!}$$
-:::
-
-::: {.example}
-**How many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary?**
-:::
-
-:::{.solution .fragment}
-$P(8,3) = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 8 \times 7 \times 6 = 336$
-:::
-
----
-
-## Understanding $P(n,r)$ {.smaller}
-
-Why is $P(n,r) = \frac{n!}{(n-r)!}$?
-
-- **First position:** $n$ choices
-- **Second position:** $(n-1)$ choices  
-- **Third position:** $(n-2)$ choices
-- ...
-- **$r$-th position:** $(n-r+1)$ choices
-
-::: {.formula-box}
-Total: $n \times (n-1) \times (n-2) \times \cdots \times (n-r+1) = \frac{n!}{(n-r)!}$
-:::
-
----
-
-## Practice Problem 2 {#practice-2 .smaller}
-
-::: {.example}
-A baseball team has 15 players. How many ways can the coach:
-
-a) Arrange all 15 players in a line?
-b) Choose and arrange 9 players for the starting lineup (batting order matters)?
-:::
-
-::: {.solution .fragment}
-a) $15! = 1,307,674,368,000$
-b) $P(15,9) = \frac{15!}{6!} = 1,816,214,400$
-:::
-
----
-
-## Permutations with Repetition {#sec-permutations-repetition}
-
-::: {.callout-note title="Permutations with Repetition"}
-When some objects are identical, we have **fewer** distinct arrangements
-
-If we have $n$ objects where:
-
-- $n_1$ are of type 1
-  
-- $n_2$ are of type 2  
-  
-- ...
-  
-- $n_k$ are of type $k$
-
-Number of distinct arrangements: $\frac{n!}{n_1! \times n_2! \times \cdots \times n_k!}$
-:::
-
----
-
-## Permutations with Repetition Example {.smaller}
-
-::: {.columns}
-::: {.column width="50%"}
-
-::: {.example}
-**How many distinct arrangements are there of the letters in "STATISTICS"?**
-:::
-
-**S-T-A-T-I-S-T-I-C-S**
-
-- Total letters: 10
-  
-- **S** appears 3 times
-  
-- **T** appears 3 times  
-  
-- **A** appears 1 time
-  
-- **I** appears 2 times
-  
-- **C** appears 1 time
-
-:::
-
-::: {.column width="50%"}
-
-::: {.solution .fragment}
-$\frac{10!}{3! \times 3! \times 1! \times 2! \times 1!} = \frac{3,628,800}{6 \times 6 \times 1 \times 2 \times 1} = \frac{3,628,800}{72} = 50,400$
-:::
-
-:::
-:::
-
----
 
 ## What Are Combinations? {#sec-combinations .smaller}
 
@@ -500,23 +51,20 @@ $\frac{10!}{3! \times 3! \times 1! \times 2! \times 1!} = \frac{3,628,800}{6 \ti
 A selection of objects where **order does NOT matter**
 :::
 
-::: {.callout-example title="Visual Demo: Order Doesn't Matter"}
-```
-Committee Selection:
+::: {.example title="Visual Demo: Order Doesn't Matter" .smaller}
+**Committee Selection**:
+
 ABC, BAC, CAB → Same committee!
 
-Race Results:
+**Race Results:**
+
 ABC, BAC, CAB → Different outcomes!
 
-Key Point: Order doesn't matter for combinations
-```
+:::{.callout-note}
+**Key Point**: Order doesn't matter for combinations
 :::
 
-::: {.callout-example title="Examples where order doesn't matter"}
-- Choosing committee members
-- Selecting pizza toppings
-- Forming study groups
-- Lottery number selection
+
 :::
 :::
 
@@ -569,54 +117,130 @@ for i, comb in enumerate(combs):
 ```
 :::
 :::
+:::{.notes}
+More Examples: 
+- Choosing committee members
+- Selecting pizza toppings
+- Forming study groups
+- Lottery number selection
+
 :::
+:::
+
 
 ---
 
-## Combinations Formula {#sec-combinations-formula}
+
+## Combinations Formula {#sec-combinations-formula .smaller}
 
 ::: {.callout-important title="Key Formula"}
-$C(n,r)$ or $\binom{n}{r}$: Number of ways to choose $r$ objects from $n$ distinct objects (order doesn't matter)
+**$C(n,r)$ or $\binom{n}{r}$**: Number of ways to choose **$r$** objects from **$n$** distinct objects (order doesn't matter)
 
 $$C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$$
+
+$\binom{n}{r}$ reads "*$n$ choose $r$*"
 :::
 
-::: {.callout-example title="Example"}
-How many ways can we choose 3 people from a group of 8 for a committee?
+::: {.example}
+**How many ways can we choose 3 people from a group of 8 for a committee?**
 
+:::{.solution}
 $C(8,3) = \frac{8!}{3!(8-3)!} = \frac{8!}{3! \times 5!} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = 56$
 :::
+:::
 
 ---
 
-## Relationship: Permutations vs Combinations
+## Permutations vs Combinations {.smaller}
+:::{.columns}
+:::{.column}
+::: {.callout-tip title="Relationship" .smaller}
 
-::: {.callout-tip title="Relationship"}
-$P(n,r) = C(n,r) \times r!$
+- $P(n,r) = \frac{n!}{(n-r)!} \quad (1)$
+
+and,
+
+- $C(n,r) = \frac{n!}{(n-r)!} \quad (2)$
+
+Plugging (2) into (1) and multiplying by **$r$** which represents the number of arrangements we get :
+
+$P(n,r) = C(n,r) \times r!$ **(multiply by arrangements)**
 
 **Why?** For each combination of $r$ objects, there are $r!$ ways to arrange them
+
+Similarly,
+
+$C(n,r) = P(n,r)/ r!$ **(divide out arrangements)**
+
+**Why?** diving by $r$ removes the arrangements from our formula and leaves us with the number of selection possible from $n$ objects.
+:::
 :::
 
-::: {.callout-example title="Visual Demo: P vs C Relationship"}
-```
-Relationship: P(n,r) = C(n,r) × r!
+:::{.column}
+::: {.callout-note}
+- **Permutations = Combinations × Arrangements**
 
-Example: Choose 3 from 8 people
-- C(8,3) = 56 combinations
-- For each combination, arrange 3 people: 3! = 6 ways
-- Total: 56 × 6 = 336 = P(8,3)
+- **Combinations answer:** *"How many ways can I choose?"*
+  
+- **Arrangements answer:** "How many ways can I order what I chose?"*
+  
+- **Permutations answer:** *"How many ways can I choose **AND** order?"*
 
-Combination ABC → Permutations: ABC, ACB, BAC, BCA, CAB, CBA
-```
+$\text{Choose} \times \text{Arrange} = \text{Choose and Arrange}$
+
+$$
+\underbrace{\binom{n}{r}}{\substack{\text{choose which}\\r\text{ elements}}}
+\;\times\;
+\underbrace{r!}{\substack{\text{order those}\\r\text{ elements}}}
+\;=\;
+\frac{n!}{r!(n-r)!}\;\times\;r!
+\;=\;
+\frac{n!}{(n-r)!}
+\;=\;
+P(n,r).
+$$
+
+Thus,
+
+$C(n,r)×r!= P(n,r)$
 :::
 
-::: {.callout-example title="Example"}
-$P(8,3) = C(8,3) \times 3! = 56 \times 6 = 336$ ✓
 :::
+:::
+
+
+## Permutations vs Combinations Example {.smaller}
+
+::: {.example title="Choosing 3 people from 5" .smaller}
+Select **3** people from a group of **5** for different purposes.
+
+- For a ranked competition (**order matters**):
+
+    1st place, 2nd place, 3rd place matter
+
+    **Use permutations:** $P(5,3) = \frac{5!}{(5-3)!} = \frac{5!}{2!} = \frac{120}{2} = 60$ ways
+
+- For a committee (**order doesn't matter**):
+
+    Just need 3 people, no specific roles
+
+    **Use combinations:** $C(5,3) = \frac{5!}{3!(5-3)!} = \frac{5!}{3! \cdot 2!} = \frac{120}{6 \cdot 2} = 10$ ways
+
+**Verifying the relationship:**
+
+$P(5,3)=C(5,3)×3!$
+
+$60=10 \times 6 \checkmark$
+
+For each of the 10 combinations, there are **$3! = 6$ ways** to arrange them, giving us the 60 permutations.
+:::
+
+
+
 
 ---
 
-## Key Decision: Permutation or Combination? {#sec-permutation-vs-combination}
+## Key Decision: Permutation or Combination? {#sec-permutation-vs-combination .smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -624,10 +248,20 @@ $P(8,3) = C(8,3) \times 3! = 56 \times 6 = 336$ ✓
 **Ask yourself**: Does order matter?
 
 **Order matters** → Use **Permutations**
+
 - Arrangements, sequences, rankings
 
 **Order doesn't matter** → Use **Combinations**  
+
 - Selections, groups, subsets
+
+:::{.callout-note .smaller}
+✅ **$P(n,r)$** = counts both selection & arrangement → grows faster
+
+✅ **$C(n,r)$** = counts only selection → grows slower
+
+✅ The difference comes from **$r!$**, which is big even for modest $r$.
+:::
 :::
 :::
 
@@ -679,13 +313,7 @@ fig.show()
 
 
 :::
-:::{.callout-tip}
-✅ **$P(n,r)$** = counts both selection & arrangement → grows faster
 
-✅ **$C(n,r)$** = counts only selection → grows slower
-
-✅ The difference comes from **$r!$**, which is big even for modest $r$.
-:::
 :::
 
 ---
@@ -724,41 +352,45 @@ $\binom{8}{3} = \binom{8}{5} = 56$ ✓
 
 ::: {.columns}
 
-::: {.column width="40%"}
-::: {.callout-example title="Pascal's Triangle"}
-```
-           1
-         1   1
-       1   2   1
-     1   3   3   1
-   1   4   6   4   1
- 1   5  10  10   5   1
-1   6  15  20  15   6   1
-```
+::: {.column width="50%"}
+::: {.callout-example title="Pascal's Triangle" .smaller}
 
+::: {.callout-tip title="Pascal's Triangle"}
+```
+       1                    ← (x + y)⁰
+     1   1                  ← (x + y)¹
+   1   2   1                ← (x + y)²
+ 1   3   3   1              ← (x + y)³
+1   4   6   4   1           ← (x + y)⁴
+1  5  10  10  5  1          ← (x + y)⁵
+```
+Each number equals $\binom{n}{r}$ where $n$ is the row number and $r$ is the position from the left (starting at 0).
+:::
+
+:::{.callout-note .smaller}
 **Pattern**: Each number is the sum of the two numbers above it.
 
 **Formula**: $\binom{n}{r} = \binom{n-1}{r-1} + \binom{n-1}{r}$
 
-Each number is $\binom{n}{r}$ where $n$ is the row and $r$ is the position
-
 **Example**: $\binom{4}{2} = 6$ (row 4, position 2)
 
+
+:::
+:::
 ```
 Row 3:       1   3   3   1
             ↙ ↘ ↙ ↘ ↙ ↘ ↙ ↘
 Row 4:     1   4   6   4   1
 
 ```
-
-:::
 :::
 
-::: {.column width="60%"}
-::: {.callout-example title="Pascal's Triangle Animation"}
+::: {.column width="50%"}
+::: {.callout-example title="Pascal's Triangle Animation" .smaller}
 ```{python}
 #| echo: false
 #| warning: false
+#| fig-align: right
 import plotly.graph_objects as go
 
 # Generate Pascal's triangle
@@ -799,9 +431,9 @@ fig.update_yaxes(showticklabels=False)
 
 fig.show()
 
-print("Pascal's Triangle (showing C(n,r) values):")
-for i, row in enumerate(triangle):
-    print(f"Row {i}: {row}")
+# print("Pascal's Triangle (showing C(n,r) values):")
+# for i, row in enumerate(triangle):
+#     print(f"Row {i}: {row}")
 ```
 :::
 :::
@@ -810,18 +442,55 @@ for i, row in enumerate(triangle):
 :::
 ---
 
-## Binomial Theorem
+## Binomial Theorem {.smaller}
 
+:::{.columns}
+:::{.column}
 ::: {.callout-important title="Key Formula"}
 $$(x + y)^n = \sum_{r=0}^{n} \binom{n}{r} x^{n-r} y^r$$
+
+This formula tells us how to expand $(x + y)$ raised to any positive integer power $n$.
 :::
 
-::: {.callout-example title="Example"}
+::: {.example .smaller}
+**EXAMPLE**
+
 $(x + y)^3 = \binom{3}{0}x^3 + \binom{3}{1}x^2y + \binom{3}{2}xy^2 + \binom{3}{3}y^3$
 
 $= x^3 + 3x^2y + 3xy^2 + y^3$
 :::
 
+:::
+
+:::{.column}
+
+::: {.callout-important title="Key Insights" .smaller}
+**The General Pattern**
+
+*Powers decrease and increase systematically:*
+
+- Powers of $x$: $n, n-1, n-2, \ldots, 1, 0$
+  
+- Powers of $y$: $0, 1, 2, \ldots, n-1, n$
+
+- Sum of powers in each term: always equals $n$
+
+
+**Coefficients come from Pascal's Triangle:**
+
+- Coefficient of $x^{n-r}y^r$ is $\binom{n}{r}$
+  
+- Read directly from row $n$ of Pascal's Triangle
+
+
+**Symmetry in coefficients:**
+
+First and last terms have coefficient 1
+Coefficients are symmetric: $\binom{n}{0} = \binom{n}{n}$, $\binom{n}{1} = \binom{n}{n-1}$, etc.
+:::
+:::
+
+:::
 ---
 
 ## Counting and Probability {#sec-counting-probability .smaller}
@@ -831,13 +500,13 @@ $= x^3 + 3x^2y + 3xy^2 + y^3$
 ::: {.column width="50%"}
 ::: {.example}
 A committee of 4 people is chosen from 7 women and 5 men. What's the probability that exactly 2 are women?
+
+- Total ways to choose 4 from 12: $\binom{12}{4} = 495$
+
+- Ways to choose 2 women from 7: $\binom{7}{2} = 21$
+
+- Ways to choose 2 men from 5: $\binom{5}{2} = 10$
 :::
-
-Total ways to choose 4 from 12: $\binom{12}{4} = 495$
-
-Ways to choose 2 women from 7: $\binom{7}{2} = 21$
-
-Ways to choose 2 men from 5: $\binom{5}{2} = 10$
 
 ::: {.solution .fragment}
 Favorable outcomes: $\binom{7}{2} \times \binom{5}{2} = 21 \times 10 = 210$
@@ -889,42 +558,143 @@ fig.show()
 
 ## Practice Problem 4 {#practice-4 .smaller}
 
+:::{.columns}
+:::{.column width="40%"}
+
 ::: {.example}
 A standard deck has 52 cards. What's the probability that a 5-card hand contains:
 
-a) Exactly 3 aces?
-b) At least 1 ace?
+a) Exactly 3 aces? $P(\text{exactly 3 aces in 5 cards})$
+
+
 :::
 
+:::
+
+
+:::{.column width="60%"}
+::: {.solution .fragment .smaller}
+1.	Total number of 5-card hands
+$$\binom{52}{5}
+= \frac{52\cdot51\cdot50\cdot49\cdot48}{5\cdot4\cdot3\cdot2\cdot1}
+= \frac{311{,}875{,}200}{120}  \\
+= 2{,}598{,}960 $$
+	2.	Ways to choose exactly 3 aces
+$$\binom{4}{3}
+= \frac{4\cdot3\cdot2}{3\cdot2\cdot1}
+= \frac{24}{6}
+= 4$$
+	3.	Ways to choose the other 2 cards from the 48 non-aces
+$$\binom{48}{2}
+= \frac{48\cdot47}{2\cdot1}
+= \frac{2{,}256}{2}
+= 1{,}128$$
+	4.	Total “successful” hands
+$4 \times 1{,}128 = 4{,}512$
+	5.	Probability
+$$P
+= \frac{\text{successful}}{\text{total}}
+= \frac{4{,}512}{2{,}598{,}960}
+\approx 0.001735
+\;=\;0.1735\%$$.
+:::
+:::
+
+:::
+
+
+## Practice Problem 4 {#practice-4 .smaller}
+
+:::{.columns}
+:::{.column width = "40%"}
+
+::: {.example}
+A standard deck has 52 cards. What's the probability that a 5-card hand contains:
+
+a) Exactly 3 aces? $P(\text{exactly 3 aces in 5 cards})$
+
+::: {.fragment}
+b) At least 1 ace? $P(\text{at least one ace})$
+:::
+
+:::
+
+:::
+
+:::{.column width = "60%"}
 ::: {.solution .fragment}
-a) Ways to get 3 aces from 4: $\binom{4}{3} = 4$
-   Ways to get 2 non-aces from 48: $\binom{48}{2} = 1,128$
-   Total 5-card hands: $\binom{52}{5} = 2,598,960$
 
-   Probability: $\frac{4 \times 1,128}{2,598,960} = \frac{4,512}{2,598,960} \approx 0.00174$
+1. Ways to pick 5 cards with zero aces
+	All 5 come from the 48 non-aces:
+$$\binom{48}{5}
+= \frac{48\cdot47\cdot46\cdot45\cdot44}{5\cdot4\cdot3\cdot2\cdot1}
+= \frac{205{,}476{,}480}{120}
+= 1{,}712{,}304$$
+2.	Probability of no aces
+$$
+P(\text{no aces})
+= \frac{\binom{48}{5}}{\binom{52}{5}}
+= \frac{1{,}712{,}304}{2{,}598{,}960}
+\approx 0.659 \quad \text{or} 65.9 \% $$
 
-b) Ways to choose 5 cards with no aces: $\binom{48}{5} = 1,712,304$
+3.	Subtract from 1
+$$P(\text{at least one ace})
+= 1 - P(\text{no aces})
+= 1 - 0.659
+\approx 0.341$$
 
-   $P(\text{at least 1 ace}) = 1 - \frac{\binom{48}{5}}{\binom{52}{5}} = 1 - \frac{1,712,304}{2,598,960} \approx 0.341$
+
 :::
+:::
+
+:::
+
+
 
 ---
 
 ## Practice Problem 4 (continued){.smaller}
 
+:::{.columns}
+:::{.column width="50%"}
+::: {.callout-tip}
+- **Hypergeometric formula:**
+$$
+P(\text{exactly }k\text{ successes})
+= \frac{\binom{K}{k}\,\binom{N-K}{n-k}}{\binom{N}{n}} $$
+
+where $N=52$, $K=4$ aces, $n=5$ draws, and $k$ is the number of aces you want.
+
+- **Complement trick:**
+$\;P(\ge1\text{ ace}) = 1 - P(0\text{ aces})$.
+
+This structure makes it easy to plug in any “number of successes” you need, or to use the complement when you want “at least one.”
+:::
+:::
+
+
+:::{.column width="50%"}
 :::{.example}
-b) At least 1 ace = 1 - (no aces)
+Hypergeometric in one formula
+
+For **part (a)** you could also write directly:
+
+$$P(k=3)
+= \frac{\binom{4}{3}\,\binom{48}{2}}{\binom{52}{5}}
+= \frac{4\cdot1{,}128}{2{,}598{,}960}
+\approx 0.001735$$
+
+And for **part (b)**:
+
+$$
+P(\ge1)
+= 1 - \frac{\binom{48}{5}}{\binom{52}{5}}
+= 1 - 0.6590
+= 0.3410$$
 :::
 
-:::{.callout-tip}
-Ways to choose 5 cards with no aces: $\binom{48}{5} = 1,712,304$
 :::
-
-
-::: {.solution .fragment}
-$P(\text{at least 1 ace}) = 1 - \frac{\binom{48}{5}}{\binom{52}{5}} = 1 - \frac{1,712,304}{2,598,960} \approx 0.341$
 :::
-
 ---
 
 
@@ -954,8 +724,11 @@ Treat AB as a single unit
 ## The Inclusion-Exclusion Principle {#sec-inclusion-exclusion .smaller}
 
 ::: {.columns}
-::: {.column width="50%"}
+::: {.column width="60%"}
 
+:::{.definition}
+The **Principle of Inclusion–Exclusion** lets you count (or find the probability of) the union of several sets by alternately adding and subtracting the **sizes** of their intersections.
+:::
 ::: {.formula-box}
 For two sets $A$ and $B$:
 $$|A \cup B| = |A| + |B| - |A \cap B|$$
@@ -964,10 +737,9 @@ For three sets $A$, $B$, and $C$:
 $$|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| \\
 - |A \cap C| - |B \cap C| + |A \cap B \cap C|$$
 :::
-
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 
 ::: {.callout-example title="Visual Demo: Inclusion-Exclusion"}
 ```{python}
@@ -1015,11 +787,11 @@ fig.add_annotation(x=center_b[0]+0.5, y=0, text="B", showarrow=False, font=dict(
 fig.add_annotation(x=0, y=0, text="A∩B", showarrow=False, font=dict(size=20, color="#333"))
 
 fig.update_layout(
-    title="Venn Diagram: Inclusion-Exclusion Principle",
+    title="Inclusion-Exclusion Principle",
     xaxis=dict(showticklabels=False, showgrid=False, zeroline=False, range=[-2, 2]),
     yaxis=dict(showticklabels=False, showgrid=False, zeroline=False, range=[-1.5, 1.5]),
-    height=400,
-    width=500,
+    height=300,
+    width=300,
     margin=dict(l=10, r=10, t=40, b=10)
 )
 
@@ -1266,7 +1038,7 @@ fig.update_layout(
     title='Comparison of Counting Methods',
     xaxis_title='n',
     yaxis_title='Count (log scale)',
-    height=400,
+    height=300,
     showlegend=True
 )
 
@@ -1285,7 +1057,7 @@ fig.show()
 ::: {.callout-tip title="Tools"}
 **Calculators**: 
 
-- Use nPr and nCr functions
+- Use `nPr` and `nCr` functions
   
 - Be careful with large numbers
 
@@ -1416,9 +1188,7 @@ Modern applications span computer science, biology, physics, and economics
 
 ::: {.callout-tip title="What We've Covered"}
 In this lecture, we've addressed all the learning objectives:
-
-- ✅ **Apply the fundamental counting principles**: Covered in [@sec-fundamental-counting]
-- ✅ **Calculate permutations with and without repetition**: Covered in [@sec-permutations], [@sec-permutations-r-from-n], and [@sec-permutations-repetition]  
+ 
 - ✅ **Calculate combinations and understand when to use them**: Covered in [@sec-combinations] and [@sec-combinations-formula]
 - ✅ **Distinguish between permutations and combinations**: Covered in [@sec-permutation-vs-combination]
 - ✅ **Use counting techniques to solve probability problems**: Covered in [@sec-counting-probability]
@@ -1444,15 +1214,15 @@ Counting is fundamental to:
 Permutations and combinations are the building blocks for advanced statistical concepts
 :::
 
+
 ---
+
 
 ## Questions? {.center}
 
-# Questions? {.center}
 
 **Office Hours**: Thursday's 11 AM On Zoom (Link on Canvas)
 
 **Email**: nmathlouthi@ucsb.edu
 
-**Next Class**: Discrete Probability Distributions
-
+**Next Class**: Random Variables 

@@ -220,7 +220,7 @@ Lecture Materials
 :::
 ::: {.topic}
 
-[Counting](/files/lecture_notes/lecture6/lecture6.qmd)
+[Intro to Counting & Permutations](/files/lecture_notes/lecture6/lecture6-part1.qmd)
 :::
 ::: {.lab-quiz}
 [Lab3](/files/labs/lab3/lab3.qmd)
@@ -229,6 +229,8 @@ Lecture Materials
 :::
 ::: {.worksheet}
 [Worksheet 3](/files/worksheets/worksheet3.qmd)
+
+[Worksheet 3 Solutions](/files/worksheets/worksheet3_sln.qmd)
 :::
 :::
 
@@ -239,7 +241,7 @@ Lecture Materials
 7/08
 :::
 ::: {.topic}
-Random Variables
+[Intro to Counting & Combinations](/files/lecture_notes/lecture6/lecture6-part2.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -256,7 +258,7 @@ Random Variables
 7/09
 :::
 ::: {.topic}
-Introduction to inference
+Random Variables
 :::
 ::: {.lab-quiz .empty-cell}
 —
