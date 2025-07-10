@@ -5338,7 +5338,7 @@
     "href": "files/lecture_notes/lecture6/lecture6-part1.html#permutations-with-repetition-example",
     "title": "PSTAT 5A: Counting",
     "section": "Permutations with Repetition Example",
-    "text": "Permutations with Repetition Example\n\n\n\nHow many distinct arrangements are there of the letters in “STATISTICS”? \n\nS-T-A-T-I-S-T-I-C-S\n\nTotal letters: 10\nS appears 3 times\nT appears 3 times\nA appears 1 time\nI appears 2 times\nC appears 1 time\n\n\n\nSolution. \\(\\frac{10!}{3! \\times 3! \\times 1! \\times 2! \\times 1!} = \\frac{3,628,800}{6 \\times 6 \\times 1 \\times 2 \\times 1} = \\frac{3,628,800}{72} = 50,400\\)"
+    "text": "Permutations with Repetition Example\n\n\n\nHow many distinct arrangements are there of the letters in “STATISTICS”? \n\n\n\n\n\n\n\nTip\n\n\nS-T-A-T-I-S-T-I-C-S\n\nTotal letters: 10\nS appears 3 times\nT appears 3 times\nA appears 1 time\nI appears 2 times\nC appears 1 time\n\n\n\n\n\n\nSolution. \\(\\frac{10!}{3! \\times 3! \\times 1! \\times 2! \\times 1!} = \\frac{3,628,800}{6 \\times 6 \\times 1 \\times 2 \\times 1} = \\frac{3,628,800}{72} = 50,400\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6-part1.html#sec-combinations",
