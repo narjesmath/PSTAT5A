@@ -3082,9 +3082,9 @@
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#todays-learning-objectives",
     "href": "files/lecture_notes/lecture7/lecture7.html#todays-learning-objectives",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Today’s Learning Objectives",
-    "text": "Today’s Learning Objectives\n\n\n\n\n\n\n\nLearning Objectives\n\n\nBy the end of this lecture, you will be able to:\n\nApply the fundamental counting principles\nCalculate permutations with and without repetition\nCalculate combinations and understand when to use them\nDistinguish between permutations and combinations\nUse counting techniques to solve probability problems\nApply the inclusion-exclusion principle\nSolve complex counting problems systematically"
+    "text": "Today’s Learning Objectives\nBy the end of this lecture, you will be able to:\n\nDefine random variables and distinguish discrete from continuous\nWork with probability mass functions (PMFs) and cumulative distribution functions (CDFs)\nCalculate expected values and variances for discrete random variables\nApply properties of expectation and variance\nWork with common discrete distributions (Bernoulli, Binomial, Geometric, Poisson)\nSolve real-world problems using discrete random variables\nUse technology to compute probabilities and parameters"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#why-study-counting",
@@ -3117,9 +3117,9 @@
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-1",
     "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-1",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Practice Problem 1",
-    "text": "Practice Problem 1\n\nA password must contain: - Exactly 8 characters - Each character is either a letter (26 possibilities) or digit (10 possibilities)\nHow many possible passwords are there?\n\n\nEach position has \\(26 + 10 = 36\\) choices\nTotal: \\(36^8 = 2,821,109,907,456\\) passwords"
+    "text": "Practice Problem 1\nA box contains 3 red balls and 2 blue balls. Two balls are drawn without replacement. Let \\(X\\) = number of red balls drawn.\nFind the PMF of \\(X\\).\n\nSolution: \\(X\\) can be 0, 1, or 2\n\\(P(X = 0) = \\frac{\\binom{3}{0}\\binom{2}{2}}{\\binom{5}{2}} = \\frac{1 \\times 1}{10} = \\frac{1}{10}\\)\n\\(P(X = 1) = \\frac{\\binom{3}{1}\\binom{2}{1}}{\\binom{5}{2}} = \\frac{3 \\times 2}{10} = \\frac{6}{10}\\)\n\\(P(X = 2) = \\frac{\\binom{3}{2}\\binom{2}{0}}{\\binom{5}{2}} = \\frac{3 \\times 1}{10} = \\frac{3}{10}\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#what-are-permutations",
@@ -3159,9 +3159,9 @@
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-2",
     "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-2",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Practice Problem 2",
-    "text": "Practice Problem 2\n\nA baseball team has 15 players. How many ways can the coach:\n\nArrange all 15 players in a line?\nChoose and arrange 9 players for the starting lineup (batting order matters)?\n\n\n\n\n\\(15! = 1,307,674,368,000\\)\n\\(P(15,9) = \\frac{15!}{6!} = 1,816,214,400\\)"
+    "text": "Practice Problem 2\nUsing the red balls example from Problem 1, find:\n\n\\(F(0.5)\\)\n\\(F(1)\\)\n\n\\(P(X &gt; 1)\\)\n\\(P(0.5 &lt; X \\leq 1.5)\\)\n\n\nSolutions: a) \\(F(0.5) = P(X \\leq 0.5) = P(X = 0) = \\frac{1}{10}\\) b) \\(F(1) = P(X \\leq 1) = P(X = 0) + P(X = 1) = \\frac{1}{10} + \\frac{6}{10} = \\frac{7}{10}\\) c) \\(P(X &gt; 1) = 1 - F(1) = 1 - \\frac{7}{10} = \\frac{3}{10}\\) d) \\(P(0.5 &lt; X \\leq 1.5) = F(1.5) - F(0.5) = \\frac{7}{10} - \\frac{1}{10} = \\frac{6}{10}\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#permutations-with-repetition",
@@ -3208,9 +3208,9 @@
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-3",
     "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-3",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Practice Problem 3",
-    "text": "Practice Problem 3\n\nFrom a class of 20 students:\n\nHow many ways to choose 5 students for a study group?\nHow many ways to choose a president, vice-president, and secretary?\nHow many ways to arrange all 20 students in a circle?\n\n\n\n\n\\(C(20,5) = \\frac{20!}{5! \\times 15!} = 15,504\\) (order doesn’t matter)\n\\(P(20,3) = \\frac{20!}{17!} = 6,840\\) (order matters)\n\\((20-1)! = 19!\\) (circular permutation)"
+    "text": "Practice Problem 3\nFind the expected value for the red balls example (Problem 1).\n\nSolution: \\[E[X] = 0 \\cdot \\frac{1}{10} + 1 \\cdot \\frac{6}{10} + 2 \\cdot \\frac{3}{10}\\]\n\\[= 0 + \\frac{6}{10} + \\frac{6}{10} = \\frac{12}{10} = 1.2\\]\nOn average, we expect to draw 1.2 red balls"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#properties-of-combinations",
@@ -3243,9 +3243,9 @@
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-4",
     "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-4",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Practice Problem 4",
-    "text": "Practice Problem 4\n\nA standard deck has 52 cards. What’s the probability that a 5-card hand contains:\n\nExactly 3 aces?\nAt least 1 ace?\n\n\n\nWays to get 3 aces from 4: \\(\\binom{4}{3} = 4\\) Ways to get 2 non-aces from 48: \\(\\binom{48}{2} = 1,128\\) Total 5-card hands: \\(\\binom{52}{5} = 2,598,960\\)\n\n\nProbability: \\(\\frac{4 \\times 1,128}{2,598,960} = \\frac{4,512}{2,598,960} \\approx 0.00174\\)"
+    "text": "Practice Problem 4\nFor the red balls example, find the variance and standard deviation.\nWe found \\(E[X] = 1.2\\). First find \\(E[X^2]\\):\n\n\\[E[X^2] = 0^2 \\cdot \\frac{1}{10} + 1^2 \\cdot \\frac{6}{10} + 2^2 \\cdot \\frac{3}{10}\\] \\[= 0 + \\frac{6}{10} + \\frac{12}{10} = \\frac{18}{10} = 1.8\\]\n\\[\\text{Var}(X) = 1.8 - (1.2)^2 = 1.8 - 1.44 = 0.36\\]\n\\[\\sigma = \\sqrt{0.36} = 0.6\\]"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-4-continued",
@@ -3313,9 +3313,9 @@
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-5",
     "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-5",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Practice Problem 5",
-    "text": "Practice Problem 5\n\nA pizza shop offers 12 toppings. How many different pizzas can you order if:\n\nYou want exactly 4 toppings?\nYou want at most 3 toppings?\nYou want at least 1 topping?\n\n\n\n\n\\(\\binom{12}{4} = 495\\)\n\\(\\binom{12}{0} + \\binom{12}{1} + \\binom{12}{2} + \\binom{12}{3} = 1 + 12 + 66 + 220 = 299\\)\n\\(2^{12} - 1 = 4,095\\) (all subsets except empty set)"
+    "text": "Practice Problem 5\nFor the quiz example:\n\nWhat’s the expected number of correct answers?\nWhat’s the standard deviation?\nWhat’s the probability of getting at least 4 correct?\n\n\nSolutions: a) \\(E[X] = np = 10 \\times 0.25 = 2.5\\) b) \\(\\sigma = \\sqrt{np(1-p)} = \\sqrt{10 \\times 0.25 \\times 0.75} = \\sqrt{1.875} \\approx 1.37\\) c) \\(P(X \\geq 4) = 1 - P(X \\leq 3) = 1 - [P(X=0) + P(X=1) + P(X=2) + P(X=3)]\\) Use binomial table or calculator: \\(P(X \\geq 4) \\approx 0.224\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#advanced-counting-stirling-numbers",
@@ -3341,9 +3341,9 @@
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-6",
     "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-6",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Practice Problem 6",
-    "text": "Practice Problem 6\n\nA class has 15 students: 8 women and 7 men. How many ways can we:\n\nForm a committee of 5 people with exactly 3 women?\nArrange 6 people in a row with alternating genders (starting with a woman)?\n\n\n\n\n\\(\\binom{8}{3} \\times \\binom{7}{2} = 56 \\times 21 = 1,176\\)\nChoose 3 women from 8: \\(P(8,3) = 336\\) Choose 3 men from 7: \\(P(7,3) = 210\\) Total: \\(336 \\times 210 = 70,560\\)"
+    "text": "Practice Problem 6\nA quality control inspector tests items until finding the first defective one. If 5% of items are defective:\n\nWhat’s the probability the first defective item is the 10th one tested?\nWhat’s the expected number of items tested?\nWhat’s the probability of testing more than 20 items?\n\n\nSolutions: a) \\(P(X = 10) = (0.95)^9 \\times 0.05 \\approx 0.0315\\) b) \\(E[X] = \\frac{1}{0.05} = 20\\) items c) \\(P(X &gt; 20) = (0.95)^{20} \\approx 0.358\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#counting-in-computer-science",
@@ -3369,9 +3369,9 @@
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#key-formulas-summary",
     "href": "files/lecture_notes/lecture7/lecture7.html#key-formulas-summary",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Key Formulas Summary",
-    "text": "Key Formulas Summary\n\n\n\n\n\n\n\n\n\nSummary of Key Formulas\n\n\n\nPermutations: \\(P(n,r) = \\frac{n!}{(n-r)!}\\)\nCombinations: \\(C(n,r) = \\binom{n}{r} = \\frac{n!}{r!(n-r)!}\\)\nWith repetition: \\(\\frac{n!}{n_1! \\times n_2! \\times \\cdots \\times n_k!}\\)\nInclusion-Exclusion: \\(|A \\cup B| = |A| + |B| - |A \\cap B|\\)"
+    "text": "Key Formulas Summary\n\nExpected Value: \\(E[X] = \\sum x \\cdot P(X = x)\\)\nVariance: \\(\\text{Var}(X) = E[X^2] - (E[X])^2\\)\nBinomial: \\(P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\)\nGeometric: \\(P(X = k) = (1-p)^{k-1} p\\)\nPoisson: \\(P(X = k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#technology-and-counting",
@@ -3383,9 +3383,9 @@
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-7",
     "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-7",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Practice Problem 7",
-    "text": "Practice Problem 7\n\nA standard deck of cards is shuffled. What’s the probability that:\n\nThe top 4 cards are all hearts?\nIn a 13-card hand, you get exactly one card from each rank?\n\n\n\n\\(\\frac{13}{52} \\times \\frac{12}{51} \\times \\frac{11}{50} \\times \\frac{10}{49} = \\frac{13 \\times 12 \\times 11 \\times 10}{52 \\times 51 \\times 50 \\times 49} \\approx 0.0026\\)\nChoose 1 card from each of 13 ranks: \\(4^{13}\\) Total 13-card hands: \\(\\binom{52}{13}\\)\n\n\n\n\\(\\approx 0.0026\\)\nProbability: \\(\\frac{4^{13}}{\\binom{52}{13}} \\approx 6.3 \\times 10^{-6}\\)"
+    "text": "Practice Problem 7\nFor the call center example:\n\nWhat’s the probability of no calls in a minute?\nWhat’s the probability of at most 2 calls?\nIn a 2-minute period, what’s the expected number of calls?\n\n\nSolutions: a) \\(P(X = 0) = \\frac{3^0 e^{-3}}{0!} = e^{-3} \\approx 0.0498\\) b) \\(P(X \\leq 2) = P(X=0) + P(X=1) + P(X=2) \\approx 0.0498 + 0.1494 + 0.2240 = 0.423\\) c) For 2 minutes: \\(Y \\sim \\text{Poisson}(6)\\), so \\(E[Y] = 6\\) calls"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#extending-to-probability",
@@ -3404,37 +3404,37 @@
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#common-student-questions",
     "href": "files/lecture_notes/lecture7/lecture7.html#common-student-questions",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Common Student Questions",
-    "text": "Common Student Questions\n\nQ: “When do I use permutations vs combinations?”\nA: Ask “Does order matter?” Order matters → permutation\nQ: “How do I handle restrictions?”\nA: Break the problem into cases or use complementary counting\nQ: “What if objects are identical?”\nA: Use the formula for permutations with repetition\nQ: “How do I check my answer?”\nA: Verify with small examples or use different methods"
+    "text": "Common Student Questions\nQ: “How do I choose between binomial and hypergeometric?” A: Use binomial for sampling with replacement, hypergeometric without\nQ: “When can I use Poisson approximation?” A: When \\(n\\) is large, \\(p\\) is small, and \\(np\\) is moderate\nQ: “Why does Poisson have mean = variance?” A: Mathematical property arising from its derivation as a limit\nQ: “How do I know if trials are independent?” A: Check if outcome of one trial affects others"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#looking-ahead",
     "href": "files/lecture_notes/lecture7/lecture7.html#looking-ahead",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Looking Ahead",
-    "text": "Looking Ahead\n\n\n\n\n\n\n\nNext Lecture\n\n\nNext lecture: Discrete Probability Distributions - Binomial distribution (using combinations!)\n\nHypergeometric distribution\nGeometric distribution\nExpected value and variance\n\nConnection: Today’s counting techniques are essential for probability calculations"
+    "text": "Looking Ahead\nNext lecture: Continuous Random Variables - Probability density functions (PDFs) - Normal distribution - Exponential distribution\n- Central Limit Theorem applications\nConnection: Discrete distributions often approximate continuous ones, and vice versa"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#study-tips",
     "href": "files/lecture_notes/lecture7/lecture7.html#study-tips",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Study Tips",
-    "text": "Study Tips\n\n\n\n\n\n\n\nTips\n\n\n\nPractice, practice, practice: Work through many examples\nIdentify patterns: Learn to recognize problem types\nStart simple: Build up to complex problems\nCheck your work: Use different approaches when possible\nUnderstand concepts: Don’t just memorize formulas"
+    "text": "Study Tips\n\nMaster the basics: PMF, CDF, expectation, variance\nLearn distribution characteristics: When to use each one\nPractice with technology: Get comfortable with calculators/software\nWork real problems: Apply distributions to actual scenarios\nCheck your intuition: Do answers make practical sense?"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#final-thoughts",
     "href": "files/lecture_notes/lecture7/lecture7.html#final-thoughts",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Final Thoughts",
-    "text": "Final Thoughts\nCounting is fundamental to:\n\nProbability calculations\nStatistical inference\nComputer algorithms\nScientific modeling\n\n\n\n\n\n\n\n\nKnow the Basics\n\n\nPermutations and combinations are the building blocks for advanced statistical concepts"
+    "text": "Final Thoughts\nDiscrete random variables are fundamental to: - Modeling real-world phenomena - Making statistical inferences - Understanding probability theory - Building more complex models\n\nKey insight: Random variables transform unpredictable outcomes into predictable patterns"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#questions",
     "href": "files/lecture_notes/lecture7/lecture7.html#questions",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Questions?",
-    "text": "Questions?"
+    "text": "Questions?\nOffice Hours: [Your office hours] Email: [Your email]\nNext Class: Continuous Random Variables\nRemember: Homework due [date]"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#bonus-large-number-approximations",
@@ -4216,9 +4216,9 @@
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#welcome-to-lecture-7",
     "href": "files/lecture_notes/lecture7/lecture7.html#welcome-to-lecture-7",
-    "title": "PSTAT 5A: Counting",
+    "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Welcome to Lecture 7",
-    "text": "Welcome to Lecture 7\nThe art and science of systematic enumeration"
+    "text": "Welcome to Lecture 7\nDiscrete Random Variables\nFrom outcomes to numbers: quantifying randomness\n Figure: A random variable maps outcomes (e.g., die rolls) to numbers."
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#permutations-of-r-objects-from-n-permutations-r-from-n",
@@ -5654,5 +5654,201 @@
     "title": "PSTAT 5A: Counting",
     "section": "Example",
     "text": "Example\n\nHow many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary? \n\n\nSolution. \\(P(8,3) = \\frac{8!}{(8-3)!} = \\frac{8!}{5!} = 8 \\times 7 \\times 6 = 336\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#what-is-a-random-variable",
+    "href": "files/lecture_notes/lecture7/lecture7.html#what-is-a-random-variable",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "What is a Random Variable?",
+    "text": "What is a Random Variable?\nA random variable is a function that assigns a numerical value to each outcome of a random experiment\nNotation: Usually denoted by capital letters \\(X\\), \\(Y\\), \\(Z\\)\nKey insight: Random variables transform outcomes into numbers, making mathematical analysis possible\n Figure: Mapping die roll outcomes to values of \\(X\\).\n\nExample: Rolling a die - Outcomes: \\(\\{1, 2, 3, 4, 5, 6\\}\\) - Random variable \\(X\\): the number shown - \\(X\\) can take values \\(\\{1, 2, 3, 4, 5, 6\\}\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#why-use-random-variables",
+    "href": "files/lecture_notes/lecture7/lecture7.html#why-use-random-variables",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Why Use Random Variables?",
+    "text": "Why Use Random Variables?\nRandom variables allow us to:\n\nQuantify outcomes numerically\nCalculate means, variances, and other statistics\nModel real-world phenomena mathematically\nMake predictions and decisions\nCompare different random processes\n\n Figure: Examples of random variables in real life (height, test scores, etc.).\n\nExamples: Height, test scores, number of defects, wait times, stock prices"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#types-of-random-variables",
+    "href": "files/lecture_notes/lecture7/lecture7.html#types-of-random-variables",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Types of Random Variables",
+    "text": "Types of Random Variables\nDiscrete Random Variable: - Takes on a countable number of values - Can list all possible values - Examples: dice rolls, number of emails, quiz scores\nContinuous Random Variable: - Takes on uncountably many values (intervals) - Cannot list all possible values\n- Examples: height, weight, time, temperature\n\n\n\n\n\ngraph TD\n  A[Discrete: 0, 1, 2, ...] --|Gaps|--&gt; D[Examples: Dice, Emails]\n  B[Continuous: Any real value] --|No gaps|--&gt; C[Examples: Height, Time]\n\n\n\n\n\n\n\nToday we focus on discrete random variables"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#examples-of-discrete-random-variables",
+    "href": "files/lecture_notes/lecture7/lecture7.html#examples-of-discrete-random-variables",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Examples of Discrete Random Variables",
+    "text": "Examples of Discrete Random Variables\n\\(X\\) = Number of heads in 3 coin flips - Possible values: \\(\\{0, 1, 2, 3\\}\\)\n\\(Y\\) = Number of customers in an hour - Possible values: \\(\\{0, 1, 2, 3, \\ldots\\}\\)\n\\(Z\\) = Score on a 10-question quiz - Possible values: \\(\\{0, 1, 2, \\ldots, 10\\}\\)\n Figure: Example of a discrete random variable: number of heads in coin flips.\n\nNotice: All values are integers with gaps between them"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#probability-mass-function-pmf",
+    "href": "files/lecture_notes/lecture7/lecture7.html#probability-mass-function-pmf",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Probability Mass Function (PMF)",
+    "text": "Probability Mass Function (PMF)\nThe probability mass function of a discrete random variable \\(X\\) is:\n\\[P(X = x) = \\text{probability that } X \\text{ takes the value } x\\]\nProperties of PMF: 1. \\(P(X = x) \\geq 0\\) for all \\(x\\) 2. \\(\\sum_{\\text{all } x} P(X = x) = 1\\)\n\n\n\n\n\n%% Bar chart for PMF of a fair die\n%% (Use Quarto's mermaid bar chart for illustration)\nbar\n    title PMF of a Fair Die\n    x-axis 1 2 3 4 5 6\n    y-axis Probability\n    1: 0.1667\n    2: 0.1667\n    3: 0.1667\n    4: 0.1667\n    5: 0.1667\n    6: 0.1667\n\n\n\n\n\n\n\nNotation: Sometimes written as \\(p(x)\\) or \\(f(x)\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#pmf-example-fair-die",
+    "href": "files/lecture_notes/lecture7/lecture7.html#pmf-example-fair-die",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "PMF Example: Fair Die",
+    "text": "PMF Example: Fair Die\nLet \\(X\\) = outcome of rolling a fair six-sided die\n\\[P(X = x) = \\begin{cases}\n\\frac{1}{6} & \\text{if } x \\in \\{1, 2, 3, 4, 5, 6\\} \\\\\n0 & \\text{otherwise}\n\\end{cases}\\]\n Figure: Bar chart of PMF for a fair die.\n\nVerification: - All probabilities ≥ 0 ✓ - Sum = \\(6 \\times \\frac{1}{6} = 1\\) ✓"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#pmf-example-two-coin-flips",
+    "href": "files/lecture_notes/lecture7/lecture7.html#pmf-example-two-coin-flips",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "PMF Example: Two Coin Flips",
+    "text": "PMF Example: Two Coin Flips\nLet \\(X\\) = number of heads in two coin flips\nSample space: \\(\\{HH, HT, TH, TT\\}\\)\n\n\n\n\n\nbar\n    title PMF: Number of Heads in 2 Coin Flips\n    x-axis 0 1 2\n    y-axis Probability\n    0: 0.25\n    1: 0.5\n    2: 0.25\n\n\n\n\n\n\n\n\n\n\n\\(x\\)\nOutcomes\n\\(P(X = x)\\)\n\n\n\n\n0\nTT\n1/4\n\n\n1\nHT, TH\n2/4 = 1/2\n\n\n2\nHH\n1/4\n\n\n\nVerification: \\(\\frac{1}{4} + \\frac{1}{2} + \\frac{1}{4} = 1\\) ✓"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#cumulative-distribution-function-cdf",
+    "href": "files/lecture_notes/lecture7/lecture7.html#cumulative-distribution-function-cdf",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Cumulative Distribution Function (CDF)",
+    "text": "Cumulative Distribution Function (CDF)\nThe cumulative distribution function of a random variable \\(X\\) is:\n\\[F(x) = P(X \\leq x)\\]\nProperties of CDF: 1. \\(F(x)\\) is non-decreasing 2. \\(\\lim_{x \\to -\\infty} F(x) = 0\\) 3. \\(\\lim_{x \\to \\infty} F(x) = 1\\) 4. \\(F(x)\\) is right-continuous\n\n\n\n\n\n%% Step function for CDF of two coin flips\n%% (Mermaid doesn't support step plots, so use a line chart for illustration)\nline\n    title CDF: Number of Heads in 2 Coin Flips\n    x-axis -1 0 1 2 3\n    y-axis F(x)\n    -1: 0\n    0: 0.25\n    1: 0.75\n    2: 1\n    3: 1"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#expected-value-mean",
+    "href": "files/lecture_notes/lecture7/lecture7.html#expected-value-mean",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Expected Value (Mean)",
+    "text": "Expected Value (Mean)\nThe expected value of a discrete random variable \\(X\\) is:\n\\[E[X] = \\mu = \\sum_{\\text{all } x} x \\cdot P(X = x)\\]\n Figure: Expected value as the long-run average of repeated coin flips."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#variance",
+    "href": "files/lecture_notes/lecture7/lecture7.html#variance",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Variance",
+    "text": "Variance\nThe variance of a random variable \\(X\\) measures spread around the mean:\n\\[\\text{Var}(X) = \\sigma^2 = E[(X - \\mu)^2]\\]\n Figure: Variance measures the spread of possible values around the mean."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#bernoulli-distribution",
+    "href": "files/lecture_notes/lecture7/lecture7.html#bernoulli-distribution",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Bernoulli Distribution",
+    "text": "Bernoulli Distribution\nA Bernoulli random variable models a single trial with two outcomes:\n\nSuccess (1) with probability \\(p\\)\nFailure (0) with probability \\(1-p\\)\n\n\n\n\n\n\nbar\n    title Bernoulli PMF (p=0.7)\n    x-axis 0 1\n    y-axis Probability\n    0: 0.3\n    1: 0.7"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#binomial-distribution",
+    "href": "files/lecture_notes/lecture7/lecture7.html#binomial-distribution",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\nA binomial random variable counts successes in \\(n\\) independent Bernoulli trials, each with success probability \\(p\\)\n Figure: Binomial experiment: sequence of independent trials.\n\n\n\n\n\nbar\n    title Binomial PMF (n=5, p=0.5)\n    x-axis 0 1 2 3 4 5\n    y-axis Probability\n    0: 0.031\n    1: 0.156\n    2: 0.312\n    3: 0.312\n    4: 0.156\n    5: 0.031"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#geometric-distribution",
+    "href": "files/lecture_notes/lecture7/lecture7.html#geometric-distribution",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Geometric Distribution",
+    "text": "Geometric Distribution\nA geometric random variable counts the number of trials until the first success\n Figure: Geometric experiment: waiting for the first success.\n\n\n\n\n\nbar\n    title Geometric PMF (p=0.3)\n    x-axis 1 2 3 4 5\n    y-axis Probability\n    1: 0.3\n    2: 0.21\n    3: 0.147\n    4: 0.1029\n    5: 0.072"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#poisson-distribution",
+    "href": "files/lecture_notes/lecture7/lecture7.html#poisson-distribution",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Poisson Distribution",
+    "text": "Poisson Distribution\nA Poisson random variable counts events occurring in a fixed interval when events happen at a constant average rate\n Figure: Poisson process: random events in time.\n\n\n\n\n\nbar\n    title Poisson PMF (λ=3)\n    x-axis 0 1 2 3 4 5 6\n    y-axis Probability\n    0: 0.0498\n    1: 0.1494\n    2: 0.2240\n    3: 0.2240\n    4: 0.1680\n    5: 0.1008\n    6: 0.0504"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#hypergeometric-distribution",
+    "href": "files/lecture_notes/lecture7/lecture7.html#hypergeometric-distribution",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Hypergeometric Distribution",
+    "text": "Hypergeometric Distribution\nA hypergeometric random variable counts successes when sampling without replacement from a finite population\n Figure: Hypergeometric sampling: drawing balls from a box without replacement."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#law-of-large-numbers",
+    "href": "files/lecture_notes/lecture7/lecture7.html#law-of-large-numbers",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Law of Large Numbers",
+    "text": "Law of Large Numbers\nAs \\(n\\) increases, the sample mean approaches the expected value:\n\\[\\bar{X}_n = \\frac{X_1 + X_2 + \\cdots + X_n}{n} \\to E[X]\\]\n\n\n\n\n\nline\n    title Law of Large Numbers Simulation\n    x-axis 0 100 200 300 400 500 600 700 800 900 1000\n    y-axis Sample Mean\n    0: 0.0\n    100: 0.48\n    200: 0.51\n    300: 0.49\n    400: 0.50\n    500: 0.51\n    600: 0.50\n    700: 0.50\n    800: 0.49\n    900: 0.50\n    1000: 0.50\n\n\n\n\n\n\nFigure: As the number of trials increases, the sample mean converges to the expected value."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#simulationmonte-carlo",
+    "href": "files/lecture_notes/lecture7/lecture7.html#simulationmonte-carlo",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Simulation/Monte Carlo",
+    "text": "Simulation/Monte Carlo\nMonte Carlo Method: Use computer simulation to estimate probabilities\n Figure: Monte Carlo simulation: repeated random experiments to estimate probabilities."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#properties-of-expected-value",
+    "href": "files/lecture_notes/lecture7/lecture7.html#properties-of-expected-value",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Properties of Expected Value",
+    "text": "Properties of Expected Value\nLinearity of Expectation: 1. \\(E[c] = c\\) (constant) 2. \\(E[cX] = c \\cdot E[X]\\) (scaling) 3. \\(E[X + Y] = E[X] + E[Y]\\) (additivity) 4. \\(E[aX + bY + c] = aE[X] + bE[Y] + c\\)\n\nImportant: Property 3 holds even if \\(X\\) and \\(Y\\) are dependent!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#expected-value-of-functions",
+    "href": "files/lecture_notes/lecture7/lecture7.html#expected-value-of-functions",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Expected Value of Functions",
+    "text": "Expected Value of Functions\nFor a function \\(g(X)\\) of a random variable \\(X\\):\n\\[E[g(X)] = \\sum_{\\text{all } x} g(x) \\cdot P(X = x)\\]\n\nCommon example: \\(g(X) = X^2\\)\n\\[E[X^2] = \\sum_{\\text{all } x} x^2 \\cdot P(X = x)\\]\nNote: Generally \\(E[g(X)] \\neq g(E[X])\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-8",
+    "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-8",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Practice Problem 8",
+    "text": "Practice Problem 8\nFor the light bulb example:\n\nWhat’s the expected number of defective bulbs in the sample?\nWhat’s the probability of no defective bulbs?\nWhat’s the probability of at least 2 defective bulbs?\n\n\nSolutions: a) \\(E[X] = 5 \\times \\frac{3}{20} = 0.75\\) bulbs b) \\(P(X = 0) = \\frac{\\binom{3}{0}\\binom{17}{5}}{\\binom{20}{5}} = \\frac{6188}{15504} \\approx 0.399\\) c) \\(P(X \\geq 2) = 1 - P(X = 0) - P(X = 1) \\approx 1 - 0.399 - 0.461 = 0.140\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-9",
+    "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-9",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Practice Problem 9",
+    "text": "Practice Problem 9\nA website receives an average of 2 orders per minute. Assuming orders follow a Poisson process:\n\nWhat’s the probability of exactly 3 orders in a minute?\nWhat’s the probability of no orders in 30 seconds?\nWhat’s the probability of more than 5 orders in 2 minutes?\n\n\nSolutions: a) \\(X \\sim \\text{Poisson}(2)\\): \\(P(X = 3) = \\frac{2^3 e^{-2}}{3!} \\approx 0.180\\) b) \\(Y \\sim \\text{Poisson}(1)\\): \\(P(Y = 0) = e^{-1} \\approx 0.368\\) c) \\(Z \\sim \\text{Poisson}(4)\\): \\(P(Z &gt; 5) = 1 - P(Z \\leq 5) \\approx 0.215\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#central-limit-theorem-preview",
+    "href": "files/lecture_notes/lecture7/lecture7.html#central-limit-theorem-preview",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Central Limit Theorem Preview",
+    "text": "Central Limit Theorem Preview\nFor large \\(n\\), many discrete distributions approach normal:\nBinomial: \\(X \\sim \\text{Binomial}(n, p)\\) → \\(N(np, np(1-p))\\) when \\(np &gt; 5\\) and \\(n(1-p) &gt; 5\\)\nPoisson: \\(X \\sim \\text{Poisson}(\\lambda)\\) → \\(N(\\lambda, \\lambda)\\) when \\(\\lambda &gt; 10\\)\n\nThis connection will be crucial for hypothesis testing and confidence intervals"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#common-mistakes",
+    "href": "files/lecture_notes/lecture7/lecture7.html#common-mistakes",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Common Mistakes",
+    "text": "Common Mistakes\n\nWrong distribution choice: Check assumptions carefully\nParameter confusion: Is it \\(n\\), \\(p\\), or \\(\\lambda\\)?\nInclusion errors: “At least 3” vs “More than 3”\nIndependence assumption: Sampling with/without replacement\nTechnology errors: pdf vs cdf functions"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-10",
+    "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-10",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Practice Problem 10",
+    "text": "Practice Problem 10\nA multiple choice test has 20 questions with 5 options each. A student knows the answers to 12 questions and guesses on the rest.\n\nWhat’s the expected score?\nWhat’s the probability of scoring at least 15?\nWhat’s the standard deviation of the score?\n\n\nSolution: Let \\(X\\) = known correct, \\(Y\\) = guessed correct - \\(X = 12\\) (deterministic) - \\(Y \\sim \\text{Binomial}(8, 0.2)\\) - Total score \\(S = X + Y = 12 + Y\\)\n\n\\(E[S] = 12 + E[Y] = 12 + 8(0.2) = 13.6\\)\n\\(P(S \\geq 15) = P(Y \\geq 3) \\approx 0.203\\)\n\n\\(\\sigma_S = \\sigma_Y = \\sqrt{8(0.2)(0.8)} = \\sqrt{1.28} \\approx 1.13\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#extensions-and-advanced-topics",
+    "href": "files/lecture_notes/lecture7/lecture7.html#extensions-and-advanced-topics",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Extensions and Advanced Topics",
+    "text": "Extensions and Advanced Topics\nNegative Binomial: Number of trials to get \\(r\\) successes\nMultinomial: Extension of binomial to more than 2 categories\nCompound Distributions: Sums of random variables\nGenerating Functions: Advanced technique for deriving properties\n\nThese topics appear in advanced probability courses"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#historical-context",
+    "href": "files/lecture_notes/lecture7/lecture7.html#historical-context",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Historical Context",
+    "text": "Historical Context\nJacob Bernoulli (1654-1705): Bernoulli trials and law of large numbers\nSiméon Denis Poisson (1781-1840): Poisson distribution and approximation\nAbraham de Moivre (1667-1754): Normal approximation to binomial\nModern Applications: Computer science, machine learning, bioinformatics"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#bonus-law-of-large-numbers",
+    "href": "files/lecture_notes/lecture7/lecture7.html#bonus-law-of-large-numbers",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Bonus: Law of Large Numbers",
+    "text": "Bonus: Law of Large Numbers\nAs \\(n\\) increases, the sample mean approaches the expected value:\n\\[\\bar{X}_n = \\frac{X_1 + X_2 + \\cdots + X_n}{n} \\to E[X]\\]\nExample: Flip a coin 1000 times - proportion of heads will be close to 0.5\nThis justifies our interpretation of expected value as “long-run average”"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#bonus-simulation",
+    "href": "files/lecture_notes/lecture7/lecture7.html#bonus-simulation",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Bonus: Simulation",
+    "text": "Bonus: Simulation\nMonte Carlo Method: Use computer simulation to estimate probabilities\n# Simulate 10,000 binomial random variables\nX &lt;- rbinom(10000, size=10, prob=0.3)\nmean(X)  # Should be close to 10*0.3 = 3\nvar(X)   # Should be close to 10*0.3*0.7 = 2.1\nSimulation helps verify theoretical results and solve complex problems"
   }
 ]

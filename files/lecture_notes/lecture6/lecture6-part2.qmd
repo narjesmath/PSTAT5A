@@ -579,24 +579,32 @@ $$\binom{52}{5}
 = \frac{52\cdot51\cdot50\cdot49\cdot48}{5\cdot4\cdot3\cdot2\cdot1}
 = \frac{311{,}875{,}200}{120}  \\
 = 2{,}598{,}960 $$
-	2.	Ways to choose exactly 3 aces
-$$\binom{4}{3}
+
+2.	Ways to choose exactly 3 aces
+$$
+\binom{4}{3}
 = \frac{4\cdot3\cdot2}{3\cdot2\cdot1}
 = \frac{24}{6}
-= 4$$
-	3.	Ways to choose the other 2 cards from the 48 non-aces
-$$\binom{48}{2}
+= 4
+$$
+3.	Ways to choose the other 2 cards from the 48 non-aces
+$$
+\binom{48}{2}
 = \frac{48\cdot47}{2\cdot1}
 = \frac{2{,}256}{2}
-= 1{,}128$$
-	4.	Total “successful” hands
+= 1{,}128
+$$
+
+4.	Total “successful” hands
 $4 \times 1{,}128 = 4{,}512$
-	5.	Probability
+
+5.	Probability
 $$P
 = \frac{\text{successful}}{\text{total}}
 = \frac{4{,}512}{2{,}598{,}960}
 \approx 0.001735
-\;=\;0.1735\%$$.
+\;=\;0.1735\%$$
+
 :::
 :::
 
