@@ -6200,5 +6200,12 @@
     "title": "Minimal Test",
     "section": "",
     "text": "This is a simple test.\n\nThis is a test div."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#die-roll-example-mapping-outcomes-to-numbers",
+    "href": "files/lecture_notes/lecture7/lecture7.html#die-roll-example-mapping-outcomes-to-numbers",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Die Roll Example: Mapping Outcomes to Numbers",
+    "text": "Die Roll Example: Mapping Outcomes to Numbers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\n\n\n2\n\n\n3\n\n\n4\n\n\n5\n\n\n6\n\n\n\n\n\nRandom Variable X maps each die face to its numerical value."
   }
 ]
