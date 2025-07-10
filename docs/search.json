@@ -5247,7 +5247,7 @@
     "href": "files/lecture_notes/lecture6/lecture6-part1.html#learning-objectives",
     "title": "PSTAT 5A: Counting",
     "section": "Today’s Learning Objectives",
-    "text": "Today’s Learning Objectives\n\n\n\n\n\n\n\nLearning Objectives\n\n\nBy the end of this lecture, you will be able to:\n\nApply the fundamental counting principles (Section 4)\nCalculate permutations with and without repetition (Section 8, Section 11, Section 14)"
+    "text": "Today’s Learning Objectives\n\n\n\n\n\n\n\nLearning Objectives\n\n\nBy the end of this lecture, you will be able to:\n\nApply the fundamental counting principles (Section 4)\nCalculate permutations with and without repetition (Section 8, Section 11, Section 15)"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6-part1.html#why-study-counting",
@@ -5261,14 +5261,14 @@
     "href": "files/lecture_notes/lecture6/lecture6-part1.html#sec-fundamental-counting",
     "title": "PSTAT 5A: Counting",
     "section": "The Fundamental Counting Principle",
-    "text": "The Fundamental Counting Principle\n\n\n\n\n\n\n\n\n\nMultiplication Rule\n\n\nIf a procedure consists of \\(k\\) separate tasks where:\n\nTask 1 can be performed in \\(n_1\\) ways\nTask 2 can be performed in \\(n_2\\) ways\n…\nTask \\(k\\) can be performed in \\(n_k\\) ways\n\nThen, the entire procedure can be performed in \\(n_1 \\times n_2 \\times \\cdots \\times n_k\\) ways\n\n\n\n\n\n\n\n\n\n\n\nflowchart LR\n    Start([Start]) --&gt; T1[\"Task 1: n₁ ways\"]\n    T1 --&gt; C1[Choice 1]\n    T1 --&gt; C2[Choice 2]\n    T1 --&gt; Cn1[Choice n₁]\n    C1 --&gt; T2[\"Task 2: n₂ ways\"]\n    C2 --&gt; T2\n    Cn1 --&gt; T2\n    T2 --&gt; C21[Choice 1]\n    T2 --&gt; C22[Choice 2]\n    T2 --&gt; C2n[Choice n₂]\n    C21 --&gt; Total((\"Total ways:\\n n₁ × n₂ × ... × nₖ\"))\n    C22 --&gt; Total\n    C2n --&gt; Total"
+    "text": "The Fundamental Counting Principle\n\n\n\n\n\n\n\n\n\nMultiplication Rule\n\n\nIf a procedure consists of \\(k\\) separate tasks where:\n\nTask 1 can be performed in \\(n_1\\) ways\nTask 2 can be performed in \\(n_2\\) ways\n…\nTask \\(k\\) can be performed in \\(n_k\\) ways\n\nThen, the entire procedure can be performed in \\(n_1 \\times n_2 \\times \\cdots \\times n_k\\) ways\n\n\n\n\n\n\n\n\n\n\n\n%%{init: {'flowchart': {'nodeSpacing': 20, 'rankSpacing': 50}}}%%\nflowchart TD\n    Start([🟢 Start]) --&gt; T1[📋 Task 1&lt;br/&gt;n₁ ways]\n    T1 --&gt; C1[Choice 1]\n    T1 --&gt; C2[Choice 2]\n    T1 --&gt; Cn1[Choice n₁]\n    \n    C1 --&gt; T2[📋 Task 2&lt;br/&gt;n₂ ways]\n    C2 --&gt; T2\n    Cn1 --&gt; T2\n    \n    T2 --&gt; C21[Choice 1]\n    T2 --&gt; C22[Choice 2]\n    T2 --&gt; C2n[Choice n₂]\n    \n    C21 --&gt; Total[🎯 Total ways&lt;br/&gt;n₁ × n₂ × ... × nₖ]\n    C22 --&gt; Total\n    C2n --&gt; Total\n    \n    classDef start fill:#d4edda,stroke:#155724,stroke-width:3px\n    classDef task fill:#d1ecf1,stroke:#0c5460,stroke-width:2px\n    classDef choice fill:#fff3cd,stroke:#856404,stroke-width:1px\n    classDef total fill:#f8d7da,stroke:#721c24,stroke-width:3px\n    \n    class Start start\n    class T1,T2 task\n    class C1,C2,Cn1,C21,C22,C2n choice\n    class Total total"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6-part1.html#simple-counting-example",
     "href": "files/lecture_notes/lecture6/lecture6-part1.html#simple-counting-example",
     "title": "PSTAT 5A: Counting",
     "section": "Simple Counting Example",
-    "text": "Simple Counting Example\n\nFormat ABC-123\n\nFirst position: 26 letters\nSecond position: 26 letters\nThird position: 26 letters\nFourth position: 10 digits\nFifth position: 10 digits\nSixth position: 10 digits\n\n\n\n\nSolution. Total possibilities: \\(26 \\times 26 \\times 26 \\times 10 \\times 10 \\times 10 = 26^3 \\times 10^3 = 17,576,000\\)"
+    "text": "Simple Counting Example\n\n\n\nFormat: ABC-123\n\\[\n\\underbrace{A \\; B \\; \\_ \\; \\ - \\_ \\; \\_ \\; \\_}_{positions}\n\\]\n\nFirst position: 26 letters\nSecond position: 26 letters\nThird position: 26 letters\nFourth position: 10 digits\nFifth position: 10 digits\nSixth position: 10 digits\n\n\n\n\n\nSolution. Total possibilities: \\(26 \\times 26 \\times 26 \\times 10 \\times 10 \\times 10 = 26^3 \\times 10^3 = 17,576,000\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6-part1.html#restaurant-menu-example",
@@ -5289,7 +5289,7 @@
     "href": "files/lecture_notes/lecture6/lecture6-part1.html#sec-permutations",
     "title": "PSTAT 5A: Counting",
     "section": "What Are Permutations?",
-    "text": "What Are Permutations?\n\n\n\n\n\n\n\nPermutation\n\n\nAn arrangement of objects where order matters\n\n\n\n\n\n\n\n        \n        \n        \n\n\n                            \n                                            \n\n\nAll permutations of ABC:\n1. ABC\n2. ACB\n3. BAC\n4. BCA\n5. CAB\n6. CBA\n\n\n\n\n\nRace finish positions (1st, 2nd, 3rd)\nSeating arrangements\nPasswords\nDNA sequences"
+    "text": "What Are Permutations?\n\n\n\n\n\n\n\n\n\nPermutation\n\n\nAn arrangement of objects where order matters\n\n\n\n\n\n\n\n\n\n\n\nOrder Matters\n\n\n\nRace finish positions (1st, 2nd, 3rd)\nSeating arrangements\nPasswords\nDNA sequences\n\n\n\n\n\n\n\n\n\n\n        \n        \n        \n\n\n                            \n                                            \n\n\nAll permutations of ABC:\n1. ABC\n2. ACB\n3. BAC\n4. BCA\n5. CAB\n6. CBA"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6-part1.html#permutations-of-n-distinct-objects",
@@ -5310,7 +5310,7 @@
     "href": "files/lecture_notes/lecture6/lecture6-part1.html#sec-permutations-r-from-n",
     "title": "PSTAT 5A: Counting",
     "section": "Permutations of \\(r\\) Objects from \\(n\\)",
-    "text": "Permutations of \\(r\\) Objects from \\(n\\)\n\n\n\n\n\n\n\nKey Formula\n\n\n\\(P(n,r)\\) or \\(_nP_r\\): Number of ways to arrange \\(r\\) objects selected from \\(n\\) distinct objects\n\\[P(n,r) = \\frac{n!}{(n-r)!}\\]\n\n\n\n\n\nHow many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary?\n\n\nSolution. \\(P(8,3) = \\frac{8!}{(8-3)!} = \\frac{8!}{5!} = 8 \\times 7 \\times 6 = 336\\)"
+    "text": "Permutations of \\(r\\) Objects from \\(n\\)\n\n\n\n\n\n\n\n\n\nKey Formula\n\n\n\\(P(n,r)\\) or \\(_nP_r\\): Number of ways to arrange \\(r\\) objects selected from \\(n\\) distinct objects\n\\[P(n,r) = \\frac{n!}{(n-r)!}\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\\[\nP_{k,n} =\n\\frac{n!}{(n-k)!}\n=\n\\]\n\\[\n= \\frac{\n  n(n-1)\\cdots(n-k+1)\\,\n  \\overbrace{(n-k)(n-k-1)\\cdots3\\cdot2\\cdot1}^{(n-k)!}\n}{\n  (n-k)!\n}\n\\]\n\\[\n= \\underbrace{\nn (n-1) (n-2) \\cdots (n-k+1)\n}_{k \\text{ terms}}\n\\]\nFill in \\(k\\) slots with no repetitions\n\\[\n\\underbrace{n \\; (n-1) \\; \\_ \\; \\_ \\; \\cdots}_{k}\n\\]\nNote that if we allowed repetitions we would get \\(n^k\\) \\[\n\\underbrace{n \\; n \\; n \\; \\cdots \\; n}_{k}\n\\]"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6-part1.html#understanding-pnr",
@@ -5324,7 +5324,7 @@
     "href": "files/lecture_notes/lecture6/lecture6-part1.html#practice-2",
     "title": "PSTAT 5A: Counting",
     "section": "Practice Problem 2",
-    "text": "Practice Problem 2\n\nA baseball team has 15 players. How many ways can the coach:\n\nArrange all 15 players in a line?\nChoose and arrange 9 players for the starting lineup (batting order matters)?\n\n\n\nSolution. \n\n\\(15! = 1,307,674,368,000\\)\n\\(P(15,9) = \\frac{15!}{6!} = 1,816,214,400\\)"
+    "text": "Practice Problem 2\n\nA baseball team has 15 players. How many ways can the coach:\n\nArrange all 15 players in a line?\nChoose and arrange 9 players for the starting lineup (batting order matters)?\n\n\n\n\nSolution. \n\n\\(15! = 1,307,674,368,000\\)\n\\(P(15,9) = \\frac{15!}{6!} = 1,816,214,400\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6-part1.html#sec-permutations-repetition",
@@ -5338,7 +5338,7 @@
     "href": "files/lecture_notes/lecture6/lecture6-part1.html#permutations-with-repetition-example",
     "title": "PSTAT 5A: Counting",
     "section": "Permutations with Repetition Example",
-    "text": "Permutations with Repetition Example\n\n\n\nHow many distinct arrangements are there of the letters in “STATISTICS”?\n\nS-T-A-T-I-S-T-I-C-S\n\nTotal letters: 10\nS appears 3 times\nT appears 3 times\nA appears 1 time\nI appears 2 times\nC appears 1 time\n\n\n\nSolution. \\(\\frac{10!}{3! \\times 3! \\times 1! \\times 2! \\times 1!} = \\frac{3,628,800}{6 \\times 6 \\times 1 \\times 2 \\times 1} = \\frac{3,628,800}{72} = 50,400\\)"
+    "text": "Permutations with Repetition Example\n\n\n\nHow many distinct arrangements are there of the letters in “STATISTICS”? \n\nS-T-A-T-I-S-T-I-C-S\n\nTotal letters: 10\nS appears 3 times\nT appears 3 times\nA appears 1 time\nI appears 2 times\nC appears 1 time\n\n\n\nSolution. \\(\\frac{10!}{3! \\times 3! \\times 1! \\times 2! \\times 1!} = \\frac{3,628,800}{6 \\times 6 \\times 1 \\times 2 \\times 1} = \\frac{3,628,800}{72} = 50,400\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6-part1.html#sec-combinations",
@@ -5632,7 +5632,7 @@
     "href": "files/lecture_notes/lecture6/lecture6-part1.html#learning-summary",
     "title": "PSTAT 5A: Counting",
     "section": "Learning Objectives Summary",
-    "text": "Learning Objectives Summary\n\n\n\n\n\n\n\nWhat We’ve Covered\n\n\nIn this lecture, we’ve addressed all the learning objectives:\n\n✅ Apply the fundamental counting principles: Covered in Section 4\n✅ Calculate permutations with and without repetition: Covered in Section 8, Section 11, and Section 14"
+    "text": "Learning Objectives Summary\n\n\n\n\n\n\n\nWhat We’ve Covered\n\n\nIn this lecture, we’ve addressed all the learning objectives:\n\n✅ Apply the fundamental counting principles: Covered in Section 4\n✅ Calculate permutations with and without repetition: Covered in Section 8, Section 11, and Section 15"
   },
   {
     "objectID": "files/lecture_notes/lecture6/lecture6-part2.html#welcome-to-lecture-7-part-2",
@@ -5640,5 +5640,19 @@
     "title": "PSTAT 5A: Counting",
     "section": "Welcome to Lecture 7 (Part 2)",
     "text": "Welcome to Lecture 7 (Part 2)\nThe art and science of systematic enumeration"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture6/lecture6-part1.html#perm",
+    "href": "files/lecture_notes/lecture6/lecture6-part1.html#perm",
+    "title": "PSTAT 5A: Counting",
+    "section": "Perm",
+    "text": "Perm\n\nHow many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary?\n\n\nSolution. \\(P(8,3) = \\frac{8!}{(8-3)!} = \\frac{8!}{5!} = 8 \\times 7 \\times 6 = 336\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture6/lecture6-part1.html#example",
+    "href": "files/lecture_notes/lecture6/lecture6-part1.html#example",
+    "title": "PSTAT 5A: Counting",
+    "section": "Example",
+    "text": "Example\n\nHow many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary? \n\n\nSolution. \\(P(8,3) = \\frac{8!}{(8-3)!} = \\frac{8!}{5!} = 8 \\times 7 \\times 6 = 336\\)"
   }
 ]

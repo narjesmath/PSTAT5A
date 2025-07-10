@@ -81,11 +81,11 @@ Counting helps us:
 
 ---
 
-## The Fundamental Counting Principle {#sec-fundamental-counting} 
+## The Fundamental Counting Principle {#sec-fundamental-counting .smaller} 
 
 ::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 ::: {.callout-note title="Multiplication Rule"} 
 If a procedure consists of **$k$** separate tasks where:
 
@@ -101,26 +101,48 @@ Then, the entire procedure can be performed in **$n_1 \times n_2 \times \cdots \
 :::
 :::
 
-::: {.column width="50%"}
-::: {.callout-example title="Visual Demo: Task Tree"}
+::: {.column width="40%"}
+::: {.example title="Visual Demo: Task Tree" .smaller}
+
 ```{mermaid}
-flowchart LR
-    Start([Start]) --> T1["Task 1: n₁ ways"]
-    T1 --> C1[Choice 1]
-    T1 --> C2[Choice 2]
-    T1 --> Cn1[Choice n₁]
-    C1 --> T2["Task 2: n₂ ways"]
+%%{init: {'flowchart': {'nodeSpacing': 20, 'rankSpacing': 50}}}%%
+flowchart TD
+    Start([🟢 Start]) --> T1[📋 Task 1<br/>n₁ ways]
+    T1 --> C1[Choice 1]
+    T1 --> C2[Choice 2]
+    T1 --> Cn1[Choice n₁]
+    
+    C1 --> T2[📋 Task 2<br/>n₂ ways]
     C2 --> T2
     Cn1 --> T2
-    T2 --> C21[Choice 1]
-    T2 --> C22[Choice 2]
-    T2 --> C2n[Choice n₂]
-    C21 --> Total(("Total ways:\n n₁ × n₂ × ... × nₖ"))
+    
+    T2 --> C21[Choice 1]
+    T2 --> C22[Choice 2]
+    T2 --> C2n[Choice n₂]
+    
+    C21 --> Total[🎯 Total ways<br/>n₁ × n₂ × ... × nₖ]
     C22 --> Total
     C2n --> Total
+    
+    classDef start fill:#d4edda,stroke:#155724,stroke-width:3px
+    classDef task fill:#d1ecf1,stroke:#0c5460,stroke-width:2px
+    classDef choice fill:#fff3cd,stroke:#856404,stroke-width:1px
+    classDef total fill:#f8d7da,stroke:#721c24,stroke-width:3px
+    
+    class Start start
+    class T1,T2 task
+    class C1,C2,Cn1,C21,C22,C2n choice
+    class Total total
 ```
 :::
+
+
 :::
+
+
+
+
+
 :::
 
 
@@ -129,30 +151,38 @@ flowchart LR
 
 ## Simple Counting Example {.smaller}
 
-::: {.example}
+:::{.columns}
+:::{.column}
+::: {.example .smaller}
 
+**Format**:  ABC-123
 
-Format ABC-123
+$$
+\underbrace{A \; B \; \_ \; \ - \_ \; \_ \; \_}_{positions}
+$$
 
-- First position: 26 letters
+- **First position:** 26 letters
   
-- Second position: 26 letters  
+- **Second position:** 26 letters  
   
-- Third position: 26 letters
+- **Third position:** 26 letters
   
-- Fourth position: 10 digits
+- **Fourth position:** 10 digits
   
-- Fifth position: 10 digits
+- **Fifth position:** 10 digits
   
-- Sixth position: 10 digits
+- **Sixth position:** 10 digits
 
 ![](/files/lecture_notes/lecture7/img/count.png){width="70px"}
 :::
+:::
 
-
-
+:::{.column}
 ::: {.solution .fragment}
 Total possibilities: $26 \times 26 \times 26 \times 10 \times 10 \times 10 = 26^3 \times 10^3 = 17,576,000$
+:::
+:::
+
 :::
 
 ---
@@ -201,9 +231,28 @@ Total: $36^8 = 2,821,109,907,456$ passwords
 
 ## What Are Permutations? {#sec-permutations .smaller}
 
+:::{.columns}
+:::{.column}
 ::: {.callout-note title="Permutation"}
 An arrangement of objects where **order matters**
 :::
+
+::: {.callout-important title="Order Matters"}
+- Race finish positions (1st, 2nd, 3rd)
+  
+- Seating arrangements
+  
+- Passwords
+  
+- DNA sequences
+
+![](/files/lecture_notes/lecture6/img/letter.png){width="20%"}
+:::
+
+:::
+
+
+:::{.column}
 
 ::: {.callout-example title="Permutation Animation: Placing Objects in Boxes"}
 ```{python}
@@ -255,16 +304,9 @@ for i, perm in enumerate(perms):
 ```
 :::
 
-::: {.callout-example title="Examples where order matters"}
-- Race finish positions (1st, 2nd, 3rd)
-  
-- Seating arrangements
-  
-- Passwords
-  
-- DNA sequences
-:::
 
+:::
+:::
 ---
 
 ## Permutations of $n$ Distinct Objects {.smaller}
@@ -278,7 +320,9 @@ The number of ways to arrange $n$ distinct objects is:
 $$n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$$
 :::
 
-![](/files/lecture_notes/lecture7/img/numbers.png){width="10%" fig-align="right"}
+
+![](/files/lecture_notes/lecture6/img/people.png){width="30%" fig-align="right"}
+
 :::
 
 ::: {.column width="50%"}
@@ -297,6 +341,7 @@ Seating Process:
 **5th position:** 1 choice (last person)
 
 **How many ways can 5 people sit in a row?**
+
 :::
 
 ::: {.solution .fragment}
@@ -304,6 +349,7 @@ $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ ways
 :::
 
 :::
+
 :::
 
 ---
@@ -381,21 +427,72 @@ $0! = 1$ by definition
 
 ## Permutations of $r$ Objects from $n$ {#sec-permutations-r-from-n .smaller}
 
+:::{.columns}
+:::{.column}
 ::: {.callout-important title="Key Formula"}
 **$P(n,r)$** or **$_nP_r$**: Number of ways to arrange **$r$** objects selected from **$n$** distinct objects
 
 $$P(n,r) = \frac{n!}{(n-r)!}$$
 :::
 
+![](/files/lecture_notes/lecture6/img/cunting_icon2.png){width="50%"}
+:::
+
+:::{.column}
+:::{.callout-note .smaller}
+
+$$
+P_{k,n} = 
+\frac{n!}{(n-k)!}
+=
+$$
+
+$$
+= \frac{
+  n(n-1)\cdots(n-k+1)\,
+  \overbrace{(n-k)(n-k-1)\cdots3\cdot2\cdot1}^{(n-k)!}
+}{
+  (n-k)!
+}
+$$
+
+$$
+= \underbrace{
+n (n-1) (n-2) \cdots (n-k+1)
+}_{k \text{ terms}}
+$$
+
+
+
+Fill in **$k$** slots with no repetitions  
+$$
+\underbrace{n \; (n-1) \; \_ \; \_ \; \cdots}_{k}
+$$
+
+Note that if we allowed repetitions we would get **$n^k$** 
+$$
+\underbrace{n \; n \; n \; \cdots \; n}_{k}
+$$
+
+:::
+
+
+:::
+:::
+
+
+## Example 
+
 ::: {.example}
 **How many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary?**
+![](/files/lecture_notes/lecture6/img/networking.png){width="10%"}
 :::
 
 :::{.solution .fragment}
 $P(8,3) = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 8 \times 7 \times 6 = 336$
 :::
 
----
+
 
 ## Understanding $P(n,r)$ {.smaller}
 
@@ -420,6 +517,8 @@ A baseball team has 15 players. How many ways can the coach:
 
 a) Arrange all 15 players in a line?
 b) Choose and arrange 9 players for the starting lineup (batting order matters)?
+
+![](/files/lecture_notes/lecture6/img/baseball-player.png){width="10%"}
 :::
 
 ::: {.solution .fragment}
@@ -457,6 +556,7 @@ Number of distinct arrangements: $\frac{n!}{n_1! \times n_2! \times \cdots \time
 
 ::: {.example}
 **How many distinct arrangements are there of the letters in "STATISTICS"?**
+![](/files/lecture_notes/lecture6/img/abc.png){width="10%" fig-align="right"}
 :::
 
 **S-T-A-T-I-S-T-I-C-S**

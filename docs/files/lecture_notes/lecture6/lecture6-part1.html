@@ -169,7 +169,7 @@ Narjes Mathlouthi
 <p>By the end of this lecture, you will be able to:</p>
 <ul>
 <li>Apply the fundamental counting principles (<a href="#/sec-fundamental-counting" class="quarto-xref">Section&nbsp;4</a>)</li>
-<li>Calculate permutations with and without repetition (<a href="#/sec-permutations" class="quarto-xref">Section&nbsp;8</a>, <a href="#/sec-permutations-r-from-n" class="quarto-xref">Section&nbsp;11</a>, <a href="#/sec-permutations-repetition" class="quarto-xref">Section&nbsp;14</a>)</li>
+<li>Calculate permutations with and without repetition (<a href="#/sec-permutations" class="quarto-xref">Section&nbsp;8</a>, <a href="#/sec-permutations-r-from-n" class="quarto-xref">Section&nbsp;11</a>, <a href="#/sec-permutations-repetition" class="quarto-xref">Section&nbsp;15</a>)</li>
 </ul>
 </div>
 </div>
@@ -214,10 +214,10 @@ Narjes Mathlouthi
 </div>
 </div></div>
 </section>
-<section id="sec-fundamental-counting" class="slide level2">
+<section id="sec-fundamental-counting" class="slide level2 smaller">
 <h2>The Fundamental Counting Principle</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <div title="Multiplication Rule">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -240,27 +240,41 @@ Narjes Mathlouthi
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
-<div class="callout-example" title="Visual Demo: Task Tree">
+</div><div class="column" style="width:40%;">
+<div class="example smaller" title="Visual Demo: Task Tree">
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart LR
-    Start([Start]) --&gt; T1["Task&nbsp;1:&nbsp;n₁&nbsp;ways"]
-    T1 --&gt; C1[Choice&nbsp;1]
-    T1 --&gt; C2[Choice&nbsp;2]
-    T1 --&gt; Cn1[Choice&nbsp;n₁]
-    C1 --&gt; T2["Task&nbsp;2:&nbsp;n₂&nbsp;ways"]
+<pre class="mermaid mermaid-js">%%{init: {'flowchart': {'nodeSpacing': 20, 'rankSpacing': 50}}}%%
+flowchart TD
+    Start([🟢 Start]) --&gt; T1[📋 Task 1&lt;br/&gt;n₁ ways]
+    T1 --&gt; C1[Choice 1]
+    T1 --&gt; C2[Choice 2]
+    T1 --&gt; Cn1[Choice n₁]
+    
+    C1 --&gt; T2[📋 Task 2&lt;br/&gt;n₂ ways]
     C2 --&gt; T2
     Cn1 --&gt; T2
-    T2 --&gt; C21[Choice&nbsp;1]
-    T2 --&gt; C22[Choice&nbsp;2]
-    T2 --&gt; C2n[Choice&nbsp;n₂]
-    C21 --&gt; Total(("Total&nbsp;ways:\n&nbsp;n₁&nbsp;×&nbsp;n₂&nbsp;×&nbsp;...&nbsp;×&nbsp;nₖ"))
+    
+    T2 --&gt; C21[Choice 1]
+    T2 --&gt; C22[Choice 2]
+    T2 --&gt; C2n[Choice n₂]
+    
+    C21 --&gt; Total[🎯 Total ways&lt;br/&gt;n₁ × n₂ × ... × nₖ]
     C22 --&gt; Total
     C2n --&gt; Total
+    
+    classDef start fill:#d4edda,stroke:#155724,stroke-width:3px
+    classDef task fill:#d1ecf1,stroke:#0c5460,stroke-width:2px
+    classDef choice fill:#fff3cd,stroke:#856404,stroke-width:1px
+    classDef total fill:#f8d7da,stroke:#721c24,stroke-width:3px
+    
+    class Start start
+    class T1,T2 task
+    class C1,C2,Cn1,C21,C22,C2n choice
+    class Total total
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -272,21 +286,28 @@ Narjes Mathlouthi
 </section>
 <section id="simple-counting-example" class="slide level2 smaller">
 <h2>Simple Counting Example</h2>
-<div class="example">
-<p>Format ABC-123</p>
+<div class="columns">
+<div class="column">
+<div class="example smaller">
+<p><strong>Format</strong>: ABC-123</p>
+<p><span class="math display">\[
+\underbrace{A \; B \; \_ \; \ - \_ \; \_ \; \_}_{positions}
+\]</span></p>
 <ul>
-<li><p>First position: 26 letters</p></li>
-<li><p>Second position: 26 letters</p></li>
-<li><p>Third position: 26 letters</p></li>
-<li><p>Fourth position: 10 digits</p></li>
-<li><p>Fifth position: 10 digits</p></li>
-<li><p>Sixth position: 10 digits</p></li>
+<li><p><strong>First position:</strong> 26 letters</p></li>
+<li><p><strong>Second position:</strong> 26 letters</p></li>
+<li><p><strong>Third position:</strong> 26 letters</p></li>
+<li><p><strong>Fourth position:</strong> 10 digits</p></li>
+<li><p><strong>Fifth position:</strong> 10 digits</p></li>
+<li><p><strong>Sixth position:</strong> 10 digits</p></li>
 </ul>
 <p><img data-src="../../../files/lecture_notes/lecture7/img/count.png" width="70"></p>
 </div>
+</div><div class="column">
 <div class="fragment proof solution">
 <p><span class="proof-title"><em>Solution</em>. </span>Total possibilities: <span class="math inline">\(26 \times 26 \times 26 \times 10 \times 10 \times 10 = 26^3 \times 10^3 = 17,576,000\)</span></p>
 </div>
+</div></div>
 </section>
 <section id="restaurant-menu-example" class="slide level2 smaller">
 <h2>Restaurant Menu Example</h2>
@@ -323,6 +344,8 @@ Narjes Mathlouthi
 </section>
 <section id="sec-permutations" class="slide level2 smaller">
 <h2>What Are Permutations?</h2>
+<div class="columns">
+<div class="column">
 <div title="Permutation">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -338,8 +361,30 @@ Narjes Mathlouthi
 </div>
 </div>
 </div>
+<div title="Order Matters">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Order Matters</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><p>Race finish positions (1st, 2nd, 3rd)</p></li>
+<li><p>Seating arrangements</p></li>
+<li><p>Passwords</p></li>
+<li><p>DNA sequences</p></li>
+</ul>
+<p><img data-src="../../../files/lecture_notes/lecture6/img/letter.png" style="width:20.0%"></p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column">
 <div class="callout-example" title="Permutation Animation: Placing Objects in Boxes">
-<div id="fd92641c" class="cell" data-execution_count="2">
+<div id="5f2b1a32" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
         <script type="text/javascript">
         window.PlotlyConfig = {MathJaxConfig: 'local'};
@@ -350,9 +395,9 @@ Narjes Mathlouthi
 </div>
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="157fd8c3-e9ea-4fb1-8b2b-3ff9c934fbee" class="plotly-graph-div" style="height:300px; width:500px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("157fd8c3-e9ea-4fb1-8b2b-3ff9c934fbee")) {                    Plotly.newPlot(                        "157fd8c3-e9ea-4fb1-8b2b-3ff9c934fbee",                        [{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["","",""],"textposition":"inside","visible":false,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"},{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["A","",""],"textposition":"inside","visible":false,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"},{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["A","B",""],"textposition":"inside","visible":false,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"},{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["A","B","C"],"textposition":"inside","visible":true,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"yaxis":{"showticklabels":false,"range":[0,1.5]},"xaxis":{"showticklabels":true},"margin":{"l":10,"r":10,"t":40,"b":10},"title":{"text":"Permutation ABC: Step-by-Step Placement"},"height":300,"width":500},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="0abf27f6-f3e8-4133-9e92-4627190e8278" class="plotly-graph-div" style="height:300px; width:500px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("0abf27f6-f3e8-4133-9e92-4627190e8278")) {                    Plotly.newPlot(                        "0abf27f6-f3e8-4133-9e92-4627190e8278",                        [{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["","",""],"textposition":"inside","visible":false,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"},{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["A","",""],"textposition":"inside","visible":false,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"},{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["A","B",""],"textposition":"inside","visible":false,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"},{"hoverinfo":"none","marker":{"color":["lightblue","lightblue","lightblue"]},"showlegend":false,"text":["A","B","C"],"textposition":"inside","visible":true,"x":["Box 1","Box 2","Box 3"],"y":[1,1,1],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"yaxis":{"showticklabels":false,"range":[0,1.5]},"xaxis":{"showticklabels":true},"margin":{"l":10,"r":10,"t":40,"b":10},"title":{"text":"Permutation ABC: Step-by-Step Placement"},"height":300,"width":500},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('157fd8c3-e9ea-4fb1-8b2b-3ff9c934fbee');
+var gd = document.getElementById('0abf27f6-f3e8-4133-9e92-4627190e8278');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -387,14 +432,7 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-<div class="callout-example" title="Examples where order matters">
-<ul>
-<li><p>Race finish positions (1st, 2nd, 3rd)</p></li>
-<li><p>Seating arrangements</p></li>
-<li><p>Passwords</p></li>
-<li><p>DNA sequences</p></li>
-</ul>
-</div>
+</div></div>
 </section>
 <section id="permutations-of-n-distinct-objects" class="slide level2 smaller">
 <h2>Permutations of <span class="math inline">\(n\)</span> Distinct Objects</h2>
@@ -418,7 +456,7 @@ if (outputEl) {{
 </div>
 <div class="quarto-figure quarto-figure-right">
 <figure>
-<p><img data-src="../../../files/lecture_notes/lecture7/img/numbers.png" class="quarto-figure quarto-figure-right" style="width:10.0%"></p>
+<p><img data-src="../../../files/lecture_notes/lecture6/img/people.png" class="quarto-figure quarto-figure-right" style="width:30.0%"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -479,12 +517,12 @@ if (outputEl) {{
 </tbody>
 </table>
 </div><div class="column" style="width:50%;">
-<div id="d434e219" class="cell" data-execution_count="3">
+<div id="ee96fa71" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="b8b5b67b-e95f-44d7-b947-533d9de79090" class="plotly-graph-div" style="height:400px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("b8b5b67b-e95f-44d7-b947-533d9de79090")) {                    Plotly.newPlot(                        "b8b5b67b-e95f-44d7-b947-533d9de79090",                        [{"hovertemplate":"n=%{x}\u003cbr\u003en!=%{y:,}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"lightblue"},"name":"n!","x":[0,1,2,3,4,5,6,7,8,9,10],"y":[1,1,2,6,24,120,720,5040,40320,362880,3628800],"type":"bar"},{"hovertemplate":"n=%{x}\u003cbr\u003en!=%{y:,}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"red","width":2},"mode":"lines+markers","name":"Growth Trend","x":[0,1,2,3,4,5,6,7,8,9,10],"y":[1,1,2,6,24,120,720,5040,40320,362880,3628800],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"title":{"text":"Factorial Growth: n! vs n"},"xaxis":{"title":{"text":"n"},"tickmode":"linear","tick0":0,"dtick":1},"yaxis":{"title":{"text":"n! (log scale)"},"type":"log"},"height":400,"showlegend":true,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js" integrity="sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q=" crossorigin="anonymous"></script>                <div id="e97a64f3-160e-4228-b73b-86395ed02b80" class="plotly-graph-div" style="height:400px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("e97a64f3-160e-4228-b73b-86395ed02b80")) {                    Plotly.newPlot(                        "e97a64f3-160e-4228-b73b-86395ed02b80",                        [{"hovertemplate":"n=%{x}\u003cbr\u003en!=%{y:,}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"lightblue"},"name":"n!","x":[0,1,2,3,4,5,6,7,8,9,10],"y":[1,1,2,6,24,120,720,5040,40320,362880,3628800],"type":"bar"},{"hovertemplate":"n=%{x}\u003cbr\u003en!=%{y:,}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"red","width":2},"mode":"lines+markers","name":"Growth Trend","x":[0,1,2,3,4,5,6,7,8,9,10],"y":[1,1,2,6,24,120,720,5040,40320,362880,3628800],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"title":{"text":"Factorial Growth: n! vs n"},"xaxis":{"title":{"text":"n"},"tickmode":"linear","tick0":0,"dtick":1},"yaxis":{"title":{"text":"n! (log scale)"},"type":"log"},"height":400,"showlegend":true,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('b8b5b67b-e95f-44d7-b947-533d9de79090');
+var gd = document.getElementById('e97a64f3-160e-4228-b73b-86395ed02b80');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -528,6 +566,8 @@ if (outputEl) {{
 </section>
 <section id="sec-permutations-r-from-n" class="slide level2 smaller">
 <h2>Permutations of <span class="math inline">\(r\)</span> Objects from <span class="math inline">\(n\)</span></h2>
+<div class="columns">
+<div class="column">
 <div title="Key Formula">
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -544,8 +584,53 @@ if (outputEl) {{
 </div>
 </div>
 </div>
+<p><img data-src="../../../files/lecture_notes/lecture6/img/cunting_icon2.png" style="width:50.0%"></p>
+</div><div class="column">
+<div class="smaller">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[
+P_{k,n} =
+\frac{n!}{(n-k)!}
+=
+\]</span></p>
+<p><span class="math display">\[
+= \frac{
+  n(n-1)\cdots(n-k+1)\,
+  \overbrace{(n-k)(n-k-1)\cdots3\cdot2\cdot1}^{(n-k)!}
+}{
+  (n-k)!
+}
+\]</span></p>
+<p><span class="math display">\[
+= \underbrace{
+n (n-1) (n-2) \cdots (n-k+1)
+}_{k \text{ terms}}
+\]</span></p>
+<p>Fill in <strong><span class="math inline">\(k\)</span></strong> slots with no repetitions<br>
+<span class="math display">\[
+\underbrace{n \; (n-1) \; \_ \; \_ \; \cdots}_{k}
+\]</span></p>
+<p>Note that if we allowed repetitions we would get <strong><span class="math inline">\(n^k\)</span></strong> <span class="math display">\[
+\underbrace{n \; n \; n \; \cdots \; n}_{k}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
 <div class="example">
-<p><strong>How many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary?</strong></p>
+<p><strong>How many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary?</strong> <img data-src="../../../files/lecture_notes/lecture6/img/networking.png" style="width:10.0%"></p>
 </div>
 <div class="fragment proof solution">
 <p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(P(8,3) = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 8 \times 7 \times 6 = 336\)</span></p>
@@ -574,6 +659,7 @@ if (outputEl) {{
 <li>Arrange all 15 players in a line?</li>
 <li>Choose and arrange 9 players for the starting lineup (batting order matters)?</li>
 </ol>
+<p><img data-src="../../../files/lecture_notes/lecture6/img/baseball-player.png" style="width:10.0%"></p>
 </div>
 <div class="fragment proof solution">
 <p><span class="proof-title"><em>Solution</em>. </span></p>
@@ -614,7 +700,7 @@ if (outputEl) {{
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="example">
-<p><strong>How many distinct arrangements are there of the letters in “STATISTICS”?</strong></p>
+<p><strong>How many distinct arrangements are there of the letters in “STATISTICS”?</strong> <img data-src="../../../files/lecture_notes/lecture6/img/abc.png" class="quarto-figure quarto-figure-right" style="width:10.0%"></p>
 </div>
 <p><strong>S-T-A-T-I-S-T-I-C-S</strong></p>
 <ul>
@@ -646,7 +732,7 @@ if (outputEl) {{
 <p>In this lecture, we’ve addressed all the learning objectives:</p>
 <ul>
 <li>✅ <strong>Apply the fundamental counting principles</strong>: Covered in <a href="#/sec-fundamental-counting" class="quarto-xref">Section&nbsp;4</a></li>
-<li>✅ <strong>Calculate permutations with and without repetition</strong>: Covered in <a href="#/sec-permutations" class="quarto-xref">Section&nbsp;8</a>, <a href="#/sec-permutations-r-from-n" class="quarto-xref">Section&nbsp;11</a>, and <a href="#/sec-permutations-repetition" class="quarto-xref">Section&nbsp;14</a><br>
+<li>✅ <strong>Calculate permutations with and without repetition</strong>: Covered in <a href="#/sec-permutations" class="quarto-xref">Section&nbsp;8</a>, <a href="#/sec-permutations-r-from-n" class="quarto-xref">Section&nbsp;11</a>, and <a href="#/sec-permutations-repetition" class="quarto-xref">Section&nbsp;15</a><br>
 </li>
 </ul>
 </div>
