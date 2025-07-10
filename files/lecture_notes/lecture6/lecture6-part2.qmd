@@ -51,7 +51,7 @@ By the end of this lecture, you will be able to:
 A selection of objects where **order does NOT matter**
 :::
 
-::: {.example title="Visual Demo: Order Doesn't Matter" .smaller}
+::: {.callout-example title="Visual Demo: Order Doesn't Matter" .smaller}
 **Committee Selection**:
 
 ABC, BAC, CAB → Same committee!
@@ -211,7 +211,7 @@ $C(n,r)×r!= P(n,r)$
 
 ## Permutations vs Combinations Example {.smaller}
 
-::: {.example title="Choosing 3 people from 5" .smaller}
+::: {.callout-example title="Choosing 3 people from 5"}
 Select **3** people from a group of **5** for different purposes.
 
 - For a ranked competition (**order matters**):

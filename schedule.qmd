@@ -258,7 +258,7 @@ Lecture Materials
 7/09
 :::
 ::: {.topic}
-Random Variables
+[Discrete Random Variables](/files/lecture_notes/lecture7/lecture7.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —

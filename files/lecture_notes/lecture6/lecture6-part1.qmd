@@ -102,7 +102,7 @@ Then, the entire procedure can be performed in **$n_1 \times n_2 \times \cdots \
 :::
 
 ::: {.column width="40%"}
-::: {.example title="Visual Demo: Task Tree" .smaller}
+::: {.callout-example title="Visual Demo: Task Tree"}
 
 ```{mermaid}
 %%{init: {'flowchart': {'nodeSpacing': 20, 'rankSpacing': 50}}}%%
