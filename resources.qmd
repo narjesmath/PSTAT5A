@@ -543,7 +543,7 @@ Extended Learning
 :::
 
 ::: {.resource-description}
-**Visual Learners:** [Khan Academy Videos](https://www.khanacademy.org/math/statistics-probability/probability-library) • [GeoGebra Activities](https://www.geogebra.org/t/probability) • [Math is Fun Stats](https://www.mathsisfun.com/data/index.html#stats)
+**Visual Learners:** [Khan Academy Videos](https://www.khanacademy.org/math/statistics-probability/probability-library) • [Treena Notes](https://treena.org/courses/hsc-mathematics-advanced/discrete-probability/random-variables/notes) • [Math is Fun Stats](https://www.mathsisfun.com/data/index.html#stats)
 
 **Practical Applications:** [Medical Diagnosis Examples](https://www.mathsisfun.com/data/probability-false-positives-negatives.html) • [Real-world Problems](https://www.khanacademy.org/math/statistics-probability/probability-library/basic-set-ops/a/probability-the-basics)
 
@@ -561,14 +561,273 @@ Extended Learning
 
 
 
-## Week 3: Statistical Analysis {.panel-tabset}
+## Week 3: Conditional Probability, Counting & Discrete Random Variables {.panel-tabset}
 
-::: {.coming-soon}
-::: {.coming-soon-icon}
-📊
+::: {.week-header}
+## Advanced Probability & Discrete Distributions
+This week deepens your understanding of conditional probability and Bayes' theorem, introduces counting principles (permutations and combinations), and explores discrete random variables including their probability mass functions, expected values, and common distributions.
 :::
-### Statistical Inference & Confidence Intervals (CI's)
-Week 3 will cover statistical inference,and  confidence intervals. Materials will be posted by week 3.
+
+### 📚 Core Materials
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Required Reading
+:::
+
+::: {.resource-title}
+[**OpenIntro Statistics**, Chapter 3 sections 3.3-3.4](/files/Book/os4_for_screen_reader.pdf){target="_blank"}
+:::
+
+::: {.resource-description}
+Essential coverage of conditional probability, Bayes' theorem, counting principles, and discrete random variables. Includes probability mass functions and expected values.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📖 PDF • ⏱️ 3-4 hours • 🎯 Intermediate
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Bayes' Theorem
+:::
+
+::: {.resource-title}
+[**Seeing Theory: Bayes' Theorem**](https://seeing-theory.brown.edu/bayesian-inference/index.html#section1){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive visualization of Bayes' theorem with medical testing examples, false positives/negatives, and real-world applications. Essential for understanding conditional probability.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎮 Interactive • ⏱️ 1 hour • 🔍 Visual Learning
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Combinatorics
+:::
+
+::: {.resource-title}
+[**Khan Academy: Counting & Probability**](https://www.khanacademy.org/math/statistics-probability/counting-permutations-and-combinations){target="_blank"}
+:::
+
+::: {.resource-description}
+Comprehensive coverage of counting principles, permutations, combinations, and their applications to probability with step-by-step examples and practice problems.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎬 Video + Practice • ⏱️ 2-3 hours • 🎯 Beginner-Friendly
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Discrete Distributions
+:::
+
+::: {.resource-title}
+[**Seeing Theory: Random Variables**](https://seeing-theory.brown.edu/probability-distributions/index.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive exploration of discrete random variables, probability mass functions, and common distributions (Bernoulli, Binomial, Geometric, Poisson) with parameter adjustments.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎮 Interactive • ⏱️ 1-2 hours • 📊 Distribution Explorer
+:::
+:::
+:::
+:::
+
+### 💻 Interactive Tools & Practice
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Bayes Calculator
+:::
+
+::: {.resource-title}
+[**Interactive Bayes' Theorem Calculator**](https://www.mathsisfun.com/data/bayes-theorem.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Step-by-step Bayes' theorem calculator with medical testing examples, tree diagrams, and visual representations of prior and posterior probabilities.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🧮 Calculator • ⏱️ 30 minutes • 🎯 All Levels
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Combinatorics Tool
+:::
+
+::: {.resource-title}
+[**Permutation & Combination Calculator**](https://www.calculator.net/permutation-and-combination-calculator.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Online calculator for permutations, combinations, and factorial calculations with explanations and step-by-step solutions for complex counting problems.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🧮 Calculator • ⚡ Quick Results • 📊 Problem Solving
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Python Documentation
+:::
+
+::: {.resource-title}
+[**SciPy Stats: Discrete Distributions**](https://docs.scipy.org/doc/scipy/reference/stats.html#discrete-distributions){target="_blank"}
+:::
+
+::: {.resource-description}
+Complete reference for discrete probability distributions in Python including Bernoulli, Binomial, Geometric, and Poisson with PMF, CDF, and random generation functions.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📚 API Docs • 🐍 Python • 🎯 Intermediate-Advanced
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Interactive Simulations
+:::
+
+::: {.resource-title}
+[**Treena: Probability Distributions**](https://treena.org/courses/hsc-mathematics-advanced/discrete-probability/probability-distributions/overview){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive probability distribution notes and overview for discrete random variables.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎮 Interactive Tool • ⏱️ 1 hour • 📈 Visual Distributions
+:::
+:::
+:::
+:::
+
+### 🎯 Learning Objectives & Study Plan
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Mastery Checklist
+:::
+
+::: {.resource-title}
+**Week 3 Learning Goals**
+:::
+
+::: {.resource-description}
+After completing this week, you should be able to:
+
+- [ ] **Apply Bayes' theorem** to medical testing and real-world scenarios
+- [ ] **Calculate permutations** and combinations for counting problems
+- [ ] **Distinguish discrete random variables** from outcomes
+- [ ] **Work with PMFs** and calculate probabilities for specific values
+- [ ] **Calculate expected values** and variances for discrete distributions
+- [ ] **Apply common distributions** (Bernoulli, Binomial, Geometric, Poisson)
+- [ ] **Use Python** for discrete probability calculations
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+✅ Self-Assessment • 🎯 Intermediate • 🎲 Probability & Counting
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Study Schedule
+:::
+
+::: {.resource-title}
+**Recommended Learning Path**
+:::
+
+::: {.resource-description}
+**Days 1-2:** Conditional probability and Bayes' theorem review
+
+**Day 3:** Counting principles: permutations and combinations
+
+**Day 4:** Introduction to discrete random variables and PMFs
+
+**Day 5:** Expected values, variance, and common distributions
+
+**Day 6:** Python implementation and interactive practice
+
+**Day 7:** Real-world applications and problem integration
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📅 7-day plan • ⏱️ 3-4 hours daily • 🔄 Building on Week 2
+:::
+:::
+:::
+:::
+
+### 🔍 Additional Resources
+
+::: {.resource-card}
+::: {.resource-type}
+Extended Learning
+:::
+
+::: {.resource-title}
+**Supplementary Materials by Topic**
+:::
+
+::: {.resource-description}
+**Bayes' Theorem Applications:** [Medical Diagnosis Examples](https://www.mathsisfun.com/data/probability-false-positives-negatives.html) 
+• [Spam Filtering Kaggle Python Example](https://web.stanford.edu/class/archive/cs/cs109/cs109.1218/files/student_drive/9.3.pdf)
+• [Spam Filtering](https://www.kaggle.com/code/rashimishra19/spam-filtering-using-bayesian-theorem) • [Legal Evidence](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2016.00877.x)
+
+**Combinatorics:** [Art of Problem Solving](https://artofproblemsolving.com/wiki/index.php/Combinatorics) • [Brilliant Combinatorics](https://brilliant.org/wiki/combinatorics/) • [Pascal's Triangle](https://www.mathsisfun.com/pascals-triangle.html)
+
+**Discrete Distributions:** [Wolfram MathWorld](http://mathworld.wolfram.com/DiscreteDistribution.html) • [NIST Engineering Statistics](https://www.itl.nist.gov/div898/handbook/eda/section3/eda366.htm) • [Real-world Examples](https://online.stat.psu.edu/stat414/lesson/12)
+
+**Python Programming:** [NumPy Random Documentation](https://numpy.org/doc/stable/reference/random/index.html) • [Matplotlib Statistical Plots](https://matplotlib.org/stable/gallery/statistics/index.html) • [Jupyter Notebooks Examples](https://github.com/unpingco/Python-for-Probability-Statistics-and-Machine-Learning)
+
+**Advanced Topics:** [Information Theory](https://colah.github.io/posts/2015-09-Visual-Information/) • [Markov Chains](https://setosa.io/ev/markov-chains/) • [Maximum Likelihood Estimation](https://seeing-theory.brown.edu/frequentist-inference/index.html)
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎯 All skill levels • 📈 Beginner to Advanced • 🔢 Mathematical Applications
+:::
+:::
 :::
 
 

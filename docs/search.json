@@ -5660,21 +5660,21 @@
     "href": "files/lecture_notes/lecture7/lecture7.html#what-is-a-random-variable",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "What is a Random Variable?",
-    "text": "What is a Random Variable?\n\nDefinition: A random variable is a function that assigns a numerical value to each outcome of a random experiment.\nNotation: Usually denoted by capital letters \\(X\\), \\(Y\\), \\(Z\\)\nKey insight: Random variables transform outcomes into numbers, making statistical analysis possible"
+    "text": "What is a Random Variable?\n\nDefinition: A random variable is a function that assigns a numerical value to each outcome of a random experiment.\nNotation: Usually denoted by capital letters \\(X\\), \\(Y\\), \\(Z\\)\nKey insight: Random variables transform outcomes into numbers, making statistical analysis possible\n\n\n\nTreena - Random Variables"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#why-use-random-variables",
     "href": "files/lecture_notes/lecture7/lecture7.html#why-use-random-variables",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Why Use Random Variables?",
-    "text": "Why Use Random Variables?\n\n\nRandom variables allow us to:\n\nQuantify outcomes numerically\nCalculate means, variances, and other statistics\nModel real-world phenomena\nMake predictions and decisions\nCompare different random processes\n\nExamples: Height, test scores, number of defects, wait times, stock prices"
+    "text": "Why Use Random Variables?\n\n\nRandom variables allow us to:\n\nQuantify outcomes numerically\nCalculate means, variances, and other statistics\nModel real-world phenomena\nMake predictions and decisions\nCompare different random processes\n\nExamples: Height, test scores, number of defects, wait times, stock prices\n\n\n\nTreena - Random Variables"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#types-of-random-variables",
     "href": "files/lecture_notes/lecture7/lecture7.html#types-of-random-variables",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Types of Random Variables",
-    "text": "Types of Random Variables\n\n\nToday we focus on discrete random variables - notice there are gaps between possible values!"
+    "text": "Types of Random Variables\n\n\nToday we focus on discrete random variables - notice there are gaps between possible values!\n\n\n\nDiscrete vs. Continuous: Demystifying the type of Random Variables"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#examples-of-discrete-random-variables",
@@ -6214,5 +6214,19 @@
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Resources",
     "text": "Resources\n\n\n\n Read OpenIntro Statistics Chapter 3 section 3.4\n\n\n Random Variable - Treena Courses\n\n\n Random Variables and Probability Functions\n\n\n Random Variables - Distribution and Expectation\n\n\n Khan Academy - Unit9: Random Variables"
+  },
+  {
+    "objectID": "resources.html#week-3-conditional-probability-counting-discrete-random-variables",
+    "href": "resources.html#week-3-conditional-probability-counting-discrete-random-variables",
+    "title": "Course Resources",
+    "section": "Week 3: Conditional Probability, Counting & Discrete Random Variables",
+    "text": "Week 3: Conditional Probability, Counting & Discrete Random Variables"
+  },
+  {
+    "objectID": "resources.html#advanced-probability-discrete-distributions",
+    "href": "resources.html#advanced-probability-discrete-distributions",
+    "title": "Course Resources",
+    "section": "Advanced Probability & Discrete Distributions",
+    "text": "Advanced Probability & Discrete Distributions\nThis week deepens your understanding of conditional probability and Bayes’ theorem, introduces counting principles (permutations and combinations), and explores discrete random variables including their probability mass functions, expected values, and common distributions."
   }
 ]
