@@ -208,7 +208,7 @@ Lecture Materials
 
 ::: {.week-section .week-3}
 ::: {.week-header}
-<span>Week 3: Random Variables & Inference</span>
+<span>Week 3: Conditional Probability, Counting & Random Variables </span>
 :::
 ::: {.week-content}
 ::: {.day-row}
@@ -219,8 +219,9 @@ Lecture Materials
 7/07
 :::
 ::: {.topic}
+[Conditional Probability & Bayes Theorem](/files/lecture_notes/lecture5/lecture5.qmd) 
 
-[Intro to Counting & Permutations](/files/lecture_notes/lecture6/lecture6-part1.qmd)
+
 :::
 ::: {.lab-quiz}
 [Lab3](/files/labs/lab3/lab3.qmd)
@@ -241,7 +242,8 @@ Lecture Materials
 7/08
 :::
 ::: {.topic}
-[Intro to Counting & Combinations](/files/lecture_notes/lecture6/lecture6-part2.qmd)
+[Intro to Counting & Permutations](/files/lecture_notes/lecture6/lecture6-part1.qmd)
+
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -258,7 +260,8 @@ Lecture Materials
 7/09
 :::
 ::: {.topic}
-[Discrete Random Variables](/files/lecture_notes/lecture7/lecture7.qmd)
+[Intro to Counting & Combinations](/files/lecture_notes/lecture6/lecture6-part2.qmd)
+
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -275,7 +278,7 @@ Lecture Materials
 7/10
 :::
 ::: {.topic}
-Confidence Intervals (Proportions & Means)
+[Discrete Random Variables](/files/lecture_notes/lecture7/lecture7.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
