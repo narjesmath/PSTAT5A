@@ -32,11 +32,19 @@ Labs & Worksheets
 :::
 Quizzes & Exams
 :::
+
 ::: {.legend-item}
 ::: {.legend-color style="background: #667eea;"}
 :::
 Lecture Materials
 :::
+:::
+
+::: {.legend}
+::: {.legend-item}
+::: {.legend-color style="background: #FFA500;"}
+:::
+[Anonymous Feedback Survey](https://forms.gle/W33EdcpqGuy45tUP6)
 :::
 
 ::: {.schedule-container}
@@ -297,8 +305,8 @@ Lecture Materials
 ::: {.topic .quiz-item}
 Quiz 1 (Weeks 1–2)
 :::
-::: {.lab-quiz .empty-cell}
-—
+::: {.topic .quiz-item}
+[Quiz 1 Solutions](/files/quizzes/quiz1/PSTAT5A__Quiz1_Solutions.pdf)
 :::
 ::: {.worksheet .empty-cell}
 —
@@ -309,7 +317,7 @@ Quiz 1 (Weeks 1–2)
 
 ::: {.week-section .week-4}
 ::: {.week-header}
-<span>Week 4: Hypothesis Testing</span>
+<span>Week 4: Random Variables & Distributions - Confidence Intervals</span>
 :::
 ::: {.week-content}
 ::: {.day-row}
@@ -320,10 +328,10 @@ Quiz 1 (Weeks 1–2)
 7/14
 :::
 ::: {.topic}
-Hypothesis Testing I
+[Continuous Random Variables & Distributions]()
 :::
 ::: {.lab-quiz}
-Lab 4
+[Lab 4](/files/labs/lab4/lab4.qmd)
 :::
 ::: {.worksheet}
 Worksheet 4
@@ -337,7 +345,7 @@ Worksheet 4
 7/15
 :::
 ::: {.topic}
-Hypothesis Testing II
+Confidence Intervals (Means & Proportions)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -354,7 +362,7 @@ Hypothesis Testing II
 7/16
 :::
 ::: {.topic}
-Two–Sample t-Tests
+Hypothesis Testing
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -371,7 +379,7 @@ Two–Sample t-Tests
 7/17
 :::
 ::: {.topic}
-Two–Sample t-Tests Continued
+Two–Sample t-Tests 
 :::
 ::: {.lab-quiz .empty-cell}
 —

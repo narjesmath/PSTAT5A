@@ -1,0 +1,717 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Lab 2 Solutions: Data Classes and Programming Fundamentals\"\n",
+        "subtitle: \"PSTAT 5A - Summer Session A 2025\"\n",
+        "author: \"Instructor: Narjes Mathlouthi\"\n",
+        "format: \n",
+        "  html:\n",
+        "    toc: true\n",
+        "    toc-depth: 3\n",
+        "    logo: /img/logo.png\n",
+        "    footer: \"Understanding Data - Lab2 Solutions © 2025 Narjes Mathlouthi\"\n",
+        "    number-sections: false\n",
+        "    code-fold: false\n",
+        "    theme: cosmo\n",
+        "    execute:\n",
+        "        echo: true\n",
+        "        eval: true\n",
+        "date: today\n",
+        "jupyter: python3\n",
+        "---\n",
+        "\n",
+        "\n",
+        "::: {.column-margin}\n",
+        "![](/img/logo.png){width=100px}\n",
+        ":::\n",
+        "\n",
+        "## Introduction\n",
+        "\n",
+        "This document contains the complete solutions to Lab 2: Data Classes and Programming Fundamentals. Each task is solved with explanations to help you understand the concepts.\n",
+        "\n",
+        "## Lists\n",
+        "\n",
+        "### Task 1 Solution\n",
+        "\n",
+        "Create a list containing the elements `1`, `\"hi\"`, `3.4`, and `\"PSTAT 5A\"`. Assign this list to a variable called `list1`.\n"
+      ],
+      "id": "6a52743e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "list1 = [1, \"hi\", 3.4, \"PSTAT 5A\"]\n",
+        "print(list1)"
+      ],
+      "id": "2ace994a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Task 1 (cont'd) Solution\n",
+        "\n",
+        "Run the code `type(list1)`.\n"
+      ],
+      "id": "ae87426d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "print(type(list1))"
+      ],
+      "id": "dfd5b534",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Explanation:** The output shows `<class 'list'>`, confirming that `list1` is indeed a list object.\n",
+        "\n",
+        "## Indexing\n",
+        "\n",
+        "### Task 2 Solution\n",
+        "\n",
+        "Create a list with the numbers 1 through 10, inclusive, and assign this to a variable called `x`.\n"
+      ],
+      "id": "4e8e41c1"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\n",
+        "# Alternative using range:\n",
+        "# x = list(range(1, 11))\n",
+        "print(x)"
+      ],
+      "id": "c757a625",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Run the code `x[1]`.\n"
+      ],
+      "id": "bf1c9ab7"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "print(x[1])"
+      ],
+      "id": "e16a73fd",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Run the code `x[0]`.\n"
+      ],
+      "id": "4a34f51f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "print(x[0])"
+      ],
+      "id": "c9c7c3b4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Explanation:** \n",
+        "- `x[1]` returns `2` (the second element, since indexing starts at 0)\n",
+        "- `x[0]` returns `1` (the first element)\n",
+        "\n",
+        "### Task 3 Solution\n",
+        "\n",
+        "Create a list called `x` that contains the elements `1`, `\"two\"`, `3.5`, `\"four\"`, and `\"five five\"`. Answer the questions and verify.\n"
+      ],
+      "id": "16bc24eb"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Create the list\n",
+        "x = [1, \"two\", 3.5, \"four\", \"five five\"]\n",
+        "\n",
+        "# Predictions as comments:\n",
+        "# 1. type(x) would output: <class 'list'>\n",
+        "# 2. type(x[1]) would output: <class 'str'>\n",
+        "# 3. x[0] would output: 1"
+      ],
+      "id": "d426e232",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Now verify the answers:\n"
+      ],
+      "id": "45a1ea87"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Verify answers\n",
+        "print(\"1. type(x):\", type(x))\n",
+        "print(\"2. type(x[1]):\", type(x[1]))\n",
+        "print(\"3. x[0]:\", x[0])"
+      ],
+      "id": "61719e88",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Explanation:**\n",
+        "1. `type(x)` returns `<class 'list'>` because x is a list\n",
+        "2. `type(x[1])` returns `<class 'str'>` because x[1] is \"two\", which is a string\n",
+        "3. `x[0]` returns `1`, the first element of the list\n",
+        "\n",
+        "## Tables\n",
+        "\n",
+        "First, let's install and import the datascience module:\n"
+      ],
+      "id": "317f6fe4"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Install datascience if needed (uncomment if necessary)\n",
+        "# !pip install datascience\n",
+        "from datascience import *"
+      ],
+      "id": "4fa8d8b6",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Task 4 Solution\n",
+        "\n",
+        "Read the list of methods for Table objects and write down three different methods:\n"
+      ],
+      "id": "3904f49a"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Three Table methods with descriptions:\n",
+        "# .with_columns(): adds specified columns to a table\n",
+        "# .select(): selects specific columns from a table and returns a new table\n",
+        "# .where(): filters rows based on a condition and returns a new table with matching rows\n",
+        "# .num_rows: returns the number of rows in the table\n",
+        "# .num_columns: returns the number of columns in the table"
+      ],
+      "id": "1a760651",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Task 5 Solution\n",
+        "\n",
+        "Create the professor table:\n"
+      ],
+      "id": "1597fc5d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "profs = Table().with_columns(\n",
+        "    \"Professor\", [\"Dr. Swenson\", \"Dr. Wainwright\", \"Dr. Mouti\"],\n",
+        "    \"Office\", [\"South Hall\", \"Old Gym\", \"Old Gym\"],\n",
+        "    \"Course\", [\"PSTAT 130\", \"PSTAT 120A\", \"PSTAT 126\"]\n",
+        ")\n",
+        "\n",
+        "profs"
+      ],
+      "id": "b332eb8c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Select the column called `Course` from `profs`:\n"
+      ],
+      "id": "92794fa2"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "profs.select(\"Course\")"
+      ],
+      "id": "8d833bc8",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Create a new table called `profs_new` with an additional row:\n"
+      ],
+      "id": "7232ec5c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "profs_new = profs.with_row([\"Dr. Ravat\", \"South Hall\", \"PSTAT 120B\"])\n",
+        "profs_new"
+      ],
+      "id": "4b21e71f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Explanation:** The `.with_row()` method adds a new row to the existing table. We provide the values in the same order as the columns.\n",
+        "\n",
+        "### Filtering Tables Example\n"
+      ],
+      "id": "76a7ce45"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Create example table for filtering\n",
+        "table1 = Table().with_columns(\n",
+        "    \"Course\", [\"PSTAT 5A\", \"PSTAT 120A\", \"PSTAT 130\"],\n",
+        "    \"Units\", [4, 4, 4],\n",
+        "    \"Instructor\", [\"Mathlouthi\", \"Johnson\", \"Smith\"]\n",
+        ")\n",
+        "\n",
+        "# Filter for courses taught by Mathlouthi\n",
+        "table1.where(\"Instructor\", \"Mathlouthi\")"
+      ],
+      "id": "b0f89983",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Try filtering for an instructor that doesn't exist\n",
+        "table1.where(\"Instructor\", \"Wilson\")"
+      ],
+      "id": "0ab93ae1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Arrays\n",
+        "\n",
+        "### Task 6 Solution\n",
+        "\n",
+        "Make a list and array with the same elements and compare operations:\n"
+      ],
+      "id": "0360ce74"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Create list and array\n",
+        "my_list = [1, 2, 3]\n",
+        "my_array = make_array(1, 2, 3)\n",
+        "\n",
+        "print(\"List:\", my_list)\n",
+        "print(\"Array:\", my_array)"
+      ],
+      "id": "96f14c6e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Sum operations\n",
+        "print(\"sum(my_list):\", sum(my_list))\n",
+        "print(\"sum(my_array):\", sum(my_array))"
+      ],
+      "id": "5fdd3cd4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Addition with scalar - this will cause an error for lists\n",
+        "try:\n",
+        "    result = my_list + 2\n",
+        "    print(\"my_list + 2:\", result)\n",
+        "except TypeError as e:\n",
+        "    print(\"Error with my_list + 2:\", e)"
+      ],
+      "id": "de5a7a8d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Addition with scalar works for arrays\n",
+        "print(\"my_array + 2:\", my_array + 2)"
+      ],
+      "id": "039cb758",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Explanation:** Arrays support element-wise operations (like adding 2 to each element), while lists do not. Lists use `+` for concatenation, not arithmetic.\n",
+        "\n",
+        "## Comparisons\n",
+        "\n",
+        "### Task 7 Solution\n",
+        "\n",
+        "Compare `\"statistics\"` and `\"Statistics\"`:\n"
+      ],
+      "id": "6c0a8107"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "print('\"statistics\" < \"Statistics\":', \"statistics\" < \"Statistics\")\n",
+        "print('\"Statistics\" < \"statistics\":', \"Statistics\" < \"statistics\")\n",
+        "\n",
+        "# Additional comparisons to understand the pattern\n",
+        "print('ord(\"S\"):', ord(\"S\"))\n",
+        "print('ord(\"s\"):', ord(\"s\"))"
+      ],
+      "id": "bdcf6c84",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Answer:** When Python compares strings, capital letters are given precedence (they have \"lower\" ASCII values). Capital letters come before lowercase letters in ASCII ordering, so `\"Statistics\" < \"statistics\"` returns `True`.\n",
+        "\n",
+        "### Task 8 Solution\n",
+        "\n",
+        "Create arrays and compare element-wise:\n"
+      ],
+      "id": "19255397"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "x = make_array(1, 2, 3)\n",
+        "y = make_array(2, 3, 1)\n",
+        "\n",
+        "print(\"x:\", x)\n",
+        "print(\"y:\", y)\n",
+        "print(\"x < y:\", x < y)"
+      ],
+      "id": "4167e2ad",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Explanation:** Python compares arrays element-wise, returning an array of boolean values:\n",
+        "- `1 < 2` → `True`\n",
+        "- `2 < 3` → `True`  \n",
+        "- `3 < 1` → `False`\n",
+        "\n",
+        "## Conditionals\n",
+        "\n",
+        "### Task 9 Solution\n",
+        "\n",
+        "Predict and verify the conditional statement:\n"
+      ],
+      "id": "ec43ded5"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Prediction: x will be \"goodbye\"\n",
+        "# Reasoning: x = 2, so x < 2 is False, but x < 3 is True\n",
+        "\n",
+        "# Run the code:\n",
+        "x = 2\n",
+        "\n",
+        "if x < 2:\n",
+        "    x = \"hello\"\n",
+        "elif x < 3:\n",
+        "    x = \"goodbye\"\n",
+        "else:\n",
+        "    x = \"take care\"\n",
+        "\n",
+        "print(\"Result:\", x)"
+      ],
+      "id": "c94b8d82",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Explanation:** Since `x = 2`:\n",
+        "- `x < 2` is `False` (2 is not less than 2)\n",
+        "- `x < 3` is `True` (2 is less than 3)\n",
+        "- So the `elif` condition executes, setting `x = \"goodbye\"`\n",
+        "\n",
+        "## Functions\n",
+        "\n",
+        "### Task 10 Solution\n",
+        "\n",
+        "Three functions we've used in this Lab:\n",
+        "\n",
+        "```python\n",
+        "# Three functions used in this lab:\n",
+        "# 1. type() - returns the data type of an object\n",
+        "# 2. print() - displays output to the screen\n",
+        "# 3. make_array() - creates an array from the given elements\n",
+        "# Additional: sum(), len(), range()\n",
+        "```\n",
+        "\n",
+        "### Task 11 Solution\n",
+        "\n",
+        "Write a Celsius to Fahrenheit conversion function:\n"
+      ],
+      "id": "c1715667"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "def cent_to_far(c):\n",
+        "    \"\"\"Convert Celsius to Fahrenheit using the formula F = (9/5) * C + 32\"\"\"\n",
+        "    fahrenheit = (9/5) * c + 32\n",
+        "    return fahrenheit\n",
+        "\n",
+        "# Test the function\n",
+        "print(\"cent_to_far(0):\", cent_to_far(0))    # Should return 32\n",
+        "print(\"cent_to_far(20):\", cent_to_far(20))  # Should return 68"
+      ],
+      "id": "2799069e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Explanation:** The conversion formula is F = (9/5) × C + 32. Our function correctly implements this formula.\n",
+        "\n",
+        "### Task 12 Solution\n",
+        "\n",
+        "Write a parity function to determine if a number is even or odd:\n"
+      ],
+      "id": "f0b82d15"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Solution\n",
+        "def parity(x):\n",
+        "    \"\"\"Returns 'even' if x is even, 'odd' if x is odd\"\"\"\n",
+        "    if x % 2 == 0:\n",
+        "        return \"even\"\n",
+        "    else:\n",
+        "        return \"odd\"\n",
+        "\n",
+        "# Test the function\n",
+        "print(\"parity(2):\", parity(2))  # Should return 'even'\n",
+        "print(\"parity(3):\", parity(3))  # Should return 'odd'\n",
+        "\n",
+        "# Additional tests\n",
+        "print(\"parity(10):\", parity(10))\n",
+        "print(\"parity(15):\", parity(15))"
+      ],
+      "id": "2edbfe3d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Explanation:** The modulus operator `%` returns the remainder of division. If `x % 2 == 0`, then x is divisible by 2 (even). Otherwise, it's odd.\n",
+        "\n",
+        "---\n",
+        "\n",
+        "## Complete Examples and Additional Practice\n",
+        "\n",
+        "Here are some additional examples that demonstrate the concepts:\n",
+        "\n",
+        "### Advanced List Operations\n"
+      ],
+      "id": "ecb78d44"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# List slicing examples\n",
+        "numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n",
+        "print(\"First 5 elements:\", numbers[:5])\n",
+        "print(\"Last 3 elements:\", numbers[-3:])\n",
+        "print(\"Every other element:\", numbers[::2])"
+      ],
+      "id": "80e382d7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Table Operations\n"
+      ],
+      "id": "2b0d89dd"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# More complex table operations\n",
+        "students = Table().with_columns(\n",
+        "    \"Name\", [\"Alice\", \"Bob\", \"Charlie\", \"Diana\"],\n",
+        "    \"Grade\", [85, 92, 78, 96],\n",
+        "    \"Year\", [\"Sophomore\", \"Junior\", \"Freshman\", \"Senior\"]\n",
+        ")\n",
+        "\n",
+        "# Multiple operations\n",
+        "high_performers = students.where(\"Grade\", are.above(90))\n",
+        "print(\"High performers:\")\n",
+        "high_performers.show()\n",
+        "\n",
+        "# Sort by grade\n",
+        "sorted_students = students.sort(\"Grade\", descending=True)\n",
+        "print(\"\\nStudents sorted by grade:\")\n",
+        "sorted_students.show()"
+      ],
+      "id": "548aa8ed",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Array Operations\n"
+      ],
+      "id": "46d406c2"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import numpy as np\n",
+        "\n",
+        "# Array mathematical operations\n",
+        "scores = make_array(85, 92, 78, 96, 89)\n",
+        "print(\"Original scores:\", scores)\n",
+        "print(\"Curved scores (+5):\", scores + 5)\n",
+        "print(\"Squared scores:\", scores ** 2)\n",
+        "print(\"Average score:\", np.mean(scores))"
+      ],
+      "id": "86d19345",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "\n",
+        "## Summary\n",
+        "\n",
+        "This lab covered fundamental Python data structures and programming concepts:\n",
+        "\n",
+        "- **Lists**: Mutable, mixed-type collections with zero-based indexing\n",
+        "- **Tables**: Structured data with named columns for data analysis\n",
+        "- **Arrays**: Homogeneous collections supporting element-wise operations\n",
+        "- **Comparisons**: Boolean logic and various comparison operators\n",
+        "- **Conditionals**: Decision-making with if/elif/else statements\n",
+        "- **Functions**: Creating reusable code blocks with proper documentation\n",
+        "\n",
+        "These concepts form the foundation for data analysis and programming in Python!"
+      ],
+      "id": "7040a904"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/opt/miniconda3/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

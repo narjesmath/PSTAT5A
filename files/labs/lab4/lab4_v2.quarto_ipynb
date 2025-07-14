@@ -1,0 +1,884 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Lab 4: Discrete Random Variables and Distributions\"\n",
+        "subtitle: \"PSTAT 5A - Summer Session A 2025\"\n",
+        "author: \"Instructor: Narjes Mathlouthi\"\n",
+        "format: \n",
+        "  html:\n",
+        "    toc: true\n",
+        "    toc-depth: 3\n",
+        "    logo: /img/logo.png\n",
+        "    footer: \"Discrete Random Variables - Lab4 © 2025 Narjes Mathlouthi\"\n",
+        "    number-sections: false\n",
+        "    code-fold: false\n",
+        "    theme: cosmo\n",
+        "    css: /files/lecture_notes/theme/lecture-styles.css\n",
+        "date: today\n",
+        "jupyter: python3\n",
+        "---\n",
+        "\n",
+        "\n",
+        "::: {.column-margin}\n",
+        "![](/img/logo.png){width=100px}\n",
+        ":::\n",
+        "\n",
+        "Welcome to Lab 4! Today we'll explore discrete random variables and probability distributions using Python. We'll learn how to calculate probabilities, expected values, and visualize different distributions.\n",
+        "\n",
+        "# Setup and Required Modules\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 3 minutes\n",
+        ":::\n",
+        "\n",
+        "Before we begin working with probability distributions, let's import the necessary modules:\n"
+      ],
+      "id": "5ef6db2b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "from scipy import stats\n",
+        "import pandas as pd\n",
+        "\n",
+        "# Set up plotting\n",
+        "%matplotlib inline\n",
+        "plt.style.use('seaborn-v0_8-whitegrid')"
+      ],
+      "id": "10fc71cc",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.callout-note}\n",
+        "We're introducing a new module today: `scipy.stats`. This module contains many statistical functions and probability distributions that we'll use extensively.\n",
+        ":::\n",
+        "\n",
+        "# Introduction to Random Variables\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 8 minutes\n",
+        ":::\n",
+        "\n",
+        "A **random variable** is a function that assigns numerical values to the outcomes of a random experiment. A **discrete random variable** can only take on a countable number of values (like 0, 1, 2, 3, ...).\n",
+        "\n",
+        "## Probability Mass Function (PMF)\n",
+        "\n",
+        "For a discrete random variable X, the **Probability Mass Function** P(X = k) gives the probability that X takes the value k.\n",
+        "\n",
+        "Key properties of a PMF:\n",
+        "- P(X = k) ≥ 0 for all k\n",
+        "- Σ P(X = k) = 1 (sum over all possible values)\n",
+        "\n",
+        "Let's start with a simple example:\n"
+      ],
+      "id": "64897c54"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Simple discrete random variable: rolling a fair die\n",
+        "# X can take values 1, 2, 3, 4, 5, 6 each with probability 1/6\n",
+        "\n",
+        "die_values = [1, 2, 3, 4, 5, 6]\n",
+        "die_probabilities = [1/6, 1/6, 1/6, 1/6, 1/6, 1/6]\n",
+        "\n",
+        "print(\"Die Values:\", die_values)\n",
+        "print(\"Probabilities:\", die_probabilities)\n",
+        "print(\"Sum of probabilities:\", sum(die_probabilities))"
+      ],
+      "id": "de11e380",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Let's visualize this distribution:\n"
+      ],
+      "id": "cc7d2e87"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "plt.figure(figsize=(8, 5))\n",
+        "plt.bar(die_values, die_probabilities, alpha=0.7, color='skyblue', edgecolor='black')\n",
+        "plt.xlabel('Value')\n",
+        "plt.ylabel('Probability')\n",
+        "plt.title('Probability Mass Function - Fair Die')\n",
+        "plt.ylim(0, 0.25)\n",
+        "plt.show()"
+      ],
+      "id": "9b27583e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.task-box}\n",
+        "## Task 1\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 5 minutes\n",
+        ":::\n",
+        "\n",
+        "Consider a biased coin where P(Heads) = 0.7 and P(Tails) = 0.3. Let X be a random variable where X = 1 for Heads and X = 0 for Tails.\n",
+        "\n",
+        "1. Create lists for the values and probabilities of X\n",
+        "2. Verify that the probabilities sum to 1\n",
+        "3. Create a bar plot showing the PMF\n",
+        "\n",
+        ":::\n"
+      ],
+      "id": "385c958e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Your code here"
+      ],
+      "id": "ecc01eba",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Expected Value and Variance\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 7 minutes\n",
+        ":::\n",
+        "\n",
+        "## Expected Value (Mean)\n",
+        "\n",
+        "The **expected value** of a discrete random variable X is:\n",
+        "\n",
+        "::: {.formula-box}\n",
+        "$$E[X] = \\mu = \\sum_{k} k \\cdot P(X = k)$$\n",
+        ":::\n",
+        "\n",
+        "## Variance\n",
+        "\n",
+        "The **variance** of X is:\n",
+        "\n",
+        "::: {.formula-box}\n",
+        "$$\\text{Var}(X) = \\sigma^2 = E[X^2] - (E[X])^2 = \\sum_{k} k^2 \\cdot P(X = k) - \\mu^2$$\n",
+        ":::\n",
+        "\n",
+        "Let's calculate these for our fair die example:\n"
+      ],
+      "id": "14d492f8"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Expected value of a fair die\n",
+        "expected_value = sum(k * p for k, p in zip(die_values, die_probabilities))\n",
+        "print(f\"Expected value of fair die: {expected_value}\")\n",
+        "\n",
+        "# Variance calculation\n",
+        "# First calculate E[X^2]\n",
+        "expected_x_squared = sum(k**2 * p for k, p in zip(die_values, die_probabilities))\n",
+        "variance = expected_x_squared - expected_value**2\n",
+        "\n",
+        "print(f\"E[X^2]: {expected_x_squared}\")\n",
+        "print(f\"Variance: {variance}\")\n",
+        "print(f\"Standard deviation: {np.sqrt(variance)}\")"
+      ],
+      "id": "8aba98ad",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.task-box}\n",
+        "## Task 2\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 4 minutes\n",
+        ":::\n",
+        "\n",
+        "Calculate the expected value and variance for the biased coin from Task 1 (where X = 1 for Heads with probability 0.7, and X = 0 for Tails with probability 0.3).\n",
+        "\n",
+        "Show your calculations step by step.\n",
+        "\n",
+        ":::\n"
+      ],
+      "id": "dde7e5f5"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Your code here"
+      ],
+      "id": "d2c2c7d3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Common Discrete Distributions\n",
+        "\n",
+        "## Bernoulli Distribution\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 6 minutes\n",
+        ":::\n",
+        "\n",
+        "A **Bernoulli distribution** models a single trial with two outcomes: success (1) or failure (0).\n",
+        "\n",
+        "- Parameter: p (probability of success)\n",
+        "- PMF: P(X = 1) = p, P(X = 0) = 1-p\n",
+        "- E[X] = p\n",
+        "- Var(X) = p(1-p)\n"
+      ],
+      "id": "079c3fc7"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Using scipy.stats for Bernoulli distribution\n",
+        "p = 0.3  # probability of success\n",
+        "\n",
+        "# Create Bernoulli distribution object\n",
+        "bern = stats.bernoulli(p)\n",
+        "\n",
+        "# Calculate probabilities\n",
+        "print(f\"P(X = 0) = {bern.pmf(0)}\")\n",
+        "print(f\"P(X = 1) = {bern.pmf(1)}\")\n",
+        "\n",
+        "# Expected value and variance\n",
+        "print(f\"Expected value: {bern.mean()}\")\n",
+        "print(f\"Variance: {bern.var()}\")"
+      ],
+      "id": "0803cb78",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Let's visualize several Bernoulli distributions:\n"
+      ],
+      "id": "9c4ac17f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "fig, axes = plt.subplots(1, 3, figsize=(12, 4))\n",
+        "p_values = [0.2, 0.5, 0.8]\n",
+        "\n",
+        "for i, p in enumerate(p_values):\n",
+        "    bern = stats.bernoulli(p)\n",
+        "    x_vals = [0, 1]\n",
+        "    y_vals = [bern.pmf(x) for x in x_vals]\n",
+        "    \n",
+        "    axes[i].bar(x_vals, y_vals, alpha=0.7, color='lightcoral', edgecolor='black')\n",
+        "    axes[i].set_xlabel('Value')\n",
+        "    axes[i].set_ylabel('Probability')\n",
+        "    axes[i].set_title(f'Bernoulli(p={p})')\n",
+        "    axes[i].set_ylim(0, 1)\n",
+        "\n",
+        "plt.tight_layout()\n",
+        "plt.show()"
+      ],
+      "id": "11f7f264",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Binomial Distribution\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 8 minutes\n",
+        ":::\n",
+        "\n",
+        "A **Binomial distribution** models the number of successes in n independent Bernoulli trials.\n",
+        "\n",
+        "- Parameters: n (number of trials), p (probability of success)\n",
+        "- PMF: P(X = k) = C(n,k) × p^k × (1-p)^(n-k)\n",
+        "- E[X] = np\n",
+        "- Var(X) = np(1-p)\n"
+      ],
+      "id": "560fd176"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Binomial distribution example: 10 coin flips with p = 0.5\n",
+        "n = 10\n",
+        "p = 0.5\n",
+        "\n",
+        "binom = stats.binom(n, p)\n",
+        "\n",
+        "# Calculate probabilities for different numbers of successes\n",
+        "k_values = range(0, n+1)\n",
+        "probabilities = [binom.pmf(k) for k in k_values]\n",
+        "\n",
+        "# Display some key probabilities\n",
+        "print(f\"P(X = 5) = {binom.pmf(5):.4f}\")\n",
+        "print(f\"P(X ≤ 3) = {binom.cdf(3):.4f}\")\n",
+        "print(f\"P(X ≥ 7) = {1 - binom.cdf(6):.4f}\")\n",
+        "\n",
+        "print(f\"\\nExpected value: {binom.mean()}\")\n",
+        "print(f\"Variance: {binom.var()}\")\n",
+        "print(f\"Standard deviation: {binom.std()}\")"
+      ],
+      "id": "e321330e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Let's visualize the binomial distribution:\n"
+      ],
+      "id": "1bdf9319"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "plt.figure(figsize=(10, 6))\n",
+        "plt.bar(k_values, probabilities, alpha=0.7, color='lightgreen', edgecolor='black')\n",
+        "plt.xlabel('Number of Successes (k)')\n",
+        "plt.ylabel('Probability')\n",
+        "plt.title(f'Binomial Distribution (n={n}, p={p})')\n",
+        "plt.show()"
+      ],
+      "id": "b3ffdcc1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.task-box}\n",
+        "## Task 3\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 6 minutes\n",
+        ":::\n",
+        "\n",
+        "A basketball player makes 70% of their free throws. They take 15 free throws.\n",
+        "\n",
+        "1. What is the probability they make exactly 10 free throws?\n",
+        "2. What is the probability they make at least 12 free throws?\n",
+        "3. What is the expected number of free throws made?\n",
+        "4. Create a bar plot showing the PMF for this scenario\n",
+        "\n",
+        ":::\n"
+      ],
+      "id": "649eea61"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Your code here"
+      ],
+      "id": "172250b1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Geometric Distribution\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 6 minutes\n",
+        ":::\n",
+        "\n",
+        "A **Geometric distribution** models the number of trials needed to get the first success.\n",
+        "\n",
+        "- Parameter: p (probability of success)\n",
+        "- PMF: P(X = k) = (1-p)^(k-1) × p\n",
+        "- E[X] = 1/p\n",
+        "- Var(X) = (1-p)/p²\n"
+      ],
+      "id": "433ce7f7"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Geometric distribution: rolling a die until we get a 6\n",
+        "p = 1/6  # probability of rolling a 6\n",
+        "\n",
+        "geom = stats.geom(p)\n",
+        "\n",
+        "# Calculate probabilities for first few trials\n",
+        "k_values = range(1, 21)  # trials 1 to 20\n",
+        "probabilities = [geom.pmf(k) for k in k_values]\n",
+        "\n",
+        "print(f\"P(X = 1) = {geom.pmf(1):.4f}\")  # Success on first trial\n",
+        "print(f\"P(X = 6) = {geom.pmf(6):.4f}\")  # Success on sixth trial\n",
+        "print(f\"P(X ≤ 10) = {geom.cdf(10):.4f}\")  # Success within 10 trials\n",
+        "\n",
+        "print(f\"\\nExpected value: {geom.mean():.2f}\")\n",
+        "print(f\"Variance: {geom.var():.2f}\")"
+      ],
+      "id": "c1f81a65",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Visualizing the geometric distribution:\n"
+      ],
+      "id": "c84f7055"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "plt.figure(figsize=(10, 6))\n",
+        "plt.bar(k_values, probabilities, alpha=0.7, color='orange', edgecolor='black')\n",
+        "plt.xlabel('Trial Number (k)')\n",
+        "plt.ylabel('Probability')\n",
+        "plt.title(f'Geometric Distribution (p={p:.3f})')\n",
+        "plt.show()"
+      ],
+      "id": "a0303f71",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Poisson Distribution\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 8 minutes\n",
+        ":::\n",
+        "\n",
+        "A **Poisson distribution** models the number of events occurring in a fixed interval when events occur independently at a constant average rate.\n",
+        "\n",
+        "- Parameter: λ (lambda, average rate)\n",
+        "- PMF: P(X = k) = (λ^k × e^(-λ)) / k!\n",
+        "- E[X] = λ\n",
+        "- Var(X) = λ\n"
+      ],
+      "id": "336a8f00"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Poisson distribution: number of customers arriving per hour\n",
+        "lam = 3.5  # average 3.5 customers per hour\n",
+        "\n",
+        "poisson = stats.poisson(lam)\n",
+        "\n",
+        "# Calculate probabilities\n",
+        "k_values = range(0, 15)\n",
+        "probabilities = [poisson.pmf(k) for k in k_values]\n",
+        "\n",
+        "print(f\"P(X = 0) = {poisson.pmf(0):.4f}\")  # No customers\n",
+        "print(f\"P(X = 3) = {poisson.pmf(3):.4f}\")  # Exactly 3 customers\n",
+        "print(f\"P(X ≤ 5) = {poisson.cdf(5):.4f}\")  # At most 5 customers\n",
+        "print(f\"P(X ≥ 6) = {1 - poisson.cdf(5):.4f}\")  # At least 6 customers\n",
+        "\n",
+        "print(f\"\\nExpected value: {poisson.mean()}\")\n",
+        "print(f\"Variance: {poisson.var()}\")"
+      ],
+      "id": "c38db92e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "Visualizing different Poisson distributions:\n"
+      ],
+      "id": "1d8fccab"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "fig, axes = plt.subplots(1, 3, figsize=(15, 5))\n",
+        "lambda_values = [1, 3.5, 8]\n",
+        "\n",
+        "for i, lam in enumerate(lambda_values):\n",
+        "    poisson = stats.poisson(lam)\n",
+        "    k_vals = range(0, int(lam + 4*np.sqrt(lam)))\n",
+        "    probs = [poisson.pmf(k) for k in k_vals]\n",
+        "    \n",
+        "    axes[i].bar(k_vals, probs, alpha=0.7, color='purple', edgecolor='black')\n",
+        "    axes[i].set_xlabel('Number of Events (k)')\n",
+        "    axes[i].set_ylabel('Probability')\n",
+        "    axes[i].set_title(f'Poisson(λ={lam})')\n",
+        "\n",
+        "plt.tight_layout()\n",
+        "plt.show()"
+      ],
+      "id": "8f69bebc",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.task-box}\n",
+        "## Task 4\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 7 minutes\n",
+        ":::\n",
+        "\n",
+        "A call center receives an average of 5 calls per minute.\n",
+        "\n",
+        "1. What is the probability of receiving exactly 7 calls in a minute?\n",
+        "2. What is the probability of receiving no calls in a minute?\n",
+        "3. What is the probability of receiving more than 8 calls in a minute?\n",
+        "4. Plot the PMF for k = 0 to 15 calls\n",
+        "\n",
+        ":::\n"
+      ],
+      "id": "81bd4345"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Your code here"
+      ],
+      "id": "06751dab",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Comparing Distributions\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 8 minutes\n",
+        ":::\n",
+        "\n",
+        "Let's compare how different parameters affect the shape of distributions:\n"
+      ],
+      "id": "f4e41152"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Compare binomial distributions with different parameters\n",
+        "fig, axes = plt.subplots(2, 2, figsize=(12, 10))\n",
+        "\n",
+        "# Different n, same p\n",
+        "n_values = [10, 30]\n",
+        "p = 0.3\n",
+        "for i, n in enumerate(n_values):\n",
+        "    binom = stats.binom(n, p)\n",
+        "    k_vals = range(0, n+1)\n",
+        "    probs = [binom.pmf(k) for k in k_vals]\n",
+        "    \n",
+        "    axes[0, i].bar(k_vals, probs, alpha=0.7, color='skyblue', edgecolor='black')\n",
+        "    axes[0, i].set_title(f'Binomial(n={n}, p={p})')\n",
+        "    axes[0, i].set_xlabel('k')\n",
+        "    axes[0, i].set_ylabel('Probability')\n",
+        "\n",
+        "# Different p, same n\n",
+        "p_values = [0.2, 0.7]\n",
+        "n = 20\n",
+        "for i, p in enumerate(p_values):\n",
+        "    binom = stats.binom(n, p)\n",
+        "    k_vals = range(0, n+1)\n",
+        "    probs = [binom.pmf(k) for k in k_vals]\n",
+        "    \n",
+        "    axes[1, i].bar(k_vals, probs, alpha=0.7, color='lightcoral', edgecolor='black')\n",
+        "    axes[1, i].set_title(f'Binomial(n={n}, p={p})')\n",
+        "    axes[1, i].set_xlabel('k')\n",
+        "    axes[1, i].set_ylabel('Probability')\n",
+        "\n",
+        "plt.tight_layout()\n",
+        "plt.show()"
+      ],
+      "id": "01c6f8d1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.task-box}\n",
+        "## Task 5\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 8 minutes\n",
+        ":::\n",
+        "\n",
+        "**Distribution Identification Practice**\n",
+        "\n",
+        "For each scenario below, identify the appropriate distribution and calculate the requested probability:\n",
+        "\n",
+        "1. **Scenario A**: You flip a fair coin 20 times. What's the probability of getting exactly 12 heads?\n",
+        "\n",
+        "2. **Scenario B**: You keep rolling a die until you get a 6. What's the probability it takes exactly 4 rolls?\n",
+        "\n",
+        "3. **Scenario C**: A website gets an average of 2 visitors per minute. What's the probability of getting exactly 3 visitors in a given minute?\n",
+        "\n",
+        "4. **Scenario D**: A quality control inspector tests items where 5% are defective. What's the probability the first defective item is found on the 8th test?\n",
+        "\n",
+        ":::\n"
+      ],
+      "id": "8bbe4efb"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Your code here - Scenario A"
+      ],
+      "id": "98249da0",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Your code here - Scenario B"
+      ],
+      "id": "2bf079f3",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Your code here - Scenario C"
+      ],
+      "id": "0cdd739a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Your code here - Scenario D"
+      ],
+      "id": "0aec60f2",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Simulation and Law of Large Numbers\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 10 minutes\n",
+        ":::\n",
+        "\n",
+        "Let's use simulation to verify our theoretical calculations:\n"
+      ],
+      "id": "735966b4"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Simulate rolling a fair die many times and compare to theoretical expected value\n",
+        "np.random.seed(42)\n",
+        "\n",
+        "# Theoretical expected value of a fair die\n",
+        "theoretical_mean = 3.5\n",
+        "\n",
+        "# Simulate different numbers of rolls\n",
+        "n_simulations = [10, 100, 1000, 10000, 100000]\n",
+        "simulated_means = []\n",
+        "\n",
+        "for n in n_simulations:\n",
+        "    # Simulate n rolls of a fair die\n",
+        "    rolls = np.random.randint(1, 7, size=n)\n",
+        "    simulated_mean = np.mean(rolls)\n",
+        "    simulated_means.append(simulated_mean)\n",
+        "    \n",
+        "    print(f\"n = {n:6d}: Simulated mean = {simulated_mean:.4f}, \"\n",
+        "          f\"Difference from theoretical = {abs(simulated_mean - theoretical_mean):.4f}\")\n",
+        "\n",
+        "# Plot convergence\n",
+        "plt.figure(figsize=(10, 6))\n",
+        "plt.semilogx(n_simulations, simulated_means, 'bo-', label='Simulated mean')\n",
+        "plt.axhline(y=theoretical_mean, color='red', linestyle='--', label='Theoretical mean')\n",
+        "plt.xlabel('Number of simulations')\n",
+        "plt.ylabel('Sample mean')\n",
+        "plt.title('Law of Large Numbers: Dice Rolling')\n",
+        "plt.legend()\n",
+        "plt.grid(True, alpha=0.3)\n",
+        "plt.show()"
+      ],
+      "id": "a4bfaaf1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.task-box}\n",
+        "## Task 6\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 8 minutes\n",
+        ":::\n",
+        "\n",
+        "**Simulation Project**: \n",
+        "\n",
+        "Simulate the basketball free throw scenario from Task 3 (15 shots, 70% success rate):\n",
+        "\n",
+        "1. Simulate this scenario 1000 times\n",
+        "2. Calculate the proportion of simulations where the player made exactly 10 shots\n",
+        "3. Compare this to the theoretical probability you calculated earlier\n",
+        "4. Create a histogram of the simulation results and overlay the theoretical PMF\n",
+        "\n",
+        ":::\n"
+      ],
+      "id": "5f39efdf"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Your code here"
+      ],
+      "id": "c5e18cca",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Summary and Practice\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 5 minutes\n",
+        ":::\n",
+        "\n",
+        "In this lab, we covered:\n",
+        "\n",
+        "- **Random Variables**: Functions that assign numbers to outcomes\n",
+        "- **PMF**: Probability Mass Function for discrete random variables  \n",
+        "- **Expected Value and Variance**: Key measures of center and spread\n",
+        "- **Common Distributions**:\n",
+        "  - Bernoulli: Single trial, two outcomes\n",
+        "  - Binomial: Number of successes in n trials\n",
+        "  - Geometric: Trials until first success\n",
+        "  - Poisson: Number of events in fixed interval\n",
+        "- **Using scipy.stats**: Powerful tools for probability calculations\n",
+        "- **Simulation**: Verifying theoretical results\n",
+        "\n",
+        "::: {.task-box}\n",
+        "## Final Challenge\n",
+        "\n",
+        "::: {.time-box}\n",
+        "⏱️ **Estimated time:** 10 minutes\n",
+        ":::\n",
+        "\n",
+        "**Real-World Application**: \n",
+        "\n",
+        "A customer service center has the following characteristics:\n",
+        "- 20% of calls result in a sale (Bernoulli process)\n",
+        "- Calls arrive at an average rate of 4 per hour (Poisson process)\n",
+        "- Agents keep working until they make their first sale of the day (Geometric process)\n",
+        "\n",
+        "Calculate:\n",
+        "1. In a day with 8 hours of operation, what's the expected number of calls?\n",
+        "2. What's the probability that exactly 2 of the next 10 calls result in sales?\n",
+        "3. What's the expected number of calls an agent needs to handle to make their first sale?\n",
+        "4. Create a comprehensive visualization showing all three distributions\n",
+        "\n",
+        ":::\n"
+      ],
+      "id": "c2a69740"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Your code here"
+      ],
+      "id": "417c296d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.callout-tip}\n",
+        "## For Further Practice\n",
+        "\n",
+        "After completing this lab, try exploring:\n",
+        "- The relationship between Binomial and Poisson distributions (Poisson approximation)\n",
+        "- The hypergeometric distribution\n",
+        "- Using `scipy.stats` to fit distributions to real data\n",
+        "- Monte Carlo simulations for more complex probability problems\n",
+        ":::\n",
+        "\n",
+        "This concludes Lab 4! You now have the tools to work with discrete probability distributions in Python and solve real-world probability problems."
+      ],
+      "id": "3e21edec"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/opt/miniconda3/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

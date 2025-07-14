@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Narjes Mathlouthi">
-  <meta name="dcterms.date" content="2025-07-08">
-  <title>PSTAT5A – PSTAT 5A: Conditional Probabilities</title>
+  <meta name="dcterms.date" content="2025-07-14">
+  <title>PSTAT5A – PSTAT 5A: Continuous Random Variables</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,7 +31,7 @@
     }
   </style>
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
-  <link rel="stylesheet" href="../../../files/lecture_notes/theme/lecture-styles.css">
+  <link rel="stylesheet" href="../../../files/lecture_notes/lecture8/new-style.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -131,8 +131,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">PSTAT 5A: Conditional Probabilities</h1>
-  <p class="subtitle">Lecture 6</p>
+  <h1 class="title">PSTAT 5A: Continuous Random Variables</h1>
+  <p class="subtitle">Lecture 9</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -142,577 +142,511 @@ Narjes Mathlouthi
 </div>
 </div>
 
-  <p class="date">2025-07-08</p>
-</section>
-<section id="welcome-to-lecture-6" class="slide level2 center">
-<h2>Welcome to Lecture 6</h2>
-<p><strong>Conditional Probabilities</strong></p>
-<p><em>Understanding probability when information changes the game</em></p>
-</section>
-<section id="todays-learning-objectives" class="slide level2">
-<h2>Today’s Learning Objectives</h2>
-<p>By the end of this lecture, you will be able to:</p>
-<ul>
-<li>Define and calculate conditional probabilities</li>
-<li>Apply the multiplication rule for dependent events</li>
-<li>Use tree diagrams to solve multi-stage problems</li>
-<li>Apply the law of total probability</li>
-<li>Use Bayes’ theorem to solve real-world problems</li>
-<li>Distinguish between independence and conditional independence</li>
-<li>Recognize and avoid common conditional probability fallacies</li>
-</ul>
-</section>
-<section id="motivation-why-conditional-probability" class="slide level2">
-<h2>Motivation: Why Conditional Probability?</h2>
-<p>In real life, we rarely make decisions with no information</p>
-<p><strong>Examples:</strong> - Medical diagnosis with test results - Weather forecast with current conditions<br>
-- Investment decisions with market data - Sports betting with team statistics - Insurance premiums based on risk factors</p>
-<div class="fragment">
-<p><em>Conditional probability helps us update our beliefs when we gain new information</em></p>
-</div>
-</section>
-<section id="what-is-conditional-probability" class="slide level2">
-<h2>What is Conditional Probability?</h2>
-<p><strong>Conditional Probability</strong> is the probability of an event occurring, given that another event has already occurred</p>
-<p><strong>Notation</strong>: <span class="math inline">\(P(A|B)\)</span> read as “probability of A given B”</p>
-<div class="fragment">
-<p><strong>Key insight</strong>: When we know B has occurred, our sample space effectively “shrinks” to only outcomes where B is true</p>
-</div>
-</section>
-<section id="intuitive-example" class="slide level2">
-<h2>Intuitive Example</h2>
-<p>You roll a fair six-sided die, but before revealing the result, someone tells you “the number is even”</p>
-<p>What’s the probability it’s a 4?</p>
-<div class="fragment">
-<p><strong>Without information</strong>: <span class="math inline">\(P(\text{rolling 4}) = \frac{1}{6}\)</span></p>
-<p><strong>With information</strong>: <span class="math inline">\(P(\text{4 | even}) = ?\)</span></p>
-<p>Given it’s even, possible outcomes: <span class="math inline">\(\{2, 4, 6\}\)</span> So <span class="math inline">\(P(\text{4 | even}) = \frac{1}{3}\)</span></p>
-</div>
-</section>
-<section id="formal-definition" class="slide level2">
-<h2>Formal Definition</h2>
-<p>For events A and B where <span class="math inline">\(P(B) &gt; 0\)</span>:</p>
-<p><span class="math display">\[P(A|B) = \frac{P(A \cap B)}{P(B)}\]</span></p>
-<div class="fragment">
-<p><strong>Interpretation</strong>:</p>
-<ul>
-<li><p><strong>Numerator:</strong> Outcomes where both A and B occur</p></li>
-<li><p><strong>Denominator:</strong> All outcomes where B occurs</p></li>
-<li><p><strong>Ratio:</strong> Fraction of B-outcomes where A also occurs</p></li>
-</ul>
-</div>
-</section>
-<section id="understanding-the-formula" class="slide level2">
-<h2>Understanding the Formula</h2>
-<p><span class="math display">\[P(A|B) = \frac{P(A \cap B)}{P(B)}\]</span></p>
-<p><strong>Why this formula makes sense:</strong></p>
-<ul>
-<li><p>We restrict our attention to outcomes where B occurs</p></li>
-<li><p>Among those outcomes, what fraction also have A?</p></li>
-<li><p>This is exactly <span class="math inline">\(\frac{P(A \cap B)}{P(B)}\)</span></p></li>
-</ul>
-<div class="fragment">
-<p><strong>Rearranging</strong>: <span class="math inline">\(P(A \cap B) = P(A|B) \times P(B)\)</span></p>
-</div>
-</section>
-<section id="practice-problem-1" class="slide level2">
-<h2>Practice Problem 1</h2>
-<p>A card is drawn from a standard 52-card deck. Find:</p>
-<ol type="a">
-<li><span class="math inline">\(P(\text{King | Face card})\)</span></li>
-<li><span class="math inline">\(P(\text{Heart | Red card})\)</span><br>
-</li>
-<li><span class="math inline">\(P(\text{Ace | Black card})\)</span></li>
-</ol>
-<div class="fragment">
-<p><strong>Solutions:</strong></p>
-<ol type="a">
-<li><p><span class="math inline">\(P(\text{King | Face}) = \frac{4}{12} = \frac{1}{3}\)</span> (4 kings among 12 face cards)</p></li>
-<li><p><span class="math inline">\(P(\text{Heart | Red}) = \frac{13}{26} = \frac{1}{2}\)</span> (13 hearts among 26 red cards)</p></li>
-<li><p><span class="math inline">\(P(\text{Ace | Black}) = \frac{2}{26} = \frac{1}{13}\)</span> (2 black aces among 26 black cards)</p></li>
-</ol>
-</div>
-</section>
-<section id="two-way-tables" class="slide level2">
-<h2>Two-Way Tables</h2>
-<p>Two-way tables are excellent for conditional probability problems</p>
-<p><strong>Example</strong>: Survey of 1000 people about coffee preference</p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th></th>
-<th>Coffee</th>
-<th>No Coffee</th>
-<th>Total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Morning</td>
-<td>350</td>
-<td>150</td>
-<td>500</td>
-</tr>
-<tr class="even">
-<td>Evening</td>
-<td>200</td>
-<td>300</td>
-<td>500</td>
-</tr>
-<tr class="odd">
-<td><strong>Total</strong></td>
-<td>550</td>
-<td>450</td>
-<td>1000</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="using-two-way-tables" class="slide level2">
-<h2>Using Two-Way Tables</h2>
-<p>Find: <span class="math inline">\(P(\text{Coffee | Morning person})\)</span></p>
-<p>From the table:</p>
-<ul>
-<li><p>Morning people: 500</p></li>
-<li><p>Morning people who drink coffee: 350</p></li>
-</ul>
-<div class="fragment">
-<p><span class="math inline">\(P(\text{Coffee | Morning}) = \frac{350}{500} = 0.7\)</span></p>
-<p><strong>Compare to</strong>: <span class="math inline">\(P(\text{Coffee}) = \frac{550}{1000} = 0.55\)</span></p>
-<p>Being a morning person increases coffee probability!</p>
-</div>
-</section>
-<section id="practice-problem-2" class="slide level2">
-<h2>Practice Problem 2</h2>
-<p>Using the coffee table, find:</p>
-<ol type="a">
-<li><p><span class="math inline">\(P(\text{Morning | Coffee drinker})\)</span></p></li>
-<li><p><span class="math inline">\(P(\text{No Coffee | Evening person})\)</span></p></li>
-<li><p><span class="math inline">\(P(\text{Evening | No Coffee})\)</span></p></li>
-</ol>
-<div class="fragment">
-<p><strong>Solutions:</strong></p>
-<ol type="a">
-<li><p><span class="math inline">\(P(\text{Morning | Coffee}) = \frac{350}{550} = \frac{7}{11} \approx 0.636\)</span></p></li>
-<li><p><span class="math inline">\(P(\text{No Coffee | Evening}) = \frac{300}{500} = 0.6\)</span></p></li>
-<li><p><span class="math inline">\(P(\text{Evening | No Coffee}) = \frac{300}{450} = \frac{2}{3} \approx 0.667\)</span></p></li>
-</ol>
-</div>
-</section>
-<section id="independence-revisited" class="slide level2">
-<h2>Independence Revisited</h2>
-<p>Events A and B are <strong>independent</strong> if knowing that B occurred doesn’t change the probability of A</p>
-<p><span class="math display">\[P(A|B) = P(A)\]</span></p>
-<p><strong>Equivalently:</strong> <span class="math display">\[P(A \cap B) = P(A) \times P(B)\]</span></p>
-<div class="fragment">
-<p><strong>Example</strong>: Two coin flips are independent because <span class="math inline">\(P(\text{H}_2 | \text{H}_1) = P(\text{H}_2) = 0.5\)</span></p>
-</div>
-</section>
-<section id="testing-for-independence" class="slide level2">
-<h2>Testing for Independence</h2>
-<p><strong>Method 1</strong>: Check if <span class="math inline">\(P(A|B) = P(A)\)</span></p>
-<p><strong>Method 2</strong>: Check if <span class="math inline">\(P(A \cap B) = P(A) \times P(B)\)</span></p>
-<p><strong>Method 3</strong>: Check if <span class="math inline">\(P(B|A) = P(B)\)</span></p>
-<div class="fragment">
-<p><strong>Coffee Example</strong>: Are coffee preference and time preference independent?</p>
-<p><span class="math inline">\(P(\text{Coffee}) = 0.55\)</span></p>
-<p><span class="math inline">\(P(\text{Coffee | Morning}) = 0.7\)</span></p>
-<p>Since <span class="math inline">\(0.7 \neq 0.55\)</span>, they are <strong>not independent</strong></p>
-</div>
-</section>
-<section id="the-multiplication-rule" class="slide level2">
-<h2>The Multiplication Rule</h2>
-<p><strong>General Multiplication Rule</strong>: <span class="math display">\[P(A \cap B) = P(A) \times P(B|A) = P(B) \times P(A|B)\]</span></p>
-<p><strong>For Independent Events</strong>: <span class="math display">\[P(A \cap B) = P(A) \times P(B)\]</span></p>
-<div class="fragment">
-<p><strong>Extension to Multiple Events</strong>: <span class="math display">\[P(A_1 \cap A_2 \cap A_3) = P(A_1) \times P(A_2|A_1) \times P(A_3|A_1 \cap A_2)\]</span></p>
-</div>
-</section>
-<section id="multiplication-rule-example" class="slide level2">
-<h2>Multiplication Rule Example</h2>
-<p>A jar contains 5 red balls and 3 blue balls. Two balls are drawn <strong>without replacement</strong>. What’s the probability both are red?</p>
-<div class="fragment">
-<p>Let <span class="math inline">\(R_1\)</span> = first ball is red, <span class="math inline">\(R_2\)</span> = second ball is red</p>
-<p><span class="math inline">\(P(R_1 \cap R_2) = P(R_1) \times P(R_2|R_1)\)</span></p>
-<p><span class="math inline">\(= \frac{5}{8} \times \frac{4}{7} = \frac{20}{56} = \frac{5}{14}\)</span></p>
-</div>
-</section>
-<section id="practice-problem-3" class="slide level2">
-<h2>Practice Problem 3</h2>
-<p>A box contains 4 defective and 6 working items. Three items are selected without replacement. Find the probability that:</p>
-<ol type="a">
-<li>All three work</li>
-<li>The first two work and the third is defective</li>
-<li>Exactly two work</li>
-</ol>
-<div class="fragment">
-<p><strong>Solutions:</strong> a) <span class="math inline">\(P(\text{WWW}) = \frac{6}{10} \times \frac{5}{9} \times \frac{4}{8} = \frac{120}{720} = \frac{1}{6}\)</span></p>
-<ol start="2" type="a">
-<li><span class="math inline">\(P(\text{WWD}) = \frac{6}{10} \times \frac{5}{9} \times \frac{4}{8} = \frac{120}{720} = \frac{1}{6}\)</span></li>
-</ol>
-</div>
-</section>
-<section id="practice-problem-3-continued" class="slide level2">
-<h2>Practice Problem 3 (continued)</h2>
-<ol start="3" type="a">
-<li>Exactly two work (three scenarios: WWD, WDW, DWW)</li>
-</ol>
-<p><span class="math inline">\(P(\text{WWD}) = \frac{6}{10} \times \frac{5}{9} \times \frac{4}{8} = \frac{1}{6}\)</span></p>
-<p><span class="math inline">\(P(\text{WDW}) = \frac{6}{10} \times \frac{4}{9} \times \frac{5}{8} = \frac{1}{6}\)</span></p>
-<p><span class="math inline">\(P(\text{DWW}) = \frac{4}{10} \times \frac{6}{9} \times \frac{5}{8} = \frac{1}{6}\)</span></p>
-<div class="fragment">
-<p>Total: <span class="math inline">\(\frac{1}{6} + \frac{1}{6} + \frac{1}{6} = \frac{1}{2}\)</span></p>
-</div>
+  <p class="date">2025-07-14</p>
 </section>
 <section class="slide level2">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="../../../files/lecture_notes/lecture8/lecture-interactive.js"></script>
 </section>
-<div class="hidden">
-<section id="tree-diagrams" class="slide level2">
-<h2>Tree Diagrams</h2>
-<p>Tree diagrams help visualize sequential events and conditional probabilities</p>
-<pre><code>                    0.5   Red
-            0.6 ──┐
-                    0.5   Blue
-Ball 1      
-                    0.4   Red  
-            0.4 ──┐
-                    0.6   Blue</code></pre>
-<p><em>Each branch shows conditional probabilities</em></p>
-<hr>
+<section id="welcome-to-lecture-9" class="slide level2 center">
+<h2>Welcome to Lecture 9</h2>
+<p><strong>Continuous Random Variables</strong></p>
+<p><em>From discrete jumps to smooth curves: modeling the continuous world</em></p>
 </section>
-<section id="tree-diagram-example" class="slide level2">
-<h2>Tree Diagram Example</h2>
-<p>Medical test scenario: - 2% of population has disease - Test is 95% accurate for sick people<br>
-- Test is 90% accurate for healthy people</p>
-<p>What’s the probability of testing positive?</p>
-<hr>
-</section>
-<section id="tree-diagram-solution" class="slide level2">
-<h2>Tree Diagram Solution</h2>
-<pre><code>                    0.95   Test +
-            0.02 ──┐
-                    0.05   Test -
-Disease?    
-                    0.10   Test +
-            0.98 ──┐
-                    0.90   Test -</code></pre>
-<div class="fragment">
-<p><span class="math inline">\(P(\text{Test+}) = P(\text{Test+|Disease}) \times P(\text{Disease}) + P(\text{Test+|Healthy}) \times P(\text{Healthy})\)</span></p>
-<p><span class="math inline">\(= 0.95 \times 0.02 + 0.10 \times 0.98 = 0.019 + 0.098 = 0.117\)</span></p>
-</div>
-</section>
-</div>
-<section id="law-of-total-probability" class="slide level2">
-<h2>Law of Total Probability</h2>
-<p>If events <span class="math inline">\(B_1, B_2, \ldots, B_n\)</span> form a <strong>partition</strong> of the sample space (mutually exclusive and exhaustive), then:</p>
-<p><span class="math display">\[P(A) = \sum_{i=1}^{n} P(A|B_i) \times P(B_i)\]</span></p>
-<div class="fragment">
-<p><strong>Partition means</strong>:</p>
+<section id="todays-learning-objectives" class="slide level2 smaller">
+<h2>Today’s Learning Objectives</h2>
+<p>By the end of this lecture, you will be able to:</p>
 <ul>
-<li><p><span class="math inline">\(B_i \cap B_j = \emptyset\)</span> for <span class="math inline">\(i \neq j\)</span> (mutually exclusive)</p></li>
-<li><p><span class="math inline">\(\bigcup_{i=1}^{n} B_i = S\)</span> (exhaustive)</p></li>
+<li>Distinguish between discrete and continuous random variables (<a href="#/sec-dis-cont-vars" class="quarto-xref">Section&nbsp;3</a>)</li>
+<li>Understand probability density functions (PDFs) and their interpretation (<a href="#/sec-pdf" class="quarto-xref">Section&nbsp;4</a>)</li>
+<li>Work with cumulative distribution functions (CDFs) for continuous variables</li>
+<li>Calculate probabilities using areas under curves</li>
+<li>Compute expected values and variances for continuous distributions</li>
+<li>Work with common continuous distributions (Uniform, Normal, Exponential)</li>
+<li>Apply the Central Limit Theorem</li>
+<li>Use <code>python</code> to work with continuous distributions</li>
 </ul>
-</div>
 </section>
-<section id="law-of-total-probability-example" class="slide level2">
-<h2>Law of Total Probability Example</h2>
-<p>A factory has three machines: - Machine A: 50% of production, 1% defective - Machine B: 30% of production, 2% defective<br>
-- Machine C: 20% of production, 3% defective</p>
-<p>What’s the overall defect rate?</p>
-<div class="fragment">
-<p><span class="math inline">\(P(\text{Defective}) = P(D|A)P(A) + P(D|B)P(B) + P(D|C)P(C)\)</span></p>
-<p><span class="math inline">\(= 0.01 \times 0.5 + 0.02 \times 0.3 + 0.03 \times 0.2\)</span></p>
-<p><span class="math inline">\(= 0.005 + 0.006 + 0.006 = 0.017 = 1.7\%\)</span></p>
-</div>
-</section>
-<section id="practice-problem-4" class="slide level2">
-<h2>Practice Problem 4</h2>
-<p>A student studies for an exam with three possible outcomes based on study time: - Studies hard (40%): 90% chance of passing - Studies moderately (35%): 70% chance of passing<br>
-- Doesn’t study (25%): 30% chance of passing</p>
-<p>What’s the overall probability of passing?</p>
-<div class="fragment">
-<p><span class="math inline">\(P(\text{Pass}) = 0.9 \times 0.4 + 0.7 \times 0.35 + 0.3 \times 0.25\)</span></p>
-<p><span class="math inline">\(= 0.36 + 0.245 + 0.075 = 0.68\)</span></p>
-</div>
-</section>
-<section id="bayes-theorem" class="slide level2">
-<h2>Bayes’ Theorem</h2>
-<p><strong>The Foundation</strong>: We often want to “reverse” conditional probabilities</p>
-<p>Given: <span class="math inline">\(P(B|A)\)</span>, <span class="math inline">\(P(A)\)</span>, <span class="math inline">\(P(B)\)</span> Want: <span class="math inline">\(P(A|B)\)</span></p>
-<p><strong>Bayes’ Theorem</strong>: <span class="math display">\[P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}\]</span></p>
-</section>
-<section id="bayes-theorem-components" class="slide level2">
-<h2>Bayes’ Theorem Components</h2>
-<p><span class="math display">\[P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}\]</span></p>
+<section id="sec-dis-cont-vars" class="slide level2 smaller">
+<h2>Review: Discrete vs Continuous</h2>
+<div class="columns">
+<div class="column smaller">
+<div class="type-card discrete-card">
+<h4>
+Discrete Random Variables
+</h4>
 <ul>
-<li><span class="math inline">\(P(A|B)\)</span>: <strong>Posterior probability</strong> (what we want)</li>
-<li><span class="math inline">\(P(B|A)\)</span>: <strong>Likelihood</strong> (what we observe)<br>
+<li>
+<strong>Countable</strong> values (can list them)
 </li>
-<li><span class="math inline">\(P(A)\)</span>: <strong>Prior probability</strong> (initial belief)</li>
-<li><span class="math inline">\(P(B)\)</span>: <strong>Evidence</strong> (marginal probability)</li>
+<li>
+<strong>Gaps</strong> between possible values
+</li>
+<li>
+Uses <strong>Probability Mass Function (PMF)</strong>
+</li>
+<li>
+<span class="math inline">\(P(X = x)\)</span> makes sense
+</li>
 </ul>
-<div class="fragment">
-<p><em>“In light of evidence B, how should we update our belief in A?”</em></p>
+<p>
+<strong>Examples:</strong> Dice rolls, number of emails, quiz scores
+</p>
+<div class="discrete-plot">
+<canvas id="discreteReview">
+</canvas>
+</div>
+</div>
+</div><div class="column smaller">
+<div class="type-card continuous-card">
+<h4>
+Continuous Random Variables
+</h4>
+<ul>
+<li>
+<strong>Uncountable</strong> values (infinite possibilities)
+</li>
+<li>
+<strong>No gaps</strong> - any value in an interval
+</li>
+<li>
+Uses <strong>Probability Density Function (PDF)</strong>
+</li>
+<li>
+<span class="math inline">\(P(X = x) = 0\)</span> for any specific value!
+</li>
+</ul>
+<p>
+<strong>Examples:</strong> Height, weight, time, temperature
+</p>
+<div class="continuous-plot">
+<canvas id="continuousReview">
+</canvas>
+</div>
+</div>
+</div></div>
+</section>
+<section id="sec-pdf" class="slide level2 smaller">
+<h2>Why <code>P(X = x) = 0</code> for Continuous Variables?</h2>
+<div class="smaller">
+<div class="key-insight">
+<p>For continuous random variables, the probability of any <strong>exact</strong> value is zero!</p>
+<p><strong>Think about it:</strong> What’s the probability someone is exactly 5.7324681… feet tall?</p>
+</div>
+</div>
+<div class="columns">
+<div class="column smaller">
+<p><strong>Instead, we ask:</strong></p>
+<ul>
+<li><p>P(5.7 ≤ X ≤ 5.8)?</p></li>
+<li><p>P(X ≤ 6.0)?</p></li>
+<li><p>P(X &gt; 5.5)?</p></li>
+</ul>
+<p><strong>Key insight:</strong> We calculate probabilities for <strong>intervals</strong>, not exact points.</p>
+</div><div class="column smaller">
+<div class="chart-container">
+<canvas id="continuousPointChart">
+</canvas>
+</div>
+<p><em>Click to see why P(X = exact value) = 0</em></p>
+</div></div>
+</section>
+<section id="probability-density-function-pdf" class="slide level2 smaller">
+<h2>Probability Density Function (PDF)</h2>
+<div class="summary-card smaller">
+<div style="font-weight: 600; color: #2563eb; margin-bottom: 8px;">
+<p><span style="font-size:1.1em;"> 🎯 Definition:</span> The <strong>Probability Density Function (PDF)</strong> of a continuous random variable <span class="math inline">\(X\)</span> is a function <span class="math inline">\(f(x)\)</span> such that:</p>
+</div>
+<div style="margin-bottom: 10px; font-size: 1.05em;">
+<p><span class="math display">\[P(a \leq X \leq b) = \int_a^b f(x) \, dx\]</span></p>
+</div>
+<div style="font-weight: 600; color: #f97316; margin-bottom: 4px;">
+<p>Properties of PDF:</p>
+</div>
+<ul style="margin-top: 0; margin-bottom: 0.5em;">
+<li>
+<span class="math inline">\(f(x) \geq 0\)</span> for all <span class="math inline">\(x\)</span>
+</li>
+<li>
+<span class="math inline">\(\int_{-\infty}^{\infty} f(x) \, dx = 1\)</span>
+</li>
+<li>
+<span class="math inline">\(f(x)\)</span> is NOT a probability - it’s a density!
+</li>
+</ul>
 </div>
 </section>
-<section id="bayes-theorem-with-total-probability" class="slide level2">
-<h2>Bayes’ Theorem with Total Probability</h2>
-<p>When we need to find <span class="math inline">\(P(B)\)</span>:</p>
-<p><span class="math display">\[P(A|B) = \frac{P(B|A) \times P(A)}{P(B|A) \times P(A) + P(B|A^c) \times P(A^c)}\]</span></p>
-<p>This is the most common form for applications</p>
-</section>
-<section id="medical-diagnosis-example" class="slide level2">
-<h2>Medical Diagnosis Example</h2>
-<p>Revisiting our medical test: - 2% of population has disease (prior) - Test positive (evidence)<br>
-- Test is 95% accurate for sick, 90% accurate for healthy</p>
-<p>Given a positive test, what’s the probability of having the disease?</p>
-</section>
-<section id="medical-diagnosis-solution" class="slide level2">
-<h2>Medical Diagnosis Solution</h2>
-<p>Let D = disease, T+ = positive test</p>
-<p><span class="math display">\[P(D|T+) = \frac{P(T+|D) \times P(D)}{P(T+|D) \times P(D) + P(T+|D^c) \times P(D^c)}\]</span></p>
-<p><span class="math display">\[= \frac{0.95 \times 0.02}{0.95 \times 0.02 + 0.10 \times 0.98}\]</span></p>
-<p><span class="math display">\[= \frac{0.019}{0.019 + 0.098} = \frac{0.019}{0.117} \approx 0.162\]</span></p>
-<div class="fragment">
-<p><strong>Surprising</strong>: Only 16.2% chance of disease despite positive test!</p>
+<section id="pdf-interpretation-height-is-density" class="slide level2 smaller">
+<h2>PDF Interpretation: <em>Height is Density</em></h2>
+<section id="interactive-pdf-demo-understanding-density" class="smaller interactive-demo">
+<h3 class="smaller">Interactive PDF Demo: Understanding Density</h3>
+<div class="demo-controls">
+<button onclick="updatePDFDemo()">
+New Random Variable
+</button>
+<p><select id="pdfType" onchange="updatePDFDemo()"> <option value="uniform">Uniform Distribution</option> <option value="normal">Normal Distribution</option> <option value="exponential">Exponential Distribution</option> </select> <label>Interval: [<input type="number" id="intervalA" value="1" step="0.1" onchange="updatePDFDemo()"> , <input type="number" id="intervalB" value="2" step="0.1" onchange="updatePDFDemo()">]</label></p>
+</div>
+<div class="demo-stats">
+<div id="pdfStats" style="margin-top: 8px; font-size: 0.9em; color: var(--neutral-medium);">
+<p><strong>Probability = Area under curve:</strong> <span id="pdfAreaText">Select an interval to see probability</span></p>
+</div>
+</div>
+<div class="chart-container">
+<canvas id="pdfChart">
+</canvas>
 </div>
 </section>
-<section id="why-the-low-probability" class="slide level2">
-<h2>Why the Low Probability?</h2>
-<p><strong>Base Rate Fallacy</strong>: When disease is rare (2%), most positive tests are false positives</p>
-<p><strong>Intuition</strong>: Out of 10,000 people: - 200 have disease → 190 test positive<br>
-- 9,800 healthy → 980 test positive - Total positive tests: 1,170 - True positives: 190</p>
-<p><span class="math inline">\(P(\text{Disease | Positive}) = \frac{190}{1,170} \approx 0.162\)</span> ✓</p>
 </section>
-<section id="practice-problem-5" class="slide level2">
-<h2>Practice Problem 5</h2>
-<p>Email spam filter: - 60% of emails are spam - Filter catches 95% of spam - Filter incorrectly flags 8% of legitimate emails</p>
-<p>If an email is flagged as spam, what’s the probability it’s actually spam?</p>
-<div class="fragment">
-<p><span class="math inline">\(P(\text{Spam | Flagged}) = \frac{0.95 \times 0.6}{0.95 \times 0.6 + 0.08 \times 0.4}\)</span></p>
-<p><span class="math inline">\(= \frac{0.57}{0.57 + 0.032} = \frac{0.57}{0.602} \approx 0.947\)</span></p>
-<p>The filter is quite reliable!</p>
+<section id="cumulative-distribution-function-cdf" class="slide level2 smaller">
+<h2>Cumulative Distribution Function (CDF)</h2>
+<div class="summary-card smaller">
+<div class="columns">
+<div class="column">
+<p>For continuous random variables, the <strong>CDF</strong> is:</p>
+<p><span class="math display">\[F(x) = P(X \leq x) = \int_{-\infty}^x f(t) \, dt\]</span></p>
+<p><strong>Key relationship:</strong> <span class="math display">\[f(x) = \frac{d}{dx}F(x)\]</span></p>
+<p>The PDF is the <strong>derivative</strong> of the CDF!</p>
+</div><div class="column">
+<div class="chart-container">
+<canvas id="cdfContinuousChart">
+</canvas>
+</div>
+<p><em>Click anywhere to see F(x) = P(X ≤ x) for that point</em></p>
+</div></div>
 </div>
 </section>
-<section id="multiple-events-and-bayes" class="slide level2">
-<h2>Multiple Events and Bayes’</h2>
-<p><strong>Extended Bayes’ Theorem</strong>: If <span class="math inline">\(A_1, A_2, \ldots, A_n\)</span> partition the sample space:</p>
-<p><span class="math display">\[P(A_i|B) = \frac{P(B|A_i) \times P(A_i)}{\sum_{j=1}^{n} P(B|A_j) \times P(A_j)}\]</span></p>
-<p>This allows us to update probabilities for multiple hypotheses</p>
-</section>
-<section id="three-machine-example-revisited" class="slide level2">
-<h2>Three Machine Example Revisited</h2>
-<p>A defective item is found. Which machine most likely produced it?</p>
-<p>From before: - Machine A: 50% production, 1% defective<br>
-- Machine B: 30% production, 2% defective - Machine C: 20% production, 3% defective - Overall defect rate: 1.7%</p>
-</section>
-<section id="three-machine-solution" class="slide level2">
-<h2>Three Machine Solution</h2>
-<p><span class="math display">\[P(A|\text{Defective}) = \frac{0.01 \times 0.5}{0.017} = \frac{0.005}{0.017} \approx 0.294\]</span></p>
-<p><span class="math display">\[P(B|\text{Defective}) = \frac{0.02 \times 0.3}{0.017} = \frac{0.006}{0.017} \approx 0.353\]</span></p>
-<p><span class="math display">\[P(C|\text{Defective}) = \frac{0.03 \times 0.2}{0.017} = \frac{0.006}{0.017} \approx 0.353\]</span></p>
-<div class="fragment">
-<p>Machine B or C are most likely sources of the defective item</p>
+<section id="expected-value-and-variance" class="slide level2 smaller">
+<h2>Expected Value and Variance</h2>
+<p>For continuous random variables:</p>
+<p><strong>Expected Value:</strong> <span class="math display">\[E[X] = \mu = \int_{-\infty}^{\infty} x \cdot f(x) \, dx\]</span></p>
+<p><strong>Variance:</strong> <span class="math display">\[\text{Var}(X) = \sigma^2 = \int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx = E[X^2] - (E[X])^2\]</span></p>
+<p><strong>Where:</strong> <span class="math display">\[E[X^2] = \int_{-\infty}^{\infty} x^2 \cdot f(x) \, dx\]</span></p>
+<div class="key-insight">
+<p>Notice: <strong>Integrals</strong> replace <strong>sums</strong> when moving from discrete to continuous!</p>
 </div>
 </section>
-<section id="practice-problem-6" class="slide level2">
-<h2>Practice Problem 6</h2>
-<p>Three boxes contain colored balls: - Box 1: 3 red, 2 blue (chosen 40% of time) - Box 2: 2 red, 3 blue (chosen 35% of time)<br>
-- Box 3: 1 red, 4 blue (chosen 25% of time)</p>
-<p>A red ball is drawn. Which box was it most likely from?</p>
-<div class="fragment">
-<p><span class="math inline">\(P(\text{Red}) = \frac{3}{5} \times 0.4 + \frac{2}{5} \times 0.35 + \frac{1}{5} \times 0.25 = 0.24 + 0.14 + 0.05 = 0.43\)</span></p>
-<p><span class="math inline">\(P(\text{Box 1 | Red}) = \frac{0.6 \times 0.4}{0.43} \approx 0.558\)</span> <span class="math inline">\(P(\text{Box 2 | Red}) = \frac{0.4 \times 0.35}{0.43} \approx 0.326\)</span><br>
-<span class="math inline">\(P(\text{Box 3 | Red}) = \frac{0.2 \times 0.25}{0.43} \approx 0.116\)</span></p>
+<section id="common-continuous-distributions" class="slide level2 smaller">
+<h2>Common Continuous Distributions</h2>
+<div class="dist-grid">
+<section id="uniform-distribution" class="dist-card">
+<h4>Uniform Distribution</h4>
+<p>All values equally likely in an interval</p>
+<p><strong>Parameters:</strong> <span class="math inline">\(a\)</span> (min), <span class="math inline">\(b\)</span> (max)</p>
+<p><strong>PDF:</strong> <span class="math inline">\(f(x) = \frac{1}{b-a}\)</span> for <span class="math inline">\(a \leq x \leq b\)</span></p>
+<p><strong>Mean:</strong> <span class="math inline">\(\frac{a+b}{2}\)</span></p>
+<p><strong>Variance:</strong> <span class="math inline">\(\frac{(b-a)^2}{12}\)</span></p>
+<p><strong>Use:</strong> Random numbers, waiting times</p>
+</section>
+<section id="normal-distribution" class="dist-card">
+<h4>Normal Distribution</h4>
+<p>Bell-shaped, symmetric</p>
+<p><strong>Parameters:</strong> <span class="math inline">\(\mu\)</span> (mean), <span class="math inline">\(\sigma^2\)</span> (variance)</p>
+<p><strong>PDF:</strong> <span class="math inline">\(f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span></p>
+<p><strong>Mean:</strong> <span class="math inline">\(\mu\)</span></p>
+<p><strong>Variance:</strong> <span class="math inline">\(\sigma^2\)</span></p>
+<p><strong>Use:</strong> Heights, test scores, errors</p>
+</section>
+<section id="exponential-distribution" class="dist-card">
+<h4>Exponential Distribution</h4>
+<p>Models waiting times</p>
+<p><strong>Parameters:</strong> <span class="math inline">\(\lambda\)</span> (rate)</p>
+<p><strong>PDF:</strong> <span class="math inline">\(f(x) = \lambda e^{-\lambda x}\)</span> for <span class="math inline">\(x \geq 0\)</span></p>
+<p><strong>Mean:</strong> <span class="math inline">\(\frac{1}{\lambda}\)</span></p>
+<p><strong>Variance:</strong> <span class="math inline">\(\frac{1}{\lambda^2}\)</span></p>
+<p><strong>Use:</strong> Time between events, lifetimes</p>
+</section>
 </div>
 </section>
-<section id="conditional-independence" class="slide level2">
-<h2>Conditional Independence</h2>
-<p>Events A and B are <strong>conditionally independent</strong> given C if:</p>
-<p><span class="math display">\[P(A \cap B | C) = P(A|C) \times P(B|C)\]</span></p>
-<p><strong>Important</strong>: Conditional independence doesn’t imply independence!</p>
-<div class="fragment">
-<p><strong>Example</strong>: Weather in two cities may be independent normally, but conditionally dependent given a major weather system</p>
+<section id="interactive-distribution-explorer" class="slide level2 smaller">
+<h2>Interactive Distribution Explorer</h2>
+<section id="continuous-distribution-visualizer" class="interactive-demo">
+<h3>Continuous Distribution Visualizer</h3>
+<div class="demo-controls">
+<p><select id="contDistType" onchange="updateContinuousDistribution()"> <option value="uniform">Uniform</option> <option value="normal">Normal</option> <option value="exponential">Exponential</option> </select> <label>Parameter 1: <input type="number" id="contParam1" value="0" step="0.1" onchange="updateContinuousDistribution()"></label> <label>Parameter 2: <input type="number" id="contParam2" value="1" step="0.1" onchange="updateContinuousDistribution()"></label> <button onclick="showDistributionArea()">Calculate P(a ≤ X ≤ b)</button></p>
+</div>
+<div class="demo-stats">
+<div id="contDistStats" style="margin-top: 8px; font-size: 0.9em;">
+<p><strong>Distribution Properties:</strong> <span id="contDistStatsText">Select parameters to see statistics</span></p>
+</div>
+</div>
+<div class="chart-container">
+<canvas id="contDistChart">
+</canvas>
 </div>
 </section>
-<section id="simpsons-paradox" class="slide level2">
-<h2>Simpson’s Paradox</h2>
-<p><strong>Simpson’s Paradox</strong>: A trend in subgroups can reverse when groups are combined</p>
-<p><strong>Classic Example</strong>: University admissions by gender</p>
+</section>
+<section id="the-normal-distribution-star-of-statistics" class="slide level2 smaller">
+<h2>The Normal Distribution: Star of Statistics</h2>
+<div class="summary-card smaller">
+<div class="columns">
+<div class="column">
+<h4 id="why-normal-is-special">Why Normal is Special</h4>
+<ul>
+<li><strong>Central Limit Theorem</strong>: Sample means approach normal</li>
+<li><strong>68-95-99.7 Rule</strong>:
+<ul>
+<li>68% within 1σ of μ</li>
+<li>95% within 2σ of μ<br>
+</li>
+<li>99.7% within 3σ of μ</li>
+</ul></li>
+<li><strong>Standard Normal</strong>: μ = 0, σ = 1</li>
+</ul>
+<h4 id="z-score-transformation">Z-Score Transformation</h4>
+<p><span class="math display">\[Z = \frac{X - \mu}{\sigma}\]</span></p>
+</div><div class="column">
+<div class="chart-container">
+<canvas id="normalChart">
+</canvas>
+</div>
+</div></div>
+</div>
+</section>
+<section id="practice-problem-1-uniform-distribution" class="slide level2 smaller">
+<h2>Practice Problem 1: Uniform Distribution</h2>
+<div class="practice-problem">
+<p>A bus arrives uniformly between 10:00 AM and 10:20 AM. Let <span class="math inline">\(X\)</span> = arrival time in minutes after 10:00 AM.</p>
+<p><strong>(a)</strong> What is the PDF of <span class="math inline">\(X\)</span>?<br>
+<strong>(b)</strong> What’s the probability the bus arrives between 10:05 and 10:12?<br>
+<strong>(c)</strong> What’s the expected arrival time?</p>
+<button class="show-solution smaller" onclick="toggleSolution('sol1')">
+Show Solution
+</button>
+<div class="proof solution" data-id="sol1">
+<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong> <span class="math inline">\(X \sim \text{Uniform}(0, 20)\)</span> <span class="math display">\[f(x) = \frac{1}{20-0} = \frac{1}{20} \text{ for } 0 \leq x \leq 20\]</span></p>
+<p><strong>(b)</strong> <span class="math inline">\(P(5 \leq X \leq 12) = \int_5^{12} \frac{1}{20} dx = \frac{1}{20} \times (12-5) = \frac{7}{20} = 0.35\)</span></p>
+<p><strong>(c)</strong> <span class="math inline">\(E[X] = \frac{a+b}{2} = \frac{0+20}{2} = 10\)</span> minutes after 10:00 AM</p>
+</div>
+</div>
+</section>
+<section id="practice-problem-2-normal-distribution" class="slide level2 smaller">
+<h2>Practice Problem 2: Normal Distribution</h2>
+<div class="practice-problem">
+<p>Heights of adult women are normally distributed with μ = 64 inches and σ = 2.5 inches.</p>
+<p><strong>(a)</strong> What’s the probability a woman is taller than 67 inches?<br>
+<strong>(b)</strong> What height represents the 90th percentile?<br>
+<strong>(c)</strong> What’s the probability a woman is between 62 and 66 inches tall?</p>
+<button class="show-solution smaller" onclick="toggleSolution('sol2')">
+Show Solution
+</button>
+<div class="proof solution" data-id="sol2">
+<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong> <span class="math inline">\(P(X &gt; 67) = P\left(Z &gt; \frac{67-64}{2.5}\right) = P(Z &gt; 1.2) = 1 - 0.8849 = 0.1151\)</span></p>
+<p><strong>(b)</strong> For 90th percentile: <span class="math inline">\(P(X \leq x) = 0.90\)</span><br>
+<span class="math inline">\(z_{0.90} = 1.28\)</span>, so <span class="math inline">\(x = 64 + 1.28(2.5) = 67.2\)</span> inches</p>
+<p><strong>(c)</strong> <span class="math inline">\(P(62 \leq X \leq 66) = P\left(\frac{62-64}{2.5} \leq Z \leq \frac{66-64}{2.5}\right)\)</span><br>
+<span class="math inline">\(= P(-0.8 \leq Z \leq 0.8) = 0.7881 - 0.2119 = 0.5762\)</span></p>
+</div>
+</div>
+</section>
+<section id="practice-problem-3-exponential-distribution" class="slide level2 smaller">
+<h2>Practice Problem 3: Exponential Distribution</h2>
+<div class="practice-problem">
+<p>The time between customer arrivals at a store follows an exponential distribution with an average of 5 minutes between arrivals.</p>
+<p><strong>(a)</strong> What is the PDF?<br>
+<strong>(b)</strong> What’s the probability the next customer arrives within 3 minutes?<br>
+<strong>(c)</strong> What’s the probability no customer arrives in the next 10 minutes?</p>
+<button class="show-solution smaller" onclick="toggleSolution('sol3')">
+Show Solution
+</button>
+<div class="proof solution" data-id="sol3">
+<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong> Average = 5 minutes = <span class="math inline">\(\frac{1}{\lambda}\)</span>, so <span class="math inline">\(\lambda = 0.2\)</span><br>
+<span class="math display">\[f(x) = 0.2e^{-0.2x} \text{ for } x \geq 0\]</span></p>
+<p><strong>(b)</strong> <span class="math inline">\(P(X \leq 3) = \int_0^3 0.2e^{-0.2x} dx = 1 - e^{-0.2 \times 3} = 1 - e^{-0.6} = 0.4512\)</span></p>
+<p><strong>(c)</strong> <span class="math inline">\(P(X &gt; 10) = e^{-0.2 \times 10} = e^{-2} = 0.1353\)</span></p>
+</div>
+</div>
+</section>
+<section id="central-limit-theorem" class="slide level2 smaller">
+<h2>Central Limit Theorem</h2>
+<section id="clt-demonstration" class="interactive-demo">
+<h3>CLT Demonstration</h3>
+<div class="demo-controls">
+<p><select id="cltPopulation" onchange="updateCLTDemo()"> <option value="uniform">Uniform Population</option> <option value="exponential">Exponential Population</option> <option value="bimodal">Bimodal Population</option> </select> <label>Sample Size: <input type="number" id="cltSampleSize" value="30" min="5" max="100" onchange="updateCLTDemo()"></label> <button onclick="runCLTSimulation()">Run Simulation</button></p>
+</div>
+<div class="clt-container">
+<div class="chart-container">
+<canvas id="cltPopChart">
+</canvas>
+<div class="chart-title">
+Population Distribution
+</div>
+</div>
+<div class="chart-container">
+<canvas id="cltSampleChart">
+</canvas>
+<div class="chart-title">
+Sample Means Distribution
+</div>
+</div>
+</div>
+<div id="cltStats" style="margin-top: 8px; font-size: 0.9em;">
+<p><strong>CLT in Action:</strong> <span id="cltStatsText">Run simulation to see the magic!</span></p>
+</div>
+</section>
+</section>
+<section id="transformations-of-random-variables" class="slide level2 smaller">
+<h2>Transformations of Random Variables</h2>
+<div class="summary-card smaller">
+<h4 id="linear-transformations">Linear Transformations</h4>
+<p>If <span class="math inline">\(Y = aX + b\)</span>, then: - <span class="math inline">\(E[Y] = aE[X] + b\)</span> - <span class="math inline">\(\text{Var}(Y) = a^2\text{Var}(X)\)</span> - If <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span>, then <span class="math inline">\(Y \sim N(a\mu + b, a^2\sigma^2)\)</span></p>
+<h4 id="standardization">Standardization</h4>
+<p><span class="math display">\[Z = \frac{X - \mu}{\sigma} \sim N(0, 1)\]</span></p>
+<div class="key-insight">
+<p><strong>Important</strong>: Normal distributions are closed under linear transformations!</p>
+</div>
+</div>
+</section>
+<section id="comparing-discrete-and-continuous" class="slide level2 smaller">
+<h2>Comparing Discrete and Continuous</h2>
+<div class="comparison-table">
 <table class="caption-top">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 31%">
+<col style="width: 37%">
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th>Men</th>
-<th>Women</th>
+<th>Property</th>
+<th>Discrete</th>
+<th>Continuous</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Dept A</td>
-<td>62% (825/1327)</td>
-<td>82% (108/131)</td>
+<td><strong>Probability Function</strong></td>
+<td>PMF: <span class="math inline">\(P(X = x)\)</span></td>
+<td>PDF: <span class="math inline">\(f(x)\)</span></td>
 </tr>
 <tr class="even">
-<td>Dept B</td>
-<td>63% (560/893)</td>
-<td>68% (25/37)</td>
+<td><strong>Exact Value Probability</strong></td>
+<td><span class="math inline">\(P(X = x) &gt; 0\)</span> possible</td>
+<td><span class="math inline">\(P(X = x) = 0\)</span> always</td>
 </tr>
 <tr class="odd">
-<td><strong>Overall</strong></td>
-<td><strong>44% (1385/2220)</strong></td>
-<td><strong>30% (133/168)</strong></td>
+<td><strong>Interval Probability</strong></td>
+<td><span class="math inline">\(\sum P(X = x_i)\)</span></td>
+<td><span class="math inline">\(\int_a^b f(x) dx\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Expected Value</strong></td>
+<td><span class="math inline">\(\sum x \cdot P(X = x)\)</span></td>
+<td><span class="math inline">\(\int x \cdot f(x) dx\)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Variance</strong></td>
+<td><span class="math inline">\(\sum (x-\mu)^2 P(X = x)\)</span></td>
+<td><span class="math inline">\(\int (x-\mu)^2 f(x) dx\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>CDF</strong></td>
+<td><span class="math inline">\(\sum_{x_i \leq x} P(X = x_i)\)</span></td>
+<td><span class="math inline">\(\int_{-\infty}^x f(t) dt\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>Women have higher rates in each department but lower overall!</p>
-</section>
-<section id="common-fallacies" class="slide level2">
-<h2>Common Fallacies</h2>
-<p><strong>1. Confusion of the Inverse</strong> - Confusing <span class="math inline">\(P(A|B)\)</span> with <span class="math inline">\(P(B|A)\)</span> - “If it rains, the ground is wet” ≠ “If the ground is wet, it rained”</p>
-<p><strong>2. Base Rate Neglect</strong><br>
-- Ignoring prior probabilities - Medical test example</p>
-<p><strong>3. Prosecutor’s Fallacy</strong> - <span class="math inline">\(P(\text{Evidence | Innocent}) \neq P(\text{Innocent | Evidence})\)</span></p>
-</section>
-<section id="prosecutors-fallacy-example" class="slide level2">
-<h2>Prosecutor’s Fallacy Example</h2>
-<p>DNA evidence matches defendant with probability 1 in a million for random person</p>
-<p><strong>Wrong reasoning</strong>: “Probability of innocence is 1 in a million”</p>
-<p><strong>Correct reasoning</strong>: Need to consider: - How many people could have committed the crime? - What’s the prior probability of guilt? - Possibility of lab error, planted evidence, etc.</p>
-</section>
-<section id="practice-problem-7" class="slide level2">
-<h2>Practice Problem 7</h2>
-<p>Quality control: 5% of items are defective. A test detects 96% of defective items but has a 4% false positive rate.</p>
-<ol type="a">
-<li>What’s the probability an item testing positive is actually defective?</li>
-<li>What’s the probability an item testing negative is actually good?</li>
-</ol>
-<div class="fragment">
-<ol type="a">
-<li><p><span class="math inline">\(P(\text{Defective | Positive}) = \frac{0.96 \times 0.05}{0.96 \times 0.05 + 0.04 \times 0.95} = \frac{0.048}{0.086} \approx 0.558\)</span></p></li>
-<li><p><span class="math inline">\(P(\text{Good | Negative}) = \frac{0.96 \times 0.95}{0.96 \times 0.95 + 0.04 \times 0.05} = \frac{0.912}{0.914} \approx 0.998\)</span></p></li>
-</ol>
 </div>
 </section>
-<section id="real-world-applications" class="slide level2">
-<h2>Real-World Applications</h2>
-<p><strong>Medical Screening</strong>: - Mammograms, COVID tests - Balancing sensitivity vs specificity</p>
-<p><strong>Machine Learning</strong>: - Naive Bayes classifiers - Spam detection, recommendation systems</p>
-<p><strong>Finance</strong>: - Credit scoring - Fraud detection</p>
-<p><strong>Legal System</strong>: - DNA evidence interpretation - Probability of guilt/innocence</p>
-</section>
-<section id="technology-and-tools" class="slide level2">
-<h2>Technology and Tools</h2>
-<p><strong>Calculators</strong>: - Basic probability calculations - Watch for rounding errors</p>
-<p><strong>Software</strong>: - R: conditional probability tables - Python: pandas for two-way tables - Excel: pivot tables for conditional analysis</p>
-<p><strong>Visualization</strong>: - Tree diagrams<br>
-- Contingency tables - Bayes networks</p>
-</section>
-<section id="diagnostic-thinking" class="slide level2">
-<h2>Diagnostic Thinking</h2>
-<p><strong>Questions to ask</strong>: 1. What information am I conditioning on? 2. How does this information change the probability? 3. What’s the base rate or prior probability? 4. Am I confusing <span class="math inline">\(P(A|B)\)</span> with <span class="math inline">\(P(B|A)\)</span>? 5. Are the events independent?</p>
-</section>
-<section id="problem-solving-strategy" class="slide level2">
-<h2>Problem-Solving Strategy</h2>
+<section id="properties-of-continuous-distributions" class="slide level2 smaller">
+<h2>Properties of Continuous Distributions</h2>
+<div class="summary-card smaller">
+<div class="columns">
+<div class="column">
+<h4 id="key-properties">Key Properties</h4>
 <ol type="1">
-<li><strong>Identify the type</strong>: Direct conditional, Bayes’, or law of total probability?</li>
-<li><strong>Define events clearly</strong>: Use precise notation</li>
-<li><strong>Organize information</strong>: Two-way tables or tree diagrams</li>
-<li><strong>Check for independence</strong>: Does additional info matter?</li>
-<li><strong>Apply appropriate formula</strong>: Don’t forget denominators!</li>
-<li><strong>Verify answer</strong>: Does it make intuitive sense?</li>
+<li><p><strong>Memoryless Property</strong> (Exponential only):<br>
+<span class="math inline">\(P(X &gt; s+t | X &gt; s) = P(X &gt; t)\)</span></p></li>
+<li><p><strong>Symmetry</strong> (Normal):<br>
+<span class="math inline">\(P(X \leq \mu - a) = P(X \geq \mu + a)\)</span></p></li>
+<li><p><strong>Scaling Invariance</strong> (Normal):<br>
+Linear combinations of normals are normal</p></li>
 </ol>
-</section>
-<section id="practice-problem-8" class="slide level2">
-<h2>Practice Problem 8</h2>
-<p>A survey shows: - 70% of people like pizza - 60% of people like movies<br>
-- 40% like both pizza and movies</p>
-<ol type="a">
-<li>Are liking pizza and movies independent?</li>
-<li>What’s <span class="math inline">\(P(\text{Pizza | Movies})\)</span>?</li>
-<li>What’s <span class="math inline">\(P(\text{Movies | Pizza})\)</span>?</li>
-</ol>
-</section>
-<section id="practice-problem-8-solutions" class="slide level2">
-<h2>Practice Problem 8 Solutions</h2>
-<ol type="a">
-<li><p>Check independence: <span class="math inline">\(P(\text{Pizza}) \times P(\text{Movies}) = 0.7 \times 0.6 = 0.42 \neq 0.4\)</span> Not independent!</p></li>
-<li><p><span class="math inline">\(P(\text{Pizza | Movies}) = \frac{P(\text{Pizza} \cap \text{Movies})}{P(\text{Movies})} = \frac{0.4}{0.6} = \frac{2}{3}\)</span></p></li>
-<li><p><span class="math inline">\(P(\text{Movies | Pizza}) = \frac{P(\text{Pizza} \cap \text{Movies})}{P(\text{Pizza})} = \frac{0.4}{0.7} = \frac{4}{7}\)</span></p></li>
-</ol>
-</section>
-<section id="advanced-topics-preview" class="slide level2">
-<h2>Advanced Topics Preview</h2>
-<p><strong>Markov Chains</strong>: - Sequences where future depends only on present - <span class="math inline">\(P(X_{n+1} | X_n, X_{n-1}, \ldots, X_1) = P(X_{n+1} | X_n)\)</span></p>
-<p><strong>Bayesian Statistics</strong>: - Using Bayes’ theorem for statistical inference - Updating beliefs with data</p>
-<p><strong>Information Theory</strong>: - Conditional entropy - Mutual information</p>
-</section>
-<section id="historical-context" class="slide level2">
-<h2>Historical Context</h2>
-<p><strong>Thomas Bayes</strong> (1701-1761): - Presbyterian minister and mathematician - Bayes’ theorem published posthumously</p>
-<p><strong>Pierre-Simon Laplace</strong> (1749-1827): - Developed and popularized Bayesian methods - “Probability is nothing but common sense reduced to calculation”</p>
-<p><strong>Modern Applications</strong>: AI, machine learning, medical diagnosis, finance</p>
-</section>
-<section id="common-student-questions" class="slide level2">
-<h2>Common Student Questions</h2>
-<p><strong>Q</strong>: “How do I know when to use Bayes’ theorem?” <strong>A</strong>: When you want to “reverse” a conditional probability</p>
-<p><strong>Q</strong>: “Why are medical test problems so counterintuitive?”<br>
-<strong>A</strong>: Base rates matter more than we intuitively expect</p>
-<p><strong>Q</strong>: “What’s the difference between independence and conditional independence?” <strong>A</strong>: Independence means no relationship; conditional independence means no relationship given specific information</p>
-</section>
-<section id="key-formulas-summary" class="slide level2">
-<h2>Key Formulas Summary</h2>
+</div><div class="column">
+<h4 id="useful-relationships">Useful Relationships</h4>
 <ul>
-<li><strong>Conditional Probability</strong>: <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></li>
-<li><strong>Multiplication Rule</strong>: <span class="math inline">\(P(A \cap B) = P(A) \times P(B|A)\)</span></li>
-<li><strong>Law of Total Probability</strong>: <span class="math inline">\(P(A) = \sum P(A|B_i) \times P(B_i)\)</span></li>
-<li><strong>Bayes’ Theorem</strong>: <span class="math inline">\(P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}\)</span></li>
-<li><strong>Independence</strong>: <span class="math inline">\(P(A|B) = P(A)\)</span></li>
+<li><strong>CDF to PDF</strong>: <span class="math inline">\(f(x) = F'(x)\)</span></li>
+<li><strong>PDF to CDF</strong>: <span class="math inline">\(F(x) = \int_{-\infty}^x f(t) dt\)</span></li>
+<li><strong>Complementary CDF</strong>: <span class="math inline">\(P(X &gt; x) = 1 - F(x)\)</span></li>
 </ul>
-</section>
-<section id="looking-ahead" class="slide level2">
-<h2>Looking Ahead</h2>
-<p><strong>Next lecture</strong>: Discrete Random Variables - Random variables as functions - Probability mass functions - Expected value and variance - Common discrete distributions (binomial, geometric, Poisson)</p>
-<p><strong>Connection</strong>: Conditional probability is essential for understanding dependence in random variables</p>
-</section>
-<section id="study-tips" class="slide level2">
-<h2>Study Tips</h2>
-<ol type="1">
-<li><strong>Practice with real scenarios</strong>: Medical tests, quality control</li>
-<li><strong>Draw diagrams</strong>: Tree diagrams and two-way tables</li>
-<li><strong>Check your intuition</strong>: Do answers make sense?</li>
-<li><strong>Master the basics</strong>: Conditional probability formula</li>
-<li><strong>Watch for fallacies</strong>: Don’t confuse <span class="math inline">\(P(A|B)\)</span> and <span class="math inline">\(P(B|A)\)</span></li>
-</ol>
-</section>
-<section id="final-thoughts" class="slide level2">
-<h2>Final Thoughts</h2>
-<p>Conditional probability is everywhere: - Updates beliefs with new information - Foundation of Bayesian thinking - Critical for proper statistical reasoning - Essential for machine learning and AI</p>
-<div class="fragment">
-<p><strong>Key insight</strong>: Information changes probability - embrace this uncertainty!</p>
+<div class="key-insight">
+<p><strong>Remember</strong>: Area under PDF = 1, but PDF values can exceed 1!</p>
 </div>
+</div></div>
+</div>
+</section>
+<section id="key-takeaways" class="slide level2 smaller">
+<h2>Key Takeaways</h2>
+<div class="summary-card smaller">
+<div class="columns">
+<div class="column">
+<h4 id="main-concepts">Main Concepts</h4>
+<ul>
+<li><strong>Continuous variables</strong> require PDFs, not PMFs</li>
+<li><strong>Probabilities</strong> are areas under curves, not function values</li>
+<li><strong>Integration</strong> replaces summation for continuous distributions</li>
+<li><strong>Normal distribution</strong> is central due to CLT</li>
+</ul>
+</div><div class="column">
+<h4 id="distribution-selection">Distribution Selection</h4>
+<p>Choose distributions based on the data characteristics:</p>
+<ul>
+<li><strong>Uniform</strong> for equally likely intervals</li>
+<li><strong>Normal</strong> for symmetric, bell-shaped data<br>
+</li>
+<li><strong>Exponential</strong> for waiting times/lifetimes</li>
+<li><strong>Use CLT</strong> when working with sample means</li>
+</ul>
+<h4 id="key-principle">Key Principle</h4>
+<ul>
+<li><strong>Central Limit Theorem</strong> makes normal distributions ubiquitous in statistics</li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="looking-ahead" class="slide level2 smaller">
+<h2>Looking Ahead</h2>
+<section id="next-lecture-statistical-inference" class="summary-card smaller">
+<h4>Next Lecture: Statistical Inference</h4>
+<p><strong>Topics we’ll cover:</strong></p>
+<ul>
+<li>Sampling distributions</li>
+<li>Confidence intervals</li>
+<li>Hypothesis testing</li>
+<li>p-values and significance</li>
+</ul>
+<div class="connection">
+<p><strong>Connection</strong>: Continuous distributions (especially normal) form the foundation for statistical inference</p>
+</div>
+</section>
 </section>
 <section id="questions" class="slide level2 center">
 <h2>Questions?</h2>
-<p><strong>Office Hours</strong>: [Your office hours] <strong>Email</strong>: [Your email]<br>
-<strong>Next Class</strong>: Discrete Random Variables</p>
-<p><em>Remember: Homework due [date]</em></p>
+<p><strong>Office Hours</strong>: 11AM on Thursday (link on Canvas)</p>
+<p><strong>Email</strong>: nmathlouthi@ucsb.edu</p>
+<p><strong>Next Class</strong>: Statistical Inference and Hypothesis Testing</p>
 </section>
-<section id="bonus-monty-hall-problem" class="slide level2">
-<h2>Bonus: Monty Hall Problem</h2>
-<p>Three doors: one has a car, two have goats 1. You choose a door 2. Host opens a door with a goat 3. Do you switch?</p>
-<div class="fragment">
-<p><strong>Answer</strong>: Yes! Switch! - <span class="math inline">\(P(\text{Car behind your door}) = \frac{1}{3}\)</span> - <span class="math inline">\(P(\text{Car behind other remaining door}) = \frac{2}{3}\)</span></p>
-<p><em>Conditional probability in action!</em></p>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<div style="background: #f8fafc; border-radius: 10px; border: 1px solid #e0e7ef; padding: 16px 20px; margin: 8px 0;">
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #2563eb; border-radius: 50%;"></span> <strong>Read</strong> <a href="../../../files/Book/os4_for_screen_reader.pdf" style="color: #2563eb; text-decoration: none;">OpenIntro Statistics</a> <em style="color: #666;">Chapter 4 sections 4.1-4.3</em>
+</li>
+<li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #f97316; border-radius: 50%;"></span> <a href="https://www.khanacademy.org/math/statistics-probability/continuous-random-variables" style="color: #2563eb; text-decoration: none;">Khan Academy - Continuous Random Variables</a>
+</li>
+<li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #059669; border-radius: 50%;"></span> <a href="https://seeing-theory.brown.edu/probability-distributions/" style="color: #2563eb; text-decoration: none;">Seeing Theory - Probability Distributions</a>
+</li>
+<li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #7c3aed; border-radius: 50%;"></span> <a href="https://en.wikipedia.org/wiki/Central_limit_theorem" style="color: #2563eb; text-decoration: none;">Central Limit Theorem - Wikipedia</a>
+</li>
+<li style="margin-bottom: 0; padding-left: 24px; position: relative;">
+<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #dc2626; border-radius: 50%;"></span> <a href="https://www.probabilitycourse.com/chapter4/" style="color: #2563eb; text-decoration: none;">Introduction to Probability - Continuous Random Variables</a>
+</li>
+</ul>
 </div>
-</section>
-<section id="bonus-birthday-paradox-connection" class="slide level2">
-<h2>Bonus: Birthday Paradox Connection</h2>
-<p>In a room of 23 people, probability of shared birthday ≈ 50%</p>
-<p><strong>Conditional approach</strong>: What’s <span class="math inline">\(P(\text{no match | first $k$ people have different birthdays})\)</span>?</p>
-<p>This helps build intuition for why the probability grows so quickly!</p>
-<p><em>Surprising results often involve conditional probability!</em></p>
 
 
 </section>
@@ -720,7 +654,7 @@ Disease?
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../../img/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Understanding Data - Conditional Probabilities © 2025 Narjes Mathlouthi</p>
+<p>Understanding Data – Continuous Random Variables © 2025 Narjes Mathlouthi</p>
 </div>
 </div></div>
 

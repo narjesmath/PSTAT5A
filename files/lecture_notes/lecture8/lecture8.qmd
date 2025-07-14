@@ -1,833 +1,618 @@
 ---
-title: "PSTAT 5A: Conditional Probabilities"
-subtitle: "Lecture 6"
-author: "Narjes Mathlouthi"
+title: "PSTAT 5A: Continuous Random Variables"
+subtitle: Lecture 9
+author: Narjes Mathlouthi
 date: today
-format: 
+jupyter: python3
+format:
   revealjs:
     logo: /img/logo.png
     theme: default
-    css: /files/lecture_notes/theme/lecture-styles.css
+    css: /files/lecture_notes/lecture8/new-style.css
     slide-number: true
     chalkboard: true
     preview-links: auto
-    footer: "Understanding Data - Conditional Probabilities © 2025 Narjes Mathlouthi"
+    footer: "Understanding Data – Continuous Random Variables © 2025 Narjes Mathlouthi"
+    controls-layout: edges
+    controls-tutorial: false
+    hash: true
+    history: true
+    hash-one-based-index: false
+    fragment-in-url: false
     transition: slide
     background-transition: fade
-jupyter: python3
----
-
-## Welcome to Lecture 6 {.center}
-
-**Conditional Probabilities**
-
-*Understanding probability when information changes the game*
+    pdf-separate-fragments: false
+    lang: en
+    auto-stretch: true
 
 ---
 
-## Today's Learning Objectives
+```{=html}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="/files/lecture_notes/lecture8/lecture-interactive.js"></script>
+```
+
+## Welcome to Lecture 9 {.center}
+
+**Continuous Random Variables**
+
+*From discrete jumps to smooth curves: modeling the continuous world*
+
+---
+
+## Today's Learning Objectives {.smaller}
 
 By the end of this lecture, you will be able to:
 
-- Define and calculate conditional probabilities
-- Apply the multiplication rule for dependent events
-- Use tree diagrams to solve multi-stage problems
-- Apply the law of total probability
-- Use Bayes' theorem to solve real-world problems
-- Distinguish between independence and conditional independence
-- Recognize and avoid common conditional probability fallacies
+- Distinguish between discrete and continuous random variables (@sec-dis-cont-vars)
+- Understand probability density functions (PDFs) and their interpretation (@sec-pdf)
+- Work with cumulative distribution functions (CDFs) for continuous variables
+- Calculate probabilities using areas under curves
+- Compute expected values and variances for continuous distributions
+- Work with common continuous distributions (Uniform, Normal, Exponential)
+- Apply the Central Limit Theorem
+- Use `python` to work with continuous distributions
 
 ---
 
-## Motivation: Why Conditional Probability?
+## Review: Discrete vs Continuous {#sec-dis-cont-vars .smaller}
 
-In real life, we rarely make decisions with no information
+::: {.columns}
+::: {.column .smaller}
 
-**Examples:**
-- Medical diagnosis with test results
-- Weather forecast with current conditions  
-- Investment decisions with market data
-- Sports betting with team statistics
-- Insurance premiums based on risk factors
+<div class="type-card discrete-card">
+<h4>Discrete Random Variables</h4>
+<ul>
+<li><strong>Countable</strong> values (can list them)</li>
+<li><strong>Gaps</strong> between possible values</li>
+<li>Uses <strong>Probability Mass Function (PMF)</strong></li>
+<li>$P(X = x)$ makes sense</li>
+</ul>
 
-:::{.fragment}
-*Conditional probability helps us update our beliefs when we gain new information*
+<p><strong>Examples:</strong> Dice rolls, number of emails, quiz scores</p>
+
+<div class="discrete-plot">
+<canvas id="discreteReview"></canvas>
+</div>
+</div>
+
 :::
 
----
+::: {.column .smaller}
 
-## What is Conditional Probability?
+<div class="type-card continuous-card">
+<h4>Continuous Random Variables</h4>
+<ul>
+<li><strong>Uncountable</strong> values (infinite possibilities)</li>
+<li><strong>No gaps</strong> - any value in an interval</li>
+<li>Uses <strong>Probability Density Function (PDF)</strong></li>
+<li>$P(X = x) = 0$ for any specific value!</li>
+</ul>
 
-**Conditional Probability** is the probability of an event occurring, given that another event has already occurred
+<p><strong>Examples:</strong> Height, weight, time, temperature</p>
 
-**Notation**: $P(A|B)$ read as "probability of A given B"
+<div class="continuous-plot">
+<canvas id="continuousReview"></canvas>
+</div>
+</div>
 
-:::{.fragment}
-**Key insight**: When we know B has occurred, our sample space effectively "shrinks" to only outcomes where B is true
+:::
 :::
 
----
 
-## Intuitive Example
 
-You roll a fair six-sided die, but before revealing the result, someone tells you "the number is even"
+## Why `P(X = x) = 0` for Continuous Variables? {#sec-pdf .smaller}
 
-What's the probability it's a 4?
+:::{.smaller}
+<div class="key-insight">
+For continuous random variables, the probability of any <strong>exact</strong> value is zero!
 
-:::{.fragment}
-**Without information**: $P(\text{rolling 4}) = \frac{1}{6}$
-
-**With information**: $P(\text{4 | even}) = ?$
-
-Given it's even, possible outcomes: $\{2, 4, 6\}$
-So $P(\text{4 | even}) = \frac{1}{3}$
+<strong>Think about it:</strong> What's the probability someone is exactly 5.7324681... feet tall?
+</div>
 :::
 
----
+::: {.columns}
+::: {.column .smaller}
 
-## Formal Definition
+**Instead, we ask:**
 
-For events A and B where $P(B) > 0$:
-
-$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
-
-:::{.fragment}
-
-**Interpretation**: 
-
-- **Numerator:** Outcomes where both A and B occur
+- P(5.7 ≤ X ≤ 5.8)?
   
-- **Denominator:** All outcomes where B occurs
-    
-- **Ratio:** Fraction of B-outcomes where A also occurs
-:::
-
----
-
-## Understanding the Formula
-
-$$P(A|B) = \frac{P(A \cap B)}{P(B)}$$
-
-**Why this formula makes sense:**
-
-- We restrict our attention to outcomes where B occurs
+- P(X ≤ 6.0)?
   
-- Among those outcomes, what fraction also have A?
-  
-- This is exactly $\frac{P(A \cap B)}{P(B)}$
+- P(X > 5.5)?
 
-:::{.fragment}
-**Rearranging**: $P(A \cap B) = P(A|B) \times P(B)$
+**Key insight:** We calculate probabilities for **intervals**, not exact points.
+
+:::
+::: {.column .smaller}
+
+<div class="chart-container">
+<canvas id="continuousPointChart"></canvas>
+</div>
+*Click to see why P(X = exact value) = 0*
+
+:::
+:::
+
+---
+
+## Probability Density Function (PDF) {.smaller}
+
+<div class="summary-card smaller">
+
+<div style="font-weight: 600; color: #2563eb; margin-bottom: 8px;">
+  <span style="font-size:1.1em;"> 🎯 Definition:</span>
+  The <strong>Probability Density Function (PDF)</strong> of a continuous random variable $X$ is a function $f(x)$ such that:
+</div>
+
+<div style="margin-bottom: 10px; font-size: 1.05em;">
+  $$P(a \leq X \leq b) = \int_a^b f(x) \, dx$$
+</div>
+
+<div style="font-weight: 600; color: #f97316; margin-bottom: 4px;">
+  Properties of PDF:
+</div>
+<ul style="margin-top: 0; margin-bottom: 0.5em;">
+  <li>$f(x) \geq 0$ for all $x$</li>
+  <li>$\int_{-\infty}^{\infty} f(x) \, dx = 1$</li>
+  <li>$f(x)$ is NOT a probability - it's a density!</li>
+</ul>
+
+</div>
+
+---
+
+## PDF Interpretation: *Height is Density* {.smaller}
+
+::: {.interactive-demo .smaller}
+### Interactive PDF Demo: Understanding Density{.smaller}
+
+::: {.demo-controls}
+<button onclick="updatePDFDemo()">New Random Variable</button>
+<select id="pdfType" onchange="updatePDFDemo()">
+<option value="uniform">Uniform Distribution</option>
+<option value="normal">Normal Distribution</option>
+<option value="exponential">Exponential Distribution</option>
+</select>
+<label>Interval: [<input type="number" id="intervalA" value="1" step="0.1" onchange="updatePDFDemo()"> , <input type="number" id="intervalB" value="2" step="0.1" onchange="updatePDFDemo()">]</label>
+:::
+
+::: {.demo-stats}
+<div id="pdfStats" style="margin-top: 8px; font-size: 0.9em; color: var(--neutral-medium);">
+<strong>Probability = Area under curve:</strong> <span id="pdfAreaText">Select an interval to see probability</span>
+</div>
+:::
+
+::: {.chart-container}
+<canvas id="pdfChart"></canvas>
+:::
+:::
+
+---
+
+## Cumulative Distribution Function (CDF) {.smaller}
+
+<div class="summary-card smaller">
+
+::: columns
+::: column
+
+For continuous random variables, the **CDF** is:
+
+$$F(x) = P(X \leq x) = \int_{-\infty}^x f(t) \, dt$$
+
+**Key relationship:**
+$$f(x) = \frac{d}{dx}F(x)$$
+
+The PDF is the **derivative** of the CDF!
+
+:::
+::: column
+
+<div class="chart-container">
+<canvas id="cdfContinuousChart"></canvas>
+</div>
+*Click anywhere to see F(x) = P(X ≤ x) for that point*
+
+:::
+:::
+</div>
+
+---
+
+## Expected Value and Variance {.smaller}
+
+For continuous random variables:
+
+**Expected Value:**
+$$E[X] = \mu = \int_{-\infty}^{\infty} x \cdot f(x) \, dx$$
+
+**Variance:**
+$$\text{Var}(X) = \sigma^2 = \int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx = E[X^2] - (E[X])^2$$
+
+**Where:**
+$$E[X^2] = \int_{-\infty}^{\infty} x^2 \cdot f(x) \, dx$$
+
+::: {.key-insight}
+Notice: **Integrals** replace **sums** when moving from discrete to continuous!
 :::
 
 ---
 
-## Practice Problem 1
+## Common Continuous Distributions {.smaller}
 
-A card is drawn from a standard 52-card deck. Find:
+::: {.dist-grid}
+::: {.dist-card}
+#### Uniform Distribution
+All values equally likely in an interval
 
-a) $P(\text{King | Face card})$
-b) $P(\text{Heart | Red card})$  
-c) $P(\text{Ace | Black card})$
+**Parameters:** $a$ (min), $b$ (max)
 
-:::{.fragment}
-**Solutions:**
+**PDF:** $f(x) = \frac{1}{b-a}$ for $a \leq x \leq b$
 
-a) $P(\text{King | Face}) = \frac{4}{12} = \frac{1}{3}$ (4 kings among 12 face cards)
+**Mean:** $\frac{a+b}{2}$
 
-b) $P(\text{Heart | Red}) = \frac{13}{26} = \frac{1}{2}$ (13 hearts among 26 red cards)
+**Variance:** $\frac{(b-a)^2}{12}$
 
-c) $P(\text{Ace | Black}) = \frac{2}{26} = \frac{1}{13}$ (2 black aces among 26 black cards)
+**Use:** Random numbers, waiting times
+:::
+
+::: {.dist-card}
+#### Normal Distribution
+Bell-shaped, symmetric
+
+**Parameters:** $\mu$ (mean), $\sigma^2$ (variance)
+
+**PDF:** $f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$
+
+**Mean:** $\mu$
+
+**Variance:** $\sigma^2$
+
+**Use:** Heights, test scores, errors
+:::
+
+::: {.dist-card}
+#### Exponential Distribution
+Models waiting times
+
+**Parameters:** $\lambda$ (rate)
+
+**PDF:** $f(x) = \lambda e^{-\lambda x}$ for $x \geq 0$
+
+**Mean:** $\frac{1}{\lambda}$
+
+**Variance:** $\frac{1}{\lambda^2}$
+
+**Use:** Time between events, lifetimes
+:::
+:::
+
+---
+
+## Interactive Distribution Explorer {.smaller}
+
+::: {.interactive-demo}
+### Continuous Distribution Visualizer
+
+::: {.demo-controls}
+<select id="contDistType" onchange="updateContinuousDistribution()">
+<option value="uniform">Uniform</option>
+<option value="normal">Normal</option>
+<option value="exponential">Exponential</option>
+</select>
+<label>Parameter 1: <input type="number" id="contParam1" value="0" step="0.1" onchange="updateContinuousDistribution()"></label>
+<label>Parameter 2: <input type="number" id="contParam2" value="1" step="0.1" onchange="updateContinuousDistribution()"></label>
+<button onclick="showDistributionArea()">Calculate P(a ≤ X ≤ b)</button>
+:::
+
+::: {.demo-stats}
+<div id="contDistStats" style="margin-top: 8px; font-size: 0.9em;">
+<strong>Distribution Properties:</strong> <span id="contDistStatsText">Select parameters to see statistics</span>
+</div>
+:::
+
+::: {.chart-container}
+<canvas id="contDistChart"></canvas>
+:::
+:::
+
+---
+
+## The Normal Distribution: Star of Statistics {.smaller}
+
+<div class="summary-card smaller">
+
+::: columns
+::: column
+
+#### Why Normal is Special
+
+- **Central Limit Theorem**: Sample means approach normal
+- **68-95-99.7 Rule**: 
+  - 68% within 1σ of μ
+  - 95% within 2σ of μ  
+  - 99.7% within 3σ of μ
+- **Standard Normal**: μ = 0, σ = 1
+
+#### Z-Score Transformation
+$$Z = \frac{X - \mu}{\sigma}$$
+
+:::
+::: column
+
+<div class="chart-container">
+<canvas id="normalChart"></canvas>
+</div>
+
+:::
+:::
+</div>
+
+---
+
+## Practice Problem 1: Uniform Distribution {.smaller}
+
+::: {.practice-problem}
+A bus arrives uniformly between 10:00 AM and 10:20 AM. Let $X$ = arrival time in minutes after 10:00 AM.
+
+**(a)** What is the PDF of $X$?  
+**(b)** What's the probability the bus arrives between 10:05 and 10:12?  
+**(c)** What's the expected arrival time?
+
+<button class="show-solution smaller" onclick="toggleSolution('sol1')">Show Solution</button>
+
+::: {.solution data-id="sol1"}
+**(a)** $X \sim \text{Uniform}(0, 20)$
+$$f(x) = \frac{1}{20-0} = \frac{1}{20} \text{ for } 0 \leq x \leq 20$$
+
+**(b)** $P(5 \leq X \leq 12) = \int_5^{12} \frac{1}{20} dx = \frac{1}{20} \times (12-5) = \frac{7}{20} = 0.35$
+
+**(c)** $E[X] = \frac{a+b}{2} = \frac{0+20}{2} = 10$ minutes after 10:00 AM
+:::
+:::
+
+---
+
+## Practice Problem 2: Normal Distribution {.smaller}
+
+::: {.practice-problem}
+Heights of adult women are normally distributed with μ = 64 inches and σ = 2.5 inches.
+
+**(a)** What's the probability a woman is taller than 67 inches?  
+**(b)** What height represents the 90th percentile?  
+**(c)** What's the probability a woman is between 62 and 66 inches tall?
+
+<button class="show-solution smaller" onclick="toggleSolution('sol2')">Show Solution</button>
+
+::: {.solution data-id="sol2"}
+**(a)** $P(X > 67) = P\left(Z > \frac{67-64}{2.5}\right) = P(Z > 1.2) = 1 - 0.8849 = 0.1151$
+
+**(b)** For 90th percentile: $P(X \leq x) = 0.90$  
+$z_{0.90} = 1.28$, so $x = 64 + 1.28(2.5) = 67.2$ inches
+
+**(c)** $P(62 \leq X \leq 66) = P\left(\frac{62-64}{2.5} \leq Z \leq \frac{66-64}{2.5}\right)$  
+$= P(-0.8 \leq Z \leq 0.8) = 0.7881 - 0.2119 = 0.5762$
+:::
+:::
+
+---
+
+## Practice Problem 3: Exponential Distribution {.smaller}
+
+::: {.practice-problem}
+The time between customer arrivals at a store follows an exponential distribution with an average of 5 minutes between arrivals.
+
+**(a)** What is the PDF?  
+**(b)** What's the probability the next customer arrives within 3 minutes?  
+**(c)** What's the probability no customer arrives in the next 10 minutes?
+
+<button class="show-solution smaller" onclick="toggleSolution('sol3')">Show Solution</button>
+
+::: {.solution data-id="sol3"}
+**(a)** Average = 5 minutes = $\frac{1}{\lambda}$, so $\lambda = 0.2$  
+$$f(x) = 0.2e^{-0.2x} \text{ for } x \geq 0$$
+
+**(b)** $P(X \leq 3) = \int_0^3 0.2e^{-0.2x} dx = 1 - e^{-0.2 \times 3} = 1 - e^{-0.6} = 0.4512$
+
+**(c)** $P(X > 10) = e^{-0.2 \times 10} = e^{-2} = 0.1353$
+:::
+:::
+
+---
+
+## Central Limit Theorem {.smaller}
+
+::: {.interactive-demo}
+### CLT Demonstration
+
+::: {.demo-controls}
+<select id="cltPopulation" onchange="updateCLTDemo()">
+<option value="uniform">Uniform Population</option>
+<option value="exponential">Exponential Population</option>
+<option value="bimodal">Bimodal Population</option>
+</select>
+<label>Sample Size: <input type="number" id="cltSampleSize" value="30" min="5" max="100" onchange="updateCLTDemo()"></label>
+<button onclick="runCLTSimulation()">Run Simulation</button>
+:::
+
+::: {.clt-container}
+::: {.chart-container}
+<canvas id="cltPopChart"></canvas>
+<div class="chart-title">Population Distribution</div>
+:::
+::: {.chart-container}
+<canvas id="cltSampleChart"></canvas>
+<div class="chart-title">Sample Means Distribution</div>
+:::
+:::
+
+<div id="cltStats" style="margin-top: 8px; font-size: 0.9em;">
+<strong>CLT in Action:</strong> <span id="cltStatsText">Run simulation to see the magic!</span>
+</div>
 :::
 
 ---
 
-## Two-Way Tables
+## Transformations of Random Variables {.smaller}
 
-Two-way tables are excellent for conditional probability problems
+<div class="summary-card smaller">
 
-**Example**: Survey of 1000 people about coffee preference
+#### Linear Transformations
+If $Y = aX + b$, then:
+- $E[Y] = aE[X] + b$
+- $\text{Var}(Y) = a^2\text{Var}(X)$
+- If $X \sim N(\mu, \sigma^2)$, then $Y \sim N(a\mu + b, a^2\sigma^2)$
 
-|          | Coffee | No Coffee | Total |
-|----------|--------|-----------|-------|
-| Morning  | 350    | 150       | 500   |
-| Evening  | 200    | 300       | 500   |
-| **Total**| 550    | 450       | 1000  |
+#### Standardization
+$$Z = \frac{X - \mu}{\sigma} \sim N(0, 1)$$
+
+::: {.key-insight}
+**Important**: Normal distributions are closed under linear transformations!
+:::
+
+</div>
 
 ---
 
-## Using Two-Way Tables
+## Comparing Discrete and Continuous {.smaller}
 
-Find: $P(\text{Coffee | Morning person})$
-
-From the table:
-
-- Morning people: 500
-  
-- Morning people who drink coffee: 350
-
-:::{.fragment}
-$P(\text{Coffee | Morning}) = \frac{350}{500} = 0.7$
-
-**Compare to**: $P(\text{Coffee}) = \frac{550}{1000} = 0.55$
-
-Being a morning person increases coffee probability!
+::: {.comparison-table}
+| Property | Discrete | Continuous |
+|----------|----------|------------|
+| **Probability Function** | PMF: $P(X = x)$ | PDF: $f(x)$ |
+| **Exact Value Probability** | $P(X = x) > 0$ possible | $P(X = x) = 0$ always |
+| **Interval Probability** | $\sum P(X = x_i)$ | $\int_a^b f(x) dx$ |
+| **Expected Value** | $\sum x \cdot P(X = x)$ | $\int x \cdot f(x) dx$ |
+| **Variance** | $\sum (x-\mu)^2 P(X = x)$ | $\int (x-\mu)^2 f(x) dx$ |
+| **CDF** | $\sum_{x_i \leq x} P(X = x_i)$ | $\int_{-\infty}^x f(t) dt$ |
 :::
 
 ---
 
-## Practice Problem 2
+## Properties of Continuous Distributions {.smaller}
 
-Using the coffee table, find:
+<div class="summary-card smaller">
 
-a) $P(\text{Morning | Coffee drinker})$
+::: columns
+::: column
 
-b) $P(\text{No Coffee | Evening person})$
+#### Key Properties
+1. **Memoryless Property** (Exponential only):  
+   $P(X > s+t | X > s) = P(X > t)$
 
-c) $P(\text{Evening | No Coffee})$
+2. **Symmetry** (Normal):  
+   $P(X \leq \mu - a) = P(X \geq \mu + a)$
 
-:::{.fragment}
-**Solutions:**
+3. **Scaling Invariance** (Normal):  
+   Linear combinations of normals are normal
 
-a) $P(\text{Morning | Coffee}) = \frac{350}{550} = \frac{7}{11} \approx 0.636$
+:::
+::: column
 
-b) $P(\text{No Coffee | Evening}) = \frac{300}{500} = 0.6$  
+#### Useful Relationships
+- **CDF to PDF**: $f(x) = F'(x)$
+- **PDF to CDF**: $F(x) = \int_{-\infty}^x f(t) dt$
+- **Complementary CDF**: $P(X > x) = 1 - F(x)$
 
-c) $P(\text{Evening | No Coffee}) = \frac{300}{450} = \frac{2}{3} \approx 0.667$
+::: {.key-insight}
+**Remember**: Area under PDF = 1, but PDF values can exceed 1!
 :::
 
----
-
-## Independence Revisited
-
-Events A and B are **independent** if knowing that B occurred doesn't change the probability of A
-
-$$P(A|B) = P(A)$$
-
-**Equivalently:**
-$$P(A \cap B) = P(A) \times P(B)$$
-
-:::{.fragment}
-**Example**: Two coin flips are independent because $P(\text{H}_2 | \text{H}_1) = P(\text{H}_2) = 0.5$
-:::
-
----
-
-## Testing for Independence
-
-**Method 1**: Check if $P(A|B) = P(A)$
-
-**Method 2**: Check if $P(A \cap B) = P(A) \times P(B)$  
-
-**Method 3**: Check if $P(B|A) = P(B)$
-
-:::{.fragment}
-**Coffee Example**: Are coffee preference and time preference independent?
-
-$P(\text{Coffee}) = 0.55$
-
-$P(\text{Coffee | Morning}) = 0.7$
-
-Since $0.7 \neq 0.55$, they are **not independent**
-:::
-
----
-
-## The Multiplication Rule
-
-**General Multiplication Rule**:
-$$P(A \cap B) = P(A) \times P(B|A) = P(B) \times P(A|B)$$
-
-**For Independent Events**:
-$$P(A \cap B) = P(A) \times P(B)$$
-
-:::{.fragment}
-**Extension to Multiple Events**:
-$$P(A_1 \cap A_2 \cap A_3) = P(A_1) \times P(A_2|A_1) \times P(A_3|A_1 \cap A_2)$$
-:::
-
----
-
-## Multiplication Rule Example
-
-A jar contains 5 red balls and 3 blue balls. Two balls are drawn **without replacement**. What's the probability both are red?
-
-:::{.fragment}
-Let $R_1$ = first ball is red, $R_2$ = second ball is red
-
-$P(R_1 \cap R_2) = P(R_1) \times P(R_2|R_1)$
-
-$= \frac{5}{8} \times \frac{4}{7} = \frac{20}{56} = \frac{5}{14}$
-:::
-
----
-
-## Practice Problem 3
-
-A box contains 4 defective and 6 working items. Three items are selected without replacement. Find the probability that:
-
-a) All three work
-b) The first two work and the third is defective
-c) Exactly two work
-
-:::{.fragment}
-**Solutions:**
-a) $P(\text{WWW}) = \frac{6}{10} \times \frac{5}{9} \times \frac{4}{8} = \frac{120}{720} = \frac{1}{6}$
-
-b) $P(\text{WWD}) = \frac{6}{10} \times \frac{5}{9} \times \frac{4}{8} = \frac{120}{720} = \frac{1}{6}$
-:::
-
----
-
-## Practice Problem 3 (continued)
-
-c) Exactly two work (three scenarios: WWD, WDW, DWW)
-
-$P(\text{WWD}) = \frac{6}{10} \times \frac{5}{9} \times \frac{4}{8} = \frac{1}{6}$
-
-$P(\text{WDW}) = \frac{6}{10} \times \frac{4}{9} \times \frac{5}{8} = \frac{1}{6}$
-
-$P(\text{DWW}) = \frac{4}{10} \times \frac{6}{9} \times \frac{5}{8} = \frac{1}{6}$
-
-:::{.fragment}
-Total: $\frac{1}{6} + \frac{1}{6} + \frac{1}{6} = \frac{1}{2}$
-:::
-
----
-
-:::{.hidden}
-## Tree Diagrams
-
-Tree diagrams help visualize sequential events and conditional probabilities
-
-```
-                    0.5   Red
-            0.6 ──┐
-                    0.5   Blue
-Ball 1      
-                    0.4   Red  
-            0.4 ──┐
-                    0.6   Blue
-```
-
-*Each branch shows conditional probabilities*
-
----
-
-## Tree Diagram Example
-
-Medical test scenario:
-- 2% of population has disease
-- Test is 95% accurate for sick people  
-- Test is 90% accurate for healthy people
-
-What's the probability of testing positive?
-
----
-
-## Tree Diagram Solution
-
-```
-                    0.95   Test +
-            0.02 ──┐
-                    0.05   Test -
-Disease?    
-                    0.10   Test +
-            0.98 ──┐
-                    0.90   Test -
-```
-
-:::{.fragment}
-$P(\text{Test+}) = P(\text{Test+|Disease}) \times P(\text{Disease}) + P(\text{Test+|Healthy}) \times P(\text{Healthy})$
-
-$= 0.95 \times 0.02 + 0.10 \times 0.98 = 0.019 + 0.098 = 0.117$
 :::
 :::
+</div>
+
 ---
 
-## Law of Total Probability
+## Key Takeaways {.smaller}
 
-If events $B_1, B_2, \ldots, B_n$ form a **partition** of the sample space (mutually exclusive and exhaustive), then:
+<div class="summary-card smaller">
 
-$$P(A) = \sum_{i=1}^{n} P(A|B_i) \times P(B_i)$$
+::: columns
+::: column
 
-:::{.fragment}
-**Partition means**:
+#### Main Concepts
+- **Continuous variables** require PDFs, not PMFs
+- **Probabilities** are areas under curves, not function values
+- **Integration** replaces summation for continuous distributions
+- **Normal distribution** is central due to CLT
 
-- $B_i \cap B_j = \emptyset$ for $i \neq j$ (mutually exclusive)
-  
-- $\bigcup_{i=1}^{n} B_i = S$ (exhaustive)
 :::
+::: column
 
----
+#### Distribution Selection
 
-## Law of Total Probability Example
+Choose distributions based on the data characteristics:
 
-A factory has three machines:
-- Machine A: 50% of production, 1% defective
-- Machine B: 30% of production, 2% defective  
-- Machine C: 20% of production, 3% defective
+- **Uniform** for equally likely intervals
+- **Normal** for symmetric, bell-shaped data  
+- **Exponential** for waiting times/lifetimes
+- **Use CLT** when working with sample means
 
-What's the overall defect rate?
+#### Key Principle
+- **Central Limit Theorem** makes normal distributions ubiquitous in statistics
 
-:::{.fragment}
-$P(\text{Defective}) = P(D|A)P(A) + P(D|B)P(B) + P(D|C)P(C)$
-
-$= 0.01 \times 0.5 + 0.02 \times 0.3 + 0.03 \times 0.2$
-
-$= 0.005 + 0.006 + 0.006 = 0.017 = 1.7\%$
 :::
-
----
-
-## Practice Problem 4
-
-A student studies for an exam with three possible outcomes based on study time:
-- Studies hard (40%): 90% chance of passing
-- Studies moderately (35%): 70% chance of passing  
-- Doesn't study (25%): 30% chance of passing
-
-What's the overall probability of passing?
-
-:::{.fragment}
-$P(\text{Pass}) = 0.9 \times 0.4 + 0.7 \times 0.35 + 0.3 \times 0.25$
-
-$= 0.36 + 0.245 + 0.075 = 0.68$
 :::
+</div>
 
 ---
 
-## Bayes' Theorem
+## Looking Ahead {.smaller}
 
-**The Foundation**: We often want to "reverse" conditional probabilities
+<div class="summary-card smaller">
 
-Given: $P(B|A)$, $P(A)$, $P(B)$
-Want: $P(A|B)$
+#### Next Lecture: Statistical Inference
 
-**Bayes' Theorem**:
-$$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$
+**Topics we'll cover:**
 
----
+- Sampling distributions
+- Confidence intervals
+- Hypothesis testing
+- p-values and significance
 
-## Bayes' Theorem Components
-
-$$P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$$
-
-- $P(A|B)$: **Posterior probability** (what we want)
-- $P(B|A)$: **Likelihood** (what we observe)  
-- $P(A)$: **Prior probability** (initial belief)
-- $P(B)$: **Evidence** (marginal probability)
-
-:::{.fragment}
-*"In light of evidence B, how should we update our belief in A?"*
+::: {.connection}
+**Connection**: Continuous distributions (especially normal) form the foundation for statistical inference
 :::
-
----
-
-## Bayes' Theorem with Total Probability
-
-When we need to find $P(B)$:
-
-$$P(A|B) = \frac{P(B|A) \times P(A)}{P(B|A) \times P(A) + P(B|A^c) \times P(A^c)}$$
-
-This is the most common form for applications
-
----
-
-## Medical Diagnosis Example
-
-Revisiting our medical test:
-- 2% of population has disease (prior)
-- Test positive (evidence)  
-- Test is 95% accurate for sick, 90% accurate for healthy
-
-Given a positive test, what's the probability of having the disease?
-
----
-
-## Medical Diagnosis Solution
-
-Let D = disease, T+ = positive test
-
-$$P(D|T+) = \frac{P(T+|D) \times P(D)}{P(T+|D) \times P(D) + P(T+|D^c) \times P(D^c)}$$
-
-$$= \frac{0.95 \times 0.02}{0.95 \times 0.02 + 0.10 \times 0.98}$$
-
-$$= \frac{0.019}{0.019 + 0.098} = \frac{0.019}{0.117} \approx 0.162$$
-
-:::{.fragment}
-**Surprising**: Only 16.2% chance of disease despite positive test!
-:::
-
----
-
-## Why the Low Probability?
-
-**Base Rate Fallacy**: When disease is rare (2%), most positive tests are false positives
-
-**Intuition**: Out of 10,000 people:
-- 200 have disease → 190 test positive  
-- 9,800 healthy → 980 test positive
-- Total positive tests: 1,170
-- True positives: 190
-
-$P(\text{Disease | Positive}) = \frac{190}{1,170} \approx 0.162$ ✓
-
----
-
-## Practice Problem 5
-
-Email spam filter:
-- 60% of emails are spam
-- Filter catches 95% of spam
-- Filter incorrectly flags 8% of legitimate emails
-
-If an email is flagged as spam, what's the probability it's actually spam?
-
-:::{.fragment}
-$P(\text{Spam | Flagged}) = \frac{0.95 \times 0.6}{0.95 \times 0.6 + 0.08 \times 0.4}$
-
-$= \frac{0.57}{0.57 + 0.032} = \frac{0.57}{0.602} \approx 0.947$
-
-The filter is quite reliable!
-:::
-
----
-
-## Multiple Events and Bayes'
-
-**Extended Bayes' Theorem**: If $A_1, A_2, \ldots, A_n$ partition the sample space:
-
-$$P(A_i|B) = \frac{P(B|A_i) \times P(A_i)}{\sum_{j=1}^{n} P(B|A_j) \times P(A_j)}$$
-
-This allows us to update probabilities for multiple hypotheses
-
----
-
-## Three Machine Example Revisited
-
-A defective item is found. Which machine most likely produced it?
-
-From before:
-- Machine A: 50% production, 1% defective  
-- Machine B: 30% production, 2% defective
-- Machine C: 20% production, 3% defective
-- Overall defect rate: 1.7%
-
----
-
-## Three Machine Solution
-
-$$P(A|\text{Defective}) = \frac{0.01 \times 0.5}{0.017} = \frac{0.005}{0.017} \approx 0.294$$
-
-$$P(B|\text{Defective}) = \frac{0.02 \times 0.3}{0.017} = \frac{0.006}{0.017} \approx 0.353$$
-
-$$P(C|\text{Defective}) = \frac{0.03 \times 0.2}{0.017} = \frac{0.006}{0.017} \approx 0.353$$
-
-:::{.fragment}
-Machine B or C are most likely sources of the defective item
-:::
-
----
-
-## Practice Problem 6
-
-Three boxes contain colored balls:
-- Box 1: 3 red, 2 blue (chosen 40% of time)
-- Box 2: 2 red, 3 blue (chosen 35% of time)  
-- Box 3: 1 red, 4 blue (chosen 25% of time)
-
-A red ball is drawn. Which box was it most likely from?
-
-:::{.fragment}
-$P(\text{Red}) = \frac{3}{5} \times 0.4 + \frac{2}{5} \times 0.35 + \frac{1}{5} \times 0.25 = 0.24 + 0.14 + 0.05 = 0.43$
-
-$P(\text{Box 1 | Red}) = \frac{0.6 \times 0.4}{0.43} \approx 0.558$
-$P(\text{Box 2 | Red}) = \frac{0.4 \times 0.35}{0.43} \approx 0.326$  
-$P(\text{Box 3 | Red}) = \frac{0.2 \times 0.25}{0.43} \approx 0.116$
-:::
-
----
-
-## Conditional Independence
-
-Events A and B are **conditionally independent** given C if:
-
-$$P(A \cap B | C) = P(A|C) \times P(B|C)$$
-
-**Important**: Conditional independence doesn't imply independence!
-
-:::{.fragment}
-**Example**: Weather in two cities may be independent normally, but conditionally dependent given a major weather system
-:::
-
----
-
-## Simpson's Paradox
-
-**Simpson's Paradox**: A trend in subgroups can reverse when groups are combined
-
-**Classic Example**: University admissions by gender
-
-|         | Men    | Women  |
-|---------|--------|--------|
-| Dept A  | 62% (825/1327) | 82% (108/131) |
-| Dept B  | 63% (560/893)  | 68% (25/37)   |
-| **Overall** | **44% (1385/2220)** | **30% (133/168)** |
-
-Women have higher rates in each department but lower overall!
-
----
-
-## Common Fallacies
-
-**1. Confusion of the Inverse**
-- Confusing $P(A|B)$ with $P(B|A)$
-- "If it rains, the ground is wet" ≠ "If the ground is wet, it rained"
-
-**2. Base Rate Neglect**  
-- Ignoring prior probabilities
-- Medical test example
-
-**3. Prosecutor's Fallacy**
-- $P(\text{Evidence | Innocent}) \neq P(\text{Innocent | Evidence})$
-
----
-
-## Prosecutor's Fallacy Example
-
-DNA evidence matches defendant with probability 1 in a million for random person
-
-**Wrong reasoning**: "Probability of innocence is 1 in a million"
-
-**Correct reasoning**: Need to consider:
-- How many people could have committed the crime?
-- What's the prior probability of guilt?
-- Possibility of lab error, planted evidence, etc.
-
----
-
-## Practice Problem 7
-
-Quality control: 5% of items are defective. A test detects 96% of defective items but has a 4% false positive rate.
-
-a) What's the probability an item testing positive is actually defective?
-b) What's the probability an item testing negative is actually good?
-
-:::{.fragment}
-a) $P(\text{Defective | Positive}) = \frac{0.96 \times 0.05}{0.96 \times 0.05 + 0.04 \times 0.95} = \frac{0.048}{0.086} \approx 0.558$
-
-b) $P(\text{Good | Negative}) = \frac{0.96 \times 0.95}{0.96 \times 0.95 + 0.04 \times 0.05} = \frac{0.912}{0.914} \approx 0.998$
-:::
-
----
-
-## Real-World Applications
-
-**Medical Screening**:
-- Mammograms, COVID tests
-- Balancing sensitivity vs specificity
-
-**Machine Learning**:
-- Naive Bayes classifiers
-- Spam detection, recommendation systems
-
-**Finance**:
-- Credit scoring
-- Fraud detection
-
-**Legal System**:
-- DNA evidence interpretation
-- Probability of guilt/innocence
-
----
-
-## Technology and Tools
-
-**Calculators**: 
-- Basic probability calculations
-- Watch for rounding errors
-
-**Software**:
-- R: conditional probability tables
-- Python: pandas for two-way tables
-- Excel: pivot tables for conditional analysis
-
-**Visualization**:
-- Tree diagrams  
-- Contingency tables
-- Bayes networks
-
----
-
-## Diagnostic Thinking
-
-**Questions to ask**:
-1. What information am I conditioning on?
-2. How does this information change the probability?
-3. What's the base rate or prior probability?
-4. Am I confusing $P(A|B)$ with $P(B|A)$?
-5. Are the events independent?
-
----
-
-## Problem-Solving Strategy
-
-1. **Identify the type**: Direct conditional, Bayes', or law of total probability?
-2. **Define events clearly**: Use precise notation
-3. **Organize information**: Two-way tables or tree diagrams
-4. **Check for independence**: Does additional info matter?
-5. **Apply appropriate formula**: Don't forget denominators!
-6. **Verify answer**: Does it make intuitive sense?
-
----
-
-## Practice Problem 8
-
-A survey shows:
-- 70% of people like pizza
-- 60% of people like movies  
-- 40% like both pizza and movies
-
-a) Are liking pizza and movies independent?
-b) What's $P(\text{Pizza | Movies})$?
-c) What's $P(\text{Movies | Pizza})$?
-
----
-
-## Practice Problem 8 Solutions
-
-a) Check independence: $P(\text{Pizza}) \times P(\text{Movies}) = 0.7 \times 0.6 = 0.42 \neq 0.4$
-   Not independent!
-
-b) $P(\text{Pizza | Movies}) = \frac{P(\text{Pizza} \cap \text{Movies})}{P(\text{Movies})} = \frac{0.4}{0.6} = \frac{2}{3}$
-
-c) $P(\text{Movies | Pizza}) = \frac{P(\text{Pizza} \cap \text{Movies})}{P(\text{Pizza})} = \frac{0.4}{0.7} = \frac{4}{7}$
-
----
-
-## Advanced Topics Preview
-
-**Markov Chains**: 
-- Sequences where future depends only on present
-- $P(X_{n+1} | X_n, X_{n-1}, \ldots, X_1) = P(X_{n+1} | X_n)$
-
-**Bayesian Statistics**:
-- Using Bayes' theorem for statistical inference
-- Updating beliefs with data
-
-**Information Theory**:
-- Conditional entropy
-- Mutual information
-
----
-
-## Historical Context
-
-**Thomas Bayes** (1701-1761):
-- Presbyterian minister and mathematician
-- Bayes' theorem published posthumously
-
-**Pierre-Simon Laplace** (1749-1827):
-- Developed and popularized Bayesian methods
-- "Probability is nothing but common sense reduced to calculation"
-
-**Modern Applications**: AI, machine learning, medical diagnosis, finance
-
----
-
-## Common Student Questions
-
-**Q**: "How do I know when to use Bayes' theorem?"
-**A**: When you want to "reverse" a conditional probability
-
-**Q**: "Why are medical test problems so counterintuitive?"  
-**A**: Base rates matter more than we intuitively expect
-
-**Q**: "What's the difference between independence and conditional independence?"
-**A**: Independence means no relationship; conditional independence means no relationship given specific information
-
----
-
-## Key Formulas Summary
-
-- **Conditional Probability**: $P(A|B) = \frac{P(A \cap B)}{P(B)}$
-- **Multiplication Rule**: $P(A \cap B) = P(A) \times P(B|A)$
-- **Law of Total Probability**: $P(A) = \sum P(A|B_i) \times P(B_i)$
-- **Bayes' Theorem**: $P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}$
-- **Independence**: $P(A|B) = P(A)$
-
----
-
-## Looking Ahead
-
-**Next lecture**: Discrete Random Variables
-- Random variables as functions
-- Probability mass functions
-- Expected value and variance
-- Common discrete distributions (binomial, geometric, Poisson)
-
-**Connection**: Conditional probability is essential for understanding dependence in random variables
-
----
-
-## Study Tips
-
-1. **Practice with real scenarios**: Medical tests, quality control
-2. **Draw diagrams**: Tree diagrams and two-way tables
-3. **Check your intuition**: Do answers make sense?
-4. **Master the basics**: Conditional probability formula
-5. **Watch for fallacies**: Don't confuse $P(A|B)$ and $P(B|A)$
-
----
-
-## Final Thoughts
-
-Conditional probability is everywhere:
-- Updates beliefs with new information
-- Foundation of Bayesian thinking
-- Critical for proper statistical reasoning
-- Essential for machine learning and AI
-
-:::{.fragment}
-**Key insight**: Information changes probability - embrace this uncertainty!
-:::
+</div>
 
 ---
 
 ## Questions? {.center}
 
-**Office Hours**: [Your office hours]
-**Email**: [Your email]  
-**Next Class**: Discrete Random Variables
+**Office Hours**: 11AM on Thursday (link on Canvas)  
 
-*Remember: Homework due [date]*
+**Email**: nmathlouthi@ucsb.edu 
 
----
-
-## Bonus: Monty Hall Problem
-
-Three doors: one has a car, two have goats
-1. You choose a door
-2. Host opens a door with a goat
-3. Do you switch?
-
-:::{.fragment}
-**Answer**: Yes! Switch!
-- $P(\text{Car behind your door}) = \frac{1}{3}$
-- $P(\text{Car behind other remaining door}) = \frac{2}{3}$
-
-*Conditional probability in action!*
-:::
+**Next Class**: Statistical Inference and Hypothesis Testing
 
 ---
 
-## Bonus: Birthday Paradox Connection
+## Resources
 
-In a room of 23 people, probability of shared birthday ≈ 50%
-
-**Conditional approach**: What's $P(\text{no match | first $k$ people have different birthdays})$?
-
-This helps build intuition for why the probability grows so quickly!
-
-*Surprising results often involve conditional probability!*
+<div style="background: #f8fafc; border-radius: 10px; border: 1px solid #e0e7ef; padding: 16px 20px; margin: 8px 0;">
+  <ul style="list-style: none; padding: 0; margin: 0;">
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #2563eb; border-radius: 50%;"></span>
+      <strong>Read</strong> <a href="/files/Book/os4_for_screen_reader.pdf" style="color: #2563eb; text-decoration: none;">OpenIntro Statistics</a> <em style="color: #666;">Chapter 4 sections 4.1-4.3</em>
+    </li>
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #f97316; border-radius: 50%;"></span>
+      <a href="https://www.khanacademy.org/math/statistics-probability/continuous-random-variables" style="color: #2563eb; text-decoration: none;">Khan Academy - Continuous Random Variables</a>
+    </li>
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #059669; border-radius: 50%;"></span>
+      <a href="https://seeing-theory.brown.edu/probability-distributions/" style="color: #2563eb; text-decoration: none;">Seeing Theory - Probability Distributions</a>
+    </li>
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #7c3aed; border-radius: 50%;"></span>
+      <a href="https://en.wikipedia.org/wiki/Central_limit_theorem" style="color: #2563eb; text-decoration: none;">Central Limit Theorem - Wikipedia</a>
+    </li>
+    <li style="margin-bottom: 0; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #dc2626; border-radius: 50%;"></span>
+      <a href="https://www.probabilitycourse.com/chapter4/" style="color: #2563eb; text-decoration: none;">Introduction to Probability - Continuous Random Variables</a>
+    </li>
+  </ul>
+</div>

@@ -1,7 +1,7 @@
 ---
-title: "PSTAT 5A Practice Worksheet 3 - SOLUTIONS"
-subtitle: "Comprehensive Review: Probability, Counting, and Conditional Probability"
-author: "Solution Key"
+title: "PSTAT 5A Practice Worksheet 4 - SOLUTIONS"
+subtitle: "Comprehensive Review: Discrete Random Variables and Distributions"
+author: "Complete Solutions with Detailed Work"
 date: today
 format:
   html:
@@ -16,237 +16,269 @@ format:
     geometry: margin=1in
     fontsize: 11pt
     documentclass: article
-  docx:
-    toc: true
-    number-sections: true
-    highlight-style: github
 execute:
   echo: false
   warning: false
 ---
 
-# Section A: Probability - SOLUTIONS
-*⏱️ Estimated time: 8 minutes*
+# Section A: Basic Concepts and Identification - SOLUTIONS
 
-::: {.problem}
-**Problem A1: Probability Distributions - SOLUTION**
+## Problem A1: Distribution Identification
 
-For a valid probability distribution, two conditions must be met:
+**(a)** A fair coin is flipped until the first head appears. Let X = number of flips needed.
 
-1. All probabilities must be non-negative (≥ 0)
-   
-2. The sum of all probabilities must equal 1
+**Solution:** **Geometric Distribution** with parameter p = 0.5
+- We count the number of trials until first success
+- Each flip is independent with constant probability of success
 
-**Analysis:**
+**(b)** A quality control inspector tests 20 randomly selected items from a production line where 5% are defective. Let X = number of defective items found.
 
-**(a) Invalid** 
+**Solution:** **Binomial Distribution** with parameters n = 20, p = 0.05
+- Fixed number of trials (20)
+- Each item has same probability of being defective (0.05)
+- We count number of successes (defective items)
 
-- Sum = 0.3 + 0.3 + 0.3 + 0.2 + 0.1 = 1.2 > 1
-The probabilities sum to more than 1, violating the second condition.
+**(c)** A website receives visitors at an average rate of 3 per minute. Let X = number of visitors in a 2-minute period.
 
-**(b) Valid** 
+**Solution:** **Poisson Distribution** with parameter λ = 6
+- Events occurring over time at constant rate
+- Rate = 3 per minute × 2 minutes = 6 visitors expected in 2 minutes
 
-- Sum = 0 + 0 + 1 + 0 + 0 = 1
-All probabilities are non-negative and sum to 1. This represents a class where everyone receives a C.
+**(d)** A basketball player shoots one free throw with an 80% success rate. Let X = 1 if successful, 0 if unsuccessful.
 
-**(c) Invalid** 
+**Solution:** **Bernoulli Distribution** with parameter p = 0.8
+- Single trial with two outcomes (success/failure)
 
-- Sum = 0.3 + 0.3 + 0.3 + 0 + 0 = 0.9 < 1
-The probabilities sum to less than 1, violating the second condition.
+**(e)** A student keeps taking a driving test until they pass. The probability of passing on any attempt is 0.7. Let X = number of attempts needed to pass.
 
-**(d) Invalid** 
+**Solution:** **Geometric Distribution** with parameter p = 0.7
+- We count trials until first success (passing)
 
-- Contains F = -0.1 < 0
-Although the sum would equal 1.0, the probability for grade F is negative, violating the first condition.
+## Problem A2: Probability Mass Function
 
-**(e) Valid** 
+Given distribution:
+| X     | 1    | 2    | 3    | 4    | 5    |
+|-------|------|------|------|------|------|
+| P(X=k)| 0.1  | 0.3  | 0.4  | a    | 0.1  |
 
-- Sum = 0.2 + 0.4 + 0.2 + 0.1 + 0.1 = 1.0
-All probabilities are non-negative and sum to 1.
-
-**(f) Invalid** 
-
-- Contains B = -0.1 < 0
-Although the sum equals 1.0, the probability for grade B is negative, violating the first condition.
-:::
-
-# Section B: Permutations and Combinations - SOLUTIONS
-*⏱️ Estimated time: 15 minutes*
-
-::: {.problem}
-**Problem B1: Permutations and Combinations - SOLUTION**
-
-**Part (a):** How many 6-character passwords can be formed using 3 specific letters and 3 specific digits if repetitions are not allowed and letters must come before digits?
+**(a)** Find the value of $a$.
 
 **Solution:**
-Since letters must come before digits, we have a fixed structure: LLL DDD
+Since probabilities must sum to 1:
+0.1 + 0.3 + 0.4 + a + 0.1 = 1
+0.9 + a = 1
+**a = 0.1**
 
-- Step 1: Arrange 3 letters in the first 3 positions
-  - This is a permutation: P(3,3) = 3! = 6 ways
-
-- Step 2: Arrange 3 digits in the last 3 positions  
-  - This is a permutation: P(3,3) = 3! = 6 ways
-
-- Step 3: Apply multiplication principle
-  - Total passwords = 6 × 6 = **36 passwords**
-
-**Part (b):** If the team wants to select 4 people from 12 employees to form a security committee where order doesn't matter, how many ways can this be done?
+**(b)** Calculate $P(X \leq 3)$.
 
 **Solution:**
-Since order doesn't matter, this is a combination problem.
+P(X ≤ 3) = P(X = 1) + P(X = 2) + P(X = 3)
+P(X ≤ 3) = 0.1 + 0.3 + 0.4 = **0.8**
 
-$$C(12,4) = \binom{12}{4} = \frac{12!}{4!(12-4)!} = \frac{12!}{4! \cdot 8!}$$
-
-$$= \frac{12 \times 11 \times 10 \times 9}{4 \times 3 \times 2 \times 1} = \frac{11880}{24} = \textbf{495 ways}$$
-:::
-
-# Section C: Conditional Probability - SOLUTIONS
-*⏱️ Estimated time: 15 minutes*
-
-::: {.problem}
-**Problem B1: Conditional Probability and Medical Testing - SOLUTION**
-
-**Given Information:**
-
-- P(has variant) = 0.03
-  
-- P(test positive | has variant) = 0.95 (sensitivity)
-  
-- P(test negative | no variant) = 0.92 (specificity)
-  
-- Therefore: P(test positive | no variant) = 1 - 0.92 = 0.08
-
-**Part (a):** What is the probability that a randomly selected person tests positive?
+**(c)** Calculate $P(X > 2)$.
 
 **Solution:**
+P(X > 2) = P(X = 3) + P(X = 4) + P(X = 5)
+P(X > 2) = 0.4 + 0.1 + 0.1 = **0.6**
 
-Using the Law of Total Probability:
+# Section B: Expected Value and Variance - SOLUTIONS
 
-$$P(\text{test positive}) = P(\text{test positive | has variant}) \times P(\text{has variant}) + P(\text{test positive | no variant}) \times P(\text{no variant})$$
+## Problem B1: Manual Calculations
 
-$$P(\text{test positive}) = 0.95 \times 0.03 + 0.08 \times 0.97$$
-$$= 0.0285 + 0.0776 = \textbf{0.1061}$$
+Using the distribution from Problem A2:
+| X     | 1    | 2    | 3    | 4    | 5    |
+|-------|------|------|------|------|------|
+| P(X=k)| 0.1  | 0.3  | 0.4  | 0.1  | 0.1  |
 
-**Part (b):** If someone tests positive, what is the probability they actually have the variant?
-
-**Solution:**
-Using Bayes' Theorem:
-
-$$P(\text{has variant | test positive}) = \frac{P(\text{test positive | has variant}) \times P(\text{has variant})}{P(\text{test positive})}$$
-
-$$= \frac{0.95 \times 0.03}{0.1061} = \frac{0.0285}{0.1061} = \textbf{0.2686}$$
-
-**Part (c):** If someone tests negative, what is the probability they actually don't have the variant?
+**(a)** The expected value $E[X]$
 
 **Solution:**
-First, find P(test negative):
-$$P(\text{test negative}) = 1 - P(\text{test positive}) = 1 - 0.1061 = 0.8939$$
+E[X] = Σ k · P(X = k)
+E[X] = 1(0.1) + 2(0.3) + 3(0.4) + 4(0.1) + 5(0.1)
+E[X] = 0.1 + 0.6 + 1.2 + 0.4 + 0.5
+**E[X] = 2.8**
 
-Using Bayes' Theorem:
-$$P(\text{no variant | test negative}) = \frac{P(\text{test negative | no variant}) \times P(\text{no variant})}{P(\text{test negative})}$$
-
-$$= \frac{0.92 \times 0.97}{0.8939} = \frac{0.8924}{0.8939} = \textbf{0.9983}$$
-
-**Part (d) [Challenge]:** Two consecutive positive tests - what is the probability they actually have the variant?
+**(b)** The variance $\text{Var}(X)$
 
 **Solution:**
-Assuming independence between tests:
+First, calculate E[X²]:
+E[X²] = Σ k² · P(X = k)
+E[X²] = 1²(0.1) + 2²(0.3) + 3²(0.4) + 4²(0.1) + 5²(0.1)
+E[X²] = 1(0.1) + 4(0.3) + 9(0.4) + 16(0.1) + 25(0.1)
+E[X²] = 0.1 + 1.2 + 3.6 + 1.6 + 2.5 = 9.0
 
-$$P(\text{two positive | has variant}) = 0.95^2 = 0.9025$$
-$$P(\text{two positive | no variant}) = 0.08^2 = 0.0064$$
+Then: Var(X) = E[X²] - (E[X])²
+Var(X) = 9.0 - (2.8)²
+Var(X) = 9.0 - 7.84
+**Var(X) = 1.16**
 
-$$P(\text{two positive}) = 0.9025 \times 0.03 + 0.0064 \times 0.97 = 0.027075 + 0.006208 = 0.033283$$
-
-$$P(\text{has variant | two positive}) = \frac{0.027075}{0.033283} = \textbf{0.8134}$$
-:::
-
-::: {.problem}
-**Problem C1: Advanced Counting with Restrictions - SOLUTION**
-
-**Part (a):** How many valid meal combinations are possible?
+**(c)** The standard deviation $\sigma$
 
 **Solution:**
-We need to consider cases based on the restrictions.
+σ = √Var(X) = √1.16 = **1.0770**
 
-**Case 1: Seafood appetizer is chosen**
+## Problem B2: Bernoulli and Binomial Applications
 
-- 1 appetizer option (seafood)
-  
-- 7 main course options (cannot choose vegetarian)
-  
-- 5 dessert options
-  
-- Combinations: 1 × 7 × 5 = 35
+Manufacturing process with 15% defect rate.
 
-**Case 2: Non-seafood appetizer + chocolate dessert**
-
-- 5 appetizer options (non-seafood)
-  
-- 3 main course options (only beef or chicken allowed with chocolate)
-  
-- 1 dessert option (chocolate)
-  
-- Combinations: 5 × 3 × 1 = 15
-
-**Case 3: Non-seafood appetizer + non-chocolate dessert**
-- 5 appetizer options (non-seafood)
-  
-- 8 main course options (no restrictions)
-  
-- 4 dessert options (non-chocolate)
-  
-- Combinations: 5 × 8 × 4 = 160
-
-**Total valid combinations:** 35 + 15 + 160 = **210 combinations**
-
-**Part (b):** If customers choose randomly among valid combinations, what is the probability someone chooses the chocolate dessert?
+**(a)** If you select one item randomly, what is the expected value and variance of X = number of defective items?
 
 **Solution:**
-Combinations with chocolate dessert: 15 (from Case 2 above)
-Total valid combinations: 210
+This is Bernoulli(p = 0.15)
+- **E[X] = p = 0.15**
+- **Var(X) = p(1-p) = 0.15(0.85) = 0.1275**
 
-$$P(\text{chocolate dessert}) = \frac{15}{210} = \frac{1}{14} = \textbf{0.0714}$$
-:::
-
-# Section D: Review - SOLUTIONS
-*⏱️ Estimated time: 12 minutes*
-
-::: {.problem}
-**Problem B3: Daily Expenses - SOLUTION**
-
-**Given:**
-
-- Coffee: Mean = $1.40, SD = $0.30
-  
-- Muffin: Mean = $2.50, SD = $0.15
-  
-- Prices are independent
-
-**Part (a):** What is the mean and standard deviation of the amount she spends on breakfast daily?
+**(b)** If you select 25 items randomly, what is the expected number of defective items and the standard deviation?
 
 **Solution:**
-For the sum of independent random variables:
+This is Binomial(n = 25, p = 0.15)
+- **E[X] = np = 25(0.15) = 3.75**
+- Var(X) = np(1-p) = 25(0.15)(0.85) = 3.1875
+- **σ = √3.1875 = 1.7854**
 
-**Mean of daily expenses:**
-$$E[\text{Daily}] = E[\text{Coffee}] + E[\text{Muffin}] = \$1.40 + \$2.50 = \textbf{\$3.90}$$
+# Section C: Distribution Calculations - SOLUTIONS
 
-**Variance of daily expenses:**
-$$\text{Var}[\text{Daily}] = \text{Var}[\text{Coffee}] + \text{Var}[\text{Muffin}] = (0.30)^2 + (0.15)^2 = 0.09 + 0.0225 = 0.1125$$
+## Problem C1: Binomial Distribution
 
-**Standard deviation of daily expenses:**
-$$SD[\text{Daily}] = \sqrt{0.1125} = \textbf{\$0.3354}$$
+Quiz: 10 questions, 4 choices each, student guesses randomly.
+This is Binomial(n = 10, p = 0.25)
 
-**Part (b):** What is the mean and standard deviation of the amount she spends on breakfast weekly (7 days)?
+**(a)** What is the probability the student gets exactly 3 questions correct?
 
 **Solution:**
-For the sum of 7 independent daily expenses:
+P(X = 3) = C(10,3) × (0.25)³ × (0.75)⁷
+P(X = 3) = 120 × 0.015625 × 0.1335
+**P(X = 3) = 0.2503**
 
-**Mean of weekly expenses:**
-$$E[\text{Weekly}] = 7 \times E[\text{Daily}] = 7 \times \$3.90 = \textbf{\$27.30}$$
+**(b)** What is the probability the student gets at least 2 questions correct?
 
-**Variance of weekly expenses:**
-$$\text{Var}[\text{Weekly}] = 7 \times \text{Var}[\text{Daily}] = 7 \times 0.1125 = 0.7875$$
+**Solution:**
+P(X ≥ 2) = 1 - P(X ≤ 1) = 1 - [P(X = 0) + P(X = 1)]
 
-**Standard deviation of weekly expenses:**
-$$SD[\text{Weekly}] = \sqrt{0.7875} = \textbf{\$0.8874}$$
-:::
+P(X = 0) = C(10,0) × (0.25)⁰ × (0.75)¹⁰ = 1 × 1 × 0.0563 = 0.0563
+P(X = 1) = C(10,1) × (0.25)¹ × (0.75)⁹ = 10 × 0.25 × 0.0751 = 0.1877
+
+P(X ≥ 2) = 1 - (0.0563 + 0.1877) = 1 - 0.2440
+**P(X ≥ 2) = 0.7560**
+
+**(c)** What is the expected number of correct answers?
+
+**Solution:**
+E[X] = np = 10 × 0.25 = **2.5**
+
+## Problem C2: Poisson Distribution
+
+Call center: λ = 4 calls per minute
+This is Poisson(λ = 4)
+
+**(a)** What is the probability of receiving exactly 6 calls in a given minute?
+
+**Solution:**
+P(X = 6) = (λ⁶ × e^(-λ))/6! = (4⁶ × e^(-4))/6!
+P(X = 6) = (4096 × 0.0183)/720 = 0.1042
+**P(X = 6) = 0.1042**
+
+**(b)** What is the probability of receiving no calls in a given minute?
+
+**Solution:**
+P(X = 0) = (λ⁰ × e^(-λ))/0! = (1 × e^(-4))/1 = e^(-4)
+**P(X = 0) = 0.0183**
+
+**(c)** What is the probability of receiving more than 2 calls in a given minute?
+
+**Solution:**
+P(X > 2) = 1 - P(X ≤ 2) = 1 - [P(X = 0) + P(X = 1) + P(X = 2)]
+
+P(X = 0) = e^(-4) = 0.0183
+P(X = 1) = (4¹ × e^(-4))/1! = 4 × 0.0183 = 0.0733
+P(X = 2) = (4² × e^(-4))/2! = 16 × 0.0183/2 = 0.1465
+
+P(X > 2) = 1 - (0.0183 + 0.0733 + 0.1465) = 1 - 0.2381
+**P(X > 2) = 0.7619**
+
+# Section D: Advanced Applications - SOLUTIONS
+
+## Problem D1: Geometric Distribution
+
+Software updates: p = 0.6 success rate
+This is Geometric(p = 0.6)
+
+**(a)** What is the probability that the first successful bug fix occurs on the 3rd update?
+
+**Solution:**
+P(X = 3) = (1-p)^(k-1) × p = (0.4)² × 0.6
+P(X = 3) = 0.16 × 0.6 = **0.0960**
+
+**(b)** What is the expected number of updates needed to get the first successful bug fix?
+
+**Solution:**
+E[X] = 1/p = 1/0.6 = **1.6667**
+
+**(c)** What is the probability that it takes more than 4 updates to get the first successful bug fix?
+
+**Solution:**
+P(X > 4) = (1-p)⁴ = (0.4)⁴ = **0.0256**
+
+## Problem D2: Mixed Applications
+
+Pharmaceutical testing: p = 0.02 defect rate
+
+**(a)** What is the probability that the first defective pill is found on the 5th test?
+
+**Solution:** Geometric(p = 0.02)
+P(X = 5) = (1-p)^(k-1) × p = (0.98)⁴ × 0.02
+P(X = 5) = 0.9224 × 0.02 = **0.0184**
+
+**(b)** What is the expected number of pills they need to test to find the first defective one?
+
+**Solution:** Geometric(p = 0.02)
+E[X] = 1/p = 1/0.02 = **50**
+
+**(c)** In a batch of 50 pills, what is the probability that exactly 2 pills are defective?
+
+**Solution:** Binomial(n = 50, p = 0.02)
+P(X = 2) = C(50,2) × (0.02)² × (0.98)⁴⁸
+P(X = 2) = 1225 × 0.0004 × 0.3773 = **0.1849**
+
+**(d)** In a batch of 50 pills, what is the expected number of defective pills?
+
+**Solution:** Binomial(n = 50, p = 0.02)
+E[X] = np = 50 × 0.02 = **1**
+
+# Section E: Reflection Questions - SOLUTIONS
+
+**(a)** Explain the key difference between a Binomial distribution and a Geometric distribution in terms of what they count.
+
+**Solution:**
+- **Binomial** counts the **number of successes** in a **fixed number** of trials
+- **Geometric** counts the **number of trials needed** to get the **first success**
+
+**(b)** When would you use a Poisson distribution instead of a Binomial distribution?
+
+**Solution:**
+Use Poisson when:
+- Events occur over **time or space** at a constant rate
+- The number of possible events is **very large** but the probability of each is **very small**
+- We don't have a fixed number of trials
+- Examples: arrivals, defects per unit area, accidents per day
+
+**(c)** If $X \sim \text{Binomial}(n, p)$, under what conditions would the variance be maximized?
+
+**Solution:**
+Variance = np(1-p)
+For fixed n, variance is maximized when p(1-p) is maximized.
+Taking the derivative: d/dp[p(1-p)] = 1-2p = 0
+This gives **p = 0.5**
+The variance is maximized when p = 0.5 (fair coin scenario).
+
+# Summary of Key Results
+
+## Distribution Parameters Used:
+- **A1:** Geometric(0.5), Binomial(20,0.05), Poisson(6), Bernoulli(0.8), Geometric(0.7)
+- **A2:** a = 0.1, P(X≤3) = 0.8, P(X>2) = 0.6
+- **B1:** E[X] = 2.8, Var(X) = 1.16, σ = 1.0770
+- **B2:** Bernoulli: E[X]=0.15, Var(X)=0.1275; Binomial: E[X]=3.75, σ=1.7854
+- **C1:** P(X=3)=0.2503, P(X≥2)=0.7560, E[X]=2.5
+- **C2:** P(X=6)=0.1042, P(X=0)=0.0183, P(X>2)=0.7619
+- **D1:** P(X=3)=0.0960, E[X]=1.6667, P(X>4)=0.0256
+- **D2:** P(X=5)=0.0184, E[X]=50, P(X=2)=0.1849, E[X]=1

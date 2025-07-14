@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://pstat5a.com/schedule.html</loc>
-    <lastmod>2025-07-10T17:44:38.221Z</lastmod>
+    <lastmod>2025-07-13T23:24:26.670Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/syllabus.html</loc>
@@ -78,11 +78,11 @@
   </url>
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/lecture8/lecture8.html</loc>
-    <lastmod>2025-07-08T20:21:02.965Z</lastmod>
+    <lastmod>2025-07-14T14:50:47.062Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/lecture7/lecture7.html</loc>
-    <lastmod>2025-07-10T18:19:21.296Z</lastmod>
+    <lastmod>2025-07-13T22:26:03.676Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/resources.html</loc>
@@ -110,11 +110,11 @@
   </url>
   <url>
     <loc>https://pstat5a.com/files/worksheets/worksheet4.html</loc>
-    <lastmod>2025-07-08T19:09:51.130Z</lastmod>
+    <lastmod>2025-07-13T00:34:37.749Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/worksheets/worksheet4_sln.html</loc>
-    <lastmod>2025-07-08T19:20:36.326Z</lastmod>
+    <lastmod>2025-07-13T00:36:15.079Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/test_lectures/lecture6.html</loc>
@@ -147,5 +147,37 @@
   <url>
     <loc>https://pstat5a.com/lecture7-clean.html</loc>
     <lastmod>2025-07-10T02:07:35.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/labs/lab4/lab4.html</loc>
+    <lastmod>2025-07-13T01:05:39.293Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/labs/lab4/lab4_sln.html</loc>
+    <lastmod>2025-07-13T01:06:48.948Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/labs/lab4/test.html</loc>
+    <lastmod>2025-07-13T00:19:49.508Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/labs/lab4/lab4_v2_sln.html</loc>
+    <lastmod>2025-07-12T23:20:01.142Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/labs/lab4/lab4_v2.html</loc>
+    <lastmod>2025-07-12T23:12:35.130Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/worksheets/worksheet4_sln_draft.html</loc>
+    <lastmod>2025-07-08T19:20:36.326Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/worksheets/worksheet4draft.html</loc>
+    <lastmod>2025-07-08T19:09:51.130Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/test_lectures/lecture8_condProb.html</loc>
+    <lastmod>2025-07-08T20:21:02.965Z</lastmod>
   </url>
 </urlset>
