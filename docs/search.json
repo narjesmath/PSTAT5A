@@ -5660,7 +5660,7 @@
     "href": "files/lecture_notes/lecture7/lecture7.html#what-is-a-random-variable",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "What is a Random Variable?",
-    "text": "What is a Random Variable?\n\nDefinition: A random variable is a function that assigns a numerical value to each outcome of a random experiment.\nNotation: Usually denoted by capital letters \\(X\\), \\(Y\\), \\(Z\\)\nKey insight: Random variables transform outcomes into numbers, making statistical analysis possible\n\n\n\n\n\n\n\nTreena - Random Variables"
+    "text": "What is a Random Variable?\n\nDefinition: A random variable is a function that assigns a numerical value to each outcome of a random experiment.\nNotation: Usually denoted by capital letters \\(X\\), \\(Y\\), \\(Z\\)\nKey insight: Random variables transform outcomes into numbers, making statistical analysis possible\n\n\n\nTreena - Random Variables"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#why-use-random-variables",
@@ -5674,7 +5674,7 @@
     "href": "files/lecture_notes/lecture7/lecture7.html#types-of-random-variables",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Types of Random Variables",
-    "text": "Types of Random Variables\n\n\n\n\n\n\nToday we focus on discrete random variables - notice there are gaps between possible values!\n\n\n\nDiscrete vs. Continuous: Demystifying the type of Random Variables\n\n\n\nDiscrete Random Variable\nTakes on a countable number of values\nCan list all possible values\n\nExamples:\n• Dice rolls: {1, 2, 3, 4, 5, 6}\n• Number of emails: {0, 1, 2, 3, …}\n• Quiz scores: {0, 1, 2, …, 10}\n\n\n\n\n\n\n\n\nContinuous Random Variable\nTakes on uncountably many values\nCannot list all possible values\n\nExamples:\n• Height: Any value in \\([0, \\infty)\\)\n• Time: Any positive real number\n• Temperature: Any real number\n\n\n\n\n\n\n:::"
+    "text": "Types of Random Variables\n\n\nToday we focus on discrete random variables - notice there are gaps between possible values!\n\n\n\nDiscrete vs. Continuous: Demystifying the type of Random Variables"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#examples-of-discrete-random-variables",
@@ -5688,7 +5688,7 @@
     "href": "files/lecture_notes/lecture7/lecture7.html#probability-mass-function-pmf",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Probability Mass Function (PMF)",
-    "text": "Probability Mass Function (PMF)\n\n\nDefinition: The Probability Mass Function (PMF) of a discrete random variable \\(X\\) is:\n\n\n\\[P(X = x) = \\text{probability that } X \\text{ takes the value } x\\]\n\n\nProperties of PMF:\n\n\n\n\\(P(X = x) \\geq 0\\) for all \\(x\\)\n\n\n\\(\\sum_{\\text{all } x} P(X = x) = 1\\)\n\n\n\n\n\nInteractive PMF Demo: Fair Die\n\n\nRoll Die\n\n 100 trials 500 trials 1000 trials 5000 trials 10000 trials  Reset Theoretical vs Observed Frequencies\n\n\n\nStatistics: Click “Roll Die” to see statistics"
+    "text": "Probability Mass Function (PMF)\n\n\nDefinition: The Probability Mass Function (PMF) of a discrete random variable \\(X\\) is:\n\n\n\\[P(X = x) = \\text{probability that } X \\text{ takes the value } x\\]\n\n\nProperties of PMF:\n\n\n\n\\(P(X = x) \\geq 0\\) for all \\(x\\)\n\n\n\\(\\sum_{\\text{all } x} P(X = x) = 1\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#pmf-example-fair-die",
@@ -5779,7 +5779,7 @@
     "href": "files/lecture_notes/lecture7/lecture7.html#properties-of-expected-value",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Properties of Expected Value",
-    "text": "Properties of Expected Value\n\n\n\n\nLinearity of Expectation\n\n\\(E[c] = c\\) (constant)\n\\(E[cX] = c \\cdot E[X]\\) (scaling)\n\\(E[X + Y] = E[X] + E[Y]\\) (additivity)\n\\(E[aX + bY + c] = aE[X] + bE[Y] + c\\)\n\n\n\n\nVariance Properties\n\n\\(\\text{Var}(aX + b) = a^2 \\text{Var}(X)\\)\n\\(\\text{Var}(X + Y) = \\text{Var}(X) + \\text{Var}(Y)\\) (if \\(X\\) and \\(Y\\) are independent)\n\n\nImportant: Property 3 holds even if \\(X\\) and \\(Y\\) are dependent!"
+    "text": "Properties of Expected Value\n\n\n\nLinearity of Expectation\n\n\\(E[c] = c\\) (constant)\n\\(E[cX] = c \\cdot E[X]\\) (scaling)\n\\(E[X + Y] = E[X] + E[Y]\\) (additivity)\n\\(E[aX + bY + c] = aE[X] + bE[Y] + c\\)\n\n\nVariance Properties\n\n\\(\\text{Var}(aX + b) = a^2 \\text{Var}(X)\\)\n\\(\\text{Var}(X + Y) = \\text{Var}(X) + \\text{Var}(Y)\\) (if \\(X\\) and \\(Y\\) are independent)\n\n\nImportant: Property 3 holds even if \\(X\\) and \\(Y\\) are dependent!"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#expected-value-of-functions",
@@ -6164,7 +6164,7 @@
     "href": "files/lecture_notes/lecture7/lecture7.html#key-takeaways",
     "title": "PSTAT 5A: Discrete Random Variables",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\n\n\n\nMain Concepts\n\nRandom variables transform outcomes into numbers for mathematical analysis\nPMF gives probabilities for specific values; CDF gives cumulative probabilities\nExpected value is the long-run average; variance measures spread\n\n\n\n\nDistribution Selection\nChoose distributions based on the underlying process:\n\nBernoulli for single trials\nBinomial for fixed trials\nGeometric for waiting times\nPoisson for rates\n\n\n\nKey Principle\n\nLaw of Large Numbers connects theoretical expectations with observed averages"
+    "text": "Key Takeaways\n\n\n\nMain Concepts\n\nRandom variables transform outcomes into numbers for mathematical analysis\nPMF gives probabilities for specific values; CDF gives cumulative probabilities\nExpected value is the long-run average; variance measures spread\n\n\nDistribution Selection\nChoose distributions based on the underlying process:\n\nBernoulli for single trials\nBinomial for fixed trials\nGeometric for waiting times\nPoisson for rates\n\nKey Principle\n\nLaw of Large Numbers connects theoretical expectations with observed averages"
   },
   {
     "objectID": "files/lecture_notes/lecture7/lecture7.html#section",
@@ -6191,8 +6191,8 @@
     "objectID": "files/lecture_notes/lecture7/lecture7.html#welcome-to-lecture-8",
     "href": "files/lecture_notes/lecture7/lecture7.html#welcome-to-lecture-8",
     "title": "PSTAT 5A: Discrete Random Variables",
-    "section": "",
-    "text": "Discrete Random Variables\nFrom outcomes to numbers: quantifying randomness"
+    "section": "Welcome to Lecture 8",
+    "text": "Welcome to Lecture 8\nDiscrete Random Variables\nFrom outcomes to numbers: quantifying randomness"
   },
   {
     "objectID": "test-minimal.html",
