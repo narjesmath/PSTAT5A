@@ -29,13 +29,13 @@ execute:
 
 **⏰ Time Allocation:**
 
-- **Section A (Warm-up):** 8 minutes
+- **Quiz Review** : 15 minutes
+
+- **Section A (Warm-up):** 15 minutes
   
-- **Section B (Intermediate):** 15 minutes  
+- **Section B (Intermediate):** 20 minutes  
   
-- **Section C (Advanced):** 12 minutes
-  
-- **Section D (Applications):** 15 minutes
+- **Optional Question:**  Do on your own
   
 - **Total:** 50 minutes
 
@@ -96,7 +96,7 @@ execute:
 :::
 
 # Section A: Basic Concepts and Identification
-*⏱️ Estimated time: 8 minutes*
+*⏱️ Estimated time: 15 minutes*
 
 ::: {.problem}
 **Problem A1: Distribution Identification**
@@ -141,7 +141,7 @@ The random variable X has the following probability distribution:
 <br><br><br><br><br><br>
 
 # Section B: Expected Value and Variance
-*⏱️ Estimated time: 15 minutes*
+*⏱️ Estimated time: 20 minutes*
 
 ::: {.problem}
 **Problem B1: Manual Calculations**
@@ -189,108 +189,16 @@ Part (a) is a Bernoulli distribution. Part (b) is a Binomial distribution. Use t
 
 <br><br><br><br><br><br>
 
-# Section C: Distribution Calculations
-*⏱️ Estimated time: 12 minutes*
+
+
+
+
+
+
+# Optional Questions
 
 ::: {.problem}
-**Problem C1: Binomial Distribution**
-
-A multiple-choice quiz has 10 questions, each with 4 choices. A student guesses randomly on all questions.
-
-**(a)** What is the probability the student gets exactly 3 questions correct?
-
-**(b)** What is the probability the student gets at least 2 questions correct?
-
-**(c)** What is the expected number of correct answers?
-
-:::{.callout-tip}
-This is binomial with $n = 10$ and $p = 0.25$ (since 1 out of 4 choices is correct).
-
-For part (b): $P(X \geq 2) = 1 - P(X \leq 1) = 1 - [P(X = 0) + P(X = 1)]$
-:::
-
-:::
-
-**Work Space:**
-
-<br><br><br><br><br><br><br><br>
-
-::: {.problem}
-**Problem C2: Poisson Distribution**
-
-A call center receives an average of 4 calls per minute.
-
-**(a)** What is the probability of receiving exactly 6 calls in a given minute?
-
-**(b)** What is the probability of receiving no calls in a given minute?
-
-**(c)** What is the probability of receiving more than 2 calls in a given minute?
-
-:::
-
-**Work Space:**
-
-<br><br><br><br><br><br>
-
-# Section D: Advanced Applications
-*⏱️ Estimated time: 15 minutes*
-
-::: {.problem}
-**Problem D1: Geometric Distribution**
-
-A software company releases updates that fix critical bugs with probability 0.6 per update.
-
-**(a)** What is the probability that the first successful bug fix occurs on the 3rd update?
-
-**(b)** What is the expected number of updates needed to get the first successful bug fix?
-
-**(c)** What is the probability that it takes more than 4 updates to get the first successful bug fix?
-
-:::{.callout-tip}
-For part (c): $P(X > 4) = P(X \geq 5) = (1-p)^4$ where $p = 0.6$
-
-This represents the probability of 4 consecutive failures.
-:::
-
-:::
-
-**Work Space:**
-
-<br><br><br><br><br><br>
-
-::: {.problem}
-**Problem D2: Mixed Applications**
-
-A quality assurance team at a pharmaceutical company is testing a new batch of medications.
-
-- Each pill has a 2% chance of being defective
-- They test pills one by one until they find the first defective pill
-- They also want to know about defects in batches of 50 pills
-
-**(a)** What is the probability that the first defective pill is found on the 5th test?
-
-**(b)** What is the expected number of pills they need to test to find the first defective one?
-
-**(c)** In a batch of 50 pills, what is the probability that exactly 2 pills are defective?
-
-**(d)** In a batch of 50 pills, what is the expected number of defective pills?
-
-:::{.callout-tip}
-Parts (a) and (b) use geometric distribution. Parts (c) and (d) use binomial distribution.
-
-Be careful with the parameter $p = 0.02$ for both distributions.
-:::
-
-:::
-
-**Work Space:**
-
-<br><br><br><br><br><br><br><br><br><br>
-
-# Reflection Questions
-
-::: {.problem}
-**Problem E: Conceptual Understanding**
+**Optional Problem : Conceptual Understanding**
 
 **(a)** Explain the key difference between a Binomial distribution and a Geometric distribution in terms of what they count.
 

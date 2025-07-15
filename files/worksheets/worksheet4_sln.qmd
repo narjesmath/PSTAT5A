@@ -25,260 +25,1965 @@ execute:
 
 ## Problem A1: Distribution Identification
 
-**(a)** A fair coin is flipped until the first head appears. Let X = number of flips needed.
+:::{.callout-important}
+**Instructions**: For each scenario below, identify the appropriate probability distribution and specify its parameters. Justify your choice by identifying the key characteristics.
+:::
 
-**Solution:** **Geometric Distribution** with parameter p = 0.5
-- We count the number of trials until first success
-- Each flip is independent with constant probability of success
+---
 
-**(b)** A quality control inspector tests 20 randomly selected items from a production line where 5% are defective. Let X = number of defective items found.
+### (a) Coin Flipping Until First Head
 
-**Solution:** **Binomial Distribution** with parameters n = 20, p = 0.05
-- Fixed number of trials (20)
-- Each item has same probability of being defective (0.05)
-- We count number of successes (defective items)
+:::{.problem}
+A fair coin is flipped until the first head appears. Let $X$ = number of flips needed.
+:::
 
-**(c)** A website receives visitors at an average rate of 3 per minute. Let X = number of visitors in a 2-minute period.
+**Solution:**
 
-**Solution:** **Poisson Distribution** with parameter λ = 6
-- Events occurring over time at constant rate
-- Rate = 3 per minute × 2 minutes = 6 visitors expected in 2 minutes
+:::{.callout-note icon=false}
+## **Geometric Distribution** with parameter $p = 0.5$
 
-**(d)** A basketball player shoots one free throw with an 80% success rate. Let X = 1 if successful, 0 if unsuccessful.
+**Key Characteristics:**
 
-**Solution:** **Bernoulli Distribution** with parameter p = 0.8
-- Single trial with two outcomes (success/failure)
+- ✓ We count the number of trials until the **first success**
+  
+- ✓ Each flip is **independent** with constant probability of success
+  
+- ✓ Only two outcomes per trial (head or tail)
+  
+- ✓ We stop as soon as we get a success
 
-**(e)** A student keeps taking a driving test until they pass. The probability of passing on any attempt is 0.7. Let X = number of attempts needed to pass.
+**Notation:** $X \sim \text{Geometric}(p = 0.5)$
+:::
 
-**Solution:** **Geometric Distribution** with parameter p = 0.7
-- We count trials until first success (passing)
+---
+
+### (b) Quality Control Inspection
+
+:::{.problem}
+A quality control inspector tests $20$ randomly selected items from a production line where $5\%$ are defective. Let $X$ = number of defective items found.
+:::
+
+**Solution:**
+
+:::{.callout-note icon=false}
+## **Binomial Distribution** with parameters $n = 20$, $p = 0.05$
+
+**Key Characteristics:**
+
+- ✓ **Fixed number of trials** ($n = 20$)
+  
+- ✓ Each item has the **same probability** of being defective ($p = 0.05$)
+  
+- ✓ We count the **number of successes** (defective items)
+  
+- ✓ Each test is **independent**
+
+**Notation:** $X \sim \text{Binomial}(n = 20, p = 0.05)$
+:::
+
+---
+
+### (c) Website Visitor Count
+
+:::{.problem}
+A website receives visitors at an average rate of $3$ per minute. Let $X$ = number of visitors in a 2-minute period.
+:::
+
+**Solution:**
+
+:::{.callout-note icon=false}
+## **Poisson Distribution** with parameter $\lambda = 6$
+
+**Key Characteristics:**
+
+- ✓ Events occurring **over time** at a constant average rate
+  
+- ✓ Events are **independent** and **rare**
+  
+- ✓ Rate calculation: $3 \text{ visitors/minute} \times 2 \text{ minutes} = 6$ expected visitors
+
+**Notation:** $X \sim \text{Poisson}(\lambda = 6)$
+:::
+
+---
+
+### (d) Single Free Throw
+
+:::{.problem}
+A basketball player shoots one free throw with an $80\%$ success rate. Let $X = 1$ if successful, $0$ if unsuccessful.
+:::
+
+**Solution:**
+
+:::{.callout-note icon=false}
+## **Bernoulli Distribution** with parameter $p = 0.8$
+
+**Key Characteristics:**
+
+- ✓ **Single trial** with exactly two outcomes
+  
+- ✓ Success (make shot) vs. Failure (miss shot)
+  
+- ✓ Binary outcome: $X \in \{0, 1\}$
+
+**Notation:** $X \sim \text{Bernoulli}(p = 0.8)$
+:::
+
+---
+
+### (e) Driving Test Attempts
+
+:::{.problem}
+A student keeps taking a driving test until they pass. The probability of passing on any attempt is $0.7$. Let $X$ = number of attempts needed to pass.
+:::
+
+**Solution:**
+
+:::{.callout-note icon=false}
+## **Geometric Distribution** with parameter $p = 0.7$
+
+**Key Characteristics:**
+
+- ✓ We count **trials until first success** (passing the test)
+  
+- ✓ Each attempt is **independent** with constant probability
+  
+- ✓ Student continues until success occurs
+
+**Notation:** $X \sim \text{Geometric}(p = 0.7)$
+:::
+
+---
+
+## Summary Table
+
+```{python}
+#| label: tbl-distribution-summary
+#| tbl-cap: "Distribution Identification Summary"
+
+import pandas as pd
+import plotly.graph_objects as go
+
+# Create summary data
+data = {
+    'Problem': ['(a) Coin Flips', '(b) Quality Control', '(c) Website Visitors', 
+                '(d) Free Throw', '(e) Driving Test'],
+    'Distribution': ['Geometric', 'Binomial', 'Poisson', 'Bernoulli', 'Geometric'],
+    'Parameters': ['p = 0.5', 'n = 20, p = 0.05', 'λ = 6', 'p = 0.8', 'p = 0.7'],
+    'Key Feature': ['Trials until first success', 'Fixed trials, count successes', 
+                   'Events over time period', 'Single trial, binary outcome', 
+                   'Trials until first success']
+}
+
+df = pd.DataFrame(data)
+
+# Create an interactive table
+fig = go.Figure(data=[go.Table(
+    columnwidth=[80, 80, 80, 120],
+    header=dict(
+        values=['<b>Problem</b>', '<b>Distribution</b>', '<b>Parameters</b>', '<b>Key Feature</b>'],
+        fill_color='lightblue',
+        align='center',
+        font=dict(size=14, color='black')
+    ),
+    cells=dict(
+        values=[df['Problem'], df['Distribution'], df['Parameters'], df['Key Feature']],
+        fill_color='white',
+        align='center',
+        font=dict(size=12),
+        height=40
+    )
+)])
+
+fig.update_layout(
+    title={
+        'text': 'Distribution Identification Summary',
+        'x': 0.5,
+        'xanchor': 'center',
+        'font': {'size': 16}
+    },
+    margin=dict(l=20, r=20, t=60, b=20)
+)
+
+fig.show()
+```
+
+
+Decision Framework Visualization
+
+```{python}
+#| label: fig-decision-tree
+#| fig-cap: "Decision Framework for Distribution Identification"
+
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+# Create a flowchart-style visualization
+fig = go.Figure()
+
+# Define positions for flowchart nodes
+nodes = [
+    # Level 1: Start
+    {'x': 0.5, 'y': 0.9, 'text': 'Identify the Random Variable', 'color': 'lightblue'},
+    
+    # Level 2: Main branches
+    {'x': 0.2, 'y': 0.7, 'text': 'Single Trial?', 'color': 'lightgreen'},
+    {'x': 0.5, 'y': 0.7, 'text': 'Count Until Success?', 'color': 'lightgreen'},
+    {'x': 0.8, 'y': 0.7, 'text': 'Events Over Time?', 'color': 'lightgreen'},
+    
+    # Level 3: Distributions
+    {'x': 0.2, 'y': 0.5, 'text': 'Bernoulli', 'color': 'lightyellow'},
+    {'x': 0.5, 'y': 0.5, 'text': 'Geometric', 'color': 'lightyellow'},
+    {'x': 0.65, 'y': 0.5, 'text': 'Fixed Trials?', 'color': 'lightcoral'},
+    {'x': 0.8, 'y': 0.5, 'text': 'Poisson', 'color': 'lightyellow'},
+    
+    # Level 4: Binomial
+    {'x': 0.65, 'y': 0.3, 'text': 'Binomial', 'color': 'lightyellow'}
+]
+
+# Add nodes
+for i, node in enumerate(nodes):
+    fig.add_shape(
+        type="circle",
+        x0=node['x']-0.06, y0=node['y']-0.04,
+        x1=node['x']+0.06, y1=node['y']+0.04,
+        fillcolor=node['color'],
+        line=dict(color="black", width=2)
+    )
+    
+    fig.add_annotation(
+        x=node['x'], y=node['y'],
+        text=node['text'],
+        showarrow=False,
+        font=dict(size=10, color="black"),
+        bgcolor="white",
+        bordercolor="black",
+        borderwidth=1
+    )
+
+# Add arrows (simplified)
+arrows = [
+    # From start to main branches
+    {'x0': 0.45, 'y0': 0.86, 'x1': 0.25, 'y1': 0.74},
+    {'x0': 0.5, 'y0': 0.86, 'x1': 0.5, 'y1': 0.74},
+    {'x0': 0.55, 'y0': 0.86, 'x1': 0.75, 'y1': 0.74},
+    
+    # From branches to distributions
+    {'x0': 0.2, 'y0': 0.66, 'x1': 0.2, 'y1': 0.54},
+    {'x0': 0.5, 'y0': 0.66, 'x1': 0.5, 'y1': 0.54},
+    {'x0': 0.8, 'y0': 0.66, 'x1': 0.8, 'y1': 0.54},
+    {'x0': 0.7, 'y0': 0.66, 'x1': 0.65, 'y1': 0.54},
+    {'x0': 0.65, 'y0': 0.46, 'x1': 0.65, 'y1': 0.34}
+]
+
+for arrow in arrows:
+    fig.add_annotation(
+        x=arrow['x1'], y=arrow['y1'],
+        ax=arrow['x0'], ay=arrow['y0'],
+        xref='x', yref='y',
+        axref='x', ayref='y',
+        showarrow=True,
+        arrowhead=2,
+        arrowsize=1,
+        arrowwidth=2,
+        arrowcolor="gray"
+    )
+
+fig.update_layout(
+    title={
+        'text': 'Distribution Identification Decision Framework',
+        'x': 0.5,
+        'xanchor': 'center',
+        'font': {'size': 16}
+    },
+    xaxis=dict(range=[0, 1], showgrid=False, showticklabels=False, zeroline=False),
+    yaxis=dict(range=[0, 1], showgrid=False, showticklabels=False, zeroline=False),
+    plot_bgcolor='white',
+    paper_bgcolor='white',
+    showlegend=False,
+    width=800,
+    height=600
+)
+
+fig.show()
+```
+
+:::{.callout-tip}
+**Quick Reference Guide**
+Ask these key questions to identify distributions:
+
+**How many trials?**
+
+- One trial → Bernoulli
+  
+- Fixed number → Binomial (if counting successes)
+  
+- Until first success → Geometric
+
+
+**What are we counting?**
+
+- Successes in fixed trials → Binomial
+  
+- Trials until success → Geometric
+
+- Events over time/space → Poisson
+
+
+**Time component?**
+
+- Events at constant rate over time → Poisson
+  
+- No time component → Binomial/Bernoulli/Geometric
+:::
+
+
+
+:::{.callout-warning}
+
+**Geometric vs. Binomial**: Geometric counts trials until success; 
+
+- **Binomial** counts successes in <i>fixed</i> trials
+
+- **Poisson parameter**: Remember to multiply rate by time period (e.g., 3/minute × 2 minutes = $\lambda$ = 6)
+
+**Independence assumption**: All these distributions require independent trials/events
+:::
+
+
+
 
 ## Problem A2: Probability Mass Function
 
+::: {.problem}
 Given distribution:
+
 | X     | 1    | 2    | 3    | 4    | 5    |
 |-------|------|------|------|------|------|
 | P(X=k)| 0.1  | 0.3  | 0.4  | a    | 0.1  |
+:::
 
-**(a)** Find the value of $a$.
 
-**Solution:**
-Since probabilities must sum to 1:
-0.1 + 0.3 + 0.4 + a + 0.1 = 1
-0.9 + a = 1
-**a = 0.1**
+```{python}
 
-**(b)** Calculate $P(X \leq 3)$.
+#| label: fig-pmf-basic
+#| fig-cap: "Probability Mass Function"
+#| fig-width: 10
+#| fig-height: 6
 
-**Solution:**
-P(X ≤ 3) = P(X = 1) + P(X = 2) + P(X = 3)
-P(X ≤ 3) = 0.1 + 0.3 + 0.4 = **0.8**
+import plotly.graph_objects as go
+import plotly.express as px
 
-**(c)** Calculate $P(X > 2)$.
+# Data
+x_values = [1, 2, 3, 4, 5]
+probabilities = [0.1, 0.3, 0.4, 0.1, 0.1]
 
-**Solution:**
-P(X > 2) = P(X = 3) + P(X = 4) + P(X = 5)
-P(X > 2) = 0.4 + 0.1 + 0.1 = **0.6**
+# Create the plot
+fig = go.Figure()
+
+# Add bars
+fig.add_trace(go.Bar(
+    x=x_values,
+    y=probabilities,
+    text=[f'{p}' for p in probabilities],
+    textposition='outside',
+    marker_color='steelblue',
+    marker_opacity=0.8,
+    marker_line_color='navy',
+    marker_line_width=2,
+    name='P(X=k)'
+))
+
+fig.update_layout(
+    title={
+        'text': 'Probability Mass Function',
+        'x': 0.5,
+        'xanchor': 'center',
+        'font': {'size': 18, 'family': 'Arial, sans-serif'}
+    },
+    xaxis_title='X',
+    yaxis_title='P(X = k)',
+    xaxis=dict(
+        tickmode='linear',
+        tick0=1,
+        dtick=1,
+        tickfont=dict(size=14)
+    ),
+    yaxis=dict(
+        range=[0, 0.5],
+        tickfont=dict(size=14)
+    ),
+    font=dict(size=12),
+    showlegend=False,
+    plot_bgcolor='white',
+    paper_bgcolor='white'
+)
+
+# Add grid
+fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+
+fig.show()
+```
+
+### (a) Find the value of $a$.
+
+:::{.solution}
+Since probabilities must sum to $1$:
+
+$0.1 + 0.3 + 0.4 + a + 0.1 = 1$
+
+$0.9 + a = 1$
+
+$\boxed{a = 0.1}$
+
+:::
+
+### (b) Calculate $P(X \leq 3)$.
+
+:::{.solution}
+$P(X ≤ 3) = P(X = 1) + P(X = 2) + P(X = 3)$
+
+$P(X ≤ 3) = 0.1 + 0.3 + 0.4 = \boxed{0.8}$
+:::
+
+```{python}
+
+#| label: fig-pmf-leq3
+#| fig-cap: "PMF showing P(X ≤ 3) = 0.8"
+#| fig-width: 10
+#| fig-height: 6
+
+# Create colors for highlighting P(X ≤ 3)
+colors = ['darkgreen' if x <= 3 else 'lightgray' for x in x_values]
+
+fig = go.Figure()
+
+# Add bars with conditional coloring
+fig.add_trace(go.Bar(
+    x=x_values,
+    y=probabilities,
+    text=[f'{p}' for p in probabilities],
+    textposition='outside',
+    marker_color=colors,
+    marker_opacity=0.8,
+    marker_line_color='black',
+    marker_line_width=2,
+    name='P(X=k)'
+))
+
+# Add annotation
+fig.add_annotation(
+    x=2, y=0.35,
+    text="P(X ≤ 3) = 0.8<br>(Green bars)",
+    showarrow=True,
+    arrowhead=2,
+    arrowsize=1,
+    arrowwidth=2,
+    arrowcolor="darkgreen",
+    font=dict(size=14, color="darkgreen"),
+    bgcolor="white",
+    bordercolor="darkgreen",
+    borderwidth=2
+)
+
+fig.update_layout(
+    title={
+        'text': 'Probability Mass Function: P(X ≤ 3)',
+        'x': 0.5,
+        'xanchor': 'center',
+        'font': {'size': 18, 'family': 'Arial, sans-serif'}
+    },
+    xaxis_title='X',
+    yaxis_title='P(X = k)',
+    xaxis=dict(
+        tickmode='linear',
+        tick0=1,
+        dtick=1,
+        tickfont=dict(size=14)
+    ),
+    yaxis=dict(
+        range=[0, 0.5],
+        tickfont=dict(size=14)
+    ),
+    font=dict(size=12),
+    showlegend=False,
+    plot_bgcolor='white',
+    paper_bgcolor='white'
+)
+
+# Add grid
+fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+
+fig.show()
+
+```
+
+### (c) Calculate $P(X > 2)$.
+
+:::{.solution}
+
+$P(X > 2) = P(X = 3) + P(X = 4) + P(X = 5)$
+
+$P(X > 2) = 0.4 + 0.1 + 0.1 = \boxed{0.6}$
+
+(Check: $0.8 + 0.2 = 1$ and the full PMF sums to 1, so the results are consistent.)
+:::
+
+
+```{python}
+#| label: fig-pmf-gt2
+#| fig-cap: "PMF showing P(X > 2) = 0.6"
+#| fig-width: 10
+#| fig-height: 6
+
+# Create colors for highlighting P(X > 2)
+colors = ['lightgray' if x <= 2 else 'darkorange' for x in x_values]
+
+fig = go.Figure()
+
+# Add bars with conditional coloring
+fig.add_trace(go.Bar(
+    x=x_values,
+    y=probabilities,
+    text=[f'{p}' for p in probabilities],
+    textposition='outside',
+    marker_color=colors,
+    marker_opacity=0.8,
+    marker_line_color='black',
+    marker_line_width=2,
+    name='P(X=k)'
+))
+
+# Add annotation
+fig.add_annotation(
+    x=4, y=0.35,
+    text="P(X > 2) = 0.6<br>(Orange bars)",
+    showarrow=True,
+    arrowhead=2,
+    arrowsize=1,
+    arrowwidth=2,
+    arrowcolor="darkorange",
+    font=dict(size=14, color="darkorange"),
+    bgcolor="white",
+    bordercolor="darkorange",
+    borderwidth=2
+)
+
+fig.update_layout(
+    title={
+        'text': 'Probability Mass Function: P(X > 2)',
+        'x': 0.5,
+        'xanchor': 'center',
+        'font': {'size': 18, 'family': 'Arial, sans-serif'}
+    },
+    xaxis_title='X',
+    yaxis_title='P(X = k)',
+    xaxis=dict(
+        tickmode='linear',
+        tick0=1,
+        dtick=1,
+        tickfont=dict(size=14)
+    ),
+    yaxis=dict(
+        range=[0, 0.5],
+        tickfont=dict(size=14)
+    ),
+    font=dict(size=12),
+    showlegend=False,
+    plot_bgcolor='white',
+    paper_bgcolor='white'
+)
+
+# Add grid
+fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+
+fig.show()
+
+
+```
+
+
+Putting everything together:
+
+:::{.callout-tip}
+Key Insights from Visualizations
+
+**Distribution Shape**: The PMF shows $X = 3$ has the highest probability ($0.4$), making it the mode
+
+**Cumulative Probability**: $P(X ≤ 3) = 0.8$ means $80\%$ of outcomes are 3 or less
+
+**Complement Relationship**: $P(X > 2) = 0.6$ and $P(X ≤ 2) = 0.4$ sum to $1$
+
+**Symmetry**: The distribution has some **symmetry** around the center, with equal probabilities at the extremes ($X = 1 \quad \text{and} \quad X = 5$ both have $P = 0.1$)
+:::
+
+```{python}
+
+#| label: fig-pmf-comparison
+#| fig-cap: "PMF showing both P(X ≤ 3) and P(X > 2) regions"
+#| fig-width: 12
+#| fig-height: 8
+
+from plotly.subplots import make_subplots
+
+# Create subplots
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=('Complete PMF', 'P(X ≤ 3) = 0.8', 'P(X > 2) = 0.6', 'Summary Statistics'),
+    specs=[[{"type": "bar"}, {"type": "bar"}],
+           [{"type": "bar"}, {"type": "table"}]]
+)
+
+# Plot 1: Complete PMF
+fig.add_trace(
+    go.Bar(x=x_values, y=probabilities, 
+           marker_color='steelblue', marker_opacity=0.8,
+           text=probabilities, textposition='outside',
+           name='P(X=k)'),
+    row=1, col=1
+)
+
+# Plot 2: P(X ≤ 3)
+colors_leq3 = ['darkgreen' if x <= 3 else 'lightgray' for x in x_values]
+fig.add_trace(
+    go.Bar(x=x_values, y=probabilities,
+           marker_color=colors_leq3, marker_opacity=0.8,
+           text=probabilities, textposition='outside',
+           name='P(X ≤ 3)'),
+    row=1, col=2
+)
+
+# Plot 3: P(X > 2)
+colors_gt2 = ['lightgray' if x <= 2 else 'darkorange' for x in x_values]
+fig.add_trace(
+    go.Bar(x=x_values, y=probabilities,
+           marker_color=colors_gt2, marker_opacity=0.8,
+           text=probabilities, textposition='outside',
+           name='P(X > 2)'),
+    row=2, col=1
+)
+
+# Table with summary
+fig.add_trace(
+    go.Table(
+        header=dict(values=['Calculation', 'Result'],
+                   fill_color='lightblue',
+                   align='center',
+                   font=dict(size=14)),
+        cells=dict(values=[
+            ['P(X = 1)', 'P(X = 2)', 'P(X = 3)', 'P(X = 4)', 'P(X = 5)', 
+             '', 'P(X ≤ 3)', 'P(X > 2)', 'P(X ≤ 2)', 'P(X > 3)'],
+            ['0.1', '0.3', '0.4', '0.1', '0.1', 
+             '', '0.8', '0.6', '0.4', '0.2']
+        ],
+        fill_color='white',
+        align='center',
+        font=dict(size=12))
+    ),
+    row=2, col=2
+)
+
+# Update layout
+fig.update_layout(
+    title_text=" ",
+    showlegend=False,
+    height=700
+)
+
+# Update all y-axes to have the same range
+for i in range(1, 4):
+    if i <= 3:  # Only for bar plots
+        row = 1 if i <= 2 else 2
+        col = i if i <= 2 else 1
+        fig.update_yaxes(range=[0, 0.5], row=row, col=col)
+
+fig.show()
+
+```
 
 # Section B: Expected Value and Variance - SOLUTIONS
 
 ## Problem B1: Manual Calculations
 
+:::{.problem}
 Using the distribution from Problem A2:
+
 | X     | 1    | 2    | 3    | 4    | 5    |
 |-------|------|------|------|------|------|
 | P(X=k)| 0.1  | 0.3  | 0.4  | 0.1  | 0.1  |
 
-**(a)** The expected value $E[X]$
+:::
 
-**Solution:**
-E[X] = Σ k · P(X = k)
-E[X] = 1(0.1) + 2(0.3) + 3(0.4) + 4(0.1) + 5(0.1)
-E[X] = 0.1 + 0.6 + 1.2 + 0.4 + 0.5
-**E[X] = 2.8**
 
-**(b)** The variance $\text{Var}(X)$
+### (a) Compute the expected value \(E[X]\)
 
-**Solution:**
-First, calculate E[X²]:
-E[X²] = Σ k² · P(X = k)
-E[X²] = 1²(0.1) + 2²(0.3) + 3²(0.4) + 4²(0.1) + 5²(0.1)
-E[X²] = 1(0.1) + 4(0.3) + 9(0.4) + 16(0.1) + 25(0.1)
-E[X²] = 0.1 + 1.2 + 3.6 + 1.6 + 2.5 = 9.0
+:::{.solution}
 
-Then: Var(X) = E[X²] - (E[X])²
-Var(X) = 9.0 - (2.8)²
-Var(X) = 9.0 - 7.84
-**Var(X) = 1.16**
+For a **discrete random variable**, the expected value is the *probability-weighted average* of all possible outcomes:
 
-**(c)** The standard deviation $\sigma$
+$$
+E[X] \;=\;\sum_{k=1}^{5} k  \times \,P(X=k).
+$$
 
-**Solution:**
-σ = √Var(X) = √1.16 = **1.0770**
+1. **Set up the sum**
+
+$$
+E[X] \;=\; 1(0.1) \;+\; 2(0.3) \;+\; 3(0.4) \;+\; 4(0.1) \;+\; 5(0.1).
+$$
+
+2. **Multiply each outcome by its probability**
+
+$$
+= 0.1 \;+\; 0.6 \;+\; 1.2 \;+\; 0.4 \;+\; 0.5.
+$$
+
+3. **Add the terms**
+
+$$
+\boxed {E[X] = 2.8}
+$$
+
+:::
+
+
+```{python}
+#| label: fig-pmf
+#| fig-cap: "Probability Mass Function showing E[X] = 2.8"
+#| fig-width: 10
+#| fig-height: 6
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data
+x_values = [1, 2, 3, 4, 5]
+probabilities = [0.1, 0.3, 0.4, 0.1, 0.1]
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Create bars
+bars = ax.bar(x_values, probabilities, color='steelblue', alpha=0.7, width=0.6, edgecolor='navy', linewidth=1.5)
+
+# Add value labels on top of bars
+for i, (x, p) in enumerate(zip(x_values, probabilities)):
+    ax.text(x, p + 0.015, f'{p}', ha='center', va='bottom', fontsize=12, fontweight='bold')
+
+# Add expected value line
+ax.axvline(x=2.8, color='red', linestyle='--', linewidth=2.5, alpha=0.8)
+ax.text(2.8, 0.35, 'E[X] = 2.8', rotation=90, ha='right', va='bottom', 
+        fontsize=12, fontweight='bold', color='red')
+
+# Styling
+ax.set_xlabel('X', fontsize=14, fontweight='bold')
+ax.set_ylabel('P(X = k)', fontsize=14, fontweight='bold')
+ax.set_title('Probability Mass Function\nExpected Value = 2.8', fontsize=16, fontweight='bold', pad=20)
+ax.set_ylim(0, 0.45)
+ax.set_xlim(0.5, 5.5)
+ax.set_xticks(x_values)
+ax.grid(True, alpha=0.3, axis='y')
+
+# Remove top and right spines
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+
+plt.tight_layout()
+plt.show()
+```
+
+:::{.callout-tip}
+**Visual Interpretation**
+
+Looking at the PMF plot:
+
+- The highest probability ($0.4$) occurs at $X = 3$
+
+- The second highest ($0.3$) occurs at $X = 2$
+
+Together, these two values account for $70\%$ of the probability mass
+
+The **expected value** $E[X] = 2.8$ (red dashed line) falls between these two most likely outcomes
+
+This visual confirms our intuition that the "center of gravity" should be close to, but slightly less than, 3
+:::
+
+
+:::{.callout-note}
+**Interpretation & quick check**
+
+*Interpretation:* If we were to observe this experiment many, many times, the long-run **average** value of $X$ would settle down around **2.8**. Although 2.8 itself isn’t an attainable outcome (only integers 1–5 are), it represents the center of gravity of the distribution.
+
+*Check:*  Notice most probability mass is on 2 and 3 (0.3 + 0.4 = 0.7). A mix that skews slightly toward the larger of those two values should indeed give an average a bit below 3, exactly what we see with 2.8.
+:::
+
+```{python}
+#| label: fig-convergence-multiple
+#| fig-cap: "Multiple Simulation Runs Showing Convergence"
+
+import plotly.graph_objects as go
+import numpy as np
+
+# Set random seed
+np.random.seed(123)
+
+# Define the distribution
+values = np.array([1, 2, 3, 4, 5])
+probs = np.array([0.1, 0.3, 0.4, 0.1, 0.1])
+
+# Parameters
+n_trials = 1000
+n_runs = 5
+
+# Create figure
+fig = go.Figure()
+
+# Run multiple simulations
+for run in range(n_runs):
+    # Generate samples
+    samples = np.random.choice(values, n_trials, p=probs)
+    running_avg = np.cumsum(samples) / np.arange(1, n_trials + 1)
+    
+    # Add trace
+    fig.add_trace(go.Scatter(
+        x=list(range(1, n_trials + 1)),
+        y=running_avg,
+        mode='lines',
+        name=f'Run {run + 1}',
+        line=dict(width=2),
+        opacity=0.7
+    ))
+
+# Add expected value line
+fig.add_trace(go.Scatter(
+    x=[1, n_trials],
+    y=[2.8, 2.8],
+    mode='lines',
+    name='E[X] = 2.8',
+    line=dict(color='red', width=3, dash='dash')
+))
+
+fig.update_layout(
+    title=
+    'Multiple Simulation Runs: Convergence to Expected Value<br><sub> Each line represents an independent simulation</sub>',
+    xaxis_title='Number of Trials',
+    yaxis_title='Sample Average',
+    yaxis=dict(range=[1, 5]),
+    hovermode='x unified'
+)
+
+fig.show()
+
+
+```
+
+### (b) Compute the variance $\operatorname{Var}(X)$
+
+:::{.solution}
+
+The variance measures how far the values of \(X\) tend to deviate from the mean.  
+We use the shortcut formula
+
+$$
+\operatorname{Var}(X) \;=\; E[X^2] - \bigl(E[X]\bigr)^2,
+$$
+
+where $E[X]=2.8$ was found in part (a).
+
+
+
+1. **Find $E[X^2]$** (the mean of the squared outcomes)
+
+$$
+\begin{aligned}
+E[X^2]
+&= \sum_{k=1}^{5} k^{2}\,P(X=k) \\[4pt]
+&= 1^{2}(0.1) \;+\; 2^{2}(0.3) \;+\; 3^{2}(0.4) \;+\; 4^{2}(0.1) \;+\; 5^{2}(0.1) \\[4pt]
+&= 1(0.1) \;+\; 4(0.3) \;+\; 9(0.4) \;+\; 16(0.1) \;+\; 25(0.1) \\[4pt]
+&= 0.1 \;+\; 1.2 \;+\; 3.6 \;+\; 1.6 \;+\; 2.5 \\[4pt]
+&= 9.0
+\end{aligned}
+$$
+
+2. **Apply the variance formula**
+
+$$
+\operatorname{Var}(X) \;=\; 9.0 - (2.8)^2 = 9.0 - 7.84 = \boxed{1.16}
+$$
+
+:::
+
+:::{.callout-note}
+**Interpretation & quick check**
+
+*Interpretation:* A variance of $1.16$ tells us that typical values of $X$ deviate from the mean ($2.8$) by a little over one unit (figure 8).
+
+*Check:* Most probability mass is on 2 and 3; the only “far” value is $5$ (probability $0.1$). So we expect a modest spread, larger than $0$ but well below the maximum possible of $(5-2.8)^2 = 4.84$. The calculated $1.16$ fits this intuition.
+
+:::
+
+
+
+### (c) Compute the standard deviation $\sigma$
+
+:::{.solution}
+
+The **standard deviation** is the square root of the variance:
+
+$$
+\sigma \;=\; \sqrt{\operatorname{Var}(X)}
+           \;=\; \sqrt{1.16}
+           \;\approx\; \boxed{1.08}.
+$$
+
+:::
+
+
+
+:::{.callout-note}
+**Interpretation**
+
+A standard deviation ($\sigma$) of about $1.08$ means typical observations of $X$ lie roughly one unit above or below the mean value $2.8$. This agrees with our earlier intuition that the distribution is fairly concentrated around $2 – 3$, with only a small chance of the extreme value $5$.
+:::
+
+Let's visualise this!
+```{python}
+#| label: fig-variance-illustration
+#| fig-cap: "PMF with Variance Illustration"
+#| fig-width: 10
+#| fig-height: 6
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data
+x_values = [1, 2, 3, 4, 5]
+probabilities = [0.1, 0.3, 0.4, 0.1, 0.1]
+mean = 2.8
+variance = 1.16
+std_dev = np.sqrt(variance)
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Create bars
+bars = ax.bar(x_values, probabilities, color='steelblue', alpha=0.7, width=0.6, edgecolor='navy', linewidth=1.5)
+
+# Add value labels on top of bars
+for i, (x, p) in enumerate(zip(x_values, probabilities)):
+    ax.text(x, p + 0.015, f'{p}', ha='center', va='bottom', fontsize=12, fontweight='bold')
+
+# Add mean line
+ax.axvline(x=mean, color='red', linestyle='-', linewidth=2.5, alpha=0.8, label=f'E[X] = {mean}')
+
+# Add standard deviation bounds
+ax.axvline(x=mean - std_dev, color='orange', linestyle='--', linewidth=2, alpha=0.7, label=f'E[X] ± σ')
+ax.axvline(x=mean + std_dev, color='orange', linestyle='--', linewidth=2, alpha=0.7)
+
+# Add annotations for standard deviation
+ax.annotate('', xy=(mean - std_dev, 0.25), xytext=(mean, 0.25),
+            arrowprops=dict(arrowstyle='<->', color='orange', lw=2))
+ax.text(mean - std_dev/2, 0.27, f'σ ≈ {std_dev:.2f}', ha='center', fontsize=11, 
+        color='orange', fontweight='bold')
+
+ax.annotate('', xy=(mean, 0.25), xytext=(mean + std_dev, 0.25),
+            arrowprops=dict(arrowstyle='<->', color='orange', lw=2))
+ax.text(mean + std_dev/2, 0.27, f'σ ≈ {std_dev:.2f}', ha='center', fontsize=11, 
+        color='orange', fontweight='bold')
+
+# Styling
+ax.set_xlabel('X', fontsize=14, fontweight='bold')
+ax.set_ylabel('P(X = k)', fontsize=14, fontweight='bold')
+ax.set_title(f'PMF with Mean and Standard Deviation\nVar(X) = {variance}, σ = {std_dev:.2f}', 
+             fontsize=16, fontweight='bold', pad=20)
+ax.set_ylim(0, 0.45)
+ax.set_xlim(0.5, 5.5)
+ax.set_xticks(x_values)
+ax.grid(True, alpha=0.3, axis='y')
+ax.legend(fontsize=12)
+
+# Remove top and right spines
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+
+plt.tight_layout()
+plt.show()
+```
+
+---
 
 ## Problem B2: Bernoulli and Binomial Applications
 
-Manufacturing process with 15% defect rate.
+:::{.problem}
+**Manufacturing Scenario**: A manufacturing process has a 15% defect rate.
+:::
 
-**(a)** If you select one item randomly, what is the expected value and variance of X = number of defective items?
+---
+
+### (a) Single Item Selection
+
+:::{.problem}
+If you select one item randomly, what is the expected value and variance of $X$ = number of defective items?
+:::
+
+:::{.solution}
+
+This is a **Bernoulli distribution** with parameter $p = 0.15$
+
+$$X \sim \text{Bernoulli}(p = 0.15)$$
+
+**Step 1: Expected Value**
+$$E[X] = p = \boxed{0.15}$$
+
+**Step 2: Variance**
+$$\text{Var}(X) = p(1-p) = 0.15 \times 0.85 = \boxed{0.1275}$$
+
+**Step 3: Standard Deviation**
+$$\sigma = \sqrt{\text{Var}(X)} = \sqrt{0.1275} = \boxed{0.357}$$
+:::
+
+:::{.callout-note}
+**Interpretation**: 
+
+- On average, 15% of items selected will be defective
+  
+- Since this is a single trial, $X$ can only be 0 (not defective) or 1 (defective)
+  
+- The variance measures the uncertainty in this binary outcome
+:::
+
+
+---
+
+### (b) Multiple Items Selection
+
+:::{.problem}
+If you select 25 items randomly, what is the expected number of defective items and the standard deviation?
+:::
+
+:::{.solution}
+
+This is a **Binomial distribution** with parameters $n = 25$, $p = 0.15$
+
+$$X \sim \text{Binomial}(n = 25, p = 0.15)$$
+
+**Step 1: Expected Value**
+$$E[X] = np = 25 \times 0.15 = \boxed{3.75}$$
+
+**Step 2: Variance**
+$$\text{Var}(X) = np(1-p) = 25 \times 0.15 \times 0.85 = \boxed{3.1875}$$
+
+**Step 3: Standard Deviation**
+$$\sigma = \sqrt{\text{Var}(X)} = \sqrt{3.1875} = \boxed{1.785}$$
+:::
+
+:::{.callout-note}
+**Interpretation**: 
+
+- On average, we expect about 3.75 defective items out of 25
+  
+- The actual number will typically be within ±1.785 items of this average
+  
+- Values between 2 and 6 defective items would be quite common
+:::
+
+
+
+## Visualizations
+
+Let's visualize this to build more intuition
+
+
+### Bernoulli Distribution (Single Item)
+
+```{python}
+#| label: fig-bernoulli
+#| fig-cap: "Bernoulli Distribution: P(X=k) for Single Item"
+#| fig-width: 8
+#| fig-height: 5
+
+import plotly.graph_objects as go
+import numpy as np
+
+# Bernoulli distribution parameters
+p = 0.15
+outcomes = [0, 1]
+probabilities = [1-p, p]
+labels = ['Not Defective', 'Defective']
+
+# Create the plot
+fig = go.Figure()
+
+# Add bars
+fig.add_trace(go.Bar(
+    x=outcomes,
+    y=probabilities,
+    text=[f'{prob:.3f}' for prob in probabilities],
+    textposition='outside',
+    marker_color=['lightgreen', 'salmon'],
+    marker_opacity=0.8,
+    marker_line_color='black',
+    marker_line_width=2,
+    name='Probability'
+))
+
+# Add annotations for interpretation
+for i, (outcome, prob, label) in enumerate(zip(outcomes, probabilities, labels)):
+    fig.add_annotation(
+        x=outcome, y=prob/2,
+        text=f'{label}<br>{prob:.1%}',
+        showarrow=False,
+        font=dict(size=12, color='black', family='Arial'),
+        bgcolor='white',
+        bordercolor='black',
+        borderwidth=1
+    )
+
+fig.update_layout(
+    title={
+        'text': 'Bernoulli Distribution: Single Item Defect Status<br><sub>E[X] = 0.15, Var(X) = 0.1275</sub>',
+        'x': 0.5,
+        'xanchor': 'center',
+        'font': {'size': 16}
+    },
+    xaxis_title='X (Number of Defective Items)',
+    yaxis_title='P(X = k)',
+    xaxis=dict(
+        tickmode='array',
+        tickvals=[0, 1],
+        ticktext=['0<br>(Not Defective)', '1<br>(Defective)'],
+        tickfont=dict(size=12)
+    ),
+    yaxis=dict(range=[0, 1], tickfont=dict(size=12)),
+    showlegend=False,
+    plot_bgcolor='white',
+    paper_bgcolor='white'
+)
+
+# Add grid
+fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+
+fig.show()
+```
+
+#### Binomial Distribution (25 Items)
+
+```{python}
+#| label: fig-binomial
+#| fig-cap: "Binomial Distribution: Number of Defective Items in 25 Trials"
+#| fig-width: 10
+#| fig-height: 6
+
+from scipy.stats import binom
+import plotly.graph_objects as go
+
+# Binomial distribution parameters
+n = 25
+p = 0.15
+
+# Calculate probabilities
+k_values = range(0, n+1)
+probabilities = [binom.pmf(k, n, p) for k in k_values]
+
+# Expected value and standard deviation
+expected_value = n * p
+variance = n * p * (1 - p)
+std_dev = np.sqrt(variance)
+
+# Create the plot
+fig = go.Figure()
+
+# Add bars
+fig.add_trace(go.Bar(
+    x=list(k_values),
+    y=probabilities,
+    marker_color='steelblue',
+    marker_opacity=0.7,
+    marker_line_color='navy',
+    marker_line_width=1,
+    name='P(X=k)'
+))
+
+# Add expected value line
+fig.add_vline(
+    x=expected_value,
+    line_dash="dash",
+    line_color="red",
+    line_width=3,
+    annotation_text=f"E[X] = {expected_value}",
+    annotation_position="top"
+)
+
+# Add standard deviation bounds
+fig.add_vline(
+    x=expected_value - std_dev,
+    line_dash="dot",
+    line_color="orange",
+    line_width=2,
+    annotation_text=f"E[X] - σ",
+    annotation_position="bottom left"
+)
+
+fig.add_vline(
+    x=expected_value + std_dev,
+    line_dash="dot",
+    line_color="orange",
+    line_width=2,
+    annotation_text=f"E[X] + σ",
+    annotation_position="bottom right"
+)
+
+fig.update_layout(
+    title={
+        'text': f'Binomial Distribution: n=25, p=0.15<br><sub>E[X] = {expected_value}, σ = {std_dev:.3f}</sub>',
+        'x': 0.5,
+        'xanchor': 'center',
+        'font': {'size': 16}
+    },
+    xaxis_title='Number of Defective Items (k)',
+    yaxis_title='P(X = k)',
+    xaxis=dict(tickfont=dict(size=12)),
+    yaxis=dict(tickfont=dict(size=12)),
+    showlegend=False,
+    plot_bgcolor='white',
+    paper_bgcolor='white'
+)
+
+# Add grid
+fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+
+fig.show()
+```
+
+#### Comparison: Bernoulli vs Binomial Relationship
+
+```{python}
+#| label: fig-comparison
+#| fig-cap: "Relationship Between Bernoulli and Binomial Distributions"
+#| fig-width: 12
+#| fig-height: 9
+
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
+# Create subplots
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=(
+        'Single Item (Bernoulli)', 'Multiple Items (Binomial)',
+        'Expected Values Comparison', 'Variance Comparison'
+    ),
+    specs=[[{"type": "bar"}, {"type": "bar"}],
+           [{"type": "bar"}, {"type": "bar"}]]
+)
+
+# Plot 1: Bernoulli
+fig.add_trace(
+    go.Bar(x=[0, 1], y=[0.85, 0.15], 
+           marker_color=['lightgreen', 'salmon'],
+           text=['85%', '15%'], textposition='outside',
+           name='Bernoulli'),
+    row=1, col=1
+)
+
+# Plot 2: Binomial
+k_vals = list(range(0, 11))  # Show first 11 values for clarity
+probs = [binom.pmf(k, 25, 0.15) for k in k_vals]
+fig.add_trace(
+    go.Bar(x=k_vals, y=probs,
+           marker_color='steelblue',
+           name='Binomial'),
+    row=1, col=2
+)
+
+# Plot 3: Expected Values Comparison
+sample_sizes = [1, 5, 10, 15, 20, 25]
+expected_vals = [n * 0.15 for n in sample_sizes]
+fig.add_trace(
+    go.Bar(x=sample_sizes, y=expected_vals,
+           marker_color='purple',
+           text=[f'{val:.2f}' for val in expected_vals],
+           textposition='outside',
+           name='E[X]'),
+    row=2, col=1
+)
+
+# Plot 4: Variance Comparison
+variances = [n * 0.15 * 0.85 for n in sample_sizes]
+fig.add_trace(
+    go.Bar(x=sample_sizes, y=variances,
+           marker_color='darkorange',
+           text=[f'{var:.2f}' for var in variances],
+           textposition='outside',
+           name='Var(X)'),
+    row=2, col=2
+)
+
+# Update layout
+fig.update_layout(
+    #title_text="Bernoulli vs Binomial: Complete Comparison",
+    showlegend=False,
+    height=900
+)
+
+# Update axis labels
+fig.update_xaxes(title_text="Outcome", row=1, col=1)
+fig.update_xaxes(title_text="Number of Defective Items", row=1, col=2)
+fig.update_xaxes(title_text="Sample Size (n)", row=2, col=1)
+fig.update_xaxes(title_text="Sample Size (n)", row=2, col=2)
+
+fig.update_yaxes(title_text="Probability", row=1, col=1)
+fig.update_yaxes(title_text="Probability", row=1, col=2)
+fig.update_yaxes(title_text="Expected Value", row=2, col=1)
+fig.update_yaxes(title_text="Variance", row=2, col=2)
+
+fig.show()
+
+```
+
+
+---
+
+```{python}
+#| label: tbl-summary
+#| tbl-cap: "Summary of Bernoulli vs Binomial Distributions"
+
+import pandas as pd
+import plotly.graph_objects as go
+
+# Create summary data
+data = {
+    'Distribution': ['Bernoulli(p=0.15)', 'Binomial(n=25, p=0.15)'],
+    'Scenario': ['Single item selection', '25 items selection'],
+    'Possible Values': ['0, 1', '0, 1, 2, ..., 25'],
+    'Expected Value': ['0.15', '3.75'],
+    'Variance': ['0.1275', '3.1875'],
+    'Standard Deviation': ['0.357', '1.785'],
+    'Formula E[X]': ['p', 'np'],
+    'Formula Var(X)': ['p(1-p)', 'np(1-p)']
+}
+
+df = pd.DataFrame(data)
+
+# Create table
+fig = go.Figure(data=[go.Table(
+    columnwidth=[100, 120, 100, 80, 80, 80, 80, 80],
+    header=dict(
+        values=['<b>Distribution</b>', '<b>Scenario</b>', '<b>Possible Values</b>', 
+                '<b>E[X]</b>', '<b>Var(X)</b>', '<b>σ</b>',
+                '<b>E[X] Formula</b>', '<b>Var(X) Formula</b>'],
+        fill_color='lightblue',
+        align='center',
+        font=dict(size=12, color='black')
+    ),
+    cells=dict(
+        values=[df[col] for col in df.columns],
+        fill_color=[['white', 'lightgray']*4],
+        align='center',
+        font=dict(size=11),
+        height=40
+    )
+)])
+
+fig.update_layout(
+    #title={'text': 'Comparison: Bernoulli vs Binomial Distributions','x': 0.5,'xanchor': 'center','font': {'size': 16}},
+    margin=dict(l=20, r=20, t=60, b=20),
+    height=300
+)
+
+fig.show()
+```
+
+
+:::{.callout-important}
+
+$\textbf{Bernoulli} \rightarrow \text{Binomial Connection:}$
+
+- A Binomial distribution is the sum of $n$ independent Bernoulli trials
+
+- If $X_1, X_2, \dots, X_{25}$ are independent $\text{Bernoulli}(0.15)$, then $X_1 + X_2 + \cdots + X_{25} \sim \text{Binomial}(25, 0.15)$
+
+
+$\textbf{Scaling Formulas:}$
+
+- $\textbf{Expected Value:}$ $E[\text{Binomial}] = n \times E[\text{Bernoulli}]$ = $25 \times 0.15 = 3.75$
+  
+- $\textbf{Variance:}$ $\text{Var}(\text{Binomial}) = n \times \text{Var}(\text{Bernoulli}) = 25 \times 0.1275 = 3.1875$
+
+
+:::
+:::{.callout-tip}
+- Single inspection: $15\%$ chance of finding a defect
+
+- Batch inspection ($25$ items): Expect $3-4$ defective items typically
+Acceptable range: $2-6$ defective items would be within $1$ standard deviation
+
+- Red flag: Finding 7+ defective items might indicate process issues (beyond 2 $\sigma$) 
+:::
+
+
+
+
+
+# Optional: Conceptual Understanding - SOLUTIONS
+
+:::{.callout-important}
+**Objective**: Deepen understanding of key differences between probability distributions and their applications.
+:::
+
+---
+
+### (a) Binomial vs. Geometric Distributions
+
+:::{.problem}
+Explain the key difference between a Binomial distribution and a Geometric distribution in terms of what they count.
+:::
 
 **Solution:**
-This is Bernoulli(p = 0.15)
-- **E[X] = p = 0.15**
-- **Var(X) = p(1-p) = 0.15(0.85) = 0.1275**
 
-**(b)** If you select 25 items randomly, what is the expected number of defective items and the standard deviation?
+:::{.callout-note icon=false}
+## **Key Difference: What We Count**
 
-**Solution:**
-This is Binomial(n = 25, p = 0.15)
-- **E[X] = np = 25(0.15) = 3.75**
-- Var(X) = np(1-p) = 25(0.15)(0.85) = 3.1875
-- **σ = √3.1875 = 1.7854**
+| **Distribution** | **What We Count** | **Fixed Parameter** | **Variable** |
+|------------------|-------------------|---------------------|--------------|
+| **Binomial** | Number of **successes** | Number of trials (n) | Number of successes |
+| **Geometric** | Number of **trials** | Until first success | Number of trials |
+:::
 
-# Section C: Distribution Calculations - SOLUTIONS
 
-## Problem C1: Binomial Distribution
 
-Quiz: 10 questions, 4 choices each, student guesses randomly.
-This is Binomial(n = 10, p = 0.25)
+- **Binomial Distribution**: Counts the **number of successes** in a **fixed number** of trials
+  - Example: "How many heads in 10 coin flips?"
+  - We know we'll flip exactly 10 times, but don't know how many heads
 
-**(a)** What is the probability the student gets exactly 3 questions correct?
+- **Geometric Distribution**: Counts the **number of trials needed** to get the **first success**
+  - Example: "How many coin flips until the first head?"
+  - We know we'll get exactly 1 head, but don't know how many flips it takes
 
-**Solution:**
-P(X = 3) = C(10,3) × (0.25)³ × (0.75)⁷
-P(X = 3) = 120 × 0.015625 × 0.1335
-**P(X = 3) = 0.2503**
+### Visual Comparison : Binomial vs Geometric - Fundamental Difference
 
-**(b)** What is the probability the student gets at least 2 questions correct?
+```{python}
+#| label: fig-binomial-vs-geometric
+#| fig-cap: "Binomial vs Geometric: What They Count"
+#| fig-width: 14
+#| fig-height: 8
 
-**Solution:**
-P(X ≥ 2) = 1 - P(X ≤ 1) = 1 - [P(X = 0) + P(X = 1)]
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import numpy as np
+from scipy.stats import binom, geom
 
-P(X = 0) = C(10,0) × (0.25)⁰ × (0.75)¹⁰ = 1 × 1 × 0.0563 = 0.0563
-P(X = 1) = C(10,1) × (0.25)¹ × (0.75)⁹ = 10 × 0.25 × 0.0751 = 0.1877
+# Create subplots
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=(
+        'Binomial(n=10, p=0.3): Count Successes', 
+        'Geometric(p=0.3): Count Trials to First Success',
+        'Example: Binomial Scenario', 
+        'Example: Geometric Scenario'
+    ),
+    specs=[[{"type": "bar"}, {"type": "bar"}],
+           [{"type": "table"}, {"type": "table"}]]
+)
 
-P(X ≥ 2) = 1 - (0.0563 + 0.1877) = 1 - 0.2440
-**P(X ≥ 2) = 0.7560**
+# Parameters
+n = 10
+p = 0.3
 
-**(c)** What is the expected number of correct answers?
+# Binomial distribution
+k_vals_binom = list(range(0, n+1))
+probs_binom = [binom.pmf(k, n, p) for k in k_vals_binom]
 
-**Solution:**
-E[X] = np = 10 × 0.25 = **2.5**
+fig.add_trace(
+    go.Bar(x=k_vals_binom, y=probs_binom,
+           marker_color='steelblue', marker_opacity=0.8,
+           text=[f'{prob:.3f}' for prob in probs_binom],
+           textposition='outside',
+           name='Binomial'),
+    row=1, col=1
+)
 
-## Problem C2: Poisson Distribution
+# Geometric distribution
+k_vals_geom = list(range(1, 16))  # Show first 15 trials
+probs_geom = [geom.pmf(k, p) for k in k_vals_geom]
 
-Call center: λ = 4 calls per minute
-This is Poisson(λ = 4)
+fig.add_trace(
+    go.Bar(x=k_vals_geom, y=probs_geom,
+           marker_color='darkorange', marker_opacity=0.8,
+           text=[f'{prob:.3f}' if prob > 0.02 else '' for prob in probs_geom],
+           textposition='outside',
+           name='Geometric'),
+    row=1, col=2
+)
 
-**(a)** What is the probability of receiving exactly 6 calls in a given minute?
+# Example tables
+# Binomial scenario
+fig.add_trace(
+    go.Table(
+        header=dict(values=['<b>Trial</b>', '<b>Outcome</b>', '<b>Running Count</b>'],
+                   fill_color='lightblue', align='center'),
+        cells=dict(values=[
+            ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+            ['S', 'F', 'S', 'F', 'F', 'S', 'F', 'F', 'S', 'F'],
+            ['1', '1', '2', '2', '2', '3', '3', '3', '4', '4']
+        ], fill_color='white', align='center', height=30)
+    ),
+    row=2, col=1
+)
 
-**Solution:**
-P(X = 6) = (λ⁶ × e^(-λ))/6! = (4⁶ × e^(-4))/6!
-P(X = 6) = (4096 × 0.0183)/720 = 0.1042
-**P(X = 6) = 0.1042**
+# Geometric scenario
+fig.add_trace(
+    go.Table(
+        header=dict(values=['<b>Trial</b>', '<b>Outcome</b>', '<b>Status</b>'],
+                   fill_color='lightyellow', align='center'),
+        cells=dict(values=[
+            ['1', '2', '3', '4', '5'],
+            ['F', 'F', 'F', 'S', '—'],
+            ['Continue', 'Continue', 'Continue', 'STOP!', 'Done']
+        ], fill_color='white', align='center', height=30)
+    ),
+    row=2, col=2
+)
 
-**(b)** What is the probability of receiving no calls in a given minute?
+# Update layout
+fig.update_layout(
+    #title_text="Binomial vs Geometric: Fundamental Difference",
+    showlegend=False,
+    height=700
+)
 
-**Solution:**
-P(X = 0) = (λ⁰ × e^(-λ))/0! = (1 × e^(-4))/1 = e^(-4)
-**P(X = 0) = 0.0183**
+# Update axis labels
+fig.update_xaxes(title_text="Number of Successes (k)", row=1, col=1)
+fig.update_xaxes(title_text="Number of Trials Until First Success", row=1, col=2)
+fig.update_yaxes(title_text="P(X = k)", row=1, col=1)
+fig.update_yaxes(title_text="P(X = k)", row=1, col=2)
 
-**(c)** What is the probability of receiving more than 2 calls in a given minute?
+fig.show()
+```
 
-**Solution:**
-P(X > 2) = 1 - P(X ≤ 2) = 1 - [P(X = 0) + P(X = 1) + P(X = 2)]
+:::{.callout-tip}
+Binomial: "How many successes in a fixed box of trials?"
 
-P(X = 0) = e^(-4) = 0.0183
-P(X = 1) = (4¹ × e^(-4))/1! = 4 × 0.0183 = 0.0733
-P(X = 2) = (4² × e^(-4))/2! = 16 × 0.0183/2 = 0.1465
+Fixed trials, variable successes
 
-P(X > 2) = 1 - (0.0183 + 0.0733 + 0.1465) = 1 - 0.2381
-**P(X > 2) = 0.7619**
+Geometric: "How many attempts until first success?"
 
-# Section D: Advanced Applications - SOLUTIONS
+Fixed successes (1), variable trials
+:::
 
-## Problem D1: Geometric Distribution
 
-Software updates: p = 0.6 success rate
-This is Geometric(p = 0.6)
+### (b) Poisson vs. Binomial: When to Use Each
 
-**(a)** What is the probability that the first successful bug fix occurs on the 3rd update?
+:::{.problem}
+When would you use a Poisson distribution instead of a Binomial distribution?
+:::
 
-**Solution:**
-P(X = 3) = (1-p)^(k-1) × p = (0.4)² × 0.6
-P(X = 3) = 0.16 × 0.6 = **0.0960**
-
-**(b)** What is the expected number of updates needed to get the first successful bug fix?
-
-**Solution:**
-E[X] = 1/p = 1/0.6 = **1.6667**
-
-**(c)** What is the probability that it takes more than 4 updates to get the first successful bug fix?
-
-**Solution:**
-P(X > 4) = (1-p)⁴ = (0.4)⁴ = **0.0256**
-
-## Problem D2: Mixed Applications
-
-Pharmaceutical testing: p = 0.02 defect rate
-
-**(a)** What is the probability that the first defective pill is found on the 5th test?
-
-**Solution:** Geometric(p = 0.02)
-P(X = 5) = (1-p)^(k-1) × p = (0.98)⁴ × 0.02
-P(X = 5) = 0.9224 × 0.02 = **0.0184**
-
-**(b)** What is the expected number of pills they need to test to find the first defective one?
-
-**Solution:** Geometric(p = 0.02)
-E[X] = 1/p = 1/0.02 = **50**
-
-**(c)** In a batch of 50 pills, what is the probability that exactly 2 pills are defective?
-
-**Solution:** Binomial(n = 50, p = 0.02)
-P(X = 2) = C(50,2) × (0.02)² × (0.98)⁴⁸
-P(X = 2) = 1225 × 0.0004 × 0.3773 = **0.1849**
-
-**(d)** In a batch of 50 pills, what is the expected number of defective pills?
-
-**Solution:** Binomial(n = 50, p = 0.02)
-E[X] = np = 50 × 0.02 = **1**
-
-# Section E: Reflection Questions - SOLUTIONS
-
-**(a)** Explain the key difference between a Binomial distribution and a Geometric distribution in terms of what they count.
-
-**Solution:**
-- **Binomial** counts the **number of successes** in a **fixed number** of trials
-- **Geometric** counts the **number of trials needed** to get the **first success**
-
-**(b)** When would you use a Poisson distribution instead of a Binomial distribution?
-
-**Solution:**
+:::{.solution}
 Use Poisson when:
-- Events occur over **time or space** at a constant rate
-- The number of possible events is **very large** but the probability of each is **very small**
+
+- Events occur over time or space at a constant rate
+
+- The number of possible events is very large but the probability of each is very small
+
 - We don't have a fixed number of trials
-- Examples: arrivals, defects per unit area, accidents per day
+Examples: arrivals, defects per unit area, accidents per day
+:::
 
-**(c)** If $X \sim \text{Binomial}(n, p)$, under what conditions would the variance be maximized?
+:::{.callout-note icon=false}
+## **Decision Framework: Poisson vs. Binomial**
 
-**Solution:**
-Variance = np(1-p)
-For fixed n, variance is maximized when p(1-p) is maximized.
-Taking the derivative: d/dp[p(1-p)] = 1-2p = 0
-This gives **p = 0.5**
-The variance is maximized when p = 0.5 (fair coin scenario).
+| **Criterion**         | **Use Binomial**                 | **Use Poisson**                |
+|-------------------------|----------------------------------|---------------------------------|
+| **Trials**             | Fixed number ($n$)              | No fixed limit                 |
+| **Time/Space**         | Not the focus                   | Events over time/space        |
+| **Probability**        | Moderate $p$                    | Very small $p$                 |
+| **Rate**               | Not applicable                  | Constant rate ($\lambda$)      |
+| **Examples**           | Coin flips, surveys             | Phone calls, defects          |
+:::
 
-# Summary of Key Results
+## Comparative Examples: Poisson vs Binomial - Choosing the Right Distribution
 
-## Distribution Parameters Used:
-- **A1:** Geometric(0.5), Binomial(20,0.05), Poisson(6), Bernoulli(0.8), Geometric(0.7)
-- **A2:** a = 0.1, P(X≤3) = 0.8, P(X>2) = 0.6
-- **B1:** E[X] = 2.8, Var(X) = 1.16, σ = 1.0770
-- **B2:** Bernoulli: E[X]=0.15, Var(X)=0.1275; Binomial: E[X]=3.75, σ=1.7854
-- **C1:** P(X=3)=0.2503, P(X≥2)=0.7560, E[X]=2.5
-- **C2:** P(X=6)=0.1042, P(X=0)=0.0183, P(X>2)=0.7619
-- **D1:** P(X=3)=0.0960, E[X]=1.6667, P(X>4)=0.0256
-- **D2:** P(X=5)=0.0184, E[X]=50, P(X=2)=0.1849, E[X]=1
+```{python}
+#| label: fig-poisson-vs-binomial
+#| fig-cap: "Poisson vs Binomial: When to Use Each"
+#| fig-width: 15
+#| fig-height: 10
+
+from scipy.stats import poisson
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+# Create subplots
+fig = make_subplots(
+    rows=3, cols=2,
+    subplot_titles=(
+        'Binomial Example: Survey Responses', 'Poisson Example: Phone Calls',
+        'When n is Large, p is Small', 'Poisson Approximation',
+        'Comparison Table', 'Guidelines for Choice'
+    ),
+    specs=[[{"type": "bar"}, {"type": "bar"}],
+           [{"type": "bar"}, {"type": "bar"}],
+           [{"type": "table"}, {"type": "table"}]]
+)
+
+# Example 1: Binomial - Survey responses
+n_survey = 20
+p_survey = 0.15
+k_vals_survey = list(range(0, n_survey+1))
+probs_survey = [binom.pmf(k, n_survey, p_survey) for k in k_vals_survey]
+
+fig.add_trace(
+    go.Bar(x=k_vals_survey, y=probs_survey,
+           marker_color='steelblue', marker_opacity=0.8,
+           name='Binomial Survey'),
+    row=1, col=1
+)
+
+# Example 2: Poisson - Phone calls
+lambda_calls = 3
+k_vals_calls = list(range(0, 11))
+probs_calls = [poisson.pmf(k, lambda_calls) for k in k_vals_calls]
+
+fig.add_trace(
+    go.Bar(x=k_vals_calls, y=probs_calls,
+           marker_color='darkorange', marker_opacity=0.8,
+           name='Poisson Calls'),
+    row=1, col=2
+)
+
+# Example 3: Large n, small p Binomial
+n_large = 1000
+p_small = 0.003
+lambda_approx = n_large * p_small  # = 3
+k_vals_large = list(range(0, 11))
+probs_binom_large = [binom.pmf(k, n_large, p_small) for k in k_vals_large]
+
+fig.add_trace(
+    go.Bar(x=k_vals_large, y=probs_binom_large,
+           marker_color='lightblue', marker_opacity=0.8,
+           name='Binomial (n=1000, p=0.003)'),
+    row=2, col=1
+)
+
+# Example 4: Poisson approximation
+probs_poisson_approx = [poisson.pmf(k, lambda_approx) for k in k_vals_large]
+
+fig.add_trace(
+    go.Bar(x=k_vals_large, y=probs_poisson_approx,
+           marker_color='orange', marker_opacity=0.8,
+           name='Poisson (λ=3)'),
+    row=2, col=2
+)
+
+# Comparison table - Fixed version
+comparison_data = {
+    'Scenario': ['Survey Responses', 'Phone Calls per Hour', 'Defects in Large Batch'],
+    'Distribution': ['Binomial(20, 0.15)', 'Poisson(λ=3)', 'Binomial→Poisson'],
+    'Key Feature': ['Fixed 20 people', 'Time-based events', 'n=1000, p=0.003'],
+    'What We Count': ['Count "yes" responses', 'Count arrivals', 'λ = np = 3'],
+    'Probability': ['Moderate p=0.15', 'Rare events', 'Very small p']
+}
+
+fig.add_trace(
+    go.Table(
+        columnwidth=[150, 120, 140, 130, 110],  # Set specific column widths
+        header=dict(
+            values=['<b>Scenario</b>', '<b>Distribution</b>', '<b>Key Feature</b>', '<b>What We Count</b>', '<b>Probability</b>'],
+            fill_color='lightblue', 
+            align='center',
+            font=dict(size=12, color='black'),
+            height=40
+        ),
+        cells=dict(
+            values=[
+                comparison_data['Scenario'],
+                comparison_data['Distribution'], 
+                comparison_data['Key Feature'],
+                comparison_data['What We Count'],
+                comparison_data['Probability']
+            ],
+            fill_color='white', 
+            align='center', 
+            height=45,  # Increased height for better readability
+            font=dict(size=11)
+        )
+    ),
+    row=3, col=1
+)
+
+# Guidelines table
+guidelines_data = [
+    ['Fixed trials?', 'Use Binomial', 'Use Poisson'],
+    ['Time/space component?', 'No', 'Yes'],
+    ['Probability size?', 'Moderate (0.1-0.9)', 'Very small (<0.1)'],
+    ['Sample size?', 'Small to moderate', 'Very large'],
+    ['Rate constant?', 'Not applicable', 'Yes']
+]
+
+fig.add_trace(
+    go.Table(
+        header=dict(values=['<b>Question</b>', '<b>Binomial</b>', '<b>Poisson</b>'],
+                   fill_color='lightyellow', align='center'),
+        cells=dict(values=[[row[0] for row in guidelines_data[1:]], 
+                          [row[1] for row in guidelines_data[1:]], 
+                          [row[2] for row in guidelines_data[1:]]],
+                  fill_color='white', align='center', height=35)
+    ),
+    row=3, col=2
+)
+
+# Update layout
+fig.update_layout(
+    #title_text="Poisson vs Binomial: Choosing the Right Distribution",
+    showlegend=False,
+    height=1000
+)
+
+# Add axis labels
+fig.update_xaxes(title_text="Number of Responses", row=1, col=1)
+fig.update_xaxes(title_text="Number of Calls", row=1, col=2)
+fig.update_xaxes(title_text="Number of Defects", row=2, col=1)
+fig.update_xaxes(title_text="Number of Events", row=2, col=2)
+
+fig.update_yaxes(title_text="Probability", row=1, col=1)
+fig.update_yaxes(title_text="Probability", row=1, col=2)
+fig.update_yaxes(title_text="Probability", row=2, col=1)
+fig.update_yaxes(title_text="Probability", row=2, col=2)
+
+fig.show()
+```
+
+:::{.callout-warning}
+**Common Mistake**
+
+- Don't use Poisson just because events are "rare." The key criteria are:
+
+- No fixed number of trials
+  
+- Events over time/space
+
+- Constant rate ($\lambda$)
+
+**A rare event in a fixed number of trials is still Binomial!**
+:::
+
+### (c) Variance Maximization in Binomial Distribution
+:::{.problem}
+If  $X \sim \text{Binomial}(n, p)$, under what conditions would the variance be maximized?
+:::
+
+:::{.solution}
+For a Binomial distribution: 
+$\text{Var}(X) = np(1-p)$
+
+For **fixed** $n$, variance is maximized when $p(1−p)$ is maximized.
+
+**Approach**:
+
+Taking the derivative with respect to $p$:
+
+$\frac{d}{dp} \bigl[ p(1-p) \bigr] =
+\frac{d}{dp} \bigl[ p - p^2 \bigr] =
+1 - 2p$
+
+Setting equal to zero:
+
+$1−2p=0 \quad \implies \boxed{p = 0.5}$
+
+Second derivative $= −2<0$, confirming this is a **maximum**.
+
+The variance is maximized when $p=0.5$ (fair coin scenario).
+:::
+
+### Visualization of Variance vs. Probability
+
+```{python}
+#| label: fig-variance-maximization
+#| fig-cap: "Binomial Variance Maximization: Effect of p"
+#| fig-width: 14
+#| fig-height: 8
+
+import numpy as np
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+# Create subplots
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=(
+        'Variance vs. Probability (p)', 'Distributions at Different p Values',
+        'Expected Value vs. Probability', 'Coefficient of Variation'
+    )
+)
+
+# Parameters
+n = 20
+p_vals = np.linspace(0.01, 0.99, 100)
+variances = n * p_vals * (1 - p_vals)
+expected_vals = n * p_vals
+cv_vals = np.sqrt(variances) / expected_vals  # Coefficient of variation
+
+# Plot 1: Variance vs p
+fig.add_trace(
+    go.Scatter(x=p_vals, y=variances,
+               mode='lines', line=dict(color='blue', width=3),
+               name='Variance'),
+    row=1, col=1
+)
+
+# Add maximum point
+max_var = n * 0.5 * 0.5
+fig.add_trace(
+    go.Scatter(x=[0.5], y=[max_var],
+               mode='markers', marker=dict(color='red', size=12),
+               name='Maximum at p=0.5'),
+    row=1, col=1
+)
+
+# Plot 2: Different distributions
+p_examples = [0.1, 0.3, 0.5, 0.7, 0.9]
+colors = ['purple', 'blue', 'red', 'orange', 'green']
+
+for i, (p_ex, color) in enumerate(zip(p_examples, colors)):
+    k_vals = list(range(0, n+1))
+    probs = [binom.pmf(k, n, p_ex) for k in k_vals]
+    variance_ex = n * p_ex * (1 - p_ex)
+    
+    fig.add_trace(
+        go.Scatter(x=k_vals, y=probs,
+                   mode='lines+markers',
+                   line=dict(color=color, width=2),
+                   name=f'p={p_ex}, Var={variance_ex:.2f}'),
+        row=1, col=2
+    )
+
+# Plot 3: Expected value vs p
+fig.add_trace(
+    go.Scatter(x=p_vals, y=expected_vals,
+               mode='lines', line=dict(color='green', width=3),
+               name='Expected Value'),
+    row=2, col=1
+)
+
+# Plot 4: Coefficient of variation
+fig.add_trace(
+    go.Scatter(x=p_vals, y=cv_vals,
+               mode='lines', line=dict(color='purple', width=3),
+               name='CV = σ/μ'),
+    row=2, col=2
+)
+
+# Update layout
+fig.update_layout(
+    #title_text="Binomial Distribution: Variance Analysis (n=20)",
+    showlegend=True,
+    height=700
+)
+
+# Update axis labels
+fig.update_xaxes(title_text="Probability (p)", row=1, col=1)
+fig.update_xaxes(title_text="Number of Successes", row=1, col=2)
+fig.update_xaxes(title_text="Probability (p)", row=2, col=1)
+fig.update_xaxes(title_text="Probability (p)", row=2, col=2)
+
+fig.update_yaxes(title_text="Variance", row=1, col=1)
+fig.update_yaxes(title_text="P(X = k)", row=1, col=2)
+fig.update_yaxes(title_text="Expected Value", row=2, col=1)
+fig.update_yaxes(title_text="Coefficient of Variation", row=2, col=2)
+
+fig.show()
+```
+
+### Intuitive Understanding of Variance Maximization
+
+```{python}
+#| label: fig-proof-illustration
+#| fig-cap: "Why p = 0.5 Maximizes Variance: Mathematical Intuition"
+#| fig-width: 12
+#| fig-height: 6
+
+# Create visualization showing why p=0.5 maximizes variance
+fig = make_subplots(
+    rows=1, cols=2,
+    subplot_titles=(
+        'Function p(1-p) and Its Maximum', 'Intuitive Explanation'
+    ),
+    specs=[[{"type": "scatter"}, {"type": "table"}]]
+)
+
+# Plot the function p(1-p)
+p_fine = np.linspace(0, 1, 1000)
+variance_function = p_fine * (1 - p_fine)
+
+fig.add_trace(
+    go.Scatter(x=p_fine, y=variance_function,
+               mode='lines', line=dict(color='blue', width=4),
+               name='p(1-p)'),
+    row=1, col=1
+)
+
+# Add maximum point
+fig.add_trace(
+    go.Scatter(x=[0.5], y=[0.25],
+               mode='markers', marker=dict(color='red', size=15),
+               name='Maximum at p=0.5'),
+    row=1, col=1
+)
+
+# Add tangent line at maximum (horizontal, slope = 0)
+fig.add_shape(
+    type="line",
+    x0=0.3, y0=0.25, x1=0.7, y1=0.25,
+    line=dict(color="red", width=2, dash="dash"),
+    row=1, col=1
+)
+
+# Intuitive explanation table
+explanation_data = [
+    ['When p is very small (near 0)', 'Almost no successes', 'Low variance'],
+    ['When p is very large (near 1)', 'Almost all successes', 'Low variance'], 
+    ['When p = 0.5', 'Maximum uncertainty', 'High variance'],
+    ['reason', 'p(1-p) is maximized', 'Derivative = 0'],
+    ['Intuitive reason', 'Equal chance success/failure', 'Maximum uncertainty']
+]
+
+fig.add_trace(
+    go.Table(
+        header=dict(values=['<b>Scenario</b>', '<b>Outcome Pattern</b>', '<b>Variance Level</b>'],
+                   fill_color='lightblue', align='center'),
+        cells=dict(values=[[row[0] for row in explanation_data], 
+                          [row[1] for row in explanation_data], 
+                          [row[2] for row in explanation_data]],
+                  fill_color='white', align='center', height=40)
+    ),
+    row=1, col=2
+)
+
+fig.update_layout(
+    #title_text="Mathematical and Intuitive Understanding of Variance Maximization",
+    showlegend=True,
+    height=400
+)
+
+fig.update_xaxes(title_text="Probability (p)", row=1, col=1)
+fig.update_yaxes(title_text="p(1-p)", row=1, col=1)
+
+fig.show()
+```
+
+
+:::{.callout-important}
+**Key Insights**
+
+**Maximum:** $p=0.5$ maximizes $p(1−p)$ for any fixed $n$
+
+**Intuitive Explanation:** Maximum uncertainty occurs when success and failure are equally likely
+
+**Practical Meaning:** A fair coin (50-50) has the highest variability in outcomes
+
+Extremes: When $p$ approaches $0$ or $1$, outcomes become predictable (low variance)
+:::

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Narjes Mathlouthi">
-  <meta name="dcterms.date" content="2025-07-14">
+  <meta name="dcterms.date" content="2025-07-15">
   <title>PSTAT5A – PSTAT 5A: Continuous Random Variables</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -142,14 +142,17 @@ Narjes Mathlouthi
 </div>
 </div>
 
-  <p class="date">2025-07-14</p>
+  <p class="date">2025-07-15</p>
 </section>
 <section class="slide level2">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Dancing+Script:wght@400;600&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 <script src="../../../files/lecture_notes/lecture8/lecture-interactive.js"></script>
 </section>
-<section id="welcome-to-lecture-9" class="slide level2 center">
+<section id="welcome-to-lecture-9" class="slide level2 title-slide center">
 <h2>Welcome to Lecture 9</h2>
 <p><strong>Continuous Random Variables</strong></p>
 <p><em>From discrete jumps to smooth curves: modeling the continuous world</em></p>
@@ -158,14 +161,14 @@ Narjes Mathlouthi
 <h2>Today’s Learning Objectives</h2>
 <p>By the end of this lecture, you will be able to:</p>
 <ul>
-<li>Distinguish between discrete and continuous random variables (<a href="#/sec-dis-cont-vars" class="quarto-xref">Section&nbsp;3</a>)</li>
-<li>Understand probability density functions (PDFs) and their interpretation (<a href="#/sec-pdf" class="quarto-xref">Section&nbsp;4</a>)</li>
-<li>Work with cumulative distribution functions (CDFs) for continuous variables</li>
-<li>Calculate probabilities using areas under curves</li>
-<li>Compute expected values and variances for continuous distributions</li>
-<li>Work with common continuous distributions (Uniform, Normal, Exponential)</li>
-<li>Apply the Central Limit Theorem</li>
-<li>Use <code>python</code> to work with continuous distributions</li>
+<li><strong>Distinguish</strong> between discrete and continuous random variables (<a href="#/sec-dis-cont-vars" class="quarto-xref">Section&nbsp;3</a>)</li>
+<li><strong>Understand</strong> probability density functions (PDFs) and their interpretation (<a href="#/sec-pdf" class="quarto-xref">Section&nbsp;4</a>)</li>
+<li><strong>Work with</strong> cumulative distribution functions (CDFs) for continuous variables</li>
+<li><strong>Calculate</strong> probabilities using areas under curves</li>
+<li><strong>Compute</strong> expected values and variances for continuous distributions</li>
+<li><strong>Work with</strong> common continuous distributions (Uniform, Normal, Exponential)</li>
+<li><strong>Apply</strong> the Central Limit Theorem</li>
+<li><strong>Use</strong> <code>python</code> to work with continuous distributions</li>
 </ul>
 </section>
 <section id="sec-dis-cont-vars" class="slide level2 smaller">
@@ -239,9 +242,9 @@ Uses <strong>Probability Density Function (PDF)</strong>
 <div class="column smaller">
 <p><strong>Instead, we ask:</strong></p>
 <ul>
-<li><p>P(5.7 ≤ X ≤ 5.8)?</p></li>
-<li><p>P(X ≤ 6.0)?</p></li>
-<li><p>P(X &gt; 5.5)?</p></li>
+<li><p><strong>P(5.7 ≤ X ≤ 5.8)?</strong></p></li>
+<li><p><strong>P(X ≤ 6.0)?</strong></p></li>
+<li><p><strong>P(X &gt; 5.5)?</strong></p></li>
 </ul>
 <p><strong>Key insight:</strong> We calculate probabilities for <strong>intervals</strong>, not exact points.</p>
 </div><div class="column smaller">
@@ -254,13 +257,18 @@ Uses <strong>Probability Density Function (PDF)</strong>
 </section>
 <section id="probability-density-function-pdf" class="slide level2 smaller">
 <h2>Probability Density Function (PDF)</h2>
+<div class="columns">
+<div class="column">
 <div class="summary-card smaller">
 <div style="font-weight: 600; color: #2563eb; margin-bottom: 8px;">
-<p><span style="font-size:1.1em;"> 🎯 Definition:</span> The <strong>Probability Density Function (PDF)</strong> of a continuous random variable <span class="math inline">\(X\)</span> is a function <span class="math inline">\(f(x)\)</span> such that:</p>
+<p><span style="font-size:1em;"> 🎯 Definition:</span> The <strong>Probability Density Function (PDF)</strong> of a continuous random variable <span class="math inline">\(X\)</span> is a function <span class="math inline">\(f(x)\)</span> such that:</p>
 </div>
-<div style="margin-bottom: 10px; font-size: 1.05em;">
+<div style="margin-bottom: 6px; font-size: 1em;">
 <p><span class="math display">\[P(a \leq X \leq b) = \int_a^b f(x) \, dx\]</span></p>
 </div>
+</div>
+</div><div class="column">
+<div class="summary-card smaller">
 <div style="font-weight: 600; color: #f97316; margin-bottom: 4px;">
 <p>Properties of PDF:</p>
 </div>
@@ -275,10 +283,17 @@ Uses <strong>Probability Density Function (PDF)</strong>
 <span class="math inline">\(f(x)\)</span> is NOT a probability - it’s a density!
 </li>
 </ul>
+<div style="font-weight: 600; color: #059669; margin-top: 12px; margin-bottom: 4px;">
+<p>Key Insight:</p>
 </div>
+<div style="font-size: 0.9em; color: var(--neutral-dark);">
+<p>The area under the PDF curve between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> gives the probability that <span class="math inline">\(X\)</span> falls in that interval.</p>
+</div>
+</div>
+</div></div>
 </section>
-<section id="pdf-interpretation-height-is-density" class="slide level2 smaller">
-<h2>PDF Interpretation: <em>Height is Density</em></h2>
+<section class="slide level2">
+
 <section id="interactive-pdf-demo-understanding-density" class="smaller interactive-demo">
 <h3 class="smaller">Interactive PDF Demo: Understanding Density</h3>
 <div class="demo-controls">
@@ -318,17 +333,31 @@ New Random Variable
 </section>
 <section id="expected-value-and-variance" class="slide level2 smaller">
 <h2>Expected Value and Variance</h2>
-<p>For continuous random variables:</p>
+<div class="columns">
+<div class="column smaller">
 <p><strong>Expected Value:</strong> <span class="math display">\[E[X] = \mu = \int_{-\infty}^{\infty} x \cdot f(x) \, dx\]</span></p>
-<p><strong>Variance:</strong> <span class="math display">\[\text{Var}(X) = \sigma^2 = \int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx = E[X^2] - (E[X])^2\]</span></p>
-<p><strong>Where:</strong> <span class="math display">\[E[X^2] = \int_{-\infty}^{\infty} x^2 \cdot f(x) \, dx\]</span></p>
-<div class="key-insight">
+<p><strong>Variance:</strong></p>
+<p><span class="math inline">\(\text{Var}(X) = \sigma^2 =\)</span> <span class="math inline">\(\int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx =\)</span> <span class="math inline">\(E[X^2] - (E[X])^2\)</span></p>
+<p><strong>Where:</strong></p>
+<p><span class="math display">\[E[X^2] = \int_{-\infty}^{\infty} x^2 \cdot f(x) \, dx\]</span></p>
+</div><div class="column">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
 <p>Notice: <strong>Integrals</strong> replace <strong>sums</strong> when moving from discrete to continuous!</p>
 </div>
+</div>
+</div>
+</div></div>
 </section>
 <section id="common-continuous-distributions" class="slide level2 smaller">
 <h2>Common Continuous Distributions</h2>
-<div class="dist-grid">
 <section id="uniform-distribution" class="dist-card">
 <h4>Uniform Distribution</h4>
 <p>All values equally likely in an interval</p>
@@ -356,28 +385,9 @@ New Random Variable
 <p><strong>Variance:</strong> <span class="math inline">\(\frac{1}{\lambda^2}\)</span></p>
 <p><strong>Use:</strong> Time between events, lifetimes</p>
 </section>
-</div>
 </section>
-<section id="interactive-distribution-explorer" class="slide level2 smaller">
-<h2>Interactive Distribution Explorer</h2>
-<section id="continuous-distribution-visualizer" class="interactive-demo">
-<h3>Continuous Distribution Visualizer</h3>
-<div class="demo-controls">
-<p><select id="contDistType" onchange="updateContinuousDistribution()"> <option value="uniform">Uniform</option> <option value="normal">Normal</option> <option value="exponential">Exponential</option> </select> <label>Parameter 1: <input type="number" id="contParam1" value="0" step="0.1" onchange="updateContinuousDistribution()"></label> <label>Parameter 2: <input type="number" id="contParam2" value="1" step="0.1" onchange="updateContinuousDistribution()"></label> <button onclick="showDistributionArea()">Calculate P(a ≤ X ≤ b)</button></p>
-</div>
-<div class="demo-stats">
-<div id="contDistStats" style="margin-top: 8px; font-size: 0.9em;">
-<p><strong>Distribution Properties:</strong> <span id="contDistStatsText">Select parameters to see statistics</span></p>
-</div>
-</div>
-<div class="chart-container">
-<canvas id="contDistChart">
-</canvas>
-</div>
-</section>
-</section>
-<section id="the-normal-distribution-star-of-statistics" class="slide level2 smaller">
-<h2>The Normal Distribution: Star of Statistics</h2>
+<section id="the-normal-distribution" class="slide level2 smaller">
+<h2>The Normal Distribution</h2>
 <div class="summary-card smaller">
 <div class="columns">
 <div class="column">
@@ -386,12 +396,12 @@ New Random Variable
 <li><strong>Central Limit Theorem</strong>: Sample means approach normal</li>
 <li><strong>68-95-99.7 Rule</strong>:
 <ul>
-<li>68% within 1σ of μ</li>
-<li>95% within 2σ of μ<br>
+<li><strong>68%</strong> within <span class="math inline">\(1 \sigma\)</span> of <span class="math inline">\(\mu\)</span></li>
+<li><strong>95%</strong> within <span class="math inline">\(2 \sigma\)</span> of <span class="math inline">\(\mu\)</span><br>
 </li>
-<li>99.7% within 3σ of μ</li>
+<li><strong>99.7%</strong> within <span class="math inline">\(3 \sigma\)</span> of <span class="math inline">\(\mu\)</span></li>
 </ul></li>
-<li><strong>Standard Normal</strong>: μ = 0, σ = 1</li>
+<li><strong>Standard Normal</strong>: <span class="math inline">\(\mu = 0\)</span> , <span class="math inline">\(\sigma = 1\)</span></li>
 </ul>
 <h4 id="z-score-transformation">Z-Score Transformation</h4>
 <p><span class="math display">\[Z = \frac{X - \mu}{\sigma}\]</span></p>
@@ -403,222 +413,245 @@ New Random Variable
 </div></div>
 </div>
 </section>
-<section id="practice-problem-1-uniform-distribution" class="slide level2 smaller">
-<h2>Practice Problem 1: Uniform Distribution</h2>
-<div class="practice-problem">
-<p>A bus arrives uniformly between 10:00 AM and 10:20 AM. Let <span class="math inline">\(X\)</span> = arrival time in minutes after 10:00 AM.</p>
-<p><strong>(a)</strong> What is the PDF of <span class="math inline">\(X\)</span>?<br>
-<strong>(b)</strong> What’s the probability the bus arrives between 10:05 and 10:12?<br>
-<strong>(c)</strong> What’s the expected arrival time?</p>
-<button class="show-solution smaller" onclick="toggleSolution('sol1')">
-Show Solution
-</button>
-<div class="proof solution" data-id="sol1">
-<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong> <span class="math inline">\(X \sim \text{Uniform}(0, 20)\)</span> <span class="math display">\[f(x) = \frac{1}{20-0} = \frac{1}{20} \text{ for } 0 \leq x \leq 20\]</span></p>
-<p><strong>(b)</strong> <span class="math inline">\(P(5 \leq X \leq 12) = \int_5^{12} \frac{1}{20} dx = \frac{1}{20} \times (12-5) = \frac{7}{20} = 0.35\)</span></p>
-<p><strong>(c)</strong> <span class="math inline">\(E[X] = \frac{a+b}{2} = \frac{0+20}{2} = 10\)</span> minutes after 10:00 AM</p>
-</div>
-</div>
-</section>
-<section id="practice-problem-2-normal-distribution" class="slide level2 smaller">
-<h2>Practice Problem 2: Normal Distribution</h2>
-<div class="practice-problem">
-<p>Heights of adult women are normally distributed with μ = 64 inches and σ = 2.5 inches.</p>
-<p><strong>(a)</strong> What’s the probability a woman is taller than 67 inches?<br>
-<strong>(b)</strong> What height represents the 90th percentile?<br>
-<strong>(c)</strong> What’s the probability a woman is between 62 and 66 inches tall?</p>
-<button class="show-solution smaller" onclick="toggleSolution('sol2')">
-Show Solution
-</button>
-<div class="proof solution" data-id="sol2">
-<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong> <span class="math inline">\(P(X &gt; 67) = P\left(Z &gt; \frac{67-64}{2.5}\right) = P(Z &gt; 1.2) = 1 - 0.8849 = 0.1151\)</span></p>
-<p><strong>(b)</strong> For 90th percentile: <span class="math inline">\(P(X \leq x) = 0.90\)</span><br>
-<span class="math inline">\(z_{0.90} = 1.28\)</span>, so <span class="math inline">\(x = 64 + 1.28(2.5) = 67.2\)</span> inches</p>
-<p><strong>(c)</strong> <span class="math inline">\(P(62 \leq X \leq 66) = P\left(\frac{62-64}{2.5} \leq Z \leq \frac{66-64}{2.5}\right)\)</span><br>
-<span class="math inline">\(= P(-0.8 \leq Z \leq 0.8) = 0.7881 - 0.2119 = 0.5762\)</span></p>
-</div>
-</div>
-</section>
-<section id="practice-problem-3-exponential-distribution" class="slide level2 smaller">
-<h2>Practice Problem 3: Exponential Distribution</h2>
-<div class="practice-problem">
-<p>The time between customer arrivals at a store follows an exponential distribution with an average of 5 minutes between arrivals.</p>
-<p><strong>(a)</strong> What is the PDF?<br>
-<strong>(b)</strong> What’s the probability the next customer arrives within 3 minutes?<br>
-<strong>(c)</strong> What’s the probability no customer arrives in the next 10 minutes?</p>
-<button class="show-solution smaller" onclick="toggleSolution('sol3')">
-Show Solution
-</button>
-<div class="proof solution" data-id="sol3">
-<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong> Average = 5 minutes = <span class="math inline">\(\frac{1}{\lambda}\)</span>, so <span class="math inline">\(\lambda = 0.2\)</span><br>
-<span class="math display">\[f(x) = 0.2e^{-0.2x} \text{ for } x \geq 0\]</span></p>
-<p><strong>(b)</strong> <span class="math inline">\(P(X \leq 3) = \int_0^3 0.2e^{-0.2x} dx = 1 - e^{-0.2 \times 3} = 1 - e^{-0.6} = 0.4512\)</span></p>
-<p><strong>(c)</strong> <span class="math inline">\(P(X &gt; 10) = e^{-0.2 \times 10} = e^{-2} = 0.1353\)</span></p>
-</div>
-</div>
-</section>
-<section id="central-limit-theorem" class="slide level2 smaller">
-<h2>Central Limit Theorem</h2>
-<section id="clt-demonstration" class="interactive-demo">
-<h3>CLT Demonstration</h3>
-<div class="demo-controls">
-<p><select id="cltPopulation" onchange="updateCLTDemo()"> <option value="uniform">Uniform Population</option> <option value="exponential">Exponential Population</option> <option value="bimodal">Bimodal Population</option> </select> <label>Sample Size: <input type="number" id="cltSampleSize" value="30" min="5" max="100" onchange="updateCLTDemo()"></label> <button onclick="runCLTSimulation()">Run Simulation</button></p>
-</div>
-<div class="clt-container">
-<div class="chart-container">
-<canvas id="cltPopChart">
-</canvas>
-<div class="chart-title">
-Population Distribution
-</div>
-</div>
-<div class="chart-container">
-<canvas id="cltSampleChart">
-</canvas>
-<div class="chart-title">
-Sample Means Distribution
-</div>
-</div>
-</div>
+<section class="slide level2">
+
+<!--  
+## Practice Problem 1: Uniform Distribution {.smaller .scrollable}
+
+::: {.practice-problem}
+A bus arrives uniformly between 10:00 AM and 10:20 AM. Let $X$ = arrival time in minutes after 10:00 AM.
+
+**(a)** What is the PDF of $X$?  
+**(b)** What's the probability the bus arrives between 10:05 and 10:12?  
+**(c)** What's the expected arrival time?
+
+<button class="show-solution smaller" onclick="toggleSolution('sol1')">Show Solution</button>
+
+::: {.solution data-id="sol1"}
+**(a)** $X \sim \text{Uniform}(0, 20)$
+$$f(x) = \frac{1}{20-0} = \frac{1}{20} \text{ for } 0 \leq x \leq 20$$
+
+**(b)** $P(5 \leq X \leq 12) = \int_5^{12} \frac{1}{20} dx = \frac{1}{20} \times (12-5) = \frac{7}{20} = 0.35$
+
+**(c)** $E[X] = \frac{a+b}{2} = \frac{0+20}{2} = 10$ minutes after 10:00 AM
+:::
+:::
+
+---
+
+## Practice Problem 2: Normal Distribution {.smaller .scrollable}
+
+::: {.practice-problem}
+Heights of adult women are normally distributed with μ = 64 inches and σ = 2.5 inches.
+
+**(a)** What's the probability a woman is taller than 67 inches?  
+**(b)** What height represents the 90th percentile?  
+**(c)** What's the probability a woman is between 62 and 66 inches tall?
+
+<button class="show-solution smaller" onclick="toggleSolution('sol2')">Show Solution</button>
+
+::: {.solution data-id="sol2"}
+**(a)** $P(X > 67) = P\left(Z > \frac{67-64}{2.5}\right) = P(Z > 1.2) = 1 - 0.8849 = 0.1151$
+
+**(b)** For 90th percentile: $P(X \leq x) = 0.90$  
+$z_{0.90} = 1.28$, so $x = 64 + 1.28(2.5) = 67.2$ inches
+
+**(c)** $P(62 \leq X \leq 66) = P\left(\frac{62-64}{2.5} \leq Z \leq \frac{66-64}{2.5}\right)$  
+$= P(-0.8 \leq Z \leq 0.8) = 0.7881 - 0.2119 = 0.5762$
+:::
+:::
+
+---
+
+## Practice Problem 3: Exponential Distribution {.smaller .scrollable}
+
+::: {.practice-problem}
+The time between customer arrivals at a store follows an exponential distribution with an average of 5 minutes between arrivals.
+
+**(a)** What is the PDF?  
+**(b)** What's the probability the next customer arrives within 3 minutes?  
+**(c)** What's the probability no customer arrives in the next 10 minutes?
+
+<button class="show-solution smaller" onclick="toggleSolution('sol3')">Show Solution</button>
+
+::: {.solution data-id="sol3"}
+**(a)** Average = 5 minutes = $\frac{1}{\lambda}$, so $\lambda = 0.2$  
+$$f(x) = 0.2e^{-0.2x} \text{ for } x \geq 0$$
+
+**(b)** $P(X \leq 3) = \int_0^3 0.2e^{-0.2x} dx = 1 - e^{-0.2 \times 3} = 1 - e^{-0.6} = 0.4512$
+
+**(c)** $P(X > 10) = e^{-0.2 \times 10} = e^{-2} = 0.1353$
+:::
+:::
+
+---
+
+## Central Limit Theorem {.smaller}
+
+::: {.interactive-demo}
+
+
+::: {.demo-controls}
+<select id="cltPopulation" onchange="updateCLTDemo()">
+<option value="uniform">Uniform Population</option>
+<option value="exponential">Exponential Population</option>
+<option value="bimodal">Bimodal Population</option>
+</select>
+<label>Sample Size: <input type="number" id="cltSampleSize" value="30" min="5" max="100" onchange="updateCLTDemo()"></label>
+<button onclick="runCLTSimulation()">Run Simulation</button>
+:::
+
+::: {.clt-container}
+::: {.chart-container}
+<canvas id="cltPopChart"></canvas>
+<div class="chart-title">Population Distribution</div>
+:::
+::: {.chart-container}
+<canvas id="cltSampleChart"></canvas>
+<div class="chart-title">Sample Means Distribution</div>
+:::
+:::
+
 <div id="cltStats" style="margin-top: 8px; font-size: 0.9em;">
-<p><strong>CLT in Action:</strong> <span id="cltStatsText">Run simulation to see the magic!</span></p>
+<strong>CLT in Action:</strong> <span id="cltStatsText">Run simulation to see the magic!</span>
 </div>
-</section>
-</section>
-<section id="transformations-of-random-variables" class="slide level2 smaller">
-<h2>Transformations of Random Variables</h2>
+:::
+
+---
+
+## Transformations of Random Variables {.smaller}
+
+::: columns
+::: column
+
+#### Linear Transformations
+If $Y = aX + b$, then:
+
+- $E[Y] = aE[X] + b$
+- $\text{Var}(Y) = a^2\text{Var}(X)$
+- If $X \sim N(\mu, \sigma^2)$, then $Y \sim N(a\mu + b, a^2\sigma^2)$
+
+:::
+::: column
+
+#### Standardization
+$$Z = \frac{X - \mu}{\sigma} \sim N(0, 1)$$
+
+::: {.key-insight}
+**Important**: Normal distributions are closed under linear transformations!
+:::
+
+:::
+:::
+
+---
+
+## Comparing Discrete and Continuous {.smaller}
+
+::: {.comparison-table}
+| Property | Discrete | Continuous |
+|----------|----------|------------|
+| **Probability Function** | PMF: $P(X = x)$ | PDF: $f(x)$ |
+| **Exact Value Probability** | $P(X = x) > 0$ possible | $P(X = x) = 0$ always |
+| **Interval Probability** | $\sum P(X = x_i)$ | $\int_a^b f(x) dx$ |
+| **Expected Value** | $\sum x \cdot P(X = x)$ | $\int x \cdot f(x) dx$ |
+| **Variance** | $\sum (x-\mu)^2 P(X = x)$ | $\int (x-\mu)^2 f(x) dx$ |
+| **CDF** | $\sum_{x_i \leq x} P(X = x_i)$ | $\int_{-\infty}^x f(t) dt$ |
+:::
+
+---
+
+## Properties of Continuous Distributions {.smaller}
+
 <div class="summary-card smaller">
-<h4 id="linear-transformations">Linear Transformations</h4>
-<p>If <span class="math inline">\(Y = aX + b\)</span>, then: - <span class="math inline">\(E[Y] = aE[X] + b\)</span> - <span class="math inline">\(\text{Var}(Y) = a^2\text{Var}(X)\)</span> - If <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span>, then <span class="math inline">\(Y \sim N(a\mu + b, a^2\sigma^2)\)</span></p>
-<h4 id="standardization">Standardization</h4>
-<p><span class="math display">\[Z = \frac{X - \mu}{\sigma} \sim N(0, 1)\]</span></p>
-<div class="key-insight">
-<p><strong>Important</strong>: Normal distributions are closed under linear transformations!</p>
+
+::: columns
+::: column
+
+#### Key Properties
+1. **Memoryless Property** (Exponential only):  
+   $P(X > s+t | X > s) = P(X > t)$
+
+2. **Symmetry** (Normal):  
+   $P(X \leq \mu - a) = P(X \geq \mu + a)$
+
+3. **Scaling Invariance** (Normal):  
+   Linear combinations of normals are normal
+
+:::
+::: column
+
+#### Useful Relationships
+- **CDF to PDF**: $f(x) = F'(x)$
+- **PDF to CDF**: $F(x) = \int_{-\infty}^x f(t) dt$
+- **Complementary CDF**: $P(X > x) = 1 - F(x)$
+
+::: {.key-insight}
+**Remember**: Area under PDF = 1, but PDF values can exceed 1!
+:::
+
+:::
+:::
 </div>
+
+---
+
+## Key Takeaways {.smaller}
+
+<div class="summary-card smaller key-takeaways">
+
+::: columns
+::: column
+
+#### Main Concepts
+- **Continuous variables** require PDFs, not PMFs
+- **Probabilities** are areas under curves, not function values
+- **Integration** replaces summation for continuous distributions
+- **Normal distribution** is central due to CLT
+
+:::
+::: column
+
+#### Distribution Selection
+
+Choose distributions based on the data characteristics:
+
+- **Uniform** for equally likely intervals
+- **Normal** for symmetric, bell-shaped data  
+- **Exponential** for waiting times/lifetimes
+- **Use CLT** when working with sample means
+
+#### Key Principle
+- **Central Limit Theorem** makes normal distributions ubiquitous in statistics
+
+:::
+:::
 </div>
-</section>
-<section id="comparing-discrete-and-continuous" class="slide level2 smaller">
-<h2>Comparing Discrete and Continuous</h2>
-<div class="comparison-table">
-<table class="caption-top">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 31%">
-<col style="width: 37%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Property</th>
-<th>Discrete</th>
-<th>Continuous</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Probability Function</strong></td>
-<td>PMF: <span class="math inline">\(P(X = x)\)</span></td>
-<td>PDF: <span class="math inline">\(f(x)\)</span></td>
-</tr>
-<tr class="even">
-<td><strong>Exact Value Probability</strong></td>
-<td><span class="math inline">\(P(X = x) &gt; 0\)</span> possible</td>
-<td><span class="math inline">\(P(X = x) = 0\)</span> always</td>
-</tr>
-<tr class="odd">
-<td><strong>Interval Probability</strong></td>
-<td><span class="math inline">\(\sum P(X = x_i)\)</span></td>
-<td><span class="math inline">\(\int_a^b f(x) dx\)</span></td>
-</tr>
-<tr class="even">
-<td><strong>Expected Value</strong></td>
-<td><span class="math inline">\(\sum x \cdot P(X = x)\)</span></td>
-<td><span class="math inline">\(\int x \cdot f(x) dx\)</span></td>
-</tr>
-<tr class="odd">
-<td><strong>Variance</strong></td>
-<td><span class="math inline">\(\sum (x-\mu)^2 P(X = x)\)</span></td>
-<td><span class="math inline">\(\int (x-\mu)^2 f(x) dx\)</span></td>
-</tr>
-<tr class="even">
-<td><strong>CDF</strong></td>
-<td><span class="math inline">\(\sum_{x_i \leq x} P(X = x_i)\)</span></td>
-<td><span class="math inline">\(\int_{-\infty}^x f(t) dt\)</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="properties-of-continuous-distributions" class="slide level2 smaller">
-<h2>Properties of Continuous Distributions</h2>
+
+---
+
+## Looking Ahead {.smaller}
+
 <div class="summary-card smaller">
-<div class="columns">
-<div class="column">
-<h4 id="key-properties">Key Properties</h4>
-<ol type="1">
-<li><p><strong>Memoryless Property</strong> (Exponential only):<br>
-<span class="math inline">\(P(X &gt; s+t | X &gt; s) = P(X &gt; t)\)</span></p></li>
-<li><p><strong>Symmetry</strong> (Normal):<br>
-<span class="math inline">\(P(X \leq \mu - a) = P(X \geq \mu + a)\)</span></p></li>
-<li><p><strong>Scaling Invariance</strong> (Normal):<br>
-Linear combinations of normals are normal</p></li>
-</ol>
-</div><div class="column">
-<h4 id="useful-relationships">Useful Relationships</h4>
-<ul>
-<li><strong>CDF to PDF</strong>: <span class="math inline">\(f(x) = F'(x)\)</span></li>
-<li><strong>PDF to CDF</strong>: <span class="math inline">\(F(x) = \int_{-\infty}^x f(t) dt\)</span></li>
-<li><strong>Complementary CDF</strong>: <span class="math inline">\(P(X &gt; x) = 1 - F(x)\)</span></li>
-</ul>
-<div class="key-insight">
-<p><strong>Remember</strong>: Area under PDF = 1, but PDF values can exceed 1!</p>
+
+#### Next Lecture: Statistical Inference
+
+**Topics we'll cover:**
+
+- Sampling distributions
+- Confidence intervals
+- Hypothesis testing
+- p-values and significance
+
+::: {.connection}
+**Connection**: Continuous distributions (especially normal) form the foundation for statistical inference
+:::
 </div>
-</div></div>
-</div>
-</section>
-<section id="key-takeaways" class="slide level2 smaller">
-<h2>Key Takeaways</h2>
-<div class="summary-card smaller">
-<div class="columns">
-<div class="column">
-<h4 id="main-concepts">Main Concepts</h4>
-<ul>
-<li><strong>Continuous variables</strong> require PDFs, not PMFs</li>
-<li><strong>Probabilities</strong> are areas under curves, not function values</li>
-<li><strong>Integration</strong> replaces summation for continuous distributions</li>
-<li><strong>Normal distribution</strong> is central due to CLT</li>
-</ul>
-</div><div class="column">
-<h4 id="distribution-selection">Distribution Selection</h4>
-<p>Choose distributions based on the data characteristics:</p>
-<ul>
-<li><strong>Uniform</strong> for equally likely intervals</li>
-<li><strong>Normal</strong> for symmetric, bell-shaped data<br>
-</li>
-<li><strong>Exponential</strong> for waiting times/lifetimes</li>
-<li><strong>Use CLT</strong> when working with sample means</li>
-</ul>
-<h4 id="key-principle">Key Principle</h4>
-<ul>
-<li><strong>Central Limit Theorem</strong> makes normal distributions ubiquitous in statistics</li>
-</ul>
-</div></div>
-</div>
-</section>
-<section id="looking-ahead" class="slide level2 smaller">
-<h2>Looking Ahead</h2>
-<section id="next-lecture-statistical-inference" class="summary-card smaller">
-<h4>Next Lecture: Statistical Inference</h4>
-<p><strong>Topics we’ll cover:</strong></p>
-<ul>
-<li>Sampling distributions</li>
-<li>Confidence intervals</li>
-<li>Hypothesis testing</li>
-<li>p-values and significance</li>
-</ul>
-<div class="connection">
-<p><strong>Connection</strong>: Continuous distributions (especially normal) form the foundation for statistical inference</p>
-</div>
-</section>
+
+
+
+---
+-->
 </section>
 <section id="questions" class="slide level2 center">
 <h2>Questions?</h2>

@@ -28,11 +28,14 @@ format:
 ---
 
 ```{=html}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 <script src="/files/lecture_notes/lecture8/lecture-interactive.js"></script>
 ```
 
-## Welcome to Lecture 9 {.center}
+## Welcome to Lecture 9 {.title-slide .center}
 
 **Continuous Random Variables**
 
@@ -44,14 +47,14 @@ format:
 
 By the end of this lecture, you will be able to:
 
-- Distinguish between discrete and continuous random variables (@sec-dis-cont-vars)
-- Understand probability density functions (PDFs) and their interpretation (@sec-pdf)
-- Work with cumulative distribution functions (CDFs) for continuous variables
-- Calculate probabilities using areas under curves
-- Compute expected values and variances for continuous distributions
-- Work with common continuous distributions (Uniform, Normal, Exponential)
-- Apply the Central Limit Theorem
-- Use `python` to work with continuous distributions
+- **Distinguish** between discrete and continuous random variables (@sec-dis-cont-vars)
+- **Understand** probability density functions (PDFs) and their interpretation (@sec-pdf)
+- **Work with** cumulative distribution functions (CDFs) for continuous variables
+- **Calculate** probabilities using areas under curves
+- **Compute** expected values and variances for continuous distributions
+- **Work with** common continuous distributions (Uniform, Normal, Exponential)
+- **Apply** the Central Limit Theorem
+- **Use** `python` to work with continuous distributions
 
 ---
 
@@ -116,11 +119,11 @@ For continuous random variables, the probability of any <strong>exact</strong> v
 
 **Instead, we ask:**
 
-- P(5.7 ≤ X ≤ 5.8)?
+- **P(5.7 ≤ X ≤ 5.8)?**
   
-- P(X ≤ 6.0)?
+- **P(X ≤ 6.0)?**
   
-- P(X > 5.5)?
+- **P(X > 5.5)?**
 
 **Key insight:** We calculate probabilities for **intervals**, not exact points.
 
@@ -139,16 +142,27 @@ For continuous random variables, the probability of any <strong>exact</strong> v
 
 ## Probability Density Function (PDF) {.smaller}
 
+::: {.columns}
+::: {.column }
+
 <div class="summary-card smaller">
 
 <div style="font-weight: 600; color: #2563eb; margin-bottom: 8px;">
-  <span style="font-size:1.1em;"> 🎯 Definition:</span>
+  <span style="font-size:1em;"> 🎯 Definition:</span>
   The <strong>Probability Density Function (PDF)</strong> of a continuous random variable $X$ is a function $f(x)$ such that:
 </div>
 
-<div style="margin-bottom: 10px; font-size: 1.05em;">
+<div style="margin-bottom: 6px; font-size: 1em;">
   $$P(a \leq X \leq b) = \int_a^b f(x) \, dx$$
 </div>
+
+</div>
+
+:::
+
+::: {.column }
+
+<div class="summary-card smaller">
 
 <div style="font-weight: 600; color: #f97316; margin-bottom: 4px;">
   Properties of PDF:
@@ -159,11 +173,21 @@ For continuous random variables, the probability of any <strong>exact</strong> v
   <li>$f(x)$ is NOT a probability - it's a density!</li>
 </ul>
 
+<div style="font-weight: 600; color: #059669; margin-top: 12px; margin-bottom: 4px;">
+  Key Insight:
 </div>
+<div style="font-size: 0.9em; color: var(--neutral-dark);">
+  The area under the PDF curve between $a$ and $b$ gives the probability that $X$ falls in that interval.
+</div>
+
+</div>
+
+:::
+:::
 
 ---
 
-## PDF Interpretation: *Height is Density* {.smaller}
+
 
 ::: {.interactive-demo .smaller}
 ### Interactive PDF Demo: Understanding Density{.smaller}
@@ -198,7 +222,7 @@ For continuous random variables, the probability of any <strong>exact</strong> v
 ::: columns
 ::: column
 
-For continuous random variables, the **CDF** is:
+ For continuous random variables, the **CDF** is:
 
 $$F(x) = P(X \leq x) = \int_{-\infty}^x f(t) \, dt$$
 
@@ -223,26 +247,37 @@ The PDF is the **derivative** of the CDF!
 
 ## Expected Value and Variance {.smaller}
 
-For continuous random variables:
+::: columns
+::: {.column .smaller}
 
 **Expected Value:**
 $$E[X] = \mu = \int_{-\infty}^{\infty} x \cdot f(x) \, dx$$
 
 **Variance:**
-$$\text{Var}(X) = \sigma^2 = \int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx = E[X^2] - (E[X])^2$$
+
+$\text{Var}(X) = \sigma^2 =$
+ $\int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx =$
+ $E[X^2] - (E[X])^2$
 
 **Where:**
+
 $$E[X^2] = \int_{-\infty}^{\infty} x^2 \cdot f(x) \, dx$$
 
-::: {.key-insight}
+:::
+::: column
+
+::: {.callout-important}
 Notice: **Integrals** replace **sums** when moving from discrete to continuous!
+:::
+
+:::
 :::
 
 ---
 
 ## Common Continuous Distributions {.smaller}
 
-::: {.dist-grid}
+
 ::: {.dist-card}
 #### Uniform Distribution
 All values equally likely in an interval
@@ -287,54 +322,24 @@ Models waiting times
 
 **Use:** Time between events, lifetimes
 :::
-:::
 
----
 
-## Interactive Distribution Explorer {.smaller}
 
-::: {.interactive-demo}
-### Continuous Distribution Visualizer
 
-::: {.demo-controls}
-<select id="contDistType" onchange="updateContinuousDistribution()">
-<option value="uniform">Uniform</option>
-<option value="normal">Normal</option>
-<option value="exponential">Exponential</option>
-</select>
-<label>Parameter 1: <input type="number" id="contParam1" value="0" step="0.1" onchange="updateContinuousDistribution()"></label>
-<label>Parameter 2: <input type="number" id="contParam2" value="1" step="0.1" onchange="updateContinuousDistribution()"></label>
-<button onclick="showDistributionArea()">Calculate P(a ≤ X ≤ b)</button>
-:::
-
-::: {.demo-stats}
-<div id="contDistStats" style="margin-top: 8px; font-size: 0.9em;">
-<strong>Distribution Properties:</strong> <span id="contDistStatsText">Select parameters to see statistics</span>
-</div>
-:::
-
-::: {.chart-container}
-<canvas id="contDistChart"></canvas>
-:::
-:::
-
----
-
-## The Normal Distribution: Star of Statistics {.smaller}
+## The Normal Distribution {.smaller}
 
 <div class="summary-card smaller">
 
 ::: columns
 ::: column
 
-#### Why Normal is Special
-
+#### Why Normal is Special 
 - **Central Limit Theorem**: Sample means approach normal
 - **68-95-99.7 Rule**: 
-  - 68% within 1σ of μ
-  - 95% within 2σ of μ  
-  - 99.7% within 3σ of μ
-- **Standard Normal**: μ = 0, σ = 1
+  - **68%** within $1 \sigma$ of $\mu$ 
+  - **95%** within $2 \sigma$ of $\mu$   
+  - **99.7%** within $3 \sigma$ of $\mu$ 
+- **Standard Normal**: $\mu = 0$ , $\sigma = 1$ 
 
 #### Z-Score Transformation
 $$Z = \frac{X - \mu}{\sigma}$$
@@ -352,7 +357,8 @@ $$Z = \frac{X - \mu}{\sigma}$$
 
 ---
 
-## Practice Problem 1: Uniform Distribution {.smaller}
+<!--  
+## Practice Problem 1: Uniform Distribution {.smaller .scrollable}
 
 ::: {.practice-problem}
 A bus arrives uniformly between 10:00 AM and 10:20 AM. Let $X$ = arrival time in minutes after 10:00 AM.
@@ -375,7 +381,7 @@ $$f(x) = \frac{1}{20-0} = \frac{1}{20} \text{ for } 0 \leq x \leq 20$$
 
 ---
 
-## Practice Problem 2: Normal Distribution {.smaller}
+## Practice Problem 2: Normal Distribution {.smaller .scrollable}
 
 ::: {.practice-problem}
 Heights of adult women are normally distributed with μ = 64 inches and σ = 2.5 inches.
@@ -399,7 +405,7 @@ $= P(-0.8 \leq Z \leq 0.8) = 0.7881 - 0.2119 = 0.5762$
 
 ---
 
-## Practice Problem 3: Exponential Distribution {.smaller}
+## Practice Problem 3: Exponential Distribution {.smaller .scrollable}
 
 ::: {.practice-problem}
 The time between customer arrivals at a store follows an exponential distribution with an average of 5 minutes between arrivals.
@@ -425,7 +431,7 @@ $$f(x) = 0.2e^{-0.2x} \text{ for } x \geq 0$$
 ## Central Limit Theorem {.smaller}
 
 ::: {.interactive-demo}
-### CLT Demonstration
+
 
 ::: {.demo-controls}
 <select id="cltPopulation" onchange="updateCLTDemo()">
@@ -457,13 +463,18 @@ $$f(x) = 0.2e^{-0.2x} \text{ for } x \geq 0$$
 
 ## Transformations of Random Variables {.smaller}
 
-<div class="summary-card smaller">
+::: columns
+::: column
 
 #### Linear Transformations
 If $Y = aX + b$, then:
+
 - $E[Y] = aE[X] + b$
 - $\text{Var}(Y) = a^2\text{Var}(X)$
 - If $X \sim N(\mu, \sigma^2)$, then $Y \sim N(a\mu + b, a^2\sigma^2)$
+
+:::
+::: column
 
 #### Standardization
 $$Z = \frac{X - \mu}{\sigma} \sim N(0, 1)$$
@@ -472,7 +483,8 @@ $$Z = \frac{X - \mu}{\sigma} \sim N(0, 1)$$
 **Important**: Normal distributions are closed under linear transformations!
 :::
 
-</div>
+:::
+:::
 
 ---
 
@@ -528,7 +540,7 @@ $$Z = \frac{X - \mu}{\sigma} \sim N(0, 1)$$
 
 ## Key Takeaways {.smaller}
 
-<div class="summary-card smaller">
+<div class="summary-card smaller key-takeaways">
 
 ::: columns
 ::: column
@@ -579,6 +591,7 @@ Choose distributions based on the data characteristics:
 </div>
 
 ---
+-->
 
 ## Questions? {.center}
 

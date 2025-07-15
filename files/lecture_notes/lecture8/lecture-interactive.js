@@ -58,6 +58,7 @@ function erf(x) {
 // Initialize charts when page loads
 document.addEventListener('DOMContentLoaded', function() {
     initializeCharts();
+    updateContParamLabels();
 });
 
 function initializeCharts() {
@@ -69,6 +70,12 @@ function initializeCharts() {
     initContinuousDistChart();
     initNormalChart();
     initCLTCharts();
+    
+    // Initialize interactive demos
+    setTimeout(() => {
+        updatePDFDemo();
+        updateCLTDemo();
+    }, 100);
 }
 
 // Discrete Review Chart
@@ -289,16 +296,18 @@ function updatePDFDemo() {
     let prob = 0;
     
     if (pdfType === 'uniform') {
-        for (let x = -1; x <= 4; x += 0.1) {
+        const a = 0; // support min
+        const b = 3; // support max
+        for (let x = a - 0.5; x <= b + 0.5; x += 0.05) {
             xValues.push(x);
-            yValues.push(distributions.uniformPDF(x, 0, 3));
+            yValues.push(distributions.uniformPDF(x, a, b));
             if (x >= intervalA && x <= intervalB) {
-                areaData.push(distributions.uniformPDF(x, 0, 3));
+                areaData.push(distributions.uniformPDF(x, a, b));
             } else {
                 areaData.push(null);
             }
         }
-        prob = Math.max(0, Math.min(intervalB, 3) - Math.max(intervalA, 0)) / 3;
+        prob = Math.max(0, Math.min(intervalB, b) - Math.max(intervalA, a)) / (b - a);
     } else if (pdfType === 'normal') {
         for (let x = -4; x <= 4; x += 0.1) {
             xValues.push(x);
@@ -528,6 +537,7 @@ function initContinuousDistChart() {
 }
 
 function updateContinuousDistribution() {
+    updateContParamLabels();
     const distType = document.getElementById('contDistType')?.value || 'normal';
     const param1 = parseFloat(document.getElementById('contParam1')?.value || 0);
     const param2 = parseFloat(document.getElementById('contParam2')?.value || 1);
@@ -636,7 +646,45 @@ function updateContinuousDistribution() {
 }
 
 function showDistributionArea() {
-    alert('Feature coming soon: Click on chart to select interval and calculate area!');
+    // Get distribution type and parameters
+    const distType = document.getElementById('contDistType')?.value || 'normal';
+    const param1 = parseFloat(document.getElementById('contParam1')?.value || 0);
+    const param2 = parseFloat(document.getElementById('contParam2')?.value || 1);
+    // Get interval endpoints
+    const a = parseFloat(document.getElementById('contA')?.value);
+    const b = parseFloat(document.getElementById('contB')?.value);
+    const statsText = document.getElementById('contDistStatsText');
+    if (isNaN(a) || isNaN(b)) {
+        if (statsText) statsText.textContent = 'Please enter valid interval endpoints a and b.';
+        return;
+    }
+    if (a > b) {
+        if (statsText) statsText.textContent = 'Interval must have a ≤ b.';
+        return;
+    }
+    let prob = 0;
+    if (distType === 'uniform') {
+        const min = param1;
+        const max = param2;
+        if (a > max || b < min) {
+            prob = 0;
+        } else {
+            const left = Math.max(a, min);
+            const right = Math.min(b, max);
+            prob = (right - left) / (max - min);
+            if (prob < 0) prob = 0;
+        }
+    } else if (distType === 'normal') {
+        const mu = param1;
+        const sigma = param2;
+        prob = distributions.normalCDF(b, mu, sigma) - distributions.normalCDF(a, mu, sigma);
+    } else if (distType === 'exponential') {
+        const lambda = param1;
+        prob = distributions.exponentialCDF(b, lambda) - distributions.exponentialCDF(a, lambda);
+    }
+    if (statsText) {
+        statsText.textContent = `P(${a} ≤ X ≤ ${b}) = ${prob.toFixed(4)}`;
+    }
 }
 
 // Normal Distribution with 68-95-99.7 rule
@@ -644,30 +692,32 @@ function initNormalChart() {
     const ctx = document.getElementById('normalChart');
     if (!ctx) return;
     
+    // Create explicit labels for x-axis
+    const labels = ['-4σ', '-3σ', '-2σ', '-1σ', 'μ = 0', '1σ', '2σ', '3σ', '4σ'];
+    const xPositions = [-4, -3, -2, -1, 0, 1, 2, 3, 4];
+    
     const xValues = [];
     const yValues = [];
     const oneSD = [];
     const twoSD = [];
     const threeSD = [];
     
+    // Generate data points with 0.1 step for smooth curve
     for (let x = -4; x <= 4; x += 0.1) {
         xValues.push(x);
         yValues.push(distributions.normalPDF(x, 0, 1));
-        
         // 68% (1 SD)
         if (x >= -1 && x <= 1) {
             oneSD.push(distributions.normalPDF(x, 0, 1));
         } else {
             oneSD.push(null);
         }
-        
         // 95% (2 SD)
         if (x >= -2 && x <= 2) {
             twoSD.push(distributions.normalPDF(x, 0, 1));
         } else {
             twoSD.push(null);
         }
-        
         // 99.7% (3 SD)
         if (x >= -3 && x <= 3) {
             threeSD.push(distributions.normalPDF(x, 0, 1));
@@ -686,7 +736,7 @@ function initNormalChart() {
                 borderColor: 'rgba(37, 99, 235, 1)',
                 backgroundColor: 'rgba(37, 99, 235, 0.1)',
                 fill: false,
-                borderWidth: 2,
+                borderWidth: 3,
                 pointRadius: 0
             }, {
                 label: '68% (±1σ)',
@@ -725,27 +775,61 @@ function initNormalChart() {
                     }
                 },
                 x: {
+                    type: 'linear',
                     title: {
                         display: true,
-                        text: 'Standard Deviations from Mean'
+                        text: 'Standardized Value (z)'
                     },
+                    min: -4,
+                    max: 4,
                     ticks: {
+                        stepSize: 1,
                         callback: function(value, index, values) {
-                            let num = Number(value);
-                            if (isNaN(num)) return value;
-                            if (num === 0) return '0';
-                            return Math.abs(num) < 1e-4 ? num.toExponential(2) : num.toFixed(4).replace(/\.?0+$/, "");
-                        }
+                            const num = Math.round(value);
+                            if (num === 0) return 'μ = 0';
+                            if (num === 1) return '1σ';
+                            if (num === -1) return '-1σ';
+                            if (num === 2) return '2σ';
+                            if (num === -2) return '-2σ';
+                            if (num === 3) return '3σ';
+                            if (num === -3) return '-3σ';
+                            if (num === 4) return '4σ';
+                            if (num === -4) return '-4σ';
+                            return '';
+                        },
+                        autoSkip: false,
+                        maxTicksLimit: 9
+                    },
+                    grid: {
+                        color: 'rgba(0,0,0,0.1)'
                     }
                 }
             },
             plugins: {
                 title: {
                     display: true,
-                    text: '68-95-99.7 Rule (Standard Normal)'
+                    text: 'Standard Normal Distribution: Z ~ N(0, 1)',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    }
                 },
                 legend: {
-                    display: true
+                    display: true,
+                    position: 'top'
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(context) {
+                            const z = context[0].label;
+                            return `z = ${z}`;
+                        },
+                        label: function(context) {
+                            const z = parseFloat(context.label);
+                            const density = context.parsed.y;
+                            return `f(z) = ${density.toFixed(4)}`;
+                        }
+                    }
                 }
             }
         }
@@ -1005,4 +1089,28 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeCharts);
 } else {
     initializeCharts();
+}
+
+function updateContParamLabels() {
+  const distType = document.getElementById('contDistType')?.value || 'normal';
+  const label1 = document.getElementById('contParam1Label');
+  const label2 = document.getElementById('contParam2Label');
+  const param2Input = document.getElementById('contParam2');
+  if (!label1 || !label2 || !param2Input) return;
+  if (distType === 'uniform') {
+    label1.textContent = 'Min (a):';
+    label2.textContent = 'Max (b):';
+    label2.parentElement.style.display = '';
+    param2Input.style.display = '';
+  } else if (distType === 'normal') {
+    label1.textContent = 'Mean (μ):';
+    label2.textContent = 'SD (σ):';
+    label2.parentElement.style.display = '';
+    param2Input.style.display = '';
+  } else if (distType === 'exponential') {
+    label1.textContent = 'Rate (λ):';
+    label2.textContent = '';
+    label2.parentElement.style.display = 'none';
+    param2Input.style.display = 'none';
+  }
 }

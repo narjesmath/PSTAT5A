@@ -328,13 +328,18 @@ Quiz 1 (Weeks 1–2)
 7/14
 :::
 ::: {.topic}
-[Continuous Random Variables & Distributions]()
+[Continuous Random Variables & Distributions](/files/lecture_notes/lecture8/lecture8.qmd)
 :::
 ::: {.lab-quiz}
 [Lab 4](/files/labs/lab4/lab4.qmd)
+
+[lab 4 Solutions](/files/labs/lab4/lab4_sln.qmd)
 :::
 ::: {.worksheet}
-Worksheet 4
+<!-- [Worksheet 4](/files/worksheets/worksheet4.qmd) -->
+
+<!-- [Worksheet 4](/files/worksheets/worksheet4_sln.qmd) -->
+
 :::
 :::
 
