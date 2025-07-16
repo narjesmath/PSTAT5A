@@ -635,5 +635,5 @@ Choose distributions based on the data characteristics:
 ## Back to Main Page {.center}
 
 ```{=html}
-<a href="../../index.html" class="main-page-btn">🏠 Back to Main Page</a>
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
 ```
