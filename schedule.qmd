@@ -338,7 +338,7 @@ Quiz 1 (Weeks 1–2)
 ::: {.worksheet}
 [Worksheet 4](/files/worksheets/worksheet4.qmd)
 
-<!-- [Worksheet 4](/files/worksheets/worksheet4_sln.qmd) -->
+[Worksheet 4](/files/worksheets/worksheet4_sln.qmd)
 
 :::
 :::
