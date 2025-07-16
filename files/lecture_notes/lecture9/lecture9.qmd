@@ -27,11 +27,9 @@ format:
 ---
 
 ```{=html}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-<script src="/files/lecture_notes/lecture9/lecture-interactive.js"></script>
+<a href="https://pstat5a.com/schedule.html" class="home-fab" title="Back to Main Page" style="position:fixed;top:24px;left:24px;z-index:10001;text-decoration:none;">
+  <span style="font-size:1.7em;line-height:1;">🏠</span>
+</a>
 ```
 
 ```{python}

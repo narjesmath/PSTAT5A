@@ -274,7 +274,7 @@ Notice: **Integrals** replace **sums** when moving from discrete to continuous!
 :::
 :::
 
----
+
 
 ## Common Continuous Distributions {.smaller}
 
