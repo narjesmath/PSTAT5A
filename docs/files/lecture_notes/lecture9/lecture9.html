@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Narjes Mathlouthi">
-  <meta name="dcterms.date" content="2025-07-07">
-  <title>PSTAT5A – PSTAT 5A: Discrete Random Variables</title>
+  <meta name="dcterms.date" content="2025-07-15">
+  <title>PSTAT5A – PSTAT 5A: Sampling and Confidence Intervals</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,74 +29,9 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
-  <link rel="stylesheet" href="../../../files/lecture_notes/theme/lecture-styles.css">
+  <link rel="stylesheet" href="../../../files/lecture_notes/lecture8/new-style.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -190,17 +125,14 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">PSTAT 5A: Discrete Random Variables</h1>
-  <p class="subtitle">Lecture 7</p>
+  <h1 class="title">PSTAT 5A: Sampling and Confidence Intervals</h1>
+  <p class="subtitle">Lecture 9</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -210,610 +142,590 @@ Narjes Mathlouthi
 </div>
 </div>
 
-  <p class="date">2025-07-07</p>
+  <p class="date">2025-07-15</p>
 </section>
-<section id="welcome-to-lecture-7" class="slide level2 center">
-<h2>Welcome to Lecture 7</h2>
-<p><strong>Discrete Random Variables</strong></p>
-<p><em>From outcomes to numbers: quantifying randomness</em></p>
-<p><img data-src="img/random_variable_mapping.png" width="350"> <em>Figure: A random variable maps outcomes (e.g., die rolls) to numbers.</em></p>
+<section class="slide level2">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Dancing+Script:wght@400;600&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="../../../files/lecture_notes/lecture9/lecture-interactive.js"></script>
 </section>
-<section id="todays-learning-objectives" class="slide level2">
+<section>
+<section id="welcome-to-lecture-9" class="title-slide slide level1 center">
+<h1>Welcome to Lecture 9</h1>
+<p><strong>Sampling and Confidence Intervals</strong> <em>From samples to populations: making inferences with uncertainty</em></p>
+</section>
+<section id="todays-learning-objectives" class="slide level2 smaller">
 <h2>Today’s Learning Objectives</h2>
 <p>By the end of this lecture, you will be able to:</p>
 <ul>
-<li>Define random variables and distinguish discrete from continuous</li>
-<li>Work with probability mass functions (PMFs) and cumulative distribution functions (CDFs)</li>
-<li>Calculate expected values and variances for discrete random variables</li>
-<li>Apply properties of expectation and variance</li>
-<li>Work with common discrete distributions (Bernoulli, Binomial, Geometric, Poisson)</li>
-<li>Solve real-world problems using discrete random variables</li>
-<li>Use technology to compute probabilities and parameters</li>
+<li>Understand sampling distributions and their properties (<a href="#/sec-sampling-dist" class="quarto-xref">Section&nbsp;1.2</a>)</li>
+<li>Apply the Central Limit Theorem to sampling (<a href="#/sec-clt-sampling" class="quarto-xref">Section&nbsp;1.4</a>)</li>
+<li>Construct confidence intervals for population means (<a href="#/sec-ci-means" class="quarto-xref">Section&nbsp;1.6</a>)</li>
+<li>Construct confidence intervals for population proportions (<a href="#/sec-ci-proportions" class="quarto-xref">Section&nbsp;1.8</a>)</li>
+<li>Interpret confidence intervals correctly (<a href="#/sec-ci-interpretation" class="quarto-xref">Section&nbsp;1.5</a>)</li>
+<li>Determine appropriate sample sizes for desired precision</li>
+<li>Use <code>python</code> to calculate confidence intervals</li>
+<li>Distinguish between different types of sampling methods</li>
 </ul>
 </section>
-<section id="what-is-a-random-variable" class="slide level2">
-<h2>What is a Random Variable?</h2>
-<p>A <strong>random variable</strong> is a function that assigns a numerical value to each outcome of a random experiment</p>
-<p><strong>Notation</strong>: Usually denoted by capital letters <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span></p>
-<p><strong>Key insight</strong>: Random variables transform outcomes into numbers, making mathematical analysis possible</p>
-<p><img data-src="img/random_variable_die.png" width="320"> <em>Figure: Mapping die roll outcomes to values of <span class="math inline">\(X\)</span>.</em></p>
-<div class="fragment">
-<p><strong>Example</strong>: Rolling a die - Outcomes: <span class="math inline">\(\{1, 2, 3, 4, 5, 6\}\)</span> - Random variable <span class="math inline">\(X\)</span>: the number shown - <span class="math inline">\(X\)</span> can take values <span class="math inline">\(\{1, 2, 3, 4, 5, 6\}\)</span></p>
-</div>
-</section>
-<section id="why-use-random-variables" class="slide level2">
-<h2>Why Use Random Variables?</h2>
-<p>Random variables allow us to:</p>
+<section id="sec-sampling-dist" class="slide level2 smaller">
+<h2>The Big Picture: Statistical Inference</h2>
+<div class="columns">
+<div class="column">
+<div class="type-card inference-card">
+<h4>
+Population vs Sample
+</h4>
 <ul>
-<li><strong>Quantify</strong> outcomes numerically</li>
-<li><strong>Calculate</strong> means, variances, and other statistics</li>
-<li><strong>Model</strong> real-world phenomena mathematically</li>
-<li><strong>Make predictions</strong> and decisions</li>
-<li><strong>Compare</strong> different random processes</li>
+<li>
+<strong>Population:</strong> All individuals of interest
+</li>
+<li>
+<strong>Sample:</strong> Subset we actually observe
+</li>
+<li>
+<strong>Parameter:</strong> Population characteristic (<span class="math inline">\(\mu\)</span>, <span class="math inline">\(p\)</span>)
+</li>
+<li>
+<strong>Statistic:</strong> Sample characteristic (<span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(\hat{p}\)</span>)
+</li>
 </ul>
-<p><img data-src="img/real_world_examples.png" width="340"> <em>Figure: Examples of random variables in real life (height, test scores, etc.).</em></p>
-<div class="fragment">
-<p><strong>Examples</strong>: Height, test scores, number of defects, wait times, stock prices</p>
+<p>
+<strong>Goal:</strong> Use sample statistics to estimate population parameters
+</p>
+<div class="inference-plot">
+<canvas id="inferenceReview" width="200" height="300">
+</canvas>
+</div>
+</div>
+</div><div class="column">
+<div class="type-card uncertainty-card">
+<h4>
+Why Confidence Intervals?
+</h4>
+<ul>
+<li>
+<strong>Point estimates</strong> are rarely exactly correct
+</li>
+<li>
+<strong>Interval estimates</strong> capture uncertainty
+</li>
+<li>
+<strong>Confidence level</strong> quantifies our certainty
+</li>
+<li>
+<strong>Margin of error</strong> shows precision
+</li>
+</ul>
+<p>
+<strong>Key Insight:</strong> We trade precision for confidence
+</p>
+<div class="uncertainty-plot">
+<canvas id="uncertaintyReview" width="200" height="300">
+</canvas>
+</div>
+</div>
+</div></div>
+</section>
+<section id="sampling-distributions" class="slide level2 smaller">
+<h2>Sampling Distributions</h2>
+<div class="key-insight">
+<p>A <strong>sampling distribution</strong> is the distribution of a statistic (like <span class="math inline">\(\bar{x}\)</span>) across all possible samples of size <span class="math inline">\(n\)</span>.</p>
+</div>
+<div class="columns">
+<div class="column">
+<p><strong>Key Properties:</strong></p>
+<p><strong>Center:</strong><br>
+<span class="math inline">\(E[\bar{X}] = \mu\)</span> (unbiased)</p>
+<p><strong>Spread:</strong><br>
+<span class="math inline">\(SE(\bar{X}) = \frac{\sigma}{\sqrt{n}}\)</span></p>
+<p><strong>Shape:</strong><br>
+Approaches normal as <span class="math inline">\(n\)</span> increases (Central Limit Theorem)</p>
+<p><strong>Standard Error vs Standard Deviation:</strong></p>
+<ul>
+<li><span class="math inline">\(\sigma\)</span>: spread of individual observations</li>
+<li><span class="math inline">\(SE = \frac{\sigma}{\sqrt{n}}\)</span>: spread of sample means</li>
+</ul>
+</div><div class="column smaller">
+<div class="chart-container">
+<canvas id="samplingDistChart">
+</canvas>
+</div>
+<p><em>Drag the slider to see how sample size affects the sampling distribution</em></p>
+</div></div>
+</section>
+<section id="sec-clt-sampling" class="slide level2">
+<h2>Central Limit Theorem in Action</h2>
+<div class="interactive-demo smaller">
+<!-- ### Interactive CLT Demo: Sample Means{.smaller} -->
+<div class="demo-controls">
+<button onclick="updateCLTSamplingDemo()">
+New Population
+</button>
+<p><select id="cltSamplingPopulation" onchange="updateCLTSamplingDemo()"> <option value="uniform">Uniform Population</option> <option value="exponential">Exponential Population</option> <option value="bimodal">Bimodal Population</option> <option value="skewed">Right-Skewed Population</option> </select> <label>Sample Size: <input type="number" id="cltSamplingSize" value="30" min="5" max="100" onchange="updateCLTSamplingDemo()"></label> <button onclick="runSamplingSimulation()">Collect 1000 Sample Means</button></p>
+</div>
+<div class="demo-stats">
+<div id="cltSamplingStats" style="margin-top: 8px; font-size: 0.9em; color: var(--neutral-medium);">
+<p><strong>Population μ:</strong> <span id="populationMean">-</span> | <strong>Sample Means μ:</strong> <span id="sampleMeansMean">-</span> | <strong>Standard Error:</strong> <span id="standardError">-</span></p>
+</div>
+</div>
+<div class="chart-container">
+<canvas id="cltSamplingChart">
+</canvas>
+</div>
 </div>
 </section>
-<section id="types-of-random-variables" class="slide level2">
-<h2>Types of Random Variables</h2>
-<p><strong>Discrete Random Variable</strong>: - Takes on a countable number of values - Can list all possible values - Examples: dice rolls, number of emails, quiz scores</p>
-<p><strong>Continuous Random Variable</strong>: - Takes on uncountably many values (intervals) - Cannot list all possible values<br>
-- Examples: height, weight, time, temperature</p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph TD
-  A[Discrete: 0, 1, 2, ...] --|Gaps|--&gt; D[Examples: Dice, Emails]
-  B[Continuous: Any real value] --|No gaps|--&gt; C[Examples: Height, Time]
-</pre>
+<section id="sec-ci-interpretation" class="slide level2 smaller">
+<h2>Confidence Intervals: The Concept</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>What is a Confidence Interval?</strong> A confidence interval provides a range of plausible values for a population parameter. <strong>95% Confidence Interval:</strong> If we repeated our sampling process many times, about <span class="math inline">\(95\%\)</span> of the intervals we construct would contain the <strong>true</strong> population parameter.</p>
+</div><div class="column" data-idth="60%">
+<div class="chart-container">
+<canvas id="ciConceptChart">
+</canvas>
 </div>
-<p></p></figure><p></p>
+<p><em>Click to generate new 95% confidence intervals</em></p>
+</div></div>
+</section>
+<section id="sec-ci-means" class="slide level2">
+<h2>Confidence Intervals for Population Means</h2>
+<div class="columns">
+<div class="column">
+<div class="summary-card smaller">
+<div style="font-weight: 600; color: #2563eb; margin-bottom: 8px;">
+<p><span style="font-size:1em;"> 🎯 When σ is Known:</span></p>
+</div>
+<div style="margin-bottom: 6px; font-size: 1em;">
+<p><span class="math display">\[\bar{x} \pm z^* \cdot \frac{\sigma}{\sqrt{n}}\]</span></p>
+</div>
+<div style="font-weight: 600; color: #f97316; margin-bottom: 4px;">
+<p>When <span class="math inline">\(\sigma\)</span> is Unknown (more common):</p>
+</div>
+<div style="margin-bottom: 6px; font-size: 1em;">
+<p><span class="math display">\[\bar{x} \pm t^* \cdot \frac{s}{\sqrt{n}}\]</span></p>
+</div>
+<div style="font-weight: 600; color: #059669; margin-top: 12px; margin-bottom: 4px;">
+<p><strong>Key Components:</strong></p>
+</div>
+<ul style="margin-top: 0; margin-bottom: 0.5em;">
+<li>
+<span class="math inline">\(\bar{x}\)</span>: sample mean
+</li>
+<li>
+<span class="math inline">\(t^*\)</span>: critical value (df = n-1)
+</li>
+<li>
+<span class="math inline">\(\frac{s}{\sqrt{n}}\)</span>: standard error
+</li>
+</ul>
+</div>
+</div><div class="column">
+<div class="summary-card smaller">
+<div style="font-weight: 600; color: #7c3aed; margin-bottom: 4px;">
+<p><strong>Common Confidence Levels:</strong></p>
+</div>
+<ul style="margin-top: 0; margin-bottom: 0.5em;">
+<li>
+<strong>90%:</strong> z* = 1.645, more precise
+</li>
+<li>
+<strong>95%:</strong> z* = 1.96, most common
+</li>
+<li>
+<strong>99%:</strong> z* = 2.576, more confident
+</li>
+</ul>
+<div style="font-weight: 600; color: #dc2626; margin-top: 12px; margin-bottom: 4px;">
+<p><strong>Conditions Required:</strong></p>
+</div>
+<div style="font-size: 0.9em; color: var(--neutral-dark);">
+<ul>
+<li>Random sampling<br></li>
+<li>Nearly normal population OR n ≥ 30<br></li>
+<li>Independent observations</li>
+</ul>
 </div>
 </div>
+</div></div>
+</section>
+<section id="interactive-ci-demo-confidence-intervals-for-means" class="slide level2 smaller">
+<h2>Interactive CI Demo: Confidence Intervals for Means</h2>
+<div class="interactive-demo smaller">
+<!-- ### Interactive CI Demo: Confidence Intervals for Means{.smaller} -->
+<div class="demo-controls">
+<p><label>Sample Size: <input type="number" id="ciMeanSampleSize" value="25" min="10" max="100" onchange="updateCIMeanDemo()"></label> <label>Confidence Level: <select id="ciMeanConfLevel" onchange="updateCIMeanDemo()"> <option value="90">90%</option> <option value="95" selected="">95%</option> <option value="99">99%</option> </select> </label> <label>Population μ: <input type="number" id="ciMeanPopMean" value="50" step="1" onchange="updateCIMeanDemo()"></label> <label>Population σ: <input type="number" id="ciMeanPopSD" value="10" min="1" step="1" onchange="updateCIMeanDemo()"></label> <button onclick="generateCIMean()">Generate New Sample &amp; CI</button> <button onclick="simulate100CIs()">Simulate 100 CIs</button></p>
 </div>
-<div class="fragment">
-<p><em>Today we focus on discrete random variables</em></p>
+<div class="demo-stats">
+<div id="ciMeanStats" style="margin-top: 8px; font-size: 0.9em; color: var(--neutral-medium);">
+<p><strong>Current CI:</strong> <span id="currentCI">Generate a sample to see CI</span><br> <strong>Captures μ?</strong> <span id="capturesMu">-</span> | <strong>Margin of Error:</strong> <span id="marginError">-</span></p>
+</div>
+</div>
+<div class="chart-container">
+<canvas id="ciMeanChart">
+</canvas>
+</div>
 </div>
 </section>
-<section id="examples-of-discrete-random-variables" class="slide level2">
-<h2>Examples of Discrete Random Variables</h2>
-<p><strong><span class="math inline">\(X\)</span> = Number of heads in 3 coin flips</strong> - Possible values: <span class="math inline">\(\{0, 1, 2, 3\}\)</span></p>
-<p><strong><span class="math inline">\(Y\)</span> = Number of customers in an hour</strong> - Possible values: <span class="math inline">\(\{0, 1, 2, 3, \ldots\}\)</span></p>
-<p><strong><span class="math inline">\(Z\)</span> = Score on a 10-question quiz</strong> - Possible values: <span class="math inline">\(\{0, 1, 2, \ldots, 10\}\)</span></p>
-<p><img data-src="img/coin_flips_heads.png" width="320"> <em>Figure: Example of a discrete random variable: number of heads in coin flips.</em></p>
-<div class="fragment">
-<p>Notice: All values are integers with gaps between them</p>
+<section id="sec-ci-proportions" class="slide level2">
+<h2>Confidence Intervals for Population Proportions</h2>
+<div class="columns">
+<div class="column">
+<div style="font-weight: 600; color: #2563eb; margin-bottom: 8px;">
+<p><span style="font-size:1em;"> 🎯 Formula:</span></p>
+</div>
+<div style="margin-bottom: 6px; font-size: 1em;">
+<p><span class="math display">\[\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]</span></p>
+</div>
+<div style="font-weight: 600; color: #f97316; margin-bottom: 4px;">
+<p><strong>Key Components:</strong></p>
+</div>
+<ul style="margin-top: 0; margin-bottom: 0.5em;">
+<li>
+<span class="math inline">\(\hat{p} = \frac{x}{n}\)</span>: sample proportion
+</li>
+<li>
+<span class="math inline">\(z^*\)</span>: critical value
+</li>
+<li>
+<span class="math inline">\(\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\)</span>: standard error
+</li>
+</ul>
+</div><div class="column">
+<div style="font-weight: 600; color: #059669; margin-top: 0px; margin-bottom: 4px;">
+<p><strong>Conditions Required:</strong></p>
+</div>
+<ul style="margin-top: 0; margin-bottom: 0.5em;">
+<li>
+Random sampling
+</li>
+<li>
+<span class="math inline">\(n\hat{p} \geq 10\)</span> and <span class="math inline">\(n(1-\hat{p}) \geq 10\)</span>
+</li>
+<li>
+Independent observations
+</li>
+<li>
+Population at least 10× sample size
+</li>
+</ul>
+<div style="font-weight: 600; color: #7c3aed; margin-top: 12px; margin-bottom: 4px;">
+<p>Conservative Approach:</p>
+</div>
+<div style="font-size: 0.9em; color: var(--neutral-dark);">
+<p>Use <span class="math inline">\(\hat{p} = 0.5\)</span> for planning when true proportion unknown (maximizes margin of error)</p>
+</div>
+</div></div>
+</section>
+<section id="interactive-ci-demo-confidence-intervals-for-proportions" class="slide level2 smaller">
+<h2>Interactive CI Demo: Confidence Intervals for Proportions</h2>
+<div class="interactive-demo smaller">
+<!-- ### Interactive CI Demo: Confidence Intervals for Proportions{.smaller} -->
+<div class="demo-controls">
+<p><label>Sample Size: <input type="number" id="ciPropSampleSize" value="100" min="30" max="500" onchange="updateCIPropDemo()"></label> <label>Confidence Level: <select id="ciPropConfLevel" onchange="updateCIPropDemo()"> <option value="90">90%</option> <option value="95" selected="">95%</option> <option value="99">99%</option> </select> </label> <label>Population p: <input type="number" id="ciPropPopProp" value="0.3" min="0.1" max="0.9" step="0.1" onchange="updateCIPropDemo()"></label> <button onclick="generateCIProp()">Generate New Sample &amp; CI</button> <button onclick="simulate100PropCIs()">Simulate 100 CIs</button></p>
+</div>
+<div class="demo-stats">
+<div id="ciPropStats" style="margin-top: 8px; font-size: 0.9em; color: var(--neutral-medium);">
+<p><strong>Current CI:</strong> <span id="currentPropCI">Generate a sample to see CI</span><br> <strong>Captures p?</strong> <span id="capturesProp">-</span> | <strong>Sample Proportion:</strong> <span id="sampleProp">-</span></p>
+</div>
+</div>
+<div class="chart-container">
+<canvas id="ciPropChart">
+</canvas>
+</div>
 </div>
 </section>
-<section id="probability-mass-function-pmf" class="slide level2">
-<h2>Probability Mass Function (PMF)</h2>
-<p>The <strong>probability mass function</strong> of a discrete random variable <span class="math inline">\(X\)</span> is:</p>
-<p><span class="math display">\[P(X = x) = \text{probability that } X \text{ takes the value } x\]</span></p>
-<p><strong>Properties of PMF</strong>: 1. <span class="math inline">\(P(X = x) \geq 0\)</span> for all <span class="math inline">\(x\)</span> 2. <span class="math inline">\(\sum_{\text{all } x} P(X = x) = 1\)</span></p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">%% Bar chart for PMF of a fair die
-%% (Use Quarto's mermaid bar chart for illustration)
-bar
-    title PMF of a Fair Die
-    x-axis 1 2 3 4 5 6
-    y-axis Probability
-    1: 0.1667
-    2: 0.1667
-    3: 0.1667
-    4: 0.1667
-    5: 0.1667
-    6: 0.1667
-</pre>
+<section id="practice-problem-1-ci-for-mean" class="slide level2 smaller scrollable">
+<h2>Practice Problem 1: CI for Mean</h2>
+<div class="practice-problem">
+<p>A random sample of 25 college students shows a mean daily screen time of 6.2 hours with a standard deviation of 1.8 hours. (a) Construct a 95% confidence interval for the mean daily screen time. (b) Interpret the confidence interval in context. (c) What would happen to the interval width if we used 99% confidence instead? <button class="show-solution smaller" onclick="toggleSolution('sol1')">Show Solution</button></p>
+<div class="proof solution" data-id="sol1">
+<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong><br>
+Given: <span class="math inline">\(n = 25\)</span>, <span class="math inline">\(\bar{x} = 6.2\)</span>, <span class="math inline">\(s = 1.8\)</span>, 95% confidence</p>
+<p>For <span class="math inline">\(df = 24\)</span>, <span class="math inline">\(t^* = 2.064\)</span></p>
+<p><span class="math inline">\(SE = \frac{s}{\sqrt{n}} = \frac{1.8}{\sqrt{25}} = 0.36\)</span></p>
+<p><span class="math inline">\(CI = 6.2 \pm 2.064 \times 0.36 = 6.2 \pm 0.743 = (5.46, 6.94)\)</span> hours</p>
+<p><strong>(b)</strong><br>
+We are 95% confident that the true mean daily screen time for all college students is between <span class="math inline">\(5.46\)</span> and <span class="math inline">\(6.94\)</span> hours.</p>
+<p><strong>(c)</strong><br>
+For 99% confidence, we use <span class="math inline">\(t^* = 2.797\)</span>, giving a wider interval: <span class="math inline">\((5.19, 7.21)\)</span> hours.</p>
 </div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Notation</strong>: Sometimes written as <span class="math inline">\(p(x)\)</span> or <span class="math inline">\(f(x)\)</span></p>
 </div>
 </section>
-<section id="pmf-example-fair-die" class="slide level2">
-<h2>PMF Example: Fair Die</h2>
-<p>Let <span class="math inline">\(X\)</span> = outcome of rolling a fair six-sided die</p>
-<p><span class="math display">\[P(X = x) = \begin{cases}
-\frac{1}{6} &amp; \text{if } x \in \{1, 2, 3, 4, 5, 6\} \\
-0 &amp; \text{otherwise}
-\end{cases}\]</span></p>
-<p><img data-src="img/pmf_fair_die.png" width="340"> <em>Figure: Bar chart of PMF for a fair die.</em></p>
-<div class="fragment">
-<p><strong>Verification</strong>: - All probabilities ≥ 0 ✓ - Sum = <span class="math inline">\(6 \times \frac{1}{6} = 1\)</span> ✓</p>
+<section id="practice-problem-2-ci-for-proportion" class="slide level2 smaller scrollable">
+<h2>Practice Problem 2: CI for Proportion</h2>
+<div class="practice-problem">
+<p>In a survey of 400 voters, 240 support a particular candidate. (a) Construct a 90% confidence interval for the true proportion of supporters. (b) Check if the conditions for inference are met. (c) How large a sample would be needed for a margin of error of 0.03 with 95% confidence? <button class="show-solution smaller" onclick="toggleSolution('sol2')">Show Solution</button></p>
+<div class="proof solution" data-id="sol2">
+<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong><br>
+<span class="math inline">\(\hat{p} = \frac{240}{400} = 0.6\)</span>, <span class="math inline">\(n = 400\)</span>, 90% confidence, <span class="math inline">\(z^* = 1.645\)</span></p>
+<p><span class="math inline">\(SE = \sqrt{\frac{0.6 \times 0.4}{400}} = \sqrt{\frac{0.24}{400}} = 0.0245\)</span></p>
+<p><span class="math inline">\(CI = 0.6 \pm 1.645 \times 0.0245 = 0.6 \pm 0.0403 = (0.560, 0.640)\)</span></p>
+<p><strong>(b)</strong></p>
+<p><strong>Check conditions:</strong> <span class="math inline">\(n\hat{p} = 400 \times 0.6 = 240 \geq 10\)</span> ✓<br>
+<span class="math inline">\(n(1-\hat{p}) = 400 \times 0.4 = 160 \geq 10\)</span> ✓</p>
+<p><strong>(c)</strong></p>
+<p><strong>Sample size calculation:</strong></p>
+<p><span class="math inline">\(n = \frac{(z^*)^2 \hat{p}(1-\hat{p})}{ME^2} =
+\frac{(1.96)^2 \times 0.6 \times 0.4}{(0.03)^2} =
+\frac{0.9216}{0.0009} = 1024\)</span> people</p>
+</div>
 </div>
 </section>
-<section id="pmf-example-two-coin-flips" class="slide level2">
-<h2>PMF Example: Two Coin Flips</h2>
-<p>Let <span class="math inline">\(X\)</span> = number of heads in two coin flips</p>
-<p>Sample space: <span class="math inline">\(\{HH, HT, TH, TT\}\)</span></p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">bar
-    title PMF: Number of Heads in 2 Coin Flips
-    x-axis 0 1 2
-    y-axis Probability
-    0: 0.25
-    1: 0.5
-    2: 0.25
-</pre>
+<section id="practice-problem-3-sample-size-planning" class="slide level2 smaller scrollable">
+<h2>Practice Problem 3: Sample Size Planning</h2>
+<div class="practice-problem">
+<p>A market researcher wants to estimate the average amount spent on coffee per week by college students. (a) How large a sample is needed for a 95% CI with margin of error $2 if <span class="math inline">\(\sigma\)</span> = $8? (b) If the budget only allows for 100 students, what confidence level gives a $2 margin of error? (c) What’s the trade-off between sample size, confidence level, and precision?</p>
+<button class="show-solution smaller" onclick="toggleSolution('sol3')">
+Show Solution
+</button>
+<div class="proof solution" data-id="sol3">
+<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong><br>
+<strong>For means:</strong><br>
+<span class="math inline">\(n = \frac{(z^*)^2 \sigma^2}{ME^2} =
+\frac{(1.96)^2 \times 8^2}{2^2} =
+\frac{245.86}{4} = 62\)</span> students</p>
+<p><strong>(b)</strong><br>
+With <span class="math inline">\(n = 100\)</span>:<br>
+<span class="math inline">\(ME = z^* \frac{\sigma}{\sqrt{n}} =
+z^* \frac{8}{\sqrt{100}} =
+0.8 z^*\)</span></p>
+<p>For <span class="math inline">\(ME = 2\)</span>:<br>
+<span class="math inline">\(z^* = \frac{2}{0.8} = 2.5\)</span>,<br>
+which corresponds to about 98.8% confidence</p>
+<p><strong>(c) Trade-offs:</strong></p>
+<ul>
+<li><p>Higher confidence <span class="math inline">\(\rightarrow\)</span> wider intervals (less precision)</p></li>
+<li><p>Larger sample <span class="math inline">\(\rightarrow\)</span> narrower intervals (more precision)</p></li>
+<li><p>Lower margin of error <span class="math inline">\(\rightarrow\)</span> need larger sample or lower confidence</p></li>
+</ul>
 </div>
-<p></p></figure><p></p>
+</div>
+</section>
+<section id="common-mistakes-and-misconceptions" class="slide level2 smaller">
+<h2>Common Mistakes and Misconceptions</h2>
+<div class="columns">
+<div class="column">
+<p><strong>Interpretation Errors</strong></p>
+<p>❌ Wrong: “<span class="math inline">\(95\%\)</span> of the data falls in this interval”</p>
+<p>✅ Right: “We’re <span class="math inline">\(95\%\)</span> confident the parameter is in this interval”</p>
+<p>❌ Wrong: “There’s a <span class="math inline">\(95\%\)</span> chance <span class="math inline">\(\mu\)</span> is in this interval”</p>
+<p>✅ Right: “<span class="math inline">\(95\%\)</span> of such intervals contain <span class="math inline">\(\mu\)</span>”</p>
+</div><div class="column">
+<p><strong>Technical Errors</strong></p>
+<ul>
+<li><p>Using <span class="math inline">\(z*\)</span> when σ is unknown and <span class="math inline">\(n &lt; 30\)</span></p></li>
+<li><p>Forgetting to check conditions</p></li>
+<li><p>Confusing standard error with standard deviation</p></li>
+<li><p>Using wrong degrees of freedom for t-distribution</p></li>
+</ul>
+<div class="key-insight">
+<p><strong>Remember:</strong> The confidence level refers to the <em>long-run</em> proportion of intervals that capture the parameter!</p>
+</div>
+</div></div>
+</section>
+<section id="sample-size-and-margin-of-error-relationships" class="slide level2 smaller">
+<h2>Sample Size and Margin of Error Relationships</h2>
+<div class="interactive-demo">
+<div class="demo-controls">
+<p><label>Population σ: <input type="number" id="sampleSizeSD" value="10" min="1" max="20" onchange="updateSampleSizeDemo()"></label> <label>Confidence Level: <select id="sampleSizeConfLevel" onchange="updateSampleSizeDemo()"> <option value="90">90%</option> <option value="95" selected="">95%</option> <option value="99">99%</option> </select> </label> <label>Desired Margin of Error: <input type="number" id="desiredME" value="2" min="0.5" max="5" step="0.5" onchange="updateSampleSizeDemo()"></label></p>
+</div>
+<div class="sample-size-container">
+<div class="chart-container">
+<canvas id="sampleSizeChart">
+</canvas>
+<div class="chart-title">
+Sample Size vs Margin of Error
 </div>
 </div>
 </div>
-<div class="fragment">
+<div id="sampleSizeStats" style="margin-top: 8px; font-size: 0.9em;">
+<p><strong>Required Sample Size:</strong> <span id="requiredN">-</span> | <strong>Resulting ME:</strong> <span id="resultingME">-</span></p>
+</div>
+</div>
+</section>
+<section id="types-of-sampling-methods" class="slide level2">
+<h2>Types of Sampling Methods</h2>
+<div class="comparison-table">
 <table class="caption-top">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 27%">
+<col style="width: 30%">
+<col style="width: 28%">
+</colgroup>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x\)</span></th>
-<th>Outcomes</th>
-<th><span class="math inline">\(P(X = x)\)</span></th>
+<th><strong>Method</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Advantages</strong></th>
+<th><strong>Disadvantages</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>TT</td>
-<td>1/4</td>
+<td><strong>Simple Random</strong></td>
+<td>Every individual has equal chance</td>
+<td>Unbiased, simple</td>
+<td>May not represent subgroups</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>HT, TH</td>
-<td>2/4 = 1/2</td>
+<td><strong>Stratified</strong></td>
+<td>Sample from each subgroup</td>
+<td>Ensures representation</td>
+<td>More complex</td>
 </tr>
 <tr class="odd">
-<td>2</td>
-<td>HH</td>
-<td>1/4</td>
+<td><strong>Cluster</strong></td>
+<td>Sample entire groups</td>
+<td>Cost-effective for spread populations</td>
+<td>Higher variability</td>
+</tr>
+<tr class="even">
+<td><strong>Systematic</strong></td>
+<td>Every k-th individual</td>
+<td>Simple to implement</td>
+<td>Can miss patterns</td>
+</tr>
+<tr class="odd">
+<td><strong>Convenience</strong></td>
+<td>Easily accessible individuals</td>
+<td>Quick and cheap</td>
+<td>Highly biased</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Verification</strong>: <span class="math inline">\(\frac{1}{4} + \frac{1}{2} + \frac{1}{4} = 1\)</span> ✓</p>
 </div>
-</section>
-<section id="cumulative-distribution-function-cdf" class="slide level2">
-<h2>Cumulative Distribution Function (CDF)</h2>
-<p>The <strong>cumulative distribution function</strong> of a random variable <span class="math inline">\(X\)</span> is:</p>
-<p><span class="math display">\[F(x) = P(X \leq x)\]</span></p>
-<p><strong>Properties of CDF</strong>: 1. <span class="math inline">\(F(x)\)</span> is non-decreasing 2. <span class="math inline">\(\lim_{x \to -\infty} F(x) = 0\)</span> 3. <span class="math inline">\(\lim_{x \to \infty} F(x) = 1\)</span> 4. <span class="math inline">\(F(x)\)</span> is right-continuous</p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">%% Step function for CDF of two coin flips
-%% (Mermaid doesn't support step plots, so use a line chart for illustration)
-line
-    title CDF: Number of Heads in 2 Coin Flips
-    x-axis -1 0 1 2 3
-    y-axis F(x)
-    -1: 0
-    0: 0.25
-    1: 0.75
-    2: 1
-    3: 1
-</pre>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p></p></figure><p></p>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Sampling Method Matters:</strong> Only probability sampling methods allow for valid statistical inference!</p>
 </div>
 </div>
 </div>
 </section>
-<section id="expected-value-mean" class="slide level2">
-<h2>Expected Value (Mean)</h2>
-<p>The <strong>expected value</strong> of a discrete random variable <span class="math inline">\(X\)</span> is:</p>
-<p><span class="math display">\[E[X] = \mu = \sum_{\text{all } x} x \cdot P(X = x)\]</span></p>
-<p><img data-src="img/expected_value_coins.png" width="320"> <em>Figure: Expected value as the long-run average of repeated coin flips.</em></p>
-</section>
-<section id="variance" class="slide level2">
-<h2>Variance</h2>
-<p>The <strong>variance</strong> of a random variable <span class="math inline">\(X\)</span> measures spread around the mean:</p>
-<p><span class="math display">\[\text{Var}(X) = \sigma^2 = E[(X - \mu)^2]\]</span></p>
-<p><img data-src="img/variance_spread.png" width="320"> <em>Figure: Variance measures the spread of possible values around the mean.</em></p>
-</section>
-<section id="bernoulli-distribution" class="slide level2">
-<h2>Bernoulli Distribution</h2>
-<p>A <strong>Bernoulli random variable</strong> models a single trial with two outcomes:</p>
+<section id="confidence-intervals-in-practice" class="slide level2 smaller">
+<h2>Confidence Intervals in Practice</h2>
+<div class="summary-card smaller">
+<div class="columns">
+<div class="column">
+<p><strong>When to Use Each Type</strong></p>
+<p><strong>Means</strong>: Continuous data (height, income, test scores)</p>
+<p><strong>Proportions</strong>: Categorical data (yes/no, success/failure)</p>
+<p><strong>Choosing Confidence Level</strong></p>
 <ul>
-<li>Success (1) with probability <span class="math inline">\(p\)</span></li>
-<li>Failure (0) with probability <span class="math inline">\(1-p\)</span></li>
+<li><p>90%: Quick estimates, less critical decisions</p></li>
+<li><p>95%: Standard in most research</p></li>
+<li><p>99%: High-stakes decisions, medical trials</p></li>
 </ul>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">bar
-    title Bernoulli PMF (p=0.7)
-    x-axis 0 1
-    y-axis Probability
-    0: 0.3
-    1: 0.7
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="binomial-distribution" class="slide level2">
-<h2>Binomial Distribution</h2>
-<p>A <strong>binomial random variable</strong> counts successes in <span class="math inline">\(n\)</span> independent Bernoulli trials, each with success probability <span class="math inline">\(p\)</span></p>
-<p><img data-src="img/binomial_trials.png" width="340"> <em>Figure: Binomial experiment: sequence of independent trials.</em></p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">bar
-    title Binomial PMF (n=5, p=0.5)
-    x-axis 0 1 2 3 4 5
-    y-axis Probability
-    0: 0.031
-    1: 0.156
-    2: 0.312
-    3: 0.312
-    4: 0.156
-    5: 0.031
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="geometric-distribution" class="slide level2">
-<h2>Geometric Distribution</h2>
-<p>A <strong>geometric random variable</strong> counts the number of trials until the first success</p>
-<p><img data-src="img/geometric_trials.png" width="320"> <em>Figure: Geometric experiment: waiting for the first success.</em></p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">bar
-    title Geometric PMF (p=0.3)
-    x-axis 1 2 3 4 5
-    y-axis Probability
-    1: 0.3
-    2: 0.21
-    3: 0.147
-    4: 0.1029
-    5: 0.072
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="poisson-distribution" class="slide level2">
-<h2>Poisson Distribution</h2>
-<p>A <strong>Poisson random variable</strong> counts events occurring in a fixed interval when events happen at a constant average rate</p>
-<p><img data-src="img/poisson_events.png" width="320"> <em>Figure: Poisson process: random events in time.</em></p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">bar
-    title Poisson PMF (λ=3)
-    x-axis 0 1 2 3 4 5 6
-    y-axis Probability
-    0: 0.0498
-    1: 0.1494
-    2: 0.2240
-    3: 0.2240
-    4: 0.1680
-    5: 0.1008
-    6: 0.0504
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="hypergeometric-distribution" class="slide level2">
-<h2>Hypergeometric Distribution</h2>
-<p>A <strong>hypergeometric random variable</strong> counts successes when sampling <strong>without replacement</strong> from a finite population</p>
-<p><img data-src="img/hypergeometric_sampling.png" width="340"> <em>Figure: Hypergeometric sampling: drawing balls from a box without replacement.</em></p>
-</section>
-<section id="law-of-large-numbers" class="slide level2">
-<h2>Law of Large Numbers</h2>
-<p>As <span class="math inline">\(n\)</span> increases, the sample mean approaches the expected value:</p>
-<p><span class="math display">\[\bar{X}_n = \frac{X_1 + X_2 + \cdots + X_n}{n} \to E[X]\]</span></p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">line
-    title Law of Large Numbers Simulation
-    x-axis 0 100 200 300 400 500 600 700 800 900 1000
-    y-axis Sample Mean
-    0: 0.0
-    100: 0.48
-    200: 0.51
-    300: 0.49
-    400: 0.50
-    500: 0.51
-    600: 0.50
-    700: 0.50
-    800: 0.49
-    900: 0.50
-    1000: 0.50
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p><em>Figure: As the number of trials increases, the sample mean converges to the expected value.</em></p>
-</section>
-<section id="simulationmonte-carlo" class="slide level2">
-<h2>Simulation/Monte Carlo</h2>
-<p><strong>Monte Carlo Method</strong>: Use computer simulation to estimate probabilities</p>
-<p><img data-src="img/monte_carlo_simulation.png" width="340"> <em>Figure: Monte Carlo simulation: repeated random experiments to estimate probabilities.</em></p>
-</section>
-<section id="practice-problem-1" class="slide level2">
-<h2>Practice Problem 1</h2>
-<p>A box contains 3 red balls and 2 blue balls. Two balls are drawn without replacement. Let <span class="math inline">\(X\)</span> = number of red balls drawn.</p>
-<p>Find the PMF of <span class="math inline">\(X\)</span>.</p>
-<div class="fragment">
-<p><strong>Solution</strong>: <span class="math inline">\(X\)</span> can be 0, 1, or 2</p>
-<p><span class="math inline">\(P(X = 0) = \frac{\binom{3}{0}\binom{2}{2}}{\binom{5}{2}} = \frac{1 \times 1}{10} = \frac{1}{10}\)</span></p>
-<p><span class="math inline">\(P(X = 1) = \frac{\binom{3}{1}\binom{2}{1}}{\binom{5}{2}} = \frac{3 \times 2}{10} = \frac{6}{10}\)</span></p>
-<p><span class="math inline">\(P(X = 2) = \frac{\binom{3}{2}\binom{2}{0}}{\binom{5}{2}} = \frac{3 \times 1}{10} = \frac{3}{10}\)</span></p>
-</div>
-</section>
-<section id="practice-problem-2" class="slide level2">
-<h2>Practice Problem 2</h2>
-<p>Using the red balls example from Problem 1, find:</p>
-<ol type="a">
-<li><span class="math inline">\(F(0.5)\)</span></li>
-<li><span class="math inline">\(F(1)\)</span><br>
-</li>
-<li><span class="math inline">\(P(X &gt; 1)\)</span></li>
-<li><span class="math inline">\(P(0.5 &lt; X \leq 1.5)\)</span></li>
-</ol>
-<div class="fragment">
-<p><strong>Solutions</strong>: a) <span class="math inline">\(F(0.5) = P(X \leq 0.5) = P(X = 0) = \frac{1}{10}\)</span> b) <span class="math inline">\(F(1) = P(X \leq 1) = P(X = 0) + P(X = 1) = \frac{1}{10} + \frac{6}{10} = \frac{7}{10}\)</span> c) <span class="math inline">\(P(X &gt; 1) = 1 - F(1) = 1 - \frac{7}{10} = \frac{3}{10}\)</span> d) <span class="math inline">\(P(0.5 &lt; X \leq 1.5) = F(1.5) - F(0.5) = \frac{7}{10} - \frac{1}{10} = \frac{6}{10}\)</span></p>
-</div>
-</section>
-<section id="practice-problem-3" class="slide level2">
-<h2>Practice Problem 3</h2>
-<p>Find the expected value for the red balls example (Problem 1).</p>
-<div class="fragment">
-<p><strong>Solution</strong>: <span class="math display">\[E[X] = 0 \cdot \frac{1}{10} + 1 \cdot \frac{6}{10} + 2 \cdot \frac{3}{10}\]</span></p>
-<p><span class="math display">\[= 0 + \frac{6}{10} + \frac{6}{10} = \frac{12}{10} = 1.2\]</span></p>
-<p>On average, we expect to draw 1.2 red balls</p>
-</div>
-</section>
-<section id="properties-of-expected-value" class="slide level2">
-<h2>Properties of Expected Value</h2>
-<p><strong>Linearity of Expectation</strong>: 1. <span class="math inline">\(E[c] = c\)</span> (constant) 2. <span class="math inline">\(E[cX] = c \cdot E[X]\)</span> (scaling) 3. <span class="math inline">\(E[X + Y] = E[X] + E[Y]\)</span> (additivity) 4. <span class="math inline">\(E[aX + bY + c] = aE[X] + bE[Y] + c\)</span></p>
-<div class="fragment">
-<p><strong>Important</strong>: Property 3 holds even if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are dependent!</p>
-</div>
-</section>
-<section id="expected-value-of-functions" class="slide level2">
-<h2>Expected Value of Functions</h2>
-<p>For a function <span class="math inline">\(g(X)\)</span> of a random variable <span class="math inline">\(X\)</span>:</p>
-<p><span class="math display">\[E[g(X)] = \sum_{\text{all } x} g(x) \cdot P(X = x)\]</span></p>
-<div class="fragment">
-<p><strong>Common example</strong>: <span class="math inline">\(g(X) = X^2\)</span></p>
-<p><span class="math display">\[E[X^2] = \sum_{\text{all } x} x^2 \cdot P(X = x)\]</span></p>
-<p><em>Note</em>: Generally <span class="math inline">\(E[g(X)] \neq g(E[X])\)</span></p>
-</div>
-</section>
-<section id="practice-problem-4" class="slide level2">
-<h2>Practice Problem 4</h2>
-<p>For the red balls example, find the variance and standard deviation.</p>
-<p>We found <span class="math inline">\(E[X] = 1.2\)</span>. First find <span class="math inline">\(E[X^2]\)</span>:</p>
-<div class="fragment">
-<p><span class="math display">\[E[X^2] = 0^2 \cdot \frac{1}{10} + 1^2 \cdot \frac{6}{10} + 2^2 \cdot \frac{3}{10}\]</span> <span class="math display">\[= 0 + \frac{6}{10} + \frac{12}{10} = \frac{18}{10} = 1.8\]</span></p>
-<p><span class="math display">\[\text{Var}(X) = 1.8 - (1.2)^2 = 1.8 - 1.44 = 0.36\]</span></p>
-<p><span class="math display">\[\sigma = \sqrt{0.36} = 0.6\]</span></p>
-</div>
-</section>
-<section id="practice-problem-5" class="slide level2">
-<h2>Practice Problem 5</h2>
-<p>For the quiz example:</p>
-<ol type="a">
-<li>What’s the expected number of correct answers?</li>
-<li>What’s the standard deviation?</li>
-<li>What’s the probability of getting at least 4 correct?</li>
-</ol>
-<div class="fragment">
-<p><strong>Solutions</strong>: a) <span class="math inline">\(E[X] = np = 10 \times 0.25 = 2.5\)</span> b) <span class="math inline">\(\sigma = \sqrt{np(1-p)} = \sqrt{10 \times 0.25 \times 0.75} = \sqrt{1.875} \approx 1.37\)</span> c) <span class="math inline">\(P(X \geq 4) = 1 - P(X \leq 3) = 1 - [P(X=0) + P(X=1) + P(X=2) + P(X=3)]\)</span> Use binomial table or calculator: <span class="math inline">\(P(X \geq 4) \approx 0.224\)</span></p>
-</div>
-</section>
-<section id="practice-problem-6" class="slide level2">
-<h2>Practice Problem 6</h2>
-<p>A quality control inspector tests items until finding the first defective one. If 5% of items are defective:</p>
-<ol type="a">
-<li>What’s the probability the first defective item is the 10th one tested?</li>
-<li>What’s the expected number of items tested?</li>
-<li>What’s the probability of testing more than 20 items?</li>
-</ol>
-<div class="fragment">
-<p><strong>Solutions</strong>: a) <span class="math inline">\(P(X = 10) = (0.95)^9 \times 0.05 \approx 0.0315\)</span> b) <span class="math inline">\(E[X] = \frac{1}{0.05} = 20\)</span> items c) <span class="math inline">\(P(X &gt; 20) = (0.95)^{20} \approx 0.358\)</span></p>
-</div>
-</section>
-<section id="practice-problem-7" class="slide level2">
-<h2>Practice Problem 7</h2>
-<p>For the call center example:</p>
-<ol type="a">
-<li>What’s the probability of no calls in a minute?</li>
-<li>What’s the probability of at most 2 calls?</li>
-<li>In a 2-minute period, what’s the expected number of calls?</li>
-</ol>
-<div class="fragment">
-<p><strong>Solutions</strong>: a) <span class="math inline">\(P(X = 0) = \frac{3^0 e^{-3}}{0!} = e^{-3} \approx 0.0498\)</span> b) <span class="math inline">\(P(X \leq 2) = P(X=0) + P(X=1) + P(X=2) \approx 0.0498 + 0.1494 + 0.2240 = 0.423\)</span> c) For 2 minutes: <span class="math inline">\(Y \sim \text{Poisson}(6)\)</span>, so <span class="math inline">\(E[Y] = 6\)</span> calls</p>
-</div>
-</section>
-<section id="practice-problem-8" class="slide level2">
-<h2>Practice Problem 8</h2>
-<p>For the light bulb example:</p>
-<ol type="a">
-<li>What’s the expected number of defective bulbs in the sample?</li>
-<li>What’s the probability of no defective bulbs?</li>
-<li>What’s the probability of at least 2 defective bulbs?</li>
-</ol>
-<div class="fragment">
-<p><strong>Solutions</strong>: a) <span class="math inline">\(E[X] = 5 \times \frac{3}{20} = 0.75\)</span> bulbs b) <span class="math inline">\(P(X = 0) = \frac{\binom{3}{0}\binom{17}{5}}{\binom{20}{5}} = \frac{6188}{15504} \approx 0.399\)</span> c) <span class="math inline">\(P(X \geq 2) = 1 - P(X = 0) - P(X = 1) \approx 1 - 0.399 - 0.461 = 0.140\)</span></p>
-</div>
-</section>
-<section id="practice-problem-9" class="slide level2">
-<h2>Practice Problem 9</h2>
-<p>A website receives an average of 2 orders per minute. Assuming orders follow a Poisson process:</p>
-<ol type="a">
-<li>What’s the probability of exactly 3 orders in a minute?</li>
-<li>What’s the probability of no orders in 30 seconds?</li>
-<li>What’s the probability of more than 5 orders in 2 minutes?</li>
-</ol>
-<div class="fragment">
-<p><strong>Solutions</strong>: a) <span class="math inline">\(X \sim \text{Poisson}(2)\)</span>: <span class="math inline">\(P(X = 3) = \frac{2^3 e^{-2}}{3!} \approx 0.180\)</span> b) <span class="math inline">\(Y \sim \text{Poisson}(1)\)</span>: <span class="math inline">\(P(Y = 0) = e^{-1} \approx 0.368\)</span> c) <span class="math inline">\(Z \sim \text{Poisson}(4)\)</span>: <span class="math inline">\(P(Z &gt; 5) = 1 - P(Z \leq 5) \approx 0.215\)</span></p>
-</div>
-</section>
-<section id="central-limit-theorem-preview" class="slide level2">
-<h2>Central Limit Theorem Preview</h2>
-<p>For large <span class="math inline">\(n\)</span>, many discrete distributions approach normal:</p>
-<p><strong>Binomial</strong>: <span class="math inline">\(X \sim \text{Binomial}(n, p)\)</span> → <span class="math inline">\(N(np, np(1-p))\)</span> when <span class="math inline">\(np &gt; 5\)</span> and <span class="math inline">\(n(1-p) &gt; 5\)</span></p>
-<p><strong>Poisson</strong>: <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span> → <span class="math inline">\(N(\lambda, \lambda)\)</span> when <span class="math inline">\(\lambda &gt; 10\)</span></p>
-<div class="fragment">
-<p><em>This connection will be crucial for hypothesis testing and confidence intervals</em></p>
-</div>
-</section>
-<section id="common-mistakes" class="slide level2">
-<h2>Common Mistakes</h2>
-<ol type="1">
-<li><strong>Wrong distribution choice</strong>: Check assumptions carefully</li>
-<li><strong>Parameter confusion</strong>: Is it <span class="math inline">\(n\)</span>, <span class="math inline">\(p\)</span>, or <span class="math inline">\(\lambda\)</span>?</li>
-<li><strong>Inclusion errors</strong>: “At least 3” vs “More than 3”</li>
-<li><strong>Independence assumption</strong>: Sampling with/without replacement</li>
-<li><strong>Technology errors</strong>: pdf vs cdf functions</li>
-</ol>
-</section>
-<section id="practice-problem-10" class="slide level2">
-<h2>Practice Problem 10</h2>
-<p>A multiple choice test has 20 questions with 5 options each. A student knows the answers to 12 questions and guesses on the rest.</p>
-<ol type="a">
-<li>What’s the expected score?</li>
-<li>What’s the probability of scoring at least 15?</li>
-<li>What’s the standard deviation of the score?</li>
-</ol>
-<div class="fragment">
-<p><strong>Solution</strong>: Let <span class="math inline">\(X\)</span> = known correct, <span class="math inline">\(Y\)</span> = guessed correct - <span class="math inline">\(X = 12\)</span> (deterministic) - <span class="math inline">\(Y \sim \text{Binomial}(8, 0.2)\)</span> - Total score <span class="math inline">\(S = X + Y = 12 + Y\)</span></p>
-<ol type="a">
-<li><span class="math inline">\(E[S] = 12 + E[Y] = 12 + 8(0.2) = 13.6\)</span></li>
-<li><span class="math inline">\(P(S \geq 15) = P(Y \geq 3) \approx 0.203\)</span><br>
-</li>
-<li><span class="math inline">\(\sigma_S = \sigma_Y = \sqrt{8(0.2)(0.8)} = \sqrt{1.28} \approx 1.13\)</span></li>
-</ol>
-</div>
-</section>
-<section id="extensions-and-advanced-topics" class="slide level2">
-<h2>Extensions and Advanced Topics</h2>
-<p><strong>Negative Binomial</strong>: Number of trials to get <span class="math inline">\(r\)</span> successes</p>
-<p><strong>Multinomial</strong>: Extension of binomial to more than 2 categories</p>
-<p><strong>Compound Distributions</strong>: Sums of random variables</p>
-<p><strong>Generating Functions</strong>: Advanced technique for deriving properties</p>
-<div class="fragment">
-<p><em>These topics appear in advanced probability courses</em></p>
-</div>
-</section>
-<section id="historical-context" class="slide level2">
-<h2>Historical Context</h2>
-<p><strong>Jacob Bernoulli</strong> (1654-1705): Bernoulli trials and law of large numbers</p>
-<p><strong>Siméon Denis Poisson</strong> (1781-1840): Poisson distribution and approximation</p>
-<p><strong>Abraham de Moivre</strong> (1667-1754): Normal approximation to binomial</p>
-<p><strong>Modern Applications</strong>: Computer science, machine learning, bioinformatics</p>
-</section>
-<section id="common-student-questions" class="slide level2">
-<h2>Common Student Questions</h2>
-<p><strong>Q</strong>: “How do I choose between binomial and hypergeometric?” <strong>A</strong>: Use binomial for sampling with replacement, hypergeometric without</p>
-<p><strong>Q</strong>: “When can I use Poisson approximation?” <strong>A</strong>: When <span class="math inline">\(n\)</span> is large, <span class="math inline">\(p\)</span> is small, and <span class="math inline">\(np\)</span> is moderate</p>
-<p><strong>Q</strong>: “Why does Poisson have mean = variance?” <strong>A</strong>: Mathematical property arising from its derivation as a limit</p>
-<p><strong>Q</strong>: “How do I know if trials are independent?” <strong>A</strong>: Check if outcome of one trial affects others</p>
-</section>
-<section id="key-formulas-summary" class="slide level2">
-<h2>Key Formulas Summary</h2>
+</div><div class="column">
+<p><strong>Real-World Applications</strong></p>
 <ul>
-<li><strong>Expected Value</strong>: <span class="math inline">\(E[X] = \sum x \cdot P(X = x)\)</span></li>
-<li><strong>Variance</strong>: <span class="math inline">\(\text{Var}(X) = E[X^2] - (E[X])^2\)</span></li>
-<li><strong>Binomial</strong>: <span class="math inline">\(P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\)</span></li>
-<li><strong>Geometric</strong>: <span class="math inline">\(P(X = k) = (1-p)^{k-1} p\)</span></li>
-<li><strong>Poisson</strong>: <span class="math inline">\(P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}\)</span></li>
+<li><p>Political polls: Proportion confidence intervals</p></li>
+<li><p>Quality control: Mean confidence intervals</p></li>
+<li><p>Medical research: Both types with high confidence</p></li>
+<li><p>Business analytics: Varies by decision importance</p></li>
 </ul>
+<p><strong>Communication Tips</strong></p>
+<ul>
+<li><p>Always include the confidence level</p></li>
+<li><p>State what the interval estimates</p></li>
+<li><p>Acknowledge the uncertainty</p></li>
+<li><p>Consider practical significance</p></li>
+</ul>
+</div></div>
+</div>
 </section>
-<section id="looking-ahead" class="slide level2">
+<section id="key-takeaways" class="slide level2 smaller">
+<h2>Key Takeaways</h2>
+<div class="summary-card smaller key-takeaways">
+<div class="columns">
+<div class="column">
+<p><strong>Main Concepts</strong></p>
+<ul>
+<li><p>Sampling distributions follow predictable patterns</p></li>
+<li><p>Confidence intervals quantify uncertainty</p></li>
+<li><p>Central Limit Theorem makes normal-based inference possible</p></li>
+<li><p>Sample size directly affects precision</p></li>
+</ul>
+</div><div class="column">
+<p><strong>Practical Guidelines</strong> Choose appropriate methods based on:</p>
+<ul>
+<li><p>Data type (continuous vs categorical)</p></li>
+<li><p>Sample size (use t when σ unknown)</p></li>
+<li><p>Desired precision (affects sample size)</p></li>
+<li><p>Confidence level (affects interval width)</p></li>
+</ul>
+<p><strong>Key Principle</strong> Statistical inference allows us to make informed decisions about populations using sample data, while properly accounting for uncertainty.</p>
+</div></div>
+</div>
+</section>
+<section id="looking-ahead" class="slide level2 smaller">
 <h2>Looking Ahead</h2>
-<p><strong>Next lecture</strong>: Continuous Random Variables - Probability density functions (PDFs) - Normal distribution - Exponential distribution<br>
-- Central Limit Theorem applications</p>
-<p><strong>Connection</strong>: Discrete distributions often approximate continuous ones, and vice versa</p>
-</section>
-<section id="study-tips" class="slide level2">
-<h2>Study Tips</h2>
-<ol type="1">
-<li><strong>Master the basics</strong>: PMF, CDF, expectation, variance</li>
-<li><strong>Learn distribution characteristics</strong>: When to use each one</li>
-<li><strong>Practice with technology</strong>: Get comfortable with calculators/software</li>
-<li><strong>Work real problems</strong>: Apply distributions to actual scenarios</li>
-<li><strong>Check your intuition</strong>: Do answers make practical sense?</li>
-</ol>
-</section>
-<section id="final-thoughts" class="slide level2">
-<h2>Final Thoughts</h2>
-<p>Discrete random variables are fundamental to: - Modeling real-world phenomena - Making statistical inferences - Understanding probability theory - Building more complex models</p>
-<div class="fragment">
-<p><strong>Key insight</strong>: Random variables transform unpredictable outcomes into predictable patterns</p>
+<div class="summary-card smaller">
+<p><em>Next Lecture: Hypothesis Testing</em></p>
+<p>Topics we’ll cover:</p>
+<ul>
+<li><p>Null and alternative hypotheses</p></li>
+<li><p>Test statistics and p-values</p></li>
+<li><p>Type I and Type II errors</p></li>
+</ul>
+<div class="connection">
+<p>Connection: Confidence intervals and hypothesis tests are two sides of the same statistical inference coin</p>
+</div>
 </div>
 </section>
 <section id="questions" class="slide level2 center">
 <h2>Questions?</h2>
-<p><strong>Office Hours</strong>: [Your office hours] <strong>Email</strong>: [Your email]<br>
-<strong>Next Class</strong>: Continuous Random Variables</p>
-<p><em>Remember: Homework due [date]</em></p>
+<ul>
+<li><p>Office Hours: 11AM on Thursday (link on Canvas)</p></li>
+<li><p>Email: nmathlouthi@ucsb.edu</p></li>
+<li><p>Next Class: Hypothesis Testing and Statistical Significance</p></li>
+</ul>
 </section>
-<section id="bonus-law-of-large-numbers" class="slide level2">
-<h2>Bonus: Law of Large Numbers</h2>
-<p>As <span class="math inline">\(n\)</span> increases, the sample mean approaches the expected value:</p>
-<p><span class="math display">\[\bar{X}_n = \frac{X_1 + X_2 + \cdots + X_n}{n} \to E[X]\]</span></p>
-<p><strong>Example</strong>: Flip a coin 1000 times - proportion of heads will be close to 0.5</p>
-<p><em>This justifies our interpretation of expected value as “long-run average”</em></p>
-</section>
-<section id="bonus-simulation" class="slide level2">
-<h2>Bonus: Simulation</h2>
-<p><strong>Monte Carlo Method</strong>: Use computer simulation to estimate probabilities</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Simulate 10,000 binomial random variables</span></span>
-<span id="cb1-2"><a></a>X <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">10000</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.3</span>)</span>
-<span id="cb1-3"><a></a><span class="fu">mean</span>(X)  <span class="co"># Should be close to 10*0.3 = 3</span></span>
-<span id="cb1-4"><a></a><span class="fu">var</span>(X)   <span class="co"># Should be close to 10*0.3*0.7 = 2.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>Simulation helps verify theoretical results and solve complex problems</em></p>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<div style="background: #f8fafc; border-radius: 10px; border: 1px solid #e0e7ef; padding: 16px 20px; margin: 8px 0;">
+  <ul style="list-style: none; padding: 0; margin: 0;">
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #2563eb; border-radius: 50%;"></span>
+      <strong>Read</strong> <a href="../../../files/Book/os4_for_screen_reader.pdf" style="color: #2563eb; text-decoration: none;">OpenIntro Statistics</a> <em style="color: #666;">Chapter 5 sections 5.1-5.3</em>
+    </li>
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #f97316; border-radius: 50%;"></span>
+      <a href="https://www.khanacademy.org/math/statistics-probability/confidence-intervals-one-sample" style="color: #2563eb; text-decoration: none;">Khan Academy - Confidence Intervals</a>
+    </li>
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #059669; border-radius: 50%;"></span>
+      <a href="https://seeing-theory.brown.edu/frequentist-inference/" style="color: #2563eb; text-decoration: none;">Seeing Theory - Frequentist Inference</a>
+    </li>
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #7c3aed; border-radius: 50%;"></span>
+      <a href="https://en.wikipedia.org/wiki/Confidence_interval" style="color: #2563eb; text-decoration: none;">Confidence Intervals - Wikipedia</a>
+    </li>
+    <li style="margin-bottom: 0; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #dc2626; border-radius: 50%;"></span>
+      <a href="https://www.statology.org/confidence-interval-vs-prediction-interval/" style="color: #2563eb; text-decoration: none;">Understanding Different Types of Intervals</a>
+    </li>
+  </ul>
+</div>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../../img/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Understanding Data - Discrete Random Variables © 2025 Narjes Mathlouthi</p>
+<p>Understanding Data – Sampling and Confidence Intervals © 2025 Narjes Mathlouthi</p>
 </div>
 </div></div>
 

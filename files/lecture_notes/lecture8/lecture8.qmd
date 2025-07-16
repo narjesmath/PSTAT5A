@@ -8,7 +8,7 @@ format:
   revealjs:
     logo: /img/logo.png
     theme: default
-    css: /files/lecture_notes/lecture8/new-style.css
+    css: new-style.css
     slide-number: true
     chalkboard: true
     preview-links: auto
@@ -24,15 +24,18 @@ format:
     pdf-separate-fragments: false
     lang: en
     auto-stretch: true
-
+    includes:
+      after_body: home-button.html
 ---
+
 
 ```{=html}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-<script src="/files/lecture_notes/lecture8/lecture-interactive.js"></script>
+
+<script src="lecture-interactive.js"></script>
 ```
 
 ## Welcome to Lecture 9 {.title-slide .center}
@@ -255,9 +258,7 @@ $$E[X] = \mu = \int_{-\infty}^{\infty} x \cdot f(x) \, dx$$
 
 **Variance:**
 
-$\text{Var}(X) = \sigma^2 =$
- $\int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx =$
- $E[X^2] - (E[X])^2$
+$$\text{Var}(X) = \sigma^2 = \int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx = E[X^2] - (E[X])^2$$
 
 **Where:**
 
@@ -357,7 +358,7 @@ $$Z = \frac{X - \mu}{\sigma}$$
 
 ---
 
-<!--  
+ 
 ## Practice Problem 1: Uniform Distribution {.smaller .scrollable}
 
 ::: {.practice-problem}
@@ -430,8 +431,8 @@ $$f(x) = 0.2e^{-0.2x} \text{ for } x \geq 0$$
 
 ## Central Limit Theorem {.smaller}
 
-::: {.interactive-demo}
-
+::: {.interactive-demo .smaller}
+### Interactive CLT Demo: Sample Means Approach Normal {.smaller}
 
 ::: {.demo-controls}
 <select id="cltPopulation" onchange="updateCLTDemo()">
@@ -591,7 +592,6 @@ Choose distributions based on the data characteristics:
 </div>
 
 ---
--->
 
 ## Questions? {.center}
 
@@ -629,3 +629,11 @@ Choose distributions based on the data characteristics:
     </li>
   </ul>
 </div>
+
+---
+
+## Back to Main Page {.center}
+
+```{=html}
+<a href="../../index.html" class="main-page-btn">🏠 Back to Main Page</a>
+```

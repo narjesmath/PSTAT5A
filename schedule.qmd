@@ -336,7 +336,7 @@ Quiz 1 (Weeks 1–2)
 [lab 4 Solutions](/files/labs/lab4/lab4_sln.qmd)
 :::
 ::: {.worksheet}
-<!-- [Worksheet 4](/files/worksheets/worksheet4.qmd) -->
+[Worksheet 4](/files/worksheets/worksheet4.qmd)
 
 <!-- [Worksheet 4](/files/worksheets/worksheet4_sln.qmd) -->
 
