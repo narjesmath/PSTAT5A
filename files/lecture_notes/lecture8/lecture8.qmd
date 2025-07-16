@@ -359,7 +359,7 @@ $$Z = \frac{X - \mu}{\sigma}$$
 ---
 
  
-## Practice Problem 1: Uniform Distribution {.smaller .scrollable}
+<!-- ## Practice Problem 1: Uniform Distribution {.smaller .scrollable}
 
 ::: {.practice-problem}
 A bus arrives uniformly between 10:00 AM and 10:20 AM. Let $X$ = arrival time in minutes after 10:00 AM.
@@ -569,7 +569,7 @@ Choose distributions based on the data characteristics:
 
 :::
 :::
-</div>
+</div> -->
 
 ---
 

@@ -1319,25 +1319,40 @@ select:focus {
   padding: 6px 12px;
 }
 
-/* ==========================================================================
-   Dark Mode Support (optional)
-   ========================================================================== */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --neutral-light: #1e293b;
-    --neutral-dark: #f1f5f9;
-    --border-color: #374151;
+/* Improved mobile responsiveness and color consistency */
+@media (max-width: 600px) {
+  .columns, .columns > .column, .columns > .column.smaller {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
-  
-  .summary-card,
-  .interactive-demo,
-  .chart-container {
-    background: #1e293b;
-    color: #f1f5f9;
+  .summary-card, .dist-card, .type-card, .interactive-demo {
+    padding: 10px 4vw !important;
+    margin: 8px 0 !important;
+    box-sizing: border-box;
   }
-  
-  .demo-controls {
-    background: #374151;
+  .chart-container, canvas {
+    max-width: 100vw !important;
+    width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box;
+  }
+  .main-page-btn, .home-fab, .back-to-main-fab {
+    left: 8px !important;
+    right: 8px !important;
+    bottom: 8px !important;
+    top: 8px !important;
+    font-size: 1.1em !important;
+    padding: 0.2em 0.6em !important;
+  }
+  .reveal .slides section {
+    padding: 8px !important;
+    margin: 0 !important;
+  }
+  .reveal h1, .reveal h2, .reveal h3 {
+    font-size: 1.1em !important;
   }
 }
 
