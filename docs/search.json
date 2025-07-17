@@ -7878,8 +7878,8 @@
     "objectID": "files/lecture_notes/lecture10/lecture10.html#todays-learning-objectives",
     "href": "files/lecture_notes/lecture10/lecture10.html#todays-learning-objectives",
     "title": "From Random Variables to Sampling & Confidence Intervals",
-    "section": "",
-    "text": "By the end of this session, you will be able to:\n\nDefine what a random variable is\nDistinguish between different types of random variables\nIdentify examples of random variables in your field of study\nConnect probability concepts to real-world applications"
+    "section": "Today’s Learning Objectives",
+    "text": "Today’s Learning Objectives\nBy the end of this session, you will be able to:\n\nDefine what a random variable is\nDistinguish between different types of random variables\nIdentify examples of random variables in your field of study\nConnect probability concepts to real-world applications"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#what-is-a-random-variable",
@@ -7900,7 +7900,7 @@
     "href": "files/lecture_notes/lecture10/lecture10.html#activity-your-research-field",
     "title": "From Random Variables to Sampling & Confidence Intervals",
     "section": "Activity: Your Research Field",
-    "text": "Activity: Your Research Field\n\n\n\n\n\n\n\n\nThink About Your Major/Research Area\n\n\n\nTake 2 minutes to brainstorm:\n\nWhat random phenomena occur in your field?\nHow might you assign numbers to these outcomes?\nWhat questions could you answer with this data?\n\n\n\n\n\n\n\n\n\n\n\nExamples by Field\n\n\n\n\nPsychology: Reaction times, survey responses\nBiology: Species counts, gene expression levels\nEconomics: Stock prices, unemployment rates\nEngineering: System failures, signal strength"
+    "text": "Activity: Your Research Field\n\n\n\n\n\n\n\n\nThink About Your Major/Research Area\n\n\nTake 2 minutes to brainstorm:\n\nWhat random phenomena occur in your field?\nHow might you assign numbers to these outcomes?\nWhat questions could you answer with this data?\n\n\n\n\n\n\n\n\n\n\n\n\nExamples by Field\n\n\n\nPsychology: Reaction times, survey responses\nBiology: Species counts, gene expression levels\nEconomics: Stock prices, unemployment rates\nEngineering: System failures, signal strength"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#discrete-random-variables",
@@ -7942,7 +7942,7 @@
     "href": "files/lecture_notes/lecture10/lecture10.html#common-discrete-distributions",
     "title": "From Random Variables to Sampling & Confidence Intervals",
     "section": "Common Discrete Distributions",
-    "text": "Common Discrete Distributions\n\nBinomial Distribution - Characteristics\n\n\n\n\nFixed number of trials (n)\nEach trial has two outcomes\nConstant probability of success\nTrials are independent\n\nExample: Number of successful research grants out of 10 applications"
+    "text": "Common Discrete Distributions\nBinomial Distribution - Characteristics\n\n\n\n\nFixed number of trials (n)\nEach trial has two outcomes\nConstant probability of success\nTrials are independent\n\nExample: Number of successful research grants out of 10 applications"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#poisson-distribution---characteristics",
@@ -7956,7 +7956,7 @@
     "href": "files/lecture_notes/lecture10/lecture10.html#common-continuous-distributions",
     "title": "From Random Variables to Sampling & Confidence Intervals",
     "section": "Common Continuous Distributions",
-    "text": "Common Continuous Distributions\n\nNormal Distribution - Characteristics\n\n\n\nBell-shaped curve\nSymmetric around mean\nParameters: \\(\\mu\\) (mean), \\(\\sigma\\) (standard deviation)\nMany natural phenomena follow this pattern\n\nExample: Heights, test scores, measurement errors"
+    "text": "Common Continuous Distributions\nNormal Distribution - Characteristics\n\n\n\nBell-shaped curve\nSymmetric around mean\nParameters: \\(\\mu\\) (mean), \\(\\sigma\\) (standard deviation)\nMany natural phenomena follow this pattern\n\nExample: Heights, test scores, measurement errors"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#exponential-distribution---characteristics",
@@ -7970,7 +7970,7 @@
     "href": "files/lecture_notes/lecture10/lecture10.html#interactive-activity-choose-your-distribution",
     "title": "From Random Variables to Sampling & Confidence Intervals",
     "section": "Interactive Activity: Choose Your Distribution",
-    "text": "Interactive Activity: Choose Your Distribution\n\n\n\n\n\n\nGroup Discussion (5 minutes)\n\n\n\nFor each scenario, identify: 1. Is the random variable discrete or continuous? 2. What distribution might it follow? 3. What are the parameters?\nScenarios: - Number of students attending office hours per week - Time spent studying for an exam - Number of typos in a research paper - Body temperature of patients in a hospital"
+    "text": "Interactive Activity: Choose Your Distribution\n\n\n\n\n\n\nGroup Discussion (5 minutes)\n\n\nFor each scenario, identify: 1. Is the random variable discrete or continuous? 2. What distribution might it follow? 3. What are the parameters?\nScenarios: - Number of students attending office hours per week - Time spent studying for an exam - Number of typos in a research paper - Body temperature of patients in a hospital"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#application-research-design",
@@ -8012,7 +8012,7 @@
     "href": "files/lecture_notes/lecture10/lecture10.html#confidence-interval-interpretation",
     "title": "From Random Variables to Sampling & Confidence Intervals",
     "section": "Confidence Interval Interpretation",
-    "text": "Confidence Interval Interpretation\n\n\n\n\n\n\nCommon Misconceptions\n\n\n\n❌ WRONG: “There’s a 95% probability that μ is in this specific interval”\n✅ CORRECT: “If we repeated this process many times, 95% of the intervals we construct would contain the true μ”\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nThe interval is random, not the population parameter\nBefore collecting data: 95% chance our method will work\nAfter collecting data: The interval either contains μ or it doesn’t\nConfidence level = Long-run success rate of the method"
+    "text": "Confidence Interval Interpretation\n\n\n\n\n\n\nCommon Misconceptions\n\n\n❌ WRONG: “There’s a 95% probability that μ is in this specific interval”\n✅ CORRECT: “If we repeated this process many times, 95% of the intervals we construct would contain the true μ”\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe interval is random, not the population parameter\nBefore collecting data: 95% chance our method will work\nAfter collecting data: The interval either contains μ or it doesn’t\nConfidence level = Long-run success rate of the method"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#factors-affecting-confidence-interval-width",
@@ -8033,7 +8033,7 @@
     "href": "files/lecture_notes/lecture10/lecture10.html#next-steps",
     "title": "From Random Variables to Sampling & Confidence Intervals",
     "section": "Next Steps",
-    "text": "Next Steps\n\n\n\n\n\n\nFor Your Research/Interests\n\n\n\n\nIdentify random variables in your field\nThink about appropriate distributions\nConsider data collection methods\nPlan statistical analyses\nConnect theory to practice"
+    "text": "Next Steps\n\n\n\n\n\n\nFor Your Research/Interests\n\n\n\nIdentify random variables in your field\nThink about appropriate distributions\nConsider data collection methods\nPlan statistical analyses\nConnect theory to practice"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#questions-and-discussion",
