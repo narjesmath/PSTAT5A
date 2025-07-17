@@ -416,7 +416,7 @@ Simulations
 :::
 
 ::: {.resource-title}
-[**StatKey: Probability Simulations**](https://www.lock5stat.com/statkey/){target="_blank"}
+[**StatKey: Probability Simulations**](https://www.lock5stat.com/StatKey//bootstrap_1_quant/bootstrap_1_quant.html){target="_blank"}
 :::
 
 ::: {.resource-description}
@@ -830,16 +830,567 @@ Extended Learning
 :::
 :::
 
+---
+title: "Week 4: Continuous Random Variables & Confidence Intervals"
+subtitle: "Course Resources and Learning Materials"
+format:
+  html:
+    toc: true
+    toc-location: left
+    theme: cosmo
+    css: /theme/styles.css
+    code-fold: false
+    code-tools: false
+    smooth-scroll: true
+    page-layout: full
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 200px
+execute:
+  echo: false
+  warning: false
+---
+
+## Week 4: Continuous Random Variables & Intro to Confidence Intervals {.panel-tabset}
+
+::: {.week-header}
+## From Discrete to Continuous: Understanding Density and Intervals
+This week transitions from discrete to continuous random variables, introducing probability density functions, common continuous distributions, and the foundations of statistical inference through confidence intervals. You'll learn how the Central Limit Theorem enables us to make probabilistic statements about population parameters.
+:::
+
+### 📚 Core Materials
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Required Reading
+:::
+
+::: {.resource-title}
+[**OpenIntro Statistics**, Chapter 4](/files/Book/os4_for_screen_reader.pdf){target="_blank"}
+:::
+
+::: {.resource-description}
+Essential coverage of continuous random variables, probability density functions, normal distribution, and Central Limit Theorem. Foundation for understanding statistical inference.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📖 PDF • ⏱️ 3-4 hours • 🎯 Intermediate
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Required Reading
+:::
+
+::: {.resource-title}
+[**OpenIntro Statistics**, Chapter 5 sections 5.1-5.2](/files/Book/os4_for_screen_reader.pdf){target="_blank"}
+:::
+
+::: {.resource-description}
+Introduction to confidence intervals, interpretation, and construction. Essential for understanding how sample statistics relate to population parameters.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📖 PDF • ⏱️ 2-3 hours • 🎯 Intermediate
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Central Limit Theorem
+:::
+
+::: {.resource-title}
+[**Seeing Theory: Central Limit Theorem**](https://seeing-theory.brown.edu/probability-distributions/index.html#section3){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive visualization of the Central Limit Theorem with adjustable sample sizes and population distributions. See how sample means become normally distributed regardless of the original population shape.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎮 Interactive • ⏱️ 1 hour • 📊 Visual Learning
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Continuous Distributions
+:::
+
+::: {.resource-title}
+[**Think Stats: Continuous Distributions**](https://learning.oreilly.com/library/view/think-stats/9781449308117/ch05.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Python-focused introduction to continuous distributions including normal, exponential, and Pareto distributions with real data examples and implementation.
+
+**🎓 UCSB Access:** [Library Database](https://www.library.ucsb.edu/research/db/211) → Search "O'Reilly" → Login with NetID → Search "Think Stats"
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+💻 Online via UCSB Library • ⏱️ 2-3 hours • 🐍 Python Focus
+:::
+:::
+:::
+:::
+
+### 💻 Interactive Tools & Practice
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Distribution Explorer
+:::
+
+::: {.resource-title}
+[**Seeing Theory: Probability Distributions**](https://seeing-theory.brown.edu/probability-distributions/index.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive exploration of continuous distributions including Normal, Exponential, and Uniform distributions. Adjust parameters and see real-time changes in PDFs and CDFs.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎮 Interactive Web App • ⏱️ 1-2 hours • 📈 Parameter Exploration
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Confidence Intervals
+:::
+
+::: {.resource-title}
+[**StatKey: Confidence Intervals**](https://www.lock5stat.com/statkey/confidence_intervals_1_mean/confidence_intervals_1_mean.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive confidence interval construction tool. Upload data or use built-in datasets to create and interpret confidence intervals with different confidence levels.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🔧 Interactive Tool • ⏱️ 1 hour • 📊 Data Upload
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Normal Distribution
+:::
+
+::: {.resource-title}
+[**GeoGebra: Normal Distribution**](https://www.geogebra.org/t/normal-distribution?lang=en){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive normal distribution calculator with Z-score calculations, area under curve, and probability computations. Essential for understanding standardization.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🧮 Calculator • ⏱️ 30 minutes • 📐 Z-scores & Areas
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Python Documentation
+:::
+
+::: {.resource-title}
+[**SciPy Stats: Continuous Distributions**](https://docs.scipy.org/doc/scipy/reference/stats.html#continuous-distributions){target="_blank"}
+:::
+
+::: {.resource-description}
+Complete reference for continuous probability distributions in Python including Normal, Exponential, Uniform, and T-distributions with PDF, CDF, and random generation functions.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📚 API Docs • 🐍 Python • 🎯 Intermediate-Advanced
+:::
+:::
+:::
+:::
+
+### 🎯 Learning Objectives & Study Plan
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Mastery Checklist
+:::
+
+::: {.resource-title}
+**Week 4 Learning Goals**
+:::
+
+::: {.resource-description}
+After completing this week, you should be able to:
+
+- [ ] **Distinguish PDFs from PMFs** and understand continuous probability
+- [ ] **Work with normal distribution** including standardization and Z-scores
+- [ ] **Apply the Central Limit Theorem** to sampling distributions
+- [ ] **Calculate and interpret confidence intervals** for population means
+- [ ] **Choose appropriate confidence levels** based on context
+- [ ] **Understand factors affecting CI width** (sample size, confidence level, variability)
+- [ ] **Use Python** for continuous distributions and confidence intervals
+- [ ] **Interpret CI results correctly** avoiding common misconceptions
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+✅ Self-Assessment • 🎯 Intermediate • 📊 Continuous Probability
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Study Schedule
+:::
+
+::: {.resource-title}
+**Recommended Learning Path**
+:::
+
+::: {.resource-description}
+**Days 1-2:** Continuous random variables and PDFs (OpenIntro Ch. 4)
+
+**Day 3:** Normal distribution and standardization
+
+**Day 4:** Central Limit Theorem and sampling distributions  
+
+**Day 5:** Introduction to confidence intervals (OpenIntro Ch. 5.1-5.2)
+
+**Day 6:** Python implementation and interactive practice
+
+**Day 7:** Real-world applications and interpretation practice
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📅 7-day plan • ⏱️ 3-4 hours daily • 🔄 Building on Discrete Foundation
+:::
+:::
+:::
+:::
+
+### 🔍 Additional Resources
+
+::: {.resource-card}
+::: {.resource-type}
+Extended Learning
+:::
+
+::: {.resource-title}
+**Supplementary Materials by Topic**
+:::
+
+::: {.resource-description}
+**Normal Distribution:** [Standard Normal Table](https://www.mathsisfun.com/data/standard-normal-distribution-table.html) • [68-95-99.7 Rule](https://www.khanacademy.org/math/ap-statistics/density-curves-normal-distribution-ap/stats-normal-distributions/e/empirical_rule) • [Z-score Calculator](https://www.calculator.net/z-score-calculator.html)
+
+**Central Limit Theorem:** [Khan Academy CLT](https://www.khanacademy.org/math/statistics-probability/sampling-distributions-library/central-limit-theorem/v/central-limit-theorem) • [Interactive CLT Demo](https://onlinestatbook.com/2/sampling_distributions/clt_demo.html) • [Rice University Simulations](https://onlinestatbook.com/2/sampling_distributions/samp_dist_mean.html)
+
+**Confidence Intervals:** [Interpretation Guide](https://www.mathsisfun.com/data/confidence-interval.html) • [Common Misconceptions](https://rpsychologist.com/d3/ci/) • [Sample Size Calculator](https://www.calculator.net/sample-size-calculator.html)
+
+**Python Implementation:** [NumPy Random Normal](https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html) • [SciPy Statistical Tests](https://scipy-lectures.org/packages/statistics/index.html) • [Statsmodels Confidence Intervals](https://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.PredictionResults.conf_int.html)
+
+**Real-world Applications:** [Medical Reference Ranges](https://en.wikipedia.org/wiki/Reference_range) • [Quality Control in Manufacturing](https://asq.org/quality-resources/control-chart) • [Polling and Election Predictions](https://fivethirtyeight.com/features/how-fivethirtyeight-calculates-pollster-ratings/) • [A/B Testing in Tech](https://blog.optimizely.com/2015/01/20/statistics-for-the-internet-age-the-story-behind-optimizelys-new-stats-engine/)
+
+**Advanced Topics:** [Bootstrap Confidence Intervals](https://seeing-theory.brown.edu/frequentist-inference/index.html#section3) • [Non-parametric Methods](https://online.stat.psu.edu/stat415/) • [Bayesian Credible Intervals](https://seeing-theory.brown.edu/bayesian-inference/index.html#section3)
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎯 All skill levels • 📈 Beginner to Advanced • 🔬 Statistical Inference
+:::
+:::
+:::
+
+### 📊 Practical Applications & Case Studies
 
 
-## Week 4: Statistical Methods & Testing {.panel-tabset}
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Healthcare Example
+:::
+
+::: {.resource-title}
+**Blood Pressure Analysis**
+:::
+
+::: {.resource-description}
+**Working Kaggle Notebooks:**
+- [Blood Pressure Data Analysis](https://www.kaggle.com/code/akhilasp/blood-pressure-data-analysis){target="_blank"} - Complete analysis with descriptive statistics and confidence intervals
+- [Blood Pressure Prediction](https://www.kaggle.com/code/jothamsoboyejo/blood-pressure-prediction){target="_blank"} - Normal distribution modeling
+
+**Concepts Applied:**
+- Normal distribution for blood pressure readings
+- Confidence intervals for population means
+- Statistical inference in medical research
+
+**Datasets:** [Blood Pressure Variability](https://www.kaggle.com/datasets/haritmengar/blood-pressure-variability){target="_blank"} • [Cardiovascular Disease](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset){target="_blank"}
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🏥 Healthcare • 📊 Real Kaggle Data • 🎯 Applied Statistics
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Business Example
+:::
+
+::: {.resource-title}
+**Customer Satisfaction Analysis**
+:::
+
+::: {.resource-description}
+**Working Kaggle Notebooks:**
+- [Customer Satisfaction Analysis](https://www.kaggle.com/code/jacksondivakarr/customer-satisfaction-analysis){target="_blank"} - 10K+ records with statistical analysis
+- [Customer Service Satisfaction](https://www.kaggle.com/code/ddosad/customer-service-satisfaction-analysis){target="_blank"} - eCommerce data analysis
+
+**Concepts Applied:**
+- Continuous rating scales and normal distribution
+- Confidence intervals for customer ratings
+- Business decision-making with statistical evidence
+
+**Datasets:** [Customer Satisfaction 10K+](https://www.kaggle.com/datasets/ahmedaliraja/customer-satisfaction-10k){target="_blank"} • [Airlines Customer Satisfaction](https://www.kaggle.com/datasets/sjleshrac/airlines-customer-satisfaction){target="_blank"}
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+💼 Business • 📈 Customer Analytics • 🎯 Decision Making
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Environmental Science
+:::
+
+::: {.resource-title}
+**Climate Data Analysis**
+:::
+
+::: {.resource-description}
+**Working Kaggle Notebooks:**
+- [Climate Change Data Analysis](https://www.kaggle.com/code/shauvikbrahma/climate-change-data-analysis){target="_blank"} - Temperature trends with statistical analysis
+- [Global Temperature Analysis](https://www.kaggle.com/code/sebastienj/map-of-temperatures-and-analysis-of-global-warming){target="_blank"} - Historical climate data exploration
+
+**Concepts Applied:**
+- Normal distribution for temperature measurements
+- Confidence intervals for climate change analysis
+- Central Limit Theorem with environmental data
+
+**Datasets:** [Climate Change: Earth Surface Temperature](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data){target="_blank"} • [Environmental Sensor Data](https://www.kaggle.com/datasets/garystafford/environmental-sensor-data-132k){target="_blank"}
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🌡️ Environmental • 🌍 Climate Data • 🔬 Research Applications
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Quality Control
+:::
+
+::: {.resource-title}
+**Manufacturing Process Control**
+:::
+
+::: {.resource-description}
+**Working Kaggle Notebooks:**
+- [Statistical Process Control](https://www.kaggle.com/code/nalkrolu/statistical-process-control-quality-control){target="_blank"} - Complete SPC implementation
+- [Parts Manufacturing Quality Analysis](https://www.kaggle.com/code/gabrielsantello/parts-manufacturing-quality-analysis){target="_blank"} - Industrial quality metrics
+- [Production Quality Control Analysis](https://www.kaggle.com/code/melissamonfared/production-quality-control-analysis-eda){target="_blank"} - EDA with confidence intervals
+
+**Concepts Applied:**
+- Normal distribution for process measurements
+- Control charts and confidence limits
+- Statistical quality control methods
+
+**Datasets:** [Production Quality](https://www.kaggle.com/datasets/podsyp/production-quality){target="_blank"} • [Manufacturing Defects](https://www.kaggle.com/datasets/fahmidachowdhury/manufacturing-defects){target="_blank"}
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🏭 Manufacturing • ⚙️ Quality Control • 📊 Process Improvement
+:::
+:::
+:::
+:::
+
+### 🎯 Core Statistical Concepts - Working Notebooks
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Continuous Distributions
+:::
+
+::: {.resource-title}
+**Normal Distribution Tutorials**
+:::
+
+::: {.resource-description}
+**Beginner-Friendly Notebooks:**
+- [Normal Distribution](https://www.kaggle.com/code/gadaadhaarigeek/normal-distribution){target="_blank"} - Complete introduction with examples
+- [Students Performance & Normal Distribution](https://www.kaggle.com/code/olgaluzhetska/students-performance-and-normal-distribution){target="_blank"} - Real education data
+- [Discrete vs Continuous Distributions](https://www.kaggle.com/code/paulrohan2020/tutorial-discrete-vs-continuous-prob-distribution){target="_blank"} - Comprehensive comparison
+
+**Concepts Covered:** PDF/CDF, standardization, Z-scores, probability calculations
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📊 Core Concepts • 🎯 Beginner-Friendly • 📚 Tutorial Style
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Confidence Intervals
+:::
+
+::: {.resource-title}
+**Confidence Interval Implementation**
+:::
+
+::: {.resource-description}
+**Hands-on Practice:**
+- [Python for Data 23: Confidence Intervals](https://www.kaggle.com/code/hamelg/python-for-data-23-confidence-intervals){target="_blank"} - Complete Python tutorial with Titanic data
+- [Understanding Confidence Intervals](https://www.kaggle.com/code/adikeshri/understanding-confidence-intervals){target="_blank"} - Theory and practice
+- [Inference Statistics: Confidence Intervals](https://www.kaggle.com/code/ramendrapandey/inference-statistics-1-confidence-intervals){target="_blank"} - Multi-dataset analysis
+
+**Concepts Covered:** Construction, interpretation, margin of error, confidence levels
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🔢 Statistical Inference • 🐍 Python Implementation • 📈 Real Data
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+General Statistics
+:::
+
+::: {.resource-title}
+**Comprehensive Statistics Tutorial**
+:::
+
+::: {.resource-description}
+**Complete Reference:**
+- [Statistics Tutorial](https://www.kaggle.com/code/carlolepelaars/statistics-tutorial){target="_blank"} - End-to-end statistical analysis covering descriptive statistics, probability distributions, and inference
+
+**Perfect for:** Students wanting a single comprehensive notebook covering multiple Week 4 concepts in one place
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📚 Comprehensive • 🎯 All Levels • 🔄 Complete Reference
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Datasets for Practice
+:::
+
+::: {.resource-title}
+**Ready-to-Use Datasets**
+:::
+
+::: {.resource-description}
+**High-Quality Data:**
+- [Normal Distribution Data](https://www.kaggle.com/datasets/tinasoni/normal-distribution-data){target="_blank"} - Clean datasets for practicing normal distribution concepts
+- [Daily Climate Data](https://www.kaggle.com/datasets/sumanthvrao/daily-climate-time-series-data){target="_blank"} - Delhi weather data (2013-2017)
+- [Multi-stage Manufacturing Process](https://www.kaggle.com/datasets/supergus/multistage-continuousflow-manufacturing-process){target="_blank"} - Real factory data
+
+**Perfect for:** Creating your own analysis and practicing confidence interval construction
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📊 Practice Data • 🎯 Student Projects • 🔧 Analysis Ready
+:::
+:::
+:::
+:::
+
+### 🧮 Formula Reference Sheet
+
+::: {.formula-reference}
+**Essential Formulas for Week 4**
+
+**Normal Distribution:**
+- Standard Normal: $Z = \frac{X - \mu}{\sigma}$
+- Probability: $P(a < X < b) = \int_a^b \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx$
+
+**Central Limit Theorem:**
+- Sampling Distribution: $\bar{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)$
+- Standard Error: $SE = \frac{\sigma}{\sqrt{n}}$
+
+**Confidence Intervals:**
+- General Form: $\text{statistic} \pm \text{margin of error}$
+- For Means: $\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$
+- Margin of Error: $ME = z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$
+
+**Common Z-values:**
+- 90% CI: $z_{0.05} = 1.645$
+- 95% CI: $z_{0.025} = 1.96$  
+- 99% CI: $z_{0.005} = 2.576$
+:::
+
+
+## Week 5: Statistical Methods & Testing {.panel-tabset}
 
 ::: {.coming-soon}
 ::: {.coming-soon-icon}
 🔬
 :::
 ### Hypothesis Testing Fundamentals
-Week 4  will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 4.
+Week 5  will cover Confidence Intervals, hypothesis testing, and two sample t-Tests. Materials will be posted by week 5.
+:::
+
+## Week 6: Statistical Methods & Testing {.panel-tabset}
+
+::: {.coming-soon}
+::: {.coming-soon-icon}
+🔬
+:::
+### Hypothesis Testing Fundamentals
+Week 6  will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 6.
 :::
 
 

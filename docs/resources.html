@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course Resources – PSTAT5A</title>
+<title>Week 4: Continuous Random Variables &amp; Confidence Intervals – PSTAT5A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="./theme/styles.css">
@@ -151,7 +180,17 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#interactive-tools-practice-2" id="toc-interactive-tools-practice-2" class="nav-link" data-scroll-target="#interactive-tools-practice-2">💻 Interactive Tools &amp; Practice</a></li>
   <li><a href="#learning-objectives-study-plan-2" id="toc-learning-objectives-study-plan-2" class="nav-link" data-scroll-target="#learning-objectives-study-plan-2">🎯 Learning Objectives &amp; Study Plan</a></li>
   <li><a href="#additional-resources-2" id="toc-additional-resources-2" class="nav-link" data-scroll-target="#additional-resources-2">🔍 Additional Resources</a></li>
-  <li><a href="#week-4-statistical-methods-testing" id="toc-week-4-statistical-methods-testing" class="nav-link" data-scroll-target="#week-4-statistical-methods-testing">Week 4: Statistical Methods &amp; Testing</a></li>
+  <li><a href="#week-4-continuous-random-variables-intro-to-confidence-intervals" id="toc-week-4-continuous-random-variables-intro-to-confidence-intervals" class="nav-link" data-scroll-target="#week-4-continuous-random-variables-intro-to-confidence-intervals">Week 4: Continuous Random Variables &amp; Intro to Confidence Intervals</a></li>
+  <li><a href="#from-discrete-to-continuous-understanding-density-and-intervals" id="toc-from-discrete-to-continuous-understanding-density-and-intervals" class="nav-link" data-scroll-target="#from-discrete-to-continuous-understanding-density-and-intervals">From Discrete to Continuous: Understanding Density and Intervals</a></li>
+  <li><a href="#core-materials-3" id="toc-core-materials-3" class="nav-link" data-scroll-target="#core-materials-3">📚 Core Materials</a></li>
+  <li><a href="#interactive-tools-practice-3" id="toc-interactive-tools-practice-3" class="nav-link" data-scroll-target="#interactive-tools-practice-3">💻 Interactive Tools &amp; Practice</a></li>
+  <li><a href="#learning-objectives-study-plan-3" id="toc-learning-objectives-study-plan-3" class="nav-link" data-scroll-target="#learning-objectives-study-plan-3">🎯 Learning Objectives &amp; Study Plan</a></li>
+  <li><a href="#additional-resources-3" id="toc-additional-resources-3" class="nav-link" data-scroll-target="#additional-resources-3">🔍 Additional Resources</a></li>
+  <li><a href="#practical-applications-case-studies" id="toc-practical-applications-case-studies" class="nav-link" data-scroll-target="#practical-applications-case-studies">📊 Practical Applications &amp; Case Studies</a></li>
+  <li><a href="#core-statistical-concepts---working-notebooks" id="toc-core-statistical-concepts---working-notebooks" class="nav-link" data-scroll-target="#core-statistical-concepts---working-notebooks">🎯 Core Statistical Concepts - Working Notebooks</a></li>
+  <li><a href="#formula-reference-sheet" id="toc-formula-reference-sheet" class="nav-link" data-scroll-target="#formula-reference-sheet">🧮 Formula Reference Sheet</a></li>
+  <li><a href="#week-5-statistical-methods-testing" id="toc-week-5-statistical-methods-testing" class="nav-link" data-scroll-target="#week-5-statistical-methods-testing">Week 5: Statistical Methods &amp; Testing</a></li>
+  <li><a href="#week-6-statistical-methods-testing" id="toc-week-6-statistical-methods-testing" class="nav-link" data-scroll-target="#week-6-statistical-methods-testing">Week 6: Statistical Methods &amp; Testing</a></li>
   </ul>
 </nav>
 </nav>
@@ -164,8 +203,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course Resources</h1>
-<p class="subtitle lead">Your comprehensive guide to learning materials and references</p>
+<h1 class="title">Week 4: Continuous Random Variables &amp; Confidence Intervals</h1>
+<p class="subtitle lead">Course Resources and Learning Materials</p>
 </div>
 
 
@@ -506,7 +545,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Simulations</p>
 </div>
 <div class="resource-title">
-<p><a href="https://www.lock5stat.com/statkey/" target="_blank"><strong>StatKey: Probability Simulations</strong></a></p>
+<p><a href="https://www.lock5stat.com/StatKey//bootstrap_1_quant/bootstrap_1_quant.html" target="_blank"><strong>StatKey: Probability Simulations</strong></a></p>
 </div>
 <div class="resource-description">
 <p>Interactive probability simulation tool with tree diagrams, conditional probability, and Bayes’ theorem calculators.</p>
@@ -840,15 +879,410 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="week-4-statistical-methods-testing" class="level2 panel-tabset">
-<h2 class="panel-tabset anchored" data-anchor-id="week-4-statistical-methods-testing">Week 4: Statistical Methods &amp; Testing</h2>
+<section id="week-4-continuous-random-variables-intro-to-confidence-intervals" class="level2 panel-tabset">
+<h2 class="panel-tabset anchored" data-anchor-id="week-4-continuous-random-variables-intro-to-confidence-intervals">Week 4: Continuous Random Variables &amp; Intro to Confidence Intervals</h2>
+</section>
+<section id="from-discrete-to-continuous-understanding-density-and-intervals" class="level2 week-header">
+<h2 class="anchored" data-anchor-id="from-discrete-to-continuous-understanding-density-and-intervals">From Discrete to Continuous: Understanding Density and Intervals</h2>
+<p>This week transitions from discrete to continuous random variables, introducing probability density functions, common continuous distributions, and the foundations of statistical inference through confidence intervals. You’ll learn how the Central Limit Theorem enables us to make probabilistic statements about population parameters.</p>
+</section>
+<section id="core-materials-3" class="level3">
+<h3 class="anchored" data-anchor-id="core-materials-3">📚 Core Materials</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Required Reading</p>
+</div>
+<div class="resource-title">
+<p><a href="./files/Book/os4_for_screen_reader.pdf" target="_blank"><strong>OpenIntro Statistics</strong>, Chapter 4</a></p>
+</div>
+<div class="resource-description">
+<p>Essential coverage of continuous random variables, probability density functions, normal distribution, and Central Limit Theorem. Foundation for understanding statistical inference.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📖 PDF • ⏱️ 3-4 hours • 🎯 Intermediate</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Required Reading</p>
+</div>
+<div class="resource-title">
+<p><a href="./files/Book/os4_for_screen_reader.pdf" target="_blank"><strong>OpenIntro Statistics</strong>, Chapter 5 sections 5.1-5.2</a></p>
+</div>
+<div class="resource-description">
+<p>Introduction to confidence intervals, interpretation, and construction. Essential for understanding how sample statistics relate to population parameters.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📖 PDF • ⏱️ 2-3 hours • 🎯 Intermediate</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Central Limit Theorem</p>
+</div>
+<div class="resource-title">
+<p><a href="https://seeing-theory.brown.edu/probability-distributions/index.html#section3" target="_blank"><strong>Seeing Theory: Central Limit Theorem</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive visualization of the Central Limit Theorem with adjustable sample sizes and population distributions. See how sample means become normally distributed regardless of the original population shape.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎮 Interactive • ⏱️ 1 hour • 📊 Visual Learning</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Continuous Distributions</p>
+</div>
+<div class="resource-title">
+<p><a href="https://learning.oreilly.com/library/view/think-stats/9781449308117/ch05.html" target="_blank"><strong>Think Stats: Continuous Distributions</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Python-focused introduction to continuous distributions including normal, exponential, and Pareto distributions with real data examples and implementation.</p>
+<p><strong>🎓 UCSB Access:</strong> <a href="https://www.library.ucsb.edu/research/db/211">Library Database</a> → Search “O’Reilly” → Login with NetID → Search “Think Stats”</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>💻 Online via UCSB Library • ⏱️ 2-3 hours • 🐍 Python Focus</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="interactive-tools-practice-3" class="level3">
+<h3 class="anchored" data-anchor-id="interactive-tools-practice-3">💻 Interactive Tools &amp; Practice</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Distribution Explorer</p>
+</div>
+<div class="resource-title">
+<p><a href="https://seeing-theory.brown.edu/probability-distributions/index.html" target="_blank"><strong>Seeing Theory: Probability Distributions</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive exploration of continuous distributions including Normal, Exponential, and Uniform distributions. Adjust parameters and see real-time changes in PDFs and CDFs.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎮 Interactive Web App • ⏱️ 1-2 hours • 📈 Parameter Exploration</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Confidence Intervals</p>
+</div>
+<div class="resource-title">
+<p><a href="https://www.lock5stat.com/statkey/confidence_intervals_1_mean/confidence_intervals_1_mean.html" target="_blank"><strong>StatKey: Confidence Intervals</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive confidence interval construction tool. Upload data or use built-in datasets to create and interpret confidence intervals with different confidence levels.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🔧 Interactive Tool • ⏱️ 1 hour • 📊 Data Upload</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Normal Distribution</p>
+</div>
+<div class="resource-title">
+<p><a href="https://www.geogebra.org/t/normal-distribution?lang=en" target="_blank"><strong>GeoGebra: Normal Distribution</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive normal distribution calculator with Z-score calculations, area under curve, and probability computations. Essential for understanding standardization.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🧮 Calculator • ⏱️ 30 minutes • 📐 Z-scores &amp; Areas</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Python Documentation</p>
+</div>
+<div class="resource-title">
+<p><a href="https://docs.scipy.org/doc/scipy/reference/stats.html#continuous-distributions" target="_blank"><strong>SciPy Stats: Continuous Distributions</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Complete reference for continuous probability distributions in Python including Normal, Exponential, Uniform, and T-distributions with PDF, CDF, and random generation functions.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📚 API Docs • 🐍 Python • 🎯 Intermediate-Advanced</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="learning-objectives-study-plan-3" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives-study-plan-3">🎯 Learning Objectives &amp; Study Plan</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Mastery Checklist</p>
+</div>
+<div class="resource-title">
+<p><strong>Week 4 Learning Goals</strong></p>
+</div>
+<div class="resource-description">
+<p>After completing this week, you should be able to:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Distinguish PDFs from PMFs</strong> and understand continuous probability</label></li>
+<li><label><input type="checkbox"><strong>Work with normal distribution</strong> including standardization and Z-scores</label></li>
+<li><label><input type="checkbox"><strong>Apply the Central Limit Theorem</strong> to sampling distributions</label></li>
+<li><label><input type="checkbox"><strong>Calculate and interpret confidence intervals</strong> for population means</label></li>
+<li><label><input type="checkbox"><strong>Choose appropriate confidence levels</strong> based on context</label></li>
+<li><label><input type="checkbox"><strong>Understand factors affecting CI width</strong> (sample size, confidence level, variability)</label></li>
+<li><label><input type="checkbox"><strong>Use Python</strong> for continuous distributions and confidence intervals</label></li>
+<li><label><input type="checkbox"><strong>Interpret CI results correctly</strong> avoiding common misconceptions</label></li>
+</ul>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>✅ Self-Assessment • 🎯 Intermediate • 📊 Continuous Probability</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Study Schedule</p>
+</div>
+<div class="resource-title">
+<p><strong>Recommended Learning Path</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Days 1-2:</strong> Continuous random variables and PDFs (OpenIntro Ch. 4)</p>
+<p><strong>Day 3:</strong> Normal distribution and standardization</p>
+<p><strong>Day 4:</strong> Central Limit Theorem and sampling distributions</p>
+<p><strong>Day 5:</strong> Introduction to confidence intervals (OpenIntro Ch. 5.1-5.2)</p>
+<p><strong>Day 6:</strong> Python implementation and interactive practice</p>
+<p><strong>Day 7:</strong> Real-world applications and interpretation practice</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📅 7-day plan • ⏱️ 3-4 hours daily • 🔄 Building on Discrete Foundation</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="additional-resources-3" class="level3">
+<h3 class="anchored" data-anchor-id="additional-resources-3">🔍 Additional Resources</h3>
+<div class="resource-card">
+<div class="resource-type">
+<p>Extended Learning</p>
+</div>
+<div class="resource-title">
+<p><strong>Supplementary Materials by Topic</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Normal Distribution:</strong> <a href="https://www.mathsisfun.com/data/standard-normal-distribution-table.html">Standard Normal Table</a> • <a href="https://www.khanacademy.org/math/ap-statistics/density-curves-normal-distribution-ap/stats-normal-distributions/e/empirical_rule">68-95-99.7 Rule</a> • <a href="https://www.calculator.net/z-score-calculator.html">Z-score Calculator</a></p>
+<p><strong>Central Limit Theorem:</strong> <a href="https://www.khanacademy.org/math/statistics-probability/sampling-distributions-library/central-limit-theorem/v/central-limit-theorem">Khan Academy CLT</a> • <a href="https://onlinestatbook.com/2/sampling_distributions/clt_demo.html">Interactive CLT Demo</a> • <a href="https://onlinestatbook.com/2/sampling_distributions/samp_dist_mean.html">Rice University Simulations</a></p>
+<p><strong>Confidence Intervals:</strong> <a href="https://www.mathsisfun.com/data/confidence-interval.html">Interpretation Guide</a> • <a href="https://rpsychologist.com/d3/ci/">Common Misconceptions</a> • <a href="https://www.calculator.net/sample-size-calculator.html">Sample Size Calculator</a></p>
+<p><strong>Python Implementation:</strong> <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html">NumPy Random Normal</a> • <a href="https://scipy-lectures.org/packages/statistics/index.html">SciPy Statistical Tests</a> • <a href="https://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.PredictionResults.conf_int.html">Statsmodels Confidence Intervals</a></p>
+<p><strong>Real-world Applications:</strong> <a href="https://en.wikipedia.org/wiki/Reference_range">Medical Reference Ranges</a> • <a href="https://asq.org/quality-resources/control-chart">Quality Control in Manufacturing</a> • <a href="https://fivethirtyeight.com/features/how-fivethirtyeight-calculates-pollster-ratings/">Polling and Election Predictions</a> • <a href="https://blog.optimizely.com/2015/01/20/statistics-for-the-internet-age-the-story-behind-optimizelys-new-stats-engine/">A/B Testing in Tech</a></p>
+<p><strong>Advanced Topics:</strong> <a href="https://seeing-theory.brown.edu/frequentist-inference/index.html#section3">Bootstrap Confidence Intervals</a> • <a href="https://online.stat.psu.edu/stat415/">Non-parametric Methods</a> • <a href="https://seeing-theory.brown.edu/bayesian-inference/index.html#section3">Bayesian Credible Intervals</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎯 All skill levels • 📈 Beginner to Advanced • 🔬 Statistical Inference</p>
+</div>
+</div>
+</div>
+</section>
+<section id="practical-applications-case-studies" class="level3">
+<h3 class="anchored" data-anchor-id="practical-applications-case-studies">📊 Practical Applications &amp; Case Studies</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Healthcare Example</p>
+</div>
+<div class="resource-title">
+<p><strong>Blood Pressure Analysis</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Working Kaggle Notebooks:</strong> - <a href="https://www.kaggle.com/code/akhilasp/blood-pressure-data-analysis" target="_blank">Blood Pressure Data Analysis</a> - Complete analysis with descriptive statistics and confidence intervals - <a href="https://www.kaggle.com/code/jothamsoboyejo/blood-pressure-prediction" target="_blank">Blood Pressure Prediction</a> - Normal distribution modeling</p>
+<p><strong>Concepts Applied:</strong> - Normal distribution for blood pressure readings - Confidence intervals for population means - Statistical inference in medical research</p>
+<p><strong>Datasets:</strong> <a href="https://www.kaggle.com/datasets/haritmengar/blood-pressure-variability" target="_blank">Blood Pressure Variability</a> • <a href="https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset" target="_blank">Cardiovascular Disease</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🏥 Healthcare • 📊 Real Kaggle Data • 🎯 Applied Statistics</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Business Example</p>
+</div>
+<div class="resource-title">
+<p><strong>Customer Satisfaction Analysis</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Working Kaggle Notebooks:</strong> - <a href="https://www.kaggle.com/code/jacksondivakarr/customer-satisfaction-analysis" target="_blank">Customer Satisfaction Analysis</a> - 10K+ records with statistical analysis - <a href="https://www.kaggle.com/code/ddosad/customer-service-satisfaction-analysis" target="_blank">Customer Service Satisfaction</a> - eCommerce data analysis</p>
+<p><strong>Concepts Applied:</strong> - Continuous rating scales and normal distribution - Confidence intervals for customer ratings - Business decision-making with statistical evidence</p>
+<p><strong>Datasets:</strong> <a href="https://www.kaggle.com/datasets/ahmedaliraja/customer-satisfaction-10k" target="_blank">Customer Satisfaction 10K+</a> • <a href="https://www.kaggle.com/datasets/sjleshrac/airlines-customer-satisfaction" target="_blank">Airlines Customer Satisfaction</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>💼 Business • 📈 Customer Analytics • 🎯 Decision Making</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Environmental Science</p>
+</div>
+<div class="resource-title">
+<p><strong>Climate Data Analysis</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Working Kaggle Notebooks:</strong> - <a href="https://www.kaggle.com/code/shauvikbrahma/climate-change-data-analysis" target="_blank">Climate Change Data Analysis</a> - Temperature trends with statistical analysis - <a href="https://www.kaggle.com/code/sebastienj/map-of-temperatures-and-analysis-of-global-warming" target="_blank">Global Temperature Analysis</a> - Historical climate data exploration</p>
+<p><strong>Concepts Applied:</strong> - Normal distribution for temperature measurements - Confidence intervals for climate change analysis - Central Limit Theorem with environmental data</p>
+<p><strong>Datasets:</strong> <a href="https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data" target="_blank">Climate Change: Earth Surface Temperature</a> • <a href="https://www.kaggle.com/datasets/garystafford/environmental-sensor-data-132k" target="_blank">Environmental Sensor Data</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🌡️ Environmental • 🌍 Climate Data • 🔬 Research Applications</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Quality Control</p>
+</div>
+<div class="resource-title">
+<p><strong>Manufacturing Process Control</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Working Kaggle Notebooks:</strong> - <a href="https://www.kaggle.com/code/nalkrolu/statistical-process-control-quality-control" target="_blank">Statistical Process Control</a> - Complete SPC implementation - <a href="https://www.kaggle.com/code/gabrielsantello/parts-manufacturing-quality-analysis" target="_blank">Parts Manufacturing Quality Analysis</a> - Industrial quality metrics - <a href="https://www.kaggle.com/code/melissamonfared/production-quality-control-analysis-eda" target="_blank">Production Quality Control Analysis</a> - EDA with confidence intervals</p>
+<p><strong>Concepts Applied:</strong> - Normal distribution for process measurements - Control charts and confidence limits - Statistical quality control methods</p>
+<p><strong>Datasets:</strong> <a href="https://www.kaggle.com/datasets/podsyp/production-quality" target="_blank">Production Quality</a> • <a href="https://www.kaggle.com/datasets/fahmidachowdhury/manufacturing-defects" target="_blank">Manufacturing Defects</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🏭 Manufacturing • ⚙️ Quality Control • 📊 Process Improvement</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="core-statistical-concepts---working-notebooks" class="level3">
+<h3 class="anchored" data-anchor-id="core-statistical-concepts---working-notebooks">🎯 Core Statistical Concepts - Working Notebooks</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Continuous Distributions</p>
+</div>
+<div class="resource-title">
+<p><strong>Normal Distribution Tutorials</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Beginner-Friendly Notebooks:</strong> - <a href="https://www.kaggle.com/code/gadaadhaarigeek/normal-distribution" target="_blank">Normal Distribution</a> - Complete introduction with examples - <a href="https://www.kaggle.com/code/olgaluzhetska/students-performance-and-normal-distribution" target="_blank">Students Performance &amp; Normal Distribution</a> - Real education data - <a href="https://www.kaggle.com/code/paulrohan2020/tutorial-discrete-vs-continuous-prob-distribution" target="_blank">Discrete vs Continuous Distributions</a> - Comprehensive comparison</p>
+<p><strong>Concepts Covered:</strong> PDF/CDF, standardization, Z-scores, probability calculations</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📊 Core Concepts • 🎯 Beginner-Friendly • 📚 Tutorial Style</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Confidence Intervals</p>
+</div>
+<div class="resource-title">
+<p><strong>Confidence Interval Implementation</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Hands-on Practice:</strong> - <a href="https://www.kaggle.com/code/hamelg/python-for-data-23-confidence-intervals" target="_blank">Python for Data 23: Confidence Intervals</a> - Complete Python tutorial with Titanic data - <a href="https://www.kaggle.com/code/adikeshri/understanding-confidence-intervals" target="_blank">Understanding Confidence Intervals</a> - Theory and practice - <a href="https://www.kaggle.com/code/ramendrapandey/inference-statistics-1-confidence-intervals" target="_blank">Inference Statistics: Confidence Intervals</a> - Multi-dataset analysis</p>
+<p><strong>Concepts Covered:</strong> Construction, interpretation, margin of error, confidence levels</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🔢 Statistical Inference • 🐍 Python Implementation • 📈 Real Data</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>General Statistics</p>
+</div>
+<div class="resource-title">
+<p><strong>Comprehensive Statistics Tutorial</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Complete Reference:</strong> - <a href="https://www.kaggle.com/code/carlolepelaars/statistics-tutorial" target="_blank">Statistics Tutorial</a> - End-to-end statistical analysis covering descriptive statistics, probability distributions, and inference</p>
+<p><strong>Perfect for:</strong> Students wanting a single comprehensive notebook covering multiple Week 4 concepts in one place</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📚 Comprehensive • 🎯 All Levels • 🔄 Complete Reference</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Datasets for Practice</p>
+</div>
+<div class="resource-title">
+<p><strong>Ready-to-Use Datasets</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>High-Quality Data:</strong> - <a href="https://www.kaggle.com/datasets/tinasoni/normal-distribution-data" target="_blank">Normal Distribution Data</a> - Clean datasets for practicing normal distribution concepts - <a href="https://www.kaggle.com/datasets/sumanthvrao/daily-climate-time-series-data" target="_blank">Daily Climate Data</a> - Delhi weather data (2013-2017) - <a href="https://www.kaggle.com/datasets/supergus/multistage-continuousflow-manufacturing-process" target="_blank">Multi-stage Manufacturing Process</a> - Real factory data</p>
+<p><strong>Perfect for:</strong> Creating your own analysis and practicing confidence interval construction</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📊 Practice Data • 🎯 Student Projects • 🔧 Analysis Ready</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="formula-reference-sheet" class="level3">
+<h3 class="anchored" data-anchor-id="formula-reference-sheet">🧮 Formula Reference Sheet</h3>
+<div class="formula-reference">
+<p><strong>Essential Formulas for Week 4</strong></p>
+<p><strong>Normal Distribution:</strong> - Standard Normal: <span class="math inline">\(Z = \frac{X - \mu}{\sigma}\)</span> - Probability: <span class="math inline">\(P(a &lt; X &lt; b) = \int_a^b \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx\)</span></p>
+<p><strong>Central Limit Theorem:</strong> - Sampling Distribution: <span class="math inline">\(\bar{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)\)</span> - Standard Error: <span class="math inline">\(SE = \frac{\sigma}{\sqrt{n}}\)</span></p>
+<p><strong>Confidence Intervals:</strong> - General Form: <span class="math inline">\(\text{statistic} \pm \text{margin of error}\)</span> - For Means: <span class="math inline">\(\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}\)</span> - Margin of Error: <span class="math inline">\(ME = z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}\)</span></p>
+<p><strong>Common Z-values:</strong> - 90% CI: <span class="math inline">\(z_{0.05} = 1.645\)</span> - 95% CI: <span class="math inline">\(z_{0.025} = 1.96\)</span><br>
+- 99% CI: <span class="math inline">\(z_{0.005} = 2.576\)</span></p>
+</div>
+</section>
+<section id="week-5-statistical-methods-testing" class="level2 panel-tabset">
+<h2 class="panel-tabset anchored" data-anchor-id="week-5-statistical-methods-testing">Week 5: Statistical Methods &amp; Testing</h2>
 <div class="coming-soon">
 <div class="coming-soon-icon">
 <p>🔬</p>
 </div>
 <section id="hypothesis-testing-fundamentals" class="level3">
 <h3 class="anchored" data-anchor-id="hypothesis-testing-fundamentals">Hypothesis Testing Fundamentals</h3>
-<p>Week 4 will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 4.</p>
+<p>Week 5 will cover Confidence Intervals, hypothesis testing, and two sample t-Tests. Materials will be posted by week 5.</p>
+</section>
+</div>
+</section>
+<section id="week-6-statistical-methods-testing" class="level2 panel-tabset">
+<h2 class="panel-tabset anchored" data-anchor-id="week-6-statistical-methods-testing">Week 6: Statistical Methods &amp; Testing</h2>
+<div class="coming-soon">
+<div class="coming-soon-icon">
+<p>🔬</p>
+</div>
+<section id="hypothesis-testing-fundamentals-1" class="level3">
+<h3 class="anchored" data-anchor-id="hypothesis-testing-fundamentals-1">Hypothesis Testing Fundamentals</h3>
+<p>Week 6 will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 6.</p>
 </section>
 </div>
 <script>

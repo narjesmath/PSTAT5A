@@ -3446,35 +3446,35 @@
   {
     "objectID": "resources.html",
     "href": "resources.html",
-    "title": "Course Resources",
+    "title": "Week 4: Continuous Random Variables & Confidence Intervals",
     "section": "",
     "text": "🔍"
   },
   {
     "objectID": "resources.html#week-1-foundations-of-data-science",
     "href": "resources.html#week-1-foundations-of-data-science",
-    "title": "Course Resources",
+    "title": "Week 4: Continuous Random Variables & Confidence Intervals",
     "section": "Week 1: Foundations of Data Science",
     "text": "Week 1: Foundations of Data Science"
   },
   {
     "objectID": "resources.html#getting-started-with-data",
     "href": "resources.html#getting-started-with-data",
-    "title": "Course Resources",
+    "title": "Week 4: Continuous Random Variables & Confidence Intervals",
     "section": "Getting Started with Data",
     "text": "Getting Started with Data\nThis week introduces fundamental concepts in data science, including data types, basic statistics, and essential Python tools for data manipulation and analysis."
   },
   {
     "objectID": "resources.html#week-2-introduction-to-probability",
     "href": "resources.html#week-2-introduction-to-probability",
-    "title": "Course Resources",
+    "title": "Week 4: Continuous Random Variables & Confidence Intervals",
     "section": "Week 2: Introduction to Probability",
     "text": "Week 2: Introduction to Probability"
   },
   {
     "objectID": "resources.html#understanding-uncertainty-through-statistics",
     "href": "resources.html#understanding-uncertainty-through-statistics",
-    "title": "Course Resources",
+    "title": "Week 4: Continuous Random Variables & Confidence Intervals",
     "section": "Understanding Uncertainty Through Statistics",
     "text": "Understanding Uncertainty Through Statistics\nThis week introduces fundamental concepts in probability theory, including sample spaces, events, conditional probability, independence, and Bayes’ theorem. You’ll learn to quantify uncertainty and make informed decisions with incomplete information."
   },
@@ -6218,14 +6218,14 @@
   {
     "objectID": "resources.html#week-3-conditional-probability-counting-discrete-random-variables",
     "href": "resources.html#week-3-conditional-probability-counting-discrete-random-variables",
-    "title": "Course Resources",
+    "title": "Week 4: Continuous Random Variables & Confidence Intervals",
     "section": "Week 3: Conditional Probability, Counting & Discrete Random Variables",
     "text": "Week 3: Conditional Probability, Counting & Discrete Random Variables"
   },
   {
     "objectID": "resources.html#advanced-probability-discrete-distributions",
     "href": "resources.html#advanced-probability-discrete-distributions",
-    "title": "Course Resources",
+    "title": "Week 4: Continuous Random Variables & Confidence Intervals",
     "section": "Advanced Probability & Discrete Distributions",
     "text": "Advanced Probability & Discrete Distributions\nThis week deepens your understanding of conditional probability and Bayes’ theorem, introduces counting principles (permutations and combinations), and explores discrete random variables including their probability mass functions, expected values, and common distributions."
   },
@@ -8055,5 +8055,33 @@
     "title": "From Random Variables to Sampling & Confidence Intervals",
     "section": "Additional Resources",
     "text": "Additional Resources\n\n# Useful Python libraries for statistics and probability\nimport numpy as np           # Numerical computing\nimport scipy.stats as stats  # Statistical functions\nimport matplotlib.pyplot as plt  # Plotting\nimport seaborn as sns        # Statistical visualization\nimport pandas as pd          # Data manipulation\n\n# Quick reference for common distributions:\n# stats.binom.pmf(k, n, p)     # Binomial PMF\n# stats.poisson.pmf(k, lam)    # Poisson PMF  \n# stats.norm.pdf(x, mu, sigma) # Normal PDF\n# stats.expon.pdf(x, scale)    # Exponential PDF\n\n# Generate random samples:\n# np.random.binomial(n, p, size)\n# np.random.poisson(lam, size)\n# np.random.normal(mu, sigma, size)\n# np.random.exponential(scale, size)"
+  },
+  {
+    "objectID": "resources.html#week-4-continuous-random-variables-intro-to-confidence-intervals",
+    "href": "resources.html#week-4-continuous-random-variables-intro-to-confidence-intervals",
+    "title": "Week 4: Continuous Random Variables & Confidence Intervals",
+    "section": "Week 4: Continuous Random Variables & Intro to Confidence Intervals",
+    "text": "Week 4: Continuous Random Variables & Intro to Confidence Intervals"
+  },
+  {
+    "objectID": "resources.html#from-discrete-to-continuous-understanding-density-and-intervals",
+    "href": "resources.html#from-discrete-to-continuous-understanding-density-and-intervals",
+    "title": "Week 4: Continuous Random Variables & Confidence Intervals",
+    "section": "From Discrete to Continuous: Understanding Density and Intervals",
+    "text": "From Discrete to Continuous: Understanding Density and Intervals\nThis week transitions from discrete to continuous random variables, introducing probability density functions, common continuous distributions, and the foundations of statistical inference through confidence intervals. You’ll learn how the Central Limit Theorem enables us to make probabilistic statements about population parameters."
+  },
+  {
+    "objectID": "resources.html#week-5-statistical-methods-testing",
+    "href": "resources.html#week-5-statistical-methods-testing",
+    "title": "Week 4: Continuous Random Variables & Confidence Intervals",
+    "section": "Week 5: Statistical Methods & Testing",
+    "text": "Week 5: Statistical Methods & Testing\n\n\n🔬\n\n\nHypothesis Testing Fundamentals\nWeek 5 will cover Confidence Intervals, hypothesis testing, and two sample t-Tests. Materials will be posted by week 5."
+  },
+  {
+    "objectID": "resources.html#week-6-statistical-methods-testing",
+    "href": "resources.html#week-6-statistical-methods-testing",
+    "title": "Week 4: Continuous Random Variables & Confidence Intervals",
+    "section": "Week 6: Statistical Methods & Testing",
+    "text": "Week 6: Statistical Methods & Testing\n\n\n🔬\n\n\nHypothesis Testing Fundamentals\nWeek 6 will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 6."
   }
 ]
