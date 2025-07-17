@@ -7,6 +7,8 @@ format:
     toc-location: left
     theme: cosmo
     css: /theme/styles.css
+    include-after-body: |
+      <script src="/theme/collapsible.js"></script>
     code-fold: false
     code-tools: false
     smooth-scroll: true
@@ -21,7 +23,9 @@ execute:
 
 ---
 
-
+```{=html}
+<script src="/theme/collapsible.js"></script>
+```
 
 ::: {.search-container}
 ::: {.search-icon}
@@ -30,7 +34,15 @@ execute:
 <input type="text" class="search-input" placeholder="Search all resources..." id="searchInput">
 :::
 
-## Week 1: Foundations of Data Science {.panel-tabset}
+<details class="week-collapsible" open>
+<summary class="week-summary">
+<h3>📊 Week 1: Foundations of Data Science</h3>
+<p class="week-subtitle">Getting Started with Data - Data types, basic statistics, and Python tools</p>
+</summary>
+
+<div class="week-content">
+
+<!-- ## Week 1: Foundations of Data Science {.panel-tabset} -->
 
 ::: {.week-header}
 ## Getting Started with Data
@@ -296,7 +308,19 @@ Extended Learning
 :::
 :::
 
-## Week 2: Introduction to Probability {.panel-tabset}
+
+</div>
+</details>
+
+<details class="week-collapsible">
+<summary class="week-summary">
+<h3>🎲 Week 2: Introduction to Probability</h3>
+<p class="week-subtitle">Understanding Uncertainty - Sample spaces, conditional probability, and Bayes' theorem</p>
+</summary>
+
+<div class="week-content">
+
+<!-- ## Week 2: Introduction to Probability {.panel-tabset} -->
 
 ::: {.week-header}
 ## Understanding Uncertainty Through Statistics
@@ -557,11 +581,19 @@ Extended Learning
 :::
 :::
 
+</div>
+</details>
 
 
+<details class="week-collapsible" open>
+<summary class="week-summary">
+<h3>📊 Week 3: Conditional Probability, Counting & Discrete Random Variables</h3>
+<p class="week-subtitle">Getting Started with conditional probability and Bayes' theorem, counting principles (permutations and combinations), and Python tools</p>
+</summary>
 
+<div class="week-content">
 
-## Week 3: Conditional Probability, Counting & Discrete Random Variables {.panel-tabset}
+<!-- ## Week 3: Conditional Probability, Counting & Discrete Random Variables {.panel-tabset} -->
 
 ::: {.week-header}
 ## Advanced Probability & Discrete Distributions
@@ -830,29 +862,18 @@ Extended Learning
 :::
 :::
 
----
-title: "Week 4: Continuous Random Variables & Confidence Intervals"
-subtitle: "Course Resources and Learning Materials"
-format:
-  html:
-    toc: true
-    toc-location: left
-    theme: cosmo
-    css: /theme/styles.css
-    code-fold: false
-    code-tools: false
-    smooth-scroll: true
-    page-layout: full
-    grid:
-      sidebar-width: 300px
-      body-width: 900px
-      margin-width: 200px
-execute:
-  echo: false
-  warning: false
----
+</div>
+</details>
 
-## Week 4: Continuous Random Variables & Intro to Confidence Intervals {.panel-tabset}
+<details class="week-collapsible" open>
+<summary class="week-summary">
+<h3>📊 Week 4: Continuous Random Variables & Intro to Confidence Intervals</h3>
+<p class="week-subtitle">This week transitions from discrete to continuous random variables.</p>
+</summary>
+
+<div class="week-content">
+
+<!-- ## Week 4: Continuous Random Variables & Intro to Confidence Intervals {.panel-tabset} -->
 
 ::: {.week-header}
 ## From Discrete to Continuous: Understanding Density and Intervals
@@ -1372,8 +1393,19 @@ Datasets for Practice
 - 99% CI: $z_{0.005} = 2.576$
 :::
 
+</div>
+</details>
 
-## Week 5: Statistical Methods & Testing {.panel-tabset}
+
+<details class="week-collapsible" open>
+<summary class="week-summary">
+<h3>📊 Week 5: Statistical Methods & Testing </h3>
+<p class="week-subtitle">During this week, we'll cover confidence intervals for means and proportions and tackle hypothesis testing .</p>
+</summary>
+
+<div class="week-content">
+
+<!-- ## Week 5: Statistical Methods & Testing {.panel-tabset} -->
 
 ::: {.coming-soon}
 ::: {.coming-soon-icon}
@@ -1382,8 +1414,19 @@ Datasets for Practice
 ### Hypothesis Testing Fundamentals
 Week 5  will cover Confidence Intervals, hypothesis testing, and two sample t-Tests. Materials will be posted by week 5.
 :::
+</div>
+</details>
 
-## Week 6: Statistical Methods & Testing {.panel-tabset}
+
+<details class="week-collapsible" open>
+<summary class="week-summary">
+<h3>📊 Week 6: Statistical Methods & Testing </h3>
+<p class="week-subtitle"> During the last week, we dive into statistical modeling and testing! .</p>
+</summary>
+
+<div class="week-content">
+
+<!-- ## Week 6: Statistical Methods & Testing {.panel-tabset} -->
 
 ::: {.coming-soon}
 ::: {.coming-soon-icon}
@@ -1393,7 +1436,7 @@ Week 5  will cover Confidence Intervals, hypothesis testing, and two sample t-Te
 Week 6  will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 6.
 :::
 
-
+</div>
 
 
 ```{=html}

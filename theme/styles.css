@@ -800,3 +800,244 @@
     padding: 1.5rem;
   }
 }
+
+/* ============================================ */
+/* COLLAPSIBLE WEEK SECTIONS 
+/* ============================================ */
+
+/* Week Collapsible Container */
+.week-collapsible {
+  border: 2px solid #e1e4e8;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  background: white;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.week-collapsible:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.week-collapsible[open] {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-color: var(--primary-color);
+}
+
+/* Week Summary (clickable header) */
+.week-summary {
+  list-style: none;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--light-bg) 0%, #e9ecef 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 12px;
+  margin: 0;
+}
+
+.week-summary:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.week-collapsible[open] .week-summary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.week-summary::marker {
+  display: none;
+}
+
+/* Dropdown Arrow */
+.week-summary::after {
+  content: '▼';
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transition: all 0.3s ease;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.week-summary:hover::after {
+  color: var(--secondary-color);
+}
+
+.week-collapsible[open] .week-summary::after {
+  transform: translateY(-50%) rotate(0deg);
+  color: white;
+}
+
+/* Week Title */
+.week-summary h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.week-collapsible[open] .week-summary h3 {
+  color: white;
+}
+
+/* Week Subtitle */
+.week-subtitle {
+  margin: 0;
+  color: #6c757d;
+  font-size: 1rem;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.week-collapsible[open] .week-summary .week-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Week Content Container */
+.week-content {
+  padding: 0 2rem 2rem 2rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress Indicator */
+.week-summary::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: var(--success-color);
+  border-radius: 50%;
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--success-color);
+  transition: all 0.3s ease;
+}
+
+/* Future weeks - gray indicator */
+.week-collapsible:nth-child(n+5) .week-summary::before {
+  background: #6c757d;
+  box-shadow: 0 0 0 2px #6c757d;
+}
+
+/* Current week indicator - pulsing animation */
+.week-collapsible:nth-child(4) .week-summary::before {
+  background: var(--warning-color);
+  box-shadow: 0 0 0 2px var(--warning-color);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 2px var(--warning-color);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 193, 7, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 2px var(--warning-color);
+  }
+}
+
+/* Integration with existing search */
+.week-collapsible.search-highlight {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(240, 147, 251, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .week-summary {
+    padding: 1rem 1.5rem;
+  }
+  
+  .week-summary h3 {
+    font-size: 1.2rem;
+  }
+  
+  .week-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .week-summary::after {
+    right: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .week-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .week-summary::before {
+    left: -4px;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Dark mode support (if you add it later) */
+@media (prefers-color-scheme: dark) {
+  .week-collapsible {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+  
+  .week-summary {
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  }
+  
+  .week-summary:hover {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  }
+}
+
+/* Print styles for collapsible sections */
+@media print {
+  .week-collapsible {
+    border: 1px solid #ccc;
+    box-shadow: none;
+    page-break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .week-collapsible[open] {
+    border-color: #333;
+  }
+  
+  .week-summary {
+    background: #f5f5f5 !important;
+    color: #333 !important;
+    page-break-after: avoid;
+  }
+  
+  .week-summary::after {
+    display: none;
+  }
+  
+  .week-summary::before {
+    display: none;
+  }
+  
+  .week-content {
+    page-break-inside: avoid;
+  }
+}
