@@ -587,7 +587,7 @@ Extended Learning
 
 <details class="week-collapsible" open>
 <summary class="week-summary">
-<h3>📊 Week 3: Conditional Probability, Counting & Discrete Random Variables</h3>
+<h3>🃏 Week 3: Conditional Probability, Counting & Discrete Random Variables</h3>
 <p class="week-subtitle">Getting Started with conditional probability and Bayes' theorem, counting principles (permutations and combinations), and Python tools</p>
 </summary>
 
@@ -867,9 +867,10 @@ Extended Learning
 
 <details class="week-collapsible" open>
 <summary class="week-summary">
-<h3>📊 Week 4: Continuous Random Variables & Intro to Confidence Intervals</h3>
+<h3>📈 Week 4: Continuous Random Variables & Intro to Confidence Intervals</h3>
 <p class="week-subtitle">This week transitions from discrete to continuous random variables.</p>
 </summary>
+
 
 <div class="week-content">
 
@@ -1399,44 +1400,41 @@ Datasets for Practice
 
 <details class="week-collapsible" open>
 <summary class="week-summary">
-<h3>📊 Week 5: Statistical Methods & Testing </h3>
-<p class="week-subtitle">During this week, we'll cover confidence intervals for means and proportions and tackle hypothesis testing .</p>
+<h3>🎯 Week 5: Statistical Methods & Testing</h3>
+<p class="week-subtitle">During this week, we'll cover confidence intervals for means and proportions and tackle hypothesis testing.</p>
 </summary>
 
 <div class="week-content">
 
-<!-- ## Week 5: Statistical Methods & Testing {.panel-tabset} -->
-
 ::: {.coming-soon}
 ::: {.coming-soon-icon}
-🔬
+🎯
 :::
 ### Hypothesis Testing Fundamentals
-Week 5  will cover Confidence Intervals, hypothesis testing, and two sample t-Tests. Materials will be posted by week 5.
+Week 5 will cover Confidence Intervals, hypothesis testing, and two sample t-Tests. Materials will be posted by week 5.
 :::
+
 </div>
 </details>
 
-
 <details class="week-collapsible" open>
 <summary class="week-summary">
-<h3>📊 Week 6: Statistical Methods & Testing </h3>
-<p class="week-subtitle"> During the last week, we dive into statistical modeling and testing! .</p>
+<h3>⚖️ Week 6: Statistical Methods & Testing</h3>
+<p class="week-subtitle">During the last week, we dive into statistical modeling and testing!</p>
 </summary>
 
 <div class="week-content">
 
-<!-- ## Week 6: Statistical Methods & Testing {.panel-tabset} -->
-
 ::: {.coming-soon}
 ::: {.coming-soon-icon}
-🔬
+⚖️
 :::
-### Hypothesis Testing Fundamentals
-Week 6  will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 6.
+### Advanced Statistical Methods
+Week 6 will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 6.
 :::
 
 </div>
+</details>
 
 
 ```{=html}
