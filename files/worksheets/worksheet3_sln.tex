@@ -1,0 +1,592 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={PSTAT 5A Practice Worksheet 3 - SOLUTIONS},
+  pdfauthor={Narjes Mathlouthi},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{PSTAT 5A Practice Worksheet 3 - SOLUTIONS}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Comprehensive Review: Probability, Counting, and Conditional
+Probability}
+\author{Narjes Mathlouthi}
+\date{2025-07-09}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+
+\textbf{📚 Key Formulas Reference:}
+
+\textbf{Basic Probability:}
+
+\begin{itemize}
+\item
+  \textbf{Conditional Probability:}
+  \(P(A|B) = \frac{P(A \cap B)}{P(B)}\)
+\item
+  \textbf{Law of Total Probability:}
+  \(P(A) = \sum P(A|B_i) \cdot P(B_i)\)
+\item
+  \textbf{Addition Rule:} \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)
+\item
+  \textbf{Multiplication Rule:}
+  \(P(A \cap B) = P(A) \cdot P(B|A) = P(B) \cdot P(A|B)\)
+\end{itemize}
+
+\textbf{Counting:}
+
+\begin{itemize}
+\item
+  \textbf{Multiplication Rule:} If a procedure consists of \(k\) steps,
+  with \(n_1\) ways for step 1, \(n_2\) for step 2, \ldots, \(n_k\) for
+  step \(k\), then total ways:
+  \(n_1 \times n_2 \times \cdots \times n_k\)
+\item
+  \textbf{Factorial:}
+  \(n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1\)
+\item
+  \textbf{Permutations:} \(P(n,r) = \frac{n!}{(n-r)!}\)
+\item
+  \textbf{Combinations:} \(C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}\)
+\end{itemize}
+
+\section{Section A: Probability -
+SOLUTIONS}\label{section-a-probability---solutions}
+
+\emph{⏱️ Estimated time: 8 minutes}
+
+\textbf{Problem A1: Probability Distributions - SOLUTION}
+
+For a valid probability distribution, two conditions must be met:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  All probabilities must be non-negative (≥ 0)
+\item
+  The sum of all probabilities must equal 1
+\end{enumerate}
+
+\textbf{Analysis:}
+
+\textbf{(a) Invalid}
+\[\text{Sum} = 0.3 + 0.3 + 0.3 + 0.2 + 0.1 = 1.2 > 1\] The probabilities
+sum to more than 1, violating condition 2.
+
+\textbf{(b) Valid} \[\text{Sum} = 0 + 0 + 1 + 0 + 0 = 1\] All
+probabilities are non-negative and sum to 1. This represents a class
+where everyone receives a C.
+
+\textbf{(c) Invalid} \[\text{Sum} = 0.3 + 0.3 + 0.3 + 0 + 0 = 0.9 < 1\]
+The probabilities sum to less than 1, violating condition 2.
+
+\textbf{(d) Invalid} Contains \(P(F) = -0.1 < 0\) Although the sum would
+equal 1.0, the probability for grade F is negative, violating condition
+1.
+
+\textbf{(e) Valid} \[\text{Sum} = 0.2 + 0.4 + 0.2 + 0.1 + 0.1 = 1.0\]
+All probabilities are non-negative and sum to 1.
+
+\textbf{(f) Invalid} Contains \(P(B) = -0.1 < 0\) Although the sum
+equals 1.0, the probability for grade B is negative, violating condition
+1.
+
+\section{Section B: Permutations and Combinations -
+SOLUTIONS}\label{section-b-permutations-and-combinations---solutions}
+
+\emph{⏱️ Estimated time: 15 minutes}
+
+\textbf{Problem B1: Permutations and Combinations - SOLUTION}
+
+\textbf{Part (a):} How many 6-character passwords can be formed using 3
+specific letters and 3 specific digits if repetitions are not allowed
+and letters must come before digits?
+
+\textbf{Solution:} Since letters must come before digits, we have a
+fixed structure: \textbf{LLL DDD}
+
+\textbf{Step 1:} Arrange 3 letters in the first 3 positions
+
+\begin{itemize}
+\tightlist
+\item
+  This is a permutation:
+  \(P(3,3) = \frac{3!}{(3-3)!} = \frac{3!}{0!} = 3! = 6\) ways
+\end{itemize}
+
+\textbf{Step 2:} Arrange 3 digits in the last 3 positions
+
+\begin{itemize}
+\tightlist
+\item
+  This is a permutation:
+  \(P(3,3) = \frac{3!}{(3-3)!} = \frac{3!}{0!} = 3! = 6\) ways
+\end{itemize}
+
+\textbf{Step 3:} Apply multiplication principle
+\[\text{Total passwords} = 6 \times 6 = \boxed{36 \text{ passwords}}\]
+
+\textbf{Part (b):} If the team wants to select 4 people from 12
+employees to form a security committee where order doesn't matter, how
+many ways can this be done?
+
+\textbf{Solution:} Since order doesn't matter, this is a
+\textbf{combination} problem.
+
+\[C(12,4) = \binom{12}{4} = \frac{12!}{4!(12-4)!} = \frac{12!}{4! \cdot 8!}\]
+
+\[= \frac{12 \times 11 \times 10 \times 9}{4 \times 3 \times 2 \times 1} = \frac{11,880}{24} = \boxed{495 \text{ ways}}\]
+
+\section{Section C: Conditional Probability -
+SOLUTIONS}\label{section-c-conditional-probability---solutions}
+
+\emph{⏱️ Estimated time: 12 minutes}
+
+\textbf{Problem C1: Drawing Cards (Without Replacement) - SOLUTION}
+
+\textbf{Given Information:}
+
+\begin{itemize}
+\item
+  Standard 52-card deck
+\item
+  Drawing two cards without replacement
+\item
+  \(A = \{\text{"first card is a heart"}\}\)
+\item
+  \(B = \{\text{"second card is an ace"}\}\)
+\end{itemize}
+
+\textbf{Solution:}
+
+\textbf{1. P(A)}
+
+There are 13 hearts in a 52-card deck.
+\[P(A) = \frac{13}{52} = \boxed{\frac{1}{4} = 0.2500}\]
+
+\textbf{2. P(A and B)}
+
+We need both events to occur: first card is a heart AND second card is
+an ace.
+
+\textbf{Case 1:} First card is the Ace of Hearts -
+\(P(\text{1st card is Ace of Hearts}) = \frac{1}{52}\)
+
+\begin{itemize}
+\item
+  \(P(\text{2nd card is an ace | 1st card is Ace of Hearts}) = \frac{3}{51}\)
+  (3 aces left)
+\item
+  \(P(\text{Case 1}) = \frac{1}{52} \times \frac{3}{51} = \frac{3}{2652}\)
+\end{itemize}
+
+\textbf{Case 2:} First card is a non-ace heart -
+\(P(\text{1st card is non-ace heart}) = \frac{12}{52}\) (12 non-ace
+hearts)
+
+\begin{itemize}
+\item
+  \(P(\text{2nd card is an ace | 1st card is non-ace heart}) = \frac{4}{51}\)
+  (4 aces left)
+\item
+  \(P(\text{Case 2}) = \frac{12}{52} \times \frac{4}{51} = \frac{48}{2652}\)
+\end{itemize}
+
+\[P(A \text{ and } B) = \frac{3}{2652} + \frac{48}{2652} = \frac{51}{2652} = \boxed{\frac{1}{52} = 0.0192}\]
+
+\textbf{3. P(B\textbar A)}
+
+Using the definition of conditional probability:
+\[P(B|A) = \frac{P(A \text{ and } B)}{P(A)} = \frac{\frac{1}{52}}{\frac{1}{4}} = \frac{1}{52} \times \frac{4}{1} = \boxed{\frac{4}{52} = \frac{1}{13} = 0.0769}\]
+
+\textbf{Alternative approach:} Given that the first card is a heart:
+
+\begin{itemize}
+\item
+  If it's the Ace of Hearts: 3 aces remain out of 51 cards
+\item
+  If it's a non-ace heart: 4 aces remain out of 51 cards
+\item
+  \(P(B|A) = \frac{1}{13} \times \frac{3}{51} + \frac{12}{13} \times \frac{4}{51} = \frac{3 + 48}{13 \times 51} = \frac{51}{663} = \frac{4}{52} = \frac{1}{13}\)
+\end{itemize}
+
+\textbf{4. P(B)}
+
+Using the Law of Total Probability. Let \(A^c\) = ``first card is not a
+heart''
+
+\[P(B) = P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)\]
+
+We know:
+
+\begin{itemize}
+\item
+  \(P(A) = \frac{1}{4}\) and \(P(A^c) = \frac{3}{4}\)
+\item
+  \(P(B|A) = \frac{1}{13}\) (from part 3)
+\item
+  \(P(B|A^c) = \frac{4}{51}\) (if first card isn't a heart, all 4 aces
+  remain)
+\end{itemize}
+
+\[P(B) = \frac{1}{13} \times \frac{1}{4} + \frac{4}{51} \times \frac{3}{4} = \frac{1}{52} + \frac{12}{204} = \frac{1}{52} + \frac{3}{51}\]
+
+\[= \frac{51 + 156}{52 \times 51} = \frac{207}{2652} = \boxed{\frac{4}{51} = 0.0784}\]
+
+\textbf{5. Comparison of P(B\textbar A) vs P(B)}
+
+\[P(B|A) = \frac{1}{13} = 0.0769\] \[P(B) = \frac{4}{51} = 0.0784\]
+
+\textbf{Analysis:} \(P(B|A) < P(B)\)
+
+\textbf{Explanation:} The probability of getting an ace on the second
+draw is slightly \textbf{lower} when we know the first card is a heart
+compared to when we don't know anything about the first card. This
+happens because:
+
+\begin{itemize}
+\item
+  When the first card is a heart, there's a \(\frac{1}{13}\) chance it's
+  the Ace of Hearts, removing one ace from the deck
+\item
+  This makes it slightly less likely to draw an ace on the second draw
+\item
+  This demonstrates \textbf{dependence} - the events are not independent
+  because drawing without replacement creates dependence between
+  successive draws
+\end{itemize}
+
+\section{Section D: Advanced Counting with Restrictions -
+SOLUTIONS}\label{section-d-advanced-counting-with-restrictions---solutions}
+
+\emph{⏱️ Estimated time: 15 minutes}
+
+\textbf{Problem D1: Advanced Counting with Restrictions - SOLUTION}
+
+\textbf{Given:}
+
+\begin{itemize}
+\item
+  6 appetizer options (including 1 seafood)
+\item
+  8 main course options (including 1 vegetarian, and 3 that are beef or
+  chicken)
+\item
+  5 dessert options (including 1 chocolate)
+\end{itemize}
+
+\textbf{Restrictions:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Seafood appetizer → cannot choose vegetarian main course
+\item
+  Chocolate dessert → must choose beef or chicken main course (3
+  specific options)
+\end{enumerate}
+
+\textbf{Part (a):} How many valid meal combinations are possible?
+
+\textbf{Solution using cases:}
+
+\textbf{Case 1: Seafood appetizer is chosen}
+
+\begin{itemize}
+\item
+  1 appetizer choice (seafood)
+\item
+  7 main course choices (8 total minus 1 vegetarian)
+\item
+  5 dessert choices (no restrictions)
+\item
+  Total: \(1 \times 7 \times 5 = 35\) combinations
+\end{itemize}
+
+\textbf{Case 2: Non-seafood appetizer + chocolate dessert}
+
+\begin{itemize}
+\item
+  5 appetizer choices (6 total minus 1 seafood)
+\item
+  3 main course choices (only beef or chicken allowed with chocolate)
+\item
+  1 dessert choice (chocolate)
+\item
+  Total: \(5 \times 3 \times 1 = 15\) combinations
+\end{itemize}
+
+\textbf{Case 3: Non-seafood appetizer + non-chocolate dessert}
+
+\begin{itemize}
+\item
+  5 appetizer choices (6 total minus 1 seafood)
+\item
+  8 main course choices (no restrictions since no seafood appetizer)
+\item
+  4 dessert choices (5 total minus 1 chocolate)
+\item
+  Total: \(5 \times 8 \times 4 = 160\) combinations
+\end{itemize}
+
+\textbf{Total valid combinations:}
+\[35 + 15 + 160 = \boxed{210 \text{ combinations}}\]
+
+\textbf{Verification using complementary counting:}
+
+\begin{itemize}
+\item
+  Total unrestricted combinations: \(6 \times 8 \times 5 = 240\)
+\item
+  Invalid combinations to subtract:
+
+  \begin{itemize}
+  \item
+    Seafood + vegetarian + any dessert: \(1 \times 1 \times 5 = 5\)
+  \item
+    Non-seafood + chocolate + non-beef/chicken:
+    \(5 \times 5 \times 1 = 25\)
+  \end{itemize}
+\item
+  Valid combinations: \(240 - 5 - 25 = 210\) ✓
+\end{itemize}
+
+\textbf{Part (b):} If customers choose randomly among valid
+combinations, what is the probability someone chooses the chocolate
+dessert?
+
+\textbf{Solution:} From our case analysis, combinations with chocolate
+dessert come only from Case 2:
+
+\begin{itemize}
+\item
+  Combinations with chocolate dessert: 15
+\item
+  Total valid combinations: 210
+\end{itemize}
+
+\[P(\text{chocolate dessert}) = \frac{15}{210} = \frac{1}{14} = \boxed{0.0714}\]
+
+\textbf{Alternative verification:}
+
+We can also calculate this directly:
+
+\begin{itemize}
+\item
+  Non-seafood appetizers: 5 choices
+\item
+  With chocolate dessert, must choose from 3 main courses
+\item
+  Valid chocolate combinations: \(5 \times 3 = 15\)
+\item
+  Probability: \(\frac{15}{210} = \frac{1}{14} = 0.0714\) ✓
+\end{itemize}
+
+\section{Summary of Key Concepts}\label{summary-of-key-concepts}
+
+\textbf{Probability Distributions}
+
+\begin{itemize}
+\item
+  Valid distributions require: all probabilities \(\geq 0\) and sum
+  \(= 1\)
+\item
+  Check both conditions systematically
+\end{itemize}
+
+\textbf{Permutations vs Combinations}
+
+\begin{itemize}
+\item
+  Permutations: Order matters, use \(P(n,r) = \frac{n!}{(n-r)!}\)
+\item
+  Combinations: Order doesn't matter, use
+  \(C(n,r) = \frac{n!}{r!(n-r)!}\)
+\item
+  Multiplication principle: Combine independent choices
+\end{itemize}
+
+\textbf{Conditional Probability}
+
+\begin{itemize}
+\item
+  Without replacement: Creates dependence between events
+\item
+  Use definition: \(P(B|A) = \frac{P(A \cap B)}{P(A)}\)
+\item
+  Law of Total Probability: For calculating marginal probabilities
+\end{itemize}
+
+\textbf{Advanced Counting}
+
+\begin{itemize}
+\item
+  Case analysis: Break complex problems into manageable parts
+\item
+  Handle restrictions: Consider what's allowed vs.~not allowed
+\item
+  Verification: Use complementary counting or direct calculation
+\end{itemize}
+
+
+
+
+\end{document}

@@ -1,0 +1,252 @@
+---
+title: "PSTAT 5A Practice Worksheet 3 - SOLUTIONS"
+subtitle: "Comprehensive Review: Probability, Counting, and Conditional Probability"
+author: "Solution Key"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    theme: cosmo
+    css: /files/lecture_notes/theme/lecture-styles.css
+  pdf:
+    toc: true
+    number-sections: true
+    geometry: margin=1in
+    fontsize: 11pt
+    documentclass: article
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+execute:
+  echo: false
+  warning: false
+---
+
+# Section A: Probability - SOLUTIONS
+*⏱️ Estimated time: 8 minutes*
+
+::: {.problem}
+**Problem A1: Probability Distributions - SOLUTION**
+
+For a valid probability distribution, two conditions must be met:
+
+1. All probabilities must be non-negative (≥ 0)
+   
+2. The sum of all probabilities must equal 1
+
+**Analysis:**
+
+**(a) Invalid** 
+
+- Sum = 0.3 + 0.3 + 0.3 + 0.2 + 0.1 = 1.2 > 1
+The probabilities sum to more than 1, violating the second condition.
+
+**(b) Valid** 
+
+- Sum = 0 + 0 + 1 + 0 + 0 = 1
+All probabilities are non-negative and sum to 1. This represents a class where everyone receives a C.
+
+**(c) Invalid** 
+
+- Sum = 0.3 + 0.3 + 0.3 + 0 + 0 = 0.9 < 1
+The probabilities sum to less than 1, violating the second condition.
+
+**(d) Invalid** 
+
+- Contains F = -0.1 < 0
+Although the sum would equal 1.0, the probability for grade F is negative, violating the first condition.
+
+**(e) Valid** 
+
+- Sum = 0.2 + 0.4 + 0.2 + 0.1 + 0.1 = 1.0
+All probabilities are non-negative and sum to 1.
+
+**(f) Invalid** 
+
+- Contains B = -0.1 < 0
+Although the sum equals 1.0, the probability for grade B is negative, violating the first condition.
+:::
+
+# Section B: Permutations and Combinations - SOLUTIONS
+*⏱️ Estimated time: 15 minutes*
+
+::: {.problem}
+**Problem B1: Permutations and Combinations - SOLUTION**
+
+**Part (a):** How many 6-character passwords can be formed using 3 specific letters and 3 specific digits if repetitions are not allowed and letters must come before digits?
+
+**Solution:**
+Since letters must come before digits, we have a fixed structure: LLL DDD
+
+- Step 1: Arrange 3 letters in the first 3 positions
+  - This is a permutation: P(3,3) = 3! = 6 ways
+
+- Step 2: Arrange 3 digits in the last 3 positions  
+  - This is a permutation: P(3,3) = 3! = 6 ways
+
+- Step 3: Apply multiplication principle
+  - Total passwords = 6 × 6 = **36 passwords**
+
+**Part (b):** If the team wants to select 4 people from 12 employees to form a security committee where order doesn't matter, how many ways can this be done?
+
+**Solution:**
+Since order doesn't matter, this is a combination problem.
+
+$$C(12,4) = \binom{12}{4} = \frac{12!}{4!(12-4)!} = \frac{12!}{4! \cdot 8!}$$
+
+$$= \frac{12 \times 11 \times 10 \times 9}{4 \times 3 \times 2 \times 1} = \frac{11880}{24} = \textbf{495 ways}$$
+:::
+
+# Section C: Conditional Probability - SOLUTIONS
+*⏱️ Estimated time: 15 minutes*
+
+::: {.problem}
+**Problem B1: Conditional Probability and Medical Testing - SOLUTION**
+
+**Given Information:**
+
+- P(has variant) = 0.03
+  
+- P(test positive | has variant) = 0.95 (sensitivity)
+  
+- P(test negative | no variant) = 0.92 (specificity)
+  
+- Therefore: P(test positive | no variant) = 1 - 0.92 = 0.08
+
+**Part (a):** What is the probability that a randomly selected person tests positive?
+
+**Solution:**
+
+Using the Law of Total Probability:
+
+$$P(\text{test positive}) = P(\text{test positive | has variant}) \times P(\text{has variant}) + P(\text{test positive | no variant}) \times P(\text{no variant})$$
+
+$$P(\text{test positive}) = 0.95 \times 0.03 + 0.08 \times 0.97$$
+$$= 0.0285 + 0.0776 = \textbf{0.1061}$$
+
+**Part (b):** If someone tests positive, what is the probability they actually have the variant?
+
+**Solution:**
+Using Bayes' Theorem:
+
+$$P(\text{has variant | test positive}) = \frac{P(\text{test positive | has variant}) \times P(\text{has variant})}{P(\text{test positive})}$$
+
+$$= \frac{0.95 \times 0.03}{0.1061} = \frac{0.0285}{0.1061} = \textbf{0.2686}$$
+
+**Part (c):** If someone tests negative, what is the probability they actually don't have the variant?
+
+**Solution:**
+First, find P(test negative):
+$$P(\text{test negative}) = 1 - P(\text{test positive}) = 1 - 0.1061 = 0.8939$$
+
+Using Bayes' Theorem:
+$$P(\text{no variant | test negative}) = \frac{P(\text{test negative | no variant}) \times P(\text{no variant})}{P(\text{test negative})}$$
+
+$$= \frac{0.92 \times 0.97}{0.8939} = \frac{0.8924}{0.8939} = \textbf{0.9983}$$
+
+**Part (d) [Challenge]:** Two consecutive positive tests - what is the probability they actually have the variant?
+
+**Solution:**
+Assuming independence between tests:
+
+$$P(\text{two positive | has variant}) = 0.95^2 = 0.9025$$
+$$P(\text{two positive | no variant}) = 0.08^2 = 0.0064$$
+
+$$P(\text{two positive}) = 0.9025 \times 0.03 + 0.0064 \times 0.97 = 0.027075 + 0.006208 = 0.033283$$
+
+$$P(\text{has variant | two positive}) = \frac{0.027075}{0.033283} = \textbf{0.8134}$$
+:::
+
+::: {.problem}
+**Problem C1: Advanced Counting with Restrictions - SOLUTION**
+
+**Part (a):** How many valid meal combinations are possible?
+
+**Solution:**
+We need to consider cases based on the restrictions.
+
+**Case 1: Seafood appetizer is chosen**
+
+- 1 appetizer option (seafood)
+  
+- 7 main course options (cannot choose vegetarian)
+  
+- 5 dessert options
+  
+- Combinations: 1 × 7 × 5 = 35
+
+**Case 2: Non-seafood appetizer + chocolate dessert**
+
+- 5 appetizer options (non-seafood)
+  
+- 3 main course options (only beef or chicken allowed with chocolate)
+  
+- 1 dessert option (chocolate)
+  
+- Combinations: 5 × 3 × 1 = 15
+
+**Case 3: Non-seafood appetizer + non-chocolate dessert**
+- 5 appetizer options (non-seafood)
+  
+- 8 main course options (no restrictions)
+  
+- 4 dessert options (non-chocolate)
+  
+- Combinations: 5 × 8 × 4 = 160
+
+**Total valid combinations:** 35 + 15 + 160 = **210 combinations**
+
+**Part (b):** If customers choose randomly among valid combinations, what is the probability someone chooses the chocolate dessert?
+
+**Solution:**
+Combinations with chocolate dessert: 15 (from Case 2 above)
+Total valid combinations: 210
+
+$$P(\text{chocolate dessert}) = \frac{15}{210} = \frac{1}{14} = \textbf{0.0714}$$
+:::
+
+# Section D: Review - SOLUTIONS
+*⏱️ Estimated time: 12 minutes*
+
+::: {.problem}
+**Problem B3: Daily Expenses - SOLUTION**
+
+**Given:**
+
+- Coffee: Mean = $1.40, SD = $0.30
+  
+- Muffin: Mean = $2.50, SD = $0.15
+  
+- Prices are independent
+
+**Part (a):** What is the mean and standard deviation of the amount she spends on breakfast daily?
+
+**Solution:**
+For the sum of independent random variables:
+
+**Mean of daily expenses:**
+$$E[\text{Daily}] = E[\text{Coffee}] + E[\text{Muffin}] = \$1.40 + \$2.50 = \textbf{\$3.90}$$
+
+**Variance of daily expenses:**
+$$\text{Var}[\text{Daily}] = \text{Var}[\text{Coffee}] + \text{Var}[\text{Muffin}] = (0.30)^2 + (0.15)^2 = 0.09 + 0.0225 = 0.1125$$
+
+**Standard deviation of daily expenses:**
+$$SD[\text{Daily}] = \sqrt{0.1125} = \textbf{\$0.3354}$$
+
+**Part (b):** What is the mean and standard deviation of the amount she spends on breakfast weekly (7 days)?
+
+**Solution:**
+For the sum of 7 independent daily expenses:
+
+**Mean of weekly expenses:**
+$$E[\text{Weekly}] = 7 \times E[\text{Daily}] = 7 \times \$3.90 = \textbf{\$27.30}$$
+
+**Variance of weekly expenses:**
+$$\text{Var}[\text{Weekly}] = 7 \times \text{Var}[\text{Daily}] = 7 \times 0.1125 = 0.7875$$
+
+**Standard deviation of weekly expenses:**
+$$SD[\text{Weekly}] = \sqrt{0.7875} = \textbf{\$0.8874}$$
+:::

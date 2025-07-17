@@ -7493,85 +7493,85 @@
     "objectID": "files/lecture_notes/lecture9/lec9.html#the-big-picture-from-sample-to-population",
     "href": "files/lecture_notes/lecture9/lec9.html#the-big-picture-from-sample-to-population",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
-    "section": "The Big Picture: From Sample to Population",
-    "text": "The Big Picture: From Sample to Population\n\n\nThink of this like trying to understand a huge library by reading just a few books\n\n\n        \n        \n        \n\n\n                            \n                                            \n\n\n\nKey Terms Made Simple:\n\nPopulation (\\(\\mu\\)): Everyone we care about (like all students at UCSB)\nSample (\\(\\bar x\\)): The people we actually measured (like 100 students we surveyed)\nParameter: The true answer we want (population mean)\nStatistic: Our best guess (sample mean)"
+    "section": " The Big Picture: From Sample to Population  ",
+    "text": "The Big Picture: From Sample to Population  \n\n\nThink of this like trying to understand a huge library by reading just a few books\n\n\n                            \n                                            \n\n\n\nKey Terms Made Simple:\n\nPopulation (\\(\\mu\\)): Everyone we care about (like all students at UCSB)\nSample (\\(\\bar x\\)): The people we actually measured (like 100 students we surveyed)\nParameter: The true answer we want (population mean)\nStatistic: Our best guess (sample mean)"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#why-point-estimates-arent-enough",
     "href": "files/lecture_notes/lecture9/lec9.html#why-point-estimates-arent-enough",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
-    "section": "Why Point Estimates Aren’t Enough",
-    "text": "Why Point Estimates Aren’t Enough\nImagine asking: “What’s the average height of UCSB students?”\n\n\n                            \n                                            \n\n\nThe Problem: Each sample gives a slightly different answer!\nThe Solution: Use confidence intervals to show the range of reasonable values."
+    "section": " Why Point Estimates Aren’t Enough  ",
+    "text": "Why Point Estimates Aren’t Enough  \n\n\nImagine asking: “What’s the average height of UCSB students?”\n\n\n                            \n                                            \n\n\n\nThe Problem: Each sample gives a slightly different answer!\nThe Solution: Use confidence intervals to show the range of reasonable values."
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#understanding-sampling-distributions",
     "href": "files/lecture_notes/lecture9/lec9.html#understanding-sampling-distributions",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
     "section": "Understanding Sampling Distributions",
-    "text": "Understanding Sampling Distributions\nSimple Analogy: Think of sampling distributions like “What if we repeated our study 1000 times?”\n\n\n                            \n                                            \n\n\nKey Insights: 1. Population can be any shape (skewed, normal, weird) 2. One sample might not look like the population 3. Sample means vary from sample to sample 4. Many sample means form a beautiful normal distribution!"
+    "text": "Understanding Sampling Distributions\n\n\nSimple Analogy: Think of sampling distributions like “What if we repeated our study 1000 times?”\n\n\n                            \n                                            \n\n\n\nKey Insights:\n\nPopulation can be any shape (skewed, normal, weird)\nOne sample might not look like the population\nSample means vary from sample to sample\nMany sample means form a beautiful normal distribution!"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#the-central-limit-theorem-clt",
     "href": "files/lecture_notes/lecture9/lec9.html#the-central-limit-theorem-clt",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
-    "section": "The Central Limit Theorem (CLT) 🎯",
-    "text": "The Central Limit Theorem (CLT) 🎯\nThe Magic Rule: No matter what shape your population is, sample means will be approximately normal!\n\n\n                            \n                                            \n\n\nThe Rule of Thumb: With n ≥ 30, sample means will be approximately normal, regardless of population shape!"
+    "section": "  The Central Limit Theorem (CLT) 🎯  ",
+    "text": "The Central Limit Theorem (CLT) 🎯  \n\n\n\n\n                            \n                                            \nCentral Limit Theorem: Larger Samples → More Normal!\n\n\n\nThe Magic Rule: No matter what shape your population is, sample means will be approximately normal!\nThe Rule of Thumb: With n ≥ 30, sample means will be approximately normal, regardless of population shape!"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#standard-error-the-key-to-everything",
     "href": "files/lecture_notes/lecture9/lec9.html#standard-error-the-key-to-everything",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
-    "section": "Standard Error: The Key to Everything",
-    "text": "Standard Error: The Key to Everything\nStandard Error (SE) tells us how much sample means vary\n\n\nThink of it like this: - Standard Deviation (σ): How spread out individual people are - Standard Error (SE): How spread out sample averages are\nThe Formula Broken Down: \\[SE = \\frac{\\sigma}{\\sqrt{n}}\\]\nWhere: - σ = population standard deviation (how varied people are) - n = sample size (how many people we measured) - √n = square root of sample size (the magic that makes averages more precise)\n\n\n\n                            \n                                            \n\n\n\nKey Insight: Doubling your sample size doesn’t halve the error - you need 4 times the sample for half the error!"
+    "section": " Standard Error: The Key to Everything  ",
+    "text": "Standard Error: The Key to Everything  \n\n\n\nStandard Deviation (σ): How spread out individual people are\nStandard Error (SE): How spread out sample averages are\n\nThe Formula: \\[SE = \\frac{\\sigma}{\\sqrt{n}}\\]\nWhere:\n\n\\(\\sigma\\) = population standard deviation (how varied people are)\n\\(n\\) = sample size (how many people we measured)\n\\(\\sqrt{n}\\) = square root of sample size\n\n\n\n\n                            \n                                            \n\n\n\n\n\n\n\n\nImportant\n\n\nDoubling your sample size doesn’t halve the error - you need 4 times the sample for half the error!"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#confidence-intervals-the-intuitive-idea",
     "href": "files/lecture_notes/lecture9/lec9.html#confidence-intervals-the-intuitive-idea",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
-    "section": "Confidence Intervals: The Intuitive Idea",
-    "text": "Confidence Intervals: The Intuitive Idea\nImagine you’re trying to guess someone’s height just by looking at their shadow…\n\n\n                            \n                                            \n\n\nSimple Interpretation: “We’re 95% confident the true average height is between 64.3 and 70.1 inches”"
+    "section": " Confidence Intervals: The Intuitive Idea  ",
+    "text": "Confidence Intervals: The Intuitive Idea  \n\n\nImagine you’re trying to guess someone’s height just by looking at their shadow…\n\n\n                            \n                                            \n\n\n\nSimple Interpretation: “We’re 95% confident the true average height is between 64.3 and 70.1 inches”"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#building-confidence-intervals-step-by-step",
     "href": "files/lecture_notes/lecture9/lec9.html#building-confidence-intervals-step-by-step",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
-    "section": "Building Confidence Intervals Step-by-Step",
-    "text": "Building Confidence Intervals Step-by-Step\nFor Population Means (Most Common Case)\nWhen we DON’T know the population standard deviation (σ):\n\n\n                            \n                                            \n\n\nThe Formula: \\(\\bar{x} \\pm t^* \\cdot \\frac{s}{\\sqrt{n}}\\)\nBreaking it down: - \\(\\bar{x}\\) = our sample average (the center of our guess) - \\(t^*\\) = critical value (how many standard errors to go out) - \\(\\frac{s}{\\sqrt{n}}\\) = standard error (our uncertainty measure)"
+    "section": " Building Confidence Intervals Step-by-Step  ",
+    "text": "Building Confidence Intervals Step-by-Step  \n\n\nFor Population Means (Most Common Case)\nWhen we DON’T know the population standard deviation (σ):\n\n\n                            \n                                            \n\n\n\nThe Formula: \\(\\bar{x} \\pm t^* \\cdot \\frac{s}{\\sqrt{n}}\\)\nBreaking it down: - \\(\\bar{x}\\) = our sample average (the center of our guess) - \\(t^*\\) = critical value (how many standard errors to go out) - \\(\\frac{s}{\\sqrt{n}}\\) = standard error (our uncertainty measure)"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#the-t-distribution-when-σ-is-unknown",
     "href": "files/lecture_notes/lecture9/lec9.html#the-t-distribution-when-σ-is-unknown",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
     "section": "The t-Distribution: When σ is Unknown",
-    "text": "The t-Distribution: When σ is Unknown\nWhy not use the normal distribution? Because when we estimate σ with s, we add extra uncertainty!\n\n\n                            \n                                            \n\n\nKey Points: - Small samples (n &lt; 30): Use t-distribution - Large samples (n ≥ 30): t ≈ normal - Degrees of freedom = n - 1"
+    "text": "The t-Distribution: When σ is Unknown\n\n\nWhy not use the normal distribution? Because when we estimate σ with s, we add extra uncertainty!\n\n\n                            \n                                            \n\n\n\nKey Points: - Small samples (n &lt; 30): Use t-distribution - Large samples (n ≥ 30): t ≈ normal - Degrees of freedom = n - 1"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#confidence-intervals-for-proportions",
     "href": "files/lecture_notes/lecture9/lec9.html#confidence-intervals-for-proportions",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
     "section": "Confidence Intervals for Proportions",
-    "text": "Confidence Intervals for Proportions\nFor Yes/No questions like: “What percentage of students prefer online classes?”\n\n\n                            \n                                            \n\n\nThe Formula: \\(\\hat{p} \\pm z^* \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\)\nResults: Sample: 60% prefer online (120/200)\n95% CI: (53.2%, 66.8%) - We’re 95% confident the true percentage is in this range."
+    "text": "Confidence Intervals for Proportions\n\n\nFor Yes/No questions like: “What percentage of students prefer online classes?”\n\n\n                            \n                                            \n\n\n\nThe Formula: \\(\\hat{p} \\pm z^* \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\)\nResults: Sample: 60% prefer online (120/200)\n95% CI: (53.2%, 66.8%) - We’re 95% confident the true percentage is in this range."
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#what-does-95-confident-really-mean",
     "href": "files/lecture_notes/lecture9/lec9.html#what-does-95-confident-really-mean",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
     "section": "What Does “95% Confident” Really Mean? 🤔",
-    "text": "What Does “95% Confident” Really Mean? 🤔\nThe Biggest Misconception: “There’s a 95% chance the true mean is in our interval”\nActually: “If we repeated this study 100 times, about 95 of our intervals would contain the true mean”\n\n\n                            \n                                            \n\n\nRemember: The interval either contains the true value or it doesn’t - there’s no probability involved for a single interval!"
+    "text": "What Does “95% Confident” Really Mean? 🤔\n\n\nThe Biggest Misconception: “There’s a 95% chance the true mean is in our interval”\nActually: “If we repeated this study 100 times, about 95 of our intervals would contain the true mean”\n\n\n                            \n                                            \n\n\n\nRemember: The interval either contains the true value or it doesn’t - there’s no probability involved for a single interval!"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#sample-size-planning-getting-the-precision-you-want",
     "href": "files/lecture_notes/lecture9/lec9.html#sample-size-planning-getting-the-precision-you-want",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
     "section": "Sample Size Planning: Getting the Precision You Want",
-    "text": "Sample Size Planning: Getting the Precision You Want\nThe Question: “How many people do we need to survey?”\n\n\n                            \n                                            \n\n\nKey Formula for Means: \\(n = \\left(\\frac{z^* \\sigma}{ME}\\right)^2\\)\nTrade-offs: - Want smaller margin of error? Need bigger sample - Want higher confidence? Need bigger sample\n- Want to save money? Accept wider intervals"
+    "text": "Sample Size Planning: Getting the Precision You Want\n\n\nThe Question: “How many people do we need to survey?”\n\n\n                            \n                                            \n\n\n\nKey Formula for Means: \\(n = \\left(\\frac{z^* \\sigma}{ME}\\right)^2\\)\nTrade-offs: - Want smaller margin of error? Need bigger sample - Want higher confidence? Need bigger sample\n- Want to save money? Accept wider intervals"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#real-example-student-sleep-study",
     "href": "files/lecture_notes/lecture9/lec9.html#real-example-student-sleep-study",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
     "section": "Real Example: Student Sleep Study 😴",
-    "text": "Real Example: Student Sleep Study 😴\nResearch Question: How many hours do UCSB students sleep per night?\n\n\n                            \n                                            \n\n\nBottom Line: We’re 95% confident that UCSB students sleep between 6.73 and 7.47 hours per night on average."
+    "text": "Real Example: Student Sleep Study 😴\n\n\nResearch Question: How many hours do UCSB students sleep per night?\n\n\n                            \n                                            \n\n\n\nBottom Line: We’re 95% confident that UCSB students sleep between 6.73 and 7.47 hours per night on average."
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#common-mistakes-to-avoid",
@@ -7585,27 +7585,55 @@
     "href": "files/lecture_notes/lecture9/lec9.html#practice-problems",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
     "section": "Practice Problems 📝",
-    "text": "Practice Problems 📝\nProblem 1: Coffee Shop Revenue\nA coffee shop owner samples 36 days and finds average daily revenue of $850 with standard deviation $120.\nYour turn: Calculate a 90% confidence interval for the true average daily revenue.\n\n\n\n\n\n\nSolution\n\n\nGiven: n = 36, x̄ = $850, s = $120, 90% confidence\nStep 1: Check conditions ✓ (large sample)\nStep 2: Find critical value\ndf = 35, t* = 1.690 (90% confidence)\nStep 3: Calculate standard error\nSE = 120/√36 = 120/6 = $20\nStep 4: Build interval\nCI = 850 ± 1.690 × 20 = 850 ± 33.8 = ($816.20, $883.80)\nInterpretation: We are 90% confident the true average daily revenue is between $816.20 and $883.80."
+    "text": "Practice Problems 📝\n\n\nProblem 1: Coffee Shop Revenue\nA coffee shop owner samples 36 days and finds average daily revenue of $850 with standard deviation $120.\nYour turn: Calculate a 90% confidence interval for the true average daily revenue.\n\n\n\n\n\n\nSolution\n\n\nGiven: n = 36, x̄ = $850, s = $120, 90% confidence\nStep 1: Check conditions ✓ (large sample)\nStep 2: Find critical value\ndf = 35, t* = 1.690 (90% confidence)\nStep 3: Calculate standard error\nSE = 120/√36 = 120/6 = $20\nStep 4: Build interval\nCI = 850 ± 1.690 × 20 = 850 ± 33.8 = ($816.20, $883.80)\nInterpretation: We are 90% confident the true average daily revenue is between $816.20 and $883.80.\n\n\n\n\nProblem 2: Student Survey\nIn a survey of 400 students, 280 say they would recommend their major to a friend.\nYour turn: 1. Calculate the sample proportion 2. Build a 95% confidence interval\n3. Check if conditions are met\n\n\n\n\n\n\nSolution\n\n\nStep 1: Sample proportion\np̂ = 280/400 = 0.70 (70%)\nStep 2: Check conditions\nnp̂ = 400(0.70) = 280 ≥ 10 ✓\nn(1-p̂) = 400(0.30) = 120 ≥ 10 ✓\nStep 3: Build CI\nSE = √[0.70(0.30)/400] = √[0.000525] = 0.0229\nz* = 1.96 (95% confidence)\nCI = 0.70 ± 1.96(0.0229) = 0.70 ± 0.045 = (0.655, 0.745)\nInterpretation: We are 95% confident that between 65.5% and 74.5% of all students would recommend their major."
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#looking-ahead-hypothesis-testing",
     "href": "files/lecture_notes/lecture9/lec9.html#looking-ahead-hypothesis-testing",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
     "section": "Looking Ahead: Hypothesis Testing 🔮",
-    "text": "Looking Ahead: Hypothesis Testing 🔮\nNext week we’ll learn: - How to test specific claims about populations - When to reject or fail to reject hypotheses\n- The connection between confidence intervals and hypothesis tests"
+    "text": "Looking Ahead: Hypothesis Testing 🔮\n\n\nNext week we’ll learn: - How to test specific claims about populations - When to reject or fail to reject hypotheses\n- The connection between confidence intervals and hypothesis tests"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#key-takeaways",
     "href": "files/lecture_notes/lecture9/lec9.html#key-takeaways",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
     "section": "Key Takeaways 🎯",
-    "text": "Key Takeaways 🎯\n\n\nBig Ideas: 1. Samples vary - confidence intervals capture this uncertainty 2. Larger samples give more precise estimates\n3. Higher confidence means wider intervals 4. The CLT makes normal-based inference possible\n\nPractical Skills: - Build CIs for means and proportions - Interpret confidence correctly - Plan sample sizes for desired precision - Avoid common interpretation mistakes\n\nRemember: Statistics is about making informed decisions under uncertainty. Confidence intervals help us quantify that uncertainty!"
+    "text": "Key Takeaways 🎯\n\n\nBig Ideas: 1. Samples vary - confidence intervals capture this uncertainty 2. Larger samples give more precise estimates\n3. Higher confidence means wider intervals 4. The CLT makes normal-based inference possible\n\nPractical Skills: - Build CIs for means and proportions - Interpret confidence correctly - Plan sample sizes for desired precision - Avoid common interpretation mistakes"
   },
   {
     "objectID": "files/lecture_notes/lecture9/lec9.html#questions",
     "href": "files/lecture_notes/lecture9/lec9.html#questions",
     "title": "PSTAT 5A: Sampling and Confidence Intervals",
     "section": "Questions? 🤔",
-    "text": "Questions? 🤔\nOffice Hours: Thursday 11AM (link on Canvas)\nEmail: nmathlouthi@ucsb.edu\nNext Class: Hypothesis Testing and p-values\n“The goal is not to eliminate uncertainty, but to understand and work with it”"
+    "text": "Questions? 🤔\n\n\nOffice Hours: Thursday 11AM (link on Canvas)\nEmail: nmathlouthi@ucsb.edu\nNext Class: Hypothesis Testing and p-values\n“The goal is not to eliminate uncertainty, but to understand and work with it”"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lec9.html#sampling-distributions",
+    "href": "files/lecture_notes/lecture9/lec9.html#sampling-distributions",
+    "title": "PSTAT 5A: Sampling and Confidence Intervals",
+    "section": " Sampling Distributions  ",
+    "text": "Sampling Distributions  \n\n\nThink of sampling distributions like “What if we repeated our study 1000 times?”\n\n\n                            \n                                            \n\n\n\nKey Insights:\n\nPopulation can be any shape (skewed, normal, weird)\nOne sample might not look like the population\nSample means vary from sample to sample\nMany sample means form a beautiful normal distribution!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lec9.html#from-observation-to-experimentation-the-foundation-of-statistical-inference",
+    "href": "files/lecture_notes/lecture9/lec9.html#from-observation-to-experimentation-the-foundation-of-statistical-inference",
+    "title": "PSTAT 5A: Sampling and Confidence Intervals",
+    "section": "From Observation to Experimentation: The Foundation of Statistical Inference”",
+    "text": "From Observation to Experimentation: The Foundation of Statistical Inference”"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lec9.html#from-observation-to-experimentation",
+    "href": "files/lecture_notes/lecture9/lec9.html#from-observation-to-experimentation",
+    "title": "PSTAT 5A: Sampling and Confidence Intervals",
+    "section": "  From Observation to Experimentation ",
+    "text": "From Observation to Experimentation"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lec9.html#standard-error-the-key-to-everything-1",
+    "href": "files/lecture_notes/lecture9/lec9.html#standard-error-the-key-to-everything-1",
+    "title": "PSTAT 5A: Sampling and Confidence Intervals",
+    "section": " Standard Error: The Key to Everything  ",
+    "text": "Standard Error: The Key to Everything  \n\n\nThink of it like this:\n\nStandard Deviation (σ): How spread out individual people are\nStandard Error (SE): How spread out sample averages are\n\nThe Formula: \\[SE = \\frac{\\sigma}{\\sqrt{n}}\\]\nWhere:\n\n\\(\\sigma\\) = population standard deviation (how varied people are)\n\\(n\\) = sample size (how many people we measured)\n\\(\\sqrt{n}\\) = square root of sample size (the magic that makes averages more precise)\n\n\n\n\n                            \n                                            \n\n\n\n\n\n\n\n\nImportant\n\n\nDoubling your sample size doesn’t halve the error - you need 4 times the sample for half the error!"
   }
 ]

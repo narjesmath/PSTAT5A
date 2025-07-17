@@ -1,0 +1,346 @@
+---
+title: "PSTAT 5A Practice Worksheet 3 - SOLUTIONS"
+subtitle: "Comprehensive Review: Probability, Counting, and Conditional Probability"
+author: "Narjes Mathlouthi"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    theme: cosmo
+    css: /files/lecture_notes/theme/lecture-styles.css
+  pdf:
+    toc: true
+    number-sections: true
+    geometry: margin=1in
+    fontsize: 11pt
+    documentclass: article
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+execute:
+  echo: false
+  warning: false
+---
+
+
+
+::: {.formula-box}
+**📚 Key Formulas Reference:**
+
+**Basic Probability:**
+
+- **Conditional Probability:** $P(A|B) = \frac{P(A \cap B)}{P(B)}$
+  
+- **Law of Total Probability:** $P(A) = \sum P(A|B_i) \cdot P(B_i)$
+  
+- **Addition Rule:** $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+  
+- **Multiplication Rule:** $P(A \cap B) = P(A) \cdot P(B|A) = P(B) \cdot P(A|B)$
+
+**Counting:**
+
+- **Multiplication Rule:** If a procedure consists of $k$ steps, with $n_1$ ways for step 1, $n_2$ for step 2, ..., $n_k$ for step $k$, then total ways: $n_1 \times n_2 \times \cdots \times n_k$
+
+- **Factorial:** $n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$
+
+- **Permutations:** $P(n,r) = \frac{n!}{(n-r)!}$
+  
+- **Combinations:** $C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$
+:::
+
+# Section A: Probability - SOLUTIONS
+*⏱️ Estimated time: 8 minutes*
+
+::: {.problem}
+**Problem A1: Probability Distributions - SOLUTION**
+
+For a valid probability distribution, two conditions must be met:
+
+1. All probabilities must be non-negative (≥ 0)
+   
+2. The sum of all probabilities must equal 1
+
+**Analysis:**
+
+**(a) Invalid** 
+$$\text{Sum} = 0.3 + 0.3 + 0.3 + 0.2 + 0.1 = 1.2 > 1$$
+The probabilities sum to more than 1, violating condition 2.
+
+**(b) Valid** 
+$$\text{Sum} = 0 + 0 + 1 + 0 + 0 = 1$$
+All probabilities are non-negative and sum to 1. This represents a class where everyone receives a C.
+
+**(c) Invalid** 
+$$\text{Sum} = 0.3 + 0.3 + 0.3 + 0 + 0 = 0.9 < 1$$
+The probabilities sum to less than 1, violating condition 2.
+
+**(d) Invalid** 
+Contains $P(F) = -0.1 < 0$
+Although the sum would equal 1.0, the probability for grade F is negative, violating condition 1.
+
+**(e) Valid** 
+$$\text{Sum} = 0.2 + 0.4 + 0.2 + 0.1 + 0.1 = 1.0$$
+All probabilities are non-negative and sum to 1.
+
+**(f) Invalid** 
+Contains $P(B) = -0.1 < 0$
+Although the sum equals 1.0, the probability for grade B is negative, violating condition 1.
+:::
+
+# Section B: Permutations and Combinations - SOLUTIONS
+*⏱️ Estimated time: 15 minutes*
+
+::: {.problem}
+**Problem B1: Permutations and Combinations - SOLUTION**
+
+**Part (a):** How many 6-character passwords can be formed using 3 specific letters and 3 specific digits if repetitions are not allowed and letters must come before digits?
+
+**Solution:**
+Since letters must come before digits, we have a fixed structure: **LLL DDD**
+
+**Step 1:** Arrange 3 letters in the first 3 positions
+
+- This is a permutation: $P(3,3) = \frac{3!}{(3-3)!} = \frac{3!}{0!} = 3! = 6$ ways
+
+**Step 2:** Arrange 3 digits in the last 3 positions  
+
+- This is a permutation: $P(3,3) = \frac{3!}{(3-3)!} = \frac{3!}{0!} = 3! = 6$ ways
+
+**Step 3:** Apply multiplication principle
+$$\text{Total passwords} = 6 \times 6 = \boxed{36 \text{ passwords}}$$
+
+**Part (b):** If the team wants to select 4 people from 12 employees to form a security committee where order doesn't matter, how many ways can this be done?
+
+**Solution:**
+Since order doesn't matter, this is a **combination** problem.
+
+$$C(12,4) = \binom{12}{4} = \frac{12!}{4!(12-4)!} = \frac{12!}{4! \cdot 8!}$$
+
+$$= \frac{12 \times 11 \times 10 \times 9}{4 \times 3 \times 2 \times 1} = \frac{11,880}{24} = \boxed{495 \text{ ways}}$$
+:::
+
+# Section C: Conditional Probability - SOLUTIONS
+*⏱️ Estimated time: 12 minutes*
+
+::: {.problem}
+**Problem C1: Drawing Cards (Without Replacement) - SOLUTION**
+
+**Given Information:**
+
+- Standard 52-card deck
+  
+- Drawing two cards without replacement
+  
+- $A = \{\text{"first card is a heart"}\}$
+  
+- $B = \{\text{"second card is an ace"}\}$
+
+**Solution:**
+
+**1. P(A)**
+
+There are 13 hearts in a 52-card deck.
+$$P(A) = \frac{13}{52} = \boxed{\frac{1}{4} = 0.2500}$$
+
+**2. P(A and B)**
+
+We need both events to occur: first card is a heart AND second card is an ace.
+
+**Case 1:** First card is the Ace of Hearts
+- $P(\text{1st card is Ace of Hearts}) = \frac{1}{52}$
+  
+- $P(\text{2nd card is an ace | 1st card is Ace of Hearts}) = \frac{3}{51}$ (3 aces left)
+  
+- $P(\text{Case 1}) = \frac{1}{52} \times \frac{3}{51} = \frac{3}{2652}$
+
+**Case 2:** First card is a non-ace heart
+- $P(\text{1st card is non-ace heart}) = \frac{12}{52}$ (12 non-ace hearts)
+  
+- $P(\text{2nd card is an ace | 1st card is non-ace heart}) = \frac{4}{51}$ (4 aces left)
+  
+- $P(\text{Case 2}) = \frac{12}{52} \times \frac{4}{51} = \frac{48}{2652}$
+
+$$P(A \text{ and } B) = \frac{3}{2652} + \frac{48}{2652} = \frac{51}{2652} = \boxed{\frac{1}{52} = 0.0192}$$
+
+**3. P(B|A)**
+
+Using the definition of conditional probability:
+$$P(B|A) = \frac{P(A \text{ and } B)}{P(A)} = \frac{\frac{1}{52}}{\frac{1}{4}} = \frac{1}{52} \times \frac{4}{1} = \boxed{\frac{4}{52} = \frac{1}{13} = 0.0769}$$
+
+**Alternative approach:** Given that the first card is a heart:
+
+- If it's the Ace of Hearts: 3 aces remain out of 51 cards
+  
+- If it's a non-ace heart: 4 aces remain out of 51 cards
+  
+- $P(B|A) = \frac{1}{13} \times \frac{3}{51} + \frac{12}{13} \times \frac{4}{51} = \frac{3 + 48}{13 \times 51} = \frac{51}{663} = \frac{4}{52} = \frac{1}{13}$
+
+**4. P(B)**
+
+Using the Law of Total Probability. Let $A^c$ = "first card is not a heart"
+
+$$P(B) = P(B|A) \cdot P(A) + P(B|A^c) \cdot P(A^c)$$
+
+We know:
+
+- $P(A) = \frac{1}{4}$ and $P(A^c) = \frac{3}{4}$
+  
+- $P(B|A) = \frac{1}{13}$ (from part 3)
+  
+- $P(B|A^c) = \frac{4}{51}$ (if first card isn't a heart, all 4 aces remain)
+
+$$P(B) = \frac{1}{13} \times \frac{1}{4} + \frac{4}{51} \times \frac{3}{4} = \frac{1}{52} + \frac{12}{204} = \frac{1}{52} + \frac{3}{51}$$
+
+$$= \frac{51 + 156}{52 \times 51} = \frac{207}{2652} = \boxed{\frac{4}{51} = 0.0784}$$
+
+**5. Comparison of P(B|A) vs P(B)**
+
+$$P(B|A) = \frac{1}{13} = 0.0769$$
+$$P(B) = \frac{4}{51} = 0.0784$$
+
+**Analysis:** $P(B|A) < P(B)$
+
+**Explanation:** The probability of getting an ace on the second draw is slightly **lower** when we know the first card is a heart compared to when we don't know anything about the first card. This happens because:
+
+- When the first card is a heart, there's a $\frac{1}{13}$ chance it's the Ace of Hearts, removing one ace from the deck
+  
+- This makes it slightly less likely to draw an ace on the second draw
+  
+- This demonstrates **dependence** - the events are not independent because drawing without replacement creates dependence between successive draws
+:::
+
+# Section D: Advanced Counting with Restrictions - SOLUTIONS
+*⏱️ Estimated time: 15 minutes*
+
+::: {.problem}
+**Problem D1: Advanced Counting with Restrictions - SOLUTION**
+
+**Given:**
+
+- 6 appetizer options (including 1 seafood)
+  
+- 8 main course options (including 1 vegetarian, and 3 that are beef or chicken)
+  
+- 5 dessert options (including 1 chocolate)
+
+**Restrictions:**
+
+1. Seafood appetizer → cannot choose vegetarian main course
+   
+2. Chocolate dessert → must choose beef or chicken main course (3 specific options)
+
+**Part (a):** How many valid meal combinations are possible?
+
+**Solution using cases:**
+
+**Case 1: Seafood appetizer is chosen**
+
+- 1 appetizer choice (seafood)
+  
+- 7 main course choices (8 total minus 1 vegetarian)
+  
+- 5 dessert choices (no restrictions)
+  
+- Total: $1 \times 7 \times 5 = 35$ combinations
+
+**Case 2: Non-seafood appetizer + chocolate dessert**
+
+- 5 appetizer choices (6 total minus 1 seafood)
+  
+- 3 main course choices (only beef or chicken allowed with chocolate)
+  
+- 1 dessert choice (chocolate)
+  
+- Total: $5 \times 3 \times 1 = 15$ combinations
+
+**Case 3: Non-seafood appetizer + non-chocolate dessert**
+
+- 5 appetizer choices (6 total minus 1 seafood)
+  
+- 8 main course choices (no restrictions since no seafood appetizer)
+  
+- 4 dessert choices (5 total minus 1 chocolate)
+  
+- Total: $5 \times 8 \times 4 = 160$ combinations
+
+**Total valid combinations:**
+$$35 + 15 + 160 = \boxed{210 \text{ combinations}}$$
+
+**Verification using complementary counting:**
+
+- Total unrestricted combinations: $6 \times 8 \times 5 = 240$
+  
+- Invalid combinations to subtract:
+  
+  - Seafood + vegetarian + any dessert: $1 \times 1 \times 5 = 5$
+  
+  - Non-seafood + chocolate + non-beef/chicken: $5 \times 5 \times 1 = 25$
+  
+- Valid combinations: $240 - 5 - 25 = 210$ ✓
+
+**Part (b):** If customers choose randomly among valid combinations, what is the probability someone chooses the chocolate dessert?
+
+**Solution:**
+From our case analysis, combinations with chocolate dessert come only from Case 2:
+
+- Combinations with chocolate dessert: 15
+  
+- Total valid combinations: 210
+
+$$P(\text{chocolate dessert}) = \frac{15}{210} = \frac{1}{14} = \boxed{0.0714}$$
+
+**Alternative verification:**
+
+We can also calculate this directly:
+
+- Non-seafood appetizers: 5 choices
+  
+- With chocolate dessert, must choose from 3 main courses
+  
+- Valid chocolate combinations: $5 \times 3 = 15$
+  
+- Probability: $\frac{15}{210} = \frac{1}{14} = 0.0714$ ✓
+:::
+
+# Summary of Key Concepts
+
+::: {.key-concept-box}
+**Probability Distributions**
+
+- <strong>Valid distributions</strong> require: all probabilities $\geq 0$ and sum $= 1$
+  
+- <strong>Check both conditions</strong> systematically
+:::
+
+::: {.key-concept-box}
+**Permutations vs Combinations**
+
+- <strong>Permutations:</strong> Order matters, use $P(n,r) = \frac{n!}{(n-r)!}$
+  
+- <strong>Combinations:</strong> Order doesn't matter, use $C(n,r) = \frac{n!}{r!(n-r)!}$
+  
+- <strong>Multiplication principle:</strong> Combine independent choices
+:::
+
+::: {.key-concept-box}
+**Conditional Probability**
+
+- <strong>Without replacement:</strong> Creates dependence between events
+  
+- <strong>Use definition:</strong> $P(B|A) = \frac{P(A \cap B)}{P(A)}$
+  
+- <strong>Law of Total Probability:</strong> For calculating marginal probabilities
+:::
+
+::: {.key-concept-box}
+**Advanced Counting**
+
+- <strong>Case analysis:</strong> Break complex problems into manageable parts
+  
+- <strong>Handle restrictions:</strong> Consider what's allowed vs. not allowed
+  
+- <strong>Verification:</strong> Use complementary counting or direct calculation
+:::

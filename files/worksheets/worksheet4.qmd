@@ -1,0 +1,213 @@
+---
+title: "PSTAT 5A Practice Worksheet 4"
+subtitle: "Comprehensive Review: Discrete Random Variables and Distributions"
+author: "Student Name: ________________________"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    theme: cosmo
+    css: /files/lecture_notes/theme/lecture-styles.css
+  pdf:
+    toc: true
+    number-sections: true
+    geometry: margin=1in
+    fontsize: 11pt
+    documentclass: article
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+execute:
+  echo: false
+  warning: false
+---
+
+# Instructions and Overview
+
+**⏰ Time Allocation:**
+
+- **Quiz Review** : 15 minutes
+
+- **Section A (Warm-up):** 15 minutes
+  
+- **Section B (Intermediate):** 20 minutes  
+  
+- **Optional Question:**  Do on your own
+  
+- **Total:** 50 minutes
+
+
+::: {.important}
+**📝 Important Instructions:**
+
+- Use the formulas provided for guidance
+  
+- Round final answers to 4 decimal places unless otherwise specified
+  
+- Identify the distribution type before calculating
+  
+- Show your work for expected value and variance calculations
+  
+- Use calculator as needed for factorials and combinations
+:::
+
+
+::: {.formula-box}
+
+**📚 Key Formulas Reference:**
+
+**General Random Variable Properties:**
+
+- **Expected Value:** $E[X] = \sum_{k} k \cdot P(X = k)$
+  
+- **Variance:** $\text{Var}(X) = E[X^2] - (E[X])^2 = \sum_{k} k^2 \cdot P(X = k) - \mu^2$
+
+- **Standard Deviation:** $\sigma = \sqrt{\text{Var}(X)}$
+
+**Discrete Distributions:**
+
+**Bernoulli Distribution:** $X \sim \text{Bernoulli}(p)$
+
+- **PMF:** $P(X = k) = p^k(1-p)^{1-k}$ for $k \in \{0,1\}$
+- **Mean:** $E[X] = p$
+- **Variance:** $\text{Var}(X) = p(1-p)$
+
+**Binomial Distribution:** $X \sim \text{Binomial}(n,p)$
+
+- **PMF:** $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$ for $k = 0, 1, 2, ..., n$
+- **Mean:** $E[X] = np$
+- **Variance:** $\text{Var}(X) = np(1-p)$
+
+**Geometric Distribution:** $X \sim \text{Geometric}(p)$
+
+- **PMF:** $P(X = k) = (1-p)^{k-1} p$ for $k = 1, 2, 3, ...$
+- **Mean:** $E[X] = \frac{1}{p}$
+- **Variance:** $\text{Var}(X) = \frac{1-p}{p^2}$
+
+**Poisson Distribution:** $X \sim \text{Poisson}(\lambda)$
+
+- **PMF:** $P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}$ for $k = 0, 1, 2, ...$
+- **Mean:** $E[X] = \lambda$
+- **Variance:** $\text{Var}(X) = \lambda$
+
+:::
+
+# Section A: Basic Concepts and Identification
+*⏱️ Estimated time: 15 minutes*
+
+::: {.problem}
+**Problem A1: Distribution Identification**
+
+For each scenario below, identify the appropriate discrete distribution and state the parameter(s). **Do not calculate probabilities yet.**
+
+**(a)** A fair coin is flipped until the first head appears. Let X = number of flips needed.
+
+**(b)** A quality control inspector tests 20 randomly selected items from a production line where 5% are defective. Let X = number of defective items found.
+
+**(c)** A website receives visitors at an average rate of 3 per minute. Let X = number of visitors in a 2-minute period.
+
+**(d)** A basketball player shoots one free throw with an 80% success rate. Let X = 1 if successful, 0 if unsuccessful.
+
+**(e)** A student keeps taking a driving test until they pass. The probability of passing on any attempt is 0.7. Let X = number of attempts needed to pass.
+
+:::
+
+**Work Space:**
+
+<br><br><br><br><br><br>
+
+::: {.problem}
+**Problem A2: Probability Mass Function**
+
+The random variable X has the following probability distribution:
+
+| X     | 1    | 2    | 3    | 4    | 5    |
+|-------|------|------|------|------|------|
+| P(X=k)| 0.1  | 0.3  | 0.4  | a    | 0.1  |
+
+**(a)** Find the value of $a$.
+
+**(b)** Calculate $P(X \leq 3)$.
+
+**(c)** Calculate $P(X > 2)$.
+
+:::
+
+**Work Space:**
+
+<br><br><br><br><br><br>
+
+# Section B: Expected Value and Variance
+*⏱️ Estimated time: 20 minutes*
+
+::: {.problem}
+**Problem B1: Manual Calculations**
+
+Using the probability distribution from Problem A2, calculate:
+
+**(a)** The expected value $E[X]$
+
+**(b)** The variance $\text{Var}(X)$
+
+**(c)** The standard deviation $\sigma$
+
+:::{.callout-tip}
+**Calculation Strategy:**
+
+For expected value: $E[X] = \sum k \cdot P(X = k)$
+
+For variance: First find $E[X^2] = \sum k^2 \cdot P(X = k)$, then use $\text{Var}(X) = E[X^2] - (E[X])^2$
+
+Show your work step by step!
+:::
+
+:::
+
+**Work Space:**
+
+<br><br><br><br><br><br><br><br>
+
+::: {.problem}
+**Problem B2: Bernoulli and Binomial Applications**
+
+A manufacturing process produces items that are defective with probability 0.15.
+
+**(a)** If you select one item randomly, what is the expected value and variance of X = number of defective items?
+
+**(b)** If you select 25 items randomly, what is the expected number of defective items and the standard deviation?
+
+:::{.callout-tip}
+Part (a) is a Bernoulli distribution. Part (b) is a Binomial distribution. Use the formulas from the reference box!
+:::
+
+:::
+
+**Work Space:**
+
+<br><br><br><br><br><br>
+
+
+
+
+
+
+
+# Optional Questions
+
+::: {.problem}
+**Optional Problem : Conceptual Understanding**
+
+**(a)** Explain the key difference between a Binomial distribution and a Geometric distribution in terms of what they count.
+
+**(b)** When would you use a Poisson distribution instead of a Binomial distribution?
+
+**(c)** If $X \sim \text{Binomial}(n, p)$, under what conditions would the variance be maximized?
+
+:::
+
+**Work Space:**
+
+<br><br><br><br><br><br>

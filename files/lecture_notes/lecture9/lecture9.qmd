@@ -1,0 +1,662 @@
+---
+title: "PSTAT 5A: Sampling and Confidence Intervals"
+subtitle: Lecture 9
+author: Narjes Mathlouthi
+date: today
+jupyter: python3
+format:
+  revealjs:
+    logo: /img/logo.png
+    theme: default
+    css: /files/lecture_notes/lecture8/new-style.css
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Understanding Data – Sampling and Confidence Intervals © 2025 Narjes Mathlouthi"
+    controls-layout: edges
+    controls-tutorial: false
+    hash: true
+    history: true
+    hash-one-based-index: false
+    fragment-in-url: false
+    transition: slide
+    background-transition: fade
+    pdf-separate-fragments: false
+    lang: en
+    auto-stretch: true
+---
+
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="home-fab" title="Back to Main Page" style="position:fixed;top:24px;left:24px;z-index:10001;text-decoration:none;">
+  <span style="font-size:1.7em;line-height:1;">🏠</span>
+</a>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="/files/lecture_notes/lecture9/lecture-interactive.js"></script>
+```
+
+# Welcome to Lecture 9 {.title-slide .center}
+**Sampling and Confidence Intervals**
+*From samples to populations: making inferences with uncertainty*
+
+## Today's Learning Objectives {.smaller}
+
+By the end of this lecture, you will be able to:
+
+- Understand sampling distributions and their properties (@sec-sampling-dist)
+- Apply the Central Limit Theorem to sampling (@sec-clt-sampling)
+- Construct confidence intervals for population means (@sec-ci-means)
+- Construct confidence intervals for population proportions (@sec-ci-proportions)
+- Interpret confidence intervals correctly (@sec-ci-interpretation)
+- Determine appropriate sample sizes for desired precision
+- Use `python` to calculate confidence intervals
+- Distinguish between different types of sampling methods
+
+
+## The Big Picture: Statistical Inference {#sec-sampling-dist .smaller}
+::: {.columns}
+::: {.column}
+<div class="type-card inference-card">
+<h4>Population vs Sample</h4>
+<ul>
+<li><strong>Population:</strong> All individuals of interest</li>
+<li><strong>Sample:</strong> Subset we actually observe</li>
+<li><strong>Parameter:</strong> Population characteristic ($\mu$, $p$)</li>
+<li><strong>Statistic:</strong> Sample characteristic ($\bar{x}$, $\hat{p}$)</li>
+</ul>
+<p><strong>Goal:</strong> Use sample statistics to estimate population parameters</p>
+<div class="inference-plot">
+<canvas id="inferenceReview" width="200" height="300"></canvas>
+</div>
+</div>
+:::
+::: {.column}
+<div class="type-card uncertainty-card">
+<h4>Why Confidence Intervals?</h4>
+<ul>
+<li><strong>Point estimates</strong> are rarely exactly correct</li>
+<li><strong>Interval estimates</strong> capture uncertainty</li>
+<li><strong>Confidence level</strong> quantifies our certainty</li>
+<li><strong>Margin of error</strong> shows precision</li>
+</ul>
+<p><strong>Key Insight:</strong> We trade precision for confidence</p>
+<div class="uncertainty-plot">
+<canvas id="uncertaintyReview" width="200" height="300"></canvas>
+</div>
+</div>
+
+:::
+:::
+
+## Sampling Distributions {.smaller}
+
+<div class="key-insight">
+A <strong>sampling distribution</strong> is the distribution of a statistic (like $\bar{x}$) across all possible samples of size $n$.
+</div>
+
+
+::: {.columns}
+::: {.column }
+**Key Properties:**
+
+**Center:**  
+$E[\bar{X}] = \mu$ (unbiased)
+
+**Spread:**  
+$SE(\bar{X}) = \frac{\sigma}{\sqrt{n}}$
+
+**Shape:**  
+Approaches normal as $n$ increases (Central Limit Theorem)
+
+
+
+**Standard Error vs Standard Deviation:**
+
+- $\sigma$: spread of individual observations
+- $SE = \frac{\sigma}{\sqrt{n}}$: spread of sample means
+
+
+:::
+::: {.column .smaller}
+<div class="chart-container">
+<canvas id="samplingDistChart"></canvas>
+</div>
+*Drag the slider to see how sample size affects the sampling distribution*
+:::
+:::
+
+
+## Central Limit Theorem in Action {#sec-clt-sampling}  
+
+::: {.interactive-demo .smaller}
+<!-- ### Interactive CLT Demo: Sample Means{.smaller} -->
+
+::: {.demo-controls}
+<button onclick="updateCLTSamplingDemo()">New Population</button>
+<select id="cltSamplingPopulation" onchange="updateCLTSamplingDemo()">
+<option value="uniform">Uniform Population</option>
+<option value="exponential">Exponential Population</option>
+<option value="bimodal">Bimodal Population</option>
+<option value="skewed">Right-Skewed Population</option>
+</select>
+<label>Sample Size: <input type="number" id="cltSamplingSize" value="30" min="5" max="100" onchange="updateCLTSamplingDemo()"></label>
+<button onclick="runSamplingSimulation()">Collect 1000 Sample Means</button>
+:::
+
+::: {.demo-stats}
+<div id="cltSamplingStats" style="margin-top: 8px; font-size: 0.9em; color: var(--neutral-medium);">
+<strong>Population μ:</strong> <span id="populationMean">-</span> | 
+<strong>Sample Means μ:</strong> <span id="sampleMeansMean">-</span> | 
+<strong>Standard Error:</strong> <span id="standardError">-</span>
+</div>
+:::
+::: {.chart-container}
+<canvas id="cltSamplingChart"></canvas>
+
+:::
+:::
+
+
+
+## Confidence Intervals: The Concept {#sec-ci-interpretation .smaller}
+
+
+
+:::{.columns}
+:::{.column width="40%"}
+**What is a Confidence Interval?**
+A confidence interval provides a range of plausible values for a population parameter.
+**95% Confidence Interval:** If we repeated our sampling process many times, about $95\%$ of the intervals we construct would contain the **true** population parameter.
+:::
+
+:::{.column idth="60%"}
+<div class="chart-container">
+<canvas id="ciConceptChart"></canvas>
+</div>
+
+*Click to generate new 95% confidence intervals*
+
+:::
+:::
+
+
+
+## Confidence Intervals for Population Means {#sec-ci-means }
+
+::: {.columns}
+::: {.column }
+<div class="summary-card smaller">
+<div style="font-weight: 600; color: #2563eb; margin-bottom: 8px;">
+<span style="font-size:1em;"> 🎯 When σ is Known:</span>
+</div>
+<div style="margin-bottom: 6px; font-size: 1em;">
+$$\bar{x} \pm z^* \cdot \frac{\sigma}{\sqrt{n}}$$
+</div>
+<div style="font-weight: 600; color: #f97316; margin-bottom: 4px;">
+When $\sigma$ is Unknown (more common):
+</div>
+<div style="margin-bottom: 6px; font-size: 1em;">
+$$\bar{x} \pm t^* \cdot \frac{s}{\sqrt{n}}$$
+</div>
+<div style="font-weight: 600; color: #059669; margin-top: 12px; margin-bottom: 4px;">
+**Key Components:**
+</div>
+<ul style="margin-top: 0; margin-bottom: 0.5em;">
+<li>$\bar{x}$: sample mean</li>
+<li>$t^*$: critical value (df = n-1)</li>
+<li>$\frac{s}{\sqrt{n}}$: standard error</li>
+</ul>
+</div>
+
+:::
+
+::: {.column }
+<div class="summary-card smaller">
+<div style="font-weight: 600; color: #7c3aed; margin-bottom: 4px;">
+
+**Common Confidence Levels:**
+</div>
+<ul style="margin-top: 0; margin-bottom: 0.5em;">
+<li><strong>90%:</strong> z* = 1.645, more precise</li>
+<li><strong>95%:</strong> z* = 1.96, most common</li>
+<li><strong>99%:</strong> z* = 2.576, more confident</li>
+</ul>
+<div style="font-weight: 600; color: #dc2626; margin-top: 12px; margin-bottom: 4px;">
+
+**Conditions Required:**
+</div>
+<div style="font-size: 0.9em; color: var(--neutral-dark);">
+- Random sampling<br>
+- Nearly normal population OR n ≥ 30<br>
+- Independent observations
+</div>
+</div>
+
+:::
+:::
+
+
+## Interactive CI Demo: Confidence Intervals for Means{.smaller}
+:::: {.interactive-demo .smaller}
+<!-- ### Interactive CI Demo: Confidence Intervals for Means{.smaller} -->
+::: {.demo-controls}
+<label>Sample Size: <input type="number" id="ciMeanSampleSize" value="25" min="10" max="100" onchange="updateCIMeanDemo()"></label>
+<label>Confidence Level:
+<select id="ciMeanConfLevel" onchange="updateCIMeanDemo()">
+<option value="90">90%</option>
+<option value="95" selected>95%</option>
+<option value="99">99%</option>
+</select>
+</label>
+<label>Population μ: <input type="number" id="ciMeanPopMean" value="50" step="1" onchange="updateCIMeanDemo()"></label>
+<label>Population σ: <input type="number" id="ciMeanPopSD" value="10" min="1" step="1" onchange="updateCIMeanDemo()"></label>
+<button onclick="generateCIMean()">Generate New Sample & CI</button>
+<button onclick="simulate100CIs()">Simulate 100 CIs</button>
+:::
+::: {.demo-stats}
+<div id="ciMeanStats" style="margin-top: 8px; font-size: 0.9em; color: var(--neutral-medium);">
+<strong>Current CI:</strong> <span id="currentCI">Generate a sample to see CI</span><br>
+<strong>Captures μ?</strong> <span id="capturesMu">-</span> | 
+<strong>Margin of Error:</strong> <span id="marginError">-</span>
+</div>
+:::
+::: {.chart-container}
+<canvas id="ciMeanChart"></canvas>
+:::
+:::
+
+## Confidence Intervals for Population Proportions {#sec-ci-proportions }
+::: {.columns}
+::: {.column }
+<div style="font-weight: 600; color: #2563eb; margin-bottom: 8px;">
+<span style="font-size:1em;"> 🎯 Formula:</span>
+</div>
+<div style="margin-bottom: 6px; font-size: 1em;">
+$$\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+</div>
+<div style="font-weight: 600; color: #f97316; margin-bottom: 4px;">
+**Key Components:**
+</div>
+<ul style="margin-top: 0; margin-bottom: 0.5em;">
+<li>$\hat{p} = \frac{x}{n}$: sample proportion</li>
+<li>$z^*$: critical value</li>
+<li>$\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$: standard error</li>
+</ul>
+
+
+:::
+::: {.column }
+
+<div style="font-weight: 600; color: #059669; margin-top: 0px; margin-bottom: 4px;">
+
+**Conditions Required:**
+</div>
+<ul style="margin-top: 0; margin-bottom: 0.5em;">
+<li>Random sampling</li>
+<li>$n\hat{p} \geq 10$ and $n(1-\hat{p}) \geq 10$</li>
+<li>Independent observations</li>
+<li>Population at least 10× sample size</li>
+</ul>
+<div style="font-weight: 600; color: #7c3aed; margin-top: 12px; margin-bottom: 4px;">
+Conservative Approach:
+</div>
+<div style="font-size: 0.9em; color: var(--neutral-dark);">
+Use $\hat{p} = 0.5$ for planning when true proportion unknown (maximizes margin of error)
+</div>
+
+:::
+:::
+
+## Interactive CI Demo: Confidence Intervals for Proportions{.smaller}
+::: {.interactive-demo .smaller}
+
+<!-- ### Interactive CI Demo: Confidence Intervals for Proportions{.smaller} -->
+
+::: {.demo-controls}
+<label>Sample Size: <input type="number" id="ciPropSampleSize" value="100" min="30" max="500" onchange="updateCIPropDemo()"></label>
+<label>Confidence Level:
+<select id="ciPropConfLevel" onchange="updateCIPropDemo()">
+<option value="90">90%</option>
+<option value="95" selected>95%</option>
+<option value="99">99%</option>
+</select>
+</label>
+<label>Population p: <input type="number" id="ciPropPopProp" value="0.3" min="0.1" max="0.9" step="0.1" onchange="updateCIPropDemo()"></label>
+<button onclick="generateCIProp()">Generate New Sample & CI</button>
+<button onclick="simulate100PropCIs()">Simulate 100 CIs</button>
+:::
+
+::: {.demo-stats}
+<div id="ciPropStats" style="margin-top: 8px; font-size: 0.9em; color: var(--neutral-medium);">
+<strong>Current CI:</strong> <span id="currentPropCI">Generate a sample to see CI</span><br>
+<strong>Captures p?</strong> <span id="capturesProp">-</span> | 
+<strong>Sample Proportion:</strong> <span id="sampleProp">-</span>
+</div>
+:::
+::: {.chart-container}
+<canvas id="ciPropChart"></canvas>
+:::
+:::
+
+## Practice Problem 1: CI for Mean {.smaller .scrollable}
+::: {.practice-problem}
+A random sample of 25 college students shows a mean daily screen time of 6.2 hours with a standard deviation of 1.8 hours.
+(a) Construct a 95% confidence interval for the mean daily screen time.
+(b) Interpret the confidence interval in context.
+(c) What would happen to the interval width if we used 99% confidence instead?
+<button class="show-solution smaller" onclick="toggleSolution('sol1')">Show Solution</button>
+
+::: {.solution data-id="sol1"}
+**(a)**  
+Given: $n = 25$, $\bar{x} = 6.2$, $s = 1.8$, 95% confidence  
+
+For $df = 24$, $t^* = 2.064$  
+
+$SE = \frac{s}{\sqrt{n}} = \frac{1.8}{\sqrt{25}} = 0.36$  
+
+$CI = 6.2 \pm 2.064 \times 0.36 = 6.2 \pm 0.743 = (5.46, 6.94)$ hours  
+
+
+
+**(b)**  
+We are 95% confident that the true mean daily screen time for all college students is between $5.46$ and $6.94$ hours.  
+
+
+
+**(c)**  
+For 99% confidence, we use $t^* = 2.797$, giving a wider interval: $(5.19, 7.21)$ hours.
+:::
+:::
+
+
+## Practice Problem 2: CI for Proportion {.smaller .scrollable}
+::: {.practice-problem}
+In a survey of 400 voters, 240 support a particular candidate.
+(a) Construct a 90% confidence interval for the true proportion of supporters.
+(b) Check if the conditions for inference are met.
+(c) How large a sample would be needed for a margin of error of 0.03 with 95% confidence?
+<button class="show-solution smaller" onclick="toggleSolution('sol2')">Show Solution</button>
+
+::: {.solution data-id="sol2"}
+**(a)**  
+$\hat{p} = \frac{240}{400} = 0.6$, $n = 400$, 90% confidence, $z^* = 1.645$  
+
+$SE = \sqrt{\frac{0.6 \times 0.4}{400}} = \sqrt{\frac{0.24}{400}} = 0.0245$  
+
+$CI = 0.6 \pm 1.645 \times 0.0245 = 0.6 \pm 0.0403 = (0.560, 0.640)$  
+
+
+
+**(b)**  
+
+**Check conditions:** 
+$n\hat{p} = 400 \times 0.6 = 240 \geq 10$ ✓  
+$n(1-\hat{p}) = 400 \times 0.4 = 160 \geq 10$ ✓  
+
+
+
+**(c)**  
+
+**Sample size calculation:** 
+
+$n = \frac{(z^*)^2 \hat{p}(1-\hat{p})}{ME^2} =
+\frac{(1.96)^2 \times 0.6 \times 0.4}{(0.03)^2} =
+\frac{0.9216}{0.0009} = 1024$ people
+:::
+:::
+
+
+## Practice Problem 3: Sample Size Planning {.smaller .scrollable}
+::: {.practice-problem}
+A market researcher wants to estimate the average amount spent on coffee per week by college students.
+(a) How large a sample is needed for a 95% CI with margin of error $2 if $\sigma$ = $8?
+(b) If the budget only allows for 100 students, what confidence level gives a $2 margin of error?
+(c) What's the trade-off between sample size, confidence level, and precision?
+
+<button class="show-solution smaller" onclick="toggleSolution('sol3')">Show Solution</button>
+
+::: {.solution data-id="sol3"}
+**(a)**  
+**For means:**  
+$n = \frac{(z^*)^2 \sigma^2}{ME^2} =
+\frac{(1.96)^2 \times 8^2}{2^2} =
+\frac{245.86}{4} = 62$ students  
+
+
+
+**(b)**  
+With $n = 100$:  
+$ME = z^* \frac{\sigma}{\sqrt{n}} =
+z^* \frac{8}{\sqrt{100}} =
+0.8 z^*$  
+
+For $ME = 2$:  
+$z^* = \frac{2}{0.8} = 2.5$,  
+which corresponds to about 98.8% confidence  
+
+
+
+**(c) Trade-offs:**
+
+- Higher confidence $\rightarrow$ wider intervals (less precision)
+  
+- Larger sample $\rightarrow$ narrower intervals (more precision)
+  
+- Lower margin of error $\rightarrow$ need larger sample or lower confidence
+:::
+:::
+
+
+## Common Mistakes and Misconceptions {.smaller}
+
+
+::: columns
+::: column
+**Interpretation Errors**
+
+❌ Wrong: "$95\%$ of the data falls in this interval"
+
+✅ Right: "We're $95\%$ confident the parameter is in this interval"
+
+❌ Wrong: "There's a $95\%$ chance $\mu$ is in this interval"
+
+✅ Right: "$95\%$ of such intervals contain $\mu$"
+:::
+::: column
+**Technical Errors**
+
+- Using $z*$ when σ is unknown and $n < 30$
+
+- Forgetting to check conditions
+
+- Confusing standard error with standard deviation
+
+- Using wrong degrees of freedom for t-distribution
+
+::: {.key-insight}
+**Remember:** The confidence level refers to the *long-run* proportion of intervals that capture the parameter!
+:::
+:::
+:::
+
+
+## Sample Size and Margin of Error Relationships {.smaller}
+::: {.interactive-demo}
+::: {.demo-controls}
+<label>Population σ: <input type="number" id="sampleSizeSD" value="10" min="1" max="20" onchange="updateSampleSizeDemo()"></label>
+<label>Confidence Level:
+<select id="sampleSizeConfLevel" onchange="updateSampleSizeDemo()">
+<option value="90">90%</option>
+<option value="95" selected>95%</option>
+<option value="99">99%</option>
+</select>
+</label>
+<label>Desired Margin of Error: <input type="number" id="desiredME" value="2" min="0.5" max="5" step="0.5" onchange="updateSampleSizeDemo()"></label>
+:::
+
+::: {.sample-size-container}
+::: {.chart-container}
+<canvas id="sampleSizeChart"></canvas>
+<div class="chart-title">Sample Size vs Margin of Error</div>
+
+:::
+:::
+
+<div id="sampleSizeStats" style="margin-top: 8px; font-size: 0.9em;">
+<strong>Required Sample Size:</strong> <span id="requiredN">-</span> | 
+<strong>Resulting ME:</strong> <span id="resultingME">-</span>
+</div>
+
+:::
+
+## Types of Sampling Methods 
+::: {.comparison-table}
+
+| **Method**       | **Description**                     | **Advantages**                           | **Disadvantages**                    |
+|-------------------|-------------------------------------|-----------------------------------------|--------------------------------------|
+| **Simple Random** | Every individual has equal chance   | Unbiased, simple                        | May not represent subgroups         |
+| **Stratified**     | Sample from each subgroup           | Ensures representation                  | More complex                        |
+| **Cluster**        | Sample entire groups                | Cost-effective for spread populations   | Higher variability                  |
+| **Systematic**     | Every k-th individual               | Simple to implement                     | Can miss patterns                   |
+| **Convenience**    | Easily accessible individuals       | Quick and cheap                         | Highly biased                       |
+:::
+::: {.callout-note}
+**Sampling Method Matters:** Only probability sampling methods allow for valid statistical inference!
+:::
+
+## Confidence Intervals in Practice {.smaller}
+<div class="summary-card smaller">
+
+::: columns
+::: column
+**When to Use Each Type**
+
+**Means**: Continuous data (height, income, test scores)
+
+**Proportions**: Categorical data (yes/no, success/failure)
+
+**Choosing Confidence Level**
+
+- 90%: Quick estimates, less critical decisions
+
+- 95%: Standard in most research
+  
+- 99%: High-stakes decisions, medical trials
+
+:::
+::: column
+**Real-World Applications**
+
+- Political polls: Proportion confidence intervals
+
+- Quality control: Mean confidence intervals
+
+- Medical research: Both types with high confidence
+
+- Business analytics: Varies by decision importance
+
+**Communication Tips**
+
+- Always include the confidence level
+
+- State what the interval estimates
+
+- Acknowledge the uncertainty
+
+- Consider practical significance
+
+:::
+:::
+</div>
+
+## Key Takeaways {.smaller}
+<div class="summary-card smaller key-takeaways">
+
+::: columns
+::: column
+**Main Concepts**
+
+- Sampling distributions follow predictable patterns
+
+- Confidence intervals quantify uncertainty
+
+- Central Limit Theorem makes normal-based inference possible
+
+- Sample size directly affects precision
+
+:::
+::: column
+**Practical Guidelines**
+Choose appropriate methods based on:
+
+- Data type (continuous vs categorical)
+
+- Sample size (use t when σ unknown)
+  
+- Desired precision (affects sample size)
+
+- Confidence level (affects interval width)
+
+**Key Principle**
+Statistical inference allows us to make informed decisions about populations using sample data, while properly accounting for uncertainty.
+:::
+:::
+</div>
+
+## Looking Ahead {.smaller}
+<div class="summary-card smaller">
+
+*Next Lecture: Hypothesis Testing*
+
+Topics we'll cover:
+
+- Null and alternative hypotheses
+  
+- Test statistics and p-values
+  
+- Type I and Type II errors
+
+
+::: {.connection}
+Connection: Confidence intervals and hypothesis tests are two sides of the same statistical inference coin
+:::
+</div>
+
+## Questions? {.center}
+
+- Office Hours: 11AM on Thursday (link on Canvas)
+
+- Email: nmathlouthi@ucsb.edu
+
+- Next Class: Hypothesis Testing and Statistical Significance
+
+## Resources
+
+```{=html}
+<div style="background: #f8fafc; border-radius: 10px; border: 1px solid #e0e7ef; padding: 16px 20px; margin: 8px 0;">
+  <ul style="list-style: none; padding: 0; margin: 0;">
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #2563eb; border-radius: 50%;"></span>
+      <strong>Read</strong> <a href="/files/Book/os4_for_screen_reader.pdf" style="color: #2563eb; text-decoration: none;">OpenIntro Statistics</a> <em style="color: #666;">Chapter 5 sections 5.1-5.3</em>
+    </li>
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #f97316; border-radius: 50%;"></span>
+      <a href="https://www.khanacademy.org/math/statistics-probability/confidence-intervals-one-sample" style="color: #2563eb; text-decoration: none;">Khan Academy - Confidence Intervals</a>
+    </li>
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #059669; border-radius: 50%;"></span>
+      <a href="https://seeing-theory.brown.edu/frequentist-inference/" style="color: #2563eb; text-decoration: none;">Seeing Theory - Frequentist Inference</a>
+    </li>
+    <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #7c3aed; border-radius: 50%;"></span>
+      <a href="https://en.wikipedia.org/wiki/Confidence_interval" style="color: #2563eb; text-decoration: none;">Confidence Intervals - Wikipedia</a>
+    </li>
+    <li style="margin-bottom: 0; padding-left: 24px; position: relative;">
+      <span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #dc2626; border-radius: 50%;"></span>
+      <a href="https://www.statology.org/confidence-interval-vs-prediction-interval/" style="color: #2563eb; text-decoration: none;">Understanding Different Types of Intervals</a>
+    </li>
+  </ul>
+</div>
+```

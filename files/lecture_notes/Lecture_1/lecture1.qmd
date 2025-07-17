@@ -1,0 +1,173 @@
+---
+title: "Lecture 1: Introduction to Data Science"
+date: "06/23/2025"
+author: "Narjes Mathlouthi"
+format:
+  revealjs:
+   logo: /img/logo.png
+   footer: " Understanding Data - Intro to Data Science © 2025 Narjes Mathlouthi"
+   transition: slide
+   background-transition: fade
+   theme: default
+   css: /files/lecture_notes/theme/lecture-styles.css
+   slide-number: true
+   include-in-header:
+      text: |
+        <style>
+          /* bump the logo width up to 120px */
+          .reveal .reveal-logo img {
+            width: 120px;
+          }
+        </style>
+   
+---
+
+
+:::: {.columns}
+
+<h2> Welcome to PSTAT5A!</h2> 
+
+::: {.column width="55%"}
+
+**Instructor** 
+
+- Narjes Mathlouthi (`nmathlouthi@ucsb.edu`)  
+  
+**Office Hours (Zoom):** 
+
+- Thursdays 11 AM–12 PM 
+:::
+
+::: {.column width="35%"}
+**Teaching Assistants**
+
+- Summer Lee (`sle@ucsb.edu`)  
+  
+- Mingzhu He (`mingzhuhe@ucsb.edu`)
+:::
+
+::::
+ 
+
+
+---
+
+:::: {.columns}
+
+<h2>Course Resources</h2>
+
+::: {.column width="60%"}
+
+- **Canvas**: Grades & Announcements
+- **Gradescope**: Quizzes & Labs  
+  - _Entry code:_ `WJ4XR7`  
+- **Course Website**: [bit.ly/3Ga8CSK](https://bit.ly/3Ga8CSK)
+   - All lecture slides, labs, and code will be posted here
+
+:::
+
+::: {.column width="40%"}
+![](/files/lecture_notes/Lecture_1/img/qr_code.png){width="100%"  fig-align="right" }
+:::
+
+::::
+
+
+
+
+---
+
+:::: {.columns}
+
+<h2>Course Resources</h2>
+
+::: {.column width="60%"}
+**Labs**: Interactive, hands‐on Python computing sessions hosted on JupyterHub.  
+Access the lab environment at: [https://pstat5a.lsit.ucsb.edu](https://pstat5a.lsit.ucsb.edu)
+:::
+
+::: {.column width="40%"}
+![](/files/lecture_notes/Lecture_1/img/jupyterlogo.png){ width="50%"  fig-align="right" }
+
+::: aside
+> All relevant course material will be posted on the website. 
+> **Quizzes** are the only exception and will be administered via Gradescope.
+> **Please read the syllabus fully and carefully!**
+::: 
+:::
+::::
+
+
+---
+
+:::: {.columns}
+
+<h2>Communication & Email</h2>
+
+::: {.column width="60%"}
+- **Priority:** Bring non‐urgent questions to office hours or after lecture rather than emailing.  
+- **Email Subject:** Always include `[PSTAT 5A]` to help us sort and reply efficiently.  
+- **Response Time:** Please allow 24–48 hours for replies; avoid sending emails over weekends.  
+
+:::
+
+::: {.column width="40%"}
+![](/files/lecture_notes/Lecture_1/img/email.png){ width="50%"  fig-align="right" }
+
+:::
+::::
+
+---
+
+:::: {.columns}
+
+<h2>What is Data Science?</h2>
+
+::: {.column width="60%"}
+
+- No single agreed-upon definition  
+- A **cross-disciplinary** field:  
+  - **Statistics**: theory of modeling & randomness  
+  - **Computer Science**: computation & data handling
+
+:::
+
+::: {.column width="40%"}
+![](/files/lecture_notes/Lecture_1/img/data_science.png){ width="90%" fig-align="right"  }
+:::
+::::
+
+
+
+
+# Why Theory Matters
+
+- Data today is **huge** computation alone isn't enough  
+- Theory guides how and why we apply tools  
+- Employers need analysts who **understand** and **apply**
+
+
+
+# Path Forward: Course Outline
+
+1. **Descriptive Statistics**: Summarize & visualize data  
+2. **Probability**: Random variables & distributions  
+3. **Inferential Statistics**: Confidence intervals & hypothesis tests  
+4. **Regression**: Modeling relationships  
+5. **Data Collection**: Sampling & study design
+
+
+
+# Why Should I Care?
+
+- Data is everywhere, any field dealing with data needs these skills  
+- Companies seek **insightful** analysts, not just code runners  
+- This course equips you with both **theory** and **practice**
+
+
+
+# Let’s Get Started!
+
+Ready to dive into Descriptive Statistics?
+
+---
