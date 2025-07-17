@@ -1,0 +1,807 @@
+---
+title: "From Random Variables to Sampling & Confidence Intervals"
+subtitle: "Review of Concepts, Applications & Confidence Intervals Intro"
+author: "Narjes Mathlouthi"
+format: 
+  revealjs:
+    logo: /img/logo.png
+    theme: default
+    css: /files/lecture_notes/lecture7/new-style.css
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Understanding Data – Random Variables  © 2025 Narjes Mathlouthi"
+    controls-layout: edges
+    controls-tutorial: false
+    hash: true
+    history: true
+    hash-one-based-index: false
+    fragment-in-url: false
+    transition: slide
+    background-transition: fade
+    pdf-separate-fragments: false
+    lang: en
+    auto-stretch: true
+    includes:
+      after_body: home-button.html
+execute:
+  echo: true
+  warning: false
+jupyter: python3
+---
+
+## Today's Learning Objectives
+
+By the end of this session, you will be able to:
+
+- Define what a random variable is
+- Distinguish between different types of random variables
+- Identify examples of random variables in your field of study
+- Connect probability concepts to real-world applications
+
+## What is a Random Variable?
+
+::: {.incremental}
+- A **random variable (r.v.)** is a function that assigns numerical values to the outcomes of a random experiment
+- Notation: Usually denoted by capital letters (X, Y, Z)
+- It's a bridge between the sample space and real numbers
+- Think of it as a "rule" that translates outcomes into numbers
+:::
+
+::: {.fragment}
+**Key Point:** It's not actually "random", it's a deterministic function applied to random outcomes!
+:::
+
+## Real-World Connection
+
+```{python}
+#| echo: false
+#| fig-align: center
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from scipy import stats
+import seaborn as sns
+
+# Set style
+plt.style.use('seaborn-v0_8')
+sns.set_palette("husl")
+
+# Create a simple illustration
+outcomes = ["Neither", "Floods", "Droughts"]
+probabilities = [0.45, 0.3, 0.25]
+x_values = [0, 1, 2]
+
+fig, ax = plt.subplots(figsize=(10, 6))
+bars = ax.bar(x_values, probabilities, alpha=0.7, color=['lightblue', 'orange', 'lightcoral'])
+
+# Add labels
+for i, (outcome, prob, x_val) in enumerate(zip(outcomes, probabilities, x_values)):
+    ax.text(x_val, prob/2, f'{outcome}\nX = {x_val}', 
+            ha='center', va='center', fontweight='bold', fontsize=12)
+
+ax.set_title('Random Variable Example: Weather Conditions', fontsize=16, fontweight='bold')
+ax.set_xlabel('Random Variable X', fontsize=14)
+ax.set_ylabel('Probability', fontsize=14)
+ax.set_xticks(x_values)
+ax.set_ylim(0, 0.5)
+
+plt.tight_layout()
+plt.show()
+```
+
+## Activity: Your Research Field
+
+:::{.columns}
+:::{.column}
+
+::: {.callout-tip}
+## Think About Your Major/Research Area
+
+Take 2 minutes to brainstorm:
+
+1. What random phenomena occur in your field?
+2. How might you assign numbers to these outcomes?
+3. What questions could you answer with this data?
+:::
+:::
+
+:::{.column}
+:::{.fragment}
+:::{.callout-tip}
+### Examples by Field
+
+- **Psychology:** Reaction times, survey responses
+  
+- **Biology:** Species counts, gene expression levels 
+   
+- **Economics:** Stock prices, unemployment rates
+  
+- **Engineering:** System failures, signal strength
+:::
+:::
+:::
+:::
+
+# Types of Random Variables
+
+## Discrete Random Variables {.smaller}
+
+::: {.incremental}
+- **Definition:** Takes on countable values (finite or countably infinite)
+- **Examples:**
+  - Number of emails received per day
+  - Number of defective products in a batch
+  - Student enrollment in courses
+  - Number of research papers published per year
+:::
+
+::: {.fragment}
+**Note:** If X is discrete, then **X** can take values $x_1, x_2, x_3, \cdot$ where we can list all possible values.
+:::
+
+## Continuous Random Variables {.smaller}
+
+::: {.incremental}
+- **Definition:** Takes on uncountably infinite values (any value in an interval)
+- **Examples:**
+  - Height of students
+  - Time until equipment failure
+  - Temperature measurements
+  - GPA (technically discrete, but often treated as continuous)
+:::
+
+::: {.fragment}
+**Note:** If $X$ is continuous, then $X$ can take any value in an interval $[a,b]$ or $(-\infty, \infty)$.
+:::
+
+## Sampling and Random Variables
+
+```{python}
+#| echo: false
+#| fig-align: center
+
+# Simulate the UCSB example
+np.random.seed(456)
+population_size = 10000
+sample_size = 30
+num_samples = 100
+
+# Generate population heights (normally distributed)
+population_heights = np.random.normal(loc=68, scale=4, size=population_size)
+
+# Function to take samples and calculate means
+sample_means = []
+for _ in range(num_samples):
+    sample_data = np.random.choice(population_heights, size=sample_size, replace=False)
+    sample_means.append(np.mean(sample_data))
+
+# Create the visualization
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10))
+
+# Population distribution
+ax1.hist(population_heights, bins=50, alpha=0.7, color='lightblue', edgecolor='black')
+ax1.axvline(np.mean(population_heights), color='red', linestyle='--', linewidth=2, label=f'μ = {np.mean(population_heights):.2f}')
+ax1.set_title(f'Population: All UCSB Students\nN = {population_size}', fontsize=14, fontweight='bold')
+ax1.set_xlabel('Height (inches)', fontsize=12)
+ax1.set_ylabel('Frequency', fontsize=12)
+ax1.legend()
+
+# Sample means distribution
+ax2.hist(sample_means, bins=20, alpha=0.7, color='lightgreen', edgecolor='black')
+ax2.axvline(np.mean(sample_means), color='red', linestyle='--', linewidth=2, label=f'X̄ = {np.mean(sample_means):.2f}')
+ax2.set_title(f'Sample Means Distribution\n{num_samples} samples of n = {sample_size}', fontsize=14, fontweight='bold')
+ax2.set_xlabel('Sample Mean Height', fontsize=12)
+ax2.set_ylabel('Frequency', fontsize=12)
+ax2.legend()
+
+plt.tight_layout()
+plt.show()
+```
+
+## Central Limit Theorem Connection {.smaller}
+
+
+::: {.incremental}
+- When we repeatedly sample from a population, the **sample mean** becomes a random variable
+- Formula: $\bar{X} = \frac{1}{n}\sum_{i=1}^{n} X_i$
+- Each time we sample, we get a different $\bar{X}$
+- The distribution of $\bar{X}$ has special properties!
+:::
+
+
+## Central Limit Theorem Connection {.smaller}
+:::{.columns}
+:::{.column .smaller}
+::: {.incremental}
+These properties are :
+
+- **Center (Unbiased):** $E[\bar{X}] = \mu$.
+- **Spread Shrinks with $n$:** $\mathrm{Var}(\bar{X}) = \sigma^2/n$; $\mathrm{SE}(\bar{X}) = \sigma/\sqrt{n}$ (estimate with $s/\sqrt{n}$).
+- **Shape:**  
+  - If the population is Normal, then $\bar{X} \sim \text{Normal}(\mu, \sigma^2/n)$ *exactly*.  
+  - Otherwise, **CLT:** for large $n$, $\bar{X}$ is *approximately Normal* even when the data aren’t.
+:::
+:::
+
+:::{.column}
+::: {.incremental}
+- **Consistency / Law of Large Numbers:** $\bar{X} \xrightarrow{P} \mu$ as $n \to \infty$ (estimates get closer to the truth with more data).
+- **(If sampling w/out replacement, pop size $N$):** Apply finite population correction (FPC):  
+$\mathrm{SE}(\bar{X}) = \dfrac{\sigma}{\sqrt{n}}\sqrt{\dfrac{N-n}{N-1}}$.
+:::
+:::
+:::
+
+
+
+## Common Discrete Distributions
+
+### Binomial Distribution - Characteristics {.smaller}
+
+::: columns
+::: {.column width="60%" }
+:::{.smaller}
+
+- **Fixed** number of trials (n)
+  
+- Each trial has two outcomes
+  
+- Constant probability of success
+  
+- Trials are **independent**
+
+**Example:** Number of successful research grants out of 10 applications
+:::
+:::
+
+::: {.column width="40%"}
+```{python}
+#| echo: false
+#| fig-align: center
+
+# Binomial distribution example
+n = 10
+p = 0.3
+x = np.arange(0, n+1)
+prob = stats.binom.pmf(x, n, p)
+
+fig, ax = plt.subplots(figsize=(8, 5))
+bars = ax.bar(x, prob, alpha=0.7, color='steelblue', edgecolor='black')
+
+# Add probability labels on bars
+for i, (xi, pi) in enumerate(zip(x, prob)):
+    ax.text(xi, pi + 0.01, f'{pi:.3f}', ha='center', va='bottom', fontsize=10)
+
+ax.set_title('Binomial Distribution\nn = 10, p = 0.3', fontsize=14, fontweight='bold')
+ax.set_xlabel('Number of Successes', fontsize=12)
+ax.set_ylabel('Probability', fontsize=12)
+ax.set_xticks(x)
+ax.set_ylim(0, max(prob) * 1.2)
+
+plt.tight_layout()
+plt.show()
+```
+:::
+:::
+
+## Poisson Distribution - Characteristics {.smaller}
+
+::: columns
+::: {.column width="50%"}
+
+
+- Models rare events
+  
+- Events occur independently
+  
+- Constant average rate
+  
+- Useful for counts over <i>time/space</i>
+
+**Example:** Number of emails received per hour, number of mutations in DNA sequences
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-align: center
+
+# Poisson distribution example
+lambda_param = 3
+x = np.arange(0, 13)
+prob = stats.poisson.pmf(x, lambda_param)
+
+fig, ax = plt.subplots(figsize=(8, 5))
+bars = ax.bar(x, prob, alpha=0.7, color='coral', edgecolor='black')
+
+# Add probability labels on bars
+for i, (xi, pi) in enumerate(zip(x, prob)):
+    ax.text(xi, pi + 0.01, f'{pi:.3f}', ha='center', va='bottom', fontsize=10)
+
+ax.set_title('Poisson Distribution\nλ = 3', fontsize=14, fontweight='bold')
+ax.set_xlabel('Number of Events', fontsize=12)
+ax.set_ylabel('Probability', fontsize=12)
+ax.set_xticks(x)
+ax.set_ylim(0, max(prob) * 1.2)
+
+plt.tight_layout()
+plt.show()
+```
+:::
+:::
+
+## Common Continuous Distributions
+
+### Normal Distribution - Characteristics {.smaller}
+
+::: columns
+::: {.column .smaller width="50%"}
+
+
+- Bell-shaped curve
+  
+- Symmetric around mean
+  
+- Parameters: $\mu$ (mean), $\sigma$ (standard deviation)
+  
+- Many natural phenomena follow this pattern
+
+**Example:** Heights, test scores, measurement errors
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-align: center
+
+# Normal distribution example
+x = np.linspace(-4, 4, 1000)
+y = stats.norm.pdf(x, loc=0, scale=1)
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.plot(x, y, color='darkblue', linewidth=2, label='PDF')
+ax.fill_between(x, y, alpha=0.3, color='lightblue')
+ax.axvline(0, color='red', linestyle='--', linewidth=2, label='μ = 0')
+
+ax.set_title('Standard Normal Distribution\nμ = 0, σ = 1', fontsize=14, fontweight='bold')
+ax.set_xlabel('Value', fontsize=12)
+ax.set_ylabel('Density', fontsize=12)
+ax.legend()
+
+plt.tight_layout()
+plt.show()
+```
+:::
+:::
+
+## Exponential Distribution - Characteristics {.smaller}
+
+::: columns
+::: {.column width="50%"}
+
+- Models waiting times
+  
+- Memoryless property
+  
+- Parameter: $\lambda$ (rate)
+  
+- Right-skewed
+
+**Example:** Time between arrivals, equipment lifespan, time to next earthquake
+:::
+
+::: {.column width="50%"}
+```{python}
+#| echo: false
+#| fig-align: center
+
+# Exponential distribution example
+x = np.linspace(0, 5, 1000)
+lambda_param = 1.5
+y = stats.expon.pdf(x, scale=1/lambda_param)
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.plot(x, y, color='darkgreen', linewidth=2, label='PDF')
+ax.fill_between(x, y, alpha=0.3, color='lightgreen')
+
+ax.set_title('Exponential Distribution\nλ = 1.5', fontsize=14, fontweight='bold')
+ax.set_xlabel('Time', fontsize=12)
+ax.set_ylabel('Density', fontsize=12)
+ax.legend()
+
+plt.tight_layout()
+plt.show()
+```
+:::
+:::
+
+## Interactive Activity: Choose Your Distribution
+
+::: {.callout-important}
+## Group Discussion (5 minutes)
+
+For each scenario, identify:
+1. Is the random variable discrete or continuous?
+2. What distribution might it follow?
+3. What are the parameters?
+
+**Scenarios:**
+- Number of students attending office hours per week
+- Time spent studying for an exam
+- Number of typos in a research paper
+- Body temperature of patients in a hospital
+:::
+
+## Application: Research Design {.smaller}
+
+::: {.incremental}
+**Consider your research question:**
+
+1. **Identify your random variable(s)**
+   - What are you measuring?
+   - What values can it take?
+
+2. **Choose appropriate distribution**
+   - Based on the nature of your data
+   - Consider the underlying process
+
+3. **Plan your analysis**
+   - How will you collect data?
+   - What statistical tests are appropriate?
+:::
+
+## Probability Mass vs. Density Functions {.smaller}
+
+::: columns
+::: {.column width="50%"}
+**Discrete: Probability Mass Function (PMF)**
+
+- $P(X = x)$ for specific values
+  
+- Sums to **1** over all possible values
+  
+- Can find exact probabilities
+
+Example: $P(X = 3) = 0.2$
+:::
+
+::: {.column width="50%"}
+**Continuous: Probability Density Function (PDF)**
+
+- $f(x)$ represents density
+  
+- Area under curve = **1**
+  
+- $P(X = x) = 0$ for any specific value
+  
+- Find probabilities over intervals
+
+Example: $P(a < X < b) =  \int_{a}^{b} f(x)dx$
+:::
+:::
+
+## Comparing Distributions Side-by-Side
+
+```{python}
+#| echo: false
+#| fig-align: center
+
+# Create a comparison of all distributions
+fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+
+# Binomial
+n, p = 10, 0.3
+x_binom = np.arange(0, n+1)
+prob_binom = stats.binom.pmf(x_binom, n, p)
+axes[0,0].bar(x_binom, prob_binom, alpha=0.7, color='steelblue')
+axes[0,0].set_title('Binomial Distribution\n(n=10, p=0.3)', fontweight='bold')
+axes[0,0].set_xlabel('Number of Successes')
+axes[0,0].set_ylabel('Probability')
+
+# Poisson
+lambda_param = 3
+x_poisson = np.arange(0, 13)
+prob_poisson = stats.poisson.pmf(x_poisson, lambda_param)
+axes[0,1].bar(x_poisson, prob_poisson, alpha=0.7, color='coral')
+axes[0,1].set_title('Poisson Distribution\n(λ=3)', fontweight='bold')
+axes[0,1].set_xlabel('Number of Events')
+axes[0,1].set_ylabel('Probability')
+
+# Normal
+x_norm = np.linspace(-4, 4, 1000)
+y_norm = stats.norm.pdf(x_norm, 0, 1)
+axes[1,0].plot(x_norm, y_norm, color='darkblue', linewidth=2)
+axes[1,0].fill_between(x_norm, y_norm, alpha=0.3, color='lightblue')
+axes[1,0].set_title('Normal Distribution\n(μ=0, σ=1)', fontweight='bold')
+axes[1,0].set_xlabel('Value')
+axes[1,0].set_ylabel('Density')
+
+# Exponential
+x_exp = np.linspace(0, 5, 1000)
+y_exp = stats.expon.pdf(x_exp, scale=1/1.5)
+axes[1,1].plot(x_exp, y_exp, color='darkgreen', linewidth=2)
+axes[1,1].fill_between(x_exp, y_exp, alpha=0.3, color='lightgreen')
+axes[1,1].set_title('Exponential Distribution\n(λ=1.5)', fontweight='bold')
+axes[1,1].set_xlabel('Time')
+axes[1,1].set_ylabel('Density')
+
+plt.tight_layout()
+plt.show()
+```
+
+
+## Confidence Intervals for Means {.smaller}
+
+::: {.incremental}
+- **Problem:** We have one sample mean, but want to estimate the population mean
+- **Solution:** Use the sampling distribution to create a **confidence interval**
+- **Key Insight:** If we know how $\bar{X}$ varies, we can make probabilistic statements about μ
+:::
+
+::: {.fragment}
+**95% Confidence Interval Formula:**
+$\bar{x} \pm 1.96 \times \frac{\sigma}{\sqrt{n}}$
+
+**Interpretation:** "We are 95% confident that the true population mean lies within this interval"
+:::
+
+## Visualizing Confidence Intervals
+
+```{python}
+#| echo: false
+#| fig-align: center
+
+# Demonstrate confidence intervals
+np.random.seed(42)
+true_population_mean = 68  # True height
+population_std = 4
+sample_size = 30
+num_samples = 20
+
+# Generate multiple samples and their confidence intervals
+sample_means = []
+ci_lower = []
+ci_upper = []
+covers_true_mean = []
+
+for i in range(num_samples):
+    # Take a sample
+    sample = np.random.normal(true_population_mean, population_std, sample_size)
+    sample_mean = np.mean(sample)
+    
+    # Calculate 95% confidence interval
+    margin_error = 1.96 * (population_std / np.sqrt(sample_size))
+    lower = sample_mean - margin_error
+    upper = sample_mean + margin_error
+    
+    sample_means.append(sample_mean)
+    ci_lower.append(lower)
+    ci_upper.append(upper)
+    
+    # Check if CI covers true mean
+    covers_true_mean.append(lower <= true_population_mean <= upper)
+
+# Create visualization
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Plot confidence intervals
+for i in range(num_samples):
+    color = 'green' if covers_true_mean[i] else 'red'
+    alpha = 0.8 if covers_true_mean[i] else 1.0
+    
+    # Plot the confidence interval
+    ax.plot([ci_lower[i], ci_upper[i]], [i, i], color=color, alpha=alpha, linewidth=3)
+    # Plot the sample mean
+    ax.plot(sample_means[i], i, 'o', color=color, markersize=8, alpha=alpha)
+
+# Add vertical line for true population mean
+ax.axvline(true_population_mean, color='blue', linestyle='--', linewidth=3, 
+           label=f'True Population Mean (μ = {true_population_mean})')
+
+# Formatting
+ax.set_xlabel('Height (inches)', fontsize=14)
+ax.set_ylabel('Sample Number', fontsize=14)
+ax.set_title('95% Confidence Intervals from 20 Different Samples\n' + 
+             f'{sum(covers_true_mean)} out of {num_samples} intervals contain the true mean', 
+             fontsize=16, fontweight='bold')
+ax.legend(fontsize=12)
+ax.grid(True, alpha=0.3)
+
+# Add text explanation
+coverage_rate = sum(covers_true_mean) / num_samples * 100
+ax.text(0.02, 0.98, f'Coverage Rate: {coverage_rate:.0f}%\nExpected: ~95%', 
+        transform=ax.transAxes, fontsize=12, verticalalignment='top',
+        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+
+plt.tight_layout()
+plt.show()
+```
+
+## Confidence Interval Interpretation {.smaller}
+
+::: {.callout-important}
+## Common Misconceptions
+
+**❌ WRONG:** "There's a 95% probability that μ is in this specific interval"
+
+**✅ CORRECT:** "If we repeated this process many times, 95% of the intervals we construct would contain the true μ"
+:::
+
+::: {.incremental}
+:::{.callout-note}
+- The **interval** is random, not the population parameter
+- **Before** collecting data: 95% chance our method will work
+- **After** collecting data: The interval either contains μ or it doesn't
+- **Confidence level** = Long-run success rate of the method
+:::
+
+:::
+
+## Factors Affecting Confidence Interval Width
+
+```{python}
+#| echo: false
+#| fig-align: center
+
+# Show how different factors affect CI width
+fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+
+# Factor 1: Sample size
+sample_sizes = [10, 30, 50, 100, 200]
+ci_widths_n = []
+for n in sample_sizes:
+    width = 2 * 1.96 * (4 / np.sqrt(n))  # 2 * margin of error
+    ci_widths_n.append(width)
+
+axes[0].plot(sample_sizes, ci_widths_n, 'bo-', linewidth=2, markersize=8)
+axes[0].set_xlabel('Sample Size (n)', fontsize=12)
+axes[0].set_ylabel('CI Width', fontsize=12)
+axes[0].set_title('Effect of Sample Size\n(σ=4, 95% confidence)', fontweight='bold')
+axes[0].grid(True, alpha=0.3)
+
+# Factor 2: Confidence level
+confidence_levels = [90, 95, 99]
+z_values = [1.645, 1.96, 2.576]
+ci_widths_conf = []
+for z in z_values:
+    width = 2 * z * (4 / np.sqrt(30))
+    ci_widths_conf.append(width)
+
+axes[1].bar([str(cl)+'%' for cl in confidence_levels], ci_widths_conf, 
+            color=['lightblue', 'orange', 'lightcoral'], alpha=0.7)
+axes[1].set_xlabel('Confidence Level', fontsize=12)
+axes[1].set_ylabel('CI Width', fontsize=12)
+axes[1].set_title('Effect of Confidence Level\n(n=30, σ=4)', fontweight='bold')
+
+# Factor 3: Population standard deviation
+std_devs = [1, 2, 4, 6, 8]
+ci_widths_std = []
+for sigma in std_devs:
+    width = 2 * 1.96 * (sigma / np.sqrt(30))
+    ci_widths_std.append(width)
+
+axes[2].plot(std_devs, ci_widths_std, 'go-', linewidth=2, markersize=8)
+axes[2].set_xlabel('Population Std Dev (σ)', fontsize=12)
+axes[2].set_ylabel('CI Width', fontsize=12)
+axes[2].set_title('Effect of Variability\n(n=30, 95% confidence)', fontweight='bold')
+axes[2].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+
+
+---
+
+## Key Takeaways {.smaller}
+
+::: {.incremental}
+1. **Random variables** translate random outcomes into numbers
+2. **Discrete** variables have countable values; **continuous** variables have uncountable values
+3. **Distributions** describe the probability patterns of random variables
+4. **Choosing the right distribution** depends on understanding your data's nature
+5. **Real applications** exist in every field - think about your research!
+:::
+
+## Next Steps
+
+::: {.callout-tip}
+## For Your Research/Interests 
+
+1. **Identify random variables** in your field
+2. **Think about appropriate distributions**
+3. **Consider data collection methods**
+4. **Plan statistical analyses**
+5. **Connect theory to practice**
+:::
+
+## Questions and Discussion
+
+::: {.fragment}
+**Share with the class:**
+
+- What random variables are important in your field of study/major?
+  
+- Which distributions might be most relevant?
+  
+- What challenges do you anticipate in data collection?
+:::
+
+::: {.fragment}
+**Thank you for your participation!**
+:::
+
+---
+
+## Appendix: Python Code Examples {.smaller .scrollable}
+
+```{python}
+#| eval: false
+#| echo: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+import seaborn as sns
+
+# Generate random samples from different distributions
+
+# Binomial
+binom_data = np.random.binomial(n=10, p=0.3, size=100)
+
+# Poisson  
+poisson_data = np.random.poisson(lam=3, size=100)
+
+# Normal
+normal_data = np.random.normal(loc=0, scale=1, size=100)
+
+# Exponential
+exp_data = np.random.exponential(scale=1/1.5, size=100)
+
+# Create histograms
+fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+
+axes[0,0].hist(binom_data, bins=11, alpha=0.7, color='steelblue')
+axes[0,0].set_title('Binomial Sample')
+
+axes[0,1].hist(poisson_data, bins=15, alpha=0.7, color='coral')
+axes[0,1].set_title('Poisson Sample')
+
+axes[1,0].hist(normal_data, bins=20, alpha=0.7, color='lightblue')
+axes[1,0].set_title('Normal Sample')
+
+axes[1,1].hist(exp_data, bins=20, alpha=0.7, color='lightgreen')
+axes[1,1].set_title('Exponential Sample')
+
+plt.tight_layout()
+plt.show()
+```
+
+## Additional Resources {.smaller .scrollable}
+
+```{python}
+#| eval: false
+#| echo: true
+
+# Useful Python libraries for statistics and probability
+import numpy as np           # Numerical computing
+import scipy.stats as stats  # Statistical functions
+import matplotlib.pyplot as plt  # Plotting
+import seaborn as sns        # Statistical visualization
+import pandas as pd          # Data manipulation
+
+# Quick reference for common distributions:
+# stats.binom.pmf(k, n, p)     # Binomial PMF
+# stats.poisson.pmf(k, lam)    # Poisson PMF  
+# stats.norm.pdf(x, mu, sigma) # Normal PDF
+# stats.expon.pdf(x, scale)    # Exponential PDF
+
+# Generate random samples:
+# np.random.binomial(n, p, size)
+# np.random.poisson(lam, size)
+# np.random.normal(mu, sigma, size)
+# np.random.exponential(scale, size)
+```

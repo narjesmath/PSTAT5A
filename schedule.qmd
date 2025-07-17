@@ -350,7 +350,7 @@ Quiz 1 (Weeks 1–2)
 7/15
 :::
 ::: {.topic}
-Confidence Intervals (Means & Proportions)
+[Continuous Random Variables & Distributions Continued](/files/lecture_notes/lecture8/lecture8.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -367,7 +367,7 @@ Confidence Intervals (Means & Proportions)
 7/16
 :::
 ::: {.topic}
-Hypothesis Testing
+[Continuous Random Variables & Distributions Wrap Up & Exercises](/files/lecture_notes/lecture8/lecture8.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -384,7 +384,7 @@ Hypothesis Testing
 7/17
 :::
 ::: {.topic}
-Two–Sample t-Tests 
+[Random Variables, Sampling & Intro to Confidence Intervals](/files/lecture_notes/lecture10/lecture10.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -398,7 +398,7 @@ Two–Sample t-Tests
 
 ::: {.week-section .week-5}
 ::: {.week-header}
-<span>Week 5: ANOVA & Statistical Modeling</span>
+<span>Week 5: Inference & Statistical Modeling</span>
 :::
 ::: {.week-content}
 ::: {.day-row}
@@ -409,7 +409,7 @@ Two–Sample t-Tests
 7/21
 :::
 ::: {.topic}
-ANOVA
+Confidence Intervals Means & Proportions
 :::
 ::: {.lab-quiz}
 Lab 5
@@ -426,7 +426,7 @@ Worksheet 5
 7/22
 :::
 ::: {.topic}
-Intro to Statistical Modeling
+Intro to Hypothesis Testing
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -443,7 +443,7 @@ Intro to Statistical Modeling
 7/23
 :::
 ::: {.topic}
-Intro to Statistical Modeling & Correlation
+Intro to Statistical Modeling 
 :::
 ::: {.lab-quiz .empty-cell}
 —
