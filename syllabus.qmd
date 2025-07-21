@@ -19,7 +19,7 @@ execute:
 
 
 
-::: {.download-section}
+::: {.download-section .hidden}
 [Download the full syllabus as a PDF](/files/syllabus/PSTAT5A__Syllabus.pdf){.download-btn}
 :::
 
@@ -243,15 +243,15 @@ Grading
 **Grade Breakdown:**
 :::
 ::: {.info-value}
-- Lecture attendance: **5%**
+- Lecture attendance: **10%**
   
-- Section attendance: **5%**
+- Section attendance: **10%**
   
 - Quiz 1: **30%**
   
 - Quiz 2: **30%**
   
-- Quiz 3: **30%**
+- Quiz 3: **20%**
 :::
 :::
 
@@ -316,7 +316,7 @@ Quiz 2: Weeks 3–4
 July 25th
 :::
 ::: {.quiz-details}
-Covers probability and hypothesis testing
+Covers Conditional Probability, Counting & Random Variables (Discrete & Continuous)
 :::
 :::
 :::
@@ -333,7 +333,7 @@ Quiz 3: Weeks 5–6
 July 31st
 :::
 ::: {.quiz-details}
-Covers ANOVA and regression analysis
+Covers Confidence Intervals & Hypothesis testing
 :::
 :::
 :::
