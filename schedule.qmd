@@ -409,10 +409,11 @@ Quiz 1 (Weeks 1–2)
 7/21
 :::
 ::: {.topic}
-Confidence Intervals Means & Proportions
+[Confidence Intervals Means & Proportions](/files/lecture_notes/lecture9/lecture9_intro.qmd)
 :::
 ::: {.lab-quiz}
-Lab 5
+[Lab 5](/files/labs/lab5/lab5.qmd)
+<!-- [Lab5 Solutions](/files/labs/lab5/lab5_sln.qmd) -->
 :::
 ::: {.worksheet}
 Worksheet 5

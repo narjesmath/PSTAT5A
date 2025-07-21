@@ -1,0 +1,1216 @@
+---
+title: "Lab 5: Continuous Random Variables & Confidence Intervals"
+subtitle: "PSTAT 5A - Summer Session A 2025"
+author: "Instructor: Narjes Mathlouthi"
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    logo: /img/logo.png
+    footer: "Continuous Variables Lab5 © 2025 Narjes Mathlouthi"
+    number-sections: false
+    code-fold: false
+    theme: cosmo
+    css: /files/lecture_notes/theme/lecture-styles.css
+date: today
+jupyter: python3
+execute: 
+  eval: false
+---
+
+::: {.column-margin}
+![](/img/logo.png){width=100px}
+:::
+
+Welcome to Lab 5! Today we're moving from discrete (countable) to continuous (measurable) random variables. We'll explore the normal distribution, learn about sampling, and get our first taste of confidence intervals! 
+
+# Getting Started
+
+::: {.time-box}
+⏱️ **Estimated time:** 2 minutes
+:::
+
+Navigate to our class [Jupyterhub Instance](https://pstat5a.lsit.ucsb.edu/). Create a new notebook and rename it "lab5" (for detailed instructions view [lab1](/files/labs/lab1/lab1.pdf)). 
+
+:::{.callout-note}
+### Setup
+
+First, let's load our tools! Copy the below code to get started!
+
+We’ll be using the following core libraries:
+
+- **[NumPy](https://numpy.org/doc/)**: Fundamental package for fast array-based numerical computing.  
+
+- **[Matplotlib](https://matplotlib.org/stable/contents.html)** (`pyplot`): Primary library for creating static 2D plots and figures.  
+
+
+- **[SciPy](https://docs.scipy.org/doc/scipy/reference/stats.html)** (`stats`): Collection of scientific algorithms, including probability distributions and statistical tests.  
+
+
+- **[Pandas](https://pandas.pydata.org/docs/)**: High-performance data structures (`DataFrame`) and tools for data wrangling and analysis.  
+
+
+- **[Statsmodels](https://www.statsmodels.org/stable/index.html)**: Econometric and statistical modeling for regression analysis, time series, and more.  
+
+:::
+
+
+
+```{python}
+#| eval: true
+# Install any missing packages (will skip those already installed)
+#%pip install --quiet numpy matplotlib scipy pandas statsmodels --> uncommnent to install packages if needed
+
+# Load our tools (libraries)
+
+import numpy as np # numerical computing (arrays, random numbers, etc.)
+import matplotlib.pyplot as plt # plotting library for static 2D graphs and visualizations
+from scipy import stats #  statistical functions (distributions, tests, etc.)
+import pandas as pd # data structures (DataFrame) and data analysis tools
+import statsmodels  # statistical modeling (regression, time series, ANOVA, etc.)
+
+# Make our graphs look nice
+
+#!%matplotlib inline     # uncommnent to embed Matplotlib plots directly in the notebook
+plt.style.use('seaborn-v0_8-whitegrid')  # Apply a clean whitegrid style from Seaborn
+
+# Set random seed for reproducible results
+
+np.random.seed(42)    # fix the random seed so results can be reproduced exactly
+
+print("✅ All tools loaded successfully!") 
+```
+
+::: {.callout-note}
+**New for today:** We'll use the same tools but focus on **continuous distributions** - where variables can take any value in a range (like height, weight, temperature) rather than just counting things.
+:::
+
+# Part 1: Discrete vs. Continuous - What's the Difference?
+
+::: {.time-box}
+⏱️ **Estimated time:** 8 minutes
+:::
+
+## Understanding the Difference
+
+Let's start by understanding what makes a variable continuous:
+
+```{python}
+#| eval: true
+# Examples of different variable types
+print("DISCRETE VARIABLES (countable):")
+print("• Number of students in class: 0, 1, 2, 3, ...")
+print("• Number of emails received: 0, 1, 2, 3, ...")
+print("• Number of coin flips showing heads: 0, 1, 2, 3, ...")
+print()
+print("CONTINUOUS VARIABLES (measurable):")
+print("• Height: 5.5 ft, 5.73 ft, 6.02541 ft, ...")
+print("• Temperature: 72.1°F, 72.15°F, 72.152°F, ...")
+print("• Time: 2.5 seconds, 2.51 seconds, ...")
+```
+
+## Key Difference: PMF vs PDF
+
+::: {.callout-important}
+**Important Distinction:**
+
+- **Discrete:** Use **PMF** (Probability Mass Function) - gives exact probabilities
+  - Example: P(exactly 3 heads) = 0.125
+
+- **Continuous:** Use **PDF** (Probability Density Function) - gives probability *densities*
+  - Example: P(exactly 5.000000... feet) = 0 (impossible!)
+  - Instead: P(between 5.0 and 5.1 feet) = some value
+
+**Key insight:** For continuous variables, we calculate probabilities over *ranges*, not exact values!
+:::
+
+Let's visualize this difference:
+
+::: {.callout-note}
+### What we're doing
+We call [`plt.subplots(nrows=1, ncols=2, figsize=(12, 5))`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html) to create **one row** and **two columns** of plots, sized so the overall figure is 12 inches wide by 5 inches tall.
+
+We first define the key **parameters** for a **binomial** distribution with `n` (number of trials) and `p` (success probability).
+
+Then, we create a probability mass function (PMF) by first generating  all possible outcomes from 0 to 11 using [`np.arange()`](https://numpy.org/doc/stable/reference/generated/numpy.arange.html):
+
+```python
+# Create outcomes from 0 to n (inclusive)
+x_discrete = np.arange(0, n+1)
+```
+
+:::{.callout-important}
+For a binomial distribution with $10$ trials, the possible number of successes are: <br>
+
+$0 \quad \text{successes}, 1 \quad \text{success}, 2 \quad \text{successes}, ..., 10 \quad \text{successes}$ <br>
+That's $11$ different outcomes total (0 through 10 inclusive). <br>
+When we use `np.arange(0, 11)`, we get: $[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]$ <br>
+If we mistakenly used `np.arange(0, 10)`, we'd get: $[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]$ and miss the case where all $10$ trials are successes!
+:::
+
+Once we have our values, we compute the PMF using  
+   ```python
+   y_discrete = stats.binom(n, p).pmf(x_discrete)
+   ```  
+from SciPy’s [`stats.binom`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binom.html). 
+
+Lastly, we plot these probabilities as a bar chart on the **left** subplot.  
+
+Next to illustrate a continuous random variable (i.e., Standard Normal), we start by creating the range of values needed to create a probability density function (PDF). We create a smooth grid of values with
+
+```python
+x_continuous = np.linspace(-4, 4, 1000)
+```  
+via [`np.linspace()`](https://numpy.org/doc/stable/reference/generated/numpy.linspace.html) (recall we used this function in [lab3](/files/labs/lab3/lab3.qmd)).  
+
+Then, compute the PDF using  
+```python
+y_continuous = stats.norm(0, 1).pdf(x_continuous)
+```  
+from SciPy’s [`stats.norm`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html).  
+
+Lastly, we draw the curve and shade underneath on the **right** subplot.  
+ 
+Optional: [`plt.tight_layout()`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html) to automatically adjust spacing so that titles, labels, and ticks don’t overlap.
+
+:::
+
+
+
+
+```{python}
+#| eval: true
+# Create a figure with 1 row and 2 columns of axes, total size 12x5 inches
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+
+# ── Discrete example: Binomial distribution ────────────────────────────────────
+
+n, p = 10, 0.5                             # number of trials and success probability
+x_discrete = np.arange(0, 11)              # possible counts: 0 through 10 heads
+y_discrete = stats.binom(n, p).pmf(x_discrete)  # compute PMF at each count
+
+ax1.bar(
+    x_discrete, y_discrete,                # x-values and their probabilities
+    alpha=0.7,                             # make bars semi-transparent
+    color='lightblue',                     # fill color for the bars
+    edgecolor='black'                      # outline color for clarity
+)
+ax1.set_title('DISCRETE: Number of Heads in 10 Flips')  # subplot title
+ax1.set_xlabel('Number of Heads')         # x-axis label
+ax1.set_ylabel('Probability (PMF)')       # y-axis label
+ax1.grid(True, alpha=0.3)                 # light grid lines for readability
+
+# ── Continuous example: Normal distribution ───────────────────────────────────
+
+x_continuous = np.linspace(-4, 4, 1000)    # 1000 points between -4 and +4
+y_continuous = stats.norm(0, 1).pdf(x_continuous)  # standard normal PDF values
+
+ax2.plot(
+    x_continuous, y_continuous,            # x-values and density values
+    'b-',                                  # blue solid line
+    linewidth=2                            # thicker line width for emphasis
+)
+ax2.fill_between(
+    x_continuous, y_continuous,            # shade area under the curve
+    alpha=0.3,                             # semi-transparent fill
+    color='lightgreen'                     # fill color
+)
+ax2.set_title('CONTINUOUS: Standard Normal Distribution')  # subplot title
+ax2.set_xlabel('Value')                   # x-axis label
+ax2.set_ylabel('Density (PDF)')           # y-axis label
+ax2.grid(True, alpha=0.3)                 # light grid lines for readability
+
+plt.tight_layout()                         # adjust spacing so titles/labels don’t overlap
+```
+
+# Part 2: The Normal Distribution - The Most Important One!
+
+::: {.time-box}
+⏱️ **Estimated time:** 15 minutes
+:::
+
+The **normal distribution** is everywhere! Heights, test scores, measurement errors; they all tend to follow this bell-shaped pattern.
+
+## Standard Normal Distribution
+
+Let's start with the **standard normal**: mean = 0, standard deviation = 1.
+
+:::{.callout-tip}
+### Recall
+The standard normal distribution $N(0,1)$ is obtained by the linear transformation  
+$$
+Z = \frac{X - \mu}{\sigma},
+$$  
+which removes units by centering at zero and scaling to unit variance. Its PDF is  
+$$
+\phi(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}.
+$$
+
+:::
+
+In SciPy, you can create or shift any normal distribution using the `loc` (mean) and `scale` (standard deviation) parameters of [`stats.norm`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html).  In particular, evaluating
+
+```python
+stats.norm.pdf(x, loc, scale)
+```
+
+is equivalent to 
+
+```python
+y = stats.norm(loc=loc, scale=scale).pdf(x)
+```
+and under the hood it computes
+
+$$
+y = \frac{1}{\sigma},\phi (z) =\Bigl(\frac{x - \mu}{\sigma}\Bigr)
+$$
+
+where $\phi(z)$ is the standard normal PDF.
+
+
+
+
+```{python}
+#| eval: true
+
+# Create a standard normal distribution
+standard_normal = stats.norm(loc=0, scale=1)  # loc=mean, scale=standard deviation
+
+print("Standard Normal Distribution:")
+print(f"Mean: {standard_normal.mean()}")
+print(f"Standard deviation: {standard_normal.std()}")
+
+# Generate a smooth range of x-values from -4 to +4
+x = np.linspace(-4, 4, 1000)       # 1000 points for a smooth curve 
+y = standard_normal.pdf(x) # compute the pdf
+
+# Plot the PDF
+plt.figure(figsize=(10, 6))        # figure size in inches
+plt.plot(
+    x, y,                           # x-values and PDF values
+    'b-',                          # blue solid line
+    linewidth=2,
+    label=r'Standard Normal: $\mu=0,\ \sigma=1$'  # legend with LaTeX
+)
+plt.fill_between(
+    x, y,                          # shade under the PDF curve
+    alpha=0.3,
+    color='lightblue'
+)
+plt.title(r'Standard Normal Distribution $(\mu=0,\ \sigma=1)$')  # title with LaTeX
+plt.xlabel('Value')               # x-axis label
+plt.ylabel('Density')             # y-axis label
+plt.axvline(
+    0,                             # vertical line at x=0
+    color='red',
+    linestyle='--',
+    linewidth=2,
+    label=r'Mean $\mu=0$'          # legend entry for the mean line
+)
+plt.legend()                      # display legend
+plt.grid(True, alpha=0.3)         # add light grid lines
+
+```
+
+## Calculating Probabilities with Areas
+
+:::{.callout-important}
+For continuous distributions, probability = area under the curve!
+:::
+
+That is, the probability that $(X)$ falls between $(a)$ and $(b)$ is the area under the PDF from $(x=a)$ to $(x=b)$.  `SciPy`’s `stats.norm.cdf` computes the cumulative distribution function (CDF)
+
+$$
+F(x) = P(X \le x) = \int_{-\infty}^x \phi(t),dt
+$$
+
+Therefore,
+
+$$
+P(a < X < b) = F(b) - F(a)
+$$
+
+
+
+```{python}
+#| eval: true
+# Probability that a value is between -1 and 1 - P(-1 < X < 1) for X ~ N(0,1
+prob_between = standard_normal.cdf(1) - standard_normal.cdf(-1)
+print(f"P(-1 < X < 1) = {prob_between:.4f}")
+
+# Visualize this probability
+x = np.linspace(-4, 4, 1000)
+y = standard_normal.pdf(x)
+
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, 'b-', linewidth=2, label='Standard Normal')
+
+# Shade the area between -1 and 1
+x_fill = x[(x >= -1) & (x <= 1)]
+y_fill = standard_normal.pdf(x_fill)
+plt.fill_between(x_fill, y_fill, alpha=0.5, color='red', 
+                label=f'P(-1 < X < 1) = {prob_between:.4f}')
+
+plt.title('Probability as Area Under the Curve')
+plt.xlabel('Value')
+plt.ylabel('Density')
+plt.axvline(-1, color='red', linestyle='--', alpha=0.7)
+plt.axvline(1, color='red', linestyle='--', alpha=0.7)
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.show()
+```
+
+::: {.task-box}
+### Task 1: Your First Normal Distribution
+
+::: {.time-box}
+⏱️ **Estimated time:** 6 minutes
+:::
+
+Let's say human heights follow a normal distribution with mean = 68 inches and standard deviation = 4 inches.
+
+Copy the code and try it on your own!
+
+**Step 1:** Create this distribution
+
+```{python}
+#| eval: false
+# Heights distribution
+mean_height = ___  # Fill in: 68
+std_height = ___   # Fill in: 4
+
+heights = stats.norm(loc=___, scale=___)
+
+print(f"Mean height: {heights.mean()} inches")
+print(f"Standard deviation: {heights.std()} inches")
+```
+
+**Step 2:** Calculate some probabilities
+
+```{python}
+#| eval: false
+# a) What's the probability someone is taller than 72 inches (6 feet)?
+prob_tall = 1 - heights.cdf(___)  # Fill in: 72
+print(f"P(height > 72 inches) = {prob_tall:.4f}")
+
+# b) What's the probability someone is between 64 and 72 inches?
+prob_between = heights.cdf(___) - heights.cdf(___)  # Fill in both values
+print(f"P(64 < height < 72) = {prob_between:.4f}")
+
+# c) What height is at the 90th percentile? (90% of people are shorter)
+height_90th = heights.ppf(___)  # ppf = "percent point function" (inverse of cdf)
+print(f"90th percentile height: {height_90th:.2f} inches")
+```
+
+**Step 3:** Make a visualization
+
+```{python}
+#| eval: false
+# Plot the height distribution
+x = np.linspace(50, 86, 1000)
+y = heights.pdf(x)
+
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, 'b-', linewidth=2)
+plt.fill_between(x, y, alpha=0.3, color='lightgreen')
+plt.title('Human Heights Distribution')
+plt.xlabel('Height (inches)')
+plt.ylabel('Density')
+plt.axvline(mean_height, color='red', linestyle='--', linewidth=2, 
+           label=f'Mean = {mean_height} inches')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.show()
+```
+
+:::
+
+## The 68-95-99.7 Rule
+
+This rule (also called the **empirical rule**) describes how data are distributed in a normal distribution:
+
+- About **68%** of observations fall within **one** standard deviation of the mean ($\mu \pm 1\sigma$).
+- About **95%** lie within **two** standard deviations ($\mu \pm 2\sigma$).
+- Nearly **99.7%** lie within **three** standard deviations ($\mu \pm 3\sigma$).
+
+In practice, this gives a quick way to gauge how “typical” a value is: if a point lies beyond $\pm 2\sigma$, it’s already in the outer 5% and might be considered unusual or an outlier.
+
+```{python}
+#| eval: true
+# The 68-95-99.7 rule for standard normal
+mean, std = 0, 1
+
+prob_68 = stats.norm.cdf(1) - stats.norm.cdf(-1)  # Within 1 std dev
+prob_95 = stats.norm.cdf(2) - stats.norm.cdf(-2)  # Within 2 std devs
+prob_997 = stats.norm.cdf(3) - stats.norm.cdf(-3) # Within 3 std devs
+
+print("The 68-95-99.7 Rule:")
+print(f"• About {prob_68:.1%} of data is within 1 standard deviation")
+print(f"• About {prob_95:.1%} of data is within 2 standard deviations") 
+print(f"• About {prob_997:.1%} of data is within 3 standard deviations")
+
+# Visualize the rule
+x = np.linspace(-4, 4, 1000)
+y = stats.norm.pdf(x)
+
+fig, axes = plt.subplots(1, 3, figsize=(15, 4))
+
+# 68% (1 std dev)
+axes[0].plot(x, y, 'b-', linewidth=2)
+x1 = x[(x >= -1) & (x <= 1)]
+axes[0].fill_between(x1, stats.norm.pdf(x1), alpha=0.5, color='green')
+axes[0].set_title('68% within 1 σ')
+axes[0].axvline(-1, color='red', linestyle='--')
+axes[0].axvline(1, color='red', linestyle='--')
+
+# 95% (2 std devs)
+axes[1].plot(x, y, 'b-', linewidth=2)
+x2 = x[(x >= -2) & (x <= 2)]
+axes[1].fill_between(x2, stats.norm.pdf(x2), alpha=0.5, color='orange')
+axes[1].set_title('95% within 2 σ')
+axes[1].axvline(-2, color='red', linestyle='--')
+axes[1].axvline(2, color='red', linestyle='--')
+
+# 99.7% (3 std devs)
+axes[2].plot(x, y, 'b-', linewidth=2)
+x3 = x[(x >= -3) & (x <= 3)]
+axes[2].fill_between(x3, stats.norm.pdf(x3), alpha=0.5, color='purple')
+axes[2].set_title('99.7% within 3 σ')
+axes[2].axvline(-3, color='red', linestyle='--')
+axes[2].axvline(3, color='red', linestyle='--')
+
+for ax in axes:
+    ax.set_ylim(0, 0.45)
+    ax.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+```
+
+# Part 3: Other Continuous Distributions
+
+::: {.time-box}
+⏱️ **Estimated time:** 10 minutes
+:::
+
+## Uniform Distribution
+
+The **uniform distribution** on an interval $[a,b]$ assigns equal probability density to every point between $a$ and $b$.  Its PDF is  
+$$
+f(x) = \begin{cases}
+\frac{1}{b - a}, & a \le x \le b,\\
+0, & \text{otherwise},
+\end{cases}
+$$
+
+so the probability of any subinterval is simply its length divided by $(b-a)$.  In SciPy, you specify this with `loc=a` and `scale=(b - a)` when calling [`stats.uniform`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.uniform.html).
+
+Let's visualize this:
+
+
+
+```{python}
+#| eval: true
+# Uniform distribution between 0 and 10
+uniform_dist = stats.uniform(loc=0, scale=10)  # loc=start, scale=width
+
+print(f"Uniform distribution from 0 to 10:")
+print(f"Mean: {uniform_dist.mean()}")
+print(f"Standard deviation: {uniform_dist.std():.2f}")
+
+# Plot it
+x = np.linspace(-1, 11, 1000)
+y = uniform_dist.pdf(x)
+
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, 'b-', linewidth=3, label='Uniform(0, 10)')
+plt.fill_between(x, y, alpha=0.3, color='yellow')
+plt.title('Uniform Distribution: All Values Equally Likely')
+plt.xlabel('Value')
+plt.ylabel('Density')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.show()
+
+# Calculate a probability
+prob_middle = uniform_dist.cdf(7) - uniform_dist.cdf(3)
+print(f"P(3 < X < 7) = {prob_middle:.2f}")
+```
+
+## Exponential Distribution
+
+The **exponential distribution** gives the probability of waiting time until the next event (for example, the time between customer arrivals) and is controlled by a single **rate** parameter $\lambda$. Its probability density function (PDF) is
+
+$$
+f(x) \;=\; \lambda\,e^{-\lambda x}, 
+\quad x \ge 0,
+$$
+
+so the chance of a short wait ($x$ small) is high and it decays exponentially for longer waits. The **average** waiting time is $1/\lambda$.  
+
+In `SciPy`, you can create this via:
+
+```python
+from scipy import stats
+rate = 0.5              # for example, 0.5 events per unit time
+exp_dist = stats.expon(scale=1/rate)  # scale = 1/λ
+```
+
+Here is a quick example visualization of the exponential distribution :
+```{python}
+#| eval: true
+# Exponential distribution - models time between events
+# Parameter λ (lambda) = rate parameter
+rate = 0.5  # events per unit time
+exponential_dist = stats.expon(scale=1/rate)  # scale = 1/rate
+
+print(f"Exponential distribution (rate = {rate}):")
+print(f"Mean waiting time: {exponential_dist.mean():.2f}")
+
+# Plot it
+x = np.linspace(0, 10, 1000)
+y = exponential_dist.pdf(x)
+
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, 'b-', linewidth=2, label='Exponential (λ=0.5)')
+plt.fill_between(x, y, alpha=0.3, color='pink')
+plt.title('Exponential Distribution: Waiting Times')
+plt.xlabel('Time')
+plt.ylabel('Density')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.show()
+
+# Probability of waiting less than 2 time units
+prob_short_wait = exponential_dist.cdf(2)
+print(f"P(wait time < 2) = {prob_short_wait:.4f}")
+```
+
+::: {.task-box}
+### Task 2: Bus Waiting Times
+
+::: {.time-box}
+⏱️ **Estimated time:** 4 minutes
+:::
+
+The time between buses follows an exponential distribution with an average of 15 minutes between buses.
+Copy the code and try it on your own!
+
+```{python}
+#| eval: false
+# Bus waiting times
+average_wait = ___  # Fill in: 15 minutes
+rate = 1 / average_wait
+bus_times = stats.expon(scale=___)  # Fill in: average_wait
+
+# Questions:
+# a) What's the probability you wait less than 10 minutes?
+prob_short = bus_times.cdf(___)
+print(f"P(wait < 10 min) = {prob_short:.4f}")
+
+# b) What's the probability you wait more than 30 minutes?
+prob_long = 1 - bus_times.cdf(___)
+print(f"P(wait > 30 min) = {prob_long:.4f}")
+
+# c) What's the median waiting time? (50th percentile)
+median_wait = bus_times.ppf(___)  # Fill in: 0.5
+print(f"Median wait time: {median_wait:.2f} minutes")
+```
+
+:::
+
+# Part 4: Sampling and the Central Limit Theorem
+
+::: {.time-box}
+⏱️ **Estimated time:** 12 minutes
+:::
+
+Here's where things get really cool! Let's see what happens when we take samples from populations.
+
+## The Magic of Sample Means
+
+:::{.callout-note}
+### What we’re doing
+ 
+1. We define a skewed population (Exponential) with mean = 2 to illustrate a non-normal distribution.
+2. We plot the population PDF to see its right skew.
+3. We draw many samples of size `sample_size`, compute each sample’s mean, and collect those means.
+4. We plot the distribution of those sample means to show how they approximate a normal distribution.
+5. We repeat this process for smaller and larger sample sizes to see how sample size affects the shape (normality) and spread (standard error) of the sample means.
+:::
+
+```{python}
+#| eval: true
+# 1) Define a skewed population: Exponential with scale=2 (mean=2)
+population = stats.expon(scale=2)  # Mean = 2, very right-skewed
+
+# Display the population's true mean and std dev
+print("Original Population (Exponential):")
+print(f"Population mean: {population.mean()}")
+print(f"Population std: {population.std():.3f}")
+
+# Prepare x-values to plot the population PDF
+x = np.linspace(0, 15, 1000)
+# Compute population PDF values
+y = population.pdf(x)
+
+plt.figure(figsize=(12, 8))
+
+# Plot 1: Population PDF
+plt.subplot(2, 2, 1)
+plt.plot(x, y, 'r-', linewidth=2)
+plt.fill_between(x, y, alpha=0.3, color='red')
+plt.title('Population: Exponential (Skewed!)')
+plt.xlabel('Value')
+plt.ylabel('Density')
+
+# 2) Simulate sampling: draw n_samples of size sample_size
+sample_size = 30  # Size of each sample
+n_samples = 1000  # Number of samples to take
+
+sample_means = []
+for i in range(n_samples):
+    #   a) Take one sample of size sample_size
+    sample = population.rvs(sample_size)  # rvs = random variates (samples)
+    #   b) Compute the sample mean
+    sample_mean = np.mean(sample)
+    sample_means.append(sample_mean)
+
+print(f"\nSample Means (n={sample_size}, {n_samples} samples):")
+print(f"Mean of sample means: {np.mean(sample_means):.3f}")
+print(f"Std of sample means: {np.std(sample_means):.3f}")
+
+# Plot 2: Distribution of sample means for n=sample_size
+plt.subplot(2, 2, 2)
+plt.hist(sample_means, bins=50, density=True, alpha=0.7, color='green', edgecolor='black')
+plt.title('Distribution of Sample Means\n(Notice: It\'s Normal!)')
+plt.xlabel('Sample Mean')
+plt.ylabel('Density')
+
+# 3) Repeat sampling with smaller sample size to illustrate increased variability
+small_sample_size = 5
+small_sample_means = []
+for i in range(n_samples):
+    sample = population.rvs(small_sample_size)
+    small_sample_means.append(np.mean(sample))
+
+plt.subplot(2, 2, 3)
+plt.hist(small_sample_means, bins=50, density=True, alpha=0.7, color='orange', edgecolor='black')
+plt.title(f'Sample Means (n={small_sample_size})\n(Less normal, more spread)')
+plt.xlabel('Sample Mean')
+plt.ylabel('Density')
+
+# 4) Repeat sampling with larger sample size to illustrate reduced variability
+large_sample_size = 100
+large_sample_means = []
+for i in range(n_samples):
+    sample = population.rvs(large_sample_size)
+    large_sample_means.append(np.mean(sample))
+
+plt.subplot(2, 2, 4)
+plt.hist(large_sample_means, bins=50, density=True, alpha=0.7, color='blue', edgecolor='black')
+plt.title(f'Sample Means (n={large_sample_size})\n(Very normal, less spread)')
+plt.xlabel('Sample Mean')
+plt.ylabel('Density')
+
+# Finalize layout and display all four plots
+plt.tight_layout()
+plt.show()
+```
+
+::: {.callout-important}
+## Central Limit Theorem (CLT)
+
+**Amazing fact:** No matter what shape your population has, if you take many samples and calculate their means, those sample means will be approximately normally distributed!
+
+**The bigger your sample size, the more normal it gets!**
+
+If $\bar{X}$ is the sample mean from a population with mean $\mu$ and standard deviation $\sigma$, then:
+
+$$\bar{X} \sim \text{Normal}\left(\mu, \frac{\sigma}{\sqrt{n}}\right)$$
+
+Where $n$ is the sample size.
+:::
+
+::: {.task-box}
+### Task 3: Explore the CLT
+
+::: {.time-box}
+⏱️ **Estimated time:** 6 minutes
+:::
+
+Let's verify the Central Limit Theorem with a different population!
+Copy the code and try it on your own!
+
+```{python}
+#| eval: false
+# Population: Uniform distribution from 0 to 100
+population = stats.uniform(loc=0, scale=100)
+
+print("Population (Uniform 0 to 100):")
+print(f"Population mean: {population.mean()}")
+print(f"Population std: {population.std():.2f}")
+
+# Take 500 samples of size 25 each
+sample_size = ___  # Fill in: 25
+n_samples = ___    # Fill in: 500
+
+sample_means = []
+for i in range(n_samples):
+    sample = population.rvs(___)  # Fill in: sample_size
+    sample_means.append(np.mean(sample))
+
+# Check the CLT prediction
+predicted_mean = population.mean()
+predicted_std = population.std() / np.sqrt(sample_size)
+
+print(f"\nCLT Predictions:")
+print(f"Sample means should have mean ≈ {predicted_mean:.2f}")
+print(f"Sample means should have std ≈ {predicted_std:.2f}")
+
+print(f"\nActual Results:")
+print(f"Sample means actually have mean = {np.mean(sample_means):.2f}")
+print(f"Sample means actually have std = {np.std(sample_means):.2f}")
+
+# Make a histogram
+plt.figure(figsize=(10, 6))
+plt.hist(sample_means, bins=30, density=True, alpha=0.7, color='purple', edgecolor='black')
+plt.title('Distribution of Sample Means from Uniform Population')
+plt.xlabel('Sample Mean')
+plt.ylabel('Density')
+plt.axvline(np.mean(sample_means), color='red', linestyle='--', linewidth=2, 
+           label=f'Actual mean = {np.mean(sample_means):.2f}')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.show()
+```
+
+:::
+
+# Part 5: Introduction to Confidence Intervals
+
+::: {.time-box}
+⏱️ **Estimated time:** 15 minutes
+:::
+
+Now we get to one of the most practical parts of statistics: **confidence intervals**!
+
+## The Problem
+
+Imagine you want to know the average height of all students at UCSB (the population mean), but you can only measure a sample of 50 students. Your sample mean is 67.2 inches. 
+
+**Question:** What can you say about the true population mean?
+
+## The Solution: Confidence Intervals
+
+```{python}
+#| eval: true
+# Simulate the scenario
+np.random.seed(123)
+
+# Unknown population (we pretend we don't know this)
+true_population_mean = 68.0
+true_population_std = 4.0
+true_population = stats.norm(true_population_mean, true_population_std)
+
+# We take ONE sample (this is what we'd really do)
+sample_size = 50
+our_sample = true_population.rvs(sample_size)
+sample_mean = np.mean(our_sample)
+sample_std = np.std(our_sample, ddof=1)  # ddof=1 for sample std dev
+
+print("What we observe from our sample:")
+print(f"Sample size: {sample_size}")
+print(f"Sample mean: {sample_mean:.2f} inches")
+print(f"Sample std dev: {sample_std:.2f} inches")
+print()
+print("What we DON'T know (but want to estimate):")
+print(f"True population mean: {true_population_mean} inches")
+```
+
+## Building a 95% Confidence Interval
+
+```{python}
+#| eval: true
+# The Central Limit Theorem tells us that sample means are normally distributed
+# with mean = population mean and std = population_std / sqrt(n)
+
+# For a 95% confidence interval, we need the 97.5th percentile of standard normal
+# (because we want 2.5% in each tail, leaving 95% in the middle)
+confidence_level = 0.95
+alpha = 1 - confidence_level
+z_critical = stats.norm.ppf(1 - alpha/2)  # 1.96 for 95% confidence
+
+print(f"For {confidence_level*100}% confidence:")
+print(f"Critical value (z*): {z_critical:.3f}")
+
+# Standard error of the mean
+standard_error = sample_std / np.sqrt(sample_size)
+print(f"Standard error: {standard_error:.3f}")
+
+# Margin of error
+margin_of_error = z_critical * standard_error
+print(f"Margin of error: {margin_of_error:.3f}")
+
+# Confidence interval
+ci_lower = sample_mean - margin_of_error
+ci_upper = sample_mean + margin_of_error
+
+print(f"\n95% Confidence Interval for population mean:")
+print(f"[{ci_lower:.2f}, {ci_upper:.2f}] inches")
+print()
+print(f"Interpretation: We are 95% confident that the true population")
+print(f"mean height is between {ci_lower:.2f} and {ci_upper:.2f} inches.")
+
+# Check if it captured the true mean
+if ci_lower <= true_population_mean <= ci_upper:
+    print(f"✅ SUCCESS! Our interval captured the true mean ({true_population_mean})!")
+else:
+    print(f"❌ Oops! Our interval missed the true mean ({true_population_mean}).")
+```
+
+## Visualizing Confidence Intervals
+
+```{python}
+#| eval: true
+# Let's see what "95% confidence" really means
+# We'll create 20 different confidence intervals and see how many capture the truth
+
+n_intervals = 20
+sample_size = 30
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 8))
+
+# Generate multiple confidence intervals
+intervals = []
+captures = []
+
+for i in range(n_intervals):
+    # Take a new sample each time
+    sample = true_population.rvs(sample_size)
+    sample_mean = np.mean(sample)
+    sample_std = np.std(sample, ddof=1)
+    
+    # Calculate 95% CI
+    se = sample_std / np.sqrt(sample_size)
+    me = 1.96 * se
+    ci_low = sample_mean - me
+    ci_high = sample_mean + me
+    
+    intervals.append((ci_low, ci_high, sample_mean))
+    captures.append(ci_low <= true_population_mean <= ci_high)
+
+# Plot the intervals
+ax1.axvline(true_population_mean, color='red', linewidth=3, 
+           label=f'True Population Mean = {true_population_mean}')
+
+for i, (low, high, mean) in enumerate(intervals):
+    color = 'green' if captures[i] else 'red'
+    alpha = 0.8 if captures[i] else 1.0
+    
+    # Plot the confidence interval
+    ax1.plot([low, high], [i, i], color=color, linewidth=3, alpha=alpha)
+    # Plot the sample mean
+    ax1.plot(mean, i, 'o', color=color, markersize=6, alpha=alpha)
+
+ax1.set_xlabel('Height (inches)')
+ax1.set_ylabel('Sample Number')
+ax1.set_title(f'20 Different 95% Confidence Intervals\n{sum(captures)} out of {n_intervals} captured the true mean')
+ax1.legend()
+ax1.grid(True, alpha=0.3)
+
+# Show our specific sample
+ax2.hist(our_sample, bins=10, alpha=0.7, color='lightblue', edgecolor='black', density=True)
+ax2.axvline(sample_mean, color='blue', linewidth=3, label=f'Sample Mean = {sample_mean:.2f}')
+ax2.axvline(ci_lower, color='red', linestyle='--', linewidth=2, label=f'95% CI: [{ci_lower:.2f}, {ci_upper:.2f}]')
+ax2.axvline(ci_upper, color='red', linestyle='--', linewidth=2)
+ax2.axvline(true_population_mean, color='orange', linewidth=3, label=f'True Mean = {true_population_mean}')
+ax2.set_title('Our Sample and Confidence Interval')
+ax2.set_xlabel('Height (inches)')
+ax2.set_ylabel('Density')
+ax2.legend()
+ax2.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+
+print(f"Capture rate: {sum(captures)}/{n_intervals} = {sum(captures)/n_intervals*100:.1f}%")
+print("This should be close to 95%!")
+```
+
+::: {.task-box}
+### Task 4: Your Own Confidence Interval
+
+::: {.time-box}
+⏱️ **Estimated time:** 8 minutes
+:::
+
+You're studying the average time students spend on homework per week. You survey 40 students and get the following results:
+
+Copy the below code and try it on your own!
+
+```{python}
+#| eval: false
+# Homework time data (in hours per week)
+np.random.seed(456)
+homework_data = np.random.normal(15, 5, 40)  # 40 students, roughly normal
+
+print("Homework Survey Results:")
+print(f"Sample size: {len(homework_data)}")
+print(f"Sample mean: {np.mean(homework_data):.2f} hours/week")
+print(f"Sample std dev: {np.std(homework_data, ddof=1):.2f} hours/week")
+
+# Your task: Create a 90% confidence interval
+# Step 1: Calculate the needed values
+sample_mean = np.mean(homework_data)
+sample_std = np.std(homework_data, ddof=1)
+n = len(homework_data)
+
+# Step 2: Find the critical value for 90% confidence
+confidence = 0.90
+alpha = 1 - confidence
+z_star = stats.norm.ppf(1 - alpha/2)
+print(f"Critical value for 90% confidence: {z_star:.3f}")
+
+# Step 3: Calculate standard error and margin of error
+standard_error = sample_std / np.sqrt(n)
+margin_of_error = z_star * standard_error
+
+print(f"Standard error: {standard_error:.3f}")
+print(f"Margin of error: {margin_of_error:.3f}")
+
+# Step 4: Build the confidence interval
+ci_lower = sample_mean - margin_of_error
+ci_upper = sample_mean + margin_of_error
+
+print(f"\n90% Confidence Interval for average homework time:")
+print(f"[{ci_lower:.2f}, {ci_upper:.2f}] hours per week")
+
+# Step 5: Interpret your result
+print(f"\nInterpretation:")
+print(f"We are 90% confident that the true average homework time")
+print(f"for all students is between {ci_lower:.2f} and {ci_upper:.2f} hours per week.")
+```
+
+**Questions to think about:**
+
+1. How would a 95% confidence interval compare to your 90% interval?
+   
+2. What if you had surveyed 100 students instead of 40?
+
+:::
+
+## Different Confidence Levels
+
+```{python}
+#| eval: true
+# Compare different confidence levels using our height data
+confidence_levels = [0.80, 0.90, 0.95, 0.99]
+
+print("Comparison of Confidence Intervals:")
+print("=" * 50)
+
+for conf in confidence_levels:
+    alpha = 1 - conf
+    z_crit = stats.norm.ppf(1 - alpha/2)
+    margin = z_crit * standard_error
+    
+    lower = sample_mean - margin
+    upper = sample_mean + margin
+    width = upper - lower
+    
+    print(f"{conf*100:2.0f}% CI: [{lower:.2f}, {upper:.2f}], width = {width:.2f}")
+
+print()
+print("Notice: Higher confidence = Wider interval!")
+print("Trade-off: Confidence vs. Precision")
+```
+
+# Part 6: Practice - Real World Applications
+
+
+::: {.task-box}
+### Task 5: Which Distribution Should I Use?
+
+::: {.time-box}
+⏱️ **Estimated time:** 4 minutes
+:::
+
+Match each scenario with the best distribution:
+
+**Scenarios:**
+
+A. Time between customer arrivals at a coffee shop
+
+B. Heights of adult women  
+
+C. The outcome of rolling a fair 6-sided die
+
+D. Temperature measurements in a city
+
+E. Whether a coin flip shows heads or tails
+
+**Distributions:**
+
+1. Normal
+   
+2. Uniform  
+   
+3. Exponential
+   
+4. Discrete uniform
+   
+5. Bernoulli
+
+```{python}
+#| eval: false
+# Fill in your answers:
+print("My answers:")
+print("A. Time between arrivals: ___")      # Fill in the number
+print("B. Heights: ___")                    # Fill in the number
+print("C. Die roll: ___")                   # Fill in the number
+print("D. Temperature: ___")                # Fill in the number
+print("E. Coin flip: ___")                  # Fill in the number
+
+# Check your reasoning - why did you choose each one?
+```
+
+:::
+
+# Part 6: Simulation - The Law of Large Numbers (Optional)
+
+::: {.time-box}
+⏱️ **Estimated time:** 5 minutes
+:::
+
+Let's see how sample means get closer to the population mean as we increase sample size:
+
+```{python}
+#| eval: true
+# The Law of Large Numbers in action
+population = stats.norm(50, 10)  # Population: mean=50, std=10
+true_mean = population.mean()
+
+sample_sizes = [5, 10, 20, 50, 100, 200, 500, 1000]
+sample_means = []
+
+print("Law of Large Numbers: Sample means approaching population mean")
+print("=" * 60)
+print(f"True population mean: {true_mean}")
+print()
+
+for n in sample_sizes:
+    sample = population.rvs(n)
+    sample_mean = np.mean(sample)
+    sample_means.append(sample_mean)
+    error = abs(sample_mean - true_mean)
+    print(f"n={n:4d}: sample mean = {sample_mean:6.2f}, error = {error:.2f}")
+
+# Visualize convergence
+plt.figure(figsize=(10, 6))
+plt.plot(sample_sizes, sample_means, 'bo-', linewidth=2, markersize=8, label='Sample Means')
+plt.axhline(true_mean, color='red', linestyle='--', linewidth=2, 
+           label=f'True Population Mean = {true_mean}')
+plt.xlabel('Sample Size')
+plt.ylabel('Sample Mean')
+plt.title('Law of Large Numbers: Sample Means Converge to Population Mean')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.show()
+
+print(f"\nAs sample size increases, sample means get closer to {true_mean}!")
+```
+
+# Summary: What We Learned Today
+
+::: {.time-box}
+⏱️ **Estimated time:** 3 minutes
+:::
+
+🎉 **Congratulations!** You've learned about:
+
+1. **Continuous vs. Discrete Variables**
+   - Discrete: Count things (use PMF)
+   - Continuous: Measure things (use PDF, calculate areas)
+
+2. **Important Continuous Distributions**:
+   - **Normal**: The bell curve (heights, test scores, errors)
+   - **Uniform**: All values equally likely  
+   - **Exponential**: Waiting times, time between events
+
+3. **Central Limit Theorem**: Sample means are approximately normal, no matter what the population looks like!
+
+4. **Confidence Intervals**: A range of plausible values for a population parameter
+   - Higher confidence = wider interval
+   - Larger sample = narrower interval
+
+5. **Python Tools for Continuous Distributions**:
+   - `stats.norm(mean, std)` - Normal distribution
+   - `stats.uniform(start, width)` - Uniform distribution  
+   - `stats.expon(scale)` - Exponential distribution
+   - `.pdf()`, `.cdf()`, `.ppf()` methods
+
+::: {.callout-tip}
+## Key Formulas to Remember
+
+**95% Confidence Interval for a mean:**
+$$\bar{x} \pm 1.96 \times \frac{s}{\sqrt{n}}$$
+
+**Central Limit Theorem:**
+Sample means follow $\text{Normal}\left(\mu, \frac{\sigma}{\sqrt{n}}\right)$
+
+**68-95-99.7 Rule:**
+- 68% within 1 standard deviation
+- 95% within 2 standard deviations  
+- 99.7% within 3 standard deviations
+:::
+
+## What's Next?
+
+In lab 6, our final lab; we'll learn about:
+
+- Hypothesis testing (is a claim supported by data?)
+- Comparing two groups (t-tests)
+- Relationships between variables (correlation, regression)
+
+Great job tackling lab 5 and learning about continuous random variables and confidence intervals! 📊🎯
+
+::: {.callout-note}
+## Quick Reference: Python Commands
+
+```python
+# Normal distribution
+norm_dist = stats.norm(mean, std)
+
+# Uniform distribution  
+uniform_dist = stats.uniform(start, width)
+
+# Exponential distribution
+exp_dist = stats.expon(scale=mean)
+
+# Calculate probabilities
+prob = dist.cdf(x)              # P(X ≤ x)
+prob = dist.cdf(b) - dist.cdf(a) # P(a < X < b)
+
+# Get percentiles
+value = dist.ppf(0.95)          # 95th percentile
+
+# Generate random samples
+sample = dist.rvs(size=100)     # 100 random values
+
+# Confidence interval (95%)
+z_star = stats.norm.ppf(0.975)  # Critical value
+margin = z_star * (std / np.sqrt(n))
+ci = [mean - margin, mean + margin]
+```
+:::
+
+---
+
+::: {.task-box}
+### **Bonus Challenge**: 
+Try changing the parameters in any of the examples above and see how the distributions change. What happens to confidence intervals when you change the confidence level or sample size? Experiment and explore! 🔬
+
+:::

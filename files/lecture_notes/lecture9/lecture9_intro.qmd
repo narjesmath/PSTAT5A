@@ -7,7 +7,7 @@ format:
   revealjs:
     logo: /img/logo.png
     theme: default
-    css: /files/lecture_notes/lecture8/new-style.css
+    css: /files/lecture_notes/lecture9/new-style.css
     slide-number: true
     chalkboard: true
     preview-links: auto
@@ -57,11 +57,28 @@ colors = {
 
 **From Samples to Populations: Understanding Uncertainty**
 
-*"In statistics, we make educated guesses about the whole by looking at a part"*
+<!-- <i>**"In statistics, we make educated guesses about the whole by looking at a part"** </i> -->
 
 ---
 
-## What We'll Learn Today 🎯 {.smaller}
+## 📢 Announcements
+
+### 📝 Quiz 2
+**When:**  
+- 📅 **Date:** Friday, July 25  
+- ⏰ **Window:** Available 7 AM – 12 AM  
+- ⏳ **Duration:** 1 hour (once you begin)
+
+**Where:**  
+- 💻 Online on Canvas
+
+**Covers:**  
+- 📚 Material from Weeks 2–3
+
+**Note:**  
+- 📸 Upload a photo of your written work for some questions
+
+## What We'll Learn Today 🎯 
 
 :::: {.columns}
 ::: {.column}
@@ -84,7 +101,14 @@ colors = {
 
 ---
 
-## <small> <b> From Observation to Experimentation </b></small>
+## From Observation ➡️ Experimentation: Why Design Matters
+
+:::: {.incremental}
+- **Observational Study:** Passively record what already happens — good for spotting patterns, but hidden *confounders* can fool us.
+- **Controlled Experiment:** Actively assign treatments; **randomization** balances the lurking variables so we can talk about *cause*.
+- **Randomization & Replication:** Twin shields that protect us from bias and one‑off flukes.
+- **Probability Framework:** Sample space, events, and probabilities let us *quantify* uncertainty.
+::::
 
 ```{python}
 
@@ -94,8 +118,8 @@ colors = {
 # Create experiment design visualization
 fig = make_subplots(
     rows=2, cols=2,
-    subplot_titles=("Observational Study", "Controlled Experiment", 
-                   "Random Experiment Components", "With vs Without Randomization"),
+    subplot_titles=("Observational Pattern", "Controlled Experiment (Randomized)",
+                   "Anatomy of a Random Experiment", "Impact of Randomization"),
     specs=[[{"type": "scatter"}, {"type": "scatter"}],
            [{"type": "table"}, {"type": "scatter"}]],
     vertical_spacing=0.3,
@@ -243,13 +267,17 @@ fig.show()
 
 ```
 
-## <small> <b>The Big Picture: From Sample to Population </small> </b>
+## The Big Picture: From Sample to Population 
 
-:::: {.columns .smaller}
+:::: {.columns }
 ::: {.column}
+
 Think of this like **trying to understand a huge library by reading just a few books**
 
 ```{python}
+#| fig-width: 20
+#| fig-height: 5
+#| 
 import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -319,8 +347,8 @@ for annotation in fig.layout.annotations:
 fig.update_layout(
     font=dict(size=12, family="Arial Black"),
     margin=dict(l=30, r=30, t=30, b=30),
-    width=500,
-    height=350,
+    width=900,
+    height=500,
     autosize=True
 )
 
@@ -339,10 +367,10 @@ fig.show()
 
 ---
 
-## <small> <b>Why Point Estimates Aren't Enough </small> </b>
+## Why Point Estimates Aren't Enough 
 
 :::: {.columns}
-::: {.column .smaller}
+::: {.column }
 **Imagine asking:** "What's the average height of UCSB students?"
 
 ```{python}
@@ -381,26 +409,29 @@ fig.update_layout(
     title="20 Different Samples Give 20 Different Answers!",
     xaxis_title="Sample Number",
     yaxis_title="Sample Mean Height (inches)",
-    height=400,
+    height=500,
+    width = 900,
     showlegend=False
 )
 
 fig.show()
 ```
 :::
-::: {.column .smaller}
+::: {.column }
 **The Problem:** Each sample gives a slightly different answer! 
 
+:::{.fragment}
 **The Solution:** Use **confidence intervals** to show the range of reasonable values.
+:::
 :::
 ::::
 
 ---
 
-## <small> <b>Sampling Distributions </small> </b>
+## Sampling Distributions 
 
 :::: {.columns}
-::: {.column width = "70%" .smaller}
+::: {.column }
 
 Think of sampling distributions like 
 **"What if we repeated our study 1000 times?"**
@@ -463,12 +494,12 @@ fig.add_trace(
     row=2, col=2
 )
 
-fig.update_layout(height=400, width = 600, showlegend=False)
+fig.update_layout(height=500, width = 900, showlegend=False)
 fig.show()
 ```
 :::
 
-::: {.column width="30%"}
+::: {.column }
 **Key Insights:**
 
 1. **Population** can be any shape (skewed, normal, weird)
@@ -483,10 +514,10 @@ fig.show()
 
 ---
 
-## <small> <b> The Central Limit Theorem (CLT) 🎯 </small> </b>
+## The Central Limit Theorem (CLT) 🎯 
 
 :::: {.columns}
-::: {.column width = "70%"}
+::: {.column }
 
 ```{python}
 #| fig-width: 12
@@ -549,13 +580,13 @@ fig.add_trace(go.Histogram(x=means_10, nbinsx=30, name="n=10",
 fig.add_trace(go.Histogram(x=means_50, nbinsx=30, name="n=50", 
                           marker_color=colors['info'], opacity=0.7), row=2, col=3)
 
-fig.update_layout(height=500, width=700, showlegend=False, 
+fig.update_layout(height=500, width=900, showlegend=False, 
                  #title="Central Limit Theorem: Larger Samples → More Normal!"
                  )
 fig.show()
 ```
 :::
-::: {.column width = "30%" .smaller}
+::: {.column }
 **The Magic Rule:** No matter what shape your population is, sample means will be approximately normal!
 
 **The Rule of Thumb:** With **n ≥ 30**, sample means will be approximately normal, regardless of population shape!
@@ -565,26 +596,34 @@ fig.show()
 ---
 
 
-## <small> <b>Standard Error: The Key to Everything </small> </b>
+## Standard Error
 
 :::: {.columns}
-::: {.column .smaller width = "40%"}
-- **Standard Deviation (σ)**: How spread out individual people are
-  
-- **Standard Error (SE)**: How spread out sample averages are
+::: {.column }
+**What it measures**
 
-**The Formula:**
-$$SE = \frac{\sigma}{\sqrt{n}}$$
+- **Standard deviation ($\sigma$ or $s$):** spread of *individual* data points  
+- **Standard error (SE):** spread of *sample means*
 
-**Where:**
+$$
+SE = \frac{\sigma}{\sqrt{n}}
+\qquad(\text{if } \sigma \text{ is known})
+$$
 
-- $\sigma$ = population standard deviation (how varied people are)
-  
-- $n$ = sample size (how many people we measured)
-  
-- $\sqrt{n}$ = square root of sample size 
+$$
+SE = \frac{s}{\sqrt{n}}
+\qquad(\text{usual case, } \sigma \text{ unknown})
+$$
+
+**Key facts**
+
+- SE shrinks at rate $1/\sqrt{n}$ — every **4×** more observations ⇒ **½** the SE  
+- Smaller SE ⇒ narrower confidence intervals and more powerful tests  
+- SE appears in the denominator of every $t$‑statistic you’ll meet
 :::
-::: {.column width = "60%"}
+
+
+::: {.column }
 ```{python}
 #| fig-width: 8
 #| fig-height: 6
@@ -632,13 +671,13 @@ Doubling your sample size doesn't halve the error - you need 4 times the sample 
 :::
 
 :::
-:::
+::: 
 
 
-## <small> <b>Confidence Intervals: The Intuitive Idea </small> </b>
+## Confidence Intervals: The Intuitive Idea 
 
 :::: {.columns}
-::: {.column width = "70%"}
+::: {.column }
 **Imagine you're trying to guess someone's height just by looking at their shadow...**
 
 ```{python}
@@ -714,7 +753,7 @@ fig.update_layout(
     title=dict(text="95% CI: We're 95% Sure the True Mean is in This Range", x=0.3, xanchor='center'),
     xaxis=dict(title='Height (inches)', range=[60, 76], tick0=60, dtick=2),
     yaxis=dict(title='Probability Density'),
-    width=1000,
+    width=950,
     height=500,
     margin=dict(t=120, b=40, l=40, r=40),
     showlegend=True
@@ -722,99 +761,206 @@ fig.update_layout(
 
 fig.show()
 ```
+
+
+
 :::
-::: {.column width = "30%"}
-**Simple Interpretation:** "We're 95% confident the true average height is between 64.3 and 70.1 inches"
+
+::: {.column .smaller .fragment}
+**Simple Interpretation:** "We're $95\\%$ confident the true average height is between $64.3$ and $70.1$ inches."
+
+
+:::
+::::
+
+## What Exactly *Is* a Confidence Interval? 🤓
+
+:::: {.columns}
+::: {.column .smaller .semi-fade-out}
+- A **confidence interval (CI)** is *point estimate* $\pm$ *margin of error*  
+$$
+    \text{CI} = \text{statistic} \;\pm\; \bigl(\text{critical value}\bigr)\times\bigl(\text{SE}\bigr)
+$$
+
+- The “critical value” comes from a probability model (e.g., $z^{\star}$ or $t^{\star}$).  
+  
+- The **standard error (SE)** captures sampling variation.
+
+**Frequentist meaning**
+
+> If we repeated the study infinitely many times and built a $95 \%$ CI each time, about $95 \%$ of those intervals would cover the true parameter.
+
+(For any one computed interval the parameter is fixed, the *process* has a $95 \%$ success rate, not the individual interval.)
+
+```{python}
+#| fig-width: 5
+#| fig-height: 3
+#| echo: false
+import numpy as np, plotly.graph_objects as go
+np.random.seed(7)
+# quick visual: 10 intervals, half miss intentionally
+true_mu = 10
+means = np.random.normal(true_mu, 2, 10)
+ses   = np.repeat(1.2, 10)
+ci_l  = means - 1.96*ses
+ci_u  = means + 1.96*ses
+fig   = go.Figure()
+for i,(l,u,m) in enumerate(zip(ci_l,ci_u,means)):
+    color = "#10b981" if l<=true_mu<=u else "#ef4444"
+    fig.add_trace(go.Scatter(x=[l,u],y=[i,i],mode="lines",line=dict(color=color,width=4)))
+    fig.add_trace(go.Scatter(x=[m],y=[i],mode="markers",marker=dict(color=color,size=6)))
+fig.add_vline(x=true_mu,line_color="#3b82f6",line_width=3)
+fig.update_xaxes(title_text="Value")
+fig.update_yaxes(visible=False)
+fig.update_layout(height=220,margin=dict(l=20,r=20,t=10,b=10),showlegend=False)
+fig.show()
+```
+
+
+:::
+
+
+::: {.column .smaller .fragment}
+
+
+:::{.callout-tip}
+### What controls the width?
+
+- **Variability** in the data: larger $\sigma$ or $s$ ⇒ wider CI
+    
+- **Sample size** $n$: width shrinks at rate $1/\sqrt{n}$ 
+  
+- **Confidence level**: 99 % CIs are wider than 90 % CIs
+
+:::
+
+:::{.callout-important}
+### Common pitfalls
+
+- Saying “there is a $95 \%$ probability that $\mu$ lies in this interval” (wrong)  
+  
+- Interpreting the CI as covering $95 \%$ of *future* observations (it does not)  
+  
+- Ignoring conditions (normality or CLT) before using the formulae  
+:::
+
 :::
 ::::
 
 ---
 
-<!-- ## <small> <b>Building Confidence Intervals Step-by-Step </small> </b>
+
+
+
+## Building Confidence Intervals Step-by-Step 
 
 :::: {.columns}
-::: {.column}
-### For Population Means (Most Common Case)
+::: {.column }
 
-**When we DON'T know the population standard deviation (σ):**
+For Population Means (Most Common Case)
+
+**When we DON'T know the population standard deviation ($\sigma$):**
 
 ```{python}
-#| fig-width: 12
-#| fig-height: 4
+#| fig-width: 14
+#| fig-height: 6
+#| echo: false
+import numpy as np, plotly.graph_objects as go
+from plotly.subplots import make_subplots
+from scipy.stats import t, norm
 
-# Step-by-step CI construction
-fig = make_subplots(
-    rows=1, cols=4,
-    subplot_titles=("1. Start with Sample", "2. Find Standard Error", 
-                   "3. Get Critical Value", "4. Build Interval")
-)
-
-# Step 1: Sample data
+# ── 0.  Generate one sample  ─────────────────────────────────────────────
 np.random.seed(42)
-sample_data = np.random.normal(68, 4, 25)
-x_bar = np.mean(sample_data)
-s = np.std(sample_data, ddof=1)
-n = len(sample_data)
+n        = 25
+mu_true  = 68          # just for reference (we never use σ)
+sigma    = 4
+sample   = np.random.normal(mu_true, sigma, n)
+xbar     = sample.mean()
+s        = sample.std(ddof=1)
+se       = s / np.sqrt(n)
+df       = n - 1
+t_crit   = t.ppf(0.975, df)          # 95 % two-sided
+ci_low, ci_high = xbar - t_crit*se, xbar + t_crit*se
 
+# ── 1-4.  Build the four panels  ─────────────────────────────────────────
+fig = make_subplots(rows=2, cols=2,
+    subplot_titles=(
+        "1️⃣  Your Random Sample",
+        "2️⃣  Sampling Distribution of $\\bar X$",
+        "3️⃣  $t$-Distribution (df = 24)",
+        "4️⃣  95 % Confidence Interval"))
+
+# (1) Sample histogram
 fig.add_trace(
-    go.Histogram(x=sample_data, nbinsx=10, name="Sample Data",
-                marker_color=colors['primary'], opacity=0.7),
-    row=1, col=1
-)
+    go.Histogram(x=sample, nbinsx=10,
+                 marker_color="#4285F4", opacity=0.70, showlegend=False),
+    row=1, col=1)
+fig.add_vline(x=xbar, line_width=3, line_color="black",
+              annotation_text=f"$\\bar x$ = {xbar:0.1f}", annotation_position="top left",
+              row=1, col=1)
 
-# Step 2: Standard Error calculation
-se = s / np.sqrt(n)
+# (2) Sampling distribution (normal curve with ±1 SE band)
+x_grid = np.linspace(xbar-4*se, xbar+4*se, 300)
 fig.add_trace(
-    go.Bar(x=['Standard Error'], y=[se], 
-           marker_color=colors['secondary'], name="SE"),
-    row=1, col=2
-)
+    go.Scatter(x=x_grid, y=norm.pdf(x_grid, xbar, se),
+               mode="lines", line_color="#34A853", showlegend=False),
+    row=1, col=2)
+fig.add_vrect(x0=xbar-se, x1=xbar+se, fillcolor="#34A853", opacity=0.25,
+              row=1, col=2)
+fig.add_annotation(x=xbar, y=norm.pdf(xbar, xbar, se)*1.1,
+                   text="±1 SE", showarrow=False, row=1, col=2)
 
-# Step 3: Critical value
-df = n - 1
-t_critical = t.ppf(0.975, df)  # 95% confidence
-fig.add_trace(
-    go.Bar(x=['t* (95%)'], y=[t_critical], 
-           marker_color=colors['danger'], name="Critical Value"),
-    row=1, col=3
-)
+# (3) t-distribution with shaded 2.5 % tails
+x_t = np.linspace(-4,4,400)
+y_t = t.pdf(x_t, df)
+fig.add_trace(go.Scatter(x=x_t, y=y_t, mode="lines",
+                         line_color="#FBBC05", showlegend=False),
+              row=2, col=1)
+# shade both tails
+fig.add_vrect(x0=t_crit,     x1= 4, fillcolor="#FBBC05", opacity=0.25, row=2, col=1)
+fig.add_vrect(x0=-4, x1=-t_crit, fillcolor="#FBBC05", opacity=0.25, row=2, col=1)
+fig.add_annotation(x=t_crit, y=t.pdf(t_crit, df)*1.05,
+                   text=f"$t^*$ = {t_crit:0.2f}", showarrow=False, row=2, col=1)
 
-# Step 4: Confidence interval
-margin_error = t_critical * se
-ci_lower = x_bar - margin_error
-ci_upper = x_bar + margin_error
+# (4) Number line + CI
+fig.add_trace(go.Scatter(x=[ci_low, ci_high], y=[0,0],
+                         mode="markers+lines", line=dict(color="#EA4335", width=6),
+                         marker=dict(size=12,color="#EA4335"), showlegend=False),
+              row=2, col=2)
+fig.add_trace(go.Scatter(x=[xbar], y=[0], mode="markers",
+                         marker=dict(size=14, color="black", symbol="x"), showlegend=False),
+              row=2, col=2)
+fig.update_yaxes(visible=False, row=2, col=2)
+fig.add_annotation(x=xbar, y=0.1, text=f"$\\bar x$", showarrow=False, row=2, col=2)
+fig.add_annotation(x=ci_low,  y=-0.1, text=f"{ci_low:0.1f}", showarrow=False, row=2, col=2)
+fig.add_annotation(x=ci_high, y=-0.1, text=f"{ci_high:0.1f}", showarrow=False, row=2, col=2)
 
-fig.add_trace(
-    go.Scatter(x=[ci_lower, x_bar, ci_upper], 
-               y=[1, 1, 1],
-               mode='markers+lines',
-               marker=dict(size=[15, 20, 15], color=colors['success']),
-               line=dict(color=colors['success'], width=5),
-               name="Confidence Interval"),
-    row=1, col=4
-)
-
-fig.update_layout(height=300, showlegend=False)
+# ──  Cosmetic tweaks  ────────────────────────────────────────────────────
+fig.update_layout(height=460, width=820, margin=dict(t=60),
+                  title_text="Building a 95 % CI for a Mean (Unknown σ)")
 fig.show()
 ```
 :::
-::: {.column}
+::: {.column }
 **The Formula:** $\bar{x} \pm t^* \cdot \frac{s}{\sqrt{n}}$
 
 **Breaking it down:**
+
 - $\bar{x}$ = our sample average (the center of our guess)
+  
 - $t^*$ = critical value (how many standard errors to go out)
+  
 - $\frac{s}{\sqrt{n}}$ = standard error (our uncertainty measure)
 :::
 ::::
 
 ---
 
-## The t-Distribution: When σ is Unknown {.smaller}
+## The t-Distribution: When $\sigma$ is Unknown 
 
 :::: {.columns}
-::: {.column}
-**Why not use the normal distribution?** Because when we estimate σ with s, we add extra uncertainty!
+::: {.column }
+**Why not use the normal distribution?** Because when we estimate $\sigma$ with $s$, we add extra uncertainty!
 
 ```{python}
 #| fig-width: 12
@@ -861,17 +1007,20 @@ fig.add_annotation(
 fig.show()
 ```
 :::
-::: {.column}
+::: {.column }
 **Key Points:**
-- Small samples (n < 30): Use t-distribution
-- Large samples (n ≥ 30): t ≈ normal
-- Degrees of freedom = n - 1
+
+- Small samples ($n < 30$): Use t-distribution
+  
+- Large samples ($n ≥ 30$): $t$ ≈ normal
+  
+- Degrees of freedom (df)= $n - 1$
 :::
 ::::
 
 ---
 
-## Confidence Intervals for Proportions {.smaller}
+## Confidence Intervals for Proportions 
 
 :::: {.columns}
 ::: {.column}
@@ -939,7 +1088,7 @@ fig.show()
 
 ---
 
-## What Does "95% Confident" Really Mean? 🤔 {.smaller}
+## What Does "95% Confident" Really Mean? 🤔 
 
 :::: {.columns}
 ::: {.column}
@@ -1030,7 +1179,7 @@ fig.show()
 
 ---
 
-## Sample Size Planning: Getting the Precision You Want {.smaller}
+## Sample Size Planning: Getting the Precision You Want 
 
 :::: {.columns}
 ::: {.column}
@@ -1096,7 +1245,7 @@ fig.show()
 
 ---
 
-## Real Example: Student Sleep Study 😴 {.smaller}
+## Real Example: Student Sleep Study 😴 
 
 :::: {.columns}
 ::: {.column}
@@ -1221,7 +1370,7 @@ fig.show()
 
 ---
 
-## Common Mistakes to Avoid ⚠️ {.smaller}
+## Common Mistakes to Avoid ⚠️ 
 
 :::: {.columns}
 ::: {.column}
@@ -1251,74 +1400,126 @@ fig.show()
 
 ---
 
-## Practice Problems 📝 {.smaller}
+# Practice Problems 📝 
 
-:::: {.columns}
-::: {.column}
-### Problem 1: Coffee Shop Revenue
+---
+
+## Problem 1: Coffee Shop Revenue {.scrollable}
 
 A coffee shop owner samples 36 days and finds average daily revenue of $850 with standard deviation $120.
 
 **Your turn:** Calculate a 90% confidence interval for the true average daily revenue.
 
-::: {.callout-note collapse="true"}
-## Solution
+::: {#my-solution .collapsible-solution}
+<button class="solution-toggle" onclick="this.parentElement.classList.toggle('open')">
+  Show Solution
+</button>
+<div class="solution-content">
 
-**Given:** n = 36, x̄ = $850, s = $120, 90% confidence
+**Given (from the prompt)**  
+$n = 36,\; \bar{x} = \$850,\; s = \$120,\; \text{confidence level} = 90\%$
 
-**Step 1:** Check conditions ✓ (large sample)
+---
 
-**Step 2:** Find critical value  
-df = 35, t* = 1.690 (90% confidence)
+### Step 1 – Conditions  
+* $n \ge 30$  ⇒ a $t$‑interval is justified by the Central Limit Theorem.  
+* Assume daily revenues are independent.
 
-**Step 3:** Calculate standard error  
-SE = 120/√36 = 120/6 = $20
+### Step 2 – Critical value  
+$\alpha = 1-0.90 = 0.10 \;\Rightarrow\; \alpha/2 = 0.05$  
+Degrees of freedom: $df = n-1 = 35$  
+$\displaystyle t^{\star}_{0.90,\,35} \approx 1.690$
 
-**Step 4:** Build interval  
-CI = 850 ± 1.690 × 20 = 850 ± 33.8 = ($816.20, $883.80)
+### Step 3 – Standard error  
+$$SE = \frac{s}{\sqrt{n}}
+        = \frac{120}{\sqrt{36}}
+        = \frac{120}{6}
+        = \$20$$
 
-**Interpretation:** We are 90% confident the true average daily revenue is between $816.20 and $883.80.
+### Step 4 – Margin of error  
+$$ME = t^{\star}\; SE
+       = 1.690 \times \$20
+       = \$33.8$$
+
+### Step 5 – Confidence interval  
+$$\bar{x} \pm ME
+     = 850 \pm 33.8
+     \;\Longrightarrow\;
+     (\$816.2,\; \$883.8)$$
+
+**Interpretation** – We are **90 % confident** that the true mean daily revenue lies between \$816.20 and \$883.80.
+</div>
 :::
-:::
-::: {.column}
-### Problem 2: Student Survey
+
+---
+
+## Problem 2: Student Survey {.scrollable}
 
 In a survey of 400 students, 280 say they would recommend their major to a friend.
 
 **Your turn:** 
+
 1. Calculate the sample proportion
-2. Build a 95% confidence interval  
+   
+2. Build a $95\%$ confidence interval  
+   
 3. Check if conditions are met
 
-::: {.callout-note collapse="true"}
-## Solution
+::: {#my-solution .collapsible-solution}
+<button class="solution-toggle" onclick="this.parentElement.classList.toggle('open')">
+  Show Solution
+</button>
+<div class="solution-content">
 
-**Step 1:** Sample proportion  
-p̂ = 280/400 = 0.70 (70%)
 
-**Step 2:** Check conditions  
-np̂ = 400(0.70) = 280 ≥ 10 ✓  
-n(1-p̂) = 400(0.30) = 120 ≥ 10 ✓
+**Given (from the survey)**  
+$n = 400,\; x = 280$ “yes” responses
 
-**Step 3:** Build CI  
-SE = √[0.70(0.30)/400] = √[0.000525] = 0.0229  
-z* = 1.96 (95% confidence)  
-CI = 0.70 ± 1.96(0.0229) = 0.70 ± 0.045 = (0.655, 0.745)
+---
 
-**Interpretation:** We are 95% confident that between 65.5% and 74.5% of all students would recommend their major.
+### Step 1 – Sample proportion  
+$$\hat{p} = \frac{x}{n} = \frac{280}{400} = 0.70$$
+
+### Step 2 – Conditions for a $z$‑interval  
+$n\hat{p} = 400(0.70)=280 \ge 10$  
+$n(1-\hat{p}) = 400(0.30)=120 \ge 10$  
+Both counts ≥ 10, so the normal approximation is appropriate.
+
+### Step 3 – Standard error  
+$$SE = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+        = \sqrt{\frac{0.70(0.30)}{400}}
+        = \sqrt{0.000525}
+        \approx 0.0229$$
+
+### Step 4 – Critical value & margin of error  
+For 95 % confidence, $z^{\star} = 1.96$  
+
+$$ME = z^{\star}\; SE
+       = 1.96 \times 0.0229
+       \approx 0.045$$
+
+### Step 5 – Confidence interval  
+$$\hat{p} \pm ME
+     = 0.70 \pm 0.045
+     \;\Longrightarrow\;
+     (0.655,\; 0.745)$$
+
+**Interpretation** – We are **95 % confident** that between **65.5 % and 74.5 %** of all students would recommend their major to a friend.
+</div>
 :::
-:::
-::::
 
---- -->
+---
 
-## Looking Ahead: Hypothesis Testing 🔮 {.smaller}
+## Looking Ahead: Hypothesis Testing 🔮 
 
 :::: {.columns}
 ::: {.column}
 **Next week we'll learn:**
+
 - How to test specific claims about populations
+  
 - When to reject or fail to reject hypotheses  
+  
 - The connection between confidence intervals and hypothesis tests
 
 :::
@@ -1383,13 +1584,13 @@ fig.show()
 ```
 :::
 ::: {.column}
-<!-- Optionally add a summary or preview graphic here -->
+
 :::
 ::::
 
 ---
 
-## Key Takeaways 🎯 {.smaller}
+## Key Takeaways 🎯 
 
 :::: {.columns}
 ::: {.column}
@@ -1410,7 +1611,7 @@ fig.show()
 
 ---
 
-## Questions? 🤔 {.smaller}
+## Questions? 🤔 
 
 :::: {.columns}
 ::: {.column}
@@ -1421,6 +1622,6 @@ fig.show()
 *"The goal is not to eliminate uncertainty, but to understand and work with it"*
 :::
 ::: {.column}
-<!-- Optionally add a closing note or image here -->
+
 :::
 ::::
