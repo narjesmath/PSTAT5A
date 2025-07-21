@@ -850,7 +850,7 @@ fig.show()
 ---
 
 
-
+<!-- 
 
 ## Building Confidence Intervals Step-by-Step 
 
@@ -1607,7 +1607,7 @@ fig.show()
 - Plan sample sizes for desired precision
 - Avoid common interpretation mistakes
 :::
-::::
+:::: -->
 
 ---
 
