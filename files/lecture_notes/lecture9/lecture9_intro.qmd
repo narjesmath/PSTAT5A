@@ -73,7 +73,7 @@ colors = {
 - 💻 Online on Canvas
 
 **Covers:**  
-- 📚 Material from Weeks 2–3
+- 📚 Material from Weeks 3-4
 
 **Note:**  
 - 📸 Upload a photo of your written work for some questions
