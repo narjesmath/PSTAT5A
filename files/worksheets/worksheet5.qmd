@@ -1,0 +1,231 @@
+---
+title: "PSTAT 5A Practice Worksheet 5"
+subtitle: "Continuous Random Variables and Confidence Intervals"
+author: "Student Name: ________________________"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    theme: cosmo
+    css: /files/lecture_notes/theme/lecture-styles.css
+  pdf:
+    toc: true
+    number-sections: true
+    geometry: margin=1in
+    fontsize: 11pt
+    documentclass: article
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+execute:
+  echo: false
+  warning: false
+---
+
+# Instructions and Overview
+
+**⏰ Time Allocation:**
+
+- **Intro & Setup** : 10 minutes
+
+- **Section A (Continuous Distributions):** 20 minutes
+  
+- **Section B (Confidence Intervals):** 20 minutes  
+  
+- **Optional Questions:**  Do on your own
+  
+- **Total:** 50 minutes
+
+
+::: {.important}
+**📝 Important Instructions:**
+
+- Use the formulas and tables provided for guidance
+  
+- Round final answers to 4 decimal places unless otherwise specified
+  
+- For confidence intervals, always interpret your results in context
+  
+- Use [z-table](https://math.arizona.edu/~rsims/ma464/standardnormaltable.pdf) or [t-table](https://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf) as appropriate
+  
+- Show your work for all calculations
+:::
+
+
+::: {.formula-box}
+
+**📚 Key Formulas Reference:**
+
+**Continuous Random Variables:**
+
+**Normal Distribution:** $X \sim N(\mu, \sigma^2)$
+
+- **PDF:** $f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$
+- **Standardization:** $Z = \frac{X - \mu}{\sigma}$ where $Z \sim N(0,1)$
+- **Mean:** $E[X] = \mu$
+- **Variance:** $\text{Var}(X) = \sigma^2$
+
+**Uniform Distribution:** $X \sim \text{Uniform}(a,b)$
+
+- **PDF:** $f(x) = \frac{1}{b-a}$ for $a \leq x \leq b$
+- **Mean:** $E[X] = \frac{a+b}{2}$
+- **Variance:** $\text{Var}(X) = \frac{(b-a)^2}{12}$
+
+**Exponential Distribution:** $X \sim \text{Exponential}(\lambda)$
+
+- **PDF:** $f(x) = \lambda e^{-\lambda x}$ for $x \geq 0$
+- **Mean:** $E[X] = \frac{1}{\lambda}$
+- **Variance:** $\text{Var}(X) = \frac{1}{\lambda^2}$
+
+**Confidence Intervals:**
+
+**For Population Mean (σ known):** $\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$
+
+**For Population Mean (σ unknown):** $\bar{x} \pm t_{\alpha/2} \cdot \frac{s}{\sqrt{n}}$
+
+**Margin of Error:** $E = z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$ or $E = t_{\alpha/2} \cdot \frac{s}{\sqrt{n}}$
+
+**Sample Size:** $n = \left(\frac{z_{\alpha/2} \cdot \sigma}{E}\right)^2$
+
+:::
+
+# Section A: Continuous Random Variables
+*⏱️ Estimated time: 20 minutes*
+
+::: {.problem}
+**Problem A1: Distribution Identification and Properties**
+
+For each scenario below, identify the appropriate continuous distribution and find the requested values:
+
+**(a)** The time (in minutes) between arrivals at a coffee shop follows an exponential distribution with an average of 2 minutes between arrivals.
+
+- What is the parameter $\lambda$?
+- What is the probability that the next customer arrives within 1 minute?
+
+**(b)** A random number generator produces values uniformly between 10 and 30.
+
+- What are the parameters a and b?
+- What is the expected value and variance?
+
+:::
+
+**Work Space:**
+
+<br><br><br><br><br><br>
+
+::: {.problem}
+**Problem A2: Normal Distribution Calculations**
+
+The heights of adult women in the US are normally distributed with $\mu = 64$ inches and $\sigma = 2.5$ inches.
+
+**(a)** What is the probability that a randomly selected woman is taller than $67$ inches?
+
+**(b)** What height represents the $25$th percentile?
+
+**(c)** What is the probability that a randomly selected woman has a height between $62$ and $68$ inches?
+
+:::{.callout-tip}
+**Remember to standardize:** Convert to $Z$-scores using $Z = \frac{X - \mu}{\sigma}$
+
+For part (b), you're looking for the value $x$ such that $P(X ≤ x) = 0.25$
+:::
+
+:::
+
+**Work Space:**
+
+<br><br><br><br><br><br><br><br>
+
+# Section B: Confidence Intervals
+*⏱️ Estimated time: 20 minutes*
+
+::: {.problem}
+**Problem B1: Understanding Confidence Intervals**
+
+**(a)** Explain in your own words what a $95\%$ confidence interval means.
+
+**(b)** A $90\%$ confidence interval for the mean weight of apples is (150g, 170g). What is the sample mean and margin of error?
+
+**(c)** True or False: "There is a $95\%$ probability that the population mean lies within our calculated $95\%$ confidence interval." Explain your reasoning.
+
+:::
+
+**Work Space:**
+
+<br><br><br><br><br><br>
+
+::: {.problem}
+**Problem B2: Constructing Confidence Intervals**
+
+A sample of $36$ students has a mean test score of $78.5$ with a standard deviation of $12$.
+
+**(a)** Construct a $95\%$ confidence interval for the population mean test score.
+
+**(b)** Interpret this interval in the context of the problem.
+
+**(c)** What would happen to the width of the interval if:
+
+- We increased the confidence level to $99\%$?
+  
+- We increased the sample size to $144$?
+
+:::{.callout-tip}
+**Decision Guide:** 
+
+- Use $z$-distribution when $\sigma$ is **known** OR $n ≥ 30$
+  
+- Use $t$-distribution when $\sigma$ is **unknown** AND $n < 30$
+  
+- For $95\%$ CI: $z_{0.025} = 1.96$
+:::
+
+:::
+
+**Work Space:**
+
+<br><br><br><br><br><br><br><br>
+
+
+
+
+# Optional Questions
+
+::: {.problem}
+**Optional Problem: Conceptual Understanding**
+
+**(a)** Explain the key difference between discrete and continuous random variables in terms of:
+
+- The values they can take
+  
+- How we calculate probabilities
+
+**(b)** Why do we use $P(X = x) = 0$ for any specific value $x$ in a continuous distribution?
+
+**(c)** What's the relationship between PDF and CDF for continuous distributions?
+
+:::
+
+**Work Space:**
+
+<br><br><br><br><br><br><br><br>
+
+---
+
+**📋 Quick Reference:**
+
+**Common Z-values:**
+
+- $90\%$ CI: $z_{0.05} = 1.645$
+  
+- $95\%$ CI: $z_{0.025}$ = 1.96$  
+  
+- $99\%$ CI: $z_{0.005}$ = 2.576$
+
+**Common t-values (selected):**
+
+- $df = 24, \alpha = 0.05: t_{0.025} = 2.064$
+  
+- $df = 35, \alpha = 0.05: t_{0.025} = 2.030$

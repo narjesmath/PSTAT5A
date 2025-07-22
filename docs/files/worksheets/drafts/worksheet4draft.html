@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Student Name: ________________________">
+<meta name="dcterms.date" content="2025-07-22">
 
-<title>Syllabus – PSTAT5A</title>
+<title>PSTAT 5A Practice Worksheet 3 – PSTAT5A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4b58d93f5c44c434e21b9d3e6047f8ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,22 +69,51 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="./theme/syllabus-styles.css">
+<link rel="stylesheet" href="../../../files/lecture_notes/theme/lecture-styles.css">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/logo.png" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../img/logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">PSTAT5A</span>
     </a>
   </div>
@@ -93,27 +124,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="../../../index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html"> <i class="bi bi-calendar" role="img">
+    <a class="nav-link" href="../../../schedule.html"> <i class="bi bi-calendar" role="img">
 </i> 
 <span class="menu-text">Class Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./syllabus.html" aria-current="page"> <i class="bi bi-file-earmark-text" role="img">
+    <a class="nav-link" href="../../../syllabus.html"> <i class="bi bi-file-earmark-text" role="img">
 </i> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> <i class="bi bi-book" role="img">
+    <a class="nav-link" href="../../../resources.html"> <i class="bi bi-book" role="img">
 </i> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> <i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="../../../contact.html"> <i class="bi bi-envelope" role="img">
 </i> 
 <span class="menu-text">Contact</span></a>
   </li>  
@@ -125,27 +156,49 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructions-and-overview" id="toc-instructions-and-overview" class="nav-link active" data-scroll-target="#instructions-and-overview">Instructions and Overview</a></li>
+  <li><a href="#section-a-probability" id="toc-section-a-probability" class="nav-link" data-scroll-target="#section-a-probability">Section A: Probability</a></li>
+  <li><a href="#section-b-permutations-and-combination" id="toc-section-b-permutations-and-combination" class="nav-link" data-scroll-target="#section-b-permutations-and-combination">Section B: Permutations and Combination</a></li>
+  <li><a href="#section-c-conditional-probability" id="toc-section-c-conditional-probability" class="nav-link" data-scroll-target="#section-c-conditional-probability">Section C: Conditional Probability</a></li>
+  <li><a href="#section-c-conditional-probability-1" id="toc-section-c-conditional-probability-1" class="nav-link" data-scroll-target="#section-c-conditional-probability-1">Section C: Conditional Probability</a></li>
+  <li><a href="#section-d-review" id="toc-section-d-review" class="nav-link" data-scroll-target="#section-d-review">Section D: Review</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="worksheet4draft.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="worksheet4draft.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Syllabus</h1>
-<p class="subtitle lead">Summer 2025 Course Syllabus</p>
+<h1 class="title">PSTAT 5A Practice Worksheet 3</h1>
+<p class="subtitle lead">Comprehensive Review: Probability, Counting, an Conditional Probability</p>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Student Name: ________________________ </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 22, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -155,498 +208,216 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="download-section hidden">
-<p><a href="./files/syllabus/PSTAT5A__Syllabus.pdf" class="download-btn">Download the full syllabus as a PDF</a></p>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📚</p>
-</div>
-<div class="section-title">
-<p>Course Information</p>
-</div>
-</div>
-<div class="info-grid">
-<div class="info-item">
-<div class="info-label">
-<p>Lecture Time</p>
-</div>
-<div class="info-value">
-<p>M/W/T/R 8:00 AM–9:30 AM</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Lecture Hall</p>
-</div>
-<div class="info-value">
-<p>HSSB 1173</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Sections</p>
-</div>
-<div class="info-value">
-<p>As scheduled on GOLD (see Canvas for Zoom links)</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Email</p>
-</div>
-<div class="info-value">
-<p>nmathlouthi@ucsb.edu</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Office</p>
-</div>
-<div class="info-value">
-<p>Ellison Hall 5829</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Office Hours</p>
-</div>
-<div class="info-value">
-<p>Thursdays 11:00 AM–12:00 PM (via Zoom or by appointment)</p>
-</div>
-</div>
-</div>
-<div class="notice-box notice-info">
-<div class="notice-content">
-<p><strong>Note:</strong> Zoom links are posted on the Canvas page for the class.</p>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>👥</p>
-</div>
-<div class="section-title">
-<p>Teaching Assistants</p>
-</div>
-</div>
-<div class="contact-grid">
-<div class="contact-card">
-<div class="contact-avatar">
-<p>SL</p>
-</div>
-<div class="contact-name">
-<p>Summer Le</p>
-</div>
-<div class="contact-email">
-<p>sle@ucsb.edu</p>
-</div>
-</div>
-<div class="contact-card">
-<div class="contact-avatar">
-<p>MH</p>
-</div>
-<div class="contact-name">
-<p>Mingzhu He</p>
-</div>
-<div class="contact-email">
-<p>mingzhuhe@ucsb.edu</p>
-</div>
-</div>
-</div>
-<div class="notice-box notice-important">
-<div class="notice-content">
-<p><strong>Email policy:</strong> Include <code>[PSTAT 5A]</code> in your subject. Allow 24–48 hours for a reply (avoid weekends).</p>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>🎯</p>
-</div>
-<div class="section-title">
-<p>Course Description</p>
-</div>
-</div>
-<p>This introductory course covers the foundations of statistical thinking, including data description, probability, and inference. Students will learn how to summarize data, compute basic probabilities, and make informed decisions using statistical tools.</p>
-<section id="student-learning-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="student-learning-objectives">Student Learning Objectives</h3>
-<p>By the end of this course, you will be able to:</p>
+<section id="instructions-and-overview" class="level1">
+<h1>Instructions and Overview</h1>
+<p><strong>⏰ Time Allocation:</strong></p>
 <ul>
-<li><strong>Summarize data</strong> using descriptive statistics</li>
-<li><strong>Understand</strong> fundamental probability rules and distributions</li>
-<li><strong>Conduct</strong> basic inferential procedures (confidence intervals, hypothesis tests)</li>
-<li><strong>Interpret</strong> results and communicate findings</li>
+<li><p><strong>Section A (Warm-up):</strong> 8 minutes</p></li>
+<li><p><strong>Section B (Intermediate):</strong> 15 minutes</p></li>
+<li><p><strong>Section C (Advanced):</strong> 15 minutes</p></li>
+<li><p><strong>Section D (Review):</strong> 12 minutes</p></li>
+<li><p><strong>Total:</strong> 50 minutes</p></li>
 </ul>
+<div class="important">
+<p><strong>📝 Important Instructions:</strong></p>
+<ul>
+<li><p>Use the formulas provided for guidance</p></li>
+<li><p>Round final answers to 4 decimal places unless otherwise specified</p></li>
+<li><p>Identify your approach before calculating</p></li>
+<li><p>Use calculator as needed</p></li>
+</ul>
+</div>
+<div class="formula-box">
+<p><strong>📚 Key Formulas Reference:</strong></p>
+<p><strong>Basic Probability:</strong></p>
+<ul>
+<li><p><strong>Conditional Probability:</strong> <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></p></li>
+<li><p><strong>Bayes’ Theorem:</strong> <span class="math inline">\(P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}\)</span></p></li>
+<li><p><strong>Law of Total Probability:</strong> <span class="math inline">\(P(A) = \sum P(A|B_i) \cdot P(B_i)\)</span></p></li>
+<li><p><strong>Addition Rule:</strong> <span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span></p></li>
+<li><p><strong>Multiplication Rule:</strong> <span class="math inline">\(P(A \cap B) = P(A) \cdot P(B|A) = P(B) \cdot P(A|B)\)</span></p></li>
+</ul>
+<p><strong>Counting:</strong></p>
+<ul>
+<li><p><strong>Permutations:</strong> <span class="math inline">\(P(n,r) = \frac{n!}{(n-r)!}\)</span></p></li>
+<li><p><strong>Combinations:</strong> <span class="math inline">\(C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}\)</span></p></li>
+</ul>
+</div>
 </section>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📖</p>
-</div>
-<div class="section-title">
-<p>Course Materials</p>
-</div>
-</div>
-<div class="info-grid">
-<div class="info-item">
-<div class="info-label">
-<p>Canvas</p>
-</div>
-<div class="info-value">
-<p>Announcements, Zoom links, and grades (<a href="https://canvas.ucsb.edu">canvas.ucsb.edu</a>)</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Calculator</p>
-</div>
-<div class="info-value">
-<p>Scientific calculator for in-class and quiz work</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Computer</p>
-</div>
-<div class="info-value">
-<p>Use our <a href="https://pstat5a.lsit.ucsb.edu/hub/login">JupyterHub instance</a></p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Recommended Texts</p>
-</div>
-<div class="info-value">
-<p><em>OpenIntro Statistics</em> (free online)<br>
-<em>Think Stats</em> by Allen Downey (free online)</p>
-</div>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📅</p>
-</div>
-<div class="section-title">
-<p>Class Schedule</p>
-</div>
-</div>
-<div class="notice-box notice-info">
-<div class="notice-content">
-<p><strong>Note:</strong> For the most up-to-date details, please visit the <strong>Class Schedule</strong> tab on our website: <a href="./schedule.html">Class Schedule</a></p>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📊</p>
-</div>
-<div class="section-title">
-<p>Grading</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p><strong>Grade Breakdown:</strong></p>
-</div>
-<div class="info-value">
-<ul>
-<li><p>Lecture attendance: <strong>5%</strong></p></li>
-<li><p>Section attendance: <strong>5%</strong></p></li>
-<li><p>Quiz 1: <strong>30%</strong></p></li>
-<li><p>Quiz 2: <strong>30%</strong></p></li>
-<li><p>Quiz 3: <strong>30%</strong></p></li>
-</ul>
-</div>
-</div>
-<p><strong>Grading Scale:</strong></p>
-<div class="grading-container">
+<section id="section-a-probability" class="level1">
+<h1>Section A: Probability</h1>
+<p><em>⏱️ Estimated time: 8 minutes</em></p>
+<div class="problem">
+<p><strong>Problem A1: Probability Distributions</strong></p>
+<p>Each row in the table below is a proposed grade distribution for a class. Identify each as a valid or invalid probability distribution, and explain your reasoning.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: center;"><strong>A Grades</strong></th>
-<th style="text-align: center;"><strong>B Grades</strong></th>
-<th style="text-align: center;"><strong>C Grades</strong></th>
-<th style="text-align: center;"><strong>D/F Grades</strong></th>
+<th>Class</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>F</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">A+: 97–100</td>
-<td style="text-align: center;">B+: 87–89</td>
-<td style="text-align: center;">C+: 77–79</td>
-<td style="text-align: center;">D+: 67–69</td>
+<td>(a)</td>
+<td>0.3</td>
+<td>0.3</td>
+<td>0.3</td>
+<td>0.2</td>
+<td>0.1</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">A: 93–96</td>
-<td style="text-align: center;">B: 83–86</td>
-<td style="text-align: center;">C: 73–76</td>
-<td style="text-align: center;">D: 60–66</td>
+<td>(b)</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">A–: 90–92</td>
-<td style="text-align: center;">B–: 80–82</td>
-<td style="text-align: center;">C–: 70–72</td>
-<td style="text-align: center;">F: &lt; 60</td>
+<td>(c)</td>
+<td>0.3</td>
+<td>0.3</td>
+<td>0.3</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>(d)</td>
+<td>0.3</td>
+<td>0.5</td>
+<td>0.2</td>
+<td>0.1</td>
+<td>-0.1</td>
+</tr>
+<tr class="odd">
+<td>(e)</td>
+<td>0.2</td>
+<td>0.4</td>
+<td>0.2</td>
+<td>0.1</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>(f)</td>
+<td>0</td>
+<td>-0.1</td>
+<td>1.1</td>
+<td>0</td>
+<td>0</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="notice-box notice-success">
-<div class="notice-content">
-<p>Grades round to the nearest whole number (e.g., 89.7 → 90).</p>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📝</p>
-</div>
-<div class="section-title">
-<p>Quizzes</p>
-</div>
-</div>
-<div class="quiz-timeline">
-<div class="quiz-item">
-<div class="quiz-number">
-<p>1</p>
-</div>
-<div class="quiz-content">
-<div class="quiz-title">
-<p>Quiz 1: Weeks 1–2</p>
-</div>
-<div class="quiz-date">
-<p>July 11th</p>
-</div>
-<div class="quiz-details">
-<p>Covers introduction, descriptive statistics and Intro to Probability</p>
-</div>
-</div>
-</div>
-<div class="quiz-item">
-<div class="quiz-number">
-<p>2</p>
-</div>
-<div class="quiz-content">
-<div class="quiz-title">
-<p>Quiz 2: Weeks 3–4</p>
-</div>
-<div class="quiz-date">
-<p>July 25th</p>
-</div>
-<div class="quiz-details">
-<p>Covers Conditional Probability, Counting &amp; Random Variables (Discrete &amp; Continuous)</p>
-</div>
-</div>
-</div>
-<div class="quiz-item">
-<div class="quiz-number">
-<p>3</p>
-</div>
-<div class="quiz-content">
-<div class="quiz-title">
-<p>Quiz 3: Weeks 5–6</p>
-</div>
-<div class="quiz-date">
-<p>July 31st</p>
-</div>
-<div class="quiz-details">
-<p>Covers Confidence Intervals &amp; Hypothesis testing</p>
-</div>
-</div>
-</div>
-</div>
-<div class="info-item">
-<div class="info-value">
-<p><strong>Format:</strong> Multiple choice &amp; short answer (open book)<br>
-<strong>Platform:</strong> Canvas /-or Gradescope<br>
-<strong>Availability:</strong> Fridays 7 AM–12 AM (1‑hour limit)<br>
-<strong>Make‑up policy:</strong> Notify within 48 h; documentation required.</p>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>🎯</p>
-</div>
-<div class="section-title">
-<p>How to Succeed</p>
-</div>
-</div>
-<ul>
-<li><strong>Attend</strong> lectures &amp; sections</li>
-<li><strong>Engage actively</strong> &amp; ask questions</li>
-<li><strong>Use office hours</strong> for help</li>
-</ul>
-<section id="classroom-expectations" class="level3">
-<h3 class="anchored" data-anchor-id="classroom-expectations">Classroom Expectations</h3>
-<p>Respect peers &amp; TAs. Stay engaged. Seek support if needed.</p>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br></p>
 </section>
-<section id="communication-guidelines" class="level3">
-<h3 class="anchored" data-anchor-id="communication-guidelines">Communication Guidelines</h3>
+<section id="section-b-permutations-and-combination" class="level1">
+<h1>Section B: Permutations and Combination</h1>
+<p><em>⏱️ Estimated time: 15 minutes</em></p>
+<div class="problem">
+<p><strong>Problem B1: Permutations and Combinations</strong></p>
+<p>A cybersecurity team needs to create a secure access protocol.</p>
+<p><strong>Part (a):</strong> How many 6-character passwords can be formed using 3 specific letters and 3 specific digits if repetitions are not allowed and letters must come before digits?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Since letters must come before digits, think of this as two separate arrangement problems:</p>
 <ul>
-<li>Use UCSB email with clear subject</li>
-<li>Allow 24–48 h for replies</li>
-<li>Use office hours or appointments</li>
+<li><p>First, arrange the 3 letters in the first 3 positions</p></li>
+<li><p>Then, arrange the 3 digits in the last 3 positions</p></li>
+<li><p>Use the multiplication principle to combine these results</p></li>
 </ul>
+</div>
+</div>
+<p><strong>Part (b):</strong> If the team wants to select 4 people from 12 employees to form a security committee where order doesn’t matter, how many ways can this be done?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Since order doesn’t matter, this is a combination problem. Ask yourself:</p>
+<ul>
+<li><p>Are we arranging people in specific positions, or just selecting a group?</p></li>
+<li><p>Which formula should you use: <span class="math inline">\(P(n,r)\)</span> or <span class="math inline">\(C(n,r)\)</span>?</p></li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br></p>
 </section>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>🛡️</p>
-</div>
-<div class="section-title">
-<p>Academic Integrity</p>
-</div>
-</div>
-<p>Do your own work. Cite sources properly. See:</p>
+<section id="section-c-conditional-probability" class="level1">
+<h1>Section C: Conditional Probability</h1>
+<p><em>⏱️ Estimated time: 15 minutes</em></p>
+<div class="problem">
+<p><strong>Problem B1: Conditional Probability and Medical Testing</strong></p>
+<p>A new COVID variant test has the following characteristics:</p>
 <ul>
-<li><p><a href="https://studentconduct.sa.ucsb.edu/academic-integrity">Academic Integrity Policy</a></p></li>
-<li><p><a href="https://www.sa.ucsb.edu/regulations/student-conduct-code/student-conduct-code">Student Conduct Code</a></p></li>
+<li><p>The variant affects 3% of the tested population</p></li>
+<li><p>The test correctly identifies 95% of people with the variant (sensitivity)</p></li>
+<li><p>The test correctly identifies 92% of people without the variant (specificity)</p></li>
 </ul>
+<p><strong>Part (a):</strong> What is the probability that a randomly selected person tests positive?</p>
+<p><strong>Part (b):</strong> If someone tests positive, what is the probability they actually have the variant?</p>
+<p><strong>Part (c):</strong> If someone tests negative, what is the probability they actually don’t have the variant?</p>
+<p><strong>Part (d) [Challenge]:</strong> The health department wants to reduce false positives. They decide to require two consecutive positive tests for a positive diagnosis. Assuming test results are independent, what is the new probability that someone with two positive tests actually has the variant?</p>
 </div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>🤝</p>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br><br><br><br><br></p>
+</section>
+<section id="section-c-conditional-probability-1" class="level1">
+<h1>Section C: Conditional Probability</h1>
+<p><em>⏱️ Estimated time: 15 minutes</em></p>
+<div class="problem">
+<p><strong>Problem C1: Advanced Counting with Restrictions</strong></p>
+<p>A restaurant offers a prix fixe menu where customers must choose:</p>
+<ul>
+<li><p>1 appetizer from 6 options</p></li>
+<li><p>1 main course from 8 options</p></li>
+<li><p>1 dessert from 5 options</p></li>
+</ul>
+<p>However, there are restrictions:</p>
+<ul>
+<li><p>If you choose the seafood appetizer, you cannot choose the vegetarian main course</p></li>
+<li><p>If you choose the chocolate dessert, you must choose either the beef or chicken main course (3 of the 8 main courses)</p></li>
+</ul>
+<p><strong>Part (a):</strong> How many valid meal combinations are possible?</p>
+<p><strong>Part (b):</strong> If customers choose randomly among valid combinations, what is the probability someone chooses the chocolate dessert?</p>
 </div>
-<div class="section-title">
-<p>Student Resources</p>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br><br><br></p>
+</section>
+<section id="section-d-review" class="level1">
+<h1>Section D: Review</h1>
+<p><em>⏱️ Estimated time: 12 minutes</em></p>
+<div class="problem">
+<p><strong>Problem B3: Daily Expenses</strong></p>
+<p>Sally gets a cup of coffee and a muffin every day for breakfast from one of the many coffee shops in her neighborhood. She picks a coffee shop each morning at random and independently of previous days. The average price of a cup of coffee is $1.40 with a standard deviation of 30¢ ($0.30), the average price of a muffin is $2.50 with a standard deviation of 15¢, and the two prices are independent of each other.</p>
+<p><strong>Part (a):</strong> What is the mean and standard deviation of the amount she spends on breakfast daily?</p>
+<p><strong>Part (b):</strong> What is the mean and standard deviation of the amount she spends on breakfast weekly (7 days)?</p>
 </div>
-</div>
-<div class="resource-grid">
-<div class="resource-link">
-<p><span class="resource-icon">🦽</span> <span class="resource-name">DSP &amp; Accommodations</span> <span class="resource-desc">Disability services and accommodations</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">📚</span> <span class="resource-name">CLAS</span> <span class="resource-desc">Campus Learning Assistance Services</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">🏥</span> <span class="resource-name">Student Health</span> <span class="resource-desc">Health and wellness services</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">🍎</span> <span class="resource-name">Basic Needs</span> <span class="resource-desc">Food security and basic needs support</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">💚</span> <span class="resource-name">CAPS</span> <span class="resource-desc">Counseling &amp; Psychological Services</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">🎓</span> <span class="resource-name">EOP</span> <span class="resource-desc">Educational Opportunity Program</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">👥</span> <span class="resource-name">ONDAS</span> <span class="resource-desc">First-Generation Support</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">📋</span> <span class="resource-name">Undocumented Services</span> <span class="resource-desc">Support for undocumented students</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">🔄</span> <span class="resource-name">Transfer Center</span> <span class="resource-desc">Transfer student support</span></p>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📅</p>
-</div>
-<div class="section-title">
-<p>Important Dates</p>
-</div>
-</div>
-<div class="dates-grid">
-<div class="date-item">
-<div class="date-label">
-<p>Add w/o Code</p>
-</div>
-<div class="date-value">
-<p>June 29</p>
-</div>
-</div>
-<div class="date-item">
-<div class="date-label">
-<p>Drop w/ Refund</p>
-</div>
-<div class="date-value">
-<p>June 29</p>
-</div>
-</div>
-<div class="date-item">
-<div class="date-label">
-<p>Add w/ Code</p>
-</div>
-<div class="date-value">
-<p>July 3</p>
-</div>
-</div>
-<div class="date-item">
-<div class="date-label">
-<p>Drop Course</p>
-</div>
-<div class="date-value">
-<p>July 9</p>
-</div>
-</div>
-<div class="date-item">
-<div class="date-label">
-<p>Change Grade Option</p>
-</div>
-<div class="date-value">
-<p>August 1</p>
-</div>
-</div>
-</div>
-</div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Add smooth animations on scroll
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  // Observe all section cards
-  document.querySelectorAll('.section-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease';
-    observer.observe(card);
-  });
-
-  // Add click-to-copy functionality for email addresses
-  document.querySelectorAll('.contact-email').forEach(email => {
-    email.style.cursor = 'pointer';
-    email.addEventListener('click', function() {
-      navigator.clipboard.writeText(this.textContent);
-      const originalText = this.textContent;
-      this.textContent = 'Copied!';
-      setTimeout(() => {
-        this.textContent = originalText;
-      }, 1000);
-    });
-  });
-});
-</script>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -1,0 +1,1860 @@
+---
+title: "PSTAT 5A: Sampling Principles and Strategies"
+subtitle: "Lecture 10 - From Samples to Populations: Understanding Uncertainty"
+author: "Narjes Mathlouthi"
+date: today
+format:
+  revealjs:
+    logo: /img/logo.png
+    theme: default
+    css: /files/lecture_notes/lecture9/new-style.css
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    footer: "Understanding Data – Sampling Principles and Strategies © 2025"
+    transition: slide
+    background-transition: fade
+    incremental: false
+    smaller: true
+jupyter: python3
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.graph_objects as go
+import plotly.express as px
+from plotly.subplots import make_subplots
+import scipy.stats as stats
+from scipy.stats import norm, t
+import warnings
+warnings.filterwarnings('ignore')
+
+# Set style
+plt.style.use('seaborn-v0_8-whitegrid')
+sns.set_palette("husl")
+
+# Enhanced color palette
+colors = {
+    'primary': '#3b82f6',
+    'secondary': '#f59e0b', 
+    'success': '#10b981',
+    'danger': '#ef4444',
+    'info': '#8b5cf6',
+    'warning': '#f97316',
+    'light': '#f8fafc',
+    'dark': '#1f2937',
+    'accent': '#06b6d4'
+}
+
+# Set random seed for reproducibility
+np.random.seed(42)
+```
+
+# Welcome to Lecture 10 {.center}
+
+**From Samples to Populations: Understanding Uncertainty**
+
+*"In statistics, we make educated guesses about the whole by carefully studying a part"*
+
+---
+
+## 📢 Important Announcements
+
+:::: {.columns}
+::: {.column width="50%"}
+### 📝 Quiz 2 Details
+**When:**  
+- 📅 **Date:** Friday, July 25  
+- ⏰ **Window:** 7 AM – 12 AM  
+- ⏳ **Duration:** 1 hour once started
+
+**Where:** 💻 Online via Canvas
+
+**Covers:** Material from Weeks 3-4
+:::
+
+::: {.column width="50%"}
+### 📚 What to Expect
+- Discrete & continuous distributions
+- Probability calculations
+- Expected value & variance
+- Normal distribution applications
+- **Note:** Upload photos of written work for calculation problems
+:::
+::::
+
+---
+
+## Today's Learning Journey 🎯 
+
+:::: {.columns}
+::: {.column}
+### 🧠 Big Ideas We'll Explore
+- **Why sampling?** The power and necessity of statistical inference
+- **Sample behavior** - How sample means form predictable patterns
+- **Uncertainty quantification** - From point estimates to intervals
+- **The CLT magic** - Why normal distributions appear everywhere
+- **Confidence intervals** - Our bridge from samples to populations
+:::
+
+::: {.column}
+### 🛠️ Skills You'll Master
+- Design effective sampling strategies
+- Calculate and interpret standard errors
+- Apply the Central Limit Theorem
+- Construct and interpret confidence intervals
+- Choose appropriate sample sizes for desired precision
+- Recognize and avoid sampling bias
+:::
+::::
+
+---
+
+## The Foundation: Why Do We Sample? 🤔
+
+:::: {.columns}
+::: {.column}
+### 🌍 Real-World Constraints
+
+**Population vs. Sample Realities:**
+
+- **Time**: Surveying 40,000 UCSB students takes months
+  
+- **Cost**: Each measurement costs money and resources  
+  
+- **Logistics**: Some populations are impossible to reach entirely
+  
+- **Feasibility**: Testing every light bulb would destroy the product
+
+### 💡 The Statistical Solution
+Use a **representative sample** to make **valid inferences** about the **entire population**
+:::
+
+::: {.column}
+```{python}
+#| fig-width: 10
+#| fig-height: 6
+
+# Create an engaging population vs sample visualization
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=("📊 Population: All UCSB Students (40,000)", 
+                   "🎯 Our Sample (400 students)",
+                   "💰 Cost Analysis", "⏰ Time Analysis"),
+    specs=[[{"type": "scatter"}, {"type": "scatter"}],
+           [{"type": "bar"}, {"type": "bar"}]]
+)
+
+# Population visualization - large cloud of points
+pop_x = np.random.normal(0, 10, 2000)
+pop_y = np.random.normal(0, 10, 2000)
+
+fig.add_trace(
+    go.Scatter(
+        x=pop_x, y=pop_y,
+        mode='markers',
+        marker=dict(size=2, color=colors['primary'], opacity=0.4),
+        showlegend=False,
+        name="Population"
+    ),
+    row=1, col=1
+)
+
+# Sample visualization - highlighted subset
+sample_indices = np.random.choice(2000, 50, replace=False)
+sample_x = pop_x[sample_indices]
+sample_y = pop_y[sample_indices]
+
+fig.add_trace(
+    go.Scatter(
+        x=sample_x, y=sample_y,
+        mode='markers',
+        marker=dict(size=8, color=colors['danger'], opacity=0.9),
+        showlegend=False,
+        name="Sample"
+    ),
+    row=1, col=2
+)
+
+# Cost comparison
+approaches = ['Full Population', 'Smart Sample']
+costs = [200000, 2000]  # In dollars
+
+fig.add_trace(
+    go.Bar(
+        x=approaches, y=costs,
+        marker_color=[colors['danger'], colors['success']],
+        showlegend=False,
+        text=[f'${cost:,}' for cost in costs],
+        textposition='auto'
+    ),
+    row=2, col=1
+)
+
+# Time comparison  
+times = [180, 7]  # In days
+
+fig.add_trace(
+    go.Bar(
+        x=approaches, y=times,
+        marker_color=[colors['danger'], colors['success']],
+        showlegend=False,
+        text=[f'{time} days' for time in times],
+        textposition='auto'
+    ),
+    row=2, col=2
+)
+
+fig.update_layout(
+    height=600,
+    showlegend=False
+    # title_text="The Power of Smart Sampling"
+)
+
+fig.update_yaxes(title_text="Cost ($)", row=2, col=1)
+fig.update_yaxes(title_text="Time (days)", row=2, col=2)
+
+fig.show()
+```
+:::
+::::
+
+---
+
+## Study Design: The Foundation of Good Inference
+
+```{python}
+#| fig-width: 14
+#| fig-height: 7
+
+# Create comprehensive study design visualization
+fig = make_subplots(
+    rows=2, cols=3,
+    subplot_titles=("🔍 Observational Study", "🧪 Randomized Experiment", "📊 Sample vs Population",
+                   "⚠️ Confounding Variables", "🎲 Randomization Effect", "📈 Statistical Power"),
+    specs=[[{"type": "scatter"}, {"type": "scatter"}, {"type": "histogram"}],
+           [{"type": "scatter"}, {"type": "scatter"}, {"type": "scatter"}]]
+)
+
+# Observational Study - showing correlation but potential confounding
+obs_x = np.random.normal(0, 1, 100)
+obs_y = 2*obs_x + np.random.normal(0, 0.5, 100)  # Strong correlation
+colors_obs = np.where(obs_x > 0, colors['primary'], colors['secondary'])
+
+fig.add_trace(
+    go.Scatter(
+        x=obs_x, y=obs_y,
+        mode='markers',
+        marker=dict(size=6, color=colors_obs, opacity=0.7),
+        showlegend=False
+    ),
+    row=1, col=1
+)
+
+# Randomized Experiment - clear treatment effect
+np.random.seed(123)
+control_group = np.random.normal(10, 2, 50)
+treatment_group = np.random.normal(15, 2, 50)
+
+fig.add_trace(
+    go.Scatter(
+        x=['Control']*50,
+        y=control_group,
+        mode='markers',
+        marker=dict(size=6, color=colors['danger'], opacity=0.7),
+        showlegend=False
+    ),
+    row=1, col=2
+)
+
+fig.add_trace(
+    go.Scatter(
+        x=['Treatment']*50,
+        y=treatment_group,
+        mode='markers',
+        marker=dict(size=6, color=colors['success'], opacity=0.7),
+        showlegend=False
+    ),
+    row=1, col=2
+)
+
+# Sample vs Population distribution
+population_data = np.random.exponential(2, 1000)
+sample_data = np.random.choice(population_data, 100)
+
+fig.add_trace(
+    go.Histogram(
+        x=population_data,
+        name="Population",
+        marker_color=colors['primary'],
+        opacity=0.6,
+        nbinsx=50
+    ),
+    row=1, col=3
+)
+
+fig.add_trace(
+    go.Histogram(
+        x=sample_data,
+        name="Sample",
+        marker_color=colors['danger'],
+        opacity=0.8,
+        nbinsx=20
+    ),
+    row=1, col=3
+)
+
+# Confounding variables illustration
+age = np.random.uniform(20, 80, 100)
+exercise = 5 - 0.05*age + np.random.normal(0, 0.5, 100)  # Exercise decreases with age
+health = 100 - 0.3*age + 2*exercise + np.random.normal(0, 3, 100)  # Health affected by both
+
+fig.add_trace(
+    go.Scatter(
+        x=exercise, y=health,
+        mode='markers',
+        marker=dict(size=6, color=age, colorscale='Viridis', opacity=0.7),
+        showlegend=False
+    ),
+    row=2, col=1
+)
+
+# Randomization effect demonstration
+# Without randomization - biased assignment
+without_rand_x = np.concatenate([np.random.normal(-1, 0.5, 30), np.random.normal(1, 0.5, 30)])
+without_rand_y = np.concatenate([np.random.normal(45, 5, 30), np.random.normal(75, 5, 30)])
+
+fig.add_trace(
+    go.Scatter(
+        x=without_rand_x, y=without_rand_y,
+        mode='markers',
+        marker=dict(size=6, color=colors['danger'], opacity=0.7),
+        showlegend=False
+    ),
+    row=2, col=2
+)
+
+# Statistical power illustration
+effect_sizes = np.array([0, 0.2, 0.5, 0.8, 1.2])
+power_values = [0.05, 0.17, 0.50, 0.80, 0.95]
+
+fig.add_trace(
+    go.Scatter(
+        x=effect_sizes, y=power_values,
+        mode='markers+lines',
+        marker=dict(size=10, color=colors['info']),
+        line=dict(color=colors['info'], width=3),
+        showlegend=False
+    ),
+    row=2, col=3
+)
+
+# Update layout and axes
+fig.update_layout(
+    height=700,
+    showlegend=False
+    # title_text="Study Design Fundamentals"
+)
+
+# Add axis labels
+fig.update_xaxes(title_text="Variable X", row=1, col=1)
+fig.update_yaxes(title_text="Variable Y", row=1, col=1)
+fig.update_xaxes(title_text="Group", row=1, col=2)
+fig.update_yaxes(title_text="Outcome", row=1, col=2)
+fig.update_xaxes(title_text="Value", row=1, col=3)
+fig.update_yaxes(title_text="Frequency", row=1, col=3)
+fig.update_xaxes(title_text="Exercise Level", row=2, col=1)
+fig.update_yaxes(title_text="Health Score", row=2, col=1)
+fig.update_xaxes(title_text="Group Assignment", row=2, col=2)
+fig.update_yaxes(title_text="Outcome", row=2, col=2)
+fig.update_xaxes(title_text="Effect Size", row=2, col=3)
+fig.update_yaxes(title_text="Statistical Power", row=2, col=3)
+
+fig.show()
+```
+
+:::: {.columns}
+::: {.column}
+**🔍 Observational Studies:**
+- Observe what naturally occurs
+- Good for identifying associations
+- ⚠️ Cannot establish causation due to confounding
+:::
+
+::: {.column}
+**🧪 Randomized Experiments:**
+- Actively assign treatments randomly
+- Controls for confounding variables
+- ✅ Can establish causal relationships
+:::
+::::
+
+---
+
+## Types of Sampling Methods 🎯
+
+:::: {.columns}
+### 📋 Probability Sampling Methods
+
+::: {.column width = "20%" .left}
+**1. Simple Random Sampling (SRS)**
+
+Every individual has equal chance of selection
+  
+*Gold standard for inference*
+
+**2. Stratified Sampling**
+
+Divide population into **groups (strata)**
+  
+Sample *randomly* within each <i>group</i>
+  
+Ensures representation of subgroups
+
+:::
+
+:::{.column width = "20%" .right}
+
+**3. Cluster Sampling**  
+
+Divide into clusters, randomly select clusters
+  
+Sample all/some individuals within chosen clusters
+  
+Cost-effective for large populations
+
+**4. Systematic Sampling**
+
+Select every $kth$ individual from ordered list
+  
+Simple but can introduce **bias** if pattern exists
+:::
+
+
+::: {.column width = "60%" .right}
+```{python}
+#| fig-width: 10
+#| fig-height: 8
+
+# Visualization of different sampling methods
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=("Simple Random Sampling", "Stratified Sampling",
+                   "Cluster Sampling", "Systematic Sampling")
+)
+
+# Simple Random Sampling
+np.random.seed(42)
+all_x = np.random.uniform(0, 10, 200)
+all_y = np.random.uniform(0, 10, 200)
+selected = np.random.choice(200, 30, replace=False)
+
+# Plot all points
+fig.add_trace(
+    go.Scatter(
+        x=all_x, y=all_y,
+        mode='markers',
+        marker=dict(size=4, color=colors['dark'], opacity=0.5),
+        showlegend=False
+    ),
+    row=1, col=1
+)
+
+# Plot selected points
+fig.add_trace(
+    go.Scatter(
+        x=all_x[selected], y=all_y[selected],
+        mode='markers',
+        marker=dict(size=8, color=colors['primary']),
+        showlegend=False
+    ),
+    row=1, col=1
+)
+
+# Stratified Sampling
+strata_colors = [colors['primary'], colors['danger'], colors['success'], colors['info']]
+for i in range(4):
+    # Create stratum
+    # Draw rectangle to show stratum boundary
+    fig.add_shape(
+        type="rect",
+        x0=i * 2.5, y0=0,
+        x1=(i + 1) * 2.5, y1=10,
+        line=dict(color="LightGray", dash="dot"),
+        row=1, col=2
+    )
+    stratum_x = np.random.uniform(i*2.5, (i+1)*2.5, 50)
+    stratum_y = np.random.uniform(0, 10, 50)
+    
+    # All points in stratum
+    fig.add_trace(
+        go.Scatter(
+            x=stratum_x, y=stratum_y,
+            mode='markers',
+            marker=dict(size=4, color=colors['dark'], opacity=0.5),
+            showlegend=False
+        ),
+        row=1, col=2
+    )
+    
+    # Selected points from stratum
+    selected_from_stratum = np.random.choice(50, 8, replace=False)
+    fig.add_trace(
+        go.Scatter(
+            x=stratum_x[selected_from_stratum], 
+            y=stratum_y[selected_from_stratum],
+            mode='markers',
+            marker=dict(size=10, color=strata_colors[i]),
+            showlegend=False
+        ),
+        row=1, col=2
+    )
+
+# Cluster Sampling
+clusters = []
+for i in range(4):
+    for j in range(4):
+        cluster_x = np.random.uniform(i*2.5, i*2.5+2, 15) 
+        cluster_y = np.random.uniform(j*2.5, j*2.5+2, 15)
+        clusters.append((cluster_x, cluster_y))
+        # Draw grid rectangles to make cluster boundaries explicit
+        for gx in range(4):
+            for gy in range(4):
+                fig.add_shape(
+                    type="rect",
+                    x0=gx * 2.5, y0=gy * 2.5,
+                    x1=gx * 2.5 + 2, y1=gy * 2.5 + 2,
+                    line=dict(color="LightGray", dash="dot"),
+                    row=2, col=1
+                )
+
+# Show all clusters lightly
+for cluster_x, cluster_y in clusters:
+    fig.add_trace(
+        go.Scatter(
+            x=cluster_x, y=cluster_y,
+            mode='markers',
+            marker=dict(size=4, color=colors['dark'], opacity=0.5),
+            showlegend=False
+        ),
+        row=2, col=1
+    )
+
+# Highlight selected clusters
+selected_clusters = [0, 5, 10, 15]  # Select 4 clusters
+for idx in selected_clusters:
+    cluster_x, cluster_y = clusters[idx]
+    fig.add_trace(
+        go.Scatter(
+            x=cluster_x, y=cluster_y,
+            mode='markers',
+            marker=dict(size=10, color=colors['success']),
+            showlegend=False
+        ),
+        row=2, col=1
+    )
+
+# Systematic Sampling
+systematic_x = np.linspace(0, 10, 100)
+systematic_y = 2 + 0.5*systematic_x + np.random.normal(0, 0.5, 100)
+
+# All points
+fig.add_trace(
+    go.Scatter(
+        x=systematic_x, y=systematic_y,
+        mode='markers',
+        marker=dict(size=4, color=colors['dark'], opacity=0.5),
+        showlegend=False
+    ),
+    row=2, col=2
+)
+
+# Every 5th point
+systematic_selected = systematic_x[::5]
+systematic_y_selected = systematic_y[::5]
+
+fig.add_trace(
+    go.Scatter(
+        x=systematic_selected, y=systematic_y_selected,
+        mode='markers',
+        marker=dict(size=8, color=colors['primary']),
+        showlegend=False
+    ),
+    row=2, col=2
+)
+
+fig.update_layout(
+    height=600,
+    showlegend=False
+    # title_text="Sampling Method Comparison"
+)
+
+fig.show()
+```
+
+:::
+::::
+
+---
+
+## Sampling Bias: What Can Go Wrong? ⚠️
+
+:::: {.columns}
+::: {.column}
+### 🚨 Common Types of Bias
+
+**Selection Bias**
+- Systematic exclusion of certain groups
+- Example: Online surveys miss non-internet users
+
+**Response Bias**  
+- Who chooses to respond affects results
+- Example: Satisfaction surveys - unhappy customers more likely to respond
+
+**Nonresponse Bias**
+- Missing data isn't random
+- Example: Wealthy people less likely to disclose income
+
+**Convenience Sampling**
+- Sampling whoever is easiest to reach
+- Example: Surveying only students in your dorm
+:::
+
+::: {.column}
+```{python}
+#| fig-width: 10
+#| fig-height: 6
+
+# Demonstrate sampling bias effects
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=("True Population Distribution", "Biased Sample (Selection Bias)",
+                   "Response Bias Effect", "Convenience Sample Bias")
+)
+
+# True population - normal distribution
+true_population = np.random.normal(100, 15, 1000)
+
+fig.add_trace(
+    go.Histogram(
+        x=true_population,
+        name="True Population",
+        marker_color=colors['success'],
+        opacity=0.7,
+        nbinsx=30
+    ),
+    row=1, col=1
+)
+
+# Biased sample - only select from upper portion
+biased_sample = true_population[true_population > 110]
+if len(biased_sample) > 100:
+    biased_sample = np.random.choice(biased_sample, 100, replace=False)
+
+fig.add_trace(
+    go.Histogram(
+        x=biased_sample,
+        name="Biased Sample",
+        marker_color=colors['danger'],
+        opacity=0.7,
+        nbinsx=20
+    ),
+    row=1, col=2
+)
+
+# Response bias - extreme values more likely to respond
+response_weights = np.abs(true_population - 100) + 0.1  # Extreme values get higher weights
+response_sample = np.random.choice(true_population, 100, p=response_weights/response_weights.sum())
+
+fig.add_trace(
+    go.Histogram(
+        x=response_sample,
+        name="Response Bias",
+        marker_color=colors['warning'],
+        opacity=0.7,
+        nbinsx=20
+    ),
+    row=2, col=1
+)
+
+# Convenience sample - only from one location/cluster
+convenience_sample = np.random.normal(85, 8, 100)  # Different mean than population
+
+fig.add_trace(
+    go.Histogram(
+        x=convenience_sample,
+        name="Convenience Sample",
+        marker_color=colors['info'],
+        opacity=0.7,
+        nbinsx=20
+    ),
+    row=2, col=2
+)
+
+# Add mean lines
+for i, (data, color) in enumerate([
+    (true_population, colors['success']),
+    (biased_sample, colors['danger']),
+    (response_sample, colors['warning']),
+    (convenience_sample, colors['info'])
+]):
+    row = 1 if i < 2 else 2
+    col = 1 if i % 2 == 0 else 2
+    
+    fig.add_vline(
+        x=np.mean(data),
+        line_dash="dash",
+        line_color=color,
+        line_width=3,
+        row=row, col=col
+    )
+
+fig.update_layout(
+    height=500,
+    showlegend=False
+    # title_text="How Sampling Bias Distorts Results"
+)
+
+fig.show()
+```
+
+**💡 Key Insight:** Bias can't be fixed by increasing sample size!
+:::
+::::
+
+---
+
+## The Magic of Sample Means: From Chaos to Order 
+
+:::: {.columns}
+::: {.column}
+**🎲 The Setup:** 
+
+- Take **many** samples from the same population
+  
+- Calculate the mean of each sample  
+  
+- Plot all these sample means
+  
+- **Observe the magic!**
+
+**🎯 What We Discover:**
+
+- Sample means cluster around the true population mean
+  
+- They form a predictable pattern (normal distribution!)
+  
+- **Larger samples give more consistent results**
+:::
+
+::: {.column}
+```{python}
+#| fig-width: 12
+#| fig-height: 8
+
+# Comprehensive sampling distribution demonstration
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=("Population Distribution (Skewed)", "Individual Sample Distributions",
+                   "Sampling Distribution of Means", "Effect of Sample Size")
+)
+
+# Create a skewed population
+np.random.seed(42)
+population = np.concatenate([
+    np.random.exponential(2, 3000),
+    np.random.exponential(1, 2000)
+])
+population_mean = np.mean(population)
+
+fig.add_trace(
+    go.Histogram(
+        x=population,
+        name="Population",
+        marker_color=colors['primary'],
+        opacity=0.7,
+        nbinsx=50
+    ),
+    row=1, col=1
+)
+
+# Show a few individual samples
+sample_colors = [colors['danger'], colors['warning'], colors['info']]
+for i in range(3):
+    sample = np.random.choice(population, 50)
+    fig.add_trace(
+        go.Histogram(
+            x=sample,
+            name=f"Sample {i+1}",
+            marker_color=sample_colors[i],
+            opacity=0.6,
+            nbinsx=25
+        ),
+        row=1, col=2
+    )
+
+# Generate many sample means
+sample_sizes = [10, 30, 100]
+for j, n in enumerate(sample_sizes):
+    sample_means = []
+    for i in range(1000):
+        sample = np.random.choice(population, n)
+        sample_means.append(np.mean(sample))
+    
+    fig.add_trace(
+        go.Histogram(
+            x=sample_means,
+            name=f"n={n}",
+            marker_color=[colors['danger'], colors['success'], colors['info']][j],
+            opacity=0.6,
+            nbinsx=30
+        ),
+        row=2, col=1
+    )
+
+# Effect of sample size on standard error
+sample_sizes_range = np.array([5, 10, 20, 30, 50, 100, 200])
+population_std = np.std(population)
+standard_errors = population_std / np.sqrt(sample_sizes_range)
+
+fig.add_trace(
+    go.Scatter(
+        x=sample_sizes_range,
+        y=standard_errors,
+        mode='markers+lines',
+        marker=dict(size=10, color=colors['primary']),
+        line=dict(color=colors['primary'], width=3),
+        name='Standard Error'
+    ),
+    row=2, col=2
+)
+
+# Add population mean lines
+fig.add_vline(x=population_mean, line_dash="dash", line_color="black", 
+              line_width=2, row=1, col=1)
+fig.add_vline(x=population_mean, line_dash="dash", line_color="black", 
+              line_width=2, row=2, col=1)
+
+fig.update_layout(
+    height=600,
+    showlegend=False
+    # title_text="The Journey from Individual Samples to Sampling Distribution"
+)
+
+# Update axes
+fig.update_xaxes(title_text="Value", row=1, col=1)
+fig.update_xaxes(title_text="Value", row=1, col=2)
+fig.update_xaxes(title_text="Sample Mean", row=2, col=1)
+fig.update_xaxes(title_text="Sample Size (n)", row=2, col=2)
+fig.update_yaxes(title_text="Frequency", row=1, col=1)
+fig.update_yaxes(title_text="Frequency", row=1, col=2)
+fig.update_yaxes(title_text="Frequency", row=2, col=1)
+fig.update_yaxes(title_text="Standard Error", row=2, col=2)
+
+fig.show()
+```
+:::
+::::
+
+---
+
+## The Central Limit Theorem 🌟
+
+:::: {.columns}
+::: {.column .smaller}
+### 📐 The Statement
+
+For a population with mean $\mu$ and standard deviation $\sigma$, when sample size $n$ is large enough:
+
+$$\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$$
+
+Or equivalently:
+$$Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \sim N(0,1)$$
+
+### ✨ The Magic Rules
+- **Rule of Thumb:** $n \geq 30$ usually works
+- **Shape doesn't matter:** Works for ANY population distribution  
+- **Larger $n$ = Better approximation**
+:::
+
+::: {.column}
+```{python}
+#| fig-width: 12
+#| fig-height: 10
+
+# Comprehensive CLT demonstration with different population shapes
+populations = {
+    'Uniform': np.random.uniform(0, 10, 5000),
+    'Exponential': np.random.exponential(2, 5000),
+    'Bimodal': np.concatenate([np.random.normal(3, 1, 2500), np.random.normal(8, 1, 2500)]),
+    'Extremely Skewed': np.concatenate([np.random.exponential(0.5, 4000), [20]*1000])
+}
+
+fig = make_subplots(
+    rows=4, cols=4,
+    subplot_titles=[f'{dist} Population' if i == 0 else f'n={[5, 15, 50][i-1]} Sample Means' 
+                   for dist in populations.keys() for i in range(4)],
+    horizontal_spacing=0.08,
+    vertical_spacing=0.06
+)
+
+colors_list = [colors['primary'], colors['danger'], colors['success'], colors['info']]
+
+for row, (pop_name, pop_data) in enumerate(populations.items()):
+    # Population distribution
+    fig.add_trace(
+        go.Histogram(
+            x=pop_data,
+            name=f"{pop_name} Population",
+            marker_color=colors_list[row],
+            opacity=0.7,
+            nbinsx=40
+        ),
+        row=row+1, col=1
+    )
+    
+    # Sample means for different sample sizes
+    sample_sizes = [5, 15, 50]
+    for col_idx, n in enumerate(sample_sizes):
+        sample_means = []
+        for _ in range(1000):
+            sample = np.random.choice(pop_data, n)
+            sample_means.append(np.mean(sample))
+        
+        fig.add_trace(
+            go.Histogram(
+                x=sample_means,
+                name=f"{pop_name} n={n}",
+                marker_color=colors_list[row],
+                opacity=0.7,
+                nbinsx=30
+            ),
+            row=row+1, col=col_idx+2
+        )
+        
+        # Add normal overlay for larger samples
+        if n >= 15:
+            x_norm = np.linspace(min(sample_means), max(sample_means), 100)
+            y_norm = stats.norm.pdf(x_norm, np.mean(sample_means), np.std(sample_means))
+            # Scale to histogram
+            y_norm = y_norm * len(sample_means) * (max(sample_means) - min(sample_means)) / 30
+            
+            fig.add_trace(
+                go.Scatter(
+                    x=x_norm, y=y_norm,
+                    mode='lines',
+                    line=dict(color='red', width=3, dash='dash'),
+                    name='Normal Approximation',
+                    showlegend=False
+                ),
+                row=row+1, col=col_idx+2
+            )
+
+fig.update_layout(
+    height=800,
+    showlegend=False
+    #title_text="Central Limit Theorem: The Universal Pattern"
+)
+
+fig.show()
+```
+:::
+::::
+
+---
+
+## Standard Error: Measuring Our Uncertainty 📏
+
+:::: {.columns}
+::: {.column}
+### 🎯 What is Standard Error?
+
+**Standard Error (SE)** measures how much sample means vary from sample to sample.
+
+$$SE = \frac{\sigma}{\sqrt{n}} \text{ (when } \sigma \text{ is known)}$$
+
+$$SE = \frac{s}{\sqrt{n}} \text{ (usual case, } \sigma \text{ unknown)}$$
+
+### 🔍 Key Insights
+- **Smaller SE** = More precise estimates
+- **SE decreases** as sample size increases
+- **Rate of decrease:** $SE \propto 1/\sqrt{n}$
+- **4× larger sample** = ½ the uncertainty!
+:::
+
+::: {.column}
+```{python}
+#| fig-width: 10
+#| fig-height: 8
+
+# Interactive demonstration of standard error
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=("Effect of Sample Size on SE", "Sampling Distributions for Different n",
+                   "Precision vs. Sample Size", "Cost-Benefit Analysis")
+)
+
+# Effect of sample size on SE
+sample_sizes = np.array([5, 10, 20, 30, 50, 100, 200, 500])
+sigma = 15  # Population standard deviation
+standard_errors = sigma / np.sqrt(sample_sizes)
+
+fig.add_trace(
+    go.Scatter(
+        x=sample_sizes,
+        y=standard_errors,
+        mode='markers+lines',
+        marker=dict(size=12, color=colors['primary']),
+        line=dict(color=colors['primary'], width=3),
+        name='Standard Error'
+    ),
+    row=1, col=1
+)
+
+# Add inverse square root function for comparison
+theoretical_se = sigma / np.sqrt(sample_sizes)
+fig.add_trace(
+    go.Scatter(
+        x=sample_sizes,
+        y=theoretical_se,
+        mode='lines',
+        line=dict(color=colors['danger'], width=2, dash='dash'),
+        name='Theoretical SE',
+        showlegend=False
+    ),
+    row=1, col=1
+)
+
+# Sampling distributions for different sample sizes
+np.random.seed(42)
+population_mean = 100
+sample_sizes_demo = [10, 30, 100]
+colors_demo = [colors['danger'], colors['warning'], colors['success']]
+
+for i, n in enumerate(sample_sizes_demo):
+    sample_means = []
+    for _ in range(1000):
+        sample = np.random.normal(population_mean, sigma, n)
+        sample_means.append(np.mean(sample))
+    
+    fig.add_trace(
+        go.Histogram(
+            x=sample_means,
+            name=f'n={n}, SE={sigma/np.sqrt(n):.2f}',
+            marker_color=colors_demo[i],
+            opacity=0.7,
+            nbinsx=30
+        ),
+        row=1, col=2
+    )
+
+# Precision vs Sample Size (Width of 95% CI)
+ci_widths = 2 * 1.96 * standard_errors  # 95% CI width
+
+fig.add_trace(
+    go.Scatter(
+        x=sample_sizes,
+        y=ci_widths,
+        mode='markers+lines',
+        marker=dict(size=10, color=colors['info']),
+        line=dict(color=colors['info'], width=3),
+        name='95% CI Width'
+    ),
+    row=2, col=1
+)
+
+# Cost-benefit analysis
+costs = sample_sizes * 10  # $10 per participant
+precision_gained = 1 / standard_errors  # Inverse of SE as precision measure
+
+fig.add_trace(
+    go.Scatter(
+        x=costs,
+        y=precision_gained,
+        mode='markers+lines',
+        marker=dict(size=10, color=colors['secondary']),
+        line=dict(color=colors['secondary'], width=3),
+        name='Precision per Dollar'
+    ),
+    row=2, col=2
+)
+
+# Add annotations
+fig.add_annotation(
+    x=100, y=5,
+    text="Diminishing returns:<br>Each additional participant<br>helps less and less",
+    showarrow=True,
+    arrowhead=2,
+    arrowcolor=colors['danger'],
+    font=dict(size=10),
+    row=1, col=1
+)
+
+fig.update_layout(
+    height=600,
+    showlegend=False
+    #title_text="Understanding Standard Error"
+)
+
+# Update axes labels
+fig.update_xaxes(title_text="Sample Size (n)", row=1, col=1)
+fig.update_yaxes(title_text="Standard Error", row=1, col=1)
+fig.update_xaxes(title_text="Sample Mean Value", row=1, col=2)
+fig.update_yaxes(title_text="Frequency", row=1, col=2)
+fig.update_xaxes(title_text="Sample Size (n)", row=2, col=1)
+fig.update_yaxes(title_text="95% CI Width", row=2, col=1)
+fig.update_xaxes(title_text="Total Cost ($)", row=2, col=2)
+fig.update_yaxes(title_text="Precision Gained", row=2, col=2)
+
+fig.show()
+```
+:::
+::::
+
+---
+
+## Confidence Intervals: Our Bridge to the Population 🌉
+
+:::: {.columns}
+::: {.column}
+### 🎯 What Are Confidence Intervals?
+
+A **confidence interval** gives us a range of plausible values for the population parameter.
+
+**For a population mean:**
+$$\bar{x} \pm z^* \cdot \frac{s}{\sqrt{n}}$$
+
+### 🔢 Common Confidence Levels
+- **90% CI:** $z^* = 1.645$
+- **95% CI:** $z^* = 1.96$ 
+- **99% CI:** $z^* = 2.576$
+
+### 💭 Correct Interpretation
+"We are 95% confident that the true population mean lies between [lower bound] and [upper bound]"
+:::
+
+::: {.column}
+```{python}
+#| fig-width: 12
+#| fig-height: 8
+
+# Comprehensive confidence interval demonstration
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=("Multiple 95% CIs from Different Samples", "Effect of Confidence Level",
+                   "Effect of Sample Size", "CI Interpretation Simulation")
+)
+
+# Multiple CIs from different samples
+np.random.seed(42)
+true_mean = 100
+population_std = 15
+n = 30
+
+# Generate 20 different samples and their CIs
+sample_means = []
+ci_lowers = []
+ci_uppers = []
+contains_true = []
+
+for i in range(20):
+    sample = np.random.normal(true_mean, population_std, n)
+    x_bar = np.mean(sample)
+    se = population_std / np.sqrt(n)
+    
+    ci_lower = x_bar - 1.96 * se
+    ci_upper = x_bar + 1.96 * se
+    
+    sample_means.append(x_bar)
+    ci_lowers.append(ci_lower)
+    ci_uppers.append(ci_upper)
+    contains_true.append(ci_lower <= true_mean <= ci_upper)
+
+# Plot CIs
+for i in range(20):
+    color = colors['success'] if contains_true[i] else colors['danger']
+    
+    # CI line
+    fig.add_trace(
+        go.Scatter(
+            x=[ci_lowers[i], ci_uppers[i]],
+            y=[i, i],
+            mode='lines',
+            line=dict(color=color, width=3),
+            showlegend=False
+        ),
+        row=1, col=1
+    )
+    
+    # Sample mean point
+    fig.add_trace(
+        go.Scatter(
+            x=[sample_means[i]],
+            y=[i],
+            mode='markers',
+            marker=dict(color=color, size=8),
+            showlegend=False
+        ),
+        row=1, col=1
+    )
+
+# True mean line
+fig.add_vline(x=true_mean, line_dash="solid", line_color="black", 
+              line_width=3, row=1, col=1)
+
+# Effect of confidence level
+confidence_levels = [0.90, 0.95, 0.99]
+z_values = [1.645, 1.96, 2.576]
+colors_conf = [colors['info'], colors['primary'], colors['warning']]
+
+sample_mean = 100
+se = 2.5
+
+for i, (conf, z_val, color) in enumerate(zip(confidence_levels, z_values, colors_conf)):
+    ci_lower = sample_mean - z_val * se
+    ci_upper = sample_mean + z_val * se
+    
+    fig.add_trace(
+        go.Scatter(
+            x=[ci_lower, ci_upper],
+            y=[i, i],
+            mode='lines+markers',
+            line=dict(color=color, width=6),
+            marker=dict(color=color, size=10),
+            name=f'{int(conf*100)}% CI',
+            showlegend=False
+        ),
+        row=1, col=2
+    )
+
+# Effect of sample size
+sample_sizes = [10, 30, 100, 300]
+colors_size = [colors['danger'], colors['warning'], colors['success'], colors['info']]
+
+for i, (n, color) in enumerate(zip(sample_sizes, colors_size)):
+    se = population_std / np.sqrt(n)
+    ci_lower = sample_mean - 1.96 * se
+    ci_upper = sample_mean + 1.96 * se
+    
+    fig.add_trace(
+        go.Scatter(
+            x=[ci_lower, ci_upper],
+            y=[i, i],
+            mode='lines+markers',
+            line=dict(color=color, width=6),
+            marker=dict(color=color, size=10),
+            name=f'n={n}',
+            showlegend=False
+        ),
+        row=2, col=1
+    )
+
+# CI coverage simulation
+coverage_rates = []
+sample_sizes_coverage = range(10, 201, 10)
+
+for n in sample_sizes_coverage:
+    hits = 0
+    for _ in range(100):  # 100 simulations per sample size
+        sample = np.random.normal(true_mean, population_std, n)
+        x_bar = np.mean(sample)
+        se = population_std / np.sqrt(n)
+        
+        ci_lower = x_bar - 1.96 * se
+        ci_upper = x_bar + 1.96 * se
+        
+        if ci_lower <= true_mean <= ci_upper:
+            hits += 1
+    
+    coverage_rates.append(hits / 100)
+
+fig.add_trace(
+    go.Scatter(
+        x=list(sample_sizes_coverage),
+        y=coverage_rates,
+        mode='markers+lines',
+        marker=dict(color=colors['primary'], size=8),
+        line=dict(color=colors['primary'], width=3),
+        name='Actual Coverage Rate'
+    ),
+    row=2, col=2
+)
+
+# Add 95% reference line
+fig.add_hline(y=0.95, line_dash="dash", line_color="red", 
+              line_width=2, row=2, col=2)
+
+fig.update_layout(
+    height=600,
+    showlegend=False
+    #title_text="Understanding Confidence Intervals"
+)
+
+# Update axes
+fig.update_xaxes(title_text="Value", row=1, col=1)
+fig.update_yaxes(title_text="Sample Number", row=1, col=1)
+fig.update_xaxes(title_text="Value", row=1, col=2)
+fig.update_yaxes(title_text="Confidence Level", row=1, col=2)
+fig.update_xaxes(title_text="Value", row=2, col=1)
+fig.update_yaxes(title_text="Sample Size", row=2, col=1)
+fig.update_xaxes(title_text="Sample Size", row=2, col=2)
+fig.update_yaxes(title_text="Coverage Rate", row=2, col=2)
+
+fig.show()
+```
+:::
+::::
+
+---
+
+## Sample Size Planning: Getting It Right 🎯
+
+:::: {.columns}
+::: {.column}
+### 📐 The Formula
+
+To achieve margin of error $E$ with confidence level $(1-\alpha)$:
+
+$$n = \left(\frac{z^*\sigma}{E}\right)^2$$
+
+### 🎯 Key Considerations
+
+**Margin of Error Trade-offs:**
+- Smaller $E$ requires larger $n$
+- Higher confidence requires larger $n$  
+- More variable population requires larger $n$
+
+**Practical Constraints:**
+- Budget limitations
+- Time constraints  
+- Availability of participants
+:::
+
+::: {.column}
+```{python}
+#| fig-width: 12
+#| fig-height: 8
+
+# Sample size planning visualization
+fig = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=("Sample Size vs. Margin of Error", "Sample Size vs. Confidence Level",
+                   "Cost-Precision Trade-off", "Power Analysis")
+)
+
+# Sample size vs margin of error
+sigma = 10
+z_star = 1.96
+margins_of_error = np.linspace(0.5, 5, 50)
+sample_sizes_me = (z_star * sigma / margins_of_error) ** 2
+
+fig.add_trace(
+    go.Scatter(
+        x=margins_of_error,
+        y=sample_sizes_me,
+        mode='lines+markers',
+        marker=dict(color=colors['primary'], size=6),
+        line=dict(color=colors['primary'], width=3),
+        name='Required Sample Size'
+    ),
+    row=1, col=1
+)
+
+# Sample size vs confidence level
+confidence_levels = np.linspace(0.80, 0.99, 50)
+z_values = stats.norm.ppf(1 - (1 - confidence_levels) / 2)
+margin_of_error = 2
+sample_sizes_conf = (z_values * sigma / margin_of_error) ** 2
+
+fig.add_trace(
+    go.Scatter(
+        x=confidence_levels * 100,
+        y=sample_sizes_conf,
+        mode='lines+markers',
+        marker=dict(color=colors['success'], size=6),
+        line=dict(color=colors['success'], width=3),
+        name='Required Sample Size'
+    ),
+    row=1, col=2
+)
+
+# Cost-precision trade-off
+cost_per_participant = 50
+total_costs = sample_sizes_me * cost_per_participant
+precision = 1 / margins_of_error  # Inverse of margin of error
+
+fig.add_trace(
+    go.Scatter(
+        x=total_costs,
+        y=precision,
+        mode='lines+markers',
+        marker=dict(color=colors['warning'], size=6),
+        line=dict(color=colors['warning'], width=3),
+        name='Precision per Dollar'
+    ),
+    row=2, col=1
+)
+
+# Power analysis - effect of sample size on power
+effect_sizes = [0.2, 0.5, 0.8]  # Small, medium, large effect sizes
+colors_power = [colors['info'], colors['success'], colors['danger']]
+sample_sizes_power = np.arange(10, 201, 10)
+
+for i, effect_size in enumerate(effect_sizes):
+    power_values = []
+    for n in sample_sizes_power:
+        se = sigma / np.sqrt(n)
+        z_score = effect_size * np.sqrt(n) / sigma
+        power = 1 - stats.norm.cdf(1.96 - z_score)  # One-tailed test
+        power_values.append(power)
+    
+    fig.add_trace(
+        go.Scatter(
+            x=sample_sizes_power,
+            y=power_values,
+            mode='lines+markers',
+            marker=dict(color=colors_power[i], size=4),
+            line=dict(color=colors_power[i], width=3),
+            name=f'Effect Size = {effect_size}',
+            showlegend=False
+        ),
+        row=2, col=2
+    )
+
+# Add power = 0.8 reference line
+fig.add_hline(y=0.8, line_dash="dash", line_color="red", 
+              line_width=2, row=2, col=2)
+
+# Add annotations
+fig.add_annotation(
+    x=3, y=400,
+    text="Diminishing returns:<br>Small improvements in<br>precision cost a lot!",
+    showarrow=True,
+    arrowhead=2,
+    arrowcolor=colors['danger'],
+    font=dict(size=10),
+    row=1, col=1
+)
+
+fig.add_annotation(
+    x=15000, y=1.5,
+    text="Sweet spot:<br>Good precision<br>without breaking<br>the budget",
+    showarrow=True,
+    arrowhead=2,
+    arrowcolor=colors['success'],
+    font=dict(size=10),
+    row=2, col=1
+)
+
+fig.update_layout(
+    height=600,
+    showlegend=False,
+    #title_text="Strategic Sample Size Planning"
+)
+
+# Update axes
+fig.update_xaxes(title_text="Margin of Error", row=1, col=1)
+fig.update_yaxes(title_text="Required Sample Size", row=1, col=1)
+fig.update_xaxes(title_text="Confidence Level (%)", row=1, col=2)
+fig.update_yaxes(title_text="Required Sample Size", row=1, col=2)
+fig.update_xaxes(title_text="Total Cost ($)", row=2, col=1)
+fig.update_yaxes(title_text="Precision", row=2, col=1)
+fig.update_xaxes(title_text="Sample Size", row=2, col=2)
+fig.update_yaxes(title_text="Statistical Power", row=2, col=2)
+
+fig.show()
+```
+:::
+::::
+
+---
+
+## Putting It All Together: A Real Example 📊
+
+:::: {.columns}
+::: {.column}
+### 🎯 Research Question
+**"What is the average height of UCSB students?"**
+
+**Our Approach:**
+
+1. **Population:** All 26,000 UCSB students
+   
+2. **Sample:** Random sample of 100 students  
+   
+3. **Measurement:** Height in inches
+   
+4. **Goal:** 95% confidence interval for population mean
+
+**Results:**
+
+- Sample mean: $\bar{x} = 68.2$ inches
+  
+- Sample std dev: $s = 4.1$ inches  
+  
+- Sample size: $n = 100$
+:::
+
+::: {.column}
+```{python}
+#| fig-width: 10
+#| fig-height: 6
+
+# Real example walkthrough
+np.random.seed(42)
+
+# Simulate the "true" population
+true_population_mean = 68.0
+true_population_std = 4.2
+population_heights = np.random.normal(true_population_mean, true_population_std, 26000)
+
+# Our sample
+sample_size = 100
+sample_heights = np.random.choice(population_heights, sample_size)
+sample_mean = np.mean(sample_heights)
+sample_std = np.std(sample_heights, ddof=1)
+
+# Calculate confidence interval
+se = sample_std / np.sqrt(sample_size)
+z_star = 1.96
+ci_lower = sample_mean - z_star * se
+ci_upper = sample_mean + z_star * se
+
+# Create visualization
+fig = make_subplots(
+    rows=1, cols=2,
+    subplot_titles=("Population vs. Sample", "95% Confidence Interval")
+)
+
+# Population histogram
+fig.add_trace(
+    go.Histogram(
+        x=population_heights,
+        name="Population (26,000 students)",
+        marker_color=colors['primary'],
+        opacity=0.6,
+        nbinsx=50
+    ),
+    row=1, col=1
+)
+
+# Sample histogram
+fig.add_trace(
+    go.Histogram(
+        x=sample_heights,
+        name="Our Sample (100 students)",
+        marker_color=colors['danger'],
+        opacity=0.8,
+        nbinsx=20
+    ),
+    row=1, col=1
+)
+
+# Confidence interval visualization
+x_range = np.linspace(ci_lower - 1, ci_upper + 1, 1000)
+y_normal = stats.norm.pdf(x_range, sample_mean, se)
+
+fig.add_trace(
+    go.Scatter(
+        x=x_range, y=y_normal,
+        mode='lines',
+        line=dict(color=colors['primary'], width=3),
+        name='Sampling Distribution'
+    ),
+    row=1, col=2
+)
+
+# Shade the confidence interval
+ci_mask = (x_range >= ci_lower) & (x_range <= ci_upper)
+fig.add_trace(
+    go.Scatter(
+        x=np.concatenate([x_range[ci_mask], [ci_upper, ci_lower]]),
+        y=np.concatenate([y_normal[ci_mask], [0, 0]]),
+        fill='toself',
+        fillcolor='rgba(59, 130, 246, 0.3)',
+        line=dict(color='rgba(0,0,0,0)'),
+        name='95% Confidence Interval'
+    ),
+    row=1, col=2
+)
+
+# Add vertical lines
+fig.add_vline(x=sample_mean, line_dash="solid", line_color=colors['danger'], 
+              line_width=3, row=1, col=2)
+fig.add_vline(x=true_population_mean, line_dash="dash", line_color=colors['success'], 
+              line_width=3, row=1, col=2)
+fig.add_vline(x=ci_lower, line_dash="dot", line_color=colors['warning'], 
+              line_width=2, row=1, col=2)
+fig.add_vline(x=ci_upper, line_dash="dot", line_color=colors['warning'], 
+              line_width=2, row=1, col=2)
+
+# Add annotations
+annotations = [
+    dict(x=sample_mean, y=1.05, yref='paper',
+         text=f"<b>Sample Mean = {sample_mean:.2f}</b>",
+         showarrow=False, xanchor='center'),
+    dict(x=true_population_mean, y=1.10, yref='paper',
+         text=f"<b>True Mean = {true_population_mean:.1f}</b>",
+         showarrow=False, xanchor='center'),
+    dict(x=(ci_lower + ci_upper)/2, y=0.5, yref='paper',
+         text=f"<b>95% CI: ({ci_lower:.2f}, {ci_upper:.2f})</b>",
+         showarrow=False, xanchor='center', 
+         bgcolor="rgba(255,255,255,0.8)", bordercolor="black")
+]
+
+fig.update_layout(
+    annotations=annotations,
+    height=400,
+    showlegend=False,
+    title_text=f"UCSB Student Height Analysis: Sample Mean = {sample_mean:.2f} inches"
+)
+
+fig.update_xaxes(title_text="Height (inches)", row=1, col=1)
+fig.update_yaxes(title_text="Frequency", row=1, col=1)
+fig.update_xaxes(title_text="Height (inches)", row=1, col=2)
+fig.update_yaxes(title_text="Probability Density", row=1, col=2)
+
+fig.show()
+```
+
+**🎯 Interpretation:** We are 95% confident that the true average height of UCSB students is between 67.40 and 69.00 inches.
+:::
+::::
+
+---
+
+## Key Takeaways: Your Statistical Toolkit 🎯
+
+:::: {.columns}
+::: {.column}
+### 🧠 Fundamental Concepts
+
+**1. Sampling Wisdom**
+
+- Representative samples beat large biased samples
+  
+- Randomization is your best friend
+  
+- **Bias can't be fixed with larger samples**
+
+**2. The CLT Magic**  
+
+- Sample means are approximately normal ($n ≥ 30$)
+  
+- Works for ANY population distribution
+  
+- Enables powerful statistical inference
+
+**3. Standard Error**
+
+- Measures precision of our estimates
+  
+- Decreases with $\sqrt{n}$, not $n$
+  
+- Key ingredient in confidence intervals
+:::
+
+::: {.column}
+### 🛠️ Practical Skills
+
+**4. Confidence Intervals**
+
+- Quantify uncertainty in our estimates
+  
+- Correct interpretation is crucial
+  
+- Width depends on confidence level and sample size
+
+**5. Sample Size Planning**
+
+- Balance precision needs with resources
+  
+- Consider margin of error requirements
+  
+- Account for practical constraints
+
+**6. Quality Control**
+
+- Always check for potential bias
+  
+- Verify assumptions (normality, independence)
+  
+- Consider the broader context
+:::
+::::
+
+---
+
+## Common Misconceptions to Avoid ⚠️
+
+```{python}
+#| fig-width: 14
+#| fig-height: 6
+
+# Create misconceptions clarification chart
+misconceptions = [
+    ("❌ WRONG", "✅ CORRECT"),
+    ("'95% probability the mean\nis in our specific interval'", "'95% of intervals constructed\nthis way contain the true mean'"),
+    ("'Larger sample always\nbetter regardless of cost'", "'Balance sample size with\nprecision needs and budget'"),
+    ("'Bias disappears with\nlarge enough sample'", "'Bias requires design fixes,\nnot just more data'"),
+    ("'Normal population required\nfor CLT to work'", "'CLT works for ANY population\nshape with n ≥ 30'"),
+    ("'Confidence interval contains\nall reasonable values'", "'CI contains plausible values\nfor the population parameter'")
+]
+
+fig = go.Figure(data=[go.Table(
+    header=dict(
+        values=['<b>❌ Common Misconception</b>', '<b>✅ Correct Understanding</b>'],
+        fill_color=[colors['danger'], colors['success']],
+        font=dict(size=14, color='white'),
+        align="center",
+        height=40
+    ),
+    cells=dict(
+        values=[[item[0] for item in misconceptions[1:]], 
+                [item[1] for item in misconceptions[1:]]],
+        fill_color=[['#ffebee']*5, ['#e8f5e8']*5],
+        font=dict(size=12),
+        align="center",
+        height=60
+    )
+)])
+
+fig.update_layout(
+    height=400,
+    title_text="Clear Up These Common Misconceptions",
+    margin=dict(l=20, r=20, t=60, b=20)
+)
+
+fig.show()
+```
+
+---
+
+## Interactive Practice: Test Your Understanding 🧪
+
+:::: {.columns}
+::: {.column}
+### 🤔 Check Questions
+
+**1. Sample Size Question:**
+If we want to halve our margin of error, by what factor should we increase our sample size?
+
+**2. CLT Application:**  
+A population has a right-skewed distribution. What can we say about the distribution of sample means when n = 50?
+
+**3. CI Interpretation:**
+We calculated a 95% CI as (45, 55). What does this mean?
+
+**4. Bias Detection:**
+An online survey about internet usage gets 10,000 responses. What type of bias might be present?
+:::
+
+::: {.column .fragment}
+### ✅  Answers
+
+**1.** Increase by factor of **4** (since $SE \propto \frac{1}{\sqrt{n}}$)
+
+**2.** Sample means will be **approximately normal** regardless of population shape
+
+**3.** We're **95% confident** the true population parameter is between 45 and 55
+
+**4.** **Selection bias** - excludes people without internet access
+
+:::
+::::
+
+---
+
+## Comprehensive Resources 📚
+
+:::: {.columns}
+::: {.column}
+### 📖 Required Reading
+- **OpenIntro Statistics**
+  - Section 1.3: Sampling principles and strategies
+  - Section 3.3: Confidence intervals for a mean
+  - Section 4.1: Central Limit Theorem
+
+### 🎥 Video Resources
+- [**Khan Academy:** Central Limit Theorem](https://www.khanacademy.org/math/ap-statistics/sampling-distribution-ap/what-is-sampling-distribution/v/central-limit-theorem)
+- [**StatQuest:** Confidence Intervals Explained](https://www.youtube.com/watch?v=TqOeMYtOc1w) 
+- [**3Blue1Brown:** Central Limit Theorem Visualization](https://www.3blue1brown.com/lessons/clt)
+
+
+:::
+
+::: {.column}
+
+### 💻 Interactive Tools
+- [**Seeing Theory:** Probability Visualizations](https://seeing-theory.brown.edu/)
+- [**Rossman & Chance Applets:** Sampling Distributions](https://www.rossmanchance.com/applets/OneSample53.html?population=model)
+- [**Central Limit Theorem Simulator**](http://www.ltcconline.net/greenl/java/Statistics/clt/cltsimulation.html)
+  
+### 🤝 Getting Help
+- **Office Hours:** Thursday 11 AM-12 PM (Zoom link on Canvas)
+- **Email:** nmathlouthi@ucsb.edu
+
+### 🎯 What's Next?
+**Next Lecture:** Hypothesis Testing and p-values
+:::
+::::
+
+---
+
+## Questions & Discussion 🤔
+
+:::: {.columns}
+::: {.column}
+### 💭 Think About This...
+
+*"The goal is not to eliminate uncertainty, but to understand and quantify it intelligently"*
+
+**Key Questions for Reflection:**
+- How do we balance precision with practicality?
+  
+- When might a larger sample actually be worse?
+  
+- What makes a "good" confidence interval?
+  
+- How do we communicate uncertainty to non-statisticians?
+:::
+
+::: {.column}
+### 🎯 Prepare for Next Class
+
+**Coming Up:** Hypothesis Testing
+
+- What are null and alternative hypotheses?
+  
+- How do we make decisions with data?
+  
+- What does a p-value really mean?
+  
+- Type I and Type II errors
+
+**Recommended Prep:**
+
+- Review today's confidence interval concepts
+  
+- Think about yes/no questions you'd test with data
+  
+- Consider what "statistical significance" means to you
+:::
+::::
+
+---
+
+# Thank You! 🎉
+
+**Remember:** Great statisticians aren't born knowing these concepts, they're developed through practice and curiosity!
+
+
+
+---

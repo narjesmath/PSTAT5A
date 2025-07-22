@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Student Name: ________________________">
+<meta name="dcterms.date" content="2025-07-22">
 
-<title>Syllabus – PSTAT5A</title>
+<title>PSTAT 5A Practice Worksheet 5 – PSTAT5A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4b58d93f5c44c434e21b9d3e6047f8ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,22 +69,51 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="./theme/syllabus-styles.css">
+<link rel="stylesheet" href="../../files/lecture_notes/theme/lecture-styles.css">
 </head>
 
-<body class="floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/logo.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">PSTAT5A</span>
     </a>
   </div>
@@ -93,27 +124,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html"> <i class="bi bi-calendar" role="img">
+    <a class="nav-link" href="../../schedule.html"> <i class="bi bi-calendar" role="img">
 </i> 
 <span class="menu-text">Class Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./syllabus.html" aria-current="page"> <i class="bi bi-file-earmark-text" role="img">
+    <a class="nav-link" href="../../syllabus.html"> <i class="bi bi-file-earmark-text" role="img">
 </i> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> <i class="bi bi-book" role="img">
+    <a class="nav-link" href="../../resources.html"> <i class="bi bi-book" role="img">
 </i> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> <i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="../../contact.html"> <i class="bi bi-envelope" role="img">
 </i> 
 <span class="menu-text">Contact</span></a>
   </li>  
@@ -125,27 +156,47 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructions-and-overview" id="toc-instructions-and-overview" class="nav-link active" data-scroll-target="#instructions-and-overview">Instructions and Overview</a></li>
+  <li><a href="#section-a-continuous-random-variables" id="toc-section-a-continuous-random-variables" class="nav-link" data-scroll-target="#section-a-continuous-random-variables">Section A: Continuous Random Variables</a></li>
+  <li><a href="#section-b-confidence-intervals" id="toc-section-b-confidence-intervals" class="nav-link" data-scroll-target="#section-b-confidence-intervals">Section B: Confidence Intervals</a></li>
+  <li><a href="#optional-questions" id="toc-optional-questions" class="nav-link" data-scroll-target="#optional-questions">Optional Questions</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="worksheet5.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="worksheet5.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Syllabus</h1>
-<p class="subtitle lead">Summer 2025 Course Syllabus</p>
+<h1 class="title">PSTAT 5A Practice Worksheet 5</h1>
+<p class="subtitle lead">Continuous Random Variables and Confidence Intervals</p>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Student Name: ________________________ </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 22, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -155,498 +206,171 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="download-section hidden">
-<p><a href="./files/syllabus/PSTAT5A__Syllabus.pdf" class="download-btn">Download the full syllabus as a PDF</a></p>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📚</p>
-</div>
-<div class="section-title">
-<p>Course Information</p>
-</div>
-</div>
-<div class="info-grid">
-<div class="info-item">
-<div class="info-label">
-<p>Lecture Time</p>
-</div>
-<div class="info-value">
-<p>M/W/T/R 8:00 AM–9:30 AM</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Lecture Hall</p>
-</div>
-<div class="info-value">
-<p>HSSB 1173</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Sections</p>
-</div>
-<div class="info-value">
-<p>As scheduled on GOLD (see Canvas for Zoom links)</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Email</p>
-</div>
-<div class="info-value">
-<p>nmathlouthi@ucsb.edu</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Office</p>
-</div>
-<div class="info-value">
-<p>Ellison Hall 5829</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Office Hours</p>
-</div>
-<div class="info-value">
-<p>Thursdays 11:00 AM–12:00 PM (via Zoom or by appointment)</p>
-</div>
-</div>
-</div>
-<div class="notice-box notice-info">
-<div class="notice-content">
-<p><strong>Note:</strong> Zoom links are posted on the Canvas page for the class.</p>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>👥</p>
-</div>
-<div class="section-title">
-<p>Teaching Assistants</p>
-</div>
-</div>
-<div class="contact-grid">
-<div class="contact-card">
-<div class="contact-avatar">
-<p>SL</p>
-</div>
-<div class="contact-name">
-<p>Summer Le</p>
-</div>
-<div class="contact-email">
-<p>sle@ucsb.edu</p>
-</div>
-</div>
-<div class="contact-card">
-<div class="contact-avatar">
-<p>MH</p>
-</div>
-<div class="contact-name">
-<p>Mingzhu He</p>
-</div>
-<div class="contact-email">
-<p>mingzhuhe@ucsb.edu</p>
-</div>
-</div>
-</div>
-<div class="notice-box notice-important">
-<div class="notice-content">
-<p><strong>Email policy:</strong> Include <code>[PSTAT 5A]</code> in your subject. Allow 24–48 hours for a reply (avoid weekends).</p>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>🎯</p>
-</div>
-<div class="section-title">
-<p>Course Description</p>
-</div>
-</div>
-<p>This introductory course covers the foundations of statistical thinking, including data description, probability, and inference. Students will learn how to summarize data, compute basic probabilities, and make informed decisions using statistical tools.</p>
-<section id="student-learning-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="student-learning-objectives">Student Learning Objectives</h3>
-<p>By the end of this course, you will be able to:</p>
+<section id="instructions-and-overview" class="level1">
+<h1>Instructions and Overview</h1>
+<p><strong>⏰ Time Allocation:</strong></p>
 <ul>
-<li><strong>Summarize data</strong> using descriptive statistics</li>
-<li><strong>Understand</strong> fundamental probability rules and distributions</li>
-<li><strong>Conduct</strong> basic inferential procedures (confidence intervals, hypothesis tests)</li>
-<li><strong>Interpret</strong> results and communicate findings</li>
+<li><p><strong>Intro &amp; Setup</strong> : 10 minutes</p></li>
+<li><p><strong>Section A (Continuous Distributions):</strong> 20 minutes</p></li>
+<li><p><strong>Section B (Confidence Intervals):</strong> 20 minutes</p></li>
+<li><p><strong>Optional Questions:</strong> Do on your own</p></li>
+<li><p><strong>Total:</strong> 50 minutes</p></li>
 </ul>
+<div class="important">
+<p><strong>📝 Important Instructions:</strong></p>
+<ul>
+<li><p>Use the formulas and tables provided for guidance</p></li>
+<li><p>Round final answers to 4 decimal places unless otherwise specified</p></li>
+<li><p>For confidence intervals, always interpret your results in context</p></li>
+<li><p>Use <a href="https://math.arizona.edu/~rsims/ma464/standardnormaltable.pdf">z-table</a> or <a href="https://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf">t-table</a> as appropriate</p></li>
+<li><p>Show your work for all calculations</p></li>
+</ul>
+</div>
+<div class="formula-box">
+<p><strong>📚 Key Formulas Reference:</strong></p>
+<p><strong>Continuous Random Variables:</strong></p>
+<p><strong>Normal Distribution:</strong> <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span></p>
+<ul>
+<li><strong>PDF:</strong> <span class="math inline">\(f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span></li>
+<li><strong>Standardization:</strong> <span class="math inline">\(Z = \frac{X - \mu}{\sigma}\)</span> where <span class="math inline">\(Z \sim N(0,1)\)</span></li>
+<li><strong>Mean:</strong> <span class="math inline">\(E[X] = \mu\)</span></li>
+<li><strong>Variance:</strong> <span class="math inline">\(\text{Var}(X) = \sigma^2\)</span></li>
+</ul>
+<p><strong>Uniform Distribution:</strong> <span class="math inline">\(X \sim \text{Uniform}(a,b)\)</span></p>
+<ul>
+<li><strong>PDF:</strong> <span class="math inline">\(f(x) = \frac{1}{b-a}\)</span> for <span class="math inline">\(a \leq x \leq b\)</span></li>
+<li><strong>Mean:</strong> <span class="math inline">\(E[X] = \frac{a+b}{2}\)</span></li>
+<li><strong>Variance:</strong> <span class="math inline">\(\text{Var}(X) = \frac{(b-a)^2}{12}\)</span></li>
+</ul>
+<p><strong>Exponential Distribution:</strong> <span class="math inline">\(X \sim \text{Exponential}(\lambda)\)</span></p>
+<ul>
+<li><strong>PDF:</strong> <span class="math inline">\(f(x) = \lambda e^{-\lambda x}\)</span> for <span class="math inline">\(x \geq 0\)</span></li>
+<li><strong>Mean:</strong> <span class="math inline">\(E[X] = \frac{1}{\lambda}\)</span></li>
+<li><strong>Variance:</strong> <span class="math inline">\(\text{Var}(X) = \frac{1}{\lambda^2}\)</span></li>
+</ul>
+<p><strong>Confidence Intervals:</strong></p>
+<p><strong>For Population Mean (σ known):</strong> <span class="math inline">\(\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}\)</span></p>
+<p><strong>For Population Mean (σ unknown):</strong> <span class="math inline">\(\bar{x} \pm t_{\alpha/2} \cdot \frac{s}{\sqrt{n}}\)</span></p>
+<p><strong>Margin of Error:</strong> <span class="math inline">\(E = z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}\)</span> or <span class="math inline">\(E = t_{\alpha/2} \cdot \frac{s}{\sqrt{n}}\)</span></p>
+<p><strong>Sample Size:</strong> <span class="math inline">\(n = \left(\frac{z_{\alpha/2} \cdot \sigma}{E}\right)^2\)</span></p>
+</div>
 </section>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📖</p>
-</div>
-<div class="section-title">
-<p>Course Materials</p>
-</div>
-</div>
-<div class="info-grid">
-<div class="info-item">
-<div class="info-label">
-<p>Canvas</p>
-</div>
-<div class="info-value">
-<p>Announcements, Zoom links, and grades (<a href="https://canvas.ucsb.edu">canvas.ucsb.edu</a>)</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Calculator</p>
-</div>
-<div class="info-value">
-<p>Scientific calculator for in-class and quiz work</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Computer</p>
-</div>
-<div class="info-value">
-<p>Use our <a href="https://pstat5a.lsit.ucsb.edu/hub/login">JupyterHub instance</a></p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p>Recommended Texts</p>
-</div>
-<div class="info-value">
-<p><em>OpenIntro Statistics</em> (free online)<br>
-<em>Think Stats</em> by Allen Downey (free online)</p>
-</div>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📅</p>
-</div>
-<div class="section-title">
-<p>Class Schedule</p>
-</div>
-</div>
-<div class="notice-box notice-info">
-<div class="notice-content">
-<p><strong>Note:</strong> For the most up-to-date details, please visit the <strong>Class Schedule</strong> tab on our website: <a href="./schedule.html">Class Schedule</a></p>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📊</p>
-</div>
-<div class="section-title">
-<p>Grading</p>
-</div>
-</div>
-<div class="info-item">
-<div class="info-label">
-<p><strong>Grade Breakdown:</strong></p>
-</div>
-<div class="info-value">
+<section id="section-a-continuous-random-variables" class="level1">
+<h1>Section A: Continuous Random Variables</h1>
+<p><em>⏱️ Estimated time: 20 minutes</em></p>
+<div class="problem">
+<p><strong>Problem A1: Distribution Identification and Properties</strong></p>
+<p>For each scenario below, identify the appropriate continuous distribution and find the requested values:</p>
+<p><strong>(a)</strong> The time (in minutes) between arrivals at a coffee shop follows an exponential distribution with an average of 2 minutes between arrivals.</p>
 <ul>
-<li><p>Lecture attendance: <strong>5%</strong></p></li>
-<li><p>Section attendance: <strong>5%</strong></p></li>
-<li><p>Quiz 1: <strong>30%</strong></p></li>
-<li><p>Quiz 2: <strong>30%</strong></p></li>
-<li><p>Quiz 3: <strong>30%</strong></p></li>
+<li>What is the parameter <span class="math inline">\(\lambda\)</span>?</li>
+<li>What is the probability that the next customer arrives within 1 minute?</li>
+</ul>
+<p><strong>(b)</strong> A random number generator produces values uniformly between 10 and 30.</p>
+<ul>
+<li>What are the parameters a and b?</li>
+<li>What is the expected value and variance?</li>
 </ul>
 </div>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br></p>
+<div class="problem">
+<p><strong>Problem A2: Normal Distribution Calculations</strong></p>
+<p>The heights of adult women in the US are normally distributed with <span class="math inline">\(\mu = 64\)</span> inches and <span class="math inline">\(\sigma = 2.5\)</span> inches.</p>
+<p><strong>(a)</strong> What is the probability that a randomly selected woman is taller than <span class="math inline">\(67\)</span> inches?</p>
+<p><strong>(b)</strong> What height represents the <span class="math inline">\(25\)</span>th percentile?</p>
+<p><strong>(c)</strong> What is the probability that a randomly selected woman has a height between <span class="math inline">\(62\)</span> and <span class="math inline">\(68\)</span> inches?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p><strong>Grading Scale:</strong></p>
-<div class="grading-container">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;"><strong>A Grades</strong></th>
-<th style="text-align: center;"><strong>B Grades</strong></th>
-<th style="text-align: center;"><strong>C Grades</strong></th>
-<th style="text-align: center;"><strong>D/F Grades</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">A+: 97–100</td>
-<td style="text-align: center;">B+: 87–89</td>
-<td style="text-align: center;">C+: 77–79</td>
-<td style="text-align: center;">D+: 67–69</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">A: 93–96</td>
-<td style="text-align: center;">B: 83–86</td>
-<td style="text-align: center;">C: 73–76</td>
-<td style="text-align: center;">D: 60–66</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">A–: 90–92</td>
-<td style="text-align: center;">B–: 80–82</td>
-<td style="text-align: center;">C–: 70–72</td>
-<td style="text-align: center;">F: &lt; 60</td>
-</tr>
-</tbody>
-</table>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
-<div class="notice-box notice-success">
-<div class="notice-content">
-<p>Grades round to the nearest whole number (e.g., 89.7 → 90).</p>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Remember to standardize:</strong> Convert to <span class="math inline">\(Z\)</span>-scores using <span class="math inline">\(Z = \frac{X - \mu}{\sigma}\)</span></p>
+<p>For part (b), you’re looking for the value <span class="math inline">\(x\)</span> such that <span class="math inline">\(P(X ≤ x) = 0.25\)</span></p>
 </div>
 </div>
 </div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📝</p>
-</div>
-<div class="section-title">
-<p>Quizzes</p>
-</div>
-</div>
-<div class="quiz-timeline">
-<div class="quiz-item">
-<div class="quiz-number">
-<p>1</p>
-</div>
-<div class="quiz-content">
-<div class="quiz-title">
-<p>Quiz 1: Weeks 1–2</p>
-</div>
-<div class="quiz-date">
-<p>July 11th</p>
-</div>
-<div class="quiz-details">
-<p>Covers introduction, descriptive statistics and Intro to Probability</p>
-</div>
-</div>
-</div>
-<div class="quiz-item">
-<div class="quiz-number">
-<p>2</p>
-</div>
-<div class="quiz-content">
-<div class="quiz-title">
-<p>Quiz 2: Weeks 3–4</p>
-</div>
-<div class="quiz-date">
-<p>July 25th</p>
-</div>
-<div class="quiz-details">
-<p>Covers Conditional Probability, Counting &amp; Random Variables (Discrete &amp; Continuous)</p>
-</div>
-</div>
-</div>
-<div class="quiz-item">
-<div class="quiz-number">
-<p>3</p>
-</div>
-<div class="quiz-content">
-<div class="quiz-title">
-<p>Quiz 3: Weeks 5–6</p>
-</div>
-<div class="quiz-date">
-<p>July 31st</p>
-</div>
-<div class="quiz-details">
-<p>Covers Confidence Intervals &amp; Hypothesis testing</p>
-</div>
-</div>
-</div>
-</div>
-<div class="info-item">
-<div class="info-value">
-<p><strong>Format:</strong> Multiple choice &amp; short answer (open book)<br>
-<strong>Platform:</strong> Canvas /-or Gradescope<br>
-<strong>Availability:</strong> Fridays 7 AM–12 AM (1‑hour limit)<br>
-<strong>Make‑up policy:</strong> Notify within 48 h; documentation required.</p>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>🎯</p>
-</div>
-<div class="section-title">
-<p>How to Succeed</p>
-</div>
-</div>
-<ul>
-<li><strong>Attend</strong> lectures &amp; sections</li>
-<li><strong>Engage actively</strong> &amp; ask questions</li>
-<li><strong>Use office hours</strong> for help</li>
-</ul>
-<section id="classroom-expectations" class="level3">
-<h3 class="anchored" data-anchor-id="classroom-expectations">Classroom Expectations</h3>
-<p>Respect peers &amp; TAs. Stay engaged. Seek support if needed.</p>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br><br><br></p>
 </section>
-<section id="communication-guidelines" class="level3">
-<h3 class="anchored" data-anchor-id="communication-guidelines">Communication Guidelines</h3>
+<section id="section-b-confidence-intervals" class="level1">
+<h1>Section B: Confidence Intervals</h1>
+<p><em>⏱️ Estimated time: 20 minutes</em></p>
+<div class="problem">
+<p><strong>Problem B1: Understanding Confidence Intervals</strong></p>
+<p><strong>(a)</strong> Explain in your own words what a <span class="math inline">\(95\%\)</span> confidence interval means.</p>
+<p><strong>(b)</strong> A <span class="math inline">\(90\%\)</span> confidence interval for the mean weight of apples is (150g, 170g). What is the sample mean and margin of error?</p>
+<p><strong>(c)</strong> True or False: “There is a <span class="math inline">\(95\%\)</span> probability that the population mean lies within our calculated <span class="math inline">\(95\%\)</span> confidence interval.” Explain your reasoning.</p>
+</div>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br></p>
+<div class="problem">
+<p><strong>Problem B2: Constructing Confidence Intervals</strong></p>
+<p>A sample of <span class="math inline">\(36\)</span> students has a mean test score of <span class="math inline">\(78.5\)</span> with a standard deviation of <span class="math inline">\(12\)</span>.</p>
+<p><strong>(a)</strong> Construct a <span class="math inline">\(95\%\)</span> confidence interval for the population mean test score.</p>
+<p><strong>(b)</strong> Interpret this interval in the context of the problem.</p>
+<p><strong>(c)</strong> What would happen to the width of the interval if:</p>
 <ul>
-<li>Use UCSB email with clear subject</li>
-<li>Allow 24–48 h for replies</li>
-<li>Use office hours or appointments</li>
+<li><p>We increased the confidence level to <span class="math inline">\(99\%\)</span>?</p></li>
+<li><p>We increased the sample size to <span class="math inline">\(144\)</span>?</p></li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Decision Guide:</strong></p>
+<ul>
+<li><p>Use <span class="math inline">\(z\)</span>-distribution when <span class="math inline">\(\sigma\)</span> is <strong>known</strong> OR <span class="math inline">\(n ≥ 30\)</span></p></li>
+<li><p>Use <span class="math inline">\(t\)</span>-distribution when <span class="math inline">\(\sigma\)</span> is <strong>unknown</strong> AND <span class="math inline">\(n &lt; 30\)</span></p></li>
+<li><p>For <span class="math inline">\(95\%\)</span> CI: <span class="math inline">\(z_{0.025} = 1.96\)</span></p></li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br><br><br></p>
 </section>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>🛡️</p>
-</div>
-<div class="section-title">
-<p>Academic Integrity</p>
-</div>
-</div>
-<p>Do your own work. Cite sources properly. See:</p>
+<section id="optional-questions" class="level1">
+<h1>Optional Questions</h1>
+<div class="problem">
+<p><strong>Optional Problem: Conceptual Understanding</strong></p>
+<p><strong>(a)</strong> Explain the key difference between discrete and continuous random variables in terms of:</p>
 <ul>
-<li><p><a href="https://studentconduct.sa.ucsb.edu/academic-integrity">Academic Integrity Policy</a></p></li>
-<li><p><a href="https://www.sa.ucsb.edu/regulations/student-conduct-code/student-conduct-code">Student Conduct Code</a></p></li>
+<li><p>The values they can take</p></li>
+<li><p>How we calculate probabilities</p></li>
 </ul>
+<p><strong>(b)</strong> Why do we use <span class="math inline">\(P(X = x) = 0\)</span> for any specific value <span class="math inline">\(x\)</span> in a continuous distribution?</p>
+<p><strong>(c)</strong> What’s the relationship between PDF and CDF for continuous distributions?</p>
 </div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>🤝</p>
-</div>
-<div class="section-title">
-<p>Student Resources</p>
-</div>
-</div>
-<div class="resource-grid">
-<div class="resource-link">
-<p><span class="resource-icon">🦽</span> <span class="resource-name">DSP &amp; Accommodations</span> <span class="resource-desc">Disability services and accommodations</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">📚</span> <span class="resource-name">CLAS</span> <span class="resource-desc">Campus Learning Assistance Services</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">🏥</span> <span class="resource-name">Student Health</span> <span class="resource-desc">Health and wellness services</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">🍎</span> <span class="resource-name">Basic Needs</span> <span class="resource-desc">Food security and basic needs support</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">💚</span> <span class="resource-name">CAPS</span> <span class="resource-desc">Counseling &amp; Psychological Services</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">🎓</span> <span class="resource-name">EOP</span> <span class="resource-desc">Educational Opportunity Program</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">👥</span> <span class="resource-name">ONDAS</span> <span class="resource-desc">First-Generation Support</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">📋</span> <span class="resource-name">Undocumented Services</span> <span class="resource-desc">Support for undocumented students</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">🔄</span> <span class="resource-name">Transfer Center</span> <span class="resource-desc">Transfer student support</span></p>
-</div>
-</div>
-</div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>📅</p>
-</div>
-<div class="section-title">
-<p>Important Dates</p>
-</div>
-</div>
-<div class="dates-grid">
-<div class="date-item">
-<div class="date-label">
-<p>Add w/o Code</p>
-</div>
-<div class="date-value">
-<p>June 29</p>
-</div>
-</div>
-<div class="date-item">
-<div class="date-label">
-<p>Drop w/ Refund</p>
-</div>
-<div class="date-value">
-<p>June 29</p>
-</div>
-</div>
-<div class="date-item">
-<div class="date-label">
-<p>Add w/ Code</p>
-</div>
-<div class="date-value">
-<p>July 3</p>
-</div>
-</div>
-<div class="date-item">
-<div class="date-label">
-<p>Drop Course</p>
-</div>
-<div class="date-value">
-<p>July 9</p>
-</div>
-</div>
-<div class="date-item">
-<div class="date-label">
-<p>Change Grade Option</p>
-</div>
-<div class="date-value">
-<p>August 1</p>
-</div>
-</div>
-</div>
-</div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Add smooth animations on scroll
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  // Observe all section cards
-  document.querySelectorAll('.section-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease';
-    observer.observe(card);
-  });
-
-  // Add click-to-copy functionality for email addresses
-  document.querySelectorAll('.contact-email').forEach(email => {
-    email.style.cursor = 'pointer';
-    email.addEventListener('click', function() {
-      navigator.clipboard.writeText(this.textContent);
-      const originalText = this.textContent;
-      this.textContent = 'Copied!';
-      setTimeout(() => {
-        this.textContent = originalText;
-      }, 1000);
-    });
-  });
-});
-</script>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br><br><br></p>
+<hr>
+<p><strong>📋 Quick Reference:</strong></p>
+<p><strong>Common Z-values:</strong></p>
+<ul>
+<li><p><span class="math inline">\(90\%\)</span> CI: <span class="math inline">\(z_{0.05} = 1.645\)</span></p></li>
+<li><p><span class="math inline">\(95\%\)</span> CI: <span class="math inline">\(z_{0.025}\)</span> = 1.96$</p></li>
+<li><p><span class="math inline">\(99\%\)</span> CI: <span class="math inline">\(z_{0.005}\)</span> = 2.576$</p></li>
+</ul>
+<p><strong>Common t-values (selected):</strong></p>
+<ul>
+<li><p><span class="math inline">\(df = 24, \alpha = 0.05: t_{0.025} = 2.064\)</span></p></li>
+<li><p><span class="math inline">\(df = 35, \alpha = 0.05: t_{0.025} = 2.030\)</span></p></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

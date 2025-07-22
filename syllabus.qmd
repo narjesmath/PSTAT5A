@@ -243,15 +243,15 @@ Grading
 **Grade Breakdown:**
 :::
 ::: {.info-value}
-- Lecture attendance: **10%**
+- Lecture attendance: **5%**
   
-- Section attendance: **10%**
+- Section attendance: **5%**
   
 - Quiz 1: **30%**
   
 - Quiz 2: **30%**
   
-- Quiz 3: **20%**
+- Quiz 3: **30%**
 :::
 :::
 
@@ -299,7 +299,7 @@ Quiz 1: Weeks 1–2
 July 11th
 :::
 ::: {.quiz-details}
-Covers introduction and descriptive statistics
+Covers introduction, descriptive statistics and Intro to Probability
 :::
 :::
 :::
