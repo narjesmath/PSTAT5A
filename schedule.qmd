@@ -433,7 +433,10 @@ Worksheet 5
 7/22
 :::
 ::: {.topic}
-[Confidence Intervals]()
+[Confidence Intervals (Means & Proportions)]()
+
+- [Z-table](https://math.arizona.edu/~rsims/ma464/standardnormaltable.pdf),
+[t-table](https://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf)
 :::
 ::: {.lab-quiz .empty-cell}
 —
