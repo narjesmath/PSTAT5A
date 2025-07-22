@@ -574,6 +574,7 @@ a) Exactly 3 aces? $P(\text{exactly 3 aces in 5 cards})$
 
 :::{.column width="60%"}
 ::: {.solution .fragment .smaller}
+
 1.	Total number of 5-card hands
 $$\binom{52}{5}
 = \frac{52\cdot51\cdot50\cdot49\cdot48}{5\cdot4\cdot3\cdot2\cdot1}
