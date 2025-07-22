@@ -6696,7 +6696,7 @@
     "href": "files/lecture_notes/lecture8/lecture8.html#probability-density-function-pdf",
     "title": "PSTAT 5A: Continuous Random Variables",
     "section": "Probability Density Function (PDF)",
-    "text": "Probability Density Function (PDF)\n\n\n\n\n 🎯 Definition: The Probability Density Function (PDF) of a continuous random variable \\(X\\) is a function \\(f(x)\\) such that:\n\n\n\\[P(a \\leq X \\leq b) = \\int_a^b f(x) \\, dx\\]\n\n\n\n\n\nProperties of PDF:\n\n\n\n\\(f(x) \\geq 0\\) for all \\(x\\)\n\n\n\\(\\int_{-\\infty}^{\\infty} f(x) \\, dx = 1\\)\n\n\n\\(f(x)\\) is NOT a probability - it’s a density!\n\n\n\nKey Insight:\n\n\nThe area under the PDF curve between \\(a\\) and \\(b\\) gives the probability that \\(X\\) falls in that interval.\n\n\n\n\n\n\nInteractive PDF Demo: Understanding Density\n\n\nNew Random Variable\n\n Uniform Distribution Normal Distribution Exponential Distribution  Interval: [ , ]\n\n\n\nProbability = Area under curve: Select an interval to see probability"
+    "text": "Probability Density Function (PDF)\n\n\n\n\n 🎯 Definition: The Probability Density Function (PDF) of a continuous random variable \\(X\\) is a function \\(f(x)\\) such that:\n\n\n\\[P(a \\leq X \\leq b) = \\int_a^b f(x) \\, dx\\]\n\n\n\n\n\nProperties of PDF:\n\n\n\n\\(f(x) \\geq 0\\) for all \\(x\\)\n\n\n\\(\\int_{-\\infty}^{\\infty} f(x) \\, dx = 1\\)\n\n\n\\(f(x)\\) is NOT a probability - it’s a density!\n\n\n\nKey Insight:\n\n\nThe area under the PDF curve between \\(a\\) and \\(b\\) gives the probability that \\(X\\) falls in that interval."
   },
   {
     "objectID": "files/lecture_notes/lecture8/lecture8.html#pdf-interpretation-height-is-density",
@@ -6717,7 +6717,7 @@
     "href": "files/lecture_notes/lecture8/lecture8.html#expected-value-and-variance",
     "title": "PSTAT 5A: Continuous Random Variables",
     "section": "Expected Value and Variance",
-    "text": "Expected Value and Variance\n\n\nExpected Value: \\[E[X] = \\mu = \\int_{-\\infty}^{\\infty} x \\cdot f(x) \\, dx\\]\nVariance:\n\\[\\text{Var}(X) = \\sigma^2 = \\int_{-\\infty}^{\\infty} (x - \\mu)^2 f(x) \\, dx = E[X^2] - (E[X])^2\\]\nWhere:\n\\[E[X^2] = \\int_{-\\infty}^{\\infty} x^2 \\cdot f(x) \\, dx\\]\n\n\n\n\n\n\n\nImportant\n\n\n\nNotice: Integrals replace sums when moving from discrete to continuous!"
+    "text": "Expected Value and Variance\n\n\nExpected Value: \\[E[X] = \\mu = \\int_{-\\infty}^{\\infty} x \\cdot f(x) \\, dx\\]\nVariance:\n\\[\\text{Var}(X) = \\sigma^2 = \\int_{-\\infty}^{\\infty} (x - \\mu)^2 f(x) \\, dx = E[X^2] - (E[X])^2\\]\nWhere:\n\\[E[X^2] = \\int_{-\\infty}^{\\infty} x^2 \\cdot f(x) \\, dx\\]\n\n\n\n\n\n\n\nImportant\n\n\nNotice: Integrals replace sums when moving from discrete to continuous!"
   },
   {
     "objectID": "files/lecture_notes/lecture8/lecture8.html#common-continuous-distributions",
@@ -6773,7 +6773,7 @@
     "href": "files/lecture_notes/lecture8/lecture8.html#transformations-of-random-variables",
     "title": "PSTAT 5A: Continuous Random Variables",
     "section": "Transformations of Random Variables",
-    "text": "Transformations of Random Variables\n\n\n\nLinear Transformations\nIf \\(Y = aX + b\\), then:\n\n\\(E[Y] = aE[X] + b\\)\n\\(\\text{Var}(Y) = a^2\\text{Var}(X)\\)\nIf \\(X \\sim N(\\mu, \\sigma^2)\\), then \\(Y \\sim N(a\\mu + b, a^2\\sigma^2)\\)\n\n\n\n\nStandardization\n\\[Z = \\frac{X - \\mu}{\\sigma} \\sim N(0, 1)\\]\n\nImportant: Normal distributions are closed under linear transformations!"
+    "text": "Transformations of Random Variables\n\n\nLinear Transformations\nIf \\(Y = aX + b\\), then:\n\n\\(E[Y] = aE[X] + b\\)\n\\(\\text{Var}(Y) = a^2\\text{Var}(X)\\)\nIf \\(X \\sim N(\\mu, \\sigma^2)\\), then \\(Y \\sim N(a\\mu + b, a^2\\sigma^2)\\)\n\n\nStandardization\n\\[Z = \\frac{X - \\mu}{\\sigma} \\sim N(0, 1)\\]\n\nImportant: Normal distributions are closed under linear transformations!"
   },
   {
     "objectID": "files/lecture_notes/lecture8/lecture8.html#comparing-discrete-and-continuous",
@@ -6787,14 +6787,14 @@
     "href": "files/lecture_notes/lecture8/lecture8.html#properties-of-continuous-distributions",
     "title": "PSTAT 5A: Continuous Random Variables",
     "section": "Properties of Continuous Distributions",
-    "text": "Properties of Continuous Distributions\n\n\n\n\nKey Properties\n\nMemoryless Property (Exponential only):\n\\(P(X &gt; s+t | X &gt; s) = P(X &gt; t)\\)\nSymmetry (Normal):\n\\(P(X \\leq \\mu - a) = P(X \\geq \\mu + a)\\)\nScaling Invariance (Normal):\nLinear combinations of normals are normal\n\n\n\n\nUseful Relationships\n\nCDF to PDF: \\(f(x) = F'(x)\\)\nPDF to CDF: \\(F(x) = \\int_{-\\infty}^x f(t) dt\\)\nComplementary CDF: \\(P(X &gt; x) = 1 - F(x)\\)\n\n\nRemember: Area under PDF = 1, but PDF values can exceed 1!"
+    "text": "Properties of Continuous Distributions\n\n\n\nKey Properties\n\nMemoryless Property (Exponential only):\n\\(P(X &gt; s+t | X &gt; s) = P(X &gt; t)\\)\nSymmetry (Normal):\n\\(P(X \\leq \\mu - a) = P(X \\geq \\mu + a)\\)\nScaling Invariance (Normal):\nLinear combinations of normals are normal\n\n\nUseful Relationships\n\nCDF to PDF: \\(f(x) = F'(x)\\)\nPDF to CDF: \\(F(x) = \\int_{-\\infty}^x f(t) dt\\)\nComplementary CDF: \\(P(X &gt; x) = 1 - F(x)\\)\n\n\nRemember: Area under PDF = 1, but PDF values can exceed 1!"
   },
   {
     "objectID": "files/lecture_notes/lecture8/lecture8.html#key-takeaways",
     "href": "files/lecture_notes/lecture8/lecture8.html#key-takeaways",
     "title": "PSTAT 5A: Continuous Random Variables",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\n\n\n\nMain Concepts\n\nContinuous variables require PDFs, not PMFs\nProbabilities are areas under curves, not function values\nIntegration replaces summation for continuous distributions\nNormal distribution is central due to CLT\n\n\n\n\nDistribution Selection\nChoose distributions based on the data characteristics:\n\nUniform for equally likely intervals\nNormal for symmetric, bell-shaped data\n\nExponential for waiting times/lifetimes\nUse CLT when working with sample means\n\n\n\nKey Principle\n\nCentral Limit Theorem makes normal distributions ubiquitous in statistics"
+    "text": "Key Takeaways\n\n\n\nMain Concepts\n\nContinuous variables require PDFs, not PMFs\nProbabilities are areas under curves, not function values\nIntegration replaces summation for continuous distributions\nNormal distribution is central due to CLT\n\n\nDistribution Selection\nChoose distributions based on the data characteristics:\n\nUniform for equally likely intervals\nNormal for symmetric, bell-shaped data\n\nExponential for waiting times/lifetimes\nUse CLT when working with sample means\n\nKey Principle\n\nCentral Limit Theorem makes normal distributions ubiquitous in statistics"
   },
   {
     "objectID": "files/lecture_notes/lecture8/lecture8.html#resources",
@@ -7312,7 +7312,7 @@
     "href": "files/lecture_notes/lecture8/lecture8.html#the-normal-distribution",
     "title": "PSTAT 5A: Continuous Random Variables",
     "section": "The Normal Distribution",
-    "text": "The Normal Distribution\n\n\n\n\nWhy Normal is Special\n\nCentral Limit Theorem: Sample means approach normal\n68-95-99.7 Rule:\n\n68% within \\(1 \\sigma\\) of \\(\\mu\\)\n95% within \\(2 \\sigma\\) of \\(\\mu\\)\n\n99.7% within \\(3 \\sigma\\) of \\(\\mu\\)\n\nStandard Normal: \\(\\mu = 0\\) , \\(\\sigma = 1\\)\n\n\n\nZ-Score Transformation\n\\[Z = \\frac{X - \\mu}{\\sigma}\\]"
+    "text": "The Normal Distribution\n\n\n\nWhy Normal is Special\n\nCentral Limit Theorem: Sample means approach normal\n68-95-99.7 Rule:\n\n68% within \\(1 \\sigma\\) of \\(\\mu\\)\n95% within \\(2 \\sigma\\) of \\(\\mu\\)\n\n99.7% within \\(3 \\sigma\\) of \\(\\mu\\)\n\nStandard Normal: \\(\\mu = 0\\) , \\(\\sigma = 1\\)\n\nZ-Score Transformation\n\\[Z = \\frac{X - \\mu}{\\sigma}\\]"
   },
   {
     "objectID": "files/worksheets/worksheet4_sln.html#summary-table",
