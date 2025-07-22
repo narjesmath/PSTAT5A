@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.29)  20 JUL 2025 18:02
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.29)  22 JUL 2025 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -192,14 +192,14 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-07-11 L3 programming layer (loader) 
+Package: expl3 2025-07-19 L3 programming layer (loader) 
 
 ! LaTeX Error: Mismatched LaTeX support files detected.
 (LaTeX)        Loading 'expl3.sty' aborted!
 (LaTeX)        
 (LaTeX)        The L3 programming layer in the LaTeX format
 (LaTeX)        is dated 2025-03-26, but in your TeX tree the files require
-(LaTeX)        at least 2025-07-11.
+(LaTeX)        at least 2025-07-19.
 
 For immediate help type H <return>.
  ...                                              

@@ -202,7 +202,7 @@ Intervals}
 \makeatother
 \subtitle{PSTAT 5A - Summer Session A 2025}
 \author{Complete Solutions Guide}
-\date{2025-07-20}
+\date{2025-07-22}
 
 \begin{document}
 \maketitle
@@ -220,7 +220,7 @@ Code}\label{getting-started---setup-code}
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Install any missing packages (will skip those already installed)}
-\OperatorTok{!\%}\NormalTok{pip install }\OperatorTok{{-}{-}}\NormalTok{quiet numpy matplotlib scipy pandas statsmodels}
+\CommentTok{\#!\%pip install {-}{-}quiet numpy matplotlib scipy pandas statsmodels}
 
 \CommentTok{\# Load our tools (libraries)}
 \ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np }\CommentTok{\# numerical computing (arrays, random numbers, etc.)}
@@ -230,7 +230,7 @@ Code}\label{getting-started---setup-code}
 \ImportTok{import}\NormalTok{ statsmodels  }\CommentTok{\# statistical modeling (regression, time series, ANOVA, etc.)}
 
 \CommentTok{\# Make our graphs look nice}
-\OperatorTok{!\%}\NormalTok{matplotlib inline     }\CommentTok{\# embed Matplotlib plots directly in the notebook}
+\CommentTok{\#!\%matplotlib inline     \# embed Matplotlib plots directly in the notebook}
 \NormalTok{plt.style.use(}\StringTok{\textquotesingle{}seaborn{-}v0\_8{-}whitegrid\textquotesingle{}}\NormalTok{)  }\CommentTok{\# Apply a clean whitegrid style from Seaborn}
 
 \CommentTok{\# Set random seed for reproducible results}
@@ -241,8 +241,6 @@ Code}\label{getting-started---setup-code}
 \end{Shaded}
 
 \begin{verbatim}
-zsh:fg:1: no job control in this shell.
-zsh:fg:1: no job control in this shell.
 ✅ All tools loaded successfully!
 \end{verbatim}
 
