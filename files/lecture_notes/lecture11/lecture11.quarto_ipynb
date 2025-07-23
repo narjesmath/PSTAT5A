@@ -14,19 +14,19 @@
         "    slide-level: 2\n",
         "    logo: /img/logo.png\n",
         "    theme: default\n",
-        "    css: /files/lecture_notes/lecture10/new-style.css\n",
+        "    css: new-style.css\n",
         "    slide-number: true\n",
         "    chalkboard: true\n",
         "    preview-links: auto\n",
         "    footer: \"Understanding Data – Sampling and Confidence Intervals © 2025\"\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "execute:\n",
         "  echo: false\n",
         "  warning: false\n",
         "  message: false\n",
         "---\n"
       ],
-      "id": "a02e08d1"
+      "id": "a9717ce2"
     },
     {
       "cell_type": "code",
@@ -59,7 +59,7 @@
         "    'dark': '#1f2937'\n",
         "}"
       ],
-      "id": "bcc2ca6d",
+      "id": "4fecf0ab",
       "execution_count": null,
       "outputs": []
     },
@@ -67,10 +67,6 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "```{=html}\n",
-        "<a href=\"https://pstat5a.com/schedule.html\" class=\"main-page-btn\">🏠 Back to Main Page</a>\n",
-        "```\n",
-        "\n",
         "# Welcome to Lecture 11 {.center}\n",
         "\n",
         "**From Samples to Populations: Understanding Uncertainty**\n",
@@ -136,7 +132,7 @@
         "- **Probability Framework:** Sample space, events, and probabilities let us *quantify* uncertainty.\n",
         "::::"
       ],
-      "id": "7e7c0d8f"
+      "id": "80eb8940"
     },
     {
       "cell_type": "code",
@@ -295,7 +291,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "5c40881b",
+      "id": "b0cff78f",
       "execution_count": null,
       "outputs": []
     },
@@ -310,7 +306,7 @@
         "\n",
         "Think of this like **trying to understand a huge library by reading just a few books**"
       ],
-      "id": "6ddabfa8"
+      "id": "695983ff"
     },
     {
       "cell_type": "code",
@@ -395,7 +391,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "6ef15e03",
+      "id": "9616d9dc",
       "execution_count": null,
       "outputs": []
     },
@@ -422,7 +418,7 @@
         "::: {.column }\n",
         "**Imagine asking:** \"What's the average height of UCSB students?\""
       ],
-      "id": "e016a5c7"
+      "id": "ed55bff1"
     },
     {
       "cell_type": "code",
@@ -470,7 +466,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "1e046520",
+      "id": "2bada7f8",
       "execution_count": null,
       "outputs": []
     },
@@ -498,7 +494,7 @@
         "Think of sampling distributions like \n",
         "**\"What if we repeated our study 1000 times?\"**"
       ],
-      "id": "ae37a81f"
+      "id": "d8b31c91"
     },
     {
       "cell_type": "code",
@@ -564,7 +560,7 @@
         "fig.update_layout(height=500, width = 900, showlegend=False)\n",
         "fig.show()"
       ],
-      "id": "b5ceaca7",
+      "id": "8e40315f",
       "execution_count": null,
       "outputs": []
     },
@@ -594,7 +590,7 @@
         ":::: {.columns}\n",
         "::: {.column }"
       ],
-      "id": "bb6703e1"
+      "id": "a2e06941"
     },
     {
       "cell_type": "code",
@@ -666,7 +662,7 @@
         "                 )\n",
         "fig.show()"
       ],
-      "id": "22e6cdaf",
+      "id": "41dc61aa",
       "execution_count": null,
       "outputs": []
     },
@@ -714,7 +710,7 @@
         "\n",
         "::: {.column }"
       ],
-      "id": "4f5a4a7e"
+      "id": "4ad24cab"
     },
     {
       "cell_type": "code",
@@ -760,7 +756,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "d660acaf",
+      "id": "94174c45",
       "execution_count": null,
       "outputs": []
     },
@@ -782,7 +778,7 @@
         "::: {.column }\n",
         "**Imagine you're trying to guess someone's height just by looking at their shadow...**"
       ],
-      "id": "48bb6171"
+      "id": "f5ba3b1f"
     },
     {
       "cell_type": "code",
@@ -868,7 +864,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "fcda9277",
+      "id": "5229a940",
       "execution_count": null,
       "outputs": []
     },
@@ -956,7 +952,7 @@
         "- Ignoring conditions (normality or CLT) before using the formulae  \n",
         ":::"
       ],
-      "id": "ace2228a"
+      "id": "d9428f2e"
     },
     {
       "cell_type": "code",
@@ -985,7 +981,7 @@
         "fig.update_layout(height=220,width = 700, margin=dict(l=20,r=20,t=10,b=10),showlegend=False)\n",
         "fig.show()"
       ],
-      "id": "31c4cc57",
+      "id": "247a0cfd",
       "execution_count": null,
       "outputs": []
     },
@@ -1010,7 +1006,7 @@
         "\n",
         "**When we DON'T know the population standard deviation ($\\sigma$):**"
       ],
-      "id": "f31aad5c"
+      "id": "db3137a9"
     },
     {
       "cell_type": "code",
@@ -1095,7 +1091,7 @@
         "                  title_text=\"Building a 95 % CI for a Mean (Unknown σ)\")\n",
         "fig.show()"
       ],
-      "id": "40bf49f9",
+      "id": "005c0e15",
       "execution_count": null,
       "outputs": []
     },
@@ -1125,7 +1121,7 @@
         "::: {.column }\n",
         "**Why not use the normal distribution?** Because when we estimate $\\sigma$ with $s$, we add extra uncertainty!"
       ],
-      "id": "23dfab80"
+      "id": "e882856b"
     },
     {
       "cell_type": "code",
@@ -1174,7 +1170,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "b0c90812",
+      "id": "0d8e84f2",
       "execution_count": null,
       "outputs": []
     },
@@ -1202,7 +1198,7 @@
         "::: {.column}\n",
         "**For Yes/No questions like:** \"What percentage of students prefer online classes?\""
       ],
-      "id": "262af34f"
+      "id": "9a2b4741"
     },
     {
       "cell_type": "code",
@@ -1258,7 +1254,7 @@
         "fig.update_layout(height=400, showlegend=False)\n",
         "fig.show()"
       ],
-      "id": "8fb25fe0",
+      "id": "93de5147",
       "execution_count": null,
       "outputs": []
     },
@@ -1285,7 +1281,7 @@
         "\n",
         "**Actually:** \"If we repeated this study 100 times, about 95 of our intervals would contain the true mean\""
       ],
-      "id": "c709b489"
+      "id": "360e27e0"
     },
     {
       "cell_type": "code",
@@ -1365,7 +1361,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "0acb9e40",
+      "id": "bd7b39d0",
       "execution_count": null,
       "outputs": []
     },
@@ -1387,7 +1383,7 @@
         "::: {.column width = \"60%\"}\n",
         "**The Question:** \"How many people do we need to survey?\""
       ],
-      "id": "844761e6"
+      "id": "8c8e4f3d"
     },
     {
       "cell_type": "code",
@@ -1440,7 +1436,7 @@
         "                )\n",
         "fig.show()"
       ],
-      "id": "7f419930",
+      "id": "20b17c6e",
       "execution_count": null,
       "outputs": []
     },
@@ -1470,7 +1466,7 @@
         "::: {.column width =\"60%\"}\n",
         "**Research Question:** How many hours do UCSB students sleep per night?"
       ],
-      "id": "41ba8510"
+      "id": "3d773809"
     },
     {
       "cell_type": "code",
@@ -1586,7 +1582,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "df7fce04",
+      "id": "776776d8",
       "execution_count": null,
       "outputs": []
     },
@@ -1762,7 +1758,7 @@
         "\n",
         "::: {.column}"
       ],
-      "id": "42ed9744"
+      "id": "04bd0b8b"
     },
     {
       "cell_type": "code",
@@ -1824,7 +1820,7 @@
         "fig.update_layout(height=400, width=600, showlegend=False)\n",
         "fig.show()"
       ],
-      "id": "dcf7420b",
+      "id": "105878de",
       "execution_count": null,
       "outputs": []
     },
@@ -1962,17 +1958,21 @@
         "if (typeof Reveal !== 'undefined') {\n",
         "  Reveal.addEventListener('ready', setupToggles);\n",
         "}\n",
-        "</script>"
+        "</script>\n",
+        "\n",
+        "```{=html}\n",
+        "<a href=\"https://pstat5a.com/schedule.html\" class=\"main-page-btn\">🏠 Back to Main Page</a>\n",
+        "```"
       ],
-      "id": "a1901a07"
+      "id": "0d60608d"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

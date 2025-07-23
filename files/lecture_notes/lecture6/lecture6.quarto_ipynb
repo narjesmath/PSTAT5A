@@ -20,10 +20,10 @@
         "    footer: \"Understanding Data - Counting © 2025 Narjes Mathlouthi\"\n",
         "    transition: slide\n",
         "    background-transition: fade\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---"
       ],
-      "id": "e14d51da"
+      "id": "32d5d857"
     },
     {
       "cell_type": "code",
@@ -37,7 +37,7 @@
         "import plotly.graph_objects as go\n",
         "import math"
       ],
-      "id": "6a86b363",
+      "id": "48cf3972",
       "execution_count": null,
       "outputs": []
     },
@@ -232,7 +232,7 @@
         "\n",
         "::: {.callout-example title=\"Permutation Animation: Placing Objects in Boxes\"}"
       ],
-      "id": "347d521c"
+      "id": "a11daf9e"
     },
     {
       "cell_type": "code",
@@ -284,7 +284,7 @@
         "for i, perm in enumerate(perms):\n",
         "    print(f\"{i+1}. {''.join(perm)}\")"
       ],
-      "id": "38ba4572",
+      "id": "4da990bd",
       "execution_count": null,
       "outputs": []
     },
@@ -366,7 +366,7 @@
         "\n",
         "::: {.column width=\"50%\"}"
       ],
-      "id": "5df404ec"
+      "id": "25af32bf"
     },
     {
       "cell_type": "code",
@@ -415,7 +415,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "bd13e217",
+      "id": "22055300",
       "execution_count": null,
       "outputs": []
     },
@@ -570,7 +570,7 @@
         "::: {.column width=\"50%\"}\n",
         "::: {.callout-example title=\"Combination Animation: Selecting Objects\"}"
       ],
-      "id": "591373fc"
+      "id": "ac2fffa5"
     },
     {
       "cell_type": "code",
@@ -620,7 +620,7 @@
         "for i, comb in enumerate(combs):\n",
         "    print(f\"{i+1}. {', '.join(comb)}\")"
       ],
-      "id": "f0c65b15",
+      "id": "9dd12938",
       "execution_count": null,
       "outputs": []
     },
@@ -694,7 +694,7 @@
         "\n",
         "::: {.column width=\"50%\"}"
       ],
-      "id": "65c492f7"
+      "id": "20519b46"
     },
     {
       "cell_type": "code",
@@ -743,7 +743,7 @@
         "fig.update_xaxes(tickmode='linear', tick0=2, dtick=1)\n",
         "fig.show()"
       ],
-      "id": "ba26a06b",
+      "id": "63b36d8e",
       "execution_count": null,
       "outputs": []
     },
@@ -830,7 +830,7 @@
         "::: {.column width=\"60%\"}\n",
         "::: {.callout-example title=\"Pascal's Triangle Animation\"}"
       ],
-      "id": "0e5da23f"
+      "id": "eab3a320"
     },
     {
       "cell_type": "code",
@@ -882,7 +882,7 @@
         "for i, row in enumerate(triangle):\n",
         "    print(f\"Row {i}: {row}\")"
       ],
-      "id": "9898bd6b",
+      "id": "7244f641",
       "execution_count": null,
       "outputs": []
     },
@@ -935,7 +935,7 @@
         "\n",
         "::: {.column width=\"50%\"}"
       ],
-      "id": "ecab97f3"
+      "id": "1ecddc1d"
     },
     {
       "cell_type": "code",
@@ -975,7 +975,7 @@
         "fig.update_xaxes(tickmode='linear', tick0=0, dtick=1)\n",
         "fig.show()"
       ],
-      "id": "5a15c38f",
+      "id": "1b3a4c51",
       "execution_count": null,
       "outputs": []
     },
@@ -1072,7 +1072,7 @@
         "\n",
         "::: {.callout-example title=\"Visual Demo: Inclusion-Exclusion\"}"
       ],
-      "id": "4bdd7b20"
+      "id": "b8eea853"
     },
     {
       "cell_type": "code",
@@ -1132,7 +1132,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "8f051e22",
+      "id": "4ae4d412",
       "execution_count": null,
       "outputs": []
     },
@@ -1336,7 +1336,7 @@
         "\n",
         "::: {.column width=\"60%\"}"
       ],
-      "id": "ace36e94"
+      "id": "7e1b281c"
     },
     {
       "cell_type": "code",
@@ -1396,7 +1396,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "5018c6da",
+      "id": "e12e6fd5",
       "execution_count": null,
       "outputs": []
     },
@@ -1585,15 +1585,15 @@
         "\n",
         "**Next Class**: Discrete Probability Distributions\n"
       ],
-      "id": "577c4889"
+      "id": "2082fb67"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

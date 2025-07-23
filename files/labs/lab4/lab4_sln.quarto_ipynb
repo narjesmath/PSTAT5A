@@ -16,12 +16,12 @@
         "    code-fold: false\n",
         "    theme: cosmo\n",
         "date: today\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---\n",
         "\n",
         "# Getting Started - SOLUTION"
       ],
-      "id": "e2ee1bd7"
+      "id": "02b628c3"
     },
     {
       "cell_type": "code",
@@ -39,7 +39,7 @@
         "\n",
         "print(\"✅ All tools loaded successfully!\")"
       ],
-      "id": "c68d655f",
+      "id": "13b46bc0",
       "execution_count": null,
       "outputs": []
     },
@@ -51,7 +51,7 @@
         "\n",
         "## Step 1: A Fair Coin"
       ],
-      "id": "54b3ec50"
+      "id": "57d3379d"
     },
     {
       "cell_type": "code",
@@ -65,7 +65,7 @@
         "print(\"Probabilities:\", probabilities)\n",
         "print(\"Total probability:\", sum(probabilities))  # Should be 1.0"
       ],
-      "id": "f21d9446",
+      "id": "6d5a15dc",
       "execution_count": null,
       "outputs": []
     },
@@ -81,7 +81,7 @@
         "plt.ylim(0, 0.6)\n",
         "plt.show()"
       ],
-      "id": "51f1717b",
+      "id": "81286443",
       "execution_count": null,
       "outputs": []
     },
@@ -91,7 +91,7 @@
       "source": [
         "## Task 1 Solution: Fill in the Biased Coin"
       ],
-      "id": "8d9cbbec"
+      "id": "bef9fdb5"
     },
     {
       "cell_type": "code",
@@ -107,7 +107,7 @@
         "\n",
         "# Check your answer: this should print 1.0"
       ],
-      "id": "16cbe9ac",
+      "id": "512241a0",
       "execution_count": null,
       "outputs": []
     },
@@ -123,7 +123,7 @@
         "plt.ylim(0, 0.8)\n",
         "plt.show()"
       ],
-      "id": "c8af56b5",
+      "id": "4eddea77",
       "execution_count": null,
       "outputs": []
     },
@@ -135,7 +135,7 @@
         "\n",
         "## Example: Expected Value of a Fair Coin"
       ],
-      "id": "303ac91d"
+      "id": "466368c5"
     },
     {
       "cell_type": "code",
@@ -148,7 +148,7 @@
         "expected_value = 0 * 0.5 + 1 * 0.5\n",
         "print(f\"Expected value of fair coin: {expected_value}\")"
       ],
-      "id": "1e664646",
+      "id": "68de7b9e",
       "execution_count": null,
       "outputs": []
     },
@@ -158,7 +158,7 @@
       "source": [
         "## Task 2 Solution: Expected Value of Biased Coin"
       ],
-      "id": "fe534578"
+      "id": "25fdb029"
     },
     {
       "cell_type": "code",
@@ -171,7 +171,7 @@
         "expected_biased = 0 * 0.3 + 1 * 0.7\n",
         "print(f\"Expected value of biased coin: {expected_biased}\")"
       ],
-      "id": "561b3741",
+      "id": "aba6d010",
       "execution_count": null,
       "outputs": []
     },
@@ -183,7 +183,7 @@
         "print(f\"we expect about {expected_biased} points per flip on average.\")\n",
         "print(f\"Since this is closer to 1 than 0.5, the coin favors Heads\")"
       ],
-      "id": "a91ad791",
+      "id": "bc666627",
       "execution_count": null,
       "outputs": []
     },
@@ -195,7 +195,7 @@
         "\n",
         "## Bernoulli Distribution Example"
       ],
-      "id": "ee5f60e4"
+      "id": "b6a5c4a4"
     },
     {
       "cell_type": "code",
@@ -214,7 +214,7 @@
         "# Get expected value automatically!\n",
         "print(f\"Expected value: {fair_coin.mean()}\")"
       ],
-      "id": "8660f2b7",
+      "id": "0d67bab3",
       "execution_count": null,
       "outputs": []
     },
@@ -224,7 +224,7 @@
       "source": [
         "## Task 3 Solution: Biased Coin with Python Tools"
       ],
-      "id": "fc9cfb26"
+      "id": "2f4ef2d1"
     },
     {
       "cell_type": "code",
@@ -241,7 +241,7 @@
         "print(f\"Biased coin - Probability of Heads: {prob_heads_biased}\")\n",
         "print(f\"Expected value: {biased_coin.mean()}\")"
       ],
-      "id": "3e1856c8",
+      "id": "a800e5d0",
       "execution_count": null,
       "outputs": []
     },
@@ -253,7 +253,7 @@
         "\n",
         "## Visualizing Different Coins"
       ],
-      "id": "6a65a52f"
+      "id": "691125e3"
     },
     {
       "cell_type": "code",
@@ -288,7 +288,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "056e124c",
+      "id": "d71562d7",
       "execution_count": null,
       "outputs": []
     },
@@ -300,7 +300,7 @@
         "\n",
         "## Example: 5 Fair Coin Flips"
       ],
-      "id": "86cfe125"
+      "id": "9cac0ee8"
     },
     {
       "cell_type": "code",
@@ -322,7 +322,7 @@
         "\n",
         "print(f\"\\nExpected number of heads: {five_flips.mean()}\")"
       ],
-      "id": "6b8040dd",
+      "id": "901afb0f",
       "execution_count": null,
       "outputs": []
     },
@@ -344,7 +344,7 @@
         "plt.legend()\n",
         "plt.show()"
       ],
-      "id": "ff46648f",
+      "id": "3038480f",
       "execution_count": null,
       "outputs": []
     },
@@ -354,7 +354,7 @@
       "source": [
         "## Task 4 Solution: Basketball Free Throws"
       ],
-      "id": "a1496d23"
+      "id": "f6c466cb"
     },
     {
       "cell_type": "code",
@@ -366,7 +366,7 @@
         "\n",
         "basketball = stats.binom(n_shots, p_make)  # Create the distribution"
       ],
-      "id": "37d685a1",
+      "id": "ec047113",
       "execution_count": null,
       "outputs": []
     },
@@ -386,7 +386,7 @@
         "prob_8_or_more = (basketball.pmf(8) + basketball.pmf(9) + basketball.pmf(10))\n",
         "print(f\"Probability of 8+ makes: {prob_8_or_more:.4f}\")"
       ],
-      "id": "6706cdcb",
+      "id": "1a58c5e8",
       "execution_count": null,
       "outputs": []
     },
@@ -408,7 +408,7 @@
         "plt.legend()\n",
         "plt.show()"
       ],
-      "id": "828406f4",
+      "id": "a194adbf",
       "execution_count": null,
       "outputs": []
     },
@@ -420,7 +420,7 @@
         "\n",
         "## Example: Store Customers"
       ],
-      "id": "4c515325"
+      "id": "8bf77ac3"
     },
     {
       "cell_type": "code",
@@ -439,7 +439,7 @@
         "\n",
         "print(f\"\\nExpected customers per hour: {store_customers.mean()}\")"
       ],
-      "id": "371d98bc",
+      "id": "0d1ea9c9",
       "execution_count": null,
       "outputs": []
     },
@@ -461,7 +461,7 @@
         "plt.legend()\n",
         "plt.show()"
       ],
-      "id": "75ed4d37",
+      "id": "d4172890",
       "execution_count": null,
       "outputs": []
     },
@@ -471,7 +471,7 @@
       "source": [
         "## Task 5 Solution: Email Inbox"
       ],
-      "id": "5ee8066e"
+      "id": "aaaae058"
     },
     {
       "cell_type": "code",
@@ -481,7 +481,7 @@
         "average_emails = 3  # 3 emails per hour on average\n",
         "email_arrivals = stats.poisson(average_emails)"
       ],
-      "id": "01f32ae9",
+      "id": "5263df2f",
       "execution_count": null,
       "outputs": []
     },
@@ -501,7 +501,7 @@
         "expected_emails = email_arrivals.mean()\n",
         "print(f\"Expected emails per hour: {expected_emails}\")"
       ],
-      "id": "82ecc32c",
+      "id": "8b43cd08",
       "execution_count": null,
       "outputs": []
     },
@@ -523,7 +523,7 @@
         "plt.legend()\n",
         "plt.show()"
       ],
-      "id": "26723273",
+      "id": "7f4ee135",
       "execution_count": null,
       "outputs": []
     },
@@ -535,7 +535,7 @@
         "\n",
         "## Task 6 Solution: Which Distribution?"
       ],
-      "id": "4140c5fa"
+      "id": "09543f18"
     },
     {
       "cell_type": "code",
@@ -549,7 +549,7 @@
         "answer_a = scenario_a.pmf(5)  # exactly 5 heads\n",
         "print(f\"Scenario A answer: {answer_a:.4f}\")"
       ],
-      "id": "91b99c91",
+      "id": "4f69c92e",
       "execution_count": null,
       "outputs": []
     },
@@ -564,7 +564,7 @@
         "answer_b = scenario_b.pmf(4)  # exactly 4 customers\n",
         "print(f\"Scenario B answer: {answer_b:.4f}\")"
       ],
-      "id": "5468451c",
+      "id": "6c5cfe71",
       "execution_count": null,
       "outputs": []
     },
@@ -579,7 +579,7 @@
         "answer_c = scenario_c.pmf(1)  # gets it right (value = 1)\n",
         "print(f\"Scenario C answer: {answer_c:.4f}\")"
       ],
-      "id": "8b7a89cb",
+      "id": "3a34acb5",
       "execution_count": null,
       "outputs": []
     },
@@ -589,7 +589,7 @@
       "source": [
         "# Part 7: Simple Simulation - SOLUTION"
       ],
-      "id": "610de905"
+      "id": "861935e2"
     },
     {
       "cell_type": "code",
@@ -625,7 +625,7 @@
         "print(f\"Difference: {abs(theoretical_prob - observed_prob):.4f}\")\n",
         "print(\"Theory and simulation should be close!\")"
       ],
-      "id": "a7e9206d",
+      "id": "cf6b9108",
       "execution_count": null,
       "outputs": []
     },
@@ -671,15 +671,15 @@
         "\n",
         "This completes lab4 solutions! 🎯"
       ],
-      "id": "64a304ce"
+      "id": "902d822c"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

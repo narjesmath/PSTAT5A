@@ -3,7 +3,7 @@ title: "PSTAT 5A: Discrete Random Variables"
 subtitle: Lecture 8
 author: Narjes Mathlouthi
 date: today
-jupyter: python3
+jupyter: pstat5a
 format:
   revealjs:
     logo: /img/logo.png
@@ -141,6 +141,7 @@ Random variables allow us to:
 :::{.footnote}
 [Treena - Random Variables](https://treena.org/courses/hsc-mathematics-advanced/discrete-probability/random-variables/notes)
 :::
+
 :::
 
 :::
@@ -177,6 +178,7 @@ Can list all possible values
 ::: {.discrete-plot}
 <canvas id="discretePlot"></canvas>
 :::
+
 :::
 
 ---
@@ -200,7 +202,7 @@ Cannot list all possible values
 
 :::
 
-:::
+
 
 
 
@@ -255,6 +257,7 @@ Cannot list all possible values
 
 ::: {.chart-container}
 <canvas id="dieChart"></canvas>
+
 :::
 :::
 
@@ -270,8 +273,8 @@ Let $X$ = number of heads in two coin flips
 
 **Sample Space:** $\{HH, HT, TH, TT\}$
 
-::: columns
-::: column
+:::{.columns}
+:::{.column}
 
 <div class="coin-flip-demo">
   <span class="coin" data-index="0" onclick="flipCoinDemo(this, 0)">H</span>
@@ -300,13 +303,16 @@ Let $X$ = number of heads in two coin flips
 <div id="coinStats" class="small-text" style="margin-top: 4px; color: #444;">Empirical probability updates as you flip!</div>
 
 :::
-::: column
+
+:::{.column}
 
 <div class="chart-container">
 <canvas id="coinChart"></canvas>
 </div>
 
+
 :::
+
 :::
 </div>
 
@@ -371,10 +377,12 @@ Expected value represents the **long-run average** if we repeat the experiment m
 <option value="1000" selected>1000 trials</option>
 <option value="5000">5000 trials</option>
 </select>
+
 :::
 
 ::: {.chart-container}
 <canvas id="llnChart"></canvas>
+
 :::
 
 *Watch how the sample mean converges to the expected value!* {.smaller}
@@ -438,7 +446,7 @@ Events in fixed interval
 
 **Variance:** $\lambda$
 :::
-:::
+
 
 ---
 
@@ -653,3 +661,10 @@ Choose distributions based on the underlying process:
     </li>
   </ul>
 </div>
+
+
+#
+
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+```

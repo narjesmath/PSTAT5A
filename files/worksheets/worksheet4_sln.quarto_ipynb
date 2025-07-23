@@ -22,6 +22,7 @@
         "    geometry: margin=1in\n",
         "    fontsize: 11pt\n",
         "    documentclass: article\n",
+        "latex-tinytex: false\n",
         "execute:\n",
         "  echo: false\n",
         "  warning: false\n",
@@ -163,7 +164,7 @@
         "\n",
         "## Summary Table"
       ],
-      "id": "92df40d6"
+      "id": "f23dd9bd"
     },
     {
       "cell_type": "code",
@@ -228,7 +229,7 @@
       "source": [
         "Decision Framework Visualization"
       ],
-      "id": "4043fcf5"
+      "id": "6be1e44e"
     },
     {
       "cell_type": "code",
@@ -392,7 +393,7 @@
         "| P(X=k)| 0.1  | 0.3  | 0.4  | a    | 0.1  |\n",
         ":::\n"
       ],
-      "id": "9dd7b71b"
+      "id": "7b35144e"
     },
     {
       "cell_type": "code",
@@ -487,7 +488,7 @@
         "$P(X ≤ 3) = 0.1 + 0.3 + 0.4 = \\boxed{0.8}$\n",
         ":::"
       ],
-      "id": "bc127137"
+      "id": "da16597d"
     },
     {
       "cell_type": "code",
@@ -582,7 +583,7 @@
         "(Check: $0.8 + 0.2 = 1$ and the full PMF sums to 1, so the results are consistent.)\n",
         ":::\n"
       ],
-      "id": "b9ad1e7e"
+      "id": "3163f6bc"
     },
     {
       "cell_type": "code",
@@ -680,7 +681,7 @@
         "**Symmetry**: The distribution has some **symmetry** around the center, with equal probabilities at the extremes ($X = 1 \\quad \\text{and} \\quad X = 5$ both have $P = 0.1$)\n",
         ":::"
       ],
-      "id": "63a2a1c2"
+      "id": "7b30f270"
     },
     {
       "cell_type": "code",
@@ -819,7 +820,7 @@
         "\n",
         ":::\n"
       ],
-      "id": "74a6a764"
+      "id": "596ed52b"
     },
     {
       "cell_type": "code",
@@ -902,7 +903,7 @@
         "*Check:*  Notice most probability mass is on 2 and 3 (0.3 + 0.4 = 0.7). A mix that skews slightly toward the larger of those two values should indeed give an average a bit below 3, exactly what we see with 2.8.\n",
         ":::"
       ],
-      "id": "07b02b72"
+      "id": "aefb5cb0"
     },
     {
       "cell_type": "code",
@@ -1043,7 +1044,7 @@
         "\n",
         "Let's visualise this!"
       ],
-      "id": "a01d543d"
+      "id": "29376ac0"
     },
     {
       "cell_type": "code",
@@ -1205,7 +1206,7 @@
         "\n",
         "### Bernoulli Distribution (Single Item)"
       ],
-      "id": "91aca343"
+      "id": "e05fb35a"
     },
     {
       "cell_type": "code",
@@ -1291,7 +1292,7 @@
       "source": [
         "#### Binomial Distribution (25 Items)"
       ],
-      "id": "ecd3b18b"
+      "id": "3f59336b"
     },
     {
       "cell_type": "code",
@@ -1394,7 +1395,7 @@
       "source": [
         "#### Comparison: Bernoulli vs Binomial Relationship"
       ],
-      "id": "0d6ca193"
+      "id": "ee635017"
     },
     {
       "cell_type": "code",
@@ -1492,7 +1493,7 @@
       "source": [
         "---"
       ],
-      "id": "a553c0a1"
+      "id": "ac4c2811"
     },
     {
       "cell_type": "code",
@@ -1621,7 +1622,7 @@
         "\n",
         "### Visual Comparison : Binomial vs Geometric - Fundamental Difference"
       ],
-      "id": "b38d8eb6"
+      "id": "fb6a8f1d"
     },
     {
       "cell_type": "code",
@@ -1775,7 +1776,7 @@
         "\n",
         "## Comparative Examples: Poisson vs Binomial - Choosing the Right Distribution"
       ],
-      "id": "531f722a"
+      "id": "d556be54"
     },
     {
       "cell_type": "code",
@@ -1982,7 +1983,7 @@
         "\n",
         "### Visualization of Variance vs. Probability"
       ],
-      "id": "76e5985c"
+      "id": "cd11094b"
     },
     {
       "cell_type": "code",
@@ -2094,7 +2095,7 @@
       "source": [
         "### Intuitive Understanding of Variance Maximization"
       ],
-      "id": "e2f9a36e"
+      "id": "c2eaf71a"
     },
     {
       "cell_type": "code",
@@ -2194,15 +2195,15 @@
         "Extremes: When $p$ approaches $0$ or $1$, outcomes become predictable (low variance)\n",
         ":::"
       ],
-      "id": "bbe361f8"
+      "id": "8fd039a3"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

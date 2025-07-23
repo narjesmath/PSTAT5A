@@ -25,7 +25,7 @@ format:
 execute:
   echo: true
   warning: false
-jupyter: python3
+jupyter: pstat5a
 ---
 
 ::: {.column-margin}

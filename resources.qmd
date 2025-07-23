@@ -7,8 +7,6 @@ format:
     toc-location: left
     theme: cosmo
     css: /theme/styles.css
-    include-after-body: |
-      <script src="/theme/collapsible.js"></script>
     code-fold: false
     code-tools: false
     smooth-scroll: true

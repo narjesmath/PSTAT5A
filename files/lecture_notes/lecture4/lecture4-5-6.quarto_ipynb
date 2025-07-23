@@ -20,7 +20,8 @@
         "    footer: \"Understanding Data - Introduction to Probability © 2025 Narjes Mathlouthi\"\n",
         "    transition: slide\n",
         "    background-transition: fade\n",
-        "jupyter: python312\n",
+        "jupyter: pstat5a\n",
+        "eval: false\n",
         "---\n",
         "\n",
         "\n",
@@ -152,7 +153,7 @@
         "The **sample space** (denoted $S$ or $\\Omega$) is the **set** of all possible outcomes of a random experiment\n",
         ":::"
       ],
-      "id": "43347c4c"
+      "id": "7f748309"
     },
     {
       "cell_type": "code",
@@ -183,7 +184,7 @@
         "plt.title('Sample Space (Ω)', fontsize=16, pad=20)\n",
         "plt.show()\n"
       ],
-      "id": "59e9e068",
+      "id": "edd19989",
       "execution_count": null,
       "outputs": []
     },
@@ -259,7 +260,7 @@
         "- **Compound event**: Contains multiple outcomes (Ex: $B = \\{2, 4, 6\\}$ (rolling an even number))\n",
         ":::\n"
       ],
-      "id": "c2b6525a"
+      "id": "780d0a56"
     },
     {
       "cell_type": "code",
@@ -319,7 +320,7 @@
         "plt.title('Sample Space and Events', fontsize=16, pad=20)\n",
         "plt.show()\n"
       ],
-      "id": "0712a23e",
+      "id": "b98f3fb4",
       "execution_count": null,
       "outputs": []
     },
@@ -368,7 +369,7 @@
         "\n",
         "::: {.column width=\"40%\"}"
       ],
-      "id": "837c05f7"
+      "id": "198acef3"
     },
     {
       "cell_type": "code",
@@ -418,7 +419,7 @@
         "plt.title('Sample Space $S$ with Events $A$ and $B$')\n",
         "plt.show()"
       ],
-      "id": "9fb19928",
+      "id": "7431b3a6",
       "execution_count": null,
       "outputs": []
     },
@@ -454,7 +455,7 @@
         "\n",
         "::: {.column width=\"40%\"}"
       ],
-      "id": "f2515e57"
+      "id": "6b534cc1"
     },
     {
       "cell_type": "code",
@@ -518,7 +519,7 @@
         "plt.title('A Single Set $A$ within Sample Space $S$')\n",
         "plt.show()"
       ],
-      "id": "78facb3e",
+      "id": "6f63a2b5",
       "execution_count": null,
       "outputs": []
     },
@@ -555,7 +556,7 @@
         "\n",
         "::: {.column width=\"30%\"}"
       ],
-      "id": "04a9cb4e"
+      "id": "eae90f34"
     },
     {
       "cell_type": "code",
@@ -622,7 +623,7 @@
         "\n",
         "plt.show()"
       ],
-      "id": "cf4bfc00",
+      "id": "7f50ce26",
       "execution_count": null,
       "outputs": []
     },
@@ -660,7 +661,7 @@
         "\n",
         "::: {.column width=\"40%\"}"
       ],
-      "id": "700abf5e"
+      "id": "c28620d4"
     },
     {
       "cell_type": "code",
@@ -730,7 +731,7 @@
         "plt.title('Intersection: $A \\\\cap B$ (A AND B)')\n",
         "plt.show()"
       ],
-      "id": "3caa602a",
+      "id": "591e19c0",
       "execution_count": null,
       "outputs": []
     },
@@ -769,7 +770,7 @@
         "\n",
         "::: {.column width=\"40%\"}"
       ],
-      "id": "94390470"
+      "id": "8ca194e6"
     },
     {
       "cell_type": "code",
@@ -830,7 +831,7 @@
         "plt.title('Complement: $A^c$ (NOT A)')\n",
         "plt.show()"
       ],
-      "id": "3547a868",
+      "id": "a5641276",
       "execution_count": null,
       "outputs": []
     },
@@ -960,7 +961,7 @@
         "  \n",
         "- $B = \\{4, 5, 6\\}$ (4 or higher)"
       ],
-      "id": "606a2fe1"
+      "id": "72e2794d"
     },
     {
       "cell_type": "code",
@@ -1015,7 +1016,7 @@
         "plt.title('Odd Numbers vs. 4 or Higher')\n",
         "plt.show()"
       ],
-      "id": "4c235975",
+      "id": "417150a0",
       "execution_count": null,
       "outputs": []
     },
@@ -1061,7 +1062,7 @@
         "\n",
         "$$A \\cap B = \\emptyset$$"
       ],
-      "id": "e749ef9f"
+      "id": "f6d56165"
     },
     {
       "cell_type": "code",
@@ -1120,7 +1121,7 @@
         "plt.title('Mutually Exclusive: Odd vs. Even')\n",
         "plt.show()"
       ],
-      "id": "e5ba9ca6",
+      "id": "13105e66",
       "execution_count": null,
       "outputs": []
     },
@@ -1279,7 +1280,7 @@
         "\n",
         ":::{.column}"
       ],
-      "id": "0a0f36cb"
+      "id": "2a0a1ba2"
     },
     {
       "cell_type": "code",
@@ -1295,7 +1296,7 @@
         "plt.title('Hearts vs. Face Cards')\n",
         "plt.show()"
       ],
-      "id": "ff3a70c7",
+      "id": "7e34c0f3",
       "execution_count": null,
       "outputs": []
     },
@@ -1308,7 +1309,7 @@
         "\n",
         "---"
       ],
-      "id": "ecc2db7d"
+      "id": "051c1671"
     },
     {
       "cell_type": "code",
@@ -1327,7 +1328,7 @@
         "plt.title('Hearts vs. Face Cards')\n",
         "plt.show()"
       ],
-      "id": "63b30122",
+      "id": "793f1c92",
       "execution_count": null,
       "outputs": []
     },
@@ -1366,7 +1367,7 @@
         "\n",
         ":::{.column} "
       ],
-      "id": "d293389e"
+      "id": "aa2fa0c2"
     },
     {
       "cell_type": "code",
@@ -1443,7 +1444,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "751453fe",
+      "id": "67a11b2f",
       "execution_count": null,
       "outputs": []
     },
@@ -1487,7 +1488,7 @@
         "\n",
         ":::{.column}"
       ],
-      "id": "b846ccbb"
+      "id": "6005fcf9"
     },
     {
       "cell_type": "code",
@@ -1502,7 +1503,7 @@
         "plt.title('Hearts vs. Red Cards')\n",
         "plt.show()"
       ],
-      "id": "a321f127",
+      "id": "238b8634",
       "execution_count": null,
       "outputs": []
     },
@@ -1544,7 +1545,7 @@
         "\n",
         ":::{.column}"
       ],
-      "id": "cb3dd098"
+      "id": "ba4b2b9a"
     },
     {
       "cell_type": "code",
@@ -1585,7 +1586,7 @@
         "ax.axis('equal')\n",
         "plt.show()"
       ],
-      "id": "b7717117",
+      "id": "8a94a0c6",
       "execution_count": null,
       "outputs": []
     },
@@ -1630,9 +1631,9 @@
         "\n",
         "- **Mutually Exclusive (left):** the circles A and B do not overlap, so $P(A\\cap B)=0$.\n",
         "\n",
-        "- **Independent (right):** the circles overlap, and we’ve sized the intersection so that $P(A\\cap B)=P(A)\\,P(B)$.\n"
+        "- **Independent (right):** the circles overlap, and we've sized the intersection so that $P(A\\cap B)=P(A)\\,P(B)$.\n"
       ],
-      "id": "ff9ff610"
+      "id": "adce1e8d"
     },
     {
       "cell_type": "code",
@@ -1666,7 +1667,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "b97f74de",
+      "id": "feb8b7bc",
       "execution_count": null,
       "outputs": []
     },
@@ -1683,9 +1684,9 @@
         ":::{.example}\n",
         "Draw a single card from a 52-card deck:\n",
         "\n",
-        "- Let A={“draw an Ace”}, so P(A)=4/52.\n",
+        "- Let A={\"draw an Ace\"}, so P(A)=4/52.\n",
         "\n",
-        "- Let B={“draw a King”}, so P(B)=4/52.\n",
+        "- Let B={\"draw a King\"}, so P(B)=4/52.\n",
         "\n",
         "**Q: What is $P(A\\cap B)$ ?**\n",
         "\n",
@@ -1698,13 +1699,13 @@
         "\n",
         ":::{.fragment}\n",
         ":::{.solution}\n",
-        "They’re disjoint (you can’t draw an Ace and a King), so\n",
+        "They're disjoint (you can't draw an Ace and a King), so\n",
         "$P(A\\cap B) = 0$.\n",
         "\n",
         "But\n",
         "$P(A)\\,P(B) = \\frac{4}{52}\\times\\frac{4}{52} = \\frac{16}{2704} \\neq 0$.\n",
         "\n",
-        "Hence, $P(A\\cap B)\\neq P(A)P(B)$, so they’re not independent.\n",
+        "Hence, $P(A\\cap B)\\neq P(A)P(B)$, so they're not independent.\n",
         ":::\n",
         ":::\n",
         "\n",
@@ -1719,7 +1720,7 @@
         "\n",
         "**Independent events**: $P(A \\cap B) = P(A) \\times P(B)$"
       ],
-      "id": "8fa651dd"
+      "id": "16cfb1cb"
     },
     {
       "cell_type": "code",
@@ -1747,7 +1748,7 @@
         "plt.tight_layout()\n",
         "plt.show()\n"
       ],
-      "id": "5a51ded5",
+      "id": "22186be1",
       "execution_count": null,
       "outputs": []
     },
@@ -1764,7 +1765,7 @@
         "Tree diagrams help visualize sequential events and calculate probabilities.\n",
         ":::"
       ],
-      "id": "a69d9899"
+      "id": "67797fd9"
     },
     {
       "cell_type": "code",
@@ -1827,7 +1828,7 @@
         "\n",
         "plt.show()"
       ],
-      "id": "3f13b6d0",
+      "id": "3ac3d924",
       "execution_count": null,
       "outputs": []
     },
@@ -1841,7 +1842,7 @@
         ":::{.columns}\n",
         ":::{.column}"
       ],
-      "id": "a4b8d312"
+      "id": "a4a594ea"
     },
     {
       "cell_type": "code",
@@ -1946,7 +1947,7 @@
         "ax1.set_title('Intersection Only (P(A∩B))', fontsize=14)\n",
         "plt.show()\n"
       ],
-      "id": "e6a00389",
+      "id": "d026ec9c",
       "execution_count": null,
       "outputs": []
     },
@@ -1958,7 +1959,7 @@
         "\n",
         ":::{.column }"
       ],
-      "id": "579190cc"
+      "id": "65babff5"
     },
     {
       "cell_type": "code",
@@ -1972,7 +1973,7 @@
         "ax2.set_title('Event B Only (P(B))', fontsize=14)\n",
         "plt.show()"
       ],
-      "id": "20cef054",
+      "id": "33a42de7",
       "execution_count": null,
       "outputs": []
     },
@@ -2002,7 +2003,7 @@
         ":::{.column}\n",
         ":::{.fragment}"
       ],
-      "id": "8b13608a"
+      "id": "34d2939e"
     },
     {
       "cell_type": "code",
@@ -2095,7 +2096,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "4f0dcc0e",
+      "id": "99c19aed",
       "execution_count": null,
       "outputs": []
     },
@@ -2124,7 +2125,7 @@
         "$$P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + \\cdots + P(A|B_n)P(B_n)$$\n",
         ":::"
       ],
-      "id": "bd2807df"
+      "id": "d65eaae0"
     },
     {
       "cell_type": "code",
@@ -2170,7 +2171,7 @@
         "ax.set_ylim(-2, 2)\n",
         "plt.show()"
       ],
-      "id": "78789a7f",
+      "id": "6362c758",
       "execution_count": null,
       "outputs": []
     },
@@ -2258,7 +2259,7 @@
         "\n",
         ":::{.column width=\"60%\"}"
       ],
-      "id": "7f38c6f5"
+      "id": "cb743af0"
     },
     {
       "cell_type": "code",
@@ -2296,12 +2297,12 @@
         ")\n",
         "fig.update_traces(textinfo='label+percent entry')\n",
         "fig.update_layout(\n",
-        "    title='Bayes’ Theorem: Distribution by Test Result and Condition',\n",
+        "    title='Bayes' Theorem: Distribution by Test Result and Condition',\n",
         "    margin=dict(t=50, l=25, r=25, b=25)\n",
         ")\n",
         "fig.show()"
       ],
-      "id": "afa954be",
+      "id": "8efc2bc1",
       "execution_count": null,
       "outputs": []
     },
@@ -2343,7 +2344,7 @@
         "\n",
         "$$P(D|T^+) = \\frac{P(T^+|D) \\times P(D)}{P(T^+)} = \\frac{0.95 \\times 0.01}{0.1085} \\approx 0.088$$"
       ],
-      "id": "c95a32f6"
+      "id": "753f7cbe"
     },
     {
       "cell_type": "code",
@@ -2373,7 +2374,7 @@
         "ax.axis('equal')  # Equal aspect ensures pie is circular.\n",
         "plt.show()"
       ],
-      "id": "b7b1bfd8",
+      "id": "4bc35e0e",
       "execution_count": null,
       "outputs": []
     },
@@ -2403,7 +2404,7 @@
         "\\quad\\text{with}\\quad\n",
         "P(\\text{Innocent}\\mid\\text{Evidence})$. \n",
         "\n",
-        "Ex: OJ Simpson Case ^[the DNA evidence in the O. J. Simpson trial are a classic example of the prosecutor’s fallacy.  Prosecutors highlighted that the chance of a random person matching the crime-scene DNA was “one in 170 million,” then implied (or let the jury infer) that Simpson therefore had a 1 in 170 million chance of being innocent.]\n",
+        "Ex: OJ Simpson Case ^[the DNA evidence in the O. J. Simpson trial are a classic example of the prosecutor's fallacy.  Prosecutors highlighted that the chance of a random person matching the crime-scene DNA was \"one in 170 million,\" then implied (or let the jury infer) that Simpson therefore had a 1 in 170 million chance of being innocent.]\n",
         ":::\n",
         "\n",
         "\n",
@@ -2655,15 +2656,15 @@
         "\n",
         "- [Probability Models and Axioms](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/resources/mitres_6_012s18_l01as/)"
       ],
-      "id": "53565a11"
+      "id": "23ce36f3"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python312",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3.12",
-      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/python312"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

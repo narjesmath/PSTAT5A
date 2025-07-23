@@ -7,6 +7,8 @@ format:
     theme: cosmo
     css: /theme/schedule-styles.css
     page-layout: full
+python: pstat5a
+latex-tinytex: false
 execute:
   echo: false
   warning: false
@@ -331,6 +333,7 @@ Quiz 1 (Weeks 1–2)
 [Continuous Random Variables & Distributions](/files/lecture_notes/lecture8/lecture8.qmd)
 :::
 ::: {.lab-quiz}
+
 [Lab 4](/files/labs/lab4/lab4.qmd)
 
 [lab 4 Solutions](/files/labs/lab4/lab4_sln.qmd)
@@ -399,7 +402,9 @@ Quiz 1 (Weeks 1–2)
 ::: {.week-section .week-5}
 ::: {.week-header}
 <span>Week 5: Inference & Statistical Modeling</span>
+
 :::
+
 ::: {.week-content}
 ::: {.day-row}
 ::: {.week-number}
@@ -499,16 +504,22 @@ Quiz 2 (Weeks 3–4)
 :::
 :::
 :::
+:::
+:::
 
 ::: {.week-section .week-6}
 ::: {.week-header}
 <span>Week 6: Regression & Course Wrap-Up</span>
+
 :::
+
 ::: {.week-content}
 ::: {.day-row}
+
 ::: {.week-number}
 6
 :::
+
 ::: {.date}
 7/28
 :::

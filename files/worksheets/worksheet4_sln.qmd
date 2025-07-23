@@ -16,6 +16,7 @@ format:
     geometry: margin=1in
     fontsize: 11pt
     documentclass: article
+latex-tinytex: false
 execute:
   echo: false
   warning: false

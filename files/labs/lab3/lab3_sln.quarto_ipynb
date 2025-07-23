@@ -21,7 +21,7 @@
         "    execute:\n",
         "    warning: false\n",
         "date: today\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---\n",
         "\n",
         "::: {.column-margin}\n",
@@ -40,7 +40,7 @@
         "2. Import the `datascience` module as `ds`, and check the table creation works correctly.\n",
         ":::"
       ],
-      "id": "bf74f462"
+      "id": "a85d4a4b"
     },
     {
       "cell_type": "code",
@@ -61,7 +61,7 @@
         ")\n",
         "print(table_result)\n"
       ],
-      "id": "b07123a8",
+      "id": "97b8b3b3",
       "execution_count": null,
       "outputs": []
     },
@@ -75,7 +75,7 @@
         "Create x_list and x_array containing elements 1, 2, and 3, then compute mean and median.\n",
         ":::"
       ],
-      "id": "303a45f9"
+      "id": "4a13aa00"
     },
     {
       "cell_type": "code",
@@ -100,7 +100,7 @@
         "# Verify they give the same results\n",
         "print(\"\\nBoth give the same results!\")"
       ],
-      "id": "7b5d79c0",
+      "id": "e989c555",
       "execution_count": null,
       "outputs": []
     },
@@ -116,7 +116,7 @@
         "Answer: The np.ptp() function computes the range of values (maximum - minimum) along an axis.\n",
         "PTP stands for \"Peak To Peak\" - the difference between the maximum peak and minimum peak values."
       ],
-      "id": "ebe5736b"
+      "id": "8c7dc1d6"
     },
     {
       "cell_type": "code",
@@ -133,7 +133,7 @@
         "\n",
         "# Both should give the same result: 3 - 1 = 2"
       ],
-      "id": "b1ba8241",
+      "id": "d4e46dd1",
       "execution_count": null,
       "outputs": []
     },
@@ -147,7 +147,7 @@
         "Compute standard deviation by hand and compare with np.std() function.\n",
         ":::"
       ],
-      "id": "80e6ee05"
+      "id": "f6201646"
     },
     {
       "cell_type": "code",
@@ -186,7 +186,7 @@
         "print(\"np.std(x_list, ddof=1):\", np.std(x_list, ddof=1))\n",
         "print(\"This matches part (a):\", np.isclose(sample_std, np.std(x_list, ddof=1)))"
       ],
-      "id": "4d67b082",
+      "id": "36773c07",
       "execution_count": null,
       "outputs": []
     },
@@ -200,7 +200,7 @@
         "Create a custom IQR function.\n",
         ":::"
       ],
-      "id": "c8b65692"
+      "id": "693c773a"
     },
     {
       "cell_type": "code",
@@ -236,7 +236,7 @@
         "# They should be the same!\n",
         "print(f\"Results match: {np.isclose(my_iqr, direct_iqr)}\")"
       ],
-      "id": "2e9a363c",
+      "id": "aab0fc99",
       "execution_count": null,
       "outputs": []
     },
@@ -250,7 +250,7 @@
         "Create boxplots with various customizations.\n",
         ":::"
       ],
-      "id": "6975fad3"
+      "id": "06acbbbc"
     },
     {
       "cell_type": "code",
@@ -302,61 +302,7 @@
         "iqr_calculated = np.diff(np.percentile(y, [25, 75]))[0]\n",
         "print(f\"\\nActual IQR calculated by Python: {iqr_calculated}\")"
       ],
-      "id": "81714b07",
-      "execution_count": null,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "metadata": {},
-      "source": [
-        "# Solution to Task 5\n",
-        "\n",
-        "# Import matplotlib for plotting\n",
-        "import matplotlib.pyplot as plt\n",
-        "%matplotlib inline\n",
-        "plt.style.use('seaborn-v0_8-whitegrid')\n",
-        "\n",
-        "# Step 1: Create the list y\n",
-        "y = [1, 2, 3, 4, 5, 4, 3, 5, 4, 1, 2]\n",
-        "\n",
-        "# Step 2: Create basic vertical boxplot\n",
-        "plt.figure(figsize=(8, 6))\n",
-        "plt.subplot(2, 2, 1)\n",
-        "plt.boxplot(y)\n",
-        "plt.title(\"Basic Vertical Boxplot\")\n",
-        "\n",
-        "# Step 3: Create horizontal boxplot\n",
-        "plt.subplot(2, 2, 2)\n",
-        "plt.boxplot(y, orientation='horizontal')\n",
-        "plt.title(\"Horizontal Boxplot\")\n",
-        "\n",
-        "# Step 4: Add color\n",
-        "plt.subplot(2, 2, 3)\n",
-        "plt.boxplot(y, orientation='horizontal', patch_artist=True, \n",
-        "            boxprops=dict(facecolor=\"aquamarine\"))\n",
-        "plt.title(\"Colored Horizontal Boxplot\")\n",
-        "\n",
-        "# Step 5: Final version with title\n",
-        "plt.subplot(2, 2, 4)\n",
-        "plt.boxplot(y, orientation='horizontal', patch_artist=True, \n",
-        "            boxprops=dict(facecolor=\"aquamarine\"))\n",
-        "plt.title(\"My First Python Boxplot\")\n",
-        "\n",
-        "plt.tight_layout()\n",
-        "plt.show()\n",
-        "\n",
-        "# Answer the IQR question\n",
-        "print(\"\\nBased on the boxplot:\")\n",
-        "print(\"Q1 (25th percentile) appears to be around 2\")\n",
-        "print(\"Q3 (75th percentile) appears to be around 4.5\")\n",
-        "print(\"So IQR ≈ 4.5 - 2 = 2.5\")\n",
-        "\n",
-        "# Verify with Python calculation\n",
-        "iqr_calculated = np.diff(np.percentile(y, [25, 75]))[0]\n",
-        "print(f\"\\nActual IQR calculated by Python: {iqr_calculated}\")\n"
-      ],
-      "id": "a315266b",
+      "id": "e68fdcbf",
       "execution_count": null,
       "outputs": []
     },
@@ -370,7 +316,7 @@
         "Create a histogram with appropriate bins and labels.\n",
         ":::"
       ],
-      "id": "55da58ef"
+      "id": "47968f0e"
     },
     {
       "cell_type": "code",
@@ -406,7 +352,7 @@
         "for value, count in zip(unique, counts):\n",
         "    print(f\"Value {value}: appears {count} times\")\n"
       ],
-      "id": "e4c7d98f",
+      "id": "4c5a5057",
       "execution_count": null,
       "outputs": []
     },
@@ -420,7 +366,7 @@
         "Create a scatterplot with proper labels.\n",
         ":::"
       ],
-      "id": "02d7608c"
+      "id": "d2f07271"
     },
     {
       "cell_type": "code",
@@ -449,7 +395,7 @@
         "print(f\"x1 range: {x1.min():.2f} to {x1.max():.2f}\")\n",
         "print(f\"x2 range: {x2.min():.2f} to {x2.max():.2f}\")"
       ],
-      "id": "f6719580",
+      "id": "f8f85ffc",
       "execution_count": null,
       "outputs": []
     },
@@ -463,7 +409,7 @@
         "Plot the function f(x) = x - x²sin(x) between x = -10 and x = 10.\n",
         ":::"
       ],
-      "id": "c4e83d62"
+      "id": "a1eb09ae"
     },
     {
       "cell_type": "code",
@@ -512,7 +458,7 @@
         "\n",
         "print(\"Notice how more points create a smoother curve!\")"
       ],
-      "id": "93238a7b",
+      "id": "10ae45ab",
       "execution_count": null,
       "outputs": []
     },
@@ -560,15 +506,15 @@
         "\n",
         "This concludes Lab 3 Solutions!"
       ],
-      "id": "f6b56dd2"
+      "id": "b291ee4e"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

@@ -9,7 +9,7 @@
         "subtitle: Lecture 9\n",
         "author: Narjes Mathlouthi\n",
         "date: today\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "format:\n",
         "  revealjs:\n",
         "    logo: /img/logo.png\n",
@@ -644,15 +644,15 @@
         "<a href=\"https://pstat5a.com/schedule.html\" class=\"main-page-btn\">🏠 Back to Main Page</a>\n",
         "```"
       ],
-      "id": "4187b8f2"
+      "id": "ef769084"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

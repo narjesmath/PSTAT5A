@@ -14,7 +14,12 @@ format:
     footer: "Understanding Data - Descriptive Statistics Part II © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
-jupyter: python3
+    # pdf-engine: lualatex
+    # pdf-engine-opts:
+    # - '--no-shell-escape'
+    # - '--halt-on-error'
+    latex-tinytex: false
+jupyter: pstat5a
 ---
 
 ## Learning Objectives {.smaller}
@@ -1253,3 +1258,9 @@ Comprehensive documentation for statistical functions in `scipy.stats`, includin
 **Thank you for your attention!**
 
 *Remember: The goal of descriptive statistics is to understand your data story - let the visualizations guide your insights!*
+
+#
+
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+```

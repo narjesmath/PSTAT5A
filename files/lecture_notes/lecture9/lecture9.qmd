@@ -27,7 +27,7 @@ format:
 execute:
   echo: true
   warning: false
-jupyter: python3
+jupyter: pstat5a
 ---
 
 ## Today's Learning Objectives
@@ -804,4 +804,11 @@ import pandas as pd          # Data manipulation
 # np.random.poisson(lam, size)
 # np.random.normal(mu, sigma, size)
 # np.random.exponential(scale, size)
+```
+
+
+#
+
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
 ```

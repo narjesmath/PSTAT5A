@@ -21,7 +21,7 @@
         "        echo: true\n",
         "        eval: true\n",
         "date: today\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---\n",
         "\n",
         "::: {.column-margin}\n",
@@ -38,7 +38,7 @@
         "\n",
         "Create a list containing the elements `1`, `\"hi\"`, `3.4`, and `\"PSTAT 5A\"`. Assign this list to a variable called `list1`."
       ],
-      "id": "0bf9740f"
+      "id": "c9724304"
     },
     {
       "cell_type": "code",
@@ -48,7 +48,7 @@
         "list1 = [1, \"hi\", 3.4, \"PSTAT 5A\"]\n",
         "print(list1)"
       ],
-      "id": "a72396b4",
+      "id": "7cda32f9",
       "execution_count": null,
       "outputs": []
     },
@@ -60,7 +60,7 @@
         "\n",
         "Run the code `type(list1)`."
       ],
-      "id": "9ed11c19"
+      "id": "82ab07d9"
     },
     {
       "cell_type": "code",
@@ -69,7 +69,7 @@
         "# Solution\n",
         "print(type(list1))"
       ],
-      "id": "5cbee955",
+      "id": "0420036a",
       "execution_count": null,
       "outputs": []
     },
@@ -85,7 +85,7 @@
         "\n",
         "Create a list with the numbers 1 through 10, inclusive, and assign this to a variable called `x`."
       ],
-      "id": "b8cd0927"
+      "id": "953479df"
     },
     {
       "cell_type": "code",
@@ -97,7 +97,7 @@
         "# x = list(range(1, 11))\n",
         "print(x)"
       ],
-      "id": "aac93592",
+      "id": "18b8d380",
       "execution_count": null,
       "outputs": []
     },
@@ -107,7 +107,7 @@
       "source": [
         "Run the code `x[1]`."
       ],
-      "id": "17396940"
+      "id": "336f6881"
     },
     {
       "cell_type": "code",
@@ -116,7 +116,7 @@
         "# Solution\n",
         "print(x[1])"
       ],
-      "id": "802b5354",
+      "id": "3fc7358d",
       "execution_count": null,
       "outputs": []
     },
@@ -126,7 +126,7 @@
       "source": [
         "Run the code `x[0]`."
       ],
-      "id": "378161dc"
+      "id": "432e87b8"
     },
     {
       "cell_type": "code",
@@ -135,7 +135,7 @@
         "# Solution\n",
         "print(x[0])"
       ],
-      "id": "57a23633",
+      "id": "4c5fbdf5",
       "execution_count": null,
       "outputs": []
     },
@@ -151,7 +151,7 @@
         "\n",
         "Create a list called `x` that contains the elements `1`, `\"two\"`, `3.5`, `\"four\"`, and `\"five five\"`. Answer the questions and verify."
       ],
-      "id": "0a455b8a"
+      "id": "85728695"
     },
     {
       "cell_type": "code",
@@ -165,7 +165,7 @@
         "# 2. type(x[1]) would output: <class 'str'>\n",
         "# 3. x[0] would output: 1"
       ],
-      "id": "6e927242",
+      "id": "97dcb7a2",
       "execution_count": null,
       "outputs": []
     },
@@ -175,7 +175,7 @@
       "source": [
         "Now verify the answers:"
       ],
-      "id": "cbee667c"
+      "id": "3866b0d1"
     },
     {
       "cell_type": "code",
@@ -186,7 +186,7 @@
         "print(\"2. type(x[1]):\", type(x[1]))\n",
         "print(\"3. x[0]:\", x[0])"
       ],
-      "id": "3696db39",
+      "id": "73758338",
       "execution_count": null,
       "outputs": []
     },
@@ -203,7 +203,7 @@
         "\n",
         "First, let's install and import the datascience module:"
       ],
-      "id": "449047c3"
+      "id": "c8e5be58"
     },
     {
       "cell_type": "code",
@@ -213,7 +213,7 @@
         "# !pip install datascience\n",
         "from datascience import *"
       ],
-      "id": "20169d52",
+      "id": "844072cb",
       "execution_count": null,
       "outputs": []
     },
@@ -225,7 +225,7 @@
         "\n",
         "Read the list of methods for Table objects and write down three different methods:"
       ],
-      "id": "682dff3d"
+      "id": "d20f944c"
     },
     {
       "cell_type": "code",
@@ -238,7 +238,7 @@
         "# .num_rows: returns the number of rows in the table\n",
         "# .num_columns: returns the number of columns in the table"
       ],
-      "id": "665dda0f",
+      "id": "5143ee04",
       "execution_count": null,
       "outputs": []
     },
@@ -250,7 +250,7 @@
         "\n",
         "Create the professor table:"
       ],
-      "id": "93a99d2c"
+      "id": "be241d03"
     },
     {
       "cell_type": "code",
@@ -265,7 +265,7 @@
         "\n",
         "profs"
       ],
-      "id": "ea808f9d",
+      "id": "33d33284",
       "execution_count": null,
       "outputs": []
     },
@@ -275,7 +275,7 @@
       "source": [
         "Select the column called `Course` from `profs`:"
       ],
-      "id": "3b912702"
+      "id": "69a07e7b"
     },
     {
       "cell_type": "code",
@@ -284,7 +284,7 @@
         "# Solution\n",
         "profs.select(\"Course\")"
       ],
-      "id": "4774cc08",
+      "id": "baaade6c",
       "execution_count": null,
       "outputs": []
     },
@@ -294,7 +294,7 @@
       "source": [
         "Create a new table called `profs_new` with an additional row:"
       ],
-      "id": "511155c3"
+      "id": "ed7c4288"
     },
     {
       "cell_type": "code",
@@ -304,7 +304,7 @@
         "profs_new = profs.with_row([\"Dr. Ravat\", \"South Hall\", \"PSTAT 120B\"])\n",
         "profs_new"
       ],
-      "id": "b606ef7d",
+      "id": "601a554c",
       "execution_count": null,
       "outputs": []
     },
@@ -316,7 +316,7 @@
         "\n",
         "### Filtering Tables Example"
       ],
-      "id": "a11563f8"
+      "id": "a17f0ed8"
     },
     {
       "cell_type": "code",
@@ -332,7 +332,7 @@
         "# Filter for courses taught by Mathlouthi\n",
         "table1.where(\"Instructor\", \"Mathlouthi\")"
       ],
-      "id": "d1baa7f9",
+      "id": "f572f2b4",
       "execution_count": null,
       "outputs": []
     },
@@ -343,7 +343,7 @@
         "# Try filtering for an instructor that doesn't exist\n",
         "table1.where(\"Instructor\", \"Wilson\")"
       ],
-      "id": "6b55b45b",
+      "id": "f7cd66d3",
       "execution_count": null,
       "outputs": []
     },
@@ -357,7 +357,7 @@
         "\n",
         "Make a list and array with the same elements and compare operations:"
       ],
-      "id": "bed55dd5"
+      "id": "e3559502"
     },
     {
       "cell_type": "code",
@@ -370,7 +370,7 @@
         "print(\"List:\", my_list)\n",
         "print(\"Array:\", my_array)"
       ],
-      "id": "48913cc4",
+      "id": "591ad416",
       "execution_count": null,
       "outputs": []
     },
@@ -382,7 +382,7 @@
         "print(\"sum(my_list):\", sum(my_list))\n",
         "print(\"sum(my_array):\", sum(my_array))"
       ],
-      "id": "00d89e19",
+      "id": "b29f1b5b",
       "execution_count": null,
       "outputs": []
     },
@@ -397,7 +397,7 @@
         "except TypeError as e:\n",
         "    print(\"Error with my_list + 2:\", e)"
       ],
-      "id": "a2f613a2",
+      "id": "5cabaf0a",
       "execution_count": null,
       "outputs": []
     },
@@ -408,7 +408,7 @@
         "# Addition with scalar works for arrays\n",
         "print(\"my_array + 2:\", my_array + 2)"
       ],
-      "id": "b544375c",
+      "id": "373e58c4",
       "execution_count": null,
       "outputs": []
     },
@@ -424,7 +424,7 @@
         "\n",
         "Compare `\"statistics\"` and `\"Statistics\"`:"
       ],
-      "id": "6b455193"
+      "id": "a81f9bb7"
     },
     {
       "cell_type": "code",
@@ -438,7 +438,7 @@
         "print('ord(\"S\"):', ord(\"S\"))\n",
         "print('ord(\"s\"):', ord(\"s\"))"
       ],
-      "id": "62687d0d",
+      "id": "ce20fd54",
       "execution_count": null,
       "outputs": []
     },
@@ -452,7 +452,7 @@
         "\n",
         "Create arrays and compare element-wise:"
       ],
-      "id": "266396e1"
+      "id": "c577eb22"
     },
     {
       "cell_type": "code",
@@ -466,7 +466,7 @@
         "print(\"y:\", y)\n",
         "print(\"x < y:\", x < y)"
       ],
-      "id": "ad2ab432",
+      "id": "636f5d19",
       "execution_count": null,
       "outputs": []
     },
@@ -485,7 +485,7 @@
         "\n",
         "Predict and verify the conditional statement:"
       ],
-      "id": "c37642b1"
+      "id": "f8c921c0"
     },
     {
       "cell_type": "code",
@@ -506,7 +506,7 @@
         "\n",
         "print(\"Result:\", x)"
       ],
-      "id": "9f511ecb",
+      "id": "7a2e21d6",
       "execution_count": null,
       "outputs": []
     },
@@ -537,7 +537,7 @@
         "\n",
         "Write a Celsius to Fahrenheit conversion function:"
       ],
-      "id": "dafa14f5"
+      "id": "62004405"
     },
     {
       "cell_type": "code",
@@ -553,7 +553,7 @@
         "print(\"cent_to_far(0):\", cent_to_far(0))    # Should return 32\n",
         "print(\"cent_to_far(20):\", cent_to_far(20))  # Should return 68"
       ],
-      "id": "166b4d7e",
+      "id": "d7c1eccc",
       "execution_count": null,
       "outputs": []
     },
@@ -567,7 +567,7 @@
         "\n",
         "Write a parity function to determine if a number is even or odd:"
       ],
-      "id": "61e71e91"
+      "id": "c00e9ba4"
     },
     {
       "cell_type": "code",
@@ -589,7 +589,7 @@
         "print(\"parity(10):\", parity(10))\n",
         "print(\"parity(15):\", parity(15))"
       ],
-      "id": "36da1d08",
+      "id": "8314f3ce",
       "execution_count": null,
       "outputs": []
     },
@@ -607,7 +607,7 @@
         "\n",
         "### Advanced List Operations"
       ],
-      "id": "7278d3fe"
+      "id": "aeacaa03"
     },
     {
       "cell_type": "code",
@@ -619,7 +619,7 @@
         "print(\"Last 3 elements:\", numbers[-3:])\n",
         "print(\"Every other element:\", numbers[::2])"
       ],
-      "id": "af820851",
+      "id": "f46db719",
       "execution_count": null,
       "outputs": []
     },
@@ -629,7 +629,7 @@
       "source": [
         "### Table Operations"
       ],
-      "id": "22ef5ca0"
+      "id": "53816b74"
     },
     {
       "cell_type": "code",
@@ -652,7 +652,7 @@
         "print(\"\\nStudents sorted by grade:\")\n",
         "sorted_students.show()"
       ],
-      "id": "9ec9c7b9",
+      "id": "da439de6",
       "execution_count": null,
       "outputs": []
     },
@@ -662,7 +662,7 @@
       "source": [
         "### Array Operations"
       ],
-      "id": "0da7e722"
+      "id": "d7ed8558"
     },
     {
       "cell_type": "code",
@@ -677,7 +677,7 @@
         "print(\"Squared scores:\", scores ** 2)\n",
         "print(\"Average score:\", np.mean(scores))"
       ],
-      "id": "4fb0e1d4",
+      "id": "6fec44b9",
       "execution_count": null,
       "outputs": []
     },
@@ -700,15 +700,15 @@
         "\n",
         "These concepts form the foundation for data analysis and programming in Python!"
       ],
-      "id": "5085439c"
+      "id": "82dea21c"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

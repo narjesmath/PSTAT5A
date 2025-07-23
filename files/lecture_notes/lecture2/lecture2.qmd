@@ -15,7 +15,7 @@ format:
    css: /files/lecture_notes/theme/lecture-styles.css
    slide-number: true
    number-sections: false
-jupyter: python3
+jupyter: pstat5a
    
 ---
 
@@ -801,3 +801,7 @@ Thank you for your attention!
 
 
 
+#
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+```

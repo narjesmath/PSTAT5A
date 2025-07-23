@@ -20,7 +20,7 @@
         "    footer: \"Understanding Data - Introduction to Probability © 2025 Narjes Mathlouthi\"\n",
         "    transition: slide\n",
         "    background-transition: fade\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---\n",
         "\n",
         "\n",
@@ -108,7 +108,7 @@
         "\n",
         ":::{.column}"
       ],
-      "id": "884496c2"
+      "id": "ebd07973"
     },
     {
       "cell_type": "code",
@@ -124,7 +124,7 @@
         "plt.title('Hearts vs. Face Cards')\n",
         "plt.show()"
       ],
-      "id": "a0f5eb71",
+      "id": "04d78d84",
       "execution_count": null,
       "outputs": []
     },
@@ -137,7 +137,7 @@
         "\n",
         "---"
       ],
-      "id": "9dd203b3"
+      "id": "82c20423"
     },
     {
       "cell_type": "code",
@@ -156,7 +156,7 @@
         "plt.title('Hearts vs. Face Cards')\n",
         "plt.show()"
       ],
-      "id": "09aa1d90",
+      "id": "bdf3e119",
       "execution_count": null,
       "outputs": []
     },
@@ -195,7 +195,7 @@
         "\n",
         ":::{.column} "
       ],
-      "id": "370d8914"
+      "id": "d099df7d"
     },
     {
       "cell_type": "code",
@@ -272,7 +272,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "227dd501",
+      "id": "d2f399c8",
       "execution_count": null,
       "outputs": []
     },
@@ -316,7 +316,7 @@
         "\n",
         ":::{.column}"
       ],
-      "id": "66201cfe"
+      "id": "1c208dff"
     },
     {
       "cell_type": "code",
@@ -331,7 +331,7 @@
         "plt.title('Hearts vs. Red Cards')\n",
         "plt.show()"
       ],
-      "id": "06c27e72",
+      "id": "8e5929f6",
       "execution_count": null,
       "outputs": []
     },
@@ -373,7 +373,7 @@
         "\n",
         ":::{.column}"
       ],
-      "id": "f6a32b31"
+      "id": "8c458df7"
     },
     {
       "cell_type": "code",
@@ -414,7 +414,7 @@
         "ax.axis('equal')\n",
         "plt.show()"
       ],
-      "id": "7ebadf34",
+      "id": "92432896",
       "execution_count": null,
       "outputs": []
     },
@@ -459,7 +459,7 @@
         "\n",
         "- **Independent (right):** the circles overlap, and we’ve sized the intersection so that $P(A\\cap B)=P(A)\\,P(B)$.\n"
       ],
-      "id": "d49acc11"
+      "id": "cca6607d"
     },
     {
       "cell_type": "code",
@@ -493,7 +493,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "3faa142b",
+      "id": "569f0a0b",
       "execution_count": null,
       "outputs": []
     },
@@ -546,7 +546,7 @@
         "\n",
         "**Independent events**: $P(A \\cap B) = P(A) \\times P(B)$"
       ],
-      "id": "07d88478"
+      "id": "5f08bd3d"
     },
     {
       "cell_type": "code",
@@ -574,7 +574,7 @@
         "plt.tight_layout()\n",
         "plt.show()\n"
       ],
-      "id": "1cb55b93",
+      "id": "a45026b5",
       "execution_count": null,
       "outputs": []
     },
@@ -591,7 +591,7 @@
         "Tree diagrams help visualize sequential events and calculate probabilities.\n",
         ":::"
       ],
-      "id": "21f44638"
+      "id": "552c19d7"
     },
     {
       "cell_type": "code",
@@ -654,7 +654,7 @@
         "\n",
         "plt.show()"
       ],
-      "id": "befcd5be",
+      "id": "0dbcaa48",
       "execution_count": null,
       "outputs": []
     },
@@ -668,7 +668,7 @@
         ":::{.columns}\n",
         ":::{.column}"
       ],
-      "id": "a66400c8"
+      "id": "0a3f7be6"
     },
     {
       "cell_type": "code",
@@ -773,7 +773,7 @@
         "ax1.set_title('Intersection Only (P(A∩B))', fontsize=14)\n",
         "plt.show()\n"
       ],
-      "id": "69a4d329",
+      "id": "94230b6b",
       "execution_count": null,
       "outputs": []
     },
@@ -785,7 +785,7 @@
         "\n",
         ":::{.column }"
       ],
-      "id": "f3cf700f"
+      "id": "3edc5d6a"
     },
     {
       "cell_type": "code",
@@ -799,7 +799,7 @@
         "ax2.set_title('Event B Only (P(B))', fontsize=14)\n",
         "plt.show()"
       ],
-      "id": "49b10540",
+      "id": "e582959b",
       "execution_count": null,
       "outputs": []
     },
@@ -829,7 +829,7 @@
         ":::{.column}\n",
         ":::{.fragment}"
       ],
-      "id": "efd0f43a"
+      "id": "00fe977d"
     },
     {
       "cell_type": "code",
@@ -922,7 +922,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "b59665d1",
+      "id": "7e47b049",
       "execution_count": null,
       "outputs": []
     },
@@ -951,7 +951,7 @@
         "$$P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + \\cdots + P(A|B_n)P(B_n)$$\n",
         ":::"
       ],
-      "id": "e18cfbf7"
+      "id": "60388c15"
     },
     {
       "cell_type": "code",
@@ -997,7 +997,7 @@
         "ax.set_ylim(-2, 2)\n",
         "plt.show()"
       ],
-      "id": "afa34c37",
+      "id": "c9985c54",
       "execution_count": null,
       "outputs": []
     },
@@ -1085,7 +1085,7 @@
         "\n",
         ":::{.column width=\"60%\"}"
       ],
-      "id": "e3192ede"
+      "id": "f50df800"
     },
     {
       "cell_type": "code",
@@ -1128,7 +1128,7 @@
         ")\n",
         "fig.show()"
       ],
-      "id": "5d6d4c8f",
+      "id": "639f6d5c",
       "execution_count": null,
       "outputs": []
     },
@@ -1170,7 +1170,7 @@
         "\n",
         "$$P(D|T^+) = \\frac{P(T^+|D) \\times P(D)}{P(T^+)} = \\frac{0.95 \\times 0.01}{0.1085} \\approx 0.088$$"
       ],
-      "id": "b63afd35"
+      "id": "a0970e84"
     },
     {
       "cell_type": "code",
@@ -1200,7 +1200,7 @@
         "ax.axis('equal')  # Equal aspect ensures pie is circular.\n",
         "plt.show()"
       ],
-      "id": "86312251",
+      "id": "a459b975",
       "execution_count": null,
       "outputs": []
     },
@@ -1398,17 +1398,23 @@
         "\n",
         "- [Probability Models and Axioms](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/resources/mitres_6_012s18_l01as/)\n",
         "\n",
-        "- [Interactive Set Theory & Conditional Probability](https://seeing-theory.brown.edu/compound-probability/index.html)"
+        "- [Interactive Set Theory & Conditional Probability](https://seeing-theory.brown.edu/compound-probability/index.html)\n",
+        "\n",
+        "#\n",
+        "\n",
+        "```{=html}\n",
+        "<a href=\"https://pstat5a.com/schedule.html\" class=\"main-page-btn\">🏠 Back to Main Page</a>\n",
+        "```"
       ],
-      "id": "925e7a86"
+      "id": "ee0f423f"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

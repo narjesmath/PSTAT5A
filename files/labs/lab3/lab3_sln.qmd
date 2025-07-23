@@ -15,7 +15,7 @@ format:
     execute:
     warning: false
 date: today
-jupyter: python3
+jupyter: pstat5a
 ---
 
 ::: {.column-margin}
@@ -240,56 +240,6 @@ print("So IQR ≈ 4.5 - 2 = 2.5")
 # Verify with Python calculation
 iqr_calculated = np.diff(np.percentile(y, [25, 75]))[0]
 print(f"\nActual IQR calculated by Python: {iqr_calculated}")
-
-```
-
-```{python}
-# Solution to Task 5
-
-# Import matplotlib for plotting
-import matplotlib.pyplot as plt
-%matplotlib inline
-plt.style.use('seaborn-v0_8-whitegrid')
-
-# Step 1: Create the list y
-y = [1, 2, 3, 4, 5, 4, 3, 5, 4, 1, 2]
-
-# Step 2: Create basic vertical boxplot
-plt.figure(figsize=(8, 6))
-plt.subplot(2, 2, 1)
-plt.boxplot(y)
-plt.title("Basic Vertical Boxplot")
-
-# Step 3: Create horizontal boxplot
-plt.subplot(2, 2, 2)
-plt.boxplot(y, orientation='horizontal')
-plt.title("Horizontal Boxplot")
-
-# Step 4: Add color
-plt.subplot(2, 2, 3)
-plt.boxplot(y, orientation='horizontal', patch_artist=True, 
-            boxprops=dict(facecolor="aquamarine"))
-plt.title("Colored Horizontal Boxplot")
-
-# Step 5: Final version with title
-plt.subplot(2, 2, 4)
-plt.boxplot(y, orientation='horizontal', patch_artist=True, 
-            boxprops=dict(facecolor="aquamarine"))
-plt.title("My First Python Boxplot")
-
-plt.tight_layout()
-plt.show()
-
-# Answer the IQR question
-print("\nBased on the boxplot:")
-print("Q1 (25th percentile) appears to be around 2")
-print("Q3 (75th percentile) appears to be around 4.5")
-print("So IQR ≈ 4.5 - 2 = 2.5")
-
-# Verify with Python calculation
-iqr_calculated = np.diff(np.percentile(y, [25, 75]))[0]
-print(f"\nActual IQR calculated by Python: {iqr_calculated}")
-
 
 ```
 

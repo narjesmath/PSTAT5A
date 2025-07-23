@@ -8,12 +8,12 @@ format:
     slide-level: 2
     logo: /img/logo.png
     theme: default
-    css: /files/lecture_notes/lecture10/new-style.css
+    css: new-style.css
     slide-number: true
     chalkboard: true
     preview-links: auto
     footer: "Understanding Data – Sampling and Confidence Intervals © 2025"
-jupyter: python3
+jupyter: pstat5a
 execute:
   echo: false
   warning: false
@@ -50,9 +50,7 @@ colors = {
 }
 ```
 
-```{=html}
-<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
-```
+
 
 # Welcome to Lecture 11 {.center}
 
@@ -1753,3 +1751,7 @@ if (typeof Reveal !== 'undefined') {
   Reveal.addEventListener('ready', setupToggles);
 }
 </script>
+
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+```

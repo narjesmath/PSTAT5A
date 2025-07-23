@@ -14,7 +14,8 @@ format:
     footer: "Understanding Data - Introduction to Probability © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
-jupyter: python312
+jupyter: pstat5a
+eval: false
 ---
 
 
@@ -1457,7 +1458,7 @@ Yes, they are independent!
 
 - **Mutually Exclusive (left):** the circles A and B do not overlap, so $P(A\cap B)=0$.
 
-- **Independent (right):** the circles overlap, and we’ve sized the intersection so that $P(A\cap B)=P(A)\,P(B)$.
+- **Independent (right):** the circles overlap, and we've sized the intersection so that $P(A\cap B)=P(A)\,P(B)$.
 
 
 ```{python}
@@ -1501,9 +1502,9 @@ plt.show()
 :::{.example}
 Draw a single card from a 52-card deck:
 
-- Let A={“draw an Ace”}, so P(A)=4/52.
+- Let A={"draw an Ace"}, so P(A)=4/52.
 
-- Let B={“draw a King”}, so P(B)=4/52.
+- Let B={"draw a King"}, so P(B)=4/52.
 
 **Q: What is $P(A\cap B)$ ?**
 
@@ -1516,13 +1517,13 @@ Draw a single card from a 52-card deck:
 
 :::{.fragment}
 :::{.solution}
-They’re disjoint (you can’t draw an Ace and a King), so
+They're disjoint (you can't draw an Ace and a King), so
 $P(A\cap B) = 0$.
 
 But
 $P(A)\,P(B) = \frac{4}{52}\times\frac{4}{52} = \frac{16}{2704} \neq 0$.
 
-Hence, $P(A\cap B)\neq P(A)P(B)$, so they’re not independent.
+Hence, $P(A\cap B)\neq P(A)P(B)$, so they're not independent.
 :::
 :::
 
@@ -2047,7 +2048,7 @@ fig = px.treemap(
 )
 fig.update_traces(textinfo='label+percent entry')
 fig.update_layout(
-    title='Bayes’ Theorem: Distribution by Test Result and Condition',
+    title='Bayes' Theorem: Distribution by Test Result and Condition',
     margin=dict(t=50, l=25, r=25, b=25)
 )
 fig.show()
@@ -2137,7 +2138,7 @@ $P(\text{Evidence}\mid\text{Innocent})
 \quad\text{with}\quad
 P(\text{Innocent}\mid\text{Evidence})$. 
 
-Ex: OJ Simpson Case ^[the DNA evidence in the O. J. Simpson trial are a classic example of the prosecutor’s fallacy.  Prosecutors highlighted that the chance of a random person matching the crime-scene DNA was “one in 170 million,” then implied (or let the jury infer) that Simpson therefore had a 1 in 170 million chance of being innocent.]
+Ex: OJ Simpson Case ^[the DNA evidence in the O. J. Simpson trial are a classic example of the prosecutor's fallacy.  Prosecutors highlighted that the chance of a random person matching the crime-scene DNA was "one in 170 million," then implied (or let the jury infer) that Simpson therefore had a 1 in 170 million chance of being innocent.]
 :::
 
 

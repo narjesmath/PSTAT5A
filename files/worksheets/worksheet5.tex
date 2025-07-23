@@ -1,4 +1,5 @@
 % Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
@@ -6,21 +7,23 @@
 \documentclass[
   11pt,
 ]{article}
-
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else  
-    % xetex/luatex font selection
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -38,10 +41,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\usepackage[margin=1in]{geometry}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -67,8 +66,7 @@
 \makeatother
 
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -93,6 +91,20 @@
 % Set default figure placement to htbp
 \def\fps@figure{htbp}
 \makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
 
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
@@ -151,11 +163,9 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-
 \usepackage{bookmark}
-
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={PSTAT 5A Practice Worksheet 5},
   pdfauthor={Student Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_},
@@ -176,8 +186,7 @@
 \makeatother
 \subtitle{Continuous Random Variables and Confidence Intervals}
 \author{Student Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\date{2025-07-22}
-
+\date{2025-07-23}
 \begin{document}
 \maketitle
 
@@ -194,15 +203,15 @@
 
 \begin{itemize}
 \item
-  \textbf{Quiz Review} : 10 minutes
+  \textbf{Intro \& Setup} : 10 minutes
 \item
   \textbf{Section A (Continuous Distributions):} 20 minutes
 \item
-  \textbf{Section B (Confidence Intervals):} 25 minutes
+  \textbf{Section B (Confidence Intervals):} 20 minutes
 \item
   \textbf{Optional Questions:} Do on your own
 \item
-  \textbf{Total:} 55 minutes
+  \textbf{Total:} 50 minutes
 \end{itemize}
 
 \textbf{📝 Important Instructions:}
@@ -215,7 +224,11 @@
 \item
   For confidence intervals, always interpret your results in context
 \item
-  Use z-table or t-table as appropriate
+  Use
+  \href{https://math.arizona.edu/~rsims/ma464/standardnormaltable.pdf}{z-table}
+  or
+  \href{https://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf}{t-table}
+  as appropriate
 \item
   Show your work for all calculations
 \end{itemize}
@@ -297,7 +310,7 @@ arrivals.
 \begin{itemize}
 \tightlist
 \item
-  What is the parameter λ?
+  What is the parameter \(\lambda\)?
 \item
   What is the probability that the next customer arrives within 1
   minute?
@@ -318,23 +331,24 @@ arrivals.
 
 \textbf{Problem A2: Normal Distribution Calculations}
 
-The heights of adult women in the US are normally distributed with μ =
-64 inches and σ = 2.5 inches.
+The heights of adult women in the US are normally distributed with
+\(\mu = 64\) inches and \(\sigma = 2.5\) inches.
 
 \textbf{(a)} What is the probability that a randomly selected woman is
-taller than 67 inches?
+taller than \(67\) inches?
 
-\textbf{(b)} What height represents the 25th percentile?
+\textbf{(b)} What height represents the \(25\)th percentile?
 
 \textbf{(c)} What is the probability that a randomly selected woman has
-a height between 62 and 68 inches?
+a height between \(62\) and \(68\) inches?
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, left=2mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, coltitle=black, arc=.35mm]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, left=2mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, titlerule=0mm, breakable, arc=.35mm, opacityback=0, rightrule=.15mm, leftrule=.75mm]
 
-\textbf{Remember to standardize:} Convert to Z-scores using
+\textbf{Remember to standardize:} Convert to \(Z\)-scores using
 \(Z = \frac{X - \mu}{\sigma}\)
 
-For part (b), you're looking for the value x such that P(X ≤ x) = 0.25
+For part (b), you're looking for the value \(x\) such that
+\(P(X ≤ x) = 0.25\)
 
 \end{tcolorbox}
 
@@ -343,83 +357,78 @@ For part (b), you're looking for the value x such that P(X ≤ x) = 0.25
 \section{Section B: Confidence
 Intervals}\label{section-b-confidence-intervals}
 
-\emph{⏱️ Estimated time: 25 minutes}
+\emph{⏱️ Estimated time: 20 minutes}
 
 \textbf{Problem B1: Understanding Confidence Intervals}
 
-\textbf{(a)} Explain in your own words what a 95\% confidence interval
-means.
+\textbf{(a)} Explain in your own words what a \(95\%\) confidence
+interval means.
 
-\textbf{(b)} A 90\% confidence interval for the mean weight of apples is
-(150g, 170g). What is the sample mean and margin of error?
+\textbf{(b)} A \(90\%\) confidence interval for the mean weight of
+apples is (150g, 170g). What is the sample mean and margin of error?
 
-\textbf{(c)} True or False: ``There is a 95\% probability that the
-population mean lies within our calculated 95\% confidence interval.''
-Explain your reasoning.
+\textbf{(c)} True or False: ``There is a \(95\%\) probability that the
+population mean lies within our calculated \(95\%\) confidence
+interval.'' Explain your reasoning.
 
 \textbf{Work Space:}
 
 \textbf{Problem B2: Constructing Confidence Intervals}
 
-A sample of 36 students has a mean test score of 78.5 with a standard
-deviation of 12.
+A sample of \(36\) students has a mean test score of \(78.5\) with a
+standard deviation of \(12\).
 
-\textbf{(a)} Construct a 95\% confidence interval for the population
+\textbf{(a)} Construct a \(95\%\) confidence interval for the population
 mean test score.
 
 \textbf{(b)} Interpret this interval in the context of the problem.
 
-\textbf{(c)} What would happen to the width of the interval if: - We
-increased the confidence level to 99\%? - We increased the sample size
-to 144?
+\textbf{(c)} What would happen to the width of the interval if:
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, breakable, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, titlerule=0mm, opacitybacktitle=0.6, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, toptitle=1mm, opacityback=0, left=2mm, leftrule=.75mm, bottomtitle=1mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, coltitle=black, arc=.35mm]
+\begin{itemize}
+\item
+  We increased the confidence level to \(99\%\)?
+\item
+  We increased the sample size to \(144\)?
+\end{itemize}
 
-\textbf{Decision Guide:} - Use z-distribution when σ is known OR n ≥ 30
-- Use t-distribution when σ is unknown AND n \textless{} 30 - For 95\%
-CI: z₀.₀₂₅ = 1.96
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toptitle=1mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, left=2mm, opacitybacktitle=0.6, bottomtitle=1mm, coltitle=black, titlerule=0mm, breakable, arc=.35mm, opacityback=0, rightrule=.15mm, leftrule=.75mm]
+
+\textbf{Decision Guide:}
+
+\begin{itemize}
+\item
+  Use \(z\)-distribution when \(\sigma\) is \textbf{known} OR \(n ≥ 30\)
+\item
+  Use \(t\)-distribution when \(\sigma\) is \textbf{unknown} AND
+  \(n < 30\)
+\item
+  For \(95\%\) CI: \(z_{0.025} = 1.96\)
+\end{itemize}
 
 \end{tcolorbox}
 
 \textbf{Work Space:}
 
-\textbf{Problem B3: Sample Size Determination}
-
-A market researcher wants to estimate the average amount customers spend
-per visit with a margin of error of \$5 and 95\% confidence. Previous
-studies suggest the population standard deviation is \$25.
-
-\textbf{(a)} What sample size is needed?
-
-\textbf{(b)} If the researcher wants to reduce the margin of error to
-\$3, what sample size would be needed?
-
-\textbf{Work Space:}
-
 \section{Optional Questions}\label{optional-questions}
 
-\textbf{Optional Problem 1: Conceptual Understanding}
+\textbf{Optional Problem: Conceptual Understanding}
 
 \textbf{(a)} Explain the key difference between discrete and continuous
-random variables in terms of: - The values they can take - How we
-calculate probabilities
+random variables in terms of:
 
-\textbf{(b)} Why do we use P(X = x) = 0 for any specific value x in a
-continuous distribution?
+\begin{itemize}
+\item
+  The values they can take
+\item
+  How we calculate probabilities
+\end{itemize}
+
+\textbf{(b)} Why do we use \(P(X = x) = 0\) for any specific value \(x\)
+in a continuous distribution?
 
 \textbf{(c)} What's the relationship between PDF and CDF for continuous
 distributions?
-
-\textbf{Optional Problem 2: Advanced Applications}
-
-\textbf{(a)} The lifetime of a certain battery follows an exponential
-distribution with λ = 0.1 per hour. What is the probability that the
-battery lasts more than 15 hours?
-
-\textbf{(b)} A factory claims their light bulbs have an average lifetime
-of 1000 hours. You test 25 bulbs and find a mean lifetime of 950 hours
-with a standard deviation of 100 hours. Construct a 90\% confidence
-interval and discuss whether the factory's claim seems reasonable.
 
 \textbf{Work Space:}
 
@@ -427,12 +436,25 @@ interval and discuss whether the factory's claim seems reasonable.
 
 \textbf{📋 Quick Reference:}
 
-\textbf{Common Z-values:} - 90\% CI: z₀.₀₅ = 1.645 - 95\% CI: z₀.₀₂₅ =
-1.96\\
-- 99\% CI: z₀.₀₀₅ = 2.576
+\textbf{Common Z-values:}
 
-\textbf{Common t-values (selected):} - df = 24, α = 0.05: t₀.₀₂₅ = 2.064
-- df = 35, α = 0.05: t₀.₀₂₅ = 2.030
+\begin{itemize}
+\item
+  \(90\%\) CI: \(z_{0.05} = 1.645\)
+\item
+  \(95\%\) CI: \(z_{0.025}\) = 1.96\$
+\item
+  \(99\%\) CI: \(z_{0.005}\) = 2.576\$
+\end{itemize}
+
+\textbf{Common t-values (selected):}
+
+\begin{itemize}
+\item
+  \(df = 24, \alpha = 0.05: t_{0.025} = 2.064\)
+\item
+  \(df = 35, \alpha = 0.05: t_{0.025} = 2.030\)
+\end{itemize}
 
 
 

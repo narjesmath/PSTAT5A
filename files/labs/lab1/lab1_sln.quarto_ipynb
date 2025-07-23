@@ -31,7 +31,7 @@
         "execute:\n",
         "  echo: true\n",
         "  warning: false\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---\n",
         "\n",
         "::: {.column-margin}\n",
@@ -83,7 +83,7 @@
         "\n",
         "**Code Cell:**"
       ],
-      "id": "96554086"
+      "id": "31bcbee4"
     },
     {
       "cell_type": "code",
@@ -91,7 +91,7 @@
       "source": [
         "2 + 2"
       ],
-      "id": "171ca405",
+      "id": "566905b4",
       "execution_count": null,
       "outputs": []
     },
@@ -124,7 +124,7 @@
         "\n",
         "**Code Cell with Intentional Error:**"
       ],
-      "id": "d0d4f1cc"
+      "id": "3d65df17"
     },
     {
       "cell_type": "code",
@@ -133,7 +133,7 @@
         "#| eval: false\n",
         "2 plus 2"
       ],
-      "id": "d6553c39",
+      "id": "33d34f52",
       "execution_count": null,
       "outputs": []
     },
@@ -161,7 +161,7 @@
         "\n",
         "**Corrected Version:**"
       ],
-      "id": "199d8cb5"
+      "id": "a32187db"
     },
     {
       "cell_type": "code",
@@ -169,7 +169,7 @@
       "source": [
         "2 + 2  # This works correctly"
       ],
-      "id": "a5f955f3",
+      "id": "b595edce",
       "execution_count": null,
       "outputs": []
     },
@@ -191,7 +191,7 @@
         "\n",
         "**Python Code:**"
       ],
-      "id": "cdf664a3"
+      "id": "ae2176ba"
     },
     {
       "cell_type": "code",
@@ -199,7 +199,7 @@
       "source": [
         "(2 + 3) / (4 + 5**6)"
       ],
-      "id": "5fa1ed2c",
+      "id": "f2863509",
       "execution_count": null,
       "outputs": []
     },
@@ -209,7 +209,7 @@
       "source": [
         "**Step by Step:**"
       ],
-      "id": "cc8f87f9"
+      "id": "57278869"
     },
     {
       "cell_type": "code",
@@ -224,7 +224,7 @@
         "result = numerator / denominator\n",
         "print(f\"Final result: {result}\")"
       ],
-      "id": "85ee6917",
+      "id": "477b6895",
       "execution_count": null,
       "outputs": []
     },
@@ -237,7 +237,7 @@
         "\n",
         "**Python Code:**"
       ],
-      "id": "73b7ef9b"
+      "id": "aa1ea32a"
     },
     {
       "cell_type": "code",
@@ -245,7 +245,7 @@
       "source": [
         "(1 - 3 * 4**5)**6"
       ],
-      "id": "36502ec1",
+      "id": "5f7d11ab",
       "execution_count": null,
       "outputs": []
     },
@@ -255,7 +255,7 @@
       "source": [
         "**Step by Step:**"
       ],
-      "id": "90c0dc7a"
+      "id": "0df25bee"
     },
     {
       "cell_type": "code",
@@ -273,7 +273,7 @@
         "final_result = subtraction**6\n",
         "print(f\"(1 - 3 * 4^5)^6 = {final_result}\")"
       ],
-      "id": "39d78d5a",
+      "id": "24880481",
       "execution_count": null,
       "outputs": []
     },
@@ -292,7 +292,7 @@
         "\n",
         "**Step 1: Code that produces error**"
       ],
-      "id": "d4e43864"
+      "id": "18b0d329"
     },
     {
       "cell_type": "code",
@@ -301,7 +301,7 @@
         "#| eval: false\n",
         "sin(1)"
       ],
-      "id": "ca9d773a",
+      "id": "a1f598a0",
       "execution_count": null,
       "outputs": []
     },
@@ -318,7 +318,7 @@
         "\n",
         "**Step 2: Import module and retry**"
       ],
-      "id": "cc5ba4ca"
+      "id": "e31e88f0"
     },
     {
       "cell_type": "code",
@@ -327,7 +327,7 @@
         "from math import *\n",
         "sin(1)"
       ],
-      "id": "378f0bbf",
+      "id": "80bd2849",
       "execution_count": null,
       "outputs": []
     },
@@ -337,7 +337,7 @@
       "source": [
         "**Alternative Solutions:**"
       ],
-      "id": "dec2e234"
+      "id": "c902e896"
     },
     {
       "cell_type": "code",
@@ -355,7 +355,7 @@
         "import math as m\n",
         "print(m.sin(1))"
       ],
-      "id": "6a22cb66",
+      "id": "55b85b72",
       "execution_count": null,
       "outputs": []
     },
@@ -375,7 +375,7 @@
         "\n",
         "**Step 1: Variable assignment**"
       ],
-      "id": "747ba206"
+      "id": "524522ba"
     },
     {
       "cell_type": "code",
@@ -383,7 +383,7 @@
       "source": [
         "my_variable = 5"
       ],
-      "id": "92e2f200",
+      "id": "2359222c",
       "execution_count": null,
       "outputs": []
     },
@@ -393,7 +393,7 @@
       "source": [
         "**Step 2: Wrong capitalization**"
       ],
-      "id": "7fff63b4"
+      "id": "9a0b26d2"
     },
     {
       "cell_type": "code",
@@ -403,7 +403,7 @@
         "\n",
         "print(My_variable)"
       ],
-      "id": "eb8cb4ff",
+      "id": "ae72f4d1",
       "execution_count": null,
       "outputs": []
     },
@@ -420,7 +420,7 @@
         "\n",
         "**Step 3: Correct capitalization**"
       ],
-      "id": "55034700"
+      "id": "2b21f38c"
     },
     {
       "cell_type": "code",
@@ -428,7 +428,7 @@
       "source": [
         "print(my_variable)"
       ],
-      "id": "4c3533c7",
+      "id": "fc4230f4",
       "execution_count": null,
       "outputs": []
     },
@@ -438,7 +438,7 @@
       "source": [
         "**Additional Examples:**"
       ],
-      "id": "acb088dd"
+      "id": "6cd9a440"
     },
     {
       "cell_type": "code",
@@ -455,7 +455,7 @@
         "print(f\"MY_VARIABLE = {MY_VARIABLE}\")\n",
         "print(f\"my_Variable = {my_Variable}\")"
       ],
-      "id": "17aeb454",
+      "id": "5e4a21f2",
       "execution_count": null,
       "outputs": []
     },
@@ -474,7 +474,7 @@
         "\n",
         "**Examples of well-commented code from previous tasks:**"
       ],
-      "id": "d7c93dde"
+      "id": "36a039ad"
     },
     {
       "cell_type": "code",
@@ -508,7 +508,7 @@
         "for longer explanations or documentation.\n",
         "\"\"\""
       ],
-      "id": "5df5567e",
+      "id": "86635371",
       "execution_count": null,
       "outputs": []
     },
@@ -536,7 +536,7 @@
         "\n",
         "**Code and Expected Outputs:**"
       ],
-      "id": "0e01132d"
+      "id": "d882ab0e"
     },
     {
       "cell_type": "code",
@@ -546,7 +546,7 @@
         "print(type(1.1))         # Output: <class 'float'>\n",
         "print(type(\"hello\"))     # Output: <class 'str'>"
       ],
-      "id": "2eb762f1",
+      "id": "11ef7abf",
       "execution_count": null,
       "outputs": []
     },
@@ -556,7 +556,7 @@
       "source": [
         "**Additional Examples:**"
       ],
-      "id": "267cd91e"
+      "id": "d28cb6b8"
     },
     {
       "cell_type": "code",
@@ -573,7 +573,7 @@
         "print(\"Tuple:\", type((1, 2, 3)))\n",
         "print(\"Dictionary:\", type({\"key\": \"value\"}))"
       ],
-      "id": "b76cef17",
+      "id": "16ae2a12",
       "execution_count": null,
       "outputs": []
     },
@@ -598,7 +598,7 @@
         "\n",
         "**Step 2: Initial variable assignments**"
       ],
-      "id": "fecf2576"
+      "id": "7bd2bae7"
     },
     {
       "cell_type": "code",
@@ -608,7 +608,7 @@
         "num_sections = 4\n",
         "section_capacity = 25"
       ],
-      "id": "a1c0229c",
+      "id": "0b2542f9",
       "execution_count": null,
       "outputs": []
     },
@@ -618,7 +618,7 @@
       "source": [
         "**Step 3: Update num_sections (correct approach)**"
       ],
-      "id": "c5cd45c2"
+      "id": "aa776f52"
     },
     {
       "cell_type": "code",
@@ -629,7 +629,7 @@
         "# Alternative: num_sections += 1\n",
         "# Alternative: num_sections = 4 + 1"
       ],
-      "id": "cda5c192",
+      "id": "93add97d",
       "execution_count": null,
       "outputs": []
     },
@@ -639,7 +639,7 @@
       "source": [
         "**Step 4: Predict and test expressions**"
       ],
-      "id": "1f4ccf74"
+      "id": "3905e5f7"
     },
     {
       "cell_type": "code",
@@ -649,7 +649,7 @@
         "print(type(num_sections))     # Expected: <class 'int'>\n",
         "print(num_sections * section_capacity) # Expected: 125"
       ],
-      "id": "61e952b8",
+      "id": "b48fcc12",
       "execution_count": null,
       "outputs": []
     },
@@ -659,7 +659,7 @@
       "source": [
         "**Step 5: Calculate course capacity**"
       ],
-      "id": "e486f134"
+      "id": "353bade6"
     },
     {
       "cell_type": "code",
@@ -671,7 +671,7 @@
         "print(f\"Capacity per section: {section_capacity}\")\n",
         "print(f\"Total course capacity: {course_capacity}\")"
       ],
-      "id": "8db2fe4d",
+      "id": "1a38d0fd",
       "execution_count": null,
       "outputs": []
     },
@@ -681,7 +681,7 @@
       "source": [
         "**Complete Solution with Comments:**"
       ],
-      "id": "62149734"
+      "id": "470c10a6"
     },
     {
       "cell_type": "code",
@@ -709,7 +709,7 @@
         "print(f\"Capacity per section: {section_capacity}\")\n",
         "print(f\"Total course capacity: {course_capacity} students\")"
       ],
-      "id": "a40068ac",
+      "id": "3e0158eb",
       "execution_count": null,
       "outputs": []
     },
@@ -796,15 +796,15 @@
         "\n",
         "**Great work completing Lab 1!** You now have the foundation needed for statistical programming in Python."
       ],
-      "id": "60bb0739"
+      "id": "b314217a"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

@@ -4,19 +4,19 @@ subtitle: "Lecture 10 - From Samples to Populations: Understanding Uncertainty"
 author: "Narjes Mathlouthi"
 date: 07/21/2025
 format:
-    revealjs:
-        logo: /img/logo.png
-        theme: default
-        css: new-style.css
-        slide-number: true
-        chalkboard: true
-        preview-links: auto
-        footer: "Understanding Data – Sampling Principles and Strategies © 2025"
-        transition: slide
-        background-transition: fade
-        incremental: false
-        smaller: true
-jupyter: python3
+  revealjs:
+      logo: /img/logo.png
+      theme: default
+      css: new-style.css
+      slide-number: true
+      chalkboard: true
+      preview-links: auto
+      footer: "Understanding Data – Sampling Principles and Strategies © 2025"
+      transition: slide
+      background-transition: fade
+      incremental: false
+      smaller: true
+jupyter: pstat5a
 execute:
   echo: false
   warning: false
@@ -1850,7 +1850,6 @@ An online survey about internet usage gets 10,000 responses. What type of bias m
 :::
 ::::
 
----
 
 # Thank You! 🎉
 
@@ -1858,4 +1857,8 @@ An online survey about internet usage gets 10,000 responses. What type of bias m
 
 
 
----
+
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+```
+

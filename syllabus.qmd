@@ -5,7 +5,7 @@ format:
   html:
     toc: true
     toc-location: left
-    theme: cosmo
+    theme: default
     css: /theme/syllabus-styles.css
     page-layout: full
     grid:

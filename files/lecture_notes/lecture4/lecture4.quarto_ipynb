@@ -20,7 +20,7 @@
         "    footer: \"Understanding Data - Introduction to Probability © 2025 Narjes Mathlouthi\"\n",
         "    transition: slide\n",
         "    background-transition: fade\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---\n",
         "\n",
         "## Today's Learning Objectives {#sec-objectives .smaller}\n",
@@ -139,7 +139,7 @@
         "The **sample space** (denoted $S$ or $\\Omega$) is the **set** of all possible outcomes of a random experiment\n",
         ":::"
       ],
-      "id": "0c5b3d64"
+      "id": "fe8fd365"
     },
     {
       "cell_type": "code",
@@ -170,7 +170,7 @@
         "plt.title('Sample Space (Ω)', fontsize=16, pad=20)\n",
         "plt.show()\n"
       ],
-      "id": "c3cba411",
+      "id": "310bf004",
       "execution_count": null,
       "outputs": []
     },
@@ -246,7 +246,7 @@
         "- **Compound event**: Contains multiple outcomes (Ex: $B = \\{2, 4, 6\\}$ (rolling an even number))\n",
         ":::\n"
       ],
-      "id": "18d6e0e4"
+      "id": "eec24b8a"
     },
     {
       "cell_type": "code",
@@ -306,7 +306,7 @@
         "plt.title('Sample Space and Events', fontsize=16, pad=20)\n",
         "plt.show()\n"
       ],
-      "id": "58f22cf9",
+      "id": "f9383683",
       "execution_count": null,
       "outputs": []
     },
@@ -355,7 +355,7 @@
         "\n",
         "::: {.column width=\"40%\"}"
       ],
-      "id": "99ba1089"
+      "id": "8b4b3041"
     },
     {
       "cell_type": "code",
@@ -405,7 +405,7 @@
         "plt.title('Sample Space $S$ with Events $A$ and $B$')\n",
         "plt.show()"
       ],
-      "id": "7b649d70",
+      "id": "ecbf6b97",
       "execution_count": null,
       "outputs": []
     },
@@ -441,7 +441,7 @@
         "\n",
         "::: {.column width=\"40%\"}"
       ],
-      "id": "1b7d1a02"
+      "id": "71b1f627"
     },
     {
       "cell_type": "code",
@@ -505,7 +505,7 @@
         "plt.title('A Single Set $A$ within Sample Space $S$')\n",
         "plt.show()"
       ],
-      "id": "3f0fd5ab",
+      "id": "b2452d1e",
       "execution_count": null,
       "outputs": []
     },
@@ -542,7 +542,7 @@
         "\n",
         "::: {.column width=\"30%\"}"
       ],
-      "id": "dc231ed9"
+      "id": "5aaf73cb"
     },
     {
       "cell_type": "code",
@@ -609,7 +609,7 @@
         "\n",
         "plt.show()"
       ],
-      "id": "cfd992b2",
+      "id": "5ba17de8",
       "execution_count": null,
       "outputs": []
     },
@@ -647,7 +647,7 @@
         "\n",
         "::: {.column width=\"40%\"}"
       ],
-      "id": "a7b40253"
+      "id": "cdcd8cb5"
     },
     {
       "cell_type": "code",
@@ -717,7 +717,7 @@
         "plt.title('Intersection: $A \\\\cap B$ (A AND B)')\n",
         "plt.show()"
       ],
-      "id": "8a42f5ea",
+      "id": "89d97621",
       "execution_count": null,
       "outputs": []
     },
@@ -759,7 +759,7 @@
         "\n",
         "::: {.column width=\"40%\"}"
       ],
-      "id": "9cd56835"
+      "id": "9d01b3b9"
     },
     {
       "cell_type": "code",
@@ -820,7 +820,7 @@
         "plt.title('Complement: $A^c$ (NOT A)')\n",
         "plt.show()"
       ],
-      "id": "c2486b67",
+      "id": "2fa9dfaf",
       "execution_count": null,
       "outputs": []
     },
@@ -950,7 +950,7 @@
         "  \n",
         "- $B = \\{4, 5, 6\\}$ (4 or higher)"
       ],
-      "id": "431ac5c9"
+      "id": "cf8edc30"
     },
     {
       "cell_type": "code",
@@ -1005,7 +1005,7 @@
         "plt.title('Odd Numbers vs. 4 or Higher')\n",
         "plt.show()"
       ],
-      "id": "b8f5d181",
+      "id": "fe32f114",
       "execution_count": null,
       "outputs": []
     },
@@ -1051,7 +1051,7 @@
         "\n",
         "$$A \\cap B = \\emptyset$$"
       ],
-      "id": "232c4e26"
+      "id": "45c2afdc"
     },
     {
       "cell_type": "code",
@@ -1110,7 +1110,7 @@
         "plt.title('Mutually Exclusive: Odd vs. Even')\n",
         "plt.show()"
       ],
-      "id": "2467cfb3",
+      "id": "a30487da",
       "execution_count": null,
       "outputs": []
     },
@@ -1212,17 +1212,23 @@
         "\n",
         "- [Probability Models and Axioms](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/resources/mitres_6_012s18_l01as/)\n",
         "\n",
-        "- [Probability Animations](https://seeing-theory.brown.edu/basic-probability/index.html)"
+        "- [Probability Animations](https://seeing-theory.brown.edu/basic-probability/index.html)\n",
+        "\n",
+        "#\n",
+        "\n",
+        "```{=html}\n",
+        "<a href=\"https://pstat5a.com/schedule.html\" class=\"main-page-btn\">🏠 Back to Main Page</a>\n",
+        "```"
       ],
-      "id": "07f4e946"
+      "id": "dc99071c"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

@@ -3,7 +3,7 @@ title: "PSTAT 5A: Sampling and Confidence Intervals"
 subtitle: Lecture 9
 author: Narjes Mathlouthi
 date: today
-jupyter: python3
+jupyter: pstat5a
 format:
   revealjs:
     logo: /img/logo.png

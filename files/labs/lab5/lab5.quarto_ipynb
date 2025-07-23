@@ -19,7 +19,7 @@
         "    theme: cosmo\n",
         "    css: /files/lecture_notes/theme/lecture-styles.css\n",
         "date: today\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "execute: \n",
         "  eval: false\n",
         "---\n",
@@ -60,7 +60,7 @@
         "\n",
         ":::\n"
       ],
-      "id": "8271b483"
+      "id": "014aa215"
     },
     {
       "cell_type": "code",
@@ -89,7 +89,7 @@
         "\n",
         "print(\"✅ All tools loaded successfully!\") "
       ],
-      "id": "295f6d2e",
+      "id": "ff798d68",
       "execution_count": null,
       "outputs": []
     },
@@ -111,7 +111,7 @@
         "\n",
         "Let's start by understanding what makes a variable continuous:"
       ],
-      "id": "44d9d995"
+      "id": "bc9ad3ba"
     },
     {
       "cell_type": "code",
@@ -129,7 +129,7 @@
         "print(\"• Temperature: 72.1°F, 72.15°F, 72.152°F, ...\")\n",
         "print(\"• Time: 2.5 seconds, 2.51 seconds, ...\")"
       ],
-      "id": "d5405fdd",
+      "id": "4d920549",
       "execution_count": null,
       "outputs": []
     },
@@ -203,7 +203,7 @@
         "\n",
         ":::\n"
       ],
-      "id": "362f533a"
+      "id": "f1079146"
     },
     {
       "cell_type": "code",
@@ -253,7 +253,7 @@
         "\n",
         "plt.tight_layout()                         # adjust spacing so titles/labels don’t overlap"
       ],
-      "id": "269f2a5c",
+      "id": "f9668abe",
       "execution_count": null,
       "outputs": []
     },
@@ -305,7 +305,7 @@
         "\n",
         "where $\\phi(z)$ is the standard normal PDF.\n"
       ],
-      "id": "4efe4d01"
+      "id": "d13ab066"
     },
     {
       "cell_type": "code",
@@ -350,7 +350,7 @@
         "plt.legend()                      # display legend\n",
         "plt.grid(True, alpha=0.3)         # add light grid lines"
       ],
-      "id": "0efde34f",
+      "id": "97975fb6",
       "execution_count": null,
       "outputs": []
     },
@@ -376,7 +376,7 @@
         "P(a < X < b) = F(b) - F(a)\n",
         "$$\n"
       ],
-      "id": "c904a301"
+      "id": "80dfc99a"
     },
     {
       "cell_type": "code",
@@ -409,7 +409,7 @@
         "plt.grid(True, alpha=0.3)\n",
         "plt.show()"
       ],
-      "id": "f53b341e",
+      "id": "982ec561",
       "execution_count": null,
       "outputs": []
     },
@@ -430,7 +430,7 @@
         "\n",
         "**Step 1:** Create this distribution"
       ],
-      "id": "6cd20b77"
+      "id": "562e6d96"
     },
     {
       "cell_type": "code",
@@ -446,7 +446,7 @@
         "print(f\"Mean height: {heights.mean()} inches\")\n",
         "print(f\"Standard deviation: {heights.std()} inches\")"
       ],
-      "id": "d8c189a2",
+      "id": "2c35c139",
       "execution_count": null,
       "outputs": []
     },
@@ -456,7 +456,7 @@
       "source": [
         "**Step 2:** Calculate some probabilities"
       ],
-      "id": "ac425085"
+      "id": "37f1c615"
     },
     {
       "cell_type": "code",
@@ -475,7 +475,7 @@
         "height_90th = heights.ppf(___)  # ppf = \"percent point function\" (inverse of cdf)\n",
         "print(f\"90th percentile height: {height_90th:.2f} inches\")"
       ],
-      "id": "898d899c",
+      "id": "2b0f77b4",
       "execution_count": null,
       "outputs": []
     },
@@ -485,7 +485,7 @@
       "source": [
         "**Step 3:** Make a visualization"
       ],
-      "id": "88950cf5"
+      "id": "8b99f3c8"
     },
     {
       "cell_type": "code",
@@ -508,7 +508,7 @@
         "plt.grid(True, alpha=0.3)\n",
         "plt.show()"
       ],
-      "id": "40ad300d",
+      "id": "8fa1862c",
       "execution_count": null,
       "outputs": []
     },
@@ -528,7 +528,7 @@
         "\n",
         "In practice, this gives a quick way to gauge how “typical” a value is: if a point lies beyond $\\pm 2\\sigma$, it’s already in the outer 5% and might be considered unusual or an outlier."
       ],
-      "id": "5baf4b5a"
+      "id": "83215a8b"
     },
     {
       "cell_type": "code",
@@ -584,7 +584,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "4ddd2f2c",
+      "id": "01d140b2",
       "execution_count": null,
       "outputs": []
     },
@@ -612,7 +612,7 @@
         "\n",
         "Let's visualize this:\n"
       ],
-      "id": "b4da0b66"
+      "id": "b9da439c"
     },
     {
       "cell_type": "code",
@@ -644,7 +644,7 @@
         "prob_middle = uniform_dist.cdf(7) - uniform_dist.cdf(3)\n",
         "print(f\"P(3 < X < 7) = {prob_middle:.2f}\")"
       ],
-      "id": "e5a56219",
+      "id": "b7e8a6d0",
       "execution_count": null,
       "outputs": []
     },
@@ -673,7 +673,7 @@
         "\n",
         "Here is a quick example visualization of the exponential distribution :"
       ],
-      "id": "6209aabd"
+      "id": "bd412b6f"
     },
     {
       "cell_type": "code",
@@ -706,7 +706,7 @@
         "prob_short_wait = exponential_dist.cdf(2)\n",
         "print(f\"P(wait time < 2) = {prob_short_wait:.4f}\")"
       ],
-      "id": "78dd3840",
+      "id": "b4dc39d9",
       "execution_count": null,
       "outputs": []
     },
@@ -724,7 +724,7 @@
         "The time between buses follows an exponential distribution with an average of 15 minutes between buses.\n",
         "Copy the code and try it on your own!"
       ],
-      "id": "5474ab43"
+      "id": "cfbe6b02"
     },
     {
       "cell_type": "code",
@@ -749,7 +749,7 @@
         "median_wait = bus_times.ppf(___)  # Fill in: 0.5\n",
         "print(f\"Median wait time: {median_wait:.2f} minutes\")"
       ],
-      "id": "0de74879",
+      "id": "1e05444b",
       "execution_count": null,
       "outputs": []
     },
@@ -779,7 +779,7 @@
         "5. We repeat this process for smaller and larger sample sizes to see how sample size affects the shape (normality) and spread (standard error) of the sample means.\n",
         ":::"
       ],
-      "id": "fc153421"
+      "id": "e708f27b"
     },
     {
       "cell_type": "code",
@@ -862,7 +862,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "6bc775aa",
+      "id": "e5a30cd0",
       "execution_count": null,
       "outputs": []
     },
@@ -894,7 +894,7 @@
         "Let's verify the Central Limit Theorem with a different population!\n",
         "Copy the code and try it on your own!"
       ],
-      "id": "f64c5398"
+      "id": "9c8e28bb"
     },
     {
       "cell_type": "code",
@@ -941,7 +941,7 @@
         "plt.grid(True, alpha=0.3)\n",
         "plt.show()"
       ],
-      "id": "0a80a140",
+      "id": "020eac25",
       "execution_count": null,
       "outputs": []
     },
@@ -967,7 +967,7 @@
         "\n",
         "## The Solution: Confidence Intervals"
       ],
-      "id": "eb1a9dfa"
+      "id": "ec0ee1e6"
     },
     {
       "cell_type": "code",
@@ -996,7 +996,7 @@
         "print(\"What we DON'T know (but want to estimate):\")\n",
         "print(f\"True population mean: {true_population_mean} inches\")"
       ],
-      "id": "17091a3e",
+      "id": "91fb7117",
       "execution_count": null,
       "outputs": []
     },
@@ -1006,7 +1006,7 @@
       "source": [
         "## Building a 95% Confidence Interval"
       ],
-      "id": "43a742d0"
+      "id": "7347c08a"
     },
     {
       "cell_type": "code",
@@ -1049,7 +1049,7 @@
         "else:\n",
         "    print(f\"❌ Oops! Our interval missed the true mean ({true_population_mean}).\")"
       ],
-      "id": "3223208c",
+      "id": "4d47dece",
       "execution_count": null,
       "outputs": []
     },
@@ -1059,7 +1059,7 @@
       "source": [
         "## Visualizing Confidence Intervals"
       ],
-      "id": "aa108c30"
+      "id": "75d5c1d7"
     },
     {
       "cell_type": "code",
@@ -1130,7 +1130,7 @@
         "print(f\"Capture rate: {sum(captures)}/{n_intervals} = {sum(captures)/n_intervals*100:.1f}%\")\n",
         "print(\"This should be close to 95%!\")"
       ],
-      "id": "54125b1e",
+      "id": "e9dbf452",
       "execution_count": null,
       "outputs": []
     },
@@ -1149,7 +1149,7 @@
         "\n",
         "Copy the below code and try it on your own!"
       ],
-      "id": "d3e01ecb"
+      "id": "591b226c"
     },
     {
       "cell_type": "code",
@@ -1196,7 +1196,7 @@
         "print(f\"We are 90% confident that the true average homework time\")\n",
         "print(f\"for all students is between {ci_lower:.2f} and {ci_upper:.2f} hours per week.\")"
       ],
-      "id": "f8566479",
+      "id": "58ed1c44",
       "execution_count": null,
       "outputs": []
     },
@@ -1214,7 +1214,7 @@
         "\n",
         "## Different Confidence Levels"
       ],
-      "id": "0f8a0a0f"
+      "id": "3a3db68a"
     },
     {
       "cell_type": "code",
@@ -1242,7 +1242,7 @@
         "print(\"Notice: Higher confidence = Wider interval!\")\n",
         "print(\"Trade-off: Confidence vs. Precision\")"
       ],
-      "id": "6fe4ab17",
+      "id": "9120612c",
       "execution_count": null,
       "outputs": []
     },
@@ -1286,7 +1286,7 @@
         "   \n",
         "5. Bernoulli"
       ],
-      "id": "ae136f0a"
+      "id": "6ca03ab9"
     },
     {
       "cell_type": "code",
@@ -1303,7 +1303,7 @@
         "\n",
         "# Check your reasoning - why did you choose each one?"
       ],
-      "id": "53710714",
+      "id": "9a3103a5",
       "execution_count": null,
       "outputs": []
     },
@@ -1321,7 +1321,7 @@
         "\n",
         "Let's see how sample means get closer to the population mean as we increase sample size:"
       ],
-      "id": "06bb9a49"
+      "id": "6ebd3c19"
     },
     {
       "cell_type": "code",
@@ -1361,7 +1361,7 @@
         "\n",
         "print(f\"\\nAs sample size increases, sample means get closer to {true_mean}!\")"
       ],
-      "id": "cfde8538",
+      "id": "54b9dc25",
       "execution_count": null,
       "outputs": []
     },
@@ -1461,15 +1461,15 @@
         "\n",
         ":::"
       ],
-      "id": "36ef1db5"
+      "id": "5fd99d94"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

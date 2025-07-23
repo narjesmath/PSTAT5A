@@ -20,10 +20,10 @@
         "    footer: \"Understanding Data - Counting © 2025 Narjes Mathlouthi\"\n",
         "    transition: slide\n",
         "    background-transition: fade\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---"
       ],
-      "id": "1e5812eb"
+      "id": "9b047b32"
     },
     {
       "cell_type": "code",
@@ -37,7 +37,7 @@
         "import plotly.graph_objects as go\n",
         "import math"
       ],
-      "id": "19968b0c",
+      "id": "d70e093c",
       "execution_count": null,
       "outputs": []
     },
@@ -93,7 +93,7 @@
         "- **Password security**: Character combinations and brute force protection\n",
         ":::\n",
         "\n",
-        "![](/files/lecture_notes/lecture7/img/counting_icon.png){fig-align=\"left\" width=\"10%\"}\n",
+        "![](/files/lecture_notes/lecture6/img/counting_icon.png){fig-align=\"left\" width=\"10%\"}\n",
         ":::\n",
         "\n",
         ":::\n",
@@ -192,7 +192,7 @@
         "  \n",
         "- **Sixth position:** 10 digits\n",
         "\n",
-        "![](/files/lecture_notes/lecture7/img/count.png){width=\"70px\"}\n",
+        "![](/files/lecture_notes/lecture6/img/count.png){width=\"70px\"}\n",
         ":::\n",
         ":::\n",
         "\n",
@@ -237,7 +237,7 @@
         "\n",
         "**How many possible passwords are there?**\n",
         "\n",
-        "![](/files/lecture_notes/lecture7/img/login.png){width=\"10%\" fig-align=\"right\"}\n",
+        "![](/files/lecture_notes/lecture6/img/login.png){width=\"10%\" fig-align=\"right\"}\n",
         ":::\n",
         "\n",
         "::: {.solution .fragment}\n",
@@ -275,7 +275,7 @@
         "\n",
         "::: {.callout-example title=\"Permutation Animation: Placing Objects in Boxes\"}"
       ],
-      "id": "750314a9"
+      "id": "d9a6746f"
     },
     {
       "cell_type": "code",
@@ -327,7 +327,7 @@
         "for i, perm in enumerate(perms):\n",
         "    print(f\"{i+1}. {''.join(perm)}\")"
       ],
-      "id": "64469c38",
+      "id": "b463e0a8",
       "execution_count": null,
       "outputs": []
     },
@@ -406,7 +406,7 @@
         "\n",
         "::: {.column width=\"50%\"}"
       ],
-      "id": "2f04a791"
+      "id": "00c87ab9"
     },
     {
       "cell_type": "code",
@@ -455,7 +455,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "b7198c48",
+      "id": "69c41f0d",
       "execution_count": null,
       "outputs": []
     },
@@ -658,17 +658,22 @@
         "\n",
         "**Email**: nmathlouthi@ucsb.edu\n",
         "\n",
-        "**Next Class**: Counting continued \n"
+        "**Next Class**: Counting continued \n",
+        "\n",
+        "#\n",
+        "```{=html}\n",
+        "<a href=\"https://pstat5a.com/schedule.html\" class=\"main-page-btn\">🏠 Back to Main Page</a>\n",
+        "```"
       ],
-      "id": "c5ac42f4"
+      "id": "fb9ec462"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

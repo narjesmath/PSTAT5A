@@ -170,4 +170,8 @@ Access the lab environment at: [https://pstat5a.lsit.ucsb.edu](https://pstat5a.l
 
 Ready to dive into Descriptive Statistics?
 
----
+#
+
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+```

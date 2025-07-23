@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.29)  7 JUL 2025 14:46
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.29)  23 JUL 2025 14:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -22,6 +22,51 @@ File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen146
+) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+(/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 274.
+(/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2024/09/29 v3.02 Predefined colors according to SVG 1.1 (UK)
+) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
+File: x11nam.def 2024/09/29 v3.02 Predefined colors according to Unix/X11 (UK)
+) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+(/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count267
+\Gm@cntv=\count268
+\c@Gm@tempcnt=\count269
+\Gm@bindingoffset=\dimen147
+\Gm@wd@mp=\dimen148
+\Gm@odd@mp=\dimen149
+\Gm@even@mp=\dimen150
+\Gm@layoutwidth=\dimen151
+\Gm@layoutheight=\dimen152
+\Gm@layouthoffset=\dimen153
+\Gm@layoutvoffset=\dimen154
+\Gm@dimlist=\toks18
 ) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/06/16 v2.17y AMS math features
 \@mathmargin=\skip51
@@ -30,22 +75,22 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2024/11/17 v2.01 AMS text
 (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
-\ex@=\dimen147
+\@emptytoks=\toks19
+\ex@=\dimen155
 )) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen148
+\pmbraise@=\dimen156
 ) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count267
+\inf@bad=\count270
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count268
-\leftroot@=\count269
+\uproot@=\count271
+\leftroot@=\count272
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count270
-\DOTSCASE@=\count271
+\classnum@=\count273
+\DOTSCASE@=\count274
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -55,34 +100,34 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen149
+\big@size=\dimen157
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count272
+\macc@depth=\count275
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count273
+\c@MaxMatrixCols=\count276
 \dotsspace@=\muskip17
-\c@parentequation=\count274
-\dspbrk@lvl=\count275
-\tag@help=\toks18
-\row@=\count276
-\column@=\count277
-\maxfields@=\count278
-\andhelp@=\toks19
-\eqnshift@=\dimen150
-\alignsep@=\dimen151
-\tagshift@=\dimen152
-\tagwidth@=\dimen153
-\totwidth@=\dimen154
-\lineht@=\dimen155
-\@envbody=\toks20
+\c@parentequation=\count277
+\dspbrk@lvl=\count278
+\tag@help=\toks20
+\row@=\count279
+\column@=\count280
+\maxfields@=\count281
+\andhelp@=\toks21
+\eqnshift@=\dimen158
+\alignsep@=\dimen159
+\tagshift@=\dimen160
+\tagwidth@=\dimen161
+\totwidth@=\dimen162
+\lineht@=\dimen163
+\@envbody=\toks22
 \multlinegap=\skip52
 \multlinetaggap=\skip53
-\mathdisplay@stack=\toks21
+\mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2949.
 LaTeX Info: Redefining \] on input line 2950.
 ) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -94,17 +139,15 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
-) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-06-09 L3 programming layer (loader) 
+)) (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/narjesmathlouthi/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2025-07-19 L3 programming layer (loader) 
 
 ! LaTeX Error: Mismatched LaTeX support files detected.
 (LaTeX)        Loading 'expl3.sty' aborted!
 (LaTeX)        
 (LaTeX)        The L3 programming layer in the LaTeX format
 (LaTeX)        is dated 2025-03-26, but in your TeX tree the files require
-(LaTeX)        at least 2025-06-09.
+(LaTeX)        at least 2025-07-19.
 
 For immediate help type H <return>.
  ...                                              
@@ -124,11 +167,11 @@ later errors. Please ensure that your LaTeX format is correctly regenerated.
 
  
 Here is how much of TeX's memory you used:
- 1556 strings out of 472283
- 20429 string characters out of 5528548
- 415770 words of memory out of 5000000
- 28105 multiletter control sequences out of 15000+600000
+ 3208 strings out of 472283
+ 46211 string characters out of 5528548
+ 440284 words of memory out of 5000000
+ 29722 multiletter control sequences out of 15000+600000
  626833 words of font info for 41 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,0n,72p,222b,42s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,0n,72p,231b,42s stack positions out of 10000i,1000n,20000p,200000b,200000s
 No pages of output.

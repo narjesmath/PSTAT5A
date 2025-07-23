@@ -13,7 +13,7 @@ format:
     theme: cosmo
     css: /files/lecture_notes/theme/lecture-styles.css
 date: today
-jupyter: python3
+jupyter: pstat5a
 ---
 
 ::: {.column-margin}

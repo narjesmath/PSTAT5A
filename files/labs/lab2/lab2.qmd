@@ -15,7 +15,7 @@ format:
         echo: true
         eval: true
 date: today
-jupyter: python3
+jupyter: pstat5a
 ---
 ::: {.column-margin}
 ![](/img/logo.png){width=100px}

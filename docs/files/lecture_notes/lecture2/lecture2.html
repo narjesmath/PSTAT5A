@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Narjes Mathlouthi">
   <meta name="dcterms.date" content="2025-06-25">
@@ -30,8 +30,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +43,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -95,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
   <link rel="stylesheet" href="../../../files/lecture_notes/theme/lecture-styles.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -190,9 +191,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -263,18 +261,15 @@ Narjes Mathlouthi
 </section>
 <section id="statistics" class="slide level2">
 <h2>Statistics</h2>
-<div>
 <p><q>Facts are stubborn, but statistics are more pliable.</q></p>
 <p>Mark Twain</p>
 <ul>
 <li class="fragment">Statistics refers to the mathematics and techniques with which we understand data. <sup>1</sup></li>
 </ul>
-</div>
 <!-- end columns -->
 <aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://learning.oreilly.com/library/view/data-science-from/9781491901410/ch05.html">(source)</a></p></li></ol></aside></section>
 <section id="what-are-descriptive-statistics" class="slide level2">
 <h2>What are Descriptive Statistics?</h2>
-<div>
 <p><strong>Descriptive statistics</strong> are numerical and graphical methods used to summarize, organize, and describe data in a meaningful way.</p>
 <div class="fragment">
 <h3 id="purpose-of-descriptive-statistics">Purpose of Descriptive Statistics</h3>
@@ -285,7 +280,6 @@ Narjes Mathlouthi
 <li class="fragment"><strong>Prepare data</strong> for further analysis</li>
 <li class="fragment"><strong>Make initial assessments</strong> about data quality</li>
 </ul>
-</div>
 </div>
 </section>
 <section id="descriptive-vs.-inferential-statistics" class="slide level2 smaller">
@@ -333,51 +327,38 @@ Narjes Mathlouthi
 <section id="why-data-types-matter" class="slide level2">
 <h2>Why Data Types Matter</h2>
 <p>Understanding data types is crucial because:</p>
-<div>
 <ul>
 <li class="fragment">Different statistics are appropriate for different data types</li>
 <li class="fragment">Statistical methods depend on the level of measurement</li>
 <li class="fragment">Misapplying statistics can lead to incorrect conclusions</li>
 </ul>
-</div>
 </section>
 <section id="types-of-data" class="slide level2">
 <h2>Types of Data</h2>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph TD
-    A[Variable Types]
-    A --&gt; B[Categorical]
-    A --&gt; C[Numerical]
-    B --&gt; B1["Nominal&lt;br/&gt;e.g., gender, major"]
-    B --&gt; B2["Ordinal&lt;br/&gt;e.g., rating, education level"]
-    C --&gt; C1["Discrete&lt;br/&gt;e.g., count (# of students)"]
-    C --&gt; C2["Continuous&lt;br/&gt;e.g., measurements like height, weight"]
-    
-    classDef root fill:#e1f5fe,stroke:#01579b,stroke-width:3px
-    classDef categorical fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    classDef numerical fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
-    classDef nominal fill:#fce4ec,stroke:#880e4f,stroke-width:2px
-    classDef ordinal fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    classDef discrete fill:#e0f2f1,stroke:#00695c,stroke-width:2px
-    classDef continuous fill:#f1f8e9,stroke:#33691e,stroke-width:2px
-    
-    class A root
-    class B categorical
-    class C numerical
-    class B1 nominal
-    class B2 ordinal
-    class C1 discrete
-    class C2 continuous
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {mermaid} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>graph TD</span>
+<span id="cb1-2"><a></a>    A[Variable Types]</span>
+<span id="cb1-3"><a></a>    A --&gt; B[Categorical]</span>
+<span id="cb1-4"><a></a>    A --&gt; C[Numerical]</span>
+<span id="cb1-5"><a></a>    B --&gt; B1["Nominal&lt;br/&gt;e.g., gender, major"]</span>
+<span id="cb1-6"><a></a>    B --&gt; B2["Ordinal&lt;br/&gt;e.g., rating, education level"]</span>
+<span id="cb1-7"><a></a>    C --&gt; C1["Discrete&lt;br/&gt;e.g., count (# of students)"]</span>
+<span id="cb1-8"><a></a>    C --&gt; C2["Continuous&lt;br/&gt;e.g., measurements like height, weight"]</span>
+<span id="cb1-9"><a></a>    </span>
+<span id="cb1-10"><a></a>    classDef root fill:#e1f5fe,stroke:#01579b,stroke-width:3px</span>
+<span id="cb1-11"><a></a>    classDef categorical fill:#f3e5f5,stroke:#4a148c,stroke-width:2px</span>
+<span id="cb1-12"><a></a>    classDef numerical fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px</span>
+<span id="cb1-13"><a></a>    classDef nominal fill:#fce4ec,stroke:#880e4f,stroke-width:2px</span>
+<span id="cb1-14"><a></a>    classDef ordinal fill:#fff3e0,stroke:#e65100,stroke-width:2px</span>
+<span id="cb1-15"><a></a>    classDef discrete fill:#e0f2f1,stroke:#00695c,stroke-width:2px</span>
+<span id="cb1-16"><a></a>    classDef continuous fill:#f1f8e9,stroke:#33691e,stroke-width:2px</span>
+<span id="cb1-17"><a></a>    </span>
+<span id="cb1-18"><a></a>    class A root</span>
+<span id="cb1-19"><a></a>    class B categorical</span>
+<span id="cb1-20"><a></a>    class C numerical</span>
+<span id="cb1-21"><a></a>    class B1 nominal</span>
+<span id="cb1-22"><a></a>    class B2 ordinal</span>
+<span id="cb1-23"><a></a>    class C1 discrete</span>
+<span id="cb1-24"><a></a>    class C2 continuous</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <p>Prompt: Which summary stat would you pick for “major”? For “gpa”?</p>
 <style type="text/css">
@@ -491,55 +472,44 @@ Narjes Mathlouthi
 <section id="overview" class="title-slide slide level1 smaller center">
 <h1>Overview</h1>
 <p><br></p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{init: {
-  "flowchart": { "nodeSpacing": 300, "rankSpacing": 300 },
-  "themeVariables": {
-    "fontSize": "50px",      /* &lt;-- bump this up as needed */
-    "fontFamily": "Arial"
-  },
-  "width": 1200,
-  "height": 900
-}}%%
-graph TD
-    A["Measures of Central Tendency"]
-    A --&gt; B["Mean (Average)"]
-    A --&gt; C["Median (Middle Value)"]
-    A --&gt; D["Mode (Most Frequent)"]
-    
-    B --&gt; B1["Sum of all values ÷&lt;br/&gt;Number of values"]
-    B --&gt; B2["Best for:&lt;br/&gt;Symmetric distributions"]
-    B --&gt; B3["Affected by:&lt;br/&gt;Outliers"]
-    
-    C --&gt; C1["Middle value when&lt;br/&gt;data is ordered"]
-    C --&gt; C2["Best for:&lt;br/&gt;Skewed distributions"]
-    C --&gt; C3["Resistant to:&lt;br/&gt;Outliers"]
-    
-    D --&gt; D1["Value that appears&lt;br/&gt;most frequently"]
-    D --&gt; D2["Best for:&lt;br/&gt;Categorical data"]
-    D --&gt; D3["Can have: Multiple modes&lt;br/&gt;or no mode"]
-    
-    classDef main fill:#e3f2fd,stroke:#0d47a1,stroke-width:4px
-    classDef mean fill:#fff3e0,stroke:#e65100,stroke-width:4px
-    classDef median fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px
-    classDef mode fill:#f3e5f5,stroke:#7b1fa2,stroke-width:4px
-    classDef details fill:#fafafa,stroke:#616161,stroke-width:4px
-    
-    class A main
-    class B mean
-    class C median
-    class D mode
-    class B1,B2,B3,C1,C2,C3,D1,D2,D3 details
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {mermaid} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>%%{init: {</span>
+<span id="cb2-2"><a></a>  "flowchart": { "nodeSpacing": 300, "rankSpacing": 300 },</span>
+<span id="cb2-3"><a></a>  "themeVariables": {</span>
+<span id="cb2-4"><a></a>    "fontSize": "50px",      /* &lt;-- bump this up as needed */</span>
+<span id="cb2-5"><a></a>    "fontFamily": "Arial"</span>
+<span id="cb2-6"><a></a>  },</span>
+<span id="cb2-7"><a></a>  "width": 1200,</span>
+<span id="cb2-8"><a></a>  "height": 900</span>
+<span id="cb2-9"><a></a>}}%%</span>
+<span id="cb2-10"><a></a>graph TD</span>
+<span id="cb2-11"><a></a>    A["Measures of Central Tendency"]</span>
+<span id="cb2-12"><a></a>    A --&gt; B["Mean (Average)"]</span>
+<span id="cb2-13"><a></a>    A --&gt; C["Median (Middle Value)"]</span>
+<span id="cb2-14"><a></a>    A --&gt; D["Mode (Most Frequent)"]</span>
+<span id="cb2-15"><a></a>    </span>
+<span id="cb2-16"><a></a>    B --&gt; B1["Sum of all values ÷&lt;br/&gt;Number of values"]</span>
+<span id="cb2-17"><a></a>    B --&gt; B2["Best for:&lt;br/&gt;Symmetric distributions"]</span>
+<span id="cb2-18"><a></a>    B --&gt; B3["Affected by:&lt;br/&gt;Outliers"]</span>
+<span id="cb2-19"><a></a>    </span>
+<span id="cb2-20"><a></a>    C --&gt; C1["Middle value when&lt;br/&gt;data is ordered"]</span>
+<span id="cb2-21"><a></a>    C --&gt; C2["Best for:&lt;br/&gt;Skewed distributions"]</span>
+<span id="cb2-22"><a></a>    C --&gt; C3["Resistant to:&lt;br/&gt;Outliers"]</span>
+<span id="cb2-23"><a></a>    </span>
+<span id="cb2-24"><a></a>    D --&gt; D1["Value that appears&lt;br/&gt;most frequently"]</span>
+<span id="cb2-25"><a></a>    D --&gt; D2["Best for:&lt;br/&gt;Categorical data"]</span>
+<span id="cb2-26"><a></a>    D --&gt; D3["Can have: Multiple modes&lt;br/&gt;or no mode"]</span>
+<span id="cb2-27"><a></a>    </span>
+<span id="cb2-28"><a></a>    classDef main fill:#e3f2fd,stroke:#0d47a1,stroke-width:4px</span>
+<span id="cb2-29"><a></a>    classDef mean fill:#fff3e0,stroke:#e65100,stroke-width:4px</span>
+<span id="cb2-30"><a></a>    classDef median fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px</span>
+<span id="cb2-31"><a></a>    classDef mode fill:#f3e5f5,stroke:#7b1fa2,stroke-width:4px</span>
+<span id="cb2-32"><a></a>    classDef details fill:#fafafa,stroke:#616161,stroke-width:4px</span>
+<span id="cb2-33"><a></a>    </span>
+<span id="cb2-34"><a></a>    class A main</span>
+<span id="cb2-35"><a></a>    class B mean</span>
+<span id="cb2-36"><a></a>    class C median</span>
+<span id="cb2-37"><a></a>    class D mode</span>
+<span id="cb2-38"><a></a>    class B1,B2,B3,C1,C2,C3,D1,D2,D3 details</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 </section>
 <section id="what-is-central-tendency" class="slide level2">
@@ -644,28 +614,23 @@ graph TD
 <h2>Examples</h2>
 <div class="fragment">
 <h3 id="odd-number-of-values">Odd number of values:</h3>
-<div>
 <ul>
 <li class="fragment"><p>Data: 12, 15, 18, 20, 25</p></li>
 <li class="fragment"><p>What is the median here ?</p></li>
 <li class="fragment"><p><strong>Median = 18</strong> (middle value)</p></li>
 </ul>
 </div>
-</div>
 <div class="fragment">
 <h3 id="even-number-of-values">Even number of values:</h3>
-<div>
 <ul>
 <li class="fragment"><p>Data: 10, 15, 20, 25, 30, 35</p></li>
 <li class="fragment"><p>What is the median here ?</p></li>
 <li class="fragment"><p><strong>Median = <span class="math inline">\(\frac{20 + 25}{2} = 22.5\)</span></strong></p></li>
 </ul>
 </div>
-</div>
 </section>
 <section id="properties-of-the-median" class="slide level2">
 <h2>Properties of the Median</h2>
-<div>
 <ul>
 <li class="fragment"><strong>Not affected by outliers</strong> - resistant measure</li>
 <li class="fragment"><strong>Represents the 50th percentile</strong></li>
@@ -673,7 +638,6 @@ graph TD
 <li class="fragment"><strong>Appropriate for ordinal, interval, and ratio data</strong></li>
 <li class="fragment"><strong>Divides data into two equal halves</strong></li>
 </ul>
-</div>
 </section>
 <section id="when-to-use-the-median" class="slide level2">
 <h2>When to Use the Median</h2>
@@ -706,30 +670,19 @@ graph TD
 <div class="definition">
 <p><strong>🎯 Definition:</strong> The <strong>mode</strong> is the value that appears most frequently in a dataset.</p>
 </div>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{init: {'flowchart': {'nodeSpacing': 100, 'rankSpacing': 100}, 'width': 600, 'height': 400}}%%
-graph TD
-    A["Mode Types"]
-    A --&gt; B["Unimodal&lt;br/&gt;One peak"]
-    A --&gt; C["Bimodal&lt;br/&gt;Two peaks"]
-    A --&gt; D["Multimodal&lt;br/&gt;Multiple peaks"]
-    A --&gt; E["No Mode&lt;br/&gt;No repeated values"]
-    
-    classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:3px,font-size:16px
-    classDef types fill:#f5f5f5,stroke:#424242,stroke-width:2px,font-size:14px
-    
-    class A main
-    class B,C,D,E types
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource {mermaid} number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>%%{init: {'flowchart': {'nodeSpacing': 100, 'rankSpacing': 100}, 'width': 600, 'height': 400}}%%</span>
+<span id="cb3-2"><a></a>graph TD</span>
+<span id="cb3-3"><a></a>    A["Mode Types"]</span>
+<span id="cb3-4"><a></a>    A --&gt; B["Unimodal&lt;br/&gt;One peak"]</span>
+<span id="cb3-5"><a></a>    A --&gt; C["Bimodal&lt;br/&gt;Two peaks"]</span>
+<span id="cb3-6"><a></a>    A --&gt; D["Multimodal&lt;br/&gt;Multiple peaks"]</span>
+<span id="cb3-7"><a></a>    A --&gt; E["No Mode&lt;br/&gt;No repeated values"]</span>
+<span id="cb3-8"><a></a>    </span>
+<span id="cb3-9"><a></a>    classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:3px,font-size:16px</span>
+<span id="cb3-10"><a></a>    classDef types fill:#f5f5f5,stroke:#424242,stroke-width:2px,font-size:14px</span>
+<span id="cb3-11"><a></a>    </span>
+<span id="cb3-12"><a></a>    class A main</span>
+<span id="cb3-13"><a></a>    class B,C,D,E types</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="types-of-distributions-by-mode" class="slide level2">
 <h2>Types of Distributions by Mode</h2>
@@ -751,7 +704,6 @@ graph TD
 <p>Data: 2, 3, 3, 4, 5, 5, 5, 6, 7</p>
 <div class="fragment">
 <p>Analysis:</p>
-<div>
 <ul>
 <li class="fragment">Count each value: 2(1), 3(2), 4(1), 5(3), 6(1), 7(1)</li>
 <li class="fragment">Most frequent value: 5 appears 3 times</li>
@@ -759,14 +711,12 @@ graph TD
 <li class="fragment">Type: <strong>Unimodal (one mode)</strong></li>
 </ul>
 </div>
-</div>
 </section>
 <section id="example-2" class="slide level2">
 <h2>Example 2:</h2>
 <p>Data: 1, 2, 2, 3, 4, 4, 5</p>
 <div class="fragment">
 <p>Analysis:</p>
-<div>
 <ul>
 <li class="fragment">Count each value: 1(1), 2(2), 3(1), 4(2), 5(1)</li>
 <li class="fragment">Most frequent values: 2 and 4 both appear twice</li>
@@ -774,21 +724,18 @@ graph TD
 <li class="fragment">Type: <strong>Bimodal (two modes)</strong></li>
 </ul>
 </div>
-</div>
 </section>
 <section id="example-3" class="slide level2">
 <h2>Example 3:</h2>
 <p>Data: 1, 2, 3, 4, 5</p>
 <div class="fragment">
 <p>Analysis:</p>
-<div>
 <ul>
 <li class="fragment">Count each value: 1(1), 2(1), 3(1), 4(1), 5(1)</li>
 <li class="fragment">All values appear exactly once</li>
 <li class="fragment">No mode (no value repeats)</li>
 <li class="fragment">Type: <strong>No mode</strong></li>
 </ul>
-</div>
 </div>
 </section>
 <section id="mode-for-different-data-types" class="slide level2 smaller">
@@ -884,12 +831,12 @@ graph TD
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Important Python Libraries</a></li><li><a href="#tabset-1-2">Library Overview</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div id="d0d4a621" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># for data manipulation </span></span>
-<span id="cb1-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># for data manipulation </span></span>
-<span id="cb1-3"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats <span class="co"># for advanced statistics</span></span>
-<span id="cb1-4"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># for visulization</span></span>
-<span id="cb1-5"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co"># for advanced visulization</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c41c5a51" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># for data manipulation </span></span>
+<span id="cb4-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># for data manipulation </span></span>
+<span id="cb4-3"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats <span class="co"># for advanced statistics</span></span>
+<span id="cb4-4"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># for visulization</span></span>
+<span id="cb4-5"><a></a><span class="im">import</span> seaborn <span class="im">as</span> sns <span class="co"># for advanced visulization</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2">
@@ -958,30 +905,30 @@ graph TD
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Mean Calculation</a></li><li><a href="#tabset-2-2">Median Calculation</a></li><li><a href="#tabset-2-3">Mode Calculation</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<div id="05ecd8b2" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># Import numpy library for numeric operations</span></span>
-<span id="cb2-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
-<span id="cb2-3"><a></a></span>
-<span id="cb2-4"><a></a><span class="co"># Import pandas library for data structures</span></span>
-<span id="cb2-5"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-6"><a></a></span>
-<span id="cb2-7"><a></a><span class="co"># Define sample data as a list of test scores</span></span>
-<span id="cb2-8"><a></a>data <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">91</span>, <span class="dv">85</span>, <span class="dv">87</span>, <span class="dv">89</span>, <span class="dv">86</span>]</span>
-<span id="cb2-9"><a></a></span>
-<span id="cb2-10"><a></a><span class="co"># Compute the arithmetic mean using NumPy</span></span>
-<span id="cb2-11"><a></a>mean_np <span class="op">=</span> np.mean(data)</span>
-<span id="cb2-12"><a></a><span class="bu">print</span>(<span class="ss">f"Mean (NumPy): </span><span class="sc">{</span>mean_np<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb2-13"><a></a></span>
-<span id="cb2-14"><a></a><span class="co"># Convert the data list into a pandas DataFrame</span></span>
-<span id="cb2-15"><a></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'scores'</span>: data})</span>
-<span id="cb2-16"><a></a></span>
-<span id="cb2-17"><a></a><span class="co"># Compute the arithmetic mean using Pandas</span></span>
-<span id="cb2-18"><a></a>mean_pd <span class="op">=</span> df[<span class="st">'scores'</span>].mean()</span>
-<span id="cb2-19"><a></a><span class="bu">print</span>(<span class="ss">f"Mean (Pandas): </span><span class="sc">{</span>mean_pd<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb2-20"><a></a></span>
-<span id="cb2-21"><a></a><span class="co"># Manually sum all scores and divide by count</span></span>
-<span id="cb2-22"><a></a>manual_mean <span class="op">=</span> <span class="bu">sum</span>(data) <span class="op">/</span> <span class="bu">len</span>(data)</span>
-<span id="cb2-23"><a></a><span class="bu">print</span>(<span class="ss">f"Mean (Manual): </span><span class="sc">{</span>manual_mean<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="788bec48" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># Import numpy library for numeric operations</span></span>
+<span id="cb5-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a><span class="co"># Import pandas library for data structures</span></span>
+<span id="cb5-5"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-6"><a></a></span>
+<span id="cb5-7"><a></a><span class="co"># Define sample data as a list of test scores</span></span>
+<span id="cb5-8"><a></a>data <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">91</span>, <span class="dv">85</span>, <span class="dv">87</span>, <span class="dv">89</span>, <span class="dv">86</span>]</span>
+<span id="cb5-9"><a></a></span>
+<span id="cb5-10"><a></a><span class="co"># Compute the arithmetic mean using NumPy</span></span>
+<span id="cb5-11"><a></a>mean_np <span class="op">=</span> np.mean(data)</span>
+<span id="cb5-12"><a></a><span class="bu">print</span>(<span class="ss">f"Mean (NumPy): </span><span class="sc">{</span>mean_np<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-13"><a></a></span>
+<span id="cb5-14"><a></a><span class="co"># Convert the data list into a pandas DataFrame</span></span>
+<span id="cb5-15"><a></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'scores'</span>: data})</span>
+<span id="cb5-16"><a></a></span>
+<span id="cb5-17"><a></a><span class="co"># Compute the arithmetic mean using Pandas</span></span>
+<span id="cb5-18"><a></a>mean_pd <span class="op">=</span> df[<span class="st">'scores'</span>].mean()</span>
+<span id="cb5-19"><a></a><span class="bu">print</span>(<span class="ss">f"Mean (Pandas): </span><span class="sc">{</span>mean_pd<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-20"><a></a></span>
+<span id="cb5-21"><a></a><span class="co"># Manually sum all scores and divide by count</span></span>
+<span id="cb5-22"><a></a>manual_mean <span class="op">=</span> <span class="bu">sum</span>(data) <span class="op">/</span> <span class="bu">len</span>(data)</span>
+<span id="cb5-23"><a></a><span class="bu">print</span>(<span class="ss">f"Mean (Manual): </span><span class="sc">{</span>manual_mean<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mean (NumPy): 87.10
 Mean (Pandas): 87.10
@@ -990,28 +937,28 @@ Mean (Manual): 87.10</code></pre>
 </div>
 </div>
 <div id="tabset-2-2">
-<div id="6bd78a62" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="co"># Compute the median value using NumPy</span></span>
-<span id="cb4-2"><a></a>median_np <span class="op">=</span> np.median(data)</span>
-<span id="cb4-3"><a></a><span class="bu">print</span>(<span class="ss">f"Median (NumPy): </span><span class="sc">{</span>median_np<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb4-4"><a></a></span>
-<span id="cb4-5"><a></a><span class="co"># Compute the median value using Pandas</span></span>
-<span id="cb4-6"><a></a>median_pd <span class="op">=</span> df[<span class="st">'scores'</span>].median()</span>
-<span id="cb4-7"><a></a><span class="bu">print</span>(<span class="ss">f"Median (Pandas): </span><span class="sc">{</span>median_pd<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb4-8"><a></a></span>
-<span id="cb4-9"><a></a><span class="co"># Sort the data list in ascending order</span></span>
-<span id="cb4-10"><a></a>sorted_data <span class="op">=</span> <span class="bu">sorted</span>(data)</span>
-<span id="cb4-11"><a></a></span>
-<span id="cb4-12"><a></a><span class="co"># Determine the number of elements</span></span>
-<span id="cb4-13"><a></a>n <span class="op">=</span> <span class="bu">len</span>(sorted_data)</span>
-<span id="cb4-14"><a></a></span>
-<span id="cb4-15"><a></a><span class="co"># If even count, average the two middle elements; else take middle element</span></span>
-<span id="cb4-16"><a></a><span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb4-17"><a></a>    manual_median <span class="op">=</span> (sorted_data[n<span class="op">//</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>] <span class="op">+</span> sorted_data[n<span class="op">//</span><span class="dv">2</span>]) <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb4-18"><a></a><span class="cf">else</span>:</span>
-<span id="cb4-19"><a></a>    manual_median <span class="op">=</span> sorted_data[n<span class="op">//</span><span class="dv">2</span>]</span>
-<span id="cb4-20"><a></a></span>
-<span id="cb4-21"><a></a><span class="bu">print</span>(<span class="ss">f"Median (Manual): </span><span class="sc">{</span>manual_median<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="7528a0d7" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># Compute the median value using NumPy</span></span>
+<span id="cb7-2"><a></a>median_np <span class="op">=</span> np.median(data)</span>
+<span id="cb7-3"><a></a><span class="bu">print</span>(<span class="ss">f"Median (NumPy): </span><span class="sc">{</span>median_np<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb7-4"><a></a></span>
+<span id="cb7-5"><a></a><span class="co"># Compute the median value using Pandas</span></span>
+<span id="cb7-6"><a></a>median_pd <span class="op">=</span> df[<span class="st">'scores'</span>].median()</span>
+<span id="cb7-7"><a></a><span class="bu">print</span>(<span class="ss">f"Median (Pandas): </span><span class="sc">{</span>median_pd<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb7-8"><a></a></span>
+<span id="cb7-9"><a></a><span class="co"># Sort the data list in ascending order</span></span>
+<span id="cb7-10"><a></a>sorted_data <span class="op">=</span> <span class="bu">sorted</span>(data)</span>
+<span id="cb7-11"><a></a></span>
+<span id="cb7-12"><a></a><span class="co"># Determine the number of elements</span></span>
+<span id="cb7-13"><a></a>n <span class="op">=</span> <span class="bu">len</span>(sorted_data)</span>
+<span id="cb7-14"><a></a></span>
+<span id="cb7-15"><a></a><span class="co"># If even count, average the two middle elements; else take middle element</span></span>
+<span id="cb7-16"><a></a><span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-17"><a></a>    manual_median <span class="op">=</span> (sorted_data[n<span class="op">//</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>] <span class="op">+</span> sorted_data[n<span class="op">//</span><span class="dv">2</span>]) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb7-18"><a></a><span class="cf">else</span>:</span>
+<span id="cb7-19"><a></a>    manual_median <span class="op">=</span> sorted_data[n<span class="op">//</span><span class="dv">2</span>]</span>
+<span id="cb7-20"><a></a></span>
+<span id="cb7-21"><a></a><span class="bu">print</span>(<span class="ss">f"Median (Manual): </span><span class="sc">{</span>manual_median<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Median (NumPy): 87.50
 Median (Pandas): 87.50
@@ -1020,31 +967,31 @@ Median (Manual): 87.50</code></pre>
 </div>
 </div>
 <div id="tabset-2-3">
-<div id="39138e07" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># Import SciPy stats module to compute mode</span></span>
-<span id="cb6-2"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a><span class="co"># Use SciPy to find the most common value and its count</span></span>
-<span id="cb6-5"><a></a>mode_result <span class="op">=</span> stats.mode(data, keepdims<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb6-6"><a></a><span class="bu">print</span>(<span class="ss">f"Mode (SciPy): </span><span class="sc">{</span>mode_result<span class="sc">.</span>mode[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, Count: </span><span class="sc">{</span>mode_result<span class="sc">.</span>count[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-7"><a></a></span>
-<span id="cb6-8"><a></a><span class="co"># Use Pandas to get mode(s) from the DataFrame</span></span>
-<span id="cb6-9"><a></a>mode_pd <span class="op">=</span> df[<span class="st">'scores'</span>].mode()</span>
-<span id="cb6-10"><a></a><span class="bu">print</span>(<span class="ss">f"Mode (Pandas): </span><span class="sc">{</span>mode_pd<span class="sc">.</span>values<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-11"><a></a></span>
-<span id="cb6-12"><a></a><span class="co"># Import Counter for manual frequency counting</span></span>
-<span id="cb6-13"><a></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
-<span id="cb6-14"><a></a></span>
-<span id="cb6-15"><a></a><span class="co"># Count occurrences of each score</span></span>
-<span id="cb6-16"><a></a>counter <span class="op">=</span> Counter(data)</span>
-<span id="cb6-17"><a></a></span>
-<span id="cb6-18"><a></a><span class="co"># Find the highest frequency</span></span>
-<span id="cb6-19"><a></a>max_count <span class="op">=</span> <span class="bu">max</span>(counter.values())</span>
-<span id="cb6-20"><a></a></span>
-<span id="cb6-21"><a></a><span class="co"># Identify all values that appear with that frequency</span></span>
-<span id="cb6-22"><a></a>modes <span class="op">=</span> [k <span class="cf">for</span> k, v <span class="kw">in</span> counter.items() <span class="cf">if</span> v <span class="op">==</span> max_count]</span>
-<span id="cb6-23"><a></a></span>
-<span id="cb6-24"><a></a><span class="bu">print</span>(<span class="ss">f"Mode (Manual): </span><span class="sc">{</span>modes<span class="sc">}</span><span class="ss">, Count: </span><span class="sc">{</span>max_count<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="13038726" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># Import SciPy stats module to compute mode</span></span>
+<span id="cb9-2"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb9-3"><a></a></span>
+<span id="cb9-4"><a></a><span class="co"># Use SciPy to find the most common value and its count</span></span>
+<span id="cb9-5"><a></a>mode_result <span class="op">=</span> stats.mode(data, keepdims<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-6"><a></a><span class="bu">print</span>(<span class="ss">f"Mode (SciPy): </span><span class="sc">{</span>mode_result<span class="sc">.</span>mode[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, Count: </span><span class="sc">{</span>mode_result<span class="sc">.</span>count[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-7"><a></a></span>
+<span id="cb9-8"><a></a><span class="co"># Use Pandas to get mode(s) from the DataFrame</span></span>
+<span id="cb9-9"><a></a>mode_pd <span class="op">=</span> df[<span class="st">'scores'</span>].mode()</span>
+<span id="cb9-10"><a></a><span class="bu">print</span>(<span class="ss">f"Mode (Pandas): </span><span class="sc">{</span>mode_pd<span class="sc">.</span>values<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-11"><a></a></span>
+<span id="cb9-12"><a></a><span class="co"># Import Counter for manual frequency counting</span></span>
+<span id="cb9-13"><a></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb9-14"><a></a></span>
+<span id="cb9-15"><a></a><span class="co"># Count occurrences of each score</span></span>
+<span id="cb9-16"><a></a>counter <span class="op">=</span> Counter(data)</span>
+<span id="cb9-17"><a></a></span>
+<span id="cb9-18"><a></a><span class="co"># Find the highest frequency</span></span>
+<span id="cb9-19"><a></a>max_count <span class="op">=</span> <span class="bu">max</span>(counter.values())</span>
+<span id="cb9-20"><a></a></span>
+<span id="cb9-21"><a></a><span class="co"># Identify all values that appear with that frequency</span></span>
+<span id="cb9-22"><a></a>modes <span class="op">=</span> [k <span class="cf">for</span> k, v <span class="kw">in</span> counter.items() <span class="cf">if</span> v <span class="op">==</span> max_count]</span>
+<span id="cb9-23"><a></a></span>
+<span id="cb9-24"><a></a><span class="bu">print</span>(<span class="ss">f"Mode (Manual): </span><span class="sc">{</span>modes<span class="sc">}</span><span class="ss">, Count: </span><span class="sc">{</span>max_count<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mode (SciPy): 85, Count: 2
 Mode (Pandas): [85]
@@ -1062,25 +1009,25 @@ Mode (Manual): [85], Count: 2</code></pre>
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code</a></li><li><a href="#tabset-3-2">Visualization</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
-<div id="cf8d0c4b" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="co"># import libraries</span></span>
-<span id="cb8-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb8-3"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-4"><a></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
-<span id="cb8-5"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb8-6"><a></a><span class="co"># define your data and compute statistics here</span></span>
-<span id="cb8-7"><a></a>data <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">91</span>, <span class="dv">85</span>, <span class="dv">87</span>, <span class="dv">89</span>, <span class="dv">86</span>]</span>
-<span id="cb8-8"><a></a>mean_np   <span class="op">=</span> np.mean(data)</span>
-<span id="cb8-9"><a></a>median_np <span class="op">=</span> np.median(data)</span>
-<span id="cb8-10"><a></a><span class="co"># for mode, use Counter</span></span>
-<span id="cb8-11"><a></a>counter   <span class="op">=</span> Counter(data)</span>
-<span id="cb8-12"><a></a>max_count <span class="op">=</span> <span class="bu">max</span>(counter.values())</span>
-<span id="cb8-13"><a></a>modes     <span class="op">=</span> [k <span class="cf">for</span> k,v <span class="kw">in</span> counter.items() <span class="cf">if</span> v<span class="op">==</span>max_count]</span>
-<span id="cb8-14"><a></a>mode_val  <span class="op">=</span> modes[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="4b7312a4" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="co"># import libraries</span></span>
+<span id="cb11-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-3"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-4"><a></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb11-5"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-6"><a></a><span class="co"># define your data and compute statistics here</span></span>
+<span id="cb11-7"><a></a>data <span class="op">=</span> [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">91</span>, <span class="dv">85</span>, <span class="dv">87</span>, <span class="dv">89</span>, <span class="dv">86</span>]</span>
+<span id="cb11-8"><a></a>mean_np   <span class="op">=</span> np.mean(data)</span>
+<span id="cb11-9"><a></a>median_np <span class="op">=</span> np.median(data)</span>
+<span id="cb11-10"><a></a><span class="co"># for mode, use Counter</span></span>
+<span id="cb11-11"><a></a>counter   <span class="op">=</span> Counter(data)</span>
+<span id="cb11-12"><a></a>max_count <span class="op">=</span> <span class="bu">max</span>(counter.values())</span>
+<span id="cb11-13"><a></a>modes     <span class="op">=</span> [k <span class="cf">for</span> k,v <span class="kw">in</span> counter.items() <span class="cf">if</span> v<span class="op">==</span>max_count]</span>
+<span id="cb11-14"><a></a>mode_val  <span class="op">=</span> modes[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-3-2">
-<div id="88722a86" class="cell" data-execution_count="6">
+<div id="89ed6133" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1190,6 +1137,11 @@ Mode (Manual): [85], Count: 2</code></pre>
 <li><p><a href="https://numpy.org/doc/2.1/reference/routines.statistics.html">NumPy statistical functions</a></p></li>
 <li><p><a href="https://docs.scipy.org/doc/scipy/reference/stats.html">SciPy stats module reference</a></p></li>
 </ul>
+</section>
+
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
 
 
 </section>
@@ -1414,190 +1366,172 @@ Mode (Manual): [85], Count: 2</code></pre>
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
             }
           }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/pstat5a\.com");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          return false;
         }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
             }
-          }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
         }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
               }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/pstat5a\.com");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>

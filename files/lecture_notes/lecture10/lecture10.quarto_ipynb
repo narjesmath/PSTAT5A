@@ -10,26 +10,26 @@
         "author: \"Narjes Mathlouthi\"\n",
         "date: 07/21/2025\n",
         "format:\n",
-        "    revealjs:\n",
-        "        logo: /img/logo.png\n",
-        "        theme: default\n",
-        "        css: new-style.css\n",
-        "        slide-number: true\n",
-        "        chalkboard: true\n",
-        "        preview-links: auto\n",
-        "        footer: \"Understanding Data – Sampling Principles and Strategies © 2025\"\n",
-        "        transition: slide\n",
-        "        background-transition: fade\n",
-        "        incremental: false\n",
-        "        smaller: true\n",
-        "jupyter: python3\n",
+        "  revealjs:\n",
+        "      logo: /img/logo.png\n",
+        "      theme: default\n",
+        "      css: new-style.css\n",
+        "      slide-number: true\n",
+        "      chalkboard: true\n",
+        "      preview-links: auto\n",
+        "      footer: \"Understanding Data – Sampling Principles and Strategies © 2025\"\n",
+        "      transition: slide\n",
+        "      background-transition: fade\n",
+        "      incremental: false\n",
+        "      smaller: true\n",
+        "jupyter: pstat5a\n",
         "execute:\n",
         "  echo: false\n",
         "  warning: false\n",
         "  message: false\n",
         "---"
       ],
-      "id": "9a736d2a"
+      "id": "690747cf"
     },
     {
       "cell_type": "code",
@@ -67,7 +67,7 @@
         "# Set random seed for reproducibility\n",
         "np.random.seed(42)"
       ],
-      "id": "dbaa34ec",
+      "id": "146f0d79",
       "execution_count": null,
       "outputs": []
     },
@@ -157,7 +157,7 @@
         "\n",
         "::: {.column}"
       ],
-      "id": "5a79e967"
+      "id": "735f343b"
     },
     {
       "cell_type": "code",
@@ -247,7 +247,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "c3fec91f",
+      "id": "ca232d7a",
       "execution_count": null,
       "outputs": []
     },
@@ -262,7 +262,7 @@
         "\n",
         "## Study Design: The Foundation of Good Inference"
       ],
-      "id": "6fd9d1f3"
+      "id": "19a0ce1f"
     },
     {
       "cell_type": "code",
@@ -416,7 +416,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "a80d1ea9",
+      "id": "2723b176",
       "execution_count": null,
       "outputs": []
     },
@@ -484,7 +484,7 @@
         "\n",
         "::: {.column width = \"60%\" .right}"
       ],
-      "id": "24574549"
+      "id": "80924815"
     },
     {
       "cell_type": "code",
@@ -648,7 +648,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "a08cda67",
+      "id": "32335d0a",
       "execution_count": null,
       "outputs": []
     },
@@ -686,7 +686,7 @@
         "\n",
         "::: {.column}"
       ],
-      "id": "1e5a0ab2"
+      "id": "de4f4c87"
     },
     {
       "cell_type": "code",
@@ -787,7 +787,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "e2d3d576",
+      "id": "d323ed87",
       "execution_count": null,
       "outputs": []
     },
@@ -826,7 +826,7 @@
         "\n",
         "::: {.column}"
       ],
-      "id": "1c8d2530"
+      "id": "be47777c"
     },
     {
       "cell_type": "code",
@@ -936,7 +936,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "19f466d6",
+      "id": "ebdf6601",
       "execution_count": null,
       "outputs": []
     },
@@ -970,7 +970,7 @@
         "\n",
         "::: {.column}"
       ],
-      "id": "86db181e"
+      "id": "1cb77536"
     },
     {
       "cell_type": "code",
@@ -1055,7 +1055,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "ef0b3008",
+      "id": "e59d10f2",
       "execution_count": null,
       "outputs": []
     },
@@ -1089,7 +1089,7 @@
         "\n",
         "::: {.column}"
       ],
-      "id": "2ff4e085"
+      "id": "2446d826"
     },
     {
       "cell_type": "code",
@@ -1219,7 +1219,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "c9e975a1",
+      "id": "bae04fa6",
       "execution_count": null,
       "outputs": []
     },
@@ -1254,7 +1254,7 @@
         "\n",
         "::: {.column}"
       ],
-      "id": "bd630968"
+      "id": "40c86441"
     },
     {
       "cell_type": "code",
@@ -1427,7 +1427,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "2335e985",
+      "id": "2db1cf5f",
       "execution_count": null,
       "outputs": []
     },
@@ -1465,7 +1465,7 @@
         "\n",
         "::: {.column}"
       ],
-      "id": "f15c1625"
+      "id": "3d9e87a5"
     },
     {
       "cell_type": "code",
@@ -1603,7 +1603,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "770e039c",
+      "id": "4fa150be",
       "execution_count": null,
       "outputs": []
     },
@@ -1644,7 +1644,7 @@
         "\n",
         "::: {.column}"
       ],
-      "id": "5ba2deb2"
+      "id": "8f2c7435"
     },
     {
       "cell_type": "code",
@@ -1769,7 +1769,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "1d5b7555",
+      "id": "7b56b0a8",
       "execution_count": null,
       "outputs": []
     },
@@ -1847,7 +1847,7 @@
         "\n",
         "## Common Misconceptions to Avoid ⚠️"
       ],
-      "id": "5852f138"
+      "id": "941c1ac3"
     },
     {
       "cell_type": "code",
@@ -1893,12 +1893,12 @@
         "\n",
         "fig.show()"
       ],
-      "id": "d9e0fe66",
+      "id": "70b98785",
       "execution_count": null,
       "outputs": []
     },
     {
-      "cell_type": "raw",
+      "cell_type": "markdown",
       "metadata": {},
       "source": [
         "---\n",
@@ -2015,7 +2015,6 @@
         ":::\n",
         "::::\n",
         "\n",
-        "---\n",
         "\n",
         "# Thank You! 🎉\n",
         "\n",
@@ -2023,17 +2022,20 @@
         "\n",
         "\n",
         "\n",
-        "---"
+        "\n",
+        "```{=html}\n",
+        "<a href=\"https://pstat5a.com/schedule.html\" class=\"main-page-btn\">🏠 Back to Main Page</a>\n",
+        "```\n"
       ],
-      "id": "0393fae1"
+      "id": "a0f174d1"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

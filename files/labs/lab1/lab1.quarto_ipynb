@@ -28,7 +28,7 @@
         "execute:\n",
         "  echo: false\n",
         "  warning: false\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---\n",
         "\n",
         "::: {.column-margin}\n",
@@ -538,15 +538,15 @@
         "\n",
         "**Great work completing Lab 1!** You now have the foundation needed for statistical programming in Python.\n"
       ],
-      "id": "f6189a73"
+      "id": "81ff9d66"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

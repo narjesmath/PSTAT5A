@@ -14,7 +14,7 @@ format:
     footer: "Understanding Data - Conditional Probabilities © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
-jupyter: python3
+jupyter: pstat5a
 ---
 
 ## Welcome to Lecture 6 {.center}

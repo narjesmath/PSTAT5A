@@ -14,7 +14,7 @@ format:
     footer: "Understanding Data - Counting © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
-jupyter: python3
+jupyter: pstat5a
 ---
 
 ```{python}

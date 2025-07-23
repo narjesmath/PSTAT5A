@@ -10,7 +10,7 @@ format:
     code-fold: false
     theme: cosmo
 date: today
-jupyter: python3
+jupyter: pstat5a
 ---
 
 # Setup

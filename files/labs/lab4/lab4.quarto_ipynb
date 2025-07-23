@@ -19,7 +19,7 @@
         "    theme: cosmo\n",
         "    css: /files/lecture_notes/theme/lecture-styles.css\n",
         "date: today\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "execute: \n",
         "  eval: false\n",
         "---\n",
@@ -40,7 +40,7 @@
         "\n",
         "First, let's load the tools we need. **Just copy this code block and run it as is - no changes needed!**"
       ],
-      "id": "3b85c592"
+      "id": "b970d29b"
     },
     {
       "cell_type": "code",
@@ -59,7 +59,7 @@
         "\n",
         "print(\"✅ All tools loaded successfully!\")"
       ],
-      "id": "d8627986",
+      "id": "608f8815",
       "execution_count": null,
       "outputs": []
     },
@@ -101,7 +101,7 @@
         "\n",
         "Let's tell `Python` about this:"
       ],
-      "id": "68ae618f"
+      "id": "5da1e75f"
     },
     {
       "cell_type": "code",
@@ -115,7 +115,7 @@
         "print(\"Probabilities:\", probabilities)\n",
         "print(\"Total probability:\", sum(probabilities))  # Should be 1.0"
       ],
-      "id": "18dcf7f0",
+      "id": "0e646356",
       "execution_count": null,
       "outputs": []
     },
@@ -125,7 +125,7 @@
       "source": [
         "Let's make a plot of this:"
       ],
-      "id": "52514d01"
+      "id": "109a87bc"
     },
     {
       "cell_type": "code",
@@ -139,7 +139,7 @@
         "plt.ylim(0, 0.6)\n",
         "plt.show()"
       ],
-      "id": "d8488534",
+      "id": "d3e7fd53",
       "execution_count": null,
       "outputs": []
     },
@@ -160,7 +160,7 @@
         "\n",
         "**Instructions:** Replace the `___` with the correct numbers."
       ],
-      "id": "6ef56cb5"
+      "id": "9b8da436"
     },
     {
       "cell_type": "code",
@@ -177,7 +177,7 @@
         "\n",
         "# Check your answer: this should print 1.0"
       ],
-      "id": "c234621c",
+      "id": "a99e7696",
       "execution_count": null,
       "outputs": []
     },
@@ -187,7 +187,7 @@
       "source": [
         "**Now make a graph of your biased coin:**"
       ],
-      "id": "72906eab"
+      "id": "3657aab1"
     },
     {
       "cell_type": "code",
@@ -202,7 +202,7 @@
         "plt.ylim(0, 0.8)\n",
         "plt.show()"
       ],
-      "id": "87e7cb78",
+      "id": "e1fad144",
       "execution_count": null,
       "outputs": []
     },
@@ -224,7 +224,7 @@
         "\n",
         "Let's say Heads = 1 point and Tails = 0 points."
       ],
-      "id": "79c92d2e"
+      "id": "b058e780"
     },
     {
       "cell_type": "code",
@@ -242,7 +242,7 @@
         "\n",
         "# This means: if we flip many times, we expect about 0.5 points per flip on average"
       ],
-      "id": "53e161b5",
+      "id": "749f07cd",
       "execution_count": null,
       "outputs": []
     },
@@ -261,7 +261,7 @@
         "\n",
         "**Step 1:** Fill in the calculation"
       ],
-      "id": "91a99453"
+      "id": "9a9a2905"
     },
     {
       "cell_type": "code",
@@ -275,7 +275,7 @@
         "expected_biased = 0 * ___ + 1 * ___\n",
         "print(f\"Expected value of biased coin: {expected_biased}\")"
       ],
-      "id": "0eac154c",
+      "id": "3af1c4ec",
       "execution_count": null,
       "outputs": []
     },
@@ -285,7 +285,7 @@
       "source": [
         "**Step 2:** What does this mean?"
       ],
-      "id": "04bdf8c4"
+      "id": "b77b67f4"
     },
     {
       "cell_type": "code",
@@ -298,7 +298,7 @@
         "print(f\"Since this is closer to 1 than 0.5, the coin favors ___\")  \n",
         "# Fill in: Heads or Tails?"
       ],
-      "id": "9e743606",
+      "id": "e14ff530",
       "execution_count": null,
       "outputs": []
     },
@@ -335,7 +335,7 @@
         "\n",
         "Flipping a coin once is therefore exactly a Bernoulli trial."
       ],
-      "id": "bd082a8c"
+      "id": "244bdef2"
     },
     {
       "cell_type": "code",
@@ -355,7 +355,7 @@
         "# Get expected value automatically!\n",
         "print(f\"Expected value: {fair_coin.mean()}\")"
       ],
-      "id": "1d57992c",
+      "id": "32a4f218",
       "execution_count": null,
       "outputs": []
     },
@@ -372,7 +372,7 @@
         "\n",
         "Create a Bernoulli distribution for your biased coin (70% Heads)."
       ],
-      "id": "3984ac3d"
+      "id": "d748ae9f"
     },
     {
       "cell_type": "code",
@@ -391,7 +391,7 @@
         "print(f\"Biased coin - Probability of Heads: {prob_heads_biased}\")\n",
         "print(f\"Expected value: {biased_coin.mean()}\")"
       ],
-      "id": "d861773e",
+      "id": "1f408494",
       "execution_count": null,
       "outputs": []
     },
@@ -407,7 +407,7 @@
         "\n",
         "Let's compare three different coins:"
       ],
-      "id": "2fe3baa0"
+      "id": "aca1407f"
     },
     {
       "cell_type": "code",
@@ -443,7 +443,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "5dfa2e9b",
+      "id": "f1c79466",
       "execution_count": null,
       "outputs": []
     },
@@ -461,7 +461,7 @@
         "\n",
         "## Example: 5 Fair Coin Flips"
       ],
-      "id": "027e0077"
+      "id": "d507f28b"
     },
     {
       "cell_type": "code",
@@ -484,7 +484,7 @@
         "\n",
         "print(f\"\\nExpected number of heads: {five_flips.mean()}\")"
       ],
-      "id": "fef3328f",
+      "id": "04c16ed3",
       "execution_count": null,
       "outputs": []
     },
@@ -494,7 +494,7 @@
       "source": [
         "Let's make a graph:"
       ],
-      "id": "a7de2c5d"
+      "id": "009c5f5e"
     },
     {
       "cell_type": "code",
@@ -515,7 +515,7 @@
         "plt.legend()\n",
         "plt.show()"
       ],
-      "id": "cc40f68f",
+      "id": "50426297",
       "execution_count": null,
       "outputs": []
     },
@@ -534,7 +534,7 @@
         "\n",
         "**Step 1:** Set up the problem"
       ],
-      "id": "5ea4089f"
+      "id": "84d51a8f"
     },
     {
       "cell_type": "code",
@@ -547,7 +547,7 @@
         "\n",
         "basketball = stats.binom(___, ___)  # Create the distribution"
       ],
-      "id": "a8ef1eff",
+      "id": "bd4034fb",
       "execution_count": null,
       "outputs": []
     },
@@ -557,7 +557,7 @@
       "source": [
         "**Step 2:** Answer these questions"
       ],
-      "id": "cb360289"
+      "id": "92bc263e"
     },
     {
       "cell_type": "code",
@@ -576,7 +576,7 @@
         "prob_8_or_more = (basketball.pmf(8) + basketball.pmf(9) + basketball.pmf(10))\n",
         "print(f\"Probability of 8+ makes: {prob_8_or_more:.4f}\")"
       ],
-      "id": "e5815ec2",
+      "id": "b518cf5d",
       "execution_count": null,
       "outputs": []
     },
@@ -586,7 +586,7 @@
       "source": [
         "**Step 3:** Make a graph (fill in the blanks)"
       ],
-      "id": "2f0ac73f"
+      "id": "48dc315c"
     },
     {
       "cell_type": "code",
@@ -607,7 +607,7 @@
         "plt.legend()\n",
         "plt.show()"
       ],
-      "id": "6b6e513c",
+      "id": "073296b6",
       "execution_count": null,
       "outputs": []
     },
@@ -633,7 +633,7 @@
         "\n",
         "## Example: Store Customers"
       ],
-      "id": "50ea12ce"
+      "id": "4313d601"
     },
     {
       "cell_type": "code",
@@ -653,7 +653,7 @@
         "\n",
         "print(f\"\\nExpected customers per hour: {store_customers.mean()}\")"
       ],
-      "id": "8f7239cd",
+      "id": "b1503986",
       "execution_count": null,
       "outputs": []
     },
@@ -663,7 +663,7 @@
       "source": [
         "Let's visualize this:"
       ],
-      "id": "58095a9f"
+      "id": "c8ade25a"
     },
     {
       "cell_type": "code",
@@ -684,7 +684,7 @@
         "plt.legend()\n",
         "plt.show()"
       ],
-      "id": "f8033ae8",
+      "id": "fda2a9a0",
       "execution_count": null,
       "outputs": []
     },
@@ -703,7 +703,7 @@
         "\n",
         "**Step 1:** Set up the Poisson distribution"
       ],
-      "id": "c47e383f"
+      "id": "4fc58a0d"
     },
     {
       "cell_type": "code",
@@ -714,7 +714,7 @@
         "average_emails = ___  # Fill in the average\n",
         "email_arrivals = stats.poisson(___)"
       ],
-      "id": "672bd09b",
+      "id": "f9b80b5e",
       "execution_count": null,
       "outputs": []
     },
@@ -724,7 +724,7 @@
       "source": [
         "**Step 2:** Answer these questions"
       ],
-      "id": "f6f430c2"
+      "id": "9171ff10"
     },
     {
       "cell_type": "code",
@@ -743,7 +743,7 @@
         "expected_emails = email_arrivals.___()  # Fill in the method\n",
         "print(f\"Expected emails per hour: {expected_emails}\")"
       ],
-      "id": "b67272f9",
+      "id": "6cf8156b",
       "execution_count": null,
       "outputs": []
     },
@@ -753,7 +753,7 @@
       "source": [
         "**Step 3:** Make a graph (copy and modify the code from the store example)"
       ],
-      "id": "640b5b4d"
+      "id": "a5d5b1b0"
     },
     {
       "cell_type": "code",
@@ -761,7 +761,7 @@
       "source": [
         "# Your graph code here (copy from above and modify)"
       ],
-      "id": "560fa48b",
+      "id": "4334ed44",
       "execution_count": null,
       "outputs": []
     },
@@ -789,7 +789,7 @@
         "**Scenario A:** You flip a coin 8 times. What's the probability of getting exactly 5 heads?\n",
         "*This is BINOMIAL because: fixed number of trials, same probability each time*"
       ],
-      "id": "d6eb88cd"
+      "id": "fa2f1941"
     },
     {
       "cell_type": "code",
@@ -804,7 +804,7 @@
         "answer_a = scenario_a.pmf(___)  # exactly 5 heads\n",
         "print(f\"Scenario A answer: {answer_a:.4f}\")"
       ],
-      "id": "c5338630",
+      "id": "45f63044",
       "execution_count": null,
       "outputs": []
     },
@@ -815,7 +815,7 @@
         "**Scenario B:** A coffee shop serves an average of 6 customers per hour. What's the probability of serving exactly 4 customers in an hour?\n",
         "*This is POISSON because: events happening over time at a constant rate*"
       ],
-      "id": "3fdc6436"
+      "id": "16bb66d3"
     },
     {
       "cell_type": "code",
@@ -829,7 +829,7 @@
         "answer_b = scenario_b.pmf(___)  # exactly 4 customers\n",
         "print(f\"Scenario B answer: {answer_b:.4f}\")"
       ],
-      "id": "6d321852",
+      "id": "4f580c4e",
       "execution_count": null,
       "outputs": []
     },
@@ -840,7 +840,7 @@
         "**Scenario C:** A student has a 80% chance of getting a homework problem correct. What's the probability they get their next problem right?\n",
         "*This is BERNOULLI because: single trial, two outcomes*"
       ],
-      "id": "31b3561f"
+      "id": "c9e104df"
     },
     {
       "cell_type": "code",
@@ -854,7 +854,7 @@
         "answer_c = scenario_c.pmf(___)  # gets it right (value = 1)\n",
         "print(f\"Scenario C answer: {answer_c:.4f}\")"
       ],
-      "id": "77cf4c84",
+      "id": "cc512836",
       "execution_count": null,
       "outputs": []
     },
@@ -876,7 +876,7 @@
         "A **simulation** is when we use a computer to mimic a real-world or theoretical process—in this case, coin flips—over and over. By running many virtual flips, we can observe how often Heads or Tails actually occur and see these frequencies settle around the probabilities we calculated. Simulations are a powerful tool for validating our theory and building intuition about randomness.\n",
         ":::"
       ],
-      "id": "cef6416f"
+      "id": "17728bd2"
     },
     {
       "cell_type": "code",
@@ -913,7 +913,7 @@
         "print(f\"Difference: {abs(theoretical_prob - observed_prob):.4f}\")\n",
         "print(\"Theory and simulation should be close!\")"
       ],
-      "id": "1782df99",
+      "id": "107333a5",
       "execution_count": null,
       "outputs": []
     },
@@ -969,15 +969,15 @@
         "\n",
         "Great job completing your first probability lab! 🎯"
       ],
-      "id": "2f89ffb7"
+      "id": "b7908f9f"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

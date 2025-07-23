@@ -14,7 +14,7 @@ format:
     footer: "Understanding Data - Introduction to Probability © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
-jupyter: python3
+jupyter: pstat5a
 ---
 
 ## Today's Learning Objectives {#sec-objectives .smaller}
@@ -1094,3 +1094,9 @@ $$P(\text{no rain}) = 1 - P(\text{rain}) = 1 - 0.3 = 0.7$$
 - [Probability Models and Axioms](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/resources/mitres_6_012s18_l01as/)
 
 - [Probability Animations](https://seeing-theory.brown.edu/basic-probability/index.html)
+
+#
+
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+```

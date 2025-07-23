@@ -20,10 +20,10 @@
         "    footer: \"Understanding Data - Counting © 2025 Narjes Mathlouthi\"\n",
         "    transition: slide\n",
         "    background-transition: fade\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---"
       ],
-      "id": "f9a5c8e9"
+      "id": "f71a1ab5"
     },
     {
       "cell_type": "code",
@@ -37,7 +37,7 @@
         "import plotly.graph_objects as go\n",
         "import math"
       ],
-      "id": "1be79539",
+      "id": "5d24fc06",
       "execution_count": null,
       "outputs": []
     },
@@ -90,7 +90,7 @@
         "::: {.column width=\"50%\"}\n",
         "::: {.callout-example title=\"Combination Animation: Selecting Objects\"}"
       ],
-      "id": "113d8a90"
+      "id": "7c83a6a0"
     },
     {
       "cell_type": "code",
@@ -140,7 +140,7 @@
         "for i, comb in enumerate(combs):\n",
         "    print(f\"{i+1}. {', '.join(comb)}\")"
       ],
-      "id": "74a70e50",
+      "id": "384c01e2",
       "execution_count": null,
       "outputs": []
     },
@@ -300,7 +300,7 @@
         "\n",
         "::: {.column width=\"50%\"}"
       ],
-      "id": "0cc6cf67"
+      "id": "c8016d05"
     },
     {
       "cell_type": "code",
@@ -349,7 +349,7 @@
         "fig.update_xaxes(tickmode='linear', tick0=2, dtick=1)\n",
         "fig.show()"
       ],
-      "id": "29dcece9",
+      "id": "16c4bae6",
       "execution_count": null,
       "outputs": []
     },
@@ -433,7 +433,7 @@
         "::: {.column width=\"50%\"}\n",
         "::: {.callout-example title=\"Pascal's Triangle Animation\" .smaller}"
       ],
-      "id": "07feca1b"
+      "id": "d52f9ec3"
     },
     {
       "cell_type": "code",
@@ -486,7 +486,7 @@
         "# for i, row in enumerate(triangle):\n",
         "#     print(f\"Row {i}: {row}\")"
       ],
-      "id": "371056f8",
+      "id": "62fa5764",
       "execution_count": null,
       "outputs": []
     },
@@ -576,7 +576,7 @@
         "\n",
         "::: {.column width=\"50%\"}"
       ],
-      "id": "af7257a9"
+      "id": "c7359022"
     },
     {
       "cell_type": "code",
@@ -616,7 +616,7 @@
         "fig.update_xaxes(tickmode='linear', tick0=0, dtick=1)\n",
         "fig.show()"
       ],
-      "id": "0a91798b",
+      "id": "563e4ccd",
       "execution_count": null,
       "outputs": []
     },
@@ -825,7 +825,7 @@
         "\n",
         "::: {.callout-example title=\"Visual Demo: Inclusion-Exclusion\"}"
       ],
-      "id": "ce3ed963"
+      "id": "4b4e7b84"
     },
     {
       "cell_type": "code",
@@ -885,7 +885,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "e9034ee8",
+      "id": "88ed56cc",
       "execution_count": null,
       "outputs": []
     },
@@ -1089,7 +1089,7 @@
         "\n",
         "::: {.column width=\"60%\"}"
       ],
-      "id": "5f178555"
+      "id": "85a21c74"
     },
     {
       "cell_type": "code",
@@ -1149,7 +1149,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "13cc9bd0",
+      "id": "50d3c22d",
       "execution_count": null,
       "outputs": []
     },
@@ -1337,15 +1337,15 @@
         "\n",
         "**Next Class**: Random Variables "
       ],
-      "id": "dcbcad0b"
+      "id": "1d0c35d7"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

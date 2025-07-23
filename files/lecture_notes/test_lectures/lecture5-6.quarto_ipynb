@@ -20,7 +20,7 @@
         "    footer: \"Understanding Data - Conditional Probability © 2025 Narjes Mathlouthi\"\n",
         "    transition: slide\n",
         "    background-transition: fade\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---\n",
         "\n",
         "\n",
@@ -44,7 +44,7 @@
         "\n",
         "- **Independent (right):** the circles overlap, and we’ve sized the intersection so that $P(A\\cap B)=P(A)\\,P(B)$.\n"
       ],
-      "id": "c5a64df9"
+      "id": "c8910413"
     },
     {
       "cell_type": "code",
@@ -78,7 +78,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "548d19ba",
+      "id": "bcc03947",
       "execution_count": null,
       "outputs": []
     },
@@ -131,7 +131,7 @@
         "\n",
         "**Independent events**: $P(A \\cap B) = P(A) \\times P(B)$"
       ],
-      "id": "84a0559e"
+      "id": "40ad5ff5"
     },
     {
       "cell_type": "code",
@@ -159,7 +159,7 @@
         "plt.tight_layout()\n",
         "plt.show()\n"
       ],
-      "id": "64d8aab6",
+      "id": "37308deb",
       "execution_count": null,
       "outputs": []
     },
@@ -176,7 +176,7 @@
         "Tree diagrams help visualize sequential events and calculate probabilities.\n",
         ":::"
       ],
-      "id": "1eee029f"
+      "id": "dd046814"
     },
     {
       "cell_type": "code",
@@ -239,7 +239,7 @@
         "\n",
         "plt.show()"
       ],
-      "id": "e7e30734",
+      "id": "feb09485",
       "execution_count": null,
       "outputs": []
     },
@@ -253,7 +253,7 @@
         ":::{.columns}\n",
         ":::{.column}"
       ],
-      "id": "0e3ff2d3"
+      "id": "87817e01"
     },
     {
       "cell_type": "code",
@@ -358,7 +358,7 @@
         "ax1.set_title('Intersection Only (P(A∩B))', fontsize=14)\n",
         "plt.show()\n"
       ],
-      "id": "1090c9eb",
+      "id": "b2e68677",
       "execution_count": null,
       "outputs": []
     },
@@ -370,7 +370,7 @@
         "\n",
         ":::{.column }"
       ],
-      "id": "bf0f9821"
+      "id": "ca94d6dc"
     },
     {
       "cell_type": "code",
@@ -384,7 +384,7 @@
         "ax2.set_title('Event B Only (P(B))', fontsize=14)\n",
         "plt.show()"
       ],
-      "id": "e31956df",
+      "id": "ba705950",
       "execution_count": null,
       "outputs": []
     },
@@ -414,7 +414,7 @@
         ":::{.column}\n",
         ":::{.fragment}"
       ],
-      "id": "ec294a1e"
+      "id": "03b23274"
     },
     {
       "cell_type": "code",
@@ -507,7 +507,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "6f5d8a8e",
+      "id": "49e5b329",
       "execution_count": null,
       "outputs": []
     },
@@ -536,7 +536,7 @@
         "$$P(A) = P(A|B_1)P(B_1) + P(A|B_2)P(B_2) + \\cdots + P(A|B_n)P(B_n)$$\n",
         ":::"
       ],
-      "id": "355eacf7"
+      "id": "6f7fd6d5"
     },
     {
       "cell_type": "code",
@@ -582,7 +582,7 @@
         "ax.set_ylim(-2, 2)\n",
         "plt.show()"
       ],
-      "id": "892bcac7",
+      "id": "6a217a9c",
       "execution_count": null,
       "outputs": []
     },
@@ -670,7 +670,7 @@
         "\n",
         ":::{.column width=\"60%\"}"
       ],
-      "id": "61f1273b"
+      "id": "52635318"
     },
     {
       "cell_type": "code",
@@ -713,7 +713,7 @@
         ")\n",
         "fig.show()"
       ],
-      "id": "b31ff258",
+      "id": "98a2d7d5",
       "execution_count": null,
       "outputs": []
     },
@@ -755,7 +755,7 @@
         "\n",
         "$$P(D|T^+) = \\frac{P(T^+|D) \\times P(D)}{P(T^+)} = \\frac{0.95 \\times 0.01}{0.1085} \\approx 0.088$$"
       ],
-      "id": "12e6c226"
+      "id": "9e44cd7a"
     },
     {
       "cell_type": "code",
@@ -785,7 +785,7 @@
         "ax.axis('equal')  # Equal aspect ensures pie is circular.\n",
         "plt.show()"
       ],
-      "id": "bd723762",
+      "id": "fdb0bb9f",
       "execution_count": null,
       "outputs": []
     },
@@ -1065,15 +1065,15 @@
         "\n",
         "- [Probability Models and Axioms](https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/resources/mitres_6_012s18_l01as/)"
       ],
-      "id": "86db6045"
+      "id": "3260a9af"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

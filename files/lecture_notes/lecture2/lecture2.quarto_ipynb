@@ -21,7 +21,7 @@
         "   css: /files/lecture_notes/theme/lecture-styles.css\n",
         "   slide-number: true\n",
         "   number-sections: false\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "   \n",
         "---\n",
         "\n",
@@ -545,7 +545,7 @@
         "\n",
         "### Important Python  Libraries"
       ],
-      "id": "938a8855"
+      "id": "14530fce"
     },
     {
       "cell_type": "code",
@@ -558,7 +558,7 @@
         "import matplotlib.pyplot as plt # for visulization\n",
         "import seaborn as sns # for advanced visulization"
       ],
-      "id": "30bf655c",
+      "id": "3814d174",
       "execution_count": null,
       "outputs": []
     },
@@ -599,7 +599,7 @@
         "\n",
         "### Mean Calculation"
       ],
-      "id": "38708800"
+      "id": "3ce6076f"
     },
     {
       "cell_type": "code",
@@ -630,7 +630,7 @@
         "manual_mean = sum(data) / len(data)\n",
         "print(f\"Mean (Manual): {manual_mean:.2f}\")"
       ],
-      "id": "2e7eedd2",
+      "id": "ddd19b2f",
       "execution_count": null,
       "outputs": []
     },
@@ -640,7 +640,7 @@
       "source": [
         "### Median Calculation"
       ],
-      "id": "7a94c0f1"
+      "id": "e2cdf171"
     },
     {
       "cell_type": "code",
@@ -669,7 +669,7 @@
         "\n",
         "print(f\"Median (Manual): {manual_median:.2f}\")"
       ],
-      "id": "1d2fa84f",
+      "id": "116e48f1",
       "execution_count": null,
       "outputs": []
     },
@@ -679,7 +679,7 @@
       "source": [
         "### Mode Calculation"
       ],
-      "id": "9adadb50"
+      "id": "5129805a"
     },
     {
       "cell_type": "code",
@@ -711,7 +711,7 @@
         "\n",
         "print(f\"Mode (Manual): {modes}, Count: {max_count}\")"
       ],
-      "id": "a9717fe2",
+      "id": "d1cfb6dd",
       "execution_count": null,
       "outputs": []
     },
@@ -727,7 +727,7 @@
         "\n",
         "### Code"
       ],
-      "id": "9ed2a0ab"
+      "id": "abc3d79a"
     },
     {
       "cell_type": "code",
@@ -749,7 +749,7 @@
         "modes     = [k for k,v in counter.items() if v==max_count]\n",
         "mode_val  = modes[0]"
       ],
-      "id": "40b07aaf",
+      "id": "70873716",
       "execution_count": null,
       "outputs": []
     },
@@ -759,7 +759,7 @@
       "source": [
         "### Visualization"
       ],
-      "id": "20baef34"
+      "id": "6804f565"
     },
     {
       "cell_type": "code",
@@ -787,7 +787,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "a913bfad",
+      "id": "73367281",
       "execution_count": null,
       "outputs": []
     },
@@ -879,17 +879,24 @@
         "  \n",
         "- [NumPy statistical functions](https://numpy.org/doc/2.1/reference/routines.statistics.html)\n",
         "  \n",
-        "- [SciPy stats module reference](https://docs.scipy.org/doc/scipy/reference/stats.html) \n"
+        "- [SciPy stats module reference](https://docs.scipy.org/doc/scipy/reference/stats.html) \n",
+        "\n",
+        "\n",
+        "\n",
+        "#\n",
+        "```{=html}\n",
+        "<a href=\"https://pstat5a.com/schedule.html\" class=\"main-page-btn\">🏠 Back to Main Page</a>\n",
+        "```"
       ],
-      "id": "011d7c45"
+      "id": "df2fd7f9"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

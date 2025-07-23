@@ -33,7 +33,7 @@
         "execute:\n",
         "  echo: true\n",
         "  warning: false\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "---\n",
         "\n",
         "## Today's Learning Objectives\n",
@@ -60,7 +60,7 @@
         "\n",
         "## Real-World Connection"
       ],
-      "id": "3bf4e638"
+      "id": "2d74cb40"
     },
     {
       "cell_type": "code",
@@ -101,7 +101,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "66d76e3f",
+      "id": "5bf964ea",
       "execution_count": null,
       "outputs": []
     },
@@ -176,7 +176,7 @@
         "\n",
         "## Sampling and Random Variables"
       ],
-      "id": "30644510"
+      "id": "f12f5a2c"
     },
     {
       "cell_type": "code",
@@ -222,7 +222,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "a08d4953",
+      "id": "57d5b1d6",
       "execution_count": null,
       "outputs": []
     },
@@ -288,7 +288,7 @@
         "\n",
         "::: {.column width=\"40%\"}"
       ],
-      "id": "9c19c6ef"
+      "id": "e1dcb0dc"
     },
     {
       "cell_type": "code",
@@ -319,7 +319,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "b1e49015",
+      "id": "f5bc466b",
       "execution_count": null,
       "outputs": []
     },
@@ -349,7 +349,7 @@
         "\n",
         "::: {.column width=\"50%\"}"
       ],
-      "id": "faef8b58"
+      "id": "5c0f1a72"
     },
     {
       "cell_type": "code",
@@ -379,7 +379,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "1676b7f4",
+      "id": "4e4507ba",
       "execution_count": null,
       "outputs": []
     },
@@ -411,7 +411,7 @@
         "\n",
         "::: {.column width=\"50%\"}"
       ],
-      "id": "006aeea6"
+      "id": "69d6ee56"
     },
     {
       "cell_type": "code",
@@ -437,7 +437,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "2ae46b65",
+      "id": "1c3b767e",
       "execution_count": null,
       "outputs": []
     },
@@ -466,7 +466,7 @@
         "\n",
         "::: {.column width=\"50%\"}"
       ],
-      "id": "3e47194d"
+      "id": "2a498570"
     },
     {
       "cell_type": "code",
@@ -492,7 +492,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "3c602e39",
+      "id": "451a8831",
       "execution_count": null,
       "outputs": []
     },
@@ -570,7 +570,7 @@
         "\n",
         "## Comparing Distributions Side-by-Side"
       ],
-      "id": "7b4d0c3f"
+      "id": "e7112317"
     },
     {
       "cell_type": "code",
@@ -621,7 +621,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "e035428d",
+      "id": "7b98112b",
       "execution_count": null,
       "outputs": []
     },
@@ -646,7 +646,7 @@
         "\n",
         "## Visualizing Confidence Intervals"
       ],
-      "id": "270de4cf"
+      "id": "ae51ab6f"
     },
     {
       "cell_type": "code",
@@ -720,7 +720,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "a01b0ccf",
+      "id": "969361a3",
       "execution_count": null,
       "outputs": []
     },
@@ -750,7 +750,7 @@
         "\n",
         "## Factors Affecting Confidence Interval Width"
       ],
-      "id": "8d393e12"
+      "id": "3f3790c2"
     },
     {
       "cell_type": "code",
@@ -805,7 +805,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "e2a66dbb",
+      "id": "0648ae09",
       "execution_count": null,
       "outputs": []
     },
@@ -857,7 +857,7 @@
         "\n",
         "## Appendix: Python Code Examples {.smaller .scrollable}"
       ],
-      "id": "ddf03d56"
+      "id": "e56a75ef"
     },
     {
       "cell_type": "code",
@@ -903,7 +903,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "33161244",
+      "id": "1c3d0213",
       "execution_count": null,
       "outputs": []
     },
@@ -913,7 +913,7 @@
       "source": [
         "## Additional Resources {.smaller .scrollable}"
       ],
-      "id": "e8b2c4b4"
+      "id": "55c0e13c"
     },
     {
       "cell_type": "code",
@@ -941,17 +941,29 @@
         "# np.random.normal(mu, sigma, size)\n",
         "# np.random.exponential(scale, size)"
       ],
-      "id": "34aaa650",
+      "id": "c70c4474",
       "execution_count": null,
       "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "#\n",
+        "\n",
+        "```{=html}\n",
+        "<a href=\"https://pstat5a.com/schedule.html\" class=\"main-page-btn\">🏠 Back to Main Page</a>\n",
+        "```"
+      ],
+      "id": "c20f7ce1"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

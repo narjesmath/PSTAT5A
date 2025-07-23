@@ -22,14 +22,14 @@
         "    transition: slide\n",
         "    background-transition: fade\n",
         "    smaller: true\n",
-        "jupyter: python3\n",
+        "jupyter: pstat5a\n",
         "execute:\n",
         "  echo: false\n",
         "  warning: false\n",
         "  message: false\n",
         "---"
       ],
-      "id": "b751f77b"
+      "id": "4a28c2dd"
     },
     {
       "cell_type": "code",
@@ -63,7 +63,7 @@
         "# Set random seed for reproducibility\n",
         "np.random.seed(42)"
       ],
-      "id": "168c49f6",
+      "id": "e539c0e5",
       "execution_count": null,
       "outputs": []
     },
@@ -128,7 +128,7 @@
         "\n",
         "## What is Hypothesis Testing? 🤔"
       ],
-      "id": "9519ff40"
+      "id": "0f8bcdb5"
     },
     {
       "cell_type": "code",
@@ -256,7 +256,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "c181a060",
+      "id": "7ed716fe",
       "execution_count": null,
       "outputs": []
     },
@@ -270,7 +270,7 @@
         "\n",
         "## The Courtroom Analogy ⚖️"
       ],
-      "id": "40d820e2"
+      "id": "b853b292"
     },
     {
       "cell_type": "code",
@@ -350,7 +350,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "5e351eb0",
+      "id": "16cf2c0c",
       "execution_count": null,
       "outputs": []
     },
@@ -364,7 +364,7 @@
         "\n",
         "## The Six Steps of Hypothesis Testing 📋"
       ],
-      "id": "ca82933c"
+      "id": "69507c39"
     },
     {
       "cell_type": "code",
@@ -534,7 +534,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "0b8a7372",
+      "id": "0cbfa2d9",
       "execution_count": null,
       "outputs": []
     },
@@ -546,7 +546,7 @@
         "\n",
         "## Types of Alternative Hypotheses 🎯"
       ],
-      "id": "1e3bf360"
+      "id": "92f4caa6"
     },
     {
       "cell_type": "code",
@@ -719,7 +719,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "988e395c",
+      "id": "e6be5133",
       "execution_count": null,
       "outputs": []
     },
@@ -739,7 +739,7 @@
         "\n",
         "## Types of Errors: The Trade-off 🎲"
       ],
-      "id": "104044b3"
+      "id": "fb69f986"
     },
     {
       "cell_type": "code",
@@ -874,7 +874,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "3a6f1f86",
+      "id": "465d4128",
       "execution_count": null,
       "outputs": []
     },
@@ -888,7 +888,7 @@
         "\n",
         "## Statistical Power: Detecting True Effects 💪"
       ],
-      "id": "e9c25d02"
+      "id": "b1dcd634"
     },
     {
       "cell_type": "code",
@@ -1077,7 +1077,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "671d6408",
+      "id": "a321ce77",
       "execution_count": null,
       "outputs": []
     },
@@ -1095,7 +1095,7 @@
         "\n",
         "**Research Question:** A new study technique claims to improve test scores. The current average is 75. We test 25 students using the new method."
       ],
-      "id": "5802b89f"
+      "id": "3fda8d4a"
     },
     {
       "cell_type": "code",
@@ -1113,7 +1113,7 @@
         "print(f\"Sample std (s): {np.std(new_method_scores, ddof=1):.2f}\")\n",
         "print(f\"Current average (μ₀): {current_average}\")"
       ],
-      "id": "cc868aa3",
+      "id": "8b699a25",
       "execution_count": null,
       "outputs": []
     },
@@ -1123,7 +1123,7 @@
       "source": [
         "### Complete Hypothesis Test"
       ],
-      "id": "6e1c53c9"
+      "id": "ff0006f2"
     },
     {
       "cell_type": "code",
@@ -1308,7 +1308,7 @@
         "    print(f\"📊 CONCLUSION: There is insufficient evidence (p = {p_value:.4f}) that the new study method improves test scores.\")\n",
         "    print(f\"💡 PRACTICAL IMPACT: The observed difference could reasonably be due to chance.\")"
       ],
-      "id": "fe64152b",
+      "id": "858ff11a",
       "execution_count": null,
       "outputs": []
     },
@@ -1318,7 +1318,7 @@
       "source": [
         "### Using Python's Built-in Functions"
       ],
-      "id": "39f4d34f"
+      "id": "9d8af8e6"
     },
     {
       "cell_type": "code",
@@ -1361,7 +1361,7 @@
         "    effect_interpretation = \"large\"\n",
         "print(f\"Effect size interpretation: {effect_interpretation} effect\")"
       ],
-      "id": "9a727d6f",
+      "id": "40c1d9b8",
       "execution_count": null,
       "outputs": []
     },
@@ -1377,7 +1377,7 @@
         "\n",
         "**Research Question:** Compare effectiveness of two teaching methods"
       ],
-      "id": "b94baf6a"
+      "id": "2b8d4a40"
     },
     {
       "cell_type": "code",
@@ -1396,7 +1396,7 @@
         "print(f\"  n = {len(method_B)}, mean = {np.mean(method_B):.2f}, std = {np.std(method_B, ddof=1):.2f}\")\n",
         "print(f\"\\nDifference in means: {np.mean(method_B) - np.mean(method_A):.2f} points\")"
       ],
-      "id": "c6b0e8a5",
+      "id": "ae7e08cf",
       "execution_count": null,
       "outputs": []
     },
@@ -1406,7 +1406,7 @@
       "source": [
         "## Statistical vs Practical Significance 🤔"
       ],
-      "id": "6d6c85b6"
+      "id": "7cf82731"
     },
     {
       "cell_type": "code",
@@ -1533,7 +1533,7 @@
         "print(f\"Right: Large effect ({np.mean(large_effect) - 100:.1f}) but {'not ' if p_val_small > 0.05 else ''}significant with small sample\")\n",
         "print(\"\\n💡 Always consider BOTH statistical significance AND effect size!\")"
       ],
-      "id": "c8bb433b",
+      "id": "6e9d88e3",
       "execution_count": null,
       "outputs": []
     },
@@ -1545,7 +1545,7 @@
         "\n",
         "## Best Practices Summary 📋"
       ],
-      "id": "38dff207"
+      "id": "38453d7d"
     },
     {
       "cell_type": "code",
@@ -1674,7 +1674,7 @@
         "\n",
         "fig.show()"
       ],
-      "id": "92f4699a",
+      "id": "9ab574ea",
       "execution_count": null,
       "outputs": []
     },
@@ -1686,7 +1686,7 @@
         "\n",
         "## Python Code Templates 💻 {.hidden}"
       ],
-      "id": "92eab69a"
+      "id": "c33df52e"
     },
     {
       "cell_type": "code",
@@ -1848,12 +1848,12 @@
         "required_n = power_analysis(effect_size=0.5, power=0.8)\n",
         "print(f\"\\nRequired sample size for d=0.5, power=0.8: {required_n}\")"
       ],
-      "id": "60dda75e",
+      "id": "01e93148",
       "execution_count": null,
       "outputs": []
     },
     {
-      "cell_type": "raw",
+      "cell_type": "markdown",
       "metadata": {},
       "source": [
         "---\n",
@@ -1886,21 +1886,24 @@
         "\n",
         "**Remember:** Hypothesis testing is a tool for making informed decisions under uncertainty. Use it wisely, report honestly, and always consider the practical implications of your statistical conclusions.\n",
         "\n",
-        "*\"The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data.\"* - John Tukey\n",
+        "**\"The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data.\"** - John Tukey\n",
         "\n",
         "**Next class:** Regression Analysis! 📊\n",
         "\n",
-        "---"
+        "\n",
+        "```{=html}\n",
+        "<a href=\"https://pstat5a.com/schedule.html\" class=\"main-page-btn\">🏠 Back to Main Page</a>\n",
+        "```"
       ],
-      "id": "f018f68e"
+      "id": "ac79aed0"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "name": "python3",
+      "name": "pstat5a",
       "language": "python",
-      "display_name": "Python 3 (ipykernel)",
-      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+      "display_name": "Python (pstat5a)",
+      "path": "/Users/narjesmathlouthi/Library/Jupyter/kernels/pstat5a"
     }
   },
   "nbformat": 4,

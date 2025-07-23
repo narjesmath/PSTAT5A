@@ -25,15 +25,15 @@ website:
         href: contact.qmd
         text: "Contact"
 
-format:
-  html:
-    favicon: "img/logo.png"
-    title-block-banner: false
-    title-prefix: "PSTAT5A"
-    resources:
-      - "img/logo.png"
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
-    toc: true
+# format:
+#   html:
+#     favicon: "img/logo.png"
+#     title-block-banner: false
+#     title-prefix: "PSTAT5A"
+#     resources:
+#       - "img/logo.png"
+#     theme:
+#       - cosmo
+#       - brand
+#     css: /theme/styles.css
+#     toc: true

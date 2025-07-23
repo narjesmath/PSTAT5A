@@ -13,7 +13,7 @@ format:
     toc: true
     number-sections: false
 date: today
-jupyter: python3
+jupyter: pstat5a
 execute: 
   eval: true
   warning: false

@@ -6,9 +6,9 @@ date: today
 format:
   revealjs:
     logo: /img/logo.png
-    slide-level: 2            # ## becomes a new slide
-    theme: default
-    css: /files/lecture_notes/lecture10/new-style.css
+    slide-level: 2            
+    theme:  default
+    css: lec12-style.css
     slide-number: true
     chalkboard: true
     preview-links: auto
@@ -18,7 +18,7 @@ format:
     incremental: false
     smaller: true
 
-jupyter: python3
+jupyter: pstat5a
 execute:
   echo: false
   warning: false
@@ -62,16 +62,17 @@ np.random.seed(42)
 
 *"A confidence interval is a way of expressing uncertainty in a precise, mathematical way"*
 
----
+------------------------------------------------------------------------
 
 ## 📢 Important Announcements
 
-:::: {.columns}
+::::: columns
 ::: {.column width="50%"}
 ### 📝 Quiz 2 Details
-**When:**  
-- 📅 **Date:** Friday, July 25  
-- ⏰ **Window:** 7 AM – 12 AM  
+
+**When:**\
+- 📅 **Date:** Friday, July 25\
+- ⏰ **Window:** 7 AM – 12 AM\
 - ⏳ **Duration:** 1 hour once started
 
 **Where:** 💻 Online via Canvas
@@ -81,47 +82,49 @@ np.random.seed(42)
 
 ::: {.column width="50%"}
 ### 📚 What to Expect
-- Discrete & continuous distributions
-- Probability calculations
-- Expected value & variance
-- Normal distribution applications
-- **Note:** Upload photos of written work for calculation problems
+
+-   Discrete & continuous distributions
+-   Probability calculations
+-   Expected value & variance
+-   Normal distribution applications
+-   **Note:** Upload photos of written work for calculation problems
 :::
-::::
+:::::
 
 ## 📢 Today's Roadmap
 
-:::: {.columns}
-::: {.column}
+::::: columns
+::: column
 ### 🎯 Learning Objectives
-- **Know the difference** between $z$ and $t$ distributions
-- **Understand when to use** each distribution
-- **Learn to find critical values** from tables and plots
-- **Practice calculating** confidence intervals step-by-step
-- **Interpret results** correctly in context
+
+-   **Know the difference** between $z$ and $t$ distributions
+-   **Understand when to use** each distribution
+-   **Learn to find critical values** from tables and plots
+-   **Practice calculating** confidence intervals step-by-step
+-   **Interpret results** correctly in context
 :::
 
-::: {.column}
+::: column
 ### 📋 What We'll Cover
-1. **Review:** Confidence interval basics
-2. **The t-Distribution:** When and why we use it
-3. **Critical Regions:** Finding the right values
-4. **Practical Examples:** z and t calculations
-5. **Common Mistakes:** What to avoid
-6. **Real Applications:** Making it meaningful
-:::
-::::
 
----
+1.  **Review:** Confidence interval basics
+2.  **The t-Distribution:** When and why we use it
+3.  **Critical Regions:** Finding the right values
+4.  **Practical Examples:** z and t calculations
+5.  **Common Mistakes:** What to avoid
+6.  **Real Applications:** Making it meaningful
+:::
+:::::
+
+------------------------------------------------------------------------
 
 ## Quick Review: Confidence Interval Basics 🔄
 
-:::: {.columns}
-::: {.column}
+::::: columns
+::: column
 ### 🎯 The Big Idea
 
-A **confidence interval (CI)** takes a single sample statistic and turns it into a *range* that is likely to contain an *unknown* population parameter; 
-most often the mean $\mu$.
+A **confidence interval (CI)** takes a single sample statistic and turns it into a *range* that is likely to contain an *unknown* population parameter; most often the mean $\mu$.
 
 **CI template**
 
@@ -134,18 +137,18 @@ $$
 **For the mean**
 
 | Situation | Formula | Distribution |
-|-----------|---------|--------------|
+|-----------------------|-------------------|-----------------------------|
 | **σ known** (rare) | $\displaystyle \bar{x} \;\pm\; z^{*}\,\frac{\sigma}{\sqrt{n}}$ | *z*-distribution |
 | **σ unknown** (typical) | $\displaystyle \bar{x} \;\pm\; t^{*}\,\frac{s}{\sqrt{n}}$ | *t*-distribution ($df = n-1$) |
 
 **Key points**
 
-- We *never* know the true mean $\mu$ in practice, that's exactly what the CI estimates.  
-- Use the population SD **σ** only when it is genuinely known (e.g., industrial process with long‑term QC).  
-- Otherwise substitute the sample SD **s** and switch to the *t*‑distribution, which is wider to reflect that extra uncertainty.
+-   We *never* know the true mean $\mu$ in practice, that's exactly what the CI estimates.\
+-   Use the population SD **σ** only when it is genuinely known (e.g., industrial process with long‑term QC).\
+-   Otherwise substitute the sample SD **s** and switch to the *t*‑distribution, which is wider to reflect that extra uncertainty.
 :::
 
-::: {.column}
+::: column
 ```{python}
 #| fig-width: 10
 #| fig-height: 5
@@ -211,40 +214,42 @@ fig.show()
 
 **Key Formula:** $\bar{x} \pm z^* \cdot \frac{s}{\sqrt{n}}$ (when using z-distribution)
 :::
-::::
+:::::
 
----
+------------------------------------------------------------------------
 
 ## Step-by-Step Example 1: Using z-Distribution 📝
 
-:::: {.columns}
-::: {.column}
+:::::: columns
+:::: column
 ### 🎯 Problem Setup
 
 **Research Question:** What is the average SAT score of students at UCSB?
 
 **Given Information:**
 
-- Sample size: $n = 50$ students
-- Sample mean: $\bar{x} = 1180$
-- **Population standard deviation:** $\sigma = 120$ (known from past data)
-- Confidence level: $95\%$
+-   Sample size: $n = 50$ students
+-   Sample mean: $\bar{x} = 1180$
+-   **Population standard deviation:** $\sigma = 120$ (known from past data)
+-   Confidence level: $95\%$
 
 **Question:** Construct a $95\%$ confidence interval for the population mean SAT score.
 
-<button class="show-solution smaller" onclick="toggleSolution('sol1')">Show Solution</button>
-
-::: {.solution data-id="sol1"}
+::: {#my-solution .collapsible-solution}
+<button class="solution-toggle">
+  Show Solution
+</button>
+<div class="solution-content">
 
 **Step 1: Check conditions**
 
-- $\sigma$ is known ✓
-- Use z-distribution ✓
+-   $\sigma$ is known ✓
+-   Use z-distribution ✓
 
 **Step 2: Find critical value**
 
-- For $95\%$ CI: $\alpha = 0.05, \frac{\alpha}{2} = 0.025$
-- $z^* = 1.96$ (from z-table)
+-   For $95\%$ CI: $\alpha = 0.05, \frac{\alpha}{2} = 0.025$
+-   $z^* = 1.96$ (from z-table)
 
 **Step 3: Calculate SE**
 
@@ -259,10 +264,11 @@ $$ME = z^* \times SE = 1.96 \times 16.97 = 33.26$$
 $$CI = \bar{x} \pm ME = 1180 \pm 33.26 = (1146.7, 1213.3)$$
 
 **Final Answer:** We are 95% confident that the true average SAT score is between 1146.7 and 1213.3.
+</div>
 :::
-:::
+::::
 
-::: {.column}
+::: column
 ```{python}
 #| fig-width: 10
 #| fig-height: 6
@@ -324,41 +330,43 @@ fig.update_layout(
 fig.show()
 ```
 :::
-::::
+::::::
 
----
+------------------------------------------------------------------------
 
 ## Step-by-Step Example 2: Using t-Distribution 📝
 
-:::: {.columns}
-::: {.column}
+::::::: columns
+::::: column
 ### 🎯 Problem Setup
 
 **Research Question:** What is the average daily coffee consumption at our office?
 
 **Given Information:**
-- Sample size: n = 16 employees
-- Sample mean: $\bar{x} = 2.8$ cups
-- **Sample standard deviation: s = 0.9** ($\sigma$ unknown)
-- Confidence level: 90%
+
+\- Sample size: n = 16 employees
+
+\- Sample mean: $\bar{x} = 2.8$ cups
+
+\- **Sample standard deviation: s = 0.9** ($\sigma$ unknown)
+
+\- Confidence level: 90%
 
 **Question:** Construct a 90% confidence interval for the population mean daily coffee consumption.
 
-::: {.collapsible-solution}
-<button class="solution-toggle">Show Solution</button>
-<div class="solution-content">
+:::: collapsible-solution
+<button class="solution-toggle">
 
-**Step 1: Check conditions**
-- $\sigma$ is unknown ✓
-- n < 30 ✓
-- Use t-distribution ✓
+Show Solution
 
-**Step 2: Calculate degrees of freedom**
-- df = n - 1 = 16 - 1 = 15
+</button>
 
-**Step 3: Find critical value**
-- For 90% CI: $\alpha = 0.10, \alpha/2 = 0.05$
-- t* = 1.753 (from t-table, df = 15)
+::: solution-content
+**Step 1: Check conditions** - $\sigma$ is unknown ✓ - n \< 30 ✓ - Use t-distribution ✓
+
+**Step 2: Calculate degrees of freedom** - df = n - 1 = 16 - 1 = 15
+
+**Step 3: Find critical value** - For 90% CI: $\alpha = 0.10, \alpha/2 = 0.05$ - t\* = 1.753 (from t-table, df = 15)
 
 **Step 4: Calculate SE**
 
@@ -373,12 +381,11 @@ $$ME = t^* \times SE = 1.753 \times 0.225 = 0.394$$
 $$CI = \bar{x} \pm ME = 2.8 \pm 0.394 = (2.406, 3.194)$$
 
 **Final Answer:** We are 90% confident that the true average daily coffee consumption is between 2.406 and 3.194 cups.
-
-</div>
 :::
-:::
+::::
+:::::
 
-::: {.column}
+::: column
 ```{python}
 #| fig-width: 10
 #| fig-height: 6
@@ -441,47 +448,46 @@ fig.update_layout(
 fig.show()
 ```
 :::
-::::
+:::::::
 
----
+------------------------------------------------------------------------
 
 ## Practice Problem: Test Your Skills! 🧠
 
-:::: {.columns}
-::: {.column}
+::::::: columns
+::::: column
 ### 🎯 Your Turn!
 
 **Problem:** A researcher wants to estimate the average time students spend studying per day.
 
 **Given:**
 
-- Sample size: $n = 25$ students  
-- Sample mean: $\bar{x} = 3.2$ hours
-- Sample standard deviation: $s = 1.1$ hours
-- Confidence level: $95\%$
+-   Sample size: $n = 25$ students\
+-   Sample mean: $\bar{x} = 3.2$ hours
+-   Sample standard deviation: $s = 1.1$ hours
+-   Confidence level: $95\%$
 
 **Questions:**
 
-1. Should you use $z$ or $t$-distribution? Why?
-2. What are the degrees of freedom?
-3. What is the critical value?
-4. Calculate the 95% confidence interval
-5. Interpret your result in context
+1.  Should you use $z$ or $t$-distribution? Why?
+2.  What are the degrees of freedom?
+3.  What is the critical value?
+4.  Calculate the 95% confidence interval
+5.  Interpret your result in context
 
-::: {.collapsible-solution}
-<button class="solution-toggle">Show Solution</button>
-<div class="solution-content">
+:::: collapsible-solution
+<button class="solution-toggle">
 
-**Step 1: Distribution Choice**
-Use t-distribution because:
-- σ is unknown (only sample standard deviation s is given)
-- n = 25 < 30
+Show Solution
 
-**Step 2: Degrees of Freedom**
-df = n - 1 = 25 - 1 = 24
+</button>
 
-**Step 3: Critical Value**
-For 95% CI with df = 24: t* = 2.064
+::: solution-content
+**Step 1: Distribution Choice** Use t-distribution because: - σ is unknown (only sample standard deviation s is given) - n = 25 \< 30
+
+**Step 2: Degrees of Freedom** df = n - 1 = 25 - 1 = 24
+
+**Step 3: Critical Value** For 95% CI with df = 24: t\* = 2.064
 
 **Step 4: Calculate CI**
 
@@ -491,14 +497,12 @@ Margin of Error: $ME = t^* \times SE = 2.064 \times 0.220 = 0.454$
 
 Confidence Interval: $CI = \bar{x} \pm ME = 3.2 \pm 0.454 = (2.746, 3.654)$
 
-**Step 5: Interpretation**
-We are 95% confident that the true average study time for students is between 2.746 and 3.654 hours per day.
-
-</div>
+**Step 5: Interpretation** We are 95% confident that the true average study time for students is between 2.746 and 3.654 hours per day.
 :::
-:::
+::::
+:::::
 
-::: {.column}
+::: column
 ```{python}
 #| fig-width: 10
 #| fig-height: 6
@@ -560,67 +564,92 @@ fig.show()
 ```
 
 ### 🤔 Think About It...
-- Why is the t-distribution appropriate here?
-- How would the interval change if n = 100?
-- What if we wanted 99% confidence instead?
-:::
-::::
 
----
+-   Why is the t-distribution appropriate here?
+-   How would the interval change if n = 100?
+-   What if we wanted 99% confidence instead?
+:::
+:::::::
+
+------------------------------------------------------------------------
 
 ## Summary: Key Takeaways 🎯
 
-:::: {.columns}
-::: {.column}
+::::: columns
+::: column
 ### 🧠 Core Concepts
 
-**1. Distribution Choice**
-- σ known → z-distribution
-- σ unknown + n ≥ 30 → z-distribution  
-- σ unknown + n < 30 → t-distribution
+**1. Distribution Choice** - σ known → z-distribution - σ unknown + n ≥ 30 → z-distribution\
+- σ unknown + n \< 30 → t-distribution
 
-**2. t-Distribution Properties**
-- Heavier tails than z
-- Depends on degrees of freedom (df = n-1)
-- Approaches z as df increases
+**2. t-Distribution Properties** - Heavier tails than z - Depends on degrees of freedom (df = n-1) - Approaches z as df increases
 
-**3. Critical Regions**
-- α/2 in each tail for two-sided CI
-- Critical values from tables or software
-- Larger confidence → larger critical values
+**3. Critical Regions** - α/2 in each tail for two-sided CI - Critical values from tables or software - Larger confidence → larger critical values
 :::
 
-::: {.column}
+::: column
 ### 🛠️ Practical Skills
 
-**4. Calculation Steps**
-1. Check conditions (σ known?, sample size?)
-2. Choose distribution (z or t)
-3. Find critical value
-4. Calculate standard error
-5. Compute margin of error  
-6. Construct interval
-7. Interpret in context
+**4. Calculation Steps** 1. Check conditions (σ known?, sample size?) 2. Choose distribution (z or t) 3. Find critical value 4. Calculate standard error 5. Compute margin of error\
+6. Construct interval 7. Interpret in context
 
-**5. Interpretation**
-- "We are C% confident..."
-- Focus on the process, not individual interval
-- Consider practical significance
+**5. Interpretation** - "We are C% confident..." - Focus on the process, not individual interval - Consider practical significance
 
-**6. Common Pitfalls to Avoid**
-- Wrong distribution choice
-- Incorrect degrees of freedom
-- Using α instead of α/2
-- Misinterpreting the interval
+**6. Common Pitfalls to Avoid** - Wrong distribution choice - Incorrect degrees of freedom - Using α instead of α/2 - Misinterpreting the interval
 :::
-::::
+:::::
 
----
+------------------------------------------------------------------------
 
-# Thank You! 🎉
+## 
 
-**Key Message:** Confidence intervals bridge the gap between sample data and population insights - master them, and you master statistical inference!
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+```
 
-*See you next time for hypothesis testing!* 🔬
 
----
+<script>
+// Direct solution toggle implementation
+console.log('Solution toggle script loaded');
+
+// Function to setup toggles
+function setupToggles() {
+  console.log('Setting up toggles...');
+  const buttons = document.querySelectorAll('.solution-toggle');
+  console.log('Found buttons:', buttons.length);
+  
+  buttons.forEach((btn, i) => {
+    console.log('Setting up button', i + 1);
+    
+    // Clear any existing handlers
+    btn.onclick = null;
+    
+    // Add click handler
+    btn.onclick = function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Button clicked!');
+      
+      const parent = this.closest('.collapsible-solution');
+      if (parent) {
+        parent.classList.toggle('open');
+        this.textContent = parent.classList.contains('open') ? 'Hide Solution' : 'Show Solution';
+        console.log('Toggled! Open:', parent.classList.contains('open'));
+      }
+    };
+  });
+}
+
+// Try multiple times
+document.addEventListener('DOMContentLoaded', setupToggles);
+window.addEventListener('load', setupToggles);
+setTimeout(setupToggles, 500);
+setTimeout(setupToggles, 1000);
+setTimeout(setupToggles, 2000);
+
+// For Reveal.js
+if (typeof Reveal !== 'undefined') {
+  Reveal.addEventListener('ready', setupToggles);
+}
+</script>
+

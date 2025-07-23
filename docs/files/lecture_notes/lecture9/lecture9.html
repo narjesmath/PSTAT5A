@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Narjes Mathlouthi">
   <title>PSTAT5A – From Random Variables to Sampling &amp; Confidence Intervals</title>
@@ -29,8 +29,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -41,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -94,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
   <link rel="stylesheet" href="../../../files/lecture_notes/lecture7/new-style.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -219,14 +220,12 @@ Narjes Mathlouthi
 </section>
 <section id="what-is-a-random-variable" class="slide level2">
 <h2>What is a Random Variable?</h2>
-<div>
 <ul>
 <li class="fragment">A <strong>random variable (r.v.)</strong> is a function that assigns numerical values to the outcomes of a random experiment</li>
 <li class="fragment">Notation: Usually denoted by capital letters (X, Y, Z)</li>
 <li class="fragment">It’s a bridge between the sample space and real numbers</li>
 <li class="fragment">Think of it as a “rule” that translates outcomes into numbers</li>
 </ul>
-</div>
 <div class="fragment">
 <p><strong>Key Point:</strong> It’s not actually “random”, it’s a deterministic function applied to random outcomes!</p>
 </div>
@@ -287,7 +286,6 @@ Narjes Mathlouthi
 </section>
 <section id="discrete-random-variables" class="slide level2 smaller">
 <h2>Discrete Random Variables</h2>
-<div>
 <ul>
 <li class="fragment"><strong>Definition:</strong> Takes on countable values (finite or countably infinite)</li>
 <li class="fragment"><strong>Examples:</strong>
@@ -298,14 +296,12 @@ Narjes Mathlouthi
 <li class="fragment">Number of research papers published per year</li>
 </ul></li>
 </ul>
-</div>
 <div class="fragment">
 <p><strong>Note:</strong> If X is discrete, then <strong>X</strong> can take values <span class="math inline">\(x_1, x_2, x_3, \cdot\)</span> where we can list all possible values.</p>
 </div>
 </section>
 <section id="continuous-random-variables" class="slide level2 smaller">
 <h2>Continuous Random Variables</h2>
-<div>
 <ul>
 <li class="fragment"><strong>Definition:</strong> Takes on uncountably infinite values (any value in an interval)</li>
 <li class="fragment"><strong>Examples:</strong>
@@ -316,7 +312,6 @@ Narjes Mathlouthi
 <li class="fragment">GPA (technically discrete, but often treated as continuous)</li>
 </ul></li>
 </ul>
-</div>
 <div class="fragment">
 <p><strong>Note:</strong> If <span class="math inline">\(X\)</span> is continuous, then <span class="math inline">\(X\)</span> can take any value in an interval <span class="math inline">\([a,b]\)</span> or <span class="math inline">\((-\infty, \infty)\)</span>.</p>
 </div>
@@ -327,20 +322,17 @@ Narjes Mathlouthi
 <img data-src="lecture9_files/figure-revealjs/cell-3-output-1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="central-limit-theorem-connection" class="slide level2 smaller">
 <h2>Central Limit Theorem Connection</h2>
-<div>
 <ul>
 <li class="fragment">When we repeatedly sample from a population, the <strong>sample mean</strong> becomes a random variable</li>
 <li class="fragment">Formula: <span class="math inline">\(\bar{X} = \frac{1}{n}\sum_{i=1}^{n} X_i\)</span></li>
 <li class="fragment">Each time we sample, we get a different <span class="math inline">\(\bar{X}\)</span></li>
 <li class="fragment">The distribution of <span class="math inline">\(\bar{X}\)</span> has special properties!</li>
 </ul>
-</div>
 </section>
 <section id="central-limit-theorem-connection-1" class="slide level2 smaller">
 <h2>Central Limit Theorem Connection</h2>
 <div class="columns">
 <div class="column smaller">
-<div>
 <p>These properties are :</p>
 <ul>
 <li class="fragment"><strong>Center (Unbiased):</strong> <span class="math inline">\(E[\bar{X}] = \mu\)</span>.</li>
@@ -352,15 +344,12 @@ Narjes Mathlouthi
 <li class="fragment">Otherwise, <strong>CLT:</strong> for large <span class="math inline">\(n\)</span>, <span class="math inline">\(\bar{X}\)</span> is <em>approximately Normal</em> even when the data aren’t.</li>
 </ul></li>
 </ul>
-</div>
 </div><div class="column">
-<div>
 <ul>
 <li class="fragment"><strong>Consistency / Law of Large Numbers:</strong> <span class="math inline">\(\bar{X} \xrightarrow{P} \mu\)</span> as <span class="math inline">\(n \to \infty\)</span> (estimates get closer to the truth with more data).</li>
 <li class="fragment"><strong>(If sampling w/out replacement, pop size <span class="math inline">\(N\)</span>):</strong> Apply finite population correction (FPC):<br>
 <span class="math inline">\(\mathrm{SE}(\bar{X}) = \dfrac{\sigma}{\sqrt{n}}\sqrt{\dfrac{N-n}{N-1}}\)</span>.</li>
 </ul>
-</div>
 </div></div>
 </section>
 <section id="common-discrete-distributions" class="slide level2">
@@ -378,7 +367,7 @@ Narjes Mathlouthi
 <p><strong>Example:</strong> Number of successful research grants out of 10 applications</p>
 </div>
 </div><div class="column" style="width:40%;">
-<div id="2092a6cf" class="cell" data-execution_count="3">
+<div id="a728557f" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -401,7 +390,7 @@ Narjes Mathlouthi
 </ul>
 <p><strong>Example:</strong> Number of emails received per hour, number of mutations in DNA sequences</p>
 </div><div class="column" style="width:50%;">
-<div id="9b5797cb" class="cell" data-execution_count="4">
+<div id="d9c0899d" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -425,7 +414,7 @@ Narjes Mathlouthi
 </ul>
 <p><strong>Example:</strong> Heights, test scores, measurement errors</p>
 </div><div class="column" style="width:50%;">
-<div id="19d0fcdc" class="cell" data-execution_count="5">
+<div id="a3da614d" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -448,7 +437,7 @@ Narjes Mathlouthi
 </ul>
 <p><strong>Example:</strong> Time between arrivals, equipment lifespan, time to next earthquake</p>
 </div><div class="column" style="width:50%;">
-<div id="e1fe2c88" class="cell" data-execution_count="6">
+<div id="e150c904" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -478,7 +467,6 @@ Narjes Mathlouthi
 </section>
 <section id="application-research-design" class="slide level2 smaller">
 <h2>Application: Research Design</h2>
-<div>
 <p><strong>Consider your research question:</strong></p>
 <ol type="1">
 <li class="fragment"><strong>Identify your random variable(s)</strong>
@@ -497,7 +485,6 @@ Narjes Mathlouthi
 <li class="fragment">What statistical tests are appropriate?</li>
 </ul></li>
 </ol>
-</div>
 </section>
 <section id="probability-mass-vs.-density-functions" class="slide level2 smaller">
 <h2>Probability Mass vs.&nbsp;Density Functions</h2>
@@ -527,13 +514,11 @@ Narjes Mathlouthi
 <img data-src="lecture9_files/figure-revealjs/cell-8-output-1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="confidence-intervals-for-means" class="slide level2 smaller">
 <h2>Confidence Intervals for Means</h2>
-<div>
 <ul>
 <li class="fragment"><strong>Problem:</strong> We have one sample mean, but want to estimate the population mean</li>
 <li class="fragment"><strong>Solution:</strong> Use the sampling distribution to create a <strong>confidence interval</strong></li>
 <li class="fragment"><strong>Key Insight:</strong> If we know how <span class="math inline">\(\bar{X}\)</span> varies, we can make probabilistic statements about μ</li>
 </ul>
-</div>
 <div class="fragment">
 <p><strong>95% Confidence Interval Formula:</strong> <span class="math inline">\(\bar{x} \pm 1.96 \times \frac{\sigma}{\sqrt{n}}\)</span></p>
 <p><strong>Interpretation:</strong> “We are 95% confident that the true population mean lies within this interval”</p>
@@ -559,7 +544,6 @@ Narjes Mathlouthi
 </div>
 </div>
 </div>
-<div>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -578,7 +562,6 @@ Narjes Mathlouthi
 </div>
 </div>
 </div>
-</div>
 </section>
 <section id="factors-affecting-confidence-interval-width" class="slide level2">
 <h2>Factors Affecting Confidence Interval Width</h2>
@@ -586,7 +569,6 @@ Narjes Mathlouthi
 <img data-src="lecture9_files/figure-revealjs/cell-10-output-1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="key-takeaways" class="slide level2 smaller">
 <h2>Key Takeaways</h2>
-<div>
 <ol type="1">
 <li class="fragment"><strong>Random variables</strong> translate random outcomes into numbers</li>
 <li class="fragment"><strong>Discrete</strong> variables have countable values; <strong>continuous</strong> variables have uncountable values</li>
@@ -594,7 +576,6 @@ Narjes Mathlouthi
 <li class="fragment"><strong>Choosing the right distribution</strong> depends on understanding your data’s nature</li>
 <li class="fragment"><strong>Real applications</strong> exist in every field - think about your research!</li>
 </ol>
-</div>
 </section>
 <section id="next-steps" class="slide level2">
 <h2>Next Steps</h2>
@@ -634,7 +615,7 @@ Narjes Mathlouthi
 </section>
 <section id="appendix-python-code-examples" class="slide level2 smaller scrollable">
 <h2>Appendix: Python Code Examples</h2>
-<div id="b70ad8aa" class="cell" data-execution_count="10">
+<div id="4414d47a" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
@@ -675,7 +656,7 @@ Narjes Mathlouthi
 </section>
 <section id="additional-resources" class="slide level2 smaller scrollable">
 <h2>Additional Resources</h2>
-<div id="6544c071" class="cell" data-execution_count="11">
+<div id="bc307a58" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="co"># Useful Python libraries for statistics and probability</span></span>
 <span id="cb2-2"><a></a><span class="im">import</span> numpy <span class="im">as</span> np           <span class="co"># Numerical computing</span></span>
 <span id="cb2-3"><a></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats  <span class="co"># Statistical functions</span></span>
@@ -695,9 +676,13 @@ Narjes Mathlouthi
 <span id="cb2-17"><a></a><span class="co"># np.random.normal(mu, sigma, size)</span></span>
 <span id="cb2-18"><a></a><span class="co"># np.random.exponential(scale, size)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-
-
 </section></section>
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../../img/logo.png" class="slide-logo"></p>
@@ -917,190 +902,172 @@ Narjes Mathlouthi
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
             }
           }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/pstat5a\.com");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          return false;
         }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
             }
-          }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
         }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
               }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/pstat5a\.com");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>

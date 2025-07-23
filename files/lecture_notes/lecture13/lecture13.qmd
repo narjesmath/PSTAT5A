@@ -16,7 +16,7 @@ format:
     transition: slide
     background-transition: fade
     smaller: true
-jupyter: python3
+jupyter: pstat5a
 execute:
   echo: false
   warning: false
@@ -1713,8 +1713,11 @@ print(f"\nRequired sample size for d=0.5, power=0.8: {required_n}")
 
 **Remember:** Hypothesis testing is a tool for making informed decisions under uncertainty. Use it wisely, report honestly, and always consider the practical implications of your statistical conclusions.
 
-*"The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data."* - John Tukey
+**"The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data."** - John Tukey
 
 **Next class:** Regression Analysis! 📊
 
----
+
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+```

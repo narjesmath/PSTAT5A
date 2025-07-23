@@ -14,7 +14,7 @@ format:
     footer: "Understanding Data - Counting © 2025 Narjes Mathlouthi"
     transition: slide
     background-transition: fade
-jupyter: python3
+jupyter: pstat5a
 ---
 
 ```{python}
@@ -74,7 +74,7 @@ Counting helps us:
 - **Password security**: Character combinations and brute force protection
 :::
 
-![](/files/lecture_notes/lecture7/img/counting_icon.png){fig-align="left" width="10%"}
+![](/files/lecture_notes/lecture6/img/counting_icon.png){fig-align="left" width="10%"}
 :::
 
 :::
@@ -173,7 +173,7 @@ $$
   
 - **Sixth position:** 10 digits
 
-![](/files/lecture_notes/lecture7/img/count.png){width="70px"}
+![](/files/lecture_notes/lecture6/img/count.png){width="70px"}
 :::
 :::
 
@@ -218,7 +218,7 @@ A password must contain:
 
 **How many possible passwords are there?**
 
-![](/files/lecture_notes/lecture7/img/login.png){width="10%" fig-align="right"}
+![](/files/lecture_notes/lecture6/img/login.png){width="10%" fig-align="right"}
 :::
 
 ::: {.solution .fragment}
@@ -613,3 +613,7 @@ In this lecture, we've addressed all the learning objectives:
 
 **Next Class**: Counting continued 
 
+#
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+```

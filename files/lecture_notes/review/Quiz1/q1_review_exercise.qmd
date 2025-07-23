@@ -12,9 +12,8 @@ format:
     chalkboard: true
     preview-links: auto
     footer: "Understanding Data - Review Exercises © 2025 Narjes Mathlouthi"
-    transition: slide
-    background-transition: fade
-jupyter: python3
+latex-tinytex: false
+jupyter: pstat5a
 ---
 
 
@@ -31,12 +30,12 @@ A single fair six-sided die is rolled once.
 
 ## 1. Basic Probability: Answers
 
-:::{.solution .fragment}
-1.1 $P(\text{even}) = 3/6 = \tfrac{1}{2}$  
-1.2 $P(5 \text{ or } 6) = 2/6 = \tfrac{1}{3}$
-:::
 
----
+1.1. $P(\text{even}) = 3/6 = \tfrac{1}{2}$  
+1.2. $P(5 \text{ or } 6) = 2/6 = \tfrac{1}{3}$
+
+
+
 
 ## 2. Joint & Conditional Probability
 
@@ -104,14 +103,14 @@ A bag contains 3 red balls and 2 blue balls. You draw one ball, replace it, then
 4.1 Are the two draws independent? Why or why not?  
 4.2 Compute $P(\text{red then blue})$.
 :::
----
+
 
 ## 4. Bonus Challenge: Answers
 
-:::{.solution}
+
 - Yes—they’re independent because of replacement.  
 - $(3/5)\times(2/5) = 6/25$
-:::
 
----
+
+
 
