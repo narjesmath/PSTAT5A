@@ -1,4 +1,4 @@
-/* improved-pstat-theme.css - PSTAT 5A: Enhanced Typography & Modern Design */
+/* improved-pstat-theme.css - PSTAT 5A: Enhanced Typography & Modern Design - WEB FIXED */
 
 /* ==========================================================================
    Refined Color Palette - Modern & Accessible
@@ -42,17 +42,41 @@
   --gradient-amber: linear-gradient(135deg, #fef3c7 0%, #f8fafc 100%);
   --gradient-cool: linear-gradient(135deg, #e0e7ff 0%, #f1f5f9 100%);
   --gradient-hero: linear-gradient(135deg, #1e40af 0%, #0d9488 100%);
+  
+  /* FIXED: Base font sizes using rem for better control */
+  --base-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --large-font-size: 1.125rem;
+  --xl-font-size: 1.25rem;
 }
 
 /* ==========================================================================
-   Enhanced Font System & Full Viewport Override
+   FIXED: Enhanced Font System with Stable Loading & Size Control
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Crimson+Pro:wght@400;500;600;700&display=swap');
 
-/* Force full viewport usage - override Reveal.js defaults */
+/* FIXED: Force consistent base font size for all browsers */
+html {
+  font-size: 16px !important; /* Lock base size */
+  -webkit-text-size-adjust: 100% !important; /* Prevent iOS font scaling */
+  -moz-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+body {
+  font-size: var(--base-font-size) !important;
+  line-height: 1.6 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* FIXED: Force full viewport usage with better browser compatibility */
 .reveal {
   width: 100% !important;
   height: 100% !important;
+  font-size: var(--base-font-size) !important; /* Lock reveal base size */
 }
 
 .reveal .slides {
@@ -63,6 +87,7 @@
   margin: 0 !important;
   padding: 0 !important;
   transform: none !important;
+  font-size: inherit !important; /* Inherit from reveal */
 }
 
 /* Remove any max-width constraints */
@@ -77,34 +102,26 @@
   transform: none !important;
   max-width: none !important;
   max-height: none !important;
+  font-size: inherit !important; /* Inherit from slides */
 }
 
 /* ==========================================================================
-   Base Slide Styling - Full Width Layout
+   FIXED: Base Slide Styling with Consistent Font Sizing
    ========================================================================== */
 body.reveal-viewport, .reveal .backgrounds {
   background: var(--gradient-cool);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-/* Override Reveal.js default margins and make full width */
-.reveal .slides {
-  width: 100% !important;
-  height: 100% !important;
-  left: 0 !important;
-  top: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  font-size: var(--base-font-size) !important;
 }
 
 .reveal .slides section {
   text-align: left;
-  font-size: 1.1em; /* Base font size - good readability */
-  line-height: 1.6; /* Better line spacing */
+  font-size: var(--base-font-size) !important; /* FIXED: Use rem-based variable */
+  line-height: 1.6 !important;
   color: var(--neutral-dark);
   background: transparent;
   border-radius: 0;
-  padding: 20px 40px; /* Reduced padding, more horizontal space */
+  padding: 20px 40px;
   margin: 0 !important;
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -113,35 +130,38 @@ body.reveal-viewport, .reveal .backgrounds {
   max-width: none !important;
   max-height: none !important;
   box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 /* ==========================================================================
-   FIXED Header Hierarchy - Proper Size Scaling with STRONG H1 Underline
+   FIXED: Header Hierarchy with rem-based sizes for consistency
    ========================================================================== */
 .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
-  font-family: 'Crimson Pro', 'Georgia', serif;
+  font-family: 'Crimson Pro', 'Georgia', serif !important;
   font-weight: 600;
   letter-spacing: -0.02em;
   margin-bottom: 0.8em;
   line-height: 1.2;
   color: var(--primary-blue);
+  font-feature-settings: "liga" 1, "kern" 1;
 }
 
-/* Force H1 underline with higher specificity */
+/* FIXED: H1 with stable rem-based sizing */
 .reveal .slides section h1,
 .reveal .slides section.present h1,
 .reveal .slides > section h1 {
-  font-size: 2.5em !important; /* FIXED: Much larger than body text */
+  font-size: 2.5rem !important; /* FIXED: rem instead of em */
   font-weight: 700 !important;
-  margin-bottom: 0.8em !important; /* Increased to accommodate line */
+  margin-bottom: 1rem !important;
   color: var(--primary-blue-dark) !important;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
   position: relative !important;
-  padding-bottom: 0.4em !important; /* Space for the underline */
+  padding-bottom: 0.5rem !important;
   display: block !important;
+  font-family: 'Crimson Pro', 'Georgia', serif !important;
 }
 
-/* Force underline with maximum specificity */
+/* FIXED: Underline with better cross-browser support */
 .reveal .slides section h1::after,
 .reveal .slides section.present h1::after,
 .reveal .slides > section h1::after,
@@ -151,7 +171,7 @@ body .reveal .slides section h1::after {
   bottom: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  height: 4px !important;
+  height: 3px !important;
   background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-teal) 50%, var(--accent-amber) 100%) !important;
   border-radius: 2px !important;
   box-shadow: 0 2px 4px rgba(30, 64, 175, 0.2) !important;
@@ -159,48 +179,33 @@ body .reveal .slides section h1::after {
   z-index: 10 !important;
 }
 
-/* Alternative simple underline - uncomment if gradient doesn't work */
-/*
-.reveal .slides section h1::after,
-.reveal .slides section.present h1::after,
-body .reveal .slides section h1::after {
-  content: '' !important;
-  position: absolute !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 3px !important;
-  background: #1e40af !important;
-  display: block !important;
-}
-*/
-
+/* FIXED: Other headers with rem-based sizes */
 .reveal h2 {
-  font-size: 1.8em; /* FIXED: Proper hierarchy */
+  font-size: 1.75rem !important; /* FIXED: rem for consistency */
   margin-bottom: 0.7em;
   color: var(--accent-teal);
   font-weight: 600;
 }
 
 .reveal h3 {
-  font-size: 1.4em; /* FIXED: Larger than body text */
+  font-size: 1.375rem !important; /* FIXED: rem for consistency */
   margin-bottom: 0.6em;
   color: var(--accent-amber);
   font-weight: 600;
 }
 
 .reveal h4 {
-  font-size: 1.2em; /* FIXED: Slightly larger than body */
+  font-size: 1.125rem !important; /* FIXED: rem for consistency */
   margin-bottom: 0.5em;
   color: var(--accent-purple);
   font-weight: 600;
 }
 
-/* Subtitle styling - properly sized */
+/* FIXED: Subtitle with stable sizing */
 .reveal .slides section .subtitle {
   color: var(--accent-purple);
-  font-family: 'Inter', sans-serif;
-  font-size: 1.3em; /* FIXED: Larger subtitle */
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.25rem !important; /* FIXED: rem-based */
   letter-spacing: 0.01em;
   font-weight: 500;
   margin-bottom: 1em;
@@ -212,15 +217,15 @@ body .reveal .slides section h1::after {
 }
 
 /* ==========================================================================
-   Enhanced Title Slide - Full Width Professional Look with Underline
+   FIXED: Title Slide with rem-based sizing
    ========================================================================== */
 .reveal .slides section.title-slide {
   background: var(--gradient-hero);
   color: var(--white);
   text-align: center;
-  padding: 30px 50px; /* Reduced top/bottom padding */
-  border-radius: 0; /* Remove border radius for full width */
-  margin: 0 !important; /* Remove all margins */
+  padding: 30px 50px;
+  border-radius: 0;
+  margin: 0 !important;
   box-shadow: var(--shadow-lg);
   backdrop-filter: blur(10px);
   width: 100% !important;
@@ -232,18 +237,17 @@ body .reveal .slides section h1::after {
 }
 
 .reveal .slides section.title-slide h1 {
-  font-family: 'Crimson Pro', 'Georgia', serif;
-  font-size: 3.2em; /* Impressive title size */
+  font-family: 'Crimson Pro', 'Georgia', serif !important;
+  font-size: 3rem !important; /* FIXED: rem-based for stability */
   font-weight: 800;
   color: var(--white);
   text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
   margin-bottom: 0.6em;
   letter-spacing: -0.01em;
   position: relative;
-  padding-bottom: 0.2em;
+  padding-bottom: 0.3rem;
 }
 
-/* Special underline for title slide */
 .reveal .slides section.title-slide h1::after {
   content: '';
   position: absolute;
@@ -258,8 +262,8 @@ body .reveal .slides section h1::after {
 }
 
 .reveal .slides section.title-slide .subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.6em; /* Prominent subtitle */
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.5rem !important; /* FIXED: rem-based */
   font-weight: 500;
   color: var(--accent-amber-light);
   margin-bottom: 1.5em;
@@ -272,8 +276,8 @@ body .reveal .slides section h1::after {
 }
 
 .reveal .slides section.title-slide .author {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.4em;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.25rem !important; /* FIXED: rem-based */
   font-weight: 600;
   color: var(--white);
   margin-bottom: 0.8em;
@@ -281,8 +285,8 @@ body .reveal .slides section h1::after {
 }
 
 .reveal .slides section.title-slide .date {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-size: 1.1em;
+  font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+  font-size: var(--base-font-size) !important; /* FIXED: consistent base size */
   font-weight: 500;
   color: rgba(255,255,255,0.9);
   background: rgba(255,255,255,0.1);
@@ -294,21 +298,21 @@ body .reveal .slides section h1::after {
 }
 
 /* ==========================================================================
-   Enhanced Text Sizing - Consistent Scale
+   FIXED: Text Sizing with rem-based consistency
    ========================================================================== */
 .reveal .smaller {
-  font-size: 0.9em; /* FIXED: Not too small */
+  font-size: var(--small-font-size) !important; /* FIXED: Use rem variable */
   line-height: 1.5;
 }
 
 .reveal .small-text {
-  font-size: 0.85em; /* FIXED: Still readable */
+  font-size: 0.8rem !important; /* FIXED: rem-based */
   color: var(--text-muted);
   line-height: 1.4;
 }
 
 .reveal .footnote {
-  font-size: 0.8em; /* FIXED: Readable footnotes */
+  font-size: 0.75rem !important; /* FIXED: rem-based */
   color: var(--neutral-medium);
   margin-top: 8px;
   font-style: italic;
@@ -316,13 +320,13 @@ body .reveal .slides section h1::after {
 }
 
 .reveal .large-text {
-  font-size: 1.3em;
+  font-size: var(--large-font-size) !important; /* FIXED: Use rem variable */
   font-weight: 500;
   line-height: 1.4;
 }
 
 /* ==========================================================================
-   Improved Key Insight Boxes
+   FIXED: Component Styling with consistent rem-based fonts
    ========================================================================== */
 .key-insight {
   background: var(--gradient-blue);
@@ -334,8 +338,9 @@ body .reveal .slides section h1::after {
   position: relative;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--primary-blue-light);
-  font-size: 1em; /* FIXED: Same as body text */
+  font-size: var(--base-font-size) !important; /* FIXED: consistent size */
   line-height: 1.5;
+  font-family: inherit !important;
 }
 
 .key-insight::before {
@@ -343,7 +348,7 @@ body .reveal .slides section h1::after {
   position: absolute;
   top: 20px;
   left: -8px;
-  font-size: 1.4em;
+  font-size: 1.25rem; /* FIXED: rem-based */
   background: var(--white);
   border-radius: 50%;
   padding: 6px;
@@ -355,11 +360,11 @@ body .reveal .slides section h1::after {
   margin-top: 0;
   margin-bottom: 12px;
   color: var(--primary-blue-dark);
-  font-size: 1.1em;
+  font-size: 1.1rem !important; /* FIXED: rem-based */
 }
 
 /* ==========================================================================
-   Enhanced Summary Cards - Full Width Layout
+   FIXED: Summary Cards with stable font sizing
    ========================================================================== */
 .summary-card {
   background: var(--white);
@@ -375,28 +380,19 @@ body .reveal .slides section h1::after {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  font-size: 0.95em; /* FIXED: Nearly full size */
+  font-size: var(--base-font-size) !important; /* FIXED: consistent base size */
   line-height: 1.5;
-  width: 100%; /* Use full available width */
+  width: 100%;
   box-sizing: border-box;
+  font-family: inherit !important;
 }
 
-/* Multi-column layout for summary cards when space allows */
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   width: 100%;
   margin: 20px 0;
-}
-
-/* Full-width containers */
-.interactive-demo,
-.practice-problem,
-.chart-container,
-.comparison-table {
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .summary-card::before {
@@ -416,11 +412,11 @@ body .reveal .slides section h1::after {
 }
 
 .summary-card h4, .summary-card h3, .summary-card h2 {
-  font-size: 1.2em; /* FIXED: Proper card header size */
+  font-size: 1.125rem !important; /* FIXED: rem-based */
   margin-bottom: 16px;
   color: var(--primary-blue);
   font-weight: 600;
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Crimson Pro', serif !important;
 }
 
 .summary-card ul {
@@ -432,10 +428,11 @@ body .reveal .slides section h1::after {
   margin-bottom: 8px;
   line-height: 1.5;
   color: var(--neutral-dark);
+  font-size: inherit;
 }
 
 /* ==========================================================================
-   Interactive Demo Sections - Better Readability
+   FIXED: Interactive Components with stable sizing
    ========================================================================== */
 .interactive-demo {
   background: var(--gradient-blue);
@@ -444,7 +441,8 @@ body .reveal .slides section h1::after {
   padding: 24px;
   margin: 24px 0;
   box-shadow: var(--shadow-md);
-  font-size: 1em; /* FIXED: Full readable size */
+  font-size: var(--base-font-size) !important; /* FIXED: consistent base */
+  font-family: inherit !important;
 }
 
 .demo-controls {
@@ -467,11 +465,11 @@ body .reveal .slides section h1::after {
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 0.9em; /* FIXED: Readable button text */
+  font-size: var(--small-font-size) !important; /* FIXED: consistent variable */
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-sm);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif !important;
 }
 
 .demo-controls button:hover {
@@ -484,9 +482,9 @@ body .reveal .slides section h1::after {
   padding: 8px 14px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  font-size: 0.9em; /* FIXED: Readable input text */
+  font-size: var(--small-font-size) !important; /* FIXED: consistent sizing */
   transition: all 0.3s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif !important;
 }
 
 .demo-controls select:focus, .demo-controls input:focus {
@@ -496,12 +494,13 @@ body .reveal .slides section h1::after {
 }
 
 .demo-controls label {
-  font-size: 0.9em; /* FIXED: Readable labels */
+  font-size: var(--small-font-size) !important; /* FIXED: consistent sizing */
   color: var(--neutral-dark);
   font-weight: 600;
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: inherit !important;
 }
 
 .demo-stats {
@@ -510,18 +509,19 @@ body .reveal .slides section h1::after {
   border-radius: 8px;
   border-left: 4px solid var(--primary-blue);
   margin: 16px 0;
-  font-size: 0.95em; /* FIXED: Readable stats */
+  font-size: var(--base-font-size) !important; /* FIXED: consistent base */
   font-weight: 500;
   line-height: 1.4;
+  font-family: inherit !important;
 }
 
 /* ==========================================================================
-   Enhanced Chart Containers
+   FIXED: Chart and Formula Components
    ========================================================================== */
 .chart-container {
   position: relative;
   width: 100%;
-  height: 320px; /* Increased for better visibility */
+  height: 320px;
   margin: 24px 0;
   background: var(--white);
   border-radius: 16px;
@@ -538,15 +538,59 @@ body .reveal .slides section h1::after {
 
 .chart-title {
   text-align: center;
-  font-size: 1em; /* FIXED: Readable chart titles */
+  font-size: var(--base-font-size) !important; /* FIXED: consistent sizing */
   color: var(--neutral-medium);
   margin-top: 12px;
   font-weight: 600;
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Crimson Pro', serif !important;
+}
+
+.formula-box {
+  background: var(--gradient-amber);
+  border: 1px solid var(--accent-amber);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 20px 0;
+  position: relative;
+  box-shadow: var(--shadow-md);
+  font-size: var(--base-font-size) !important; /* FIXED: consistent base */
+  font-family: inherit !important;
+}
+
+.formula-box::before {
+  content: "📐";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  font-size: 1.25rem; /* FIXED: rem-based */
+  background: var(--white);
+  border-radius: 50%;
+  padding: 6px 12px;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--accent-amber-light);
+}
+
+.formula-box h4 {
+  color: var(--accent-amber);
+  margin-top: 10px;
+  margin-bottom: 16px;
+  font-size: 1.125rem !important; /* FIXED: rem-based */
+  font-weight: 600;
+}
+
+.formula-box .math {
+  background: var(--white);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--accent-amber);
+  margin: 12px 0;
+  font-family: 'Times New Roman', serif !important;
+  font-size: 1.1rem !important; /* FIXED: rem-based math */
+  box-shadow: var(--shadow-xs);
 }
 
 /* ==========================================================================
-   Enhanced Practice Problems
+   FIXED: Practice Problems with stable sizing
    ========================================================================== */
 .practice-problem {
   background: var(--gradient-teal);
@@ -556,8 +600,9 @@ body .reveal .slides section h1::after {
   margin: 24px 0;
   position: relative;
   box-shadow: var(--shadow-md);
-  font-size: 1em; /* FIXED: Full readable size */
+  font-size: var(--base-font-size) !important; /* FIXED: consistent base */
   line-height: 1.5;
+  font-family: inherit !important;
 }
 
 .practice-problem::before {
@@ -567,7 +612,7 @@ body .reveal .slides section h1::after {
   left: 24px;
   background: var(--white);
   padding: 6px 16px;
-  font-size: 1.3em;
+  font-size: 1.25rem; /* FIXED: rem-based */
   border-radius: 20px;
   box-shadow: var(--shadow-sm);
   border: 2px solid var(--accent-teal-light);
@@ -577,7 +622,7 @@ body .reveal .slides section h1::after {
   margin-top: 10px;
   margin-bottom: 16px;
   color: var(--accent-teal-dark);
-  font-size: 1.2em;
+  font-size: 1.125rem !important; /* FIXED: rem-based */
 }
 
 .show-solution {
@@ -587,12 +632,12 @@ body .reveal .slides section h1::after {
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 0.9em; /* FIXED: Readable button */
+  font-size: var(--small-font-size) !important; /* FIXED: consistent sizing */
   font-weight: 600;
   margin: 16px 0;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-sm);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif !important;
 }
 
 .show-solution:hover {
@@ -607,82 +652,15 @@ body .reveal .slides section h1::after {
   padding: 20px;
   margin: 16px 0;
   border-radius: 12px;
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-size: 0.9em; /* FIXED: Readable code */
+  font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+  font-size: var(--small-font-size) !important; /* FIXED: consistent sizing */
   line-height: 1.5;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--accent-teal-light);
 }
 
-/* Collapsible Solution Callout for Quarto/Revealjs */
-.collapsible-solution {
-  background: var(--gradient-blue);
-  border-left: 5px solid var(--primary-blue);
-  border-radius: 12px;
-  margin: 20px 0;
-  box-shadow: var(--shadow-md);
-  padding: 0;
-  overflow: hidden;
-}
-
-.collapsible-solution .solution-toggle {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background: var(--gradient-hero);
-  color: var(--white);
-  border: none;
-  font-size: 1.1em;
-  font-weight: 600;
-  padding: 16px 24px;
-  cursor: pointer;
-  text-align: left;
-  outline: none;
-  transition: background 0.2s, color 0.2s;
-  border-bottom: 1px solid var(--primary-blue-light);
-  position: relative;
-}
-
-.collapsible-solution .solution-toggle::after {
-  content: '\25BC'; /* Down arrow */
-  margin-left: auto;
-  font-size: 1.2em;
-  transition: transform 0.2s;
-}
-
-.collapsible-solution.open .solution-toggle {
-  background: var(--primary-blue-hover);
-  color: var(--accent-amber-light);
-}
-
-.collapsible-solution.open .solution-toggle::after {
-  transform: rotate(180deg); /* Up arrow when open */
-}
-
-.collapsible-solution .solution-content {
-  display: none;
-  padding: 20px 24px;
-  background: var(--white);
-  color: var(--neutral-dark);
-  font-size: 1em;
-  line-height: 1.5;
-  border-radius: 0 0 12px 12px;
-  box-shadow: none;
-  border-left: 5px solid var(--primary-blue-light);
-}
-
-.collapsible-solution.open .solution-content {
-  display: block;
-  animation: fadeIn 0.3s;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 /* ==========================================================================
-   Enhanced Tables
+   FIXED: Tables with stable font sizing
    ========================================================================== */
 .comparison-table {
   margin: 20px 0;
@@ -694,7 +672,7 @@ body .reveal .slides section h1::after {
 .comparison-table table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.9em; /* FIXED: Readable table text */
+  font-size: var(--small-font-size) !important; /* FIXED: consistent table size */
 }
 
 .comparison-table th {
@@ -703,8 +681,8 @@ body .reveal .slides section h1::after {
   padding: 16px 20px;
   text-align: left;
   font-weight: 600;
-  font-size: 1em; /* FIXED: Proper header size */
-  font-family: 'Crimson Pro', serif;
+  font-size: var(--base-font-size) !important; /* FIXED: consistent header */
+  font-family: 'Crimson Pro', serif !important;
 }
 
 .comparison-table td {
@@ -713,6 +691,7 @@ body .reveal .slides section h1::after {
   vertical-align: top;
   line-height: 1.5;
   color: var(--neutral-dark);
+  font-size: inherit;
 }
 
 .comparison-table tr:nth-child(even) {
@@ -724,123 +703,7 @@ body .reveal .slides section h1::after {
 }
 
 /* ==========================================================================
-   Enhanced Formula Boxes
-   ========================================================================== */
-.formula-box {
-  background: var(--gradient-amber);
-  border: 1px solid var(--accent-amber);
-  border-radius: 12px;
-  padding: 20px 24px;
-  margin: 20px 0;
-  position: relative;
-  box-shadow: var(--shadow-md);
-  font-size: 1em; /* FIXED: Full readable size */
-}
-
-.formula-box::before {
-  content: "📐";
-  position: absolute;
-  top: -15px;
-  left: 20px;
-  font-size: 1.3em;
-  background: var(--white);
-  border-radius: 50%;
-  padding: 6px 12px;
-  box-shadow: var(--shadow-sm);
-  border: 2px solid var(--accent-amber-light);
-}
-
-.formula-box h4 {
-  color: var(--accent-amber);
-  margin-top: 10px;
-  margin-bottom: 16px;
-  font-size: 1.2em; /* FIXED: Proper formula header */
-  font-weight: 600;
-}
-
-.formula-box .math {
-  background: var(--white);
-  padding: 12px 16px;
-  border-radius: 8px;
-  border: 1px solid var(--accent-amber);
-  margin: 12px 0;
-  font-family: 'Times New Roman', serif;
-  font-size: 1.1em; /* FIXED: Readable math */
-  box-shadow: var(--shadow-xs);
-}
-
-/* ==========================================================================
-   Enhanced Type Cards
-   ========================================================================== */
-.type-card {
-  background: var(--white);
-  border-radius: 16px;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-md);
-  padding: 24px;
-  margin-bottom: 20px;
-  min-height: 350px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  font-size: 0.95em; /* FIXED: Nearly full size */
-}
-
-.type-card h4 {
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.4em; /* FIXED: Prominent card headers */
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  font-family: 'Crimson Pro', serif;
-}
-
-.discrete-card {
-  background: var(--gradient-blue);
-  border-color: var(--primary-blue);
-}
-
-.continuous-card {
-  background: var(--gradient-teal);
-  border-color: var(--accent-teal);
-}
-
-.discrete-card h4 {
-  color: var(--primary-blue);
-}
-
-.continuous-card h4 {
-  color: var(--accent-teal);
-}
-
-.type-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-}
-
-.type-card ul li {
-  position: relative;
-  margin-bottom: 10px;
-  padding-left: 28px;
-  font-size: 0.95em; /* FIXED: Readable list items */
-  line-height: 1.5;
-  color: var(--neutral-dark);
-}
-
-.type-card ul li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--accent-amber);
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-/* ==========================================================================
-   Enhanced Math Styling
+   FIXED: Math Styling with consistent sizing
    ========================================================================== */
 .reveal .slides section .math,
 .reveal .slides section .katex,
@@ -850,8 +713,8 @@ body .reveal .slides section h1::after {
   border-radius: 6px;
   padding: 6px 12px;
   color: var(--neutral-dark);
-  font-size: 1.05em; /* FIXED: Readable math */
-  font-family: 'STIX Two Math', 'Times New Roman', serif;
+  font-size: 1.05rem !important; /* FIXED: rem-based math */
+  font-family: 'STIX Two Math', 'Times New Roman', serif !important;
   box-shadow: var(--shadow-xs);
   margin: 0 4px;
   display: inline-block;
@@ -861,12 +724,12 @@ body .reveal .slides section h1::after {
   display: block;
   margin: 16px auto;
   text-align: center;
-  font-size: 1.2em; /* FIXED: Prominent display math */
+  font-size: 1.2rem !important; /* FIXED: rem-based display math */
   padding: 16px 20px;
 }
 
 /* ==========================================================================
-   Enhanced Text Styling
+   FIXED: Enhanced Text Styling
    ========================================================================== */
 .reveal .slides section strong {
   color: var(--accent-amber);
@@ -875,16 +738,18 @@ body .reveal .slides section h1::after {
   background: linear-gradient(90deg, var(--accent-amber-light) 60%, transparent 100%);
   padding: 2px 6px;
   border-radius: 4px;
+  font-size: inherit; /* Don't change size */
 }
 
 .reveal .slides section em {
   color: var(--accent-purple);
   font-style: italic;
   font-weight: 500;
+  font-size: inherit; /* Don't change size */
 }
 
 /* ==========================================================================
-   Enhanced List Styling
+   FIXED: List Styling
    ========================================================================== */
 .reveal .slides section ul li {
   position: relative;
@@ -892,11 +757,12 @@ body .reveal .slides section h1::after {
   margin-bottom: 8px;
   line-height: 1.5;
   color: var(--neutral-dark);
+  font-size: inherit; /* Inherit from parent */
 }
 
 .reveal .slides section ul li::marker {
   color: var(--accent-amber);
-  font-size: 1.2em;
+  font-size: 1.1em; /* Slightly larger marker */
   font-weight: bold;
 }
 
@@ -904,10 +770,11 @@ body .reveal .slides section h1::after {
   margin-bottom: 8px;
   line-height: 1.5;
   color: var(--neutral-dark);
+  font-size: inherit; /* Inherit from parent */
 }
 
 /* ==========================================================================
-   Enhanced Callouts
+   FIXED: Callouts with stable sizing
    ========================================================================== */
 .callout-tip {
   background: var(--gradient-amber);
@@ -916,9 +783,10 @@ body .reveal .slides section h1::after {
   border-radius: 8px;
   margin: 16px 0;
   position: relative;
-  font-size: 0.95em; /* FIXED: Readable callouts */
+  font-size: var(--base-font-size) !important; /* FIXED: consistent base */
   line-height: 1.5;
   box-shadow: var(--shadow-sm);
+  font-family: inherit !important;
 }
 
 .callout-tip::before {
@@ -930,6 +798,7 @@ body .reveal .slides section h1::after {
   padding: 4px 8px;
   border-radius: 50%;
   border: 2px solid var(--accent-amber-light);
+  font-size: 1rem; /* Fixed size for icon */
 }
 
 .connection {
@@ -939,56 +808,60 @@ body .reveal .slides section h1::after {
   padding: 16px 20px;
   margin: 16px 0;
   position: relative;
-  font-size: 0.95em; /* FIXED: Readable connections */
+  font-size: var(--base-font-size) !important; /* FIXED: consistent base */
   line-height: 1.5;
   box-shadow: var(--shadow-sm);
+  font-family: inherit !important;
 }
 
 .connection::before {
   content: "🔗";
   margin-right: 8px;
-  font-size: 1.1em;
+  font-size: 1rem; /* Fixed icon size */
 }
 
 .connection strong {
   color: var(--accent-teal-dark);
+  font-size: inherit; /* Don't change size */
 }
 
 /* ==========================================================================
-   Responsive Design - Full Width on All Devices with Header Adjustments
+   FIXED: Responsive Design with stable font scaling
    ========================================================================== */
 @media (max-width: 768px) {
+  /* FIXED: Reduce padding but keep font sizes stable */
   .reveal .slides section {
-    font-size: 1.0em; /* Still readable on mobile */
-    padding: 15px 25px; /* Reduced but still comfortable */
+    padding: 15px 25px;
+    /* Don't change font size here */
   }
   
+  /* FIXED: Scale headers proportionally but with rem */
   .reveal h1 {
-    font-size: 2.2em;
-    padding-bottom: 0.25em; /* Adjust for smaller screens */
+    font-size: 2.2rem !important;
+    padding-bottom: 0.3rem;
   }
   
   .reveal h1::after {
-    height: 2px; /* Thinner underline on mobile */
+    height: 2px;
   }
   
   .reveal h2 {
-    font-size: 1.6em;
+    font-size: 1.6rem !important;
   }
   
   .reveal h3 {
-    font-size: 1.3em;
+    font-size: 1.3rem !important;
   }
   
   .chart-container {
     height: 280px;
-    margin: 15px 0; /* Reduced margins */
+    margin: 15px 0;
   }
   
   .demo-controls {
     flex-direction: column;
     align-items: stretch;
-    margin: 15px 0; /* Reduced margins */
+    margin: 15px 0;
   }
   
   .demo-controls > * {
@@ -997,59 +870,75 @@ body .reveal .slides section h1::after {
   }
   
   .summary-card, .type-card {
-    margin-bottom: 15px; /* Reduced margins */
+    margin-bottom: 15px;
   }
 }
 
 @media (max-width: 600px) {
+  /* FIXED: Further reduce padding but maintain readability */
   .reveal .slides section {
-    font-size: 0.95em; /* Slightly smaller but still readable */
-    padding: 12px 20px; /* Minimal padding for maximum content space */
+    padding: 12px 20px;
+    /* Keep base font size stable */
   }
   
   .reveal h1 {
-    font-size: 2.0em; /* Smaller on very small screens */
-    padding-bottom: 0.2em;
+    font-size: 2rem !important;
+    padding-bottom: 0.25rem;
   }
   
   .reveal h1::after {
-    width: 90%; /* Longer underline on small screens for proportion */
+    width: 90%;
     height: 2px;
   }
   
   .reveal .slides section.title-slide h1 {
-    font-size: 2.8em; /* Adjust title slide for mobile */
+    font-size: 2.5rem !important; /* Smaller but still impressive */
   }
   
   .reveal .slides section.title-slide h1::after {
-    width: 90%; /* Adjust title underline width */
+    width: 90%;
     height: 3px;
   }
   
   .chart-container {
     height: 240px;
-    margin: 12px 0; /* Minimal margins */
+    margin: 12px 0;
   }
   
   .summary-card, .type-card {
-    padding: 15px; /* Reduced padding */
-    margin-bottom: 12px; /* Reduced margins */
+    padding: 15px;
+    margin-bottom: 12px;
   }
   
   .interactive-demo {
-    padding: 15px; /* Reduced padding */
-    margin: 15px 0; /* Reduced margins */
+    padding: 15px;
+    margin: 15px 0;
   }
   
   .practice-problem {
-    padding: 15px; /* Reduced padding */
-    margin: 15px 0; /* Reduced margins */
+    padding: 15px;
+    margin: 15px 0;
   }
 }
 
 /* ==========================================================================
-   Accessibility & Focus States + Full Width Utilities + Header Variations
+   FIXED: Browser-specific fixes and utilities
    ========================================================================== */
+
+/* Fix Safari and Chrome scaling issues */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .reveal, .reveal .slides, .reveal .slides section {
+    font-size: var(--base-font-size) !important;
+    -webkit-text-size-adjust: none !important;
+  }
+}
+
+/* Fix Firefox scaling */
+@-moz-document url-prefix() {
+  .reveal, .reveal .slides, .reveal .slides section {
+    font-size: var(--base-font-size) !important;
+  }
+}
 
 /* Full-width utility classes */
 .full-width {
@@ -1060,7 +949,7 @@ body .reveal .slides section h1::after {
 }
 
 .stretch-content {
-  padding: 10px 20px !important; /* Minimal padding for maximum content */
+  padding: 10px 20px !important;
 }
 
 .no-margins {
@@ -1069,55 +958,20 @@ body .reveal .slides section h1::after {
 
 /* Header underline variations */
 .reveal h1.no-underline::after {
-  display: none; /* Remove underline if needed */
+  display: none;
 }
 
 .reveal h1.short-underline::after {
-  width: 50%; /* Shorter underline */
+  width: 50%;
 }
 
 .reveal h1.accent-underline::after {
-  background: var(--accent-teal); /* Single color underline */
+  background: var(--accent-teal);
   width: 70%;
 }
 
 .reveal h1.thick-underline::after {
-  height: 5px; /* Thicker underline */
-}
-
-/* Add underlines to other headers if desired */
-.reveal h2.with-underline {
-  position: relative;
-  padding-bottom: 0.2em;
-  margin-bottom: 1em;
-}
-
-.reveal h2.with-underline::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40%;
-  height: 2px;
-  background: var(--accent-teal);
-  border-radius: 1px;
-}
-
-.reveal h3.with-underline {
-  position: relative;
-  padding-bottom: 0.15em;
-  margin-bottom: 0.8em;
-}
-
-.reveal h3.with-underline::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 30%;
-  height: 2px;
-  background: var(--accent-amber);
-  border-radius: 1px;
+  height: 5px;
 }
 
 /* Two-column layout utility */
@@ -1128,7 +982,6 @@ body .reveal .slides section h1::after {
   width: 100%;
 }
 
-/* Three-column layout utility */
 .three-columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1139,11 +992,12 @@ body .reveal .slides section h1::after {
 @media (max-width: 768px) {
   .two-columns,
   .three-columns {
-    grid-template-columns: 1fr; /* Stack on mobile */
+    grid-template-columns: 1fr;
     gap: 15px;
   }
 }
 
+/* FIXED: Focus states */
 button:focus,
 input:focus,
 select:focus {
@@ -1172,7 +1026,7 @@ select:focus {
 }
 
 /* ==========================================================================
-   Print Styles - Optimized for Documents with Header Underlines
+   FIXED: Print Styles
    ========================================================================== */
 @media print {
   .interactive-demo,
@@ -1186,19 +1040,19 @@ select:focus {
   }
   
   .reveal .slides section {
-    font-size: 12pt; /* Standard print size */
+    font-size: 12pt !important; /* Standard print size */
     color: #000;
     line-height: 1.4;
   }
   
   .reveal h1 { 
-    font-size: 18pt;
+    font-size: 18pt !important;
     color: #000;
   }
   
   .reveal h1::after {
-    background: #000 !important; /* Black underline for print */
-    height: 1px !important; /* Thinner for print */
+    background: #000 !important;
+    height: 1px !important;
   }
   
   .reveal .slides section.title-slide h1::after {
@@ -1207,12 +1061,12 @@ select:focus {
   }
   
   .reveal h2 { 
-    font-size: 16pt;
+    font-size: 16pt !important;
     color: #000;
   }
   
   .reveal h3 { 
-    font-size: 14pt;
+    font-size: 14pt !important;
     color: #000;
   }
   
