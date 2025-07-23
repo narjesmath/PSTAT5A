@@ -17,6 +17,8 @@ format:
     incremental: false
     includes:
       after-body: |
+        <a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+        
         <script>
         // Simple and direct solution toggle
         function setupSolutionToggles() {
@@ -112,6 +114,10 @@ colors = {
     'light': '#f8fafc',
     'dark': '#1f2937'
 }
+```
+
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
 ```
 
 # Welcome to Lecture 11 {.center}
@@ -1764,6 +1770,10 @@ fig.show()
 
 :::
 ::::
+
+
+
+
 
 <script>
 // Direct solution toggle implementation

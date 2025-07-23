@@ -21,6 +21,7 @@ execute:
   echo: false
   warning: false
   message: false
+  eval: true
 ---
 
 ```{python}
@@ -117,15 +118,29 @@ np.random.seed(42)
 ::: {.column}
 ### 🎯 The Big Idea
 
-A **confidence interval** provides a range of plausible values for a population parameter.
+A **confidence interval (CI)** takes a single sample statistic and turns it into a *range* that is likely to contain an *unknown* population parameter; 
+most often the mean $\mu$.
 
-**General Form:**
-$$\text{Estimate} \pm \text{Margin of Error}$$
+**CI template**
 
-**For a population mean:**
-$$\bar{x} \pm (\text{Critical Value}) \times SE$$
+$$
+\underbrace{\text{Point estimate}}_{\color{blue}{(e.g., \bar{x})}}
+\;\pm\;
+\underbrace{\text{(critical value) $\times$ (standard error)}}_{\color{red}{\text{Margin of Error (ME)}}}
+$$
 
-Where $SE = \frac{s}{\sqrt{n}}$
+**For the mean**
+
+| Situation | Formula | Distribution |
+|-----------|---------|--------------|
+| **σ known** (rare) | $\displaystyle \bar{x} \;\pm\; z^{*}\,\frac{\sigma}{\sqrt{n}}$ | *z*-distribution |
+| **σ unknown** (typical) | $\displaystyle \bar{x} \;\pm\; t^{*}\,\frac{s}{\sqrt{n}}$ | *t*-distribution ($df = n-1$) |
+
+**Key points**
+
+- We *never* know the true mean $\mu$ in practice, that's exactly what the CI estimates.  
+- Use the population SD **σ** only when it is genuinely known (e.g., industrial process with long‑term QC).  
+- Otherwise substitute the sample SD **s** and switch to the *t*‑distribution, which is wider to reflect that extra uncertainty.
 :::
 
 ::: {.column}
@@ -198,615 +213,63 @@ fig.show()
 
 ---
 
-## The Critical Decision: z or t? 🤔
-
-```{python}
-#| fig-width: 14
-#| fig-height: 8
-
-# Decision tree for z vs t
-fig = make_subplots(
-    rows=2, cols=2,
-    subplot_titles=("Decision Flow Chart", "When σ is Known (Use z)", 
-                   "When σ is Unknown (Use t)", "Comparison: z vs t Distributions"),
-    specs=[[{"type": "table"}, {"type": "scatter"}],
-           [{"type": "scatter"}, {"type": "scatter"}]]
-)
-
-# Decision table
-decision_data = [
-    ["Is σ (pop. std dev) known?", "Sample Size", "Distribution to Use", "Critical Value"],
-    ["✅ Yes", "Any size", "Standard Normal (z)", "z* from z-table"],
-    ["❌ No", "n ≥ 30", "Standard Normal (z)", "z* ≈ Normal"],
-    ["❌ No", "n < 30", "t-distribution", "t* from t-table"],
-    ["❌ No + Small n + Non-normal", "n < 15", "⚠️ Use with caution", "Consider non-parametric"]
-]
-
-fig.add_trace(go.Table(
-    header=dict(
-        values=decision_data[0],
-        fill_color=colors['primary'],
-        font=dict(size=12, color='white'),
-        align="center",
-        height=30
-    ),
-    cells=dict(
-        values=list(zip(*decision_data[1:])),
-        fill_color=[['#f8fafc', '#e8f5e8', '#fff7ed', '#fef2f2']]*4,
-        font=dict(size=11),
-        align="center",
-        height=25
-    )
-), row=1, col=1)
-
-# Scenario 1: σ known
-np.random.seed(42)
-population_data = np.random.normal(100, 15, 1000)  # σ = 15 is known
-sample_data = np.random.choice(population_data, 25)
-sample_mean = np.mean(sample_data)
-known_sigma = 15
-se_known = known_sigma / np.sqrt(25)
-
-x_known = np.linspace(sample_mean - 4*se_known, sample_mean + 4*se_known, 1000)
-y_known = stats.norm.pdf(x_known, sample_mean, se_known)
-
-fig.add_trace(go.Scatter(
-    x=x_known, y=y_known,
-    mode='lines',
-    line=dict(color=colors['success'], width=3),
-    name='z-distribution (σ known)'
-), row=1, col=2)
-
-# Scenario 2: σ unknown
-sample_std = np.std(sample_data, ddof=1)
-se_unknown = sample_std / np.sqrt(25)
-df = 25 - 1
-
-x_unknown = np.linspace(sample_mean - 4*se_unknown, sample_mean + 4*se_unknown, 1000)
-y_unknown_t = stats.t.pdf((x_unknown - sample_mean)/se_unknown, df) / se_unknown
-
-fig.add_trace(go.Scatter(
-    x=x_unknown, y=y_unknown_t,
-    mode='lines',
-    line=dict(color=colors['info'], width=3),
-    name='t-distribution (σ unknown)'
-), row=2, col=1)
-
-# Comparison of z vs t distributions
-x_comparison = np.linspace(-4, 4, 1000)
-y_z = stats.norm.pdf(x_comparison)
-y_t_5 = stats.t.pdf(x_comparison, 5)
-y_t_15 = stats.t.pdf(x_comparison, 15)
-y_t_30 = stats.t.pdf(x_comparison, 30)
-
-fig.add_trace(go.Scatter(
-    x=x_comparison, y=y_z,
-    mode='lines',
-    line=dict(color=colors['primary'], width=3),
-    name='Standard Normal (z)'
-), row=2, col=2)
-
-fig.add_trace(go.Scatter(
-    x=x_comparison, y=y_t_5,
-    mode='lines',
-    line=dict(color=colors['danger'], width=2, dash='dash'),
-    name='t (df=5)'
-), row=2, col=2)
-
-fig.add_trace(go.Scatter(
-    x=x_comparison, y=y_t_15,
-    mode='lines',
-    line=dict(color=colors['warning'], width=2, dash='dot'),
-    name='t (df=15)'
-), row=2, col=2)
-
-fig.add_trace(go.Scatter(
-    x=x_comparison, y=y_t_30,
-    mode='lines',
-    line=dict(color=colors['info'], width=2, dash='dashdot'),
-    name='t (df=30)'
-), row=2, col=2)
-
-fig.update_layout(
-    height=600,
-    showlegend=False,
-    title_text="Choosing Between z and t Distributions"
-)
-
-# Update axes
-fig.update_xaxes(title_text="Value", row=1, col=2)
-fig.update_yaxes(title_text="Probability Density", row=1, col=2)
-fig.update_xaxes(title_text="Value", row=2, col=1)
-fig.update_yaxes(title_text="Probability Density", row=2, col=1)
-fig.update_xaxes(title_text="Standard Deviations from Mean", row=2, col=2)
-fig.update_yaxes(title_text="Probability Density", row=2, col=2)
-
-fig.show()
-```
-
-:::: {.columns}
-::: {.column}
-### 🔑 The Key Questions
-1. **Is σ known?** If yes → use z
-2. **Is n ≥ 30?** If yes and σ unknown → use z (CLT applies)
-3. **Is n < 30 and σ unknown?** → use t
-:::
-
-::: {.column}
-### 📊 What We See
-- **t-distribution** has heavier tails than z
-- **Smaller df** = heavier tails = wider intervals
-- **As df increases**, t approaches z
-- **df = n - 1** for one-sample problems
-:::
-::::
-
----
-
-## Meet the t-Distribution 📊
-
-:::: {.columns}
-::: {.column}
-### 🔬 What is the t-Distribution?
-
-**Developed by:** William Sealy Gosset (1908) under the pseudonym "Student"
-
-**Why we need it:** When σ is unknown, using sample standard deviation (s) adds extra uncertainty
-
-**Key Properties:**
-- **Bell-shaped** and symmetric like z
-- **Heavier tails** than standard normal
-- **Family of curves** determined by degrees of freedom (df)
-- **Approaches z** as df increases
-
-**Degrees of Freedom:** df = n - 1 for one-sample problems
-:::
-
-::: {.column}
-```{python}
-#| fig-width: 10
-#| fig-height: 8
-
-# Comprehensive t-distribution explanation
-fig = make_subplots(
-    rows=2, cols=2,
-    subplot_titles=("t vs z: The Tale of the Tails", "How df Affects the Shape",
-                   "Critical Values Comparison", "Why Heavier Tails Matter")
-)
-
-# t vs z comparison
-x = np.linspace(-4, 4, 1000)
-y_z = stats.norm.pdf(x)
-y_t = stats.t.pdf(x, df=5)
-
-fig.add_trace(go.Scatter(
-    x=x, y=y_z,
-    mode='lines',
-    line=dict(color=colors['primary'], width=3),
-    name='Standard Normal (z)'
-), row=1, col=1)
-
-fig.add_trace(go.Scatter(
-    x=x, y=y_t,
-    mode='lines',
-    line=dict(color=colors['danger'], width=3),
-    name='t-distribution (df=5)'
-), row=1, col=1)
-
-# Fill the tail areas to show difference
-tail_x = x[x >= 2]
-tail_y_z = y_z[x >= 2]
-tail_y_t = y_t[x >= 2]
-
-fig.add_trace(go.Scatter(
-    x=np.concatenate([tail_x, [tail_x[-1], tail_x[0]]]),
-    y=np.concatenate([tail_y_z, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(59, 130, 246, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='z tail area'
-), row=1, col=1)
-
-fig.add_trace(go.Scatter(
-    x=np.concatenate([tail_x, [tail_x[-1], tail_x[0]]]),
-    y=np.concatenate([tail_y_t, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(239, 68, 68, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='t tail area'
-), row=1, col=1)
-
-# Different degrees of freedom
-df_values = [1, 3, 10, 30]
-colors_df = [colors['danger'], colors['warning'], colors['info'], colors['success']]
-
-for df, color in zip(df_values, colors_df):
-    y_t_df = stats.t.pdf(x, df)
-    fig.add_trace(go.Scatter(
-        x=x, y=y_t_df,
-        mode='lines',
-        line=dict(color=color, width=2),
-        name=f'df = {df}'
-    ), row=1, col=2)
-
-# Add z for comparison
-fig.add_trace(go.Scatter(
-    x=x, y=y_z,
-    mode='lines',
-    line=dict(color='black', width=3, dash='dash'),
-    name='z (df = ∞)'
-), row=1, col=2)
-
-# Critical values comparison
-confidence_levels = [0.90, 0.95, 0.99]
-df_range = np.arange(1, 31)
-colors_conf = [colors['info'], colors['primary'], colors['warning']]
-
-for conf, color in zip(confidence_levels, colors_conf):
-    alpha = 1 - conf
-    z_crit = stats.norm.ppf(1 - alpha/2)
-    t_crits = [stats.t.ppf(1 - alpha/2, df) for df in df_range]
-    
-    # Plot t critical values
-    fig.add_trace(go.Scatter(
-        x=df_range, y=t_crits,
-        mode='lines+markers',
-        marker=dict(size=4, color=color),
-        line=dict(color=color, width=2),
-        name=f'{int(conf*100)}% CI'
-    ), row=2, col=1)
-    
-    # Add z critical value as horizontal line
-    fig.add_hline(y=z_crit, line_dash="dash", line_color=color, 
-                  line_width=2, row=2, col=1)
-
-# Confidence interval width comparison
-n_values = np.arange(5, 51)
-df_values = n_values - 1
-sigma = 10
-conf = 0.95
-alpha = 1 - conf
-
-z_crit = stats.norm.ppf(1 - alpha/2)
-t_crits = [stats.t.ppf(1 - alpha/2, df) for df in df_values]
-
-# Calculate CI widths
-z_widths = [2 * z_crit * sigma / np.sqrt(n) for n in n_values]
-t_widths = [2 * t_crit * sigma / np.sqrt(n) for t_crit, n in zip(t_crits, n_values)]
-
-fig.add_trace(go.Scatter(
-    x=n_values, y=z_widths,
-    mode='lines+markers',
-    marker=dict(size=4, color=colors['primary']),
-    line=dict(color=colors['primary'], width=2),
-    name='z-based CI width'
-), row=2, col=2)
-
-fig.add_trace(go.Scatter(
-    x=n_values, y=t_widths,
-    mode='lines+markers',
-    marker=dict(size=4, color=colors['danger']),
-    line=dict(color=colors['danger'], width=2),
-    name='t-based CI width'
-), row=2, col=2)
-
-fig.update_layout(
-    height=600,
-    showlegend=False,
-    title_text="Understanding the t-Distribution"
-)
-
-# Update axes
-fig.update_xaxes(title_text="Standard Deviations", row=1, col=1)
-fig.update_yaxes(title_text="Probability Density", row=1, col=1)
-fig.update_xaxes(title_text="Standard Deviations", row=1, col=2)
-fig.update_yaxes(title_text="Probability Density", row=1, col=2)
-fig.update_xaxes(title_text="Degrees of Freedom", row=2, col=1)
-fig.update_yaxes(title_text="Critical Value", row=2, col=1)
-fig.update_xaxes(title_text="Sample Size (n)", row=2, col=2)
-fig.update_yaxes(title_text="CI Width", row=2, col=2)
-
-fig.show()
-```
-:::
-::::
-
----
-
-## Critical Regions and Critical Values 🎯
-
-:::: {.columns}
-::: {.column}
-### 🔍 What are Critical Regions?
-
-**Critical Region:** The area in the tails of the distribution that corresponds to our α level
-
-**Critical Value:** The z* or t* value that separates the middle (1-α)×100% from the tails
-
-**For a 95% CI:**
-- α = 0.05
-- α/2 = 0.025 in each tail
-- Critical region = 2.5% in each tail
-- Middle 95% = our confidence interval
-
-### 📐 How to Find Critical Values
-
-**From tables:** Look up α/2 or (1-α/2)
-**From software:** Use inverse CDF functions
-**Key insight:** We want the value that leaves α/2 in the upper tail
-:::
-
-::: {.column}
-```{python}
-#| fig-width: 12
-#| fig-height: 10
-
-# Critical regions and values demonstration
-fig = make_subplots(
-    rows=3, cols=2,
-    subplot_titles=("95% CI: Critical Regions", "99% CI: Critical Regions",
-                   "Finding z* from Standard Normal", "Finding t* from t-Distribution",
-                   "Reading the z-Table", "Reading the t-Table"),
-    specs=[[{"type": "scatter"}, {"type": "scatter"}],
-           [{"type": "scatter"}, {"type": "scatter"}],
-           [{"type": "table"}, {"type": "table"}]]
-)
-
-# 95% CI critical regions
-x = np.linspace(-4, 4, 1000)
-y = stats.norm.pdf(x)
-
-fig.add_trace(go.Scatter(
-    x=x, y=y,
-    mode='lines',
-    line=dict(color=colors['primary'], width=3),
-    name='Standard Normal'
-), row=1, col=1)
-
-# Shade critical regions for 95% CI
-alpha = 0.05
-z_crit = stats.norm.ppf(1 - alpha/2)
-
-# Left tail
-left_tail_x = x[x <= -z_crit]
-left_tail_y = y[x <= -z_crit]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([left_tail_x, [-z_crit, left_tail_x[0]]]),
-    y=np.concatenate([left_tail_y, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(239, 68, 68, 0.5)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='Critical Region α/2 = 0.025'
-), row=1, col=1)
-
-# Right tail
-right_tail_x = x[x >= z_crit]
-right_tail_y = y[x >= z_crit]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([right_tail_x, [right_tail_x[-1], z_crit]]),
-    y=np.concatenate([right_tail_y, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(239, 68, 68, 0.5)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='Critical Region α/2 = 0.025'
-), row=1, col=1)
-
-# Add critical value lines
-fig.add_vline(x=-z_crit, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text=f"z* = -{z_crit:.3f}", row=1, col=1)
-fig.add_vline(x=z_crit, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text=f"z* = {z_crit:.3f}", row=1, col=1)
-
-# 99% CI critical regions
-alpha_99 = 0.01
-z_crit_99 = stats.norm.ppf(1 - alpha_99/2)
-
-fig.add_trace(go.Scatter(
-    x=x, y=y,
-    mode='lines',
-    line=dict(color=colors['primary'], width=3),
-    name='Standard Normal'
-), row=1, col=2)
-
-# Shade critical regions for 99% CI
-left_tail_x_99 = x[x <= -z_crit_99]
-left_tail_y_99 = y[x <= -z_crit_99]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([left_tail_x_99, [-z_crit_99, left_tail_x_99[0]]]),
-    y=np.concatenate([left_tail_y_99, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(239, 68, 68, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='Critical Region α/2 = 0.005'
-), row=1, col=2)
-
-right_tail_x_99 = x[x >= z_crit_99]
-right_tail_y_99 = y[x >= z_crit_99]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([right_tail_x_99, [right_tail_x_99[-1], z_crit_99]]),
-    y=np.concatenate([right_tail_y_99, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(239, 68, 68, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='Critical Region α/2 = 0.005'
-), row=1, col=2)
-
-fig.add_vline(x=-z_crit_99, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text=f"z* = -{z_crit_99:.3f}", row=1, col=2)
-fig.add_vline(x=z_crit_99, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text=f"z* = {z_crit_99:.3f}", row=1, col=2)
-
-# z* demonstration
-fig.add_trace(go.Scatter(
-    x=x, y=y,
-    mode='lines',
-    line=dict(color=colors['success'], width=3),
-    name='Finding z*'
-), row=2, col=1)
-
-# Shade area to the left of z*
-area_x = x[x <= z_crit]
-area_y = y[x <= z_crit]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([area_x, [z_crit, x[0]]]),
-    y=np.concatenate([area_y, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(16, 185, 129, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='Area = 0.975'
-), row=2, col=1)
-
-fig.add_vline(x=z_crit, line_dash="dash", line_color=colors['success'], 
-              line_width=3, annotation_text=f"z* = {z_crit:.3f}<br>P(Z ≤ z*) = 0.975", row=2, col=1)
-
-# t* demonstration
-df = 15
-t_crit = stats.t.ppf(1 - alpha/2, df)
-y_t = stats.t.pdf(x, df)
-
-fig.add_trace(go.Scatter(
-    x=x, y=y_t,
-    mode='lines',
-    line=dict(color=colors['info'], width=3),
-    name='t-distribution (df=15)'
-), row=2, col=2)
-
-# Shade area to the left of t*
-area_x_t = x[x <= t_crit]
-area_y_t = y_t[x <= t_crit]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([area_x_t, [t_crit, x[0]]]),
-    y=np.concatenate([area_y_t, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(139, 92, 246, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='Area = 0.975'
-), row=2, col=2)
-
-fig.add_vline(x=t_crit, line_dash="dash", line_color=colors['info'], 
-              line_width=3, annotation_text=f"t* = {t_crit:.3f}<br>P(T ≤ t*) = 0.975", row=2, col=2)
-
-# z-table excerpt
-z_table_data = [
-    ["z", "0.00", "0.01", "0.02", "0.03", "0.04", "0.05", "0.06"],
-    ["1.9", "0.9713", "0.9719", "0.9726", "0.9732", "0.9738", "0.9744", "0.9750"],
-    ["2.0", "0.9772", "0.9778", "0.9783", "0.9788", "0.9793", "0.9798", "0.9803"],
-    ["1.96", "", "", "", "", "", "", "0.9750"],
-    ["", "⬆", "", "", "", "", "", ""],
-    ["", "z* for 95% CI", "", "", "", "", "", ""]
-]
-
-fig.add_trace(go.Table(
-    header=dict(
-        values=z_table_data[0],
-        fill_color=colors['success'],
-        font=dict(size=10, color='white'),
-        align="center"
-    ),
-    cells=dict(
-        values=list(zip(*z_table_data[1:])),
-        fill_color=[['#f0fdf4', '#ffffff', '#ffffff', '#ffffff', '#e8f5e8', '#d1fae5']]*7,
-        font=dict(size=9),
-        align="center"
-    )
-), row=3, col=1)
-
-# t-table excerpt
-t_table_data = [
-    ["df", "0.10", "0.05", "0.025", "0.01", "0.005"],
-    ["14", "1.345", "1.761", "2.145", "2.624", "2.977"],
-    ["15", "1.341", "1.753", "2.131", "2.602", "2.947"],
-    ["16", "1.337", "1.746", "2.120", "2.583", "2.921"],
-    ["", "", "", "⬆", "", ""],
-    ["", "", "", "α/2 = 0.025", "", ""],
-    ["", "", "", "for 95% CI", "", ""]
-]
-
-fig.add_trace(go.Table(
-    header=dict(
-        values=t_table_data[0],
-        fill_color=colors['info'],
-        font=dict(size=10, color='white'),
-        align="center"
-    ),
-    cells=dict(
-        values=list(zip(*t_table_data[1:])),
-        fill_color=[['#faf5ff', '#ffffff', '#ffffff', '#e0e7ff', '#ffffff', '#ffffff']]*6,
-        font=dict(size=9),
-        align="center"
-    )
-), row=3, col=2)
-
-fig.update_layout(
-    height=750,
-    showlegend=False,
-    title_text="Critical Regions and Values: Finding the Right Numbers"
-)
-
-# Update axes
-fig.update_xaxes(title_text="z-score", row=1, col=1)
-fig.update_yaxes(title_text="Density", row=1, col=1)
-fig.update_xaxes(title_text="z-score", row=1, col=2)
-fig.update_yaxes(title_text="Density", row=1, col=2)
-fig.update_xaxes(title_text="z-score", row=2, col=1)
-fig.update_yaxes(title_text="Density", row=2, col=1)
-fig.update_xaxes(title_text="t-score", row=2, col=2)
-fig.update_yaxes(title_text="Density", row=2, col=2)
-
-fig.show()
-```
-:::
-::::
-
----
-
 ## Step-by-Step Example 1: Using z-Distribution 📝
 
 :::: {.columns}
 ::: {.column}
 ### 🎯 Problem Setup
 
-**Research Question:** What is the average SAT score of students at our college?
+**Research Question:** What is the average SAT score of students at UCSB?
 
 **Given Information:**
-- Sample size: n = 50 students
+
+- Sample size: $n = 50$ students
 - Sample mean: $\bar{x} = 1180$
-- **Population standard deviation: σ = 120** (known from past data)
-- Confidence level: 95%
+- **Population standard deviation:** $\sigma = 120$ (known from past data)
+- Confidence level: $95\%$
 
-**Question:** Construct a 95% confidence interval for the population mean SAT score.
+**Question:** Construct a $95\%$ confidence interval for the population mean SAT score.
 
-### 📋 Step-by-Step Solution
+<button class="show-solution smaller" onclick="toggleSolution('sol1')">Show Solution</button>
+
+::: {.solution data-id="sol1"}
 
 **Step 1: Check conditions**
-- σ is known ✓
+
+- $\sigma$ is known ✓
 - Use z-distribution ✓
 
 **Step 2: Find critical value**
-- For 95% CI: α = 0.05, α/2 = 0.025
-- z* = 1.96 (from z-table)
+
+- For $95\%$ CI: $\alpha = 0.05, \frac{\alpha}{2} = 0.025$
+- $z^* = 1.96$ (from z-table)
+
+**Step 3: Calculate SE**
+
+$$SE = \frac{\sigma}{\sqrt{n}} = \frac{120}{\sqrt{50}} = \frac{120}{7.071} = 16.97$$
+
+**Step 4: Calculate Margin of Error**
+
+$$ME = z^* \times SE = 1.96 \times 16.97 = 33.26$$
+
+**Step 5: Construct CI**
+
+$$CI = \bar{x} \pm ME = 1180 \pm 33.26 = (1146.7, 1213.3)$$
+
+**Final Answer:** We are 95% confident that the true average SAT score is between 1146.7 and 1213.3.
+:::
 :::
 
 ::: {.column}
 ```{python}
 #| fig-width: 10
-#| fig-height: 8
+#| fig-height: 6
 
 # Example 1: z-distribution calculation
-fig = make_subplots(
-    rows=2, cols=2,
-    subplot_titles=("Given Data Visualization", "Critical Value z* = 1.96",
-                   "Confidence Interval Calculation", "Final Result Interpretation"),
-    specs=[[{"type": "xy"}, {"type": "xy"}],
-           [{"type": "table"}, {"type": "xy"}]]
-)
-
-# Given data
 n = 50
 x_bar = 1180
 sigma = 120
 confidence = 0.95
-alpha = 1 - confidence
 z_star = 1.96
 
 # Calculate standard error and CI
@@ -815,139 +278,49 @@ margin_error = z_star * se
 ci_lower = x_bar - margin_error
 ci_upper = x_bar + margin_error
 
-# Visualize the sample (simulated)
-np.random.seed(42)
-sample_data = np.random.normal(x_bar, sigma, n)
+# Create visualization
+fig = go.Figure()
 
-fig.add_trace(go.Histogram(
-    x=sample_data,
-    name="Sample Data",
-    marker_color=colors['primary'],
-    opacity=0.7,
-    nbinsx=15
-), row=1, col=1)
-
-fig.add_vline(x=x_bar, line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"Sample Mean = {x_bar}", row=1, col=1)
-
-# Critical value visualization
-x_z = np.linspace(-3, 3, 1000)
-y_z = stats.norm.pdf(x_z)
+# Sampling distribution
+x_range = np.linspace(ci_lower - 50, ci_upper + 50, 1000)
+y_range = stats.norm.pdf(x_range, x_bar, se)
 
 fig.add_trace(go.Scatter(
-    x=x_z, y=y_z,
-    mode='lines',
-    line=dict(color=colors['success'], width=3),
-    name='Standard Normal'
-), row=1, col=2)
-
-# Shade critical regions
-left_tail = x_z[x_z <= -z_star]
-left_tail_y = y_z[x_z <= -z_star]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([left_tail, [-z_star, left_tail[0]]]),
-    y=np.concatenate([left_tail_y, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(239, 68, 68, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='α/2 = 0.025'
-), row=1, col=2)
-
-right_tail = x_z[x_z >= z_star]
-right_tail_y = y_z[x_z >= z_star]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([right_tail, [right_tail[-1], z_star]]),
-    y=np.concatenate([right_tail_y, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(239, 68, 68, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='α/2 = 0.025'
-), row=1, col=2)
-
-fig.add_vline(x=-z_star, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text=f"-z* = -{z_star}", row=1, col=2)
-fig.add_vline(x=z_star, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text=f"z* = {z_star}", row=1, col=2)
-
-# Calculation steps visualization
-steps = [
-    "Step 3: Calculate SE",
-    f"SE = σ/√n = {sigma}/√{n} = {se:.2f}",
-    "",
-    "Step 4: Calculate Margin of Error", 
-    f"ME = z* × SE = {z_star} × {se:.2f} = {margin_error:.2f}",
-    "",
-    "Step 5: Construct CI",
-    f"CI = {x_bar} ± {margin_error:.2f}",
-    f"CI = ({ci_lower:.1f}, {ci_upper:.1f})"
-]
-
-fig.add_trace(go.Table(
-    header=dict(
-        values=["Calculation Steps"],
-        fill_color=colors['info'],
-        font=dict(size=12, color='white'),
-        align="left"
-    ),
-    cells=dict(
-        values=[steps],
-        fill_color='#faf5ff',
-        font=dict(size=11),
-        align="left",
-        height=25
-    )
-), row=2, col=1)
-
-# Final result visualization
-x_ci = np.linspace(ci_lower - 50, ci_upper + 50, 1000)
-y_ci = stats.norm.pdf(x_ci, x_bar, se)
-
-fig.add_trace(go.Scatter(
-    x=x_ci, y=y_ci,
+    x=x_range, y=y_range,
     mode='lines',
     line=dict(color=colors['primary'], width=3),
     name='Sampling Distribution'
-), row=2, col=2)
+))
 
 # Shade the confidence interval
-ci_mask = (x_ci >= ci_lower) & (x_ci <= ci_upper)
+ci_mask = (x_range >= ci_lower) & (x_range <= ci_upper)
 fig.add_trace(go.Scatter(
-    x=np.concatenate([x_ci[ci_mask], [ci_upper, ci_lower]]),
-    y=np.concatenate([y_ci[ci_mask], [0, 0]]),
+    x=np.concatenate([x_range[ci_mask], [ci_upper, ci_lower]]),
+    y=np.concatenate([y_range[ci_mask], [0, 0]]),
     fill='toself',
     fillcolor='rgba(59, 130, 246, 0.3)',
     line=dict(color='rgba(0,0,0,0)'),
     name='95% Confidence Interval'
-), row=2, col=2)
+))
 
-fig.add_vline(x=x_bar, line_dash="solid", line_color=colors['danger'],
-              line_width=3, annotation_text=f"x̄ = {x_bar}",
-              row=2, col=2, exclude_empty_subplots=False)
-fig.add_vline(x=ci_lower, line_dash="dot", line_color=colors['warning'],
-              line_width=2, annotation_text=f"Lower = {ci_lower:.1f}",
-              row=2, col=2, exclude_empty_subplots=False)
-fig.add_vline(x=ci_upper, line_dash="dot", line_color=colors['warning'],
-              line_width=2, annotation_text=f"Upper = {ci_upper:.1f}",
-              row=2, col=2, exclude_empty_subplots=False)
+# Add lines
+fig.add_vline(x=x_bar, line_dash="solid", line_color=colors['danger'], 
+              line_width=3, annotation_text=f"x̄ = {x_bar}")
+fig.add_vline(x=ci_lower, line_dash="dot", line_color=colors['warning'], 
+              line_width=2, annotation_text=f"Lower = {ci_lower:.1f}")
+fig.add_vline(x=ci_upper, line_dash="dot", line_color=colors['warning'], 
+              line_width=2, annotation_text=f"Upper = {ci_upper:.1f}")
 
 fig.update_layout(
-    height=600,
-    showlegend=False,
-    title_text="Example 1: 95% CI using z-Distribution (σ known)"
+    title="Example 1: 95% CI using z-Distribution (σ known)",
+    xaxis_title="SAT Score",
+    yaxis_title="Probability Density",
+    height=400,
+    showlegend=False
 )
-
-# Update axes
-fig.update_xaxes(title_text="SAT Score", row=1, col=1)
-fig.update_yaxes(title_text="Frequency", row=1, col=1)
-fig.update_xaxes(title_text="z-score", row=1, col=2)
-fig.update_yaxes(title_text="Density", row=1, col=2)
-fig.update_xaxes(title_text="SAT Score", row=2, col=2)
-fig.update_yaxes(title_text="Density", row=2, col=2)
 
 fig.show()
 ```
-
-**Final Answer:** We are 95% confident that the true average SAT score is between 1146.7 and 1213.3.
 :::
 ::::
 
@@ -964,15 +337,17 @@ fig.show()
 **Given Information:**
 - Sample size: n = 16 employees
 - Sample mean: $\bar{x} = 2.8$ cups
-- **Sample standard deviation: s = 0.9** (σ unknown)
+- **Sample standard deviation: s = 0.9** ($\sigma$ unknown)
 - Confidence level: 90%
 
 **Question:** Construct a 90% confidence interval for the population mean daily coffee consumption.
 
-### 📋 Step-by-Step Solution
+::: {.collapsible-solution}
+<button class="solution-toggle">Show Solution</button>
+<div class="solution-content">
 
 **Step 1: Check conditions**
-- σ is unknown ✓
+- $\sigma$ is unknown ✓
 - n < 30 ✓
 - Use t-distribution ✓
 
@@ -980,32 +355,39 @@ fig.show()
 - df = n - 1 = 16 - 1 = 15
 
 **Step 3: Find critical value**
-- For 90% CI: α = 0.10, α/2 = 0.05
+- For 90% CI: $\alpha = 0.10, \alpha/2 = 0.05$
 - t* = 1.753 (from t-table, df = 15)
+
+**Step 4: Calculate SE**
+
+$$SE = \frac{s}{\sqrt{n}} = \frac{0.9}{\sqrt{16}} = \frac{0.9}{4} = 0.225$$
+
+**Step 5: Calculate Margin of Error**
+
+$$ME = t^* \times SE = 1.753 \times 0.225 = 0.394$$
+
+**Step 6: Construct CI**
+
+$$CI = \bar{x} \pm ME = 2.8 \pm 0.394 = (2.406, 3.194)$$
+
+**Final Answer:** We are 90% confident that the true average daily coffee consumption is between 2.406 and 3.194 cups.
+
+</div>
+:::
 :::
 
 ::: {.column}
 ```{python}
 #| fig-width: 10
-#| fig-height: 8
+#| fig-height: 6
 
 # Example 2: t-distribution calculation
-fig = make_subplots(
-    rows=2, cols=2,
-    subplot_titles=("Given Data Visualization", "Critical Value t* (df=15)",
-                   "Confidence Interval Calculation", "Final Result Interpretation"),
-    specs=[[{"type": "xy"}, {"type": "xy"}],
-           [{"type": "table"}, {"type": "xy"}]]
-)
-
-# Given data
 n2 = 16
 x_bar2 = 2.8
 s = 0.9
 confidence2 = 0.90
-alpha2 = 1 - confidence2
 df = n2 - 1
-t_star = stats.t.ppf(1 - alpha2/2, df)
+t_star = stats.t.ppf(0.95, df)  # 90% CI, so upper tail is 0.05
 
 # Calculate standard error and CI
 se2 = s / np.sqrt(n2)
@@ -1013,148 +395,49 @@ margin_error2 = t_star * se2
 ci_lower2 = x_bar2 - margin_error2
 ci_upper2 = x_bar2 + margin_error2
 
-# Visualize the sample (simulated)
-np.random.seed(123)
-sample_data2 = np.random.normal(x_bar2, s, n2)
+# Create visualization
+fig = go.Figure()
 
-fig.add_trace(go.Histogram(
-    x=sample_data2,
-    name="Sample Data",
-    marker_color=colors['info'],
-    opacity=0.7,
-    nbinsx=8
-), row=1, col=1)
-
-fig.add_vline(x=x_bar2, line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"Sample Mean = {x_bar2}", row=1, col=1)
-
-# Critical value visualization for t-distribution
-x_t = np.linspace(-4, 4, 1000)
-y_t = stats.t.pdf(x_t, df)
+# Sampling distribution
+x_range2 = np.linspace(ci_lower2 - 0.5, ci_upper2 + 0.5, 1000)
+y_range2 = stats.t.pdf((x_range2 - x_bar2)/se2, df) / se2
 
 fig.add_trace(go.Scatter(
-    x=x_t, y=y_t,
-    mode='lines',
-    line=dict(color=colors['info'], width=3),
-    name=f't-distribution (df={df})'
-), row=1, col=2)
-
-# Compare with z-distribution
-y_z = stats.norm.pdf(x_t)
-fig.add_trace(go.Scatter(
-    x=x_t, y=y_z,
-    mode='lines',
-    line=dict(color=colors['primary'], width=2, dash='dash'),
-    name='Standard Normal (z)'
-), row=1, col=2)
-
-# Shade critical regions for t
-left_tail_t = x_t[x_t <= -t_star]
-left_tail_y_t = y_t[x_t <= -t_star]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([left_tail_t, [-t_star, left_tail_t[0]]]),
-    y=np.concatenate([left_tail_y_t, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(139, 92, 246, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='α/2 = 0.05'
-), row=1, col=2)
-
-right_tail_t = x_t[x_t >= t_star]
-right_tail_y_t = y_t[x_t >= t_star]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([right_tail_t, [right_tail_t[-1], t_star]]),
-    y=np.concatenate([right_tail_y_t, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(139, 92, 246, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='α/2 = 0.05'
-), row=1, col=2)
-
-fig.add_vline(x=-t_star, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text=f"-t* = -{t_star:.3f}", row=1, col=2)
-fig.add_vline(x=t_star, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text=f"t* = {t_star:.3f}", row=1, col=2)
-
-# Calculation steps visualization
-steps2 = [
-    "Step 4: Calculate SE",
-    f"SE = s/√n = {s}/√{n2} = {se2:.3f}",
-    "",
-    "Step 5: Calculate Margin of Error", 
-    f"ME = t* × SE = {t_star:.3f} × {se2:.3f} = {margin_error2:.3f}",
-    "",
-    "Step 6: Construct CI",
-    f"CI = {x_bar2} ± {margin_error2:.3f}",
-    f"CI = ({ci_lower2:.3f}, {ci_upper2:.3f})"
-]
-
-fig.add_trace(go.Table(
-    header=dict(
-        values=["Calculation Steps"],
-        fill_color=colors['info'],
-        font=dict(size=12, color='white'),
-        align="left"
-    ),
-    cells=dict(
-        values=[steps2],
-        fill_color='#faf5ff',
-        font=dict(size=11),
-        align="left",
-        height=25
-    )
-), row=2, col=1)
-
-# Final result visualization
-x_ci2 = np.linspace(ci_lower2 - 0.5, ci_upper2 + 0.5, 1000)
-y_ci2 = stats.t.pdf((x_ci2 - x_bar2)/se2, df) / se2
-
-fig.add_trace(go.Scatter(
-    x=x_ci2, y=y_ci2,
+    x=x_range2, y=y_range2,
     mode='lines',
     line=dict(color=colors['info'], width=3),
     name='Sampling Distribution (t)'
-), row=2, col=2)
+))
 
 # Shade the confidence interval
-ci_mask2 = (x_ci2 >= ci_lower2) & (x_ci2 <= ci_upper2)
+ci_mask2 = (x_range2 >= ci_lower2) & (x_range2 <= ci_upper2)
 fig.add_trace(go.Scatter(
-    x=np.concatenate([x_ci2[ci_mask2], [ci_upper2, ci_lower2]]),
-    y=np.concatenate([y_ci2[ci_mask2], [0, 0]]),
+    x=np.concatenate([x_range2[ci_mask2], [ci_upper2, ci_lower2]]),
+    y=np.concatenate([y_range2[ci_mask2], [0, 0]]),
     fill='toself',
     fillcolor='rgba(139, 92, 246, 0.3)',
     line=dict(color='rgba(0,0,0,0)'),
     name='90% Confidence Interval'
-), row=2, col=2)
+))
 
-fig.add_vline(x=x_bar2, line_dash="solid", line_color=colors['danger'],
-              line_width=3, annotation_text=f"x̄ = {x_bar2}",
-              row=2, col=2, exclude_empty_subplots=False)
-fig.add_vline(x=ci_lower2, line_dash="dot", line_color=colors['warning'],
-              line_width=2, annotation_text=f"Lower = {ci_lower2:.3f}",
-              row=2, col=2, exclude_empty_subplots=False)
-fig.add_vline(x=ci_upper2, line_dash="dot", line_color=colors['warning'],
-              line_width=2, annotation_text=f"Upper = {ci_upper2:.3f}",
-              row=2, col=2, exclude_empty_subplots=False)
+# Add lines
+fig.add_vline(x=x_bar2, line_dash="solid", line_color=colors['danger'], 
+              line_width=3, annotation_text=f"x̄ = {x_bar2}")
+fig.add_vline(x=ci_lower2, line_dash="dot", line_color=colors['warning'], 
+              line_width=2, annotation_text=f"Lower = {ci_lower2:.3f}")
+fig.add_vline(x=ci_upper2, line_dash="dot", line_color=colors['warning'], 
+              line_width=2, annotation_text=f"Upper = {ci_upper2:.3f}")
 
 fig.update_layout(
-    height=600,
-    showlegend=False,
-    title_text="Example 2: 90% CI using t-Distribution (σ unknown)"
+    title="Example 2: 90% CI using t-Distribution (σ unknown)",
+    xaxis_title="Cups of Coffee",
+    yaxis_title="Probability Density",
+    height=400,
+    showlegend=False
 )
-
-# Update axes
-fig.update_xaxes(title_text="Cups of Coffee", row=1, col=1)
-fig.update_yaxes(title_text="Frequency", row=1, col=1)
-fig.update_xaxes(title_text="t-score", row=1, col=2)
-fig.update_yaxes(title_text="Density", row=1, col=2)
-fig.update_xaxes(title_text="Cups of Coffee", row=2, col=2)
-fig.update_yaxes(title_text="Density", row=2, col=2)
 
 fig.show()
 ```
-
-**Final Answer:** We are 90% confident that the true average daily coffee consumption is between 2.406 and 3.194 cups.
 :::
 ::::
 
@@ -1169,565 +452,115 @@ fig.show()
 **Problem:** A researcher wants to estimate the average time students spend studying per day.
 
 **Given:**
-- Sample size: n = 25 students  
+
+- Sample size: $n = 25$ students  
 - Sample mean: $\bar{x} = 3.2$ hours
-- Sample standard deviation: s = 1.1 hours
-- Confidence level: 95%
+- Sample standard deviation: $s = 1.1$ hours
+- Confidence level: $95\%$
 
 **Questions:**
-1. Should you use z or t distribution? Why?
+
+1. Should you use $z$ or $t$-distribution? Why?
 2. What are the degrees of freedom?
 3. What is the critical value?
 4. Calculate the 95% confidence interval
 5. Interpret your result in context
 
-### 🤔 Think About It...
-- Why is the t-distribution appropriate here?
-- How would the interval change if n = 100?
-- What if we wanted 99% confidence instead?
+::: {.collapsible-solution}
+<button class="solution-toggle">Show Solution</button>
+<div class="solution-content">
+
+**Step 1: Distribution Choice**
+Use t-distribution because:
+- σ is unknown (only sample standard deviation s is given)
+- n = 25 < 30
+
+**Step 2: Degrees of Freedom**
+df = n - 1 = 25 - 1 = 24
+
+**Step 3: Critical Value**
+For 95% CI with df = 24: t* = 2.064
+
+**Step 4: Calculate CI**
+
+Standard Error: $SE = \frac{s}{\sqrt{n}} = \frac{1.1}{\sqrt{25}} = \frac{1.1}{5} = 0.220$
+
+Margin of Error: $ME = t^* \times SE = 2.064 \times 0.220 = 0.454$
+
+Confidence Interval: $CI = \bar{x} \pm ME = 3.2 \pm 0.454 = (2.746, 3.654)$
+
+**Step 5: Interpretation**
+We are 95% confident that the true average study time for students is between 2.746 and 3.654 hours per day.
+
+</div>
+:::
 :::
 
 ::: {.column}
-<!-- ```{python}
+```{python}
 #| fig-width: 10
-#| fig-height: 8
+#| fig-height: 6
 
-# Practice problem setup and solution
-fig = make_subplots(
-    rows=2, cols=2,
-    subplot_titles=("Decision Tree", "Critical Value Lookup",
-                   "Step-by-Step Solution", "Confidence Interval Visualization"),
-    specs=[[{"type": "table"}, {"type": "xy"}],
-           [{"type": "table"}, {"type": "xy"}]]
-)
-
-# Practice problem data
+# Practice problem visualization
 n_practice = 25
 x_bar_practice = 3.2
 s_practice = 1.1
-confidence_practice = 0.95
-alpha_practice = 1 - confidence_practice
 df_practice = n_practice - 1
+t_star_practice = stats.t.ppf(0.975, df_practice)  # 95% CI
 
-# Decision tree table
-decision_tree = [
-    ["Question", "Answer", "Reasoning"],
-    ["Is σ known?", "❌ No", "Only sample std (s) given"],
-    ["Is n ≥ 30?", "❌ No", "n = 25 < 30"],
-    ["Distribution?", "t-distribution", "σ unknown AND n < 30"],
-    ["Degrees of freedom?", f"df = {df_practice}", "df = n - 1 = 25 - 1 = 24"]
-]
-
-fig.add_trace(go.Table(
-    header=dict(
-        values=decision_tree[0],
-        fill_color=colors['primary'],
-        font=dict(size=11, color='white'),
-        align="center"
-    ),
-    cells=dict(
-        values=list(zip(*decision_tree[1:])),
-        fill_color=[['#f8fafc', '#e8f5e8', '#fff7ed', '#fef2f2']]*3,
-        font=dict(size=10),
-        align="center"
-    )
-), row=1, col=1)
-
-# Critical value visualization
-x_crit = np.linspace(-3, 3, 1000)
-y_crit = stats.t.pdf(x_crit, df_practice)
-t_star_practice = stats.t.ppf(1 - alpha_practice/2, df_practice)
-
-fig.add_trace(go.Scatter(
-    x=x_crit, y=y_crit,
-    mode='lines',
-    line=dict(color=colors['info'], width=3),
-    name=f't-distribution (df={df_practice})'
-), row=1, col=2)
-
-# Shade the middle 95%
-middle_x = x_crit[(x_crit >= -t_star_practice) & (x_crit <= t_star_practice)]
-middle_y = y_crit[(x_crit >= -t_star_practice) & (x_crit <= t_star_practice)]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([middle_x, [t_star_practice, -t_star_practice]]),
-    y=np.concatenate([middle_y, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(16, 185, 129, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='95% of distribution'
-), row=1, col=2)
-
-fig.add_vline(x=-t_star_practice, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text=f"-t* = -{t_star_practice:.3f}", row=1, col=2)
-fig.add_vline(x=t_star_practice, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text=f"t* = {t_star_practice:.3f}", row=1, col=2)
-
-# Solution steps
 se_practice = s_practice / np.sqrt(n_practice)
 margin_error_practice = t_star_practice * se_practice
 ci_lower_practice = x_bar_practice - margin_error_practice
 ci_upper_practice = x_bar_practice + margin_error_practice
 
-solution_steps = [
-    "Step 1: Identify distribution → t",
-    f"Step 2: df = n - 1 = {df_practice}",
-    f"Step 3: t* = {t_star_practice:.3f}",
-    f"Step 4: SE = s/√n = {s_practice}/√{n_practice} = {se_practice:.3f}",
-    f"Step 5: ME = t* × SE = {margin_error_practice:.3f}",
-    f"Step 6: CI = {x_bar_practice} ± {margin_error_practice:.3f}",
-    f"Final: ({ci_lower_practice:.3f}, {ci_upper_practice:.3f}) hours"
-]
+# Create visualization
+fig = go.Figure()
 
-fig.add_trace(go.Table(
-    header=dict(
-        values=["Solution Steps"],
-        fill_color=colors['success'],
-        font=dict(size=12, color='white'),
-        align="left"
-    ),
-    cells=dict(
-        values=[solution_steps],
-        fill_color='#f0fdf4',
-        font=dict(size=10),
-        align="left",
-        height=22
-    )
-), row=2, col=1)
-
-# Final CI visualization
-x_final = np.linspace(ci_lower_practice - 0.5, ci_upper_practice + 0.5, 1000)
-y_final = stats.t.pdf((x_final - x_bar_practice)/se_practice, df_practice) / se_practice
+# Sampling distribution
+x_range_practice = np.linspace(ci_lower_practice - 0.5, ci_upper_practice + 0.5, 1000)
+y_range_practice = stats.t.pdf((x_range_practice - x_bar_practice)/se_practice, df_practice) / se_practice
 
 fig.add_trace(go.Scatter(
-    x=x_final, y=y_final,
-    mode='lines',
-    line=dict(color=colors['info'], width=3),
-    name='Sampling Distribution'
-), row=2, col=2)
-
-# Shade the confidence interval
-ci_mask_final = (x_final >= ci_lower_practice) & (x_final <= ci_upper_practice)
-fig.add_trace(go.Scatter(
-    x=np.concatenate([x_final[ci_mask_final], [ci_upper_practice, ci_lower_practice]]),
-    y=np.concatenate([y_final[ci_mask_final], [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(139, 92, 246, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='95% Confidence Interval'
-), row=2, col=2)
-
-fig.add_vline(x=x_bar_practice, line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"x̄ = {x_bar_practice}", row=2, col=2)
-fig.add_vline(x=ci_lower_practice, line_dash="dot", line_color=colors['warning'], 
-              line_width=2, annotation_text=f"{ci_lower_practice:.3f}", row=2, col=2)
-fig.add_vline(x=ci_upper_practice, line_dash="dot", line_color=colors['warning'], 
-              line_width=2, annotation_text=f"{ci_upper_practice:.3f}", row=2, col=2)
-
-fig.update_layout(
-    height=600,
-    showlegend=False,
-    title_text="Practice Problem: Study Time Confidence Interval"
-)
-
-# Update axes
-fig.update_xaxes(title_text="t-score", row=1, col=2)
-fig.update_yaxes(title_text="Density", row=1, col=2)
-fig.update_xaxes(title_text="Study Time (hours)", row=2, col=2)
-fig.update_yaxes(title_text="Density", row=2, col=2)
-
-fig.show()
-``` -->
-
-**Answer:** We are 95% confident that the true average study time is between 2.735 and 3.665 hours per day.
-:::
-::::
-
----
-
-## Common Mistakes and How to Avoid Them ⚠️
-
-<!-- ```{python}
-#| fig-width: 14
-#| fig-height: 8
-
-# Common mistakes visualization
-fig = make_subplots(
-    rows=2, cols=2,
-    subplot_titles=("Mistake 1: Wrong Distribution Choice", "Mistake 2: Incorrect df",
-                   "Mistake 3: Wrong Tail Area", "Mistake 4: Misinterpretation"),
-    specs=[[{"type": "table"}, {"type": "table"}],
-           [{"type": "scatter"}, {"type": "table"}]]
-)
-
-# Mistake 1: Distribution choice
-dist_mistakes = [
-    ["Scenario", "Wrong Choice", "Correct Choice", "Why"],
-    ["n=20, σ unknown", "Use z", "Use t", "Small n + σ unknown"],
-    ["n=100, σ unknown", "Use t", "Use z", "Large n (CLT applies)"],
-    ["n=15, σ known", "Use t", "Use z", "σ is known"],
-    ["n=5, non-normal", "Use either", "Be cautious", "Assumptions violated"]
-]
-
-fig.add_trace(go.Table(
-    header=dict(
-        values=dist_mistakes[0],
-        fill_color=colors['danger'],
-        font=dict(size=10, color='white'),
-        align="center"
-    ),
-    cells=dict(
-        values=list(zip(*dist_mistakes[1:])),
-        fill_color=[['#fef2f2', '#fff7ed', '#f0fdf4', '#f8fafc']]*4,
-        font=dict(size=9),
-        align="center"
-    )
-), row=1, col=1)
-
-# Mistake 2: Degrees of freedom
-df_mistakes = [
-    ["Sample Size", "Wrong df", "Correct df", "Formula"],
-    ["n = 25", "25", "24", "df = n - 1"],
-    ["n = 10", "10", "9", "df = n - 1"],
-    ["n = 1", "1", "0", "df = n - 1 (but invalid!)"],
-    ["Two samples", "n₁ + n₂ - 1", "n₁ + n₂ - 2", "Different formula"]
-]
-
-fig.add_trace(go.Table(
-    header=dict(
-        values=df_mistakes[0],
-        fill_color=colors['warning'],
-        font=dict(size=10, color='white'),
-        align="center"
-    ),
-    cells=dict(
-        values=list(zip(*df_mistakes[1:])),
-        fill_color=[['#fef2f2', '#fff7ed', '#f0fdf4', '#f8fafc']]*4,
-        font=dict(size=9),
-        align="center"
-    )
-), row=1, col=2)
-
-# Mistake 3: Wrong tail area visualization
-x_tail = np.linspace(-3, 3, 1000)
-y_tail = stats.norm.pdf(x_tail)
-
-# Wrong: looking up α instead of α/2
-alpha_example = 0.05
-z_wrong = stats.norm.ppf(1 - alpha_example)  # This is wrong for two-tailed
-z_correct = stats.norm.ppf(1 - alpha_example/2)  # This is correct
-
-fig.add_trace(go.Scatter(
-    x=x_tail, y=y_tail,
-    mode='lines',
-    line=dict(color=colors['primary'], width=3),
-    name='Standard Normal'
-), row=2, col=1)
-
-# Show wrong critical value
-fig.add_vline(x=z_wrong, line_dash="dash", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"❌ Wrong: z = {z_wrong:.3f}<br>(Used α = 0.05)", row=2, col=1)
-
-# Show correct critical value  
-fig.add_vline(x=z_correct, line_dash="solid", line_color=colors['success'], 
-              line_width=3, annotation_text=f"✅ Correct: z = {z_correct:.3f}<br>(Used α/2 = 0.025)", row=2, col=1)
-
-# Shade areas to show the difference
-wrong_area_x = x_tail[x_tail >= z_wrong]
-wrong_area_y = y_tail[x_tail >= z_wrong]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([wrong_area_x, [wrong_area_x[-1], z_wrong]]),
-    y=np.concatenate([wrong_area_y, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(239, 68, 68, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='Wrong area = 0.05'
-), row=2, col=1)
-
-correct_area_x = x_tail[x_tail >= z_correct]
-correct_area_y = y_tail[x_tail >= z_correct]
-fig.add_trace(go.Scatter(
-    x=np.concatenate([correct_area_x, [correct_area_x[-1], z_correct]]),
-    y=np.concatenate([correct_area_y, [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(16, 185, 129, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='Correct area = 0.025'
-), row=2, col=1)
-
-# Mistake 4: Interpretation
-interp_mistakes = [
-    ["Wrong Interpretation", "Correct Interpretation"],
-    ["'95% probability the mean is in our interval'", "'95% confident the mean is in our interval'"],
-    ["'The interval contains 95% of the data'", "'95% of such intervals contain the true mean'"],
-    ["'Our interval is definitely correct'", "'Our method works 95% of the time'"],
-    ["'We can be 95% sure about this specific interval'", "'The process has 95% success rate'"],
-    ["'95% of future samples will be in this range'", "'This estimates the population parameter'"]
-]
-
-fig.add_trace(go.Table(
-    header=dict(
-        values=interp_mistakes[0],
-        fill_color=colors['info'],
-        font=dict(size=11, color='white'),
-        align="center"
-    ),
-    cells=dict(
-        values=list(zip(*interp_mistakes[1:])),
-        fill_color=[['#fef2f2']*5, ['#f0fdf4']*5],
-        font=dict(size=10),
-        align="left",
-        height=25
-    )
-), row=2, col=2)
-
-fig.update_layout(
-    height=600,
-    showlegend=False,
-    title_text="Common Mistakes in Confidence Intervals"
-)
-
-# Update axes
-fig.update_xaxes(title_text="z-score", row=2, col=1)
-fig.update_yaxes(title_text="Density", row=2, col=1)
-
-fig.show()
-``` -->
-
----
-
-## Quick Reference Guide 📋
-
-:::: {.columns}
-::: {.column}
-### 🔧 Decision Flowchart
-
-```{python}
-#| fig-width: 8
-#| fig-height: 6
-
-# Quick reference flowchart
-flowchart_data = [
-    ["Start: Need CI for mean", ""],
-    ["↓", ""],
-    ["Is σ (population std) known?", ""],
-    ["↙ YES", "↘ NO"],
-    ["Use z-distribution", "Is n ≥ 30?"],
-    ["z* from normal table", "↙ YES    ↘ NO"],
-    ["", "Use z*     Use t*"],
-    ["", "(approx)   df=n-1"],
-    ["", "z-table    t-table"]
-]
-
-fig = go.Figure(data=[go.Table(
-    header=dict(
-        values=['<b>Confidence Interval Decision Tree</b>', ''],
-        fill_color=colors['primary'],
-        font=dict(size=14, color='white'),
-        align="center"
-    ),
-    cells=dict(
-        values=list(zip(*flowchart_data)),
-        fill_color=[['#f8fafc']*9, ['#f8fafc']*9],
-        font=dict(size=12),
-        align="center",
-        height=30
-    )
-)])
-
-fig.update_layout(
-    height=300,
-    margin=dict(l=20, r=20, t=60, b=20),
-    title_text="Quick Decision Guide"
-)
-
-fig.show()
-```
-
-### 📊 Critical Values Quick Reference
-
-**Common z* values:**
-- 90% CI: z* = 1.645
-- 95% CI: z* = 1.96  
-- 99% CI: z* = 2.576
-
-**Common t* values (95% CI):**
-- df = 5: t* = 2.571
-- df = 10: t* = 2.228
-- df = 15: t* = 2.131
-- df = 20: t* = 2.086
-- df = 30: t* = 2.042
-:::
-
-::: {.column}
-### 📝 Formula Summary
-
-**General CI Formula:**
-$$\text{Estimate} \pm \text{Critical Value} \times SE$$
-
-**When σ is known:**
-$$\bar{x} \pm z^* \cdot \frac{\sigma}{\sqrt{n}}$$
-
-**When σ is unknown:**
-$$\bar{x} \pm t^* \cdot \frac{s}{\sqrt{n}}$$
-
-**Standard Error:**
-$$SE = \frac{\sigma}{\sqrt{n}} \text{ or } \frac{s}{\sqrt{n}}$$
-
-**Margin of Error:**
-$$ME = \text{Critical Value} \times SE$$
-
-### ✅ Checklist for CI Problems
-
-1. ✓ Identify what parameter you're estimating
-2. ✓ Check if σ is known or unknown  
-3. ✓ Determine sample size (n ≥ 30?)
-4. ✓ Choose appropriate distribution (z or t)
-5. ✓ Find correct critical value
-6. ✓ Calculate standard error
-7. ✓ Construct the interval
-8. ✓ Interpret in context
-:::
-::::
-
----
-
-## Real-World Applications 🌍
-
-:::: {.columns}
-::: {.column}
-### 🏥 Medical Research
-**Example:** Clinical trial results
-- Sample: 150 patients
-- Mean reduction in blood pressure: 12 mmHg
-- Standard deviation: 8 mmHg
-- **Result:** 95% CI = (10.7, 13.3) mmHg
-
-**Interpretation:** We're 95% confident the true mean reduction is between 10.7 and 13.3 mmHg.
-
-### 📊 Market Research  
-**Example:** Customer satisfaction survey
-- Sample: 500 customers
-- Mean satisfaction score: 7.2 (out of 10)
-- Standard deviation: 1.8
-- **Result:** 99% CI = (6.99, 7.41)
-
-**Business Decision:** Can confidently report satisfaction above 7.0
-:::
-
-::: {.column}
-```{python}
-#| fig-width: 10
-#| fig-height: 6
-
-# Real-world applications visualization
-fig = make_subplots(
-    rows=2, cols=1,
-    subplot_titles=("Medical Research: Blood Pressure Reduction", 
-                   "Market Research: Customer Satisfaction")
-)
-
-# Medical research example
-n_med = 150
-x_bar_med = 12
-s_med = 8
-conf_med = 0.95
-alpha_med = 1 - conf_med
-
-# Large sample, so use z
-z_star_med = stats.norm.ppf(1 - alpha_med/2)
-se_med = s_med / np.sqrt(n_med)
-me_med = z_star_med * se_med
-ci_lower_med = x_bar_med - me_med
-ci_upper_med = x_bar_med + me_med
-
-# Visualization of medical CI
-x_med = np.linspace(ci_lower_med - 2, ci_upper_med + 2, 1000)
-y_med = stats.norm.pdf(x_med, x_bar_med, se_med)
-
-fig.add_trace(go.Scatter(
-    x=x_med, y=y_med,
+    x=x_range_practice, y=y_range_practice,
     mode='lines',
     line=dict(color=colors['success'], width=3),
     name='Sampling Distribution'
-), row=1, col=1)
+))
 
-# Shade CI
-ci_mask_med = (x_med >= ci_lower_med) & (x_med <= ci_upper_med)
+# Shade the confidence interval
+ci_mask_practice = (x_range_practice >= ci_lower_practice) & (x_range_practice <= ci_upper_practice)
 fig.add_trace(go.Scatter(
-    x=np.concatenate([x_med[ci_mask_med], [ci_upper_med, ci_lower_med]]),
-    y=np.concatenate([y_med[ci_mask_med], [0, 0]]),
+    x=np.concatenate([x_range_practice[ci_mask_practice], [ci_upper_practice, ci_lower_practice]]),
+    y=np.concatenate([y_range_practice[ci_mask_practice], [0, 0]]),
     fill='toself',
     fillcolor='rgba(16, 185, 129, 0.3)',
     line=dict(color='rgba(0,0,0,0)'),
-    name='95% CI'
-), row=1, col=1)
+    name='95% Confidence Interval'
+))
 
-fig.add_vline(x=x_bar_med, line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"Mean = {x_bar_med} mmHg", row=1, col=1)
-fig.add_vline(x=ci_lower_med, line_dash="dot", line_color=colors['warning'], 
-              line_width=2, annotation_text=f"{ci_lower_med:.1f}", row=1, col=1)
-fig.add_vline(x=ci_upper_med, line_dash="dot", line_color=colors['warning'], 
-              line_width=2, annotation_text=f"{ci_upper_med:.1f}", row=1, col=1)
-
-# Market research example
-n_market = 500
-x_bar_market = 7.2
-s_market = 1.8
-conf_market = 0.99
-alpha_market = 1 - conf_market
-
-z_star_market = stats.norm.ppf(1 - alpha_market/2)
-se_market = s_market / np.sqrt(n_market)
-me_market = z_star_market * se_market
-ci_lower_market = x_bar_market - me_market
-ci_upper_market = x_bar_market + me_market
-
-# Visualization of market CI
-x_market = np.linspace(ci_lower_market - 0.5, ci_upper_market + 0.5, 1000)
-y_market = stats.norm.pdf(x_market, x_bar_market, se_market)
-
-fig.add_trace(go.Scatter(
-    x=x_market, y=y_market,
-    mode='lines',
-    line=dict(color=colors['info'], width=3),
-    name='Sampling Distribution'
-), row=2, col=1)
-
-# Shade CI
-ci_mask_market = (x_market >= ci_lower_market) & (x_market <= ci_upper_market)
-fig.add_trace(go.Scatter(
-    x=np.concatenate([x_market[ci_mask_market], [ci_upper_market, ci_lower_market]]),
-    y=np.concatenate([y_market[ci_mask_market], [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(139, 92, 246, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='99% CI'
-), row=2, col=1)
-
-fig.add_vline(x=x_bar_market, line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"Mean = {x_bar_market}/10", row=2, col=1)
-fig.add_vline(x=ci_lower_market, line_dash="dot", line_color=colors['warning'], 
-              line_width=2, annotation_text=f"{ci_lower_market:.2f}", row=2, col=1)
-fig.add_vline(x=ci_upper_market, line_dash="dot", line_color=colors['warning'], 
-              line_width=2, annotation_text=f"{ci_upper_market:.2f}", row=2, col=1)
+# Add lines
+fig.add_vline(x=x_bar_practice, line_dash="solid", line_color=colors['danger'], 
+              line_width=3, annotation_text=f"x̄ = {x_bar_practice}")
+fig.add_vline(x=ci_lower_practice, line_dash="dot", line_color=colors['warning'], 
+              line_width=2, annotation_text=f"Lower = {ci_lower_practice:.3f}")
+fig.add_vline(x=ci_upper_practice, line_dash="dot", line_color=colors['warning'], 
+              line_width=2, annotation_text=f"Upper = {ci_upper_practice:.3f}")
 
 fig.update_layout(
-    height=500,
-    showlegend=False,
-    title_text="Confidence Intervals in Practice"
+    title="Practice Problem: Study Time Confidence Interval",
+    xaxis_title="Study Time (hours)",
+    yaxis_title="Probability Density",
+    height=400,
+    showlegend=False
 )
-
-# Update axes
-fig.update_xaxes(title_text="Blood Pressure Reduction (mmHg)", row=1, col=1)
-fig.update_yaxes(title_text="Density", row=1, col=1)
-fig.update_xaxes(title_text="Satisfaction Score (1-10)", row=2, col=1)
-fig.update_yaxes(title_text="Density", row=2, col=1)
 
 fig.show()
 ```
 
-### 💡 Key Insight
-Confidence intervals provide **actionable uncertainty** - they tell decision-makers not just the estimate, but how precise it is.
+### 🤔 Think About It...
+- Why is the t-distribution appropriate here?
+- How would the interval change if n = 100?
+- What if we wanted 99% confidence instead?
 :::
 ::::
 
@@ -1782,87 +615,6 @@ Confidence intervals provide **actionable uncertainty** - they tell decision-mak
 
 ---
 
-## Comprehensive Resources 📚
-
-:::: {.columns}
-::: {.column}
-### 📖 Required Reading
-- **OpenIntro Statistics**
-  - Section 7.1: Introducing the t-distribution
-  - Section 7.2: Confidence intervals for a mean
-  - Section 7.3: Hypothesis testing with t
-
-### 🎥 Video Resources
-- **Khan Academy:** t-distribution and confidence intervals
-- **StatQuest:** t-tests and confidence intervals clearly explained
-- **Professor Leonard:** Confidence intervals with t-distribution
-
-### 💻 Interactive Tools
-- **t-Distribution Calculator:** Stat Trek or Desmos
-- **CI Constructor:** Rossman & Chance Applets
-- **Table Practice:** Online z and t table lookups
-:::
-
-::: {.column}
-### 📊 Practice Materials
-- **Textbook Problems:** Chapter 7 exercises
-- **Online Practice:** Khan Academy confidence interval problems
-- **R/Python Labs:** Hands-on CI construction
-- **Past Exam Questions:** Available on Canvas with solutions
-
-### 🤝 Getting Help
-- **Office Hours:** Thursday 11 AM-12 PM 
-- **Discussion Sections:** Wednesday & Friday
-- **Study Groups:** Form via Canvas discussions
-- **Math Lab:** Drop-in tutoring available
-- **Email:** nmathlouthi@ucsb.edu
-
-### 🎯 What's Next?
-**Next Lecture:** Hypothesis Testing - Making decisions with data
-**Lab This Week:** Constructing confidence intervals in R/Python
-**Homework:** CI problems with both z and t distributions
-:::
-::::
-
----
-
-## Questions & Discussion 🤔
-
-:::: {.columns}
-::: {.column}
-### 💭 Think About These...
-
-**Conceptual Questions:**
-- Why does the t-distribution have heavier tails?
-- When might a 99% CI be more useful than 95%?
-- How do confidence intervals relate to hypothesis testing?
-- What happens to intervals as sample size increases?
-
-**Practical Considerations:**
-- How do you explain confidence intervals to non-statisticians?
-- When might you prefer a wider interval?
-- What makes a "good" confidence interval?
-:::
-
-::: {.column}
-### 🔬 Prepare for Next Class
-
-**Coming Up:** Introduction to Hypothesis Testing
-- Null and alternative hypotheses
-- Test statistics and p-values
-- Type I and Type II errors
-- Connection to confidence intervals
-
-**Recommended Prep:**
-- Review today's material on t-distribution
-- Practice reading statistical tables
-- Think about yes/no questions you'd test with data
-- Consider what "statistically significant" means
-:::
-::::
-
----
-
 # Thank You! 🎉
 
 **Key Message:** Confidence intervals bridge the gap between sample data and population insights - master them, and you master statistical inference!
@@ -1870,3 +622,42 @@ Confidence intervals provide **actionable uncertainty** - they tell decision-mak
 *See you next time for hypothesis testing!* 🔬
 
 ---
+
+<script>
+// For .collapsible-solution blocks
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.collapsible-solution .solution-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const parent = btn.closest('.collapsible-solution');
+        if (parent) parent.classList.toggle('open');
+        // Toggle button text
+        if (btn.textContent.trim().startsWith('Show')) {
+          btn.textContent = btn.textContent.replace('Show', 'Hide');
+        } else if (btn.textContent.trim().startsWith('Hide')) {
+          btn.textContent = btn.textContent.replace('Hide', 'Show');
+        }
+      });
+    });
+
+    // For legacy "Show Solution" buttons with toggleSolution('id')
+    window.toggleSolution = function(id) {
+      var el = document.querySelector('[data-id="' + id + '"]');
+      if (el) {
+        if (el.style.display === 'block') {
+          el.style.display = 'none';
+          // Also update button text if possible
+          var btn = document.querySelector('button[onclick*="' + id + '"]');
+          if (btn && btn.textContent.trim().startsWith('Hide')) {
+            btn.textContent = btn.textContent.replace('Hide', 'Show');
+          }
+        } else {
+          el.style.display = 'block';
+          var btn = document.querySelector('button[onclick*="' + id + '"]');
+          if (btn && btn.textContent.trim().startsWith('Show')) {
+            btn.textContent = btn.textContent.replace('Show', 'Hide');
+          }
+        }
+      }
+    };
+  });
+</script>

@@ -109,7 +109,7 @@ body {
    ========================================================================== */
 body.reveal-viewport, 
 .reveal .backgrounds {
-  background: var(--gradient-cool);
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 25%, #dbeafe 50%, #e0f2fe 75%, #f0f9ff 100%);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: var(--base-font-size) !important;
 }
@@ -119,10 +119,10 @@ body.reveal-viewport,
   font-size: var(--base-font-size) !important;
   line-height: 1.6 !important;
   color: var(--neutral-dark);
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
-  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.1);
+  padding: 25px 45px;
   margin: 0 !important;
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -132,6 +132,8 @@ body.reveal-viewport,
   max-height: none !important;
   box-sizing: border-box;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 /* ==========================================================================
@@ -150,27 +152,32 @@ body.reveal-viewport,
 .reveal .slides section h1,
 .reveal .slides section.present h1,
 .reveal .slides > section h1 {
-  font-size: 2.5rem !important;
+  font-size: 2.8rem !important;
   font-weight: 800 !important;
-  margin: 0 auto 2rem auto !important;
+  margin: 0 auto 2.5rem auto !important;
   color: var(--white) !important;
-  text-shadow: 0 3px 8px rgba(0,0,0,0.3) !important;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
   position: relative !important;
-  padding: 1.5rem 2rem !important;
+  padding: 2rem 3rem !important;
   display: block !important;
   text-align: center !important;
   font-family: 'Crimson Pro', 'Georgia', serif !important;
   
   /* Beautiful gradient background */
-  background: var(--gradient-hero) !important;
-  border-radius: 16px !important;
-  box-shadow: var(--shadow-lg) !important;
-  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #0d9488 100%) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.4) !important;
+  border: 3px solid rgba(255, 255, 255, 0.3) !important;
   
   /* Responsive width */
-  max-width: 90% !important;
+  max-width: 85% !important;
   width: fit-content !important;
-  min-width: 300px !important;
+  min-width: 350px !important;
+  
+  /* Add subtle glow effect */
+  box-shadow: 
+    0 10px 30px rgba(30, 64, 175, 0.4),
+    0 0 20px rgba(59, 130, 246, 0.3) !important;
 }
 
 /* Premium underline with glow effect */
@@ -245,6 +252,29 @@ body.reveal-viewport,
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle animated background pattern */
+.reveal .slides section.title-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 0%, transparent 50%);
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 .reveal .slides section.title-slide h1 {
@@ -775,7 +805,9 @@ select:focus {
   transform: rotate(180deg); /* Up arrow when open */
 }
 
-.collapsible-solution .solution-content {
+.collapsible-solution .solution-content,
+section.collapsible-solution .solution-content,
+aside.collapsible-solution .solution-content {
   display: none !important;
   padding: 20px 24px;
   background: var(--white);
@@ -789,13 +821,17 @@ select:focus {
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease;
+  border: 2px dashed #e11d48 !important; /* DEBUG: Remove after testing */
 }
 
-.collapsible-solution.open .solution-content {
+.collapsible-solution.open .solution-content,
+section.collapsible-solution.open .solution-content,
+aside.collapsible-solution.open .solution-content {
   display: block !important;
   opacity: 1;
   max-height: 1000px;
   animation: fadeIn 0.3s;
+  border: 2px solid #10b981 !important; /* DEBUG: Remove after testing */
 }
 
 @keyframes fadeIn {
@@ -862,5 +898,70 @@ select:focus {
   .reveal .slides section h1::after {
     background: #000000 !important;
     box-shadow: none !important;
+  }
+}
+
+/* ==========================================================================
+   Main Page Button - Top Left of Each Slide
+   ========================================================================== */
+.main-page-btn {
+  position: fixed !important;
+  top: 20px !important;
+  left: 20px !important;
+  z-index: 99999 !important;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #0d9488 100%) !important;
+  color: var(--white) !important;
+  text-decoration: none !important;
+  padding: 14px 24px !important;
+  border-radius: 30px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Inter', sans-serif !important;
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(10px) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  letter-spacing: 0.5px !important;
+  pointer-events: auto !important;
+}
+
+.main-page-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #0f766e 100%) !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.6) !important;
+  color: var(--white) !important;
+  text-decoration: none !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.main-page-btn:active {
+  transform: translateY(0) !important;
+}
+
+/* Ensure it's visible on all slide backgrounds */
+.main-page-btn {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-page-btn {
+    top: 15px !important;
+    left: 15px !important;
+    padding: 10px 16px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-page-btn {
+    top: 10px !important;
+    left: 10px !important;
+    padding: 8px 12px !important;
+    font-size: 0.75rem !important;
   }
 }
