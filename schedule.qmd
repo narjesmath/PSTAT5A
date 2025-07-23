@@ -409,7 +409,7 @@ Quiz 1 (Weeks 1–2)
 7/21
 :::
 ::: {.topic}
-[Sampling Principles and Strategies]()
+[Sampling Principles and Strategies](/files/lecture_notes/lecture10/lecture10.qmd)
 :::
 ::: {.lab-quiz}
 
@@ -420,6 +420,7 @@ Quiz 1 (Weeks 1–2)
 ::: {.worksheet}
 
 Worksheet 5
+
 <!-- [Worksheet 5](/files/worksheets/worksheet5.qmd) -->
 
 <!-- [Worksheet 5 Solutions](/files/worksheets/worksheet5_sln.qmd) -->
@@ -433,7 +434,7 @@ Worksheet 5
 7/22
 :::
 ::: {.topic}
-[Confidence Intervals (Means & Proportions)]()
+[Confidence Intervals (Means & Proportions)](/files/lecture_notes/lecture11/lecture11.qmd)
 
 - [Z-table](https://math.arizona.edu/~rsims/ma464/standardnormaltable.pdf),
 [t-table](https://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf)

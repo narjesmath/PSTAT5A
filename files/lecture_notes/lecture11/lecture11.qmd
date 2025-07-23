@@ -1,13 +1,13 @@
 ---
 title: "PSTAT 5A: Sampling and Confidence Intervals"
-subtitle: "Lecture 10 - Making Sense of Uncertainty"
+subtitle: "Lecture 11 - Making Sense of Uncertainty"
 author: "Narjes Mathlouthi"
-date: today
+date: 07/22/2025
 format:
   revealjs:
     logo: /img/logo.png
     theme: default
-    css: /files/lecture_notes/lecture9/new-style.css
+    css: /files/lecture_notes/lecture10/new-style.css
     slide-number: true
     chalkboard: true
     preview-links: auto
@@ -60,22 +60,30 @@ colors = {
 
 ---
 
-## 📢 Announcements
+## 📢 Important Announcements
 
-### 📝 Quiz 2
+:::: {.columns}
+::: {.column width="50%"}
+### 📝 Quiz 2 Details
 **When:**  
 - 📅 **Date:** Friday, July 25  
-- ⏰ **Window:** Available 7 AM – 12 AM  
-- ⏳ **Duration:** 1 hour (once you begin)
+- ⏰ **Window:** 7 AM – 12 AM  
+- ⏳ **Duration:** 1 hour once started
 
-**Where:**  
-- 💻 Online on Canvas
+**Where:** 💻 Online via Canvas
 
-**Covers:**  
-- 📚 Material from Weeks 3-4
+**Covers:** Material from Weeks 3-4
+:::
 
-**Note:**  
-- 📸 Upload a photo of your written work for some questions
+::: {.column width="50%"}
+### 📚 What to Expect
+- Discrete & continuous distributions
+- Probability calculations
+- Expected value & variance
+- Normal distribution applications
+- **Note:** Upload photos of written work for calculation problems
+:::
+::::
 
 ## What We'll Learn Today 🎯 
 
@@ -772,7 +780,7 @@ fig.show()
 :::
 ::::
 
-<!-- ## What Exactly *Is* a Confidence Interval? 🤓 {.smaller}
+## What Exactly *Is* a Confidence Interval? 🤓 {.smaller}
 
 :::: {.columns}
 ::: {.column .smaller .semi-fade-out}
@@ -1087,10 +1095,10 @@ fig.show()
 
 ---
 
-## What Does "95% Confident" Really Mean? 🤔 
+## What Does "95% Confident" Really Mean? 🤔 {.smaller}
 
 :::: {.columns}
-::: {.column}
+::: {.column .smaller}
 **The Biggest Misconception:** "There's a 95% chance the true mean is in our interval"
 
 **Actually:** "If we repeated this study 100 times, about 95 of our intervals would contain the true mean"
@@ -1178,10 +1186,10 @@ fig.show()
 
 ---
 
-## Sample Size Planning: Getting the Precision You Want 
+## Sample Size Planning: Getting the Precision You Want {.smaller}
 
 :::: {.columns}
-::: {.column}
+::: {.column width = "60%"}
 **The Question:** "How many people do we need to survey?"
 
 ```{python}
@@ -1227,27 +1235,31 @@ fig.update_xaxes(title_text="Desired Margin of Error", row=1, col=2)
 fig.update_yaxes(title_text="Margin of Error", row=1, col=1)
 fig.update_yaxes(title_text="Required Sample Size", row=1, col=2)
 
-fig.update_layout(height=500, 
-                 title="Planning Your Study: The Trade-offs")
+fig.update_layout(height=500
+                #  title="Planning Your Study: The Trade-offs"
+                )
 fig.show()
 ```
 :::
-::: {.column}
+::: {.column .right width = "40%"}
 **Key Formula for Means:** $n = \left(\frac{z^* \sigma}{ME}\right)^2$
 
 **Trade-offs:**
+
 - Want smaller margin of error? Need bigger sample
-- Want higher confidence? Need bigger sample  
+  
+- Want higher confidence? Need bigger sample 
+   
 - Want to save money? Accept wider intervals
 :::
 ::::
 
 ---
 
-## Real Example: Student Sleep Study 😴 
+## Real Example: Student Sleep Study 😴 {.smaller}
 
 :::: {.columns}
-::: {.column}
+::: {.column width ="60%"}
 **Research Question:** How many hours do UCSB students sleep per night?
 
 ```{python}
@@ -1362,24 +1374,24 @@ fig.update_yaxes(showticklabels=False, row=2, col=2)
 fig.show()
 ```
 :::
-::: {.column}
+::: {.column width ="40%"}
 **Bottom Line:** We're 95% confident that UCSB students sleep between 6.73 and 7.47 hours per night on average.
 :::
 ::::
 
 ---
 
-## Common Mistakes to Avoid ⚠️ 
+## Common Mistakes to Avoid ⚠️ {.smaller}
 
 :::: {.columns}
-::: {.column}
+::: {.column width="40%"}
 ### ❌ Wrong Interpretations
 
 **"95% of students sleep in this range"**
 - NO! This is about the population mean, not individual students
 
 **"There's a 95% chance μ is in our interval"**
-- NO! μ is fixed; our interval varies
+- NO! $\mu$ is fixed; our interval varies
 
 **"We can be 95% certain"**
 - NO! Use "confident" not "certain"
@@ -1390,9 +1402,13 @@ fig.show()
 **"We are 95% confident the population mean is in this interval"**
 
 **Key Reminders:**
+
 - Check conditions before using formulas
-- Use t-distribution when σ is unknown
+  
+- Use t-distribution when $\sigma$ is unknown
+  
 - Larger samples give narrower intervals
+  
 - Higher confidence gives wider intervals
 :::
 ::::
@@ -1585,25 +1601,33 @@ fig.show()
 ::: {.column}
 
 :::
-:::: -->
+::::
 
 ---
 
-## Key Takeaways 🎯 
+## Key Takeaways 🎯 {.smaller}
 
 :::: {.columns}
 ::: {.column}
 **Big Ideas:**
+
 1. **Samples vary** - confidence intervals capture this uncertainty
+   
 2. **Larger samples** give more precise estimates  
+   
 3. **Higher confidence** means wider intervals
+   
 4. **The CLT** makes normal-based inference possible
 :::
 ::: {.column}
 **Practical Skills:**
+
 - Build CIs for means and proportions
+  
 - Interpret confidence correctly
+  
 - Plan sample sizes for desired precision
+  
 - Avoid common interpretation mistakes
 :::
 ::::
@@ -1616,7 +1640,7 @@ fig.show()
 ::: {.column}
 **Office Hours:** Thursday 11AM (link on Canvas)  
 **Email:** nmathlouthi@ucsb.edu  
-**Next Class:** Hypothesis Testing and p-values
+
 
 *"The goal is not to eliminate uncertainty, but to understand and work with it"*
 :::
