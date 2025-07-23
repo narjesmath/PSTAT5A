@@ -1,21 +1,23 @@
 ---
 title: "PSTAT 5A: Confidence Intervals Deep Dive"
-subtitle: "Lecture 11 - From Theory to Practice: z and t Distributions"
+subtitle: "Lecture 12 - From Theory to Practice: z and t Distributions"
 author: "Narjes Mathlouthi"
 date: today
 format:
   revealjs:
     logo: /img/logo.png
+    slide-level: 2            # ## becomes a new slide
     theme: default
     css: /files/lecture_notes/lecture10/new-style.css
     slide-number: true
     chalkboard: true
     preview-links: auto
-    footer: "Confidence Intervals - z and t Distributions © 2025"
+    footer: "Confidence Intervals – z and t Distributions © 2025"
     transition: slide
     background-transition: fade
     incremental: false
     smaller: true
+
 jupyter: python3
 execute:
   echo: false
@@ -54,7 +56,7 @@ colors = {
 np.random.seed(42)
 ```
 
-# Welcome to Lecture 11 {.center}
+# Welcome to Lecture 12 {.center}
 
 **Confidence Intervals: From Theory to Practice**
 
@@ -622,42 +624,3 @@ fig.show()
 *See you next time for hypothesis testing!* 🔬
 
 ---
-
-<script>
-// For .collapsible-solution blocks
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.collapsible-solution .solution-toggle').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        const parent = btn.closest('.collapsible-solution');
-        if (parent) parent.classList.toggle('open');
-        // Toggle button text
-        if (btn.textContent.trim().startsWith('Show')) {
-          btn.textContent = btn.textContent.replace('Show', 'Hide');
-        } else if (btn.textContent.trim().startsWith('Hide')) {
-          btn.textContent = btn.textContent.replace('Hide', 'Show');
-        }
-      });
-    });
-
-    // For legacy "Show Solution" buttons with toggleSolution('id')
-    window.toggleSolution = function(id) {
-      var el = document.querySelector('[data-id="' + id + '"]');
-      if (el) {
-        if (el.style.display === 'block') {
-          el.style.display = 'none';
-          // Also update button text if possible
-          var btn = document.querySelector('button[onclick*="' + id + '"]');
-          if (btn && btn.textContent.trim().startsWith('Hide')) {
-            btn.textContent = btn.textContent.replace('Hide', 'Show');
-          }
-        } else {
-          el.style.display = 'block';
-          var btn = document.querySelector('button[onclick*="' + id + '"]');
-          if (btn && btn.textContent.trim().startsWith('Show')) {
-            btn.textContent = btn.textContent.replace('Show', 'Hide');
-          }
-        }
-      }
-    };
-  });
-</script>

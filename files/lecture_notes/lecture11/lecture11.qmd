@@ -5,6 +5,7 @@ author: "Narjes Mathlouthi"
 date: 07/22/2025
 format:
   revealjs:
+    slide-level: 2
     logo: /img/logo.png
     theme: default
     css: /files/lecture_notes/lecture10/new-style.css
@@ -12,73 +13,6 @@ format:
     chalkboard: true
     preview-links: auto
     footer: "Understanding Data – Sampling and Confidence Intervals © 2025"
-    transition: slide
-    background-transition: fade
-    incremental: false
-    includes:
-      after-body: |
-        <a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
-        
-        <script>
-        // Simple and direct solution toggle
-        function setupSolutionToggles() {
-          console.log('Setting up solution toggles...');
-          
-          // Find all solution toggle buttons
-          const buttons = document.querySelectorAll('.solution-toggle');
-          console.log('Found', buttons.length, 'solution toggle buttons');
-          
-          buttons.forEach(function(button, index) {
-            console.log('Setting up button', index + 1);
-            
-            // Remove any existing click handlers
-            button.onclick = null;
-            
-            // Add new click handler
-            button.onclick = function() {
-              console.log('Button clicked!');
-              
-              // Find the parent collapsible solution
-              const parent = this.closest('.collapsible-solution');
-              if (parent) {
-                console.log('Found parent, toggling...');
-                
-                // Toggle the open class
-                parent.classList.toggle('open');
-                
-                // Update button text
-                if (parent.classList.contains('open')) {
-                  this.textContent = 'Hide Solution';
-                } else {
-                  this.textContent = 'Show Solution';
-                }
-                
-                console.log('Toggle complete. Parent has open class:', parent.classList.contains('open'));
-              } else {
-                console.log('No parent found!');
-              }
-            };
-            
-            // Make sure the button is clickable
-            button.style.pointerEvents = 'auto';
-            button.style.cursor = 'pointer';
-          });
-        }
-        
-        // Try multiple times to ensure it works
-        document.addEventListener('DOMContentLoaded', setupSolutionToggles);
-        window.addEventListener('load', setupSolutionToggles);
-        
-        // For Reveal.js, also try after slides are ready
-        if (typeof Reveal !== 'undefined') {
-          Reveal.addEventListener('ready', setupSolutionToggles);
-        }
-        
-        // Also try periodically
-        setTimeout(setupSolutionToggles, 1000);
-        setTimeout(setupSolutionToggles, 2000);
-        setTimeout(setupSolutionToggles, 3000);
-        </script>
 jupyter: python3
 execute:
   echo: false

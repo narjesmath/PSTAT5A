@@ -4,18 +4,18 @@ subtitle: "Lecture 10 - From Samples to Populations: Understanding Uncertainty"
 author: "Narjes Mathlouthi"
 date: 07/21/2025
 format:
-  revealjs:
-    logo: /img/logo.png
-    theme: default
-    css: new-style.css
-    slide-number: true
-    chalkboard: true
-    preview-links: auto
-    footer: "Understanding Data – Sampling Principles and Strategies © 2025"
-    transition: slide
-    background-transition: fade
-    incremental: false
-    smaller: true
+    revealjs:
+        logo: /img/logo.png
+        theme: default
+        css: new-style.css
+        slide-number: true
+        chalkboard: true
+        preview-links: auto
+        footer: "Understanding Data – Sampling Principles and Strategies © 2025"
+        transition: slide
+        background-transition: fade
+        incremental: false
+        smaller: true
 jupyter: python3
 execute:
   echo: false

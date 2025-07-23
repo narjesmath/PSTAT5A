@@ -1,0 +1,687 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Lab 4 Solutions: Introduction to Probability with Python\"\n",
+        "subtitle: \"PSTAT 5A - Summer Session A 2025\"\n",
+        "author: \"Complete Solutions\"\n",
+        "format: \n",
+        "  html:\n",
+        "    toc: true\n",
+        "    toc-depth: 3\n",
+        "    number-sections: false\n",
+        "    code-fold: false\n",
+        "    theme: cosmo\n",
+        "date: today\n",
+        "jupyter: python3\n",
+        "---\n",
+        "\n",
+        "# Getting Started - SOLUTION"
+      ],
+      "id": "e2ee1bd7"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Load our tools (libraries)\n",
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "from scipy import stats\n",
+        "import pandas as pd\n",
+        "\n",
+        "# Make our graphs look nice\n",
+        "%matplotlib inline\n",
+        "plt.style.use('seaborn-v0_8-whitegrid')\n",
+        "\n",
+        "print(\"✅ All tools loaded successfully!\")"
+      ],
+      "id": "c68d655f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Part 1: Understanding Probability with Coins - SOLUTIONS\n",
+        "\n",
+        "## Step 1: A Fair Coin"
+      ],
+      "id": "54b3ec50"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# A fair coin - just run this code!\n",
+        "outcomes = [\"Tails\", \"Heads\"]\n",
+        "probabilities = [0.5, 0.5]  # 50% each\n",
+        "\n",
+        "print(\"Possible outcomes:\", outcomes)\n",
+        "print(\"Probabilities:\", probabilities)\n",
+        "print(\"Total probability:\", sum(probabilities))  # Should be 1.0"
+      ],
+      "id": "f21d9446",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Make a bar chart - just run this code!\n",
+        "plt.figure(figsize=(8, 5))\n",
+        "plt.bar(outcomes, probabilities, color=['lightcoral', 'lightblue'], alpha=0.7, edgecolor='black')\n",
+        "plt.title('Fair Coin: 50% Heads, 50% Tails')\n",
+        "plt.ylabel('Probability')\n",
+        "plt.ylim(0, 0.6)\n",
+        "plt.show()"
+      ],
+      "id": "51f1717b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 1 Solution: Fill in the Biased Coin"
+      ],
+      "id": "8d9cbbec"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# A biased coin that lands Heads 70% of the time\n",
+        "biased_outcomes = [\"Tails\", \"Heads\"]\n",
+        "biased_probabilities = [0.3, 0.7]  # If Heads is 70%, then Tails is 30%\n",
+        "\n",
+        "print(\"Biased coin outcomes:\", biased_outcomes)\n",
+        "print(\"Biased coin probabilities:\", biased_probabilities)\n",
+        "print(\"Total probability:\", sum(biased_probabilities))\n",
+        "\n",
+        "# Check your answer: this should print 1.0"
+      ],
+      "id": "16cbe9ac",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Graph of biased coin\n",
+        "plt.figure(figsize=(8, 5))\n",
+        "plt.bar(biased_outcomes, biased_probabilities, color=['lightcoral', 'lightblue'], alpha=0.7, edgecolor='black')\n",
+        "plt.title('Biased Coin: 30% Tails, 70% Heads')\n",
+        "plt.ylabel('Probability')\n",
+        "plt.ylim(0, 0.8)\n",
+        "plt.show()"
+      ],
+      "id": "c8af56b5",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Part 2: Calculating Expected Values - SOLUTIONS\n",
+        "\n",
+        "## Example: Expected Value of a Fair Coin"
+      ],
+      "id": "303ac91d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Expected value calculation for fair coin\n",
+        "coin_values = [0, 1]  # Tails = 0, Heads = 1\n",
+        "coin_probs = [0.5, 0.5]\n",
+        "\n",
+        "expected_value = 0 * 0.5 + 1 * 0.5\n",
+        "print(f\"Expected value of fair coin: {expected_value}\")"
+      ],
+      "id": "1e664646",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 2 Solution: Expected Value of Biased Coin"
+      ],
+      "id": "fe534578"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Expected value for biased coin\n",
+        "# Values: Tails = 0, Heads = 1\n",
+        "# Probabilities: Tails = 30%, Heads = 70%\n",
+        "\n",
+        "expected_biased = 0 * 0.3 + 1 * 0.7\n",
+        "print(f\"Expected value of biased coin: {expected_biased}\")"
+      ],
+      "id": "561b3741",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "print(f\"This means: if we flip the biased coin many times,\")\n",
+        "print(f\"we expect about {expected_biased} points per flip on average.\")\n",
+        "print(f\"Since this is closer to 1 than 0.5, the coin favors Heads\")"
+      ],
+      "id": "a91ad791",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Part 3: Using Python's Built-in Probability Tools - SOLUTIONS\n",
+        "\n",
+        "## Bernoulli Distribution Example"
+      ],
+      "id": "ee5f60e4"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Create a Bernoulli distribution for a fair coin\n",
+        "fair_coin = stats.bernoulli(0.5)  # 0.5 = 50% chance of success (Heads)\n",
+        "\n",
+        "# Ask for probabilities\n",
+        "prob_tails = fair_coin.pmf(0)  # pmf = \"probability mass function\"\n",
+        "prob_heads = fair_coin.pmf(1)\n",
+        "\n",
+        "print(f\"Probability of Tails (0): {prob_tails}\")\n",
+        "print(f\"Probability of Heads (1): {prob_heads}\")\n",
+        "\n",
+        "# Get expected value automatically!\n",
+        "print(f\"Expected value: {fair_coin.mean()}\")"
+      ],
+      "id": "8660f2b7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 3 Solution: Biased Coin with Python Tools"
+      ],
+      "id": "fc9cfb26"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Create Bernoulli distribution for biased coin\n",
+        "biased_coin = stats.bernoulli(0.7)  # 70% probability of Heads\n",
+        "\n",
+        "# Calculate probabilities\n",
+        "prob_tails_biased = biased_coin.pmf(0)\n",
+        "prob_heads_biased = biased_coin.pmf(1)\n",
+        "\n",
+        "print(f\"Biased coin - Probability of Tails: {prob_tails_biased}\")\n",
+        "print(f\"Biased coin - Probability of Heads: {prob_heads_biased}\")\n",
+        "print(f\"Expected value: {biased_coin.mean()}\")"
+      ],
+      "id": "3e1856c8",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Answer:** Yes, this matches what we calculated by hand in Task 2 (0.7)\n",
+        "\n",
+        "## Visualizing Different Coins"
+      ],
+      "id": "6a65a52f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Compare three coins with different bias\n",
+        "fig, axes = plt.subplots(1, 3, figsize=(12, 4))\n",
+        "\n",
+        "# Three different coins\n",
+        "coin_types = [\n",
+        "    {\"prob\": 0.2, \"name\": \"Mostly Tails\"},\n",
+        "    {\"prob\": 0.5, \"name\": \"Fair Coin\"}, \n",
+        "    {\"prob\": 0.8, \"name\": \"Mostly Heads\"}\n",
+        "]\n",
+        "\n",
+        "for i, coin in enumerate(coin_types):\n",
+        "    # Create the distribution\n",
+        "    distribution = stats.bernoulli(coin[\"prob\"])\n",
+        "    \n",
+        "    # Get probabilities\n",
+        "    probs = [distribution.pmf(0), distribution.pmf(1)]\n",
+        "    \n",
+        "    # Make bar chart\n",
+        "    axes[i].bar([0, 1], probs, color=['lightcoral', 'lightblue'], alpha=0.7, edgecolor='black')\n",
+        "    axes[i].set_title(f'{coin[\"name\"]}\\n(p = {coin[\"prob\"]})')\n",
+        "    axes[i].set_xlabel('Outcome')\n",
+        "    axes[i].set_ylabel('Probability')\n",
+        "    axes[i].set_xticks([0, 1])\n",
+        "    axes[i].set_xticklabels(['Tails', 'Heads'])\n",
+        "    axes[i].set_ylim(0, 1)\n",
+        "\n",
+        "plt.tight_layout()\n",
+        "plt.show()"
+      ],
+      "id": "056e124c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Part 4: Multiple Coin Flips - SOLUTIONS\n",
+        "\n",
+        "## Example: 5 Fair Coin Flips"
+      ],
+      "id": "86cfe125"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Binomial distribution: 5 fair coin flips\n",
+        "n_flips = 5        # number of flips\n",
+        "p_heads = 0.5      # probability of heads each time\n",
+        "\n",
+        "five_flips = stats.binom(n_flips, p_heads)\n",
+        "\n",
+        "print(\"Flipping 5 fair coins...\")\n",
+        "print(f\"Probability of 0 heads: {five_flips.pmf(0):.4f}\")\n",
+        "print(f\"Probability of 1 head:  {five_flips.pmf(1):.4f}\")\n",
+        "print(f\"Probability of 2 heads: {five_flips.pmf(2):.4f}\")\n",
+        "print(f\"Probability of 3 heads: {five_flips.pmf(3):.4f}\")\n",
+        "print(f\"Probability of 4 heads: {five_flips.pmf(4):.4f}\")\n",
+        "print(f\"Probability of 5 heads: {five_flips.pmf(5):.4f}\")\n",
+        "\n",
+        "print(f\"\\nExpected number of heads: {five_flips.mean()}\")"
+      ],
+      "id": "6b8040dd",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Graph showing all possibilities\n",
+        "possible_heads = [0, 1, 2, 3, 4, 5]\n",
+        "probabilities = [five_flips.pmf(k) for k in possible_heads]\n",
+        "\n",
+        "plt.figure(figsize=(10, 6))\n",
+        "plt.bar(possible_heads, probabilities, alpha=0.7, color='lightgreen', edgecolor='black')\n",
+        "plt.xlabel('Number of Heads')\n",
+        "plt.ylabel('Probability')\n",
+        "plt.title('5 Fair Coin Flips: How Many Heads?')\n",
+        "plt.axvline(x=five_flips.mean(), color='red', linestyle='--', linewidth=2, \n",
+        "            label=f'Expected = {five_flips.mean()}')\n",
+        "plt.legend()\n",
+        "plt.show()"
+      ],
+      "id": "ff46648f",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 4 Solution: Basketball Free Throws"
+      ],
+      "id": "a1496d23"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Basketball free throws\n",
+        "n_shots = 10       # 10 shots\n",
+        "p_make = 0.6       # 60% chance of making each shot\n",
+        "\n",
+        "basketball = stats.binom(n_shots, p_make)  # Create the distribution"
+      ],
+      "id": "37d685a1",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# a) What's the probability of making exactly 6 shots?\n",
+        "prob_exactly_6 = basketball.pmf(6)\n",
+        "print(f\"Probability of exactly 6 makes: {prob_exactly_6:.4f}\")\n",
+        "\n",
+        "# b) How many shots do we expect them to make?\n",
+        "expected_makes = basketball.mean()\n",
+        "print(f\"Expected number of makes: {expected_makes}\")\n",
+        "\n",
+        "# c) What's the probability of making 8 or more shots?\n",
+        "prob_8_or_more = (basketball.pmf(8) + basketball.pmf(9) + basketball.pmf(10))\n",
+        "print(f\"Probability of 8+ makes: {prob_8_or_more:.4f}\")"
+      ],
+      "id": "6706cdcb",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Create bar chart\n",
+        "possible_makes = list(range(0, 11))  # 0 to 10 makes\n",
+        "probabilities = [basketball.pmf(k) for k in possible_makes]\n",
+        "\n",
+        "plt.figure(figsize=(10, 6))\n",
+        "plt.bar(possible_makes, probabilities, alpha=0.7, color='orange', edgecolor='black')\n",
+        "plt.xlabel('Number of Successful Free Throws')\n",
+        "plt.ylabel('Probability')\n",
+        "plt.title('Basketball Player: 10 Free Throws (60% Success Rate)')\n",
+        "plt.axvline(x=expected_makes, color='red', linestyle='--', linewidth=2, \n",
+        "            label=f'Expected = {expected_makes}')\n",
+        "plt.legend()\n",
+        "plt.show()"
+      ],
+      "id": "828406f4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Part 5: Events Over Time - SOLUTIONS\n",
+        "\n",
+        "## Example: Store Customers"
+      ],
+      "id": "4c515325"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# On average, 4 customers enter the store per hour\n",
+        "average_customers = 4\n",
+        "\n",
+        "store_customers = stats.poisson(average_customers)\n",
+        "\n",
+        "print(\"Store customer arrivals per hour:\")\n",
+        "print(f\"Probability of 0 customers: {store_customers.pmf(0):.4f}\")\n",
+        "print(f\"Probability of 2 customers: {store_customers.pmf(2):.4f}\")\n",
+        "print(f\"Probability of 4 customers: {store_customers.pmf(4):.4f}\")\n",
+        "print(f\"Probability of 6 customers: {store_customers.pmf(6):.4f}\")\n",
+        "\n",
+        "print(f\"\\nExpected customers per hour: {store_customers.mean()}\")"
+      ],
+      "id": "371d98bc",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Graph customer arrivals\n",
+        "possible_customers = list(range(0, 12))  # 0 to 11 customers\n",
+        "probabilities = [store_customers.pmf(k) for k in possible_customers]\n",
+        "\n",
+        "plt.figure(figsize=(10, 6))\n",
+        "plt.bar(possible_customers, probabilities, alpha=0.7, color='purple', edgecolor='black')\n",
+        "plt.xlabel('Number of Customers per Hour')\n",
+        "plt.ylabel('Probability')\n",
+        "plt.title('Store Customer Arrivals (Average = 4 per hour)')\n",
+        "plt.axvline(x=average_customers, color='red', linestyle='--', linewidth=2, \n",
+        "            label=f'Average = {average_customers}')\n",
+        "plt.legend()\n",
+        "plt.show()"
+      ],
+      "id": "75ed4d37",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Task 5 Solution: Email Inbox"
+      ],
+      "id": "5ee8066e"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Email arrivals\n",
+        "average_emails = 3  # 3 emails per hour on average\n",
+        "email_arrivals = stats.poisson(average_emails)"
+      ],
+      "id": "01f32ae9",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# a) Probability of getting exactly 3 emails in an hour\n",
+        "prob_exactly_3 = email_arrivals.pmf(3)\n",
+        "print(f\"Probability of exactly 3 emails: {prob_exactly_3:.4f}\")\n",
+        "\n",
+        "# b) Probability of getting no emails (quiet hour!)\n",
+        "prob_no_emails = email_arrivals.pmf(0)\n",
+        "print(f\"Probability of no emails: {prob_no_emails:.4f}\")\n",
+        "\n",
+        "# c) Expected number of emails per hour\n",
+        "expected_emails = email_arrivals.mean()\n",
+        "print(f\"Expected emails per hour: {expected_emails}\")"
+      ],
+      "id": "82ecc32c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Graph for email arrivals\n",
+        "possible_emails = list(range(0, 12))  # 0 to 11 emails\n",
+        "probabilities = [email_arrivals.pmf(k) for k in possible_emails]\n",
+        "\n",
+        "plt.figure(figsize=(10, 6))\n",
+        "plt.bar(possible_emails, probabilities, alpha=0.7, color='teal', edgecolor='black')\n",
+        "plt.xlabel('Number of Emails per Hour')\n",
+        "plt.ylabel('Probability')\n",
+        "plt.title('Email Arrivals (Average = 3 per hour)')\n",
+        "plt.axvline(x=average_emails, color='red', linestyle='--', linewidth=2, \n",
+        "            label=f'Average = {average_emails}')\n",
+        "plt.legend()\n",
+        "plt.show()"
+      ],
+      "id": "26723273",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Part 6: Distribution Detective - SOLUTIONS\n",
+        "\n",
+        "## Task 6 Solution: Which Distribution?"
+      ],
+      "id": "4140c5fa"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Scenario A - 8 coin flips, exactly 5 heads\n",
+        "n = 8          # number of flips\n",
+        "p = 0.5        # probability of heads (fair coin)\n",
+        "scenario_a = stats.binom(n, p)\n",
+        "\n",
+        "answer_a = scenario_a.pmf(5)  # exactly 5 heads\n",
+        "print(f\"Scenario A answer: {answer_a:.4f}\")"
+      ],
+      "id": "91b99c91",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Scenario B - Coffee shop customers\n",
+        "average_rate = 6  # customers per hour\n",
+        "scenario_b = stats.poisson(average_rate)\n",
+        "\n",
+        "answer_b = scenario_b.pmf(4)  # exactly 4 customers\n",
+        "print(f\"Scenario B answer: {answer_b:.4f}\")"
+      ],
+      "id": "5468451c",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Scenario C - Student homework problem\n",
+        "p_correct = 0.8  # 80% chance of getting it right\n",
+        "scenario_c = stats.bernoulli(p_correct)\n",
+        "\n",
+        "answer_c = scenario_c.pmf(1)  # gets it right (value = 1)\n",
+        "print(f\"Scenario C answer: {answer_c:.4f}\")"
+      ],
+      "id": "8b7a89cb",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Part 7: Simple Simulation - SOLUTION"
+      ],
+      "id": "610de905"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Simulate flipping 10 fair coins many times\n",
+        "np.random.seed(42)  # This makes everyone get the same \"random\" results\n",
+        "\n",
+        "# Our setup\n",
+        "n_flips = 10\n",
+        "p_heads = 0.5\n",
+        "n_experiments = 1000  # We'll do this 1000 times\n",
+        "\n",
+        "# What does theory say?\n",
+        "theory = stats.binom(n_flips, p_heads)\n",
+        "theoretical_prob = theory.pmf(5)  # exactly 5 heads\n",
+        "print(f\"Theory says P(exactly 5 heads) = {theoretical_prob:.4f}\")\n",
+        "\n",
+        "# Now let's simulate it\n",
+        "count_5_heads = 0\n",
+        "\n",
+        "for experiment in range(n_experiments):\n",
+        "    # Flip 10 coins\n",
+        "    flips = np.random.binomial(1, p_heads, n_flips)\n",
+        "    num_heads = sum(flips)\n",
+        "    \n",
+        "    if num_heads == 5:\n",
+        "        count_5_heads += 1\n",
+        "\n",
+        "# Calculate what we observed\n",
+        "observed_prob = count_5_heads / n_experiments\n",
+        "print(f\"Simulation says P(exactly 5 heads) = {observed_prob:.4f}\")\n",
+        "print(f\"Difference: {abs(theoretical_prob - observed_prob):.4f}\")\n",
+        "print(\"Theory and simulation should be close!\")"
+      ],
+      "id": "a7e9206d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Summary of All Answers\n",
+        "\n",
+        "## Task Answers Summary:\n",
+        "\n",
+        "**Task 1:** Biased coin probabilities = [0.3, 0.7]\n",
+        "\n",
+        "**Task 2:** Expected value of biased coin = 0.7\n",
+        "\n",
+        "**Task 3:** Bernoulli(0.7) gives same expected value = 0.7 ✓\n",
+        "\n",
+        "**Task 4:** Basketball (10 shots, 60% success rate)\n",
+        "- P(exactly 6 makes) = 0.2508\n",
+        "- Expected makes = 6.0\n",
+        "- P(8+ makes) = 0.1673\n",
+        "\n",
+        "**Task 5:** Email (3 per hour average)\n",
+        "- P(exactly 3 emails) = 0.2240\n",
+        "- P(no emails) = 0.0498\n",
+        "- Expected emails = 3.0\n",
+        "\n",
+        "**Task 6:** Distribution Detective\n",
+        "- Scenario A (8 flips, 5 heads): 0.2188\n",
+        "- Scenario B (6 customers/hour, exactly 4): 0.1339\n",
+        "- Scenario C (80% correct, gets it right): 0.8000\n",
+        "\n",
+        "**Task 7:** Simulation should give approximately 0.2461 for P(5 heads in 10 flips)\n",
+        "\n",
+        "## Key Formulas Used:\n",
+        "\n",
+        "- **Expected Value**: $E[X] = \\sum(\\text{value} \\times \\text{probability})$\n",
+        "- **Bernoulli**: `stats.bernoulli(p)`\n",
+        "- **Binomial**: `stats.binom(n, p)` \n",
+        "- **Poisson**: `stats.poisson(λ)`\n",
+        "- **PMF**: `.pmf(k)` gives P(X = k)\n",
+        "- **Mean**: `.mean()` gives expected value\n",
+        "\n",
+        "This completes lab4 solutions! 🎯"
+      ],
+      "id": "64a304ce"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/narjesmathlouthi/Desktop/PSTAT5A/web/PSTAT5A/.venv/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

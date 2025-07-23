@@ -421,7 +421,7 @@ Quiz 1 (Weeks 1–2)
 
 Worksheet 5
 
-<!-- [Worksheet 5](/files/worksheets/worksheet5.qmd) -->
+[Worksheet 5](/files/worksheets/worksheet5.qmd)
 
 <!-- [Worksheet 5 Solutions](/files/worksheets/worksheet5_sln.qmd) -->
 :::

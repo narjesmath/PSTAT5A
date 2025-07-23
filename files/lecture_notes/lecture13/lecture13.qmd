@@ -7,7 +7,7 @@ format:
   revealjs:
     logo: /img/logo.png
     theme: default
-    css: /files/lecture_notes/lecture9/new-style.css
+    css: /files/lecture_notes/lecture10/new-style.css
     slide-number: true
     chalkboard: true
     preview-links: auto
@@ -182,8 +182,14 @@ fig.add_trace(go.Scatter(
 
 # Add observed test statistic
 obs_stat = 2.5
-fig.add_vline(x=obs_stat, line_dash="solid", line_color=colors['warning'], 
-              line_width=3, row=2, col=1)
+fig.add_trace(go.Scatter(
+    x=[obs_stat, obs_stat],
+    y=[0, max(y_vals)],
+    mode='lines',
+    line=dict(color=colors['warning'], width=3, dash='solid'),
+    name=f'Observed = {obs_stat}',
+    showlegend=False
+), row=2, col=1)
 
 # Decision table
 decision_data = [
@@ -214,8 +220,8 @@ fig.add_trace(go.Table(
 
 fig.update_layout(
     height=600,
-    showlegend=False,
-    title_text="Hypothesis Testing: The Complete Picture"
+    showlegend=False
+    # title_text="Hypothesis Testing: The Complete Picture"
 )
 
 # Update axes
@@ -303,8 +309,8 @@ fig.add_trace(go.Table(
 
 fig.update_layout(
     height=400,
-    showlegend=False,
-    title_text="Understanding Hypothesis Testing Through Analogy"
+    showlegend=False
+    # title_text="Understanding Hypothesis Testing Through Analogy"
 )
 
 fig.show()
@@ -400,8 +406,15 @@ fig.add_trace(go.Scatter(
 ), row=2, col=1)
 
 test_stat = 2.1
-fig.add_vline(x=test_stat, line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"Test Statistic = {test_stat}", row=2, col=1)
+# Add vertical line manually
+fig.add_trace(go.Scatter(
+    x=[test_stat, test_stat],
+    y=[0, stats.norm.pdf(test_stat, 0, 1)],
+    mode='lines',
+    line=dict(color=colors['danger'], width=3, dash='solid'),
+    name=f'Test Statistic = {test_stat}',
+    showlegend=False
+), row=2, col=1)
 
 # Step 5: P-value visualization
 p_val_x = x_test[x_test >= test_stat]
@@ -423,8 +436,15 @@ fig.add_trace(go.Scatter(
 ), row=2, col=2)
 
 p_value = 1 - stats.norm.cdf(test_stat)
-fig.add_vline(x=test_stat, line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"p = {p_value:.3f}", row=2, col=2)
+# Add vertical line manually
+fig.add_trace(go.Scatter(
+    x=[test_stat, test_stat],
+    y=[0, stats.norm.pdf(test_stat, 0, 1)],
+    mode='lines',
+    line=dict(color=colors['danger'], width=3, dash='solid'),
+    name=f'p = {p_value:.3f}',
+    showlegend=False
+), row=2, col=2)
 
 # Step 6: Decision table
 decision_data = [
@@ -452,8 +472,8 @@ fig.add_trace(go.Table(
 
 fig.update_layout(
     height=600,
-    showlegend=False,
-    title_text="The Six Steps of Hypothesis Testing"
+    showlegend=False
+    #title_text="The Six Steps of Hypothesis Testing"
 )
 
 # Update specific axes
@@ -627,8 +647,8 @@ fig.add_trace(go.Table(
 
 fig.update_layout(
     height=600,
-    showlegend=False,
-    title_text="Types of Hypothesis Tests and When to Use Them"
+    showlegend=False
+    #title_text="Types of Hypothesis Tests and When to Use Them"
 )
 
 # Update axes for the distribution plots
@@ -645,136 +665,7 @@ fig.show()
 
 ## Understanding P-values 📊
 
-```{python}
-#| fig-width: 14
-#| fig-height: 10
 
-# Create comprehensive p-value explanation
-fig = make_subplots(
-    rows=2, cols=2,
-    subplot_titles=("What P-value Actually Means", "P-value vs Test Statistic",
-                   "Common P-value Misconceptions", "Interpreting Different P-values"),
-    specs=[[{"type": "scatter"}, {"type": "scatter"}],
-           [{"type": "table"}, {"type": "bar"}]]
-)
-
-# P-value demonstration
-x_pval = np.linspace(-4, 4, 1000)
-y_pval = stats.norm.pdf(x_pval, 0, 1)
-
-fig.add_trace(go.Scatter(
-    x=x_pval, y=y_pval,
-    mode='lines',
-    line=dict(color=colors['primary'], width=3),
-    name='Null Distribution'
-), row=1, col=1)
-
-# Multiple test statistics and their p-values
-test_stats = [1.5, 2.0, 2.5, 3.0]
-colors_pval = [colors['success'], colors['warning'], colors['danger'], colors['info']]
-
-for i, (ts, color) in enumerate(zip(test_stats, colors_pval)):
-    p_val = 1 - stats.norm.cdf(ts)
-    
-    # Add vertical line for test statistic
-    fig.add_vline(x=ts, line_dash="solid", line_color=color, 
-                  line_width=2, annotation_text=f"t={ts}, p={p_val:.3f}", row=1, col=1)
-    
-    # Shade p-value area
-    pval_x = x_pval[x_pval >= ts]
-    pval_y = y_pval[x_pval >= ts]
-    fig.add_trace(go.Scatter(
-        x=np.concatenate([pval_x, [pval_x[-1], ts]]),
-        y=np.concatenate([pval_y, [0, 0]]),
-        fill='toself',
-        fillcolor=f'rgba{tuple(list(plt.colors.to_rgba(color))[:3] + [0.2])}',
-        line=dict(color='rgba(0,0,0,0)'),
-        name=f'p={p_val:.3f}',
-        showlegend=False
-    ), row=1, col=1)
-
-# P-value vs test statistic relationship
-test_range = np.linspace(0, 4, 100)
-p_values = 1 - stats.norm.cdf(test_range)
-
-fig.add_trace(go.Scatter(
-    x=test_range, y=p_values,
-    mode='lines',
-    line=dict(color=colors['info'], width=3),
-    name='P-value Function'
-), row=1, col=2)
-
-# Add significance threshold
-fig.add_hline(y=0.05, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text="α = 0.05", row=1, col=2)
-
-# Add points for specific values
-for ts in test_stats:
-    p_val = 1 - stats.norm.cdf(ts)
-    fig.add_trace(go.Scatter(
-        x=[ts], y=[p_val],
-        mode='markers',
-        marker=dict(size=10, color=colors['danger']),
-        name=f't={ts}',
-        showlegend=False
-    ), row=1, col=2)
-
-# Common misconceptions table
-misconceptions_data = [
-    ["❌ WRONG", "✅ CORRECT"],
-    ["P-value = P(H₀ is true)", "P-value = P(data | H₀ is true)"],
-    ["P-value = probability of error", "P-value assumes H₀ is true"],
-    ["1-p = P(H₁ is true)", "P-value is NOT posterior probability"],
-    ["Smaller p = bigger effect", "P-value ≠ effect size"],
-    ["p > 0.05 means no effect", "p > 0.05 means insufficient evidence"]
-]
-
-fig.add_trace(go.Table(
-    header=dict(
-        values=["❌ Common Misconception", "✅ Correct Understanding"],
-        fill_color=[colors['danger'], colors['success']],
-        font=dict(size=11, color='white'),
-        align="left"
-    ),
-    cells=dict(
-        values=list(zip(*misconceptions_data[1:])),
-        fill_color=[['#fef2f2']*5, ['#f0fdf4']*5],
-        font=dict(size=10),
-        align="left",
-        height=25
-    )
-), row=2, col=1)
-
-# P-value interpretation
-p_ranges = ['p > 0.10', '0.05 < p ≤ 0.10', '0.01 < p ≤ 0.05', 'p ≤ 0.01']
-interpretations = ['No Evidence', 'Weak Evidence', 'Moderate Evidence', 'Strong Evidence']
-interp_colors = [colors['light'], colors['warning'], colors['primary'], colors['success']]
-
-fig.add_trace(go.Bar(
-    x=p_ranges,
-    y=[1, 2, 3, 4],  # Just for visualization
-    marker_color=interp_colors,
-    text=interpretations,
-    textposition='auto',
-    name='Evidence Strength'
-), row=2, col=2)
-
-fig.update_layout(
-    height=800,
-    showlegend=False,
-    title_text="Understanding P-values: What They Really Mean"
-)
-
-# Update axes
-fig.update_xaxes(title_text="Test Statistic", row=1, col=1)
-fig.update_yaxes(title_text="Probability Density", row=1, col=1)
-fig.update_xaxes(title_text="Test Statistic", row=1, col=2)
-fig.update_yaxes(title_text="P-value", row=1, col=2)
-fig.update_xaxes(title_text="P-value Range", row=2, col=2)
-fig.update_yaxes(title_text="Evidence Strength", row=2, col=2)
-
-fig.show()
-```
 
 **Key Message:** P-value tells us "How surprised should we be by this data if H₀ were true?"
 
@@ -900,8 +791,8 @@ fig.add_trace(go.Bar(
 
 fig.update_layout(
     height=800,
-    showlegend=True,
-    title_text="Understanding Statistical Errors and Their Consequences"
+    showlegend=True
+    #title_text="Understanding Statistical Errors and Their Consequences"
 )
 
 # Update axes
@@ -954,8 +845,14 @@ fig.add_trace(go.Scatter(
 # Critical value
 alpha = 0.05
 z_crit = stats.norm.ppf(1 - alpha)
-fig.add_vline(x=z_crit, line_dash="dash", line_color=colors['info'], 
-              line_width=3, annotation_text=f"Critical Value = {z_crit:.2f}", row=1, col=1)
+fig.add_trace(go.Scatter(
+    x=[z_crit, z_crit],
+    y=[0, max(null_dist)],
+    mode='lines',
+    line=dict(color=colors['info'], width=3, dash='dash'),
+    name=f'Critical Value = {z_crit:.2f}',
+    showlegend=False
+), row=1, col=1)
 
 # Shade Type II error (β)
 beta_x = x_power[x_power <= z_crit]
@@ -1027,8 +924,16 @@ fig.add_trace(go.Scatter(
     name='Power vs Sample Size'
 ), row=2, col=1)
 
-fig.add_hline(y=0.8, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text="Target Power = 0.8", row=2, col=1)
+# Add target power line
+target_power_x = np.linspace(min(sample_sizes), max(sample_sizes), 100)
+target_power_y = [0.8] * len(target_power_x)
+fig.add_trace(go.Scatter(
+    x=target_power_x, y=target_power_y,
+    mode='lines',
+    line=dict(color=colors['danger'], width=2, dash='dash'),
+    name='Target Power = 0.8',
+    showlegend=False
+), row=2, col=1)
 
 # Power vs Effect Size
 effect_sizes = np.linspace(0.1, 1.5, 50)
@@ -1049,21 +954,34 @@ fig.add_trace(go.Scatter(
     name='Power vs Effect Size'
 ), row=2, col=2)
 
-fig.add_hline(y=0.8, line_dash="dash", line_color=colors['danger'], 
-              line_width=2, annotation_text="Target Power = 0.8", row=2, col=2)
+# Add target power line
+target_power_x2 = np.linspace(min(effect_sizes), max(effect_sizes), 100)
+target_power_y2 = [0.8] * len(target_power_x2)
+fig.add_trace(go.Scatter(
+    x=target_power_x2, y=target_power_y2,
+    mode='lines',
+    line=dict(color=colors['danger'], width=2, dash='dash'),
+    name='Target Power = 0.8',
+    showlegend=False
+), row=2, col=2)
 
 # Add Cohen's effect size guidelines
-fig.add_vline(x=0.2, line_dash="dot", line_color=colors['warning'], 
-              line_width=1, annotation_text="Small", row=2, col=2)
-fig.add_vline(x=0.5, line_dash="dot", line_color=colors['warning'], 
-              line_width=1, annotation_text="Medium", row=2, col=2)
-fig.add_vline(x=0.8, line_dash="dot", line_color=colors['warning'], 
-              line_width=1, annotation_text="Large", row=2, col=2)
+effect_lines = [0.2, 0.5, 0.8]
+effect_labels = ["Small", "Medium", "Large"]
+for i, (line_x, label) in enumerate(zip(effect_lines, effect_labels)):
+    fig.add_trace(go.Scatter(
+        x=[line_x, line_x],
+        y=[0, 1],
+        mode='lines',
+        line=dict(color=colors['warning'], width=1, dash='dot'),
+        name=label,
+        showlegend=False
+    ), row=2, col=2)
 
 fig.update_layout(
     height=800,
-    showlegend=False,
-    title_text="Statistical Power: The Ability to Detect True Effects"
+    showlegend=False
+    #title_text="Statistical Power: The Ability to Detect True Effects"
 )
 
 # Update axes
@@ -1125,10 +1043,25 @@ fig.add_trace(go.Histogram(
     nbinsx=15
 ), row=1, col=1)
 
-fig.add_vline(x=np.mean(new_method_scores), line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"Sample Mean = {np.mean(new_method_scores):.1f}", row=1, col=1)
-fig.add_vline(x=current_average, line_dash="dash", line_color=colors['warning'], 
-              line_width=3, annotation_text=f"H₀: μ = {current_average}", row=1, col=1)
+# Add vertical lines manually
+sample_mean = np.mean(new_method_scores)
+fig.add_trace(go.Scatter(
+    x=[sample_mean, sample_mean],
+    y=[0, 6],  # Adjust height as needed
+    mode='lines',
+    line=dict(color=colors['danger'], width=3, dash='solid'),
+    name=f'Sample Mean = {sample_mean:.1f}',
+    showlegend=False
+), row=1, col=1)
+
+fig.add_trace(go.Scatter(
+    x=[current_average, current_average],
+    y=[0, 6],  # Adjust height as needed
+    mode='lines',
+    line=dict(color=colors['warning'], width=3, dash='dash'),
+    name=f'H₀: μ = {current_average}',
+    showlegend=False
+), row=1, col=1)
 
 # Test setup table
 setup_data = [
@@ -1177,8 +1110,14 @@ fig.add_trace(go.Scatter(
 ), row=2, col=1)
 
 # Test statistic line
-fig.add_vline(x=t_stat, line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"t = {t_stat:.3f}", row=2, col=1)
+fig.add_trace(go.Scatter(
+    x=[t_stat, t_stat],
+    y=[0, max(y_t)],
+    mode='lines',
+    line=dict(color=colors['danger'], width=3, dash='solid'),
+    name=f't = {t_stat:.3f}',
+    showlegend=False
+), row=2, col=1)
 
 # P-value area
 pval_x = x_t[x_t >= t_stat]
@@ -1195,8 +1134,14 @@ fig.add_trace(go.Scatter(
 # Critical value
 alpha = 0.05
 t_crit = stats.t.ppf(1 - alpha, df)
-fig.add_vline(x=t_crit, line_dash="dot", line_color=colors['success'], 
-              line_width=2, annotation_text=f"Critical Value = {t_crit:.3f}", row=2, col=1)
+fig.add_trace(go.Scatter(
+    x=[t_crit, t_crit],
+    y=[0, max(y_t)],
+    mode='lines',
+    line=dict(color=colors['success'], width=2, dash='dot'),
+    name=f'Critical Value = {t_crit:.3f}',
+    showlegend=False
+), row=2, col=1)
 
 # Results table
 results_data = [
@@ -1227,8 +1172,8 @@ fig.add_trace(go.Table(
 
 fig.update_layout(
     height=800,
-    showlegend=False,
-    title_text="Complete One-Sample t-test Example"
+    showlegend=False
+    #title_text="Complete One-Sample t-test Example"
 )
 
 # Update axes
@@ -1321,196 +1266,6 @@ print(f"  n = {len(method_B)}, mean = {np.mean(method_B):.2f}, std = {np.std(met
 print(f"\nDifference in means: {np.mean(method_B) - np.mean(method_A):.2f} points")
 ```
 
-```{python}
-#| fig-width: 14
-#| fig-height: 10
-
-# Create comprehensive two-sample analysis
-fig = make_subplots(
-    rows=2, cols=2,
-    subplot_titles=("Group Comparison", "Test Statistics",
-                   "Hypothesis Test Results", "Effect Size Analysis"),
-    specs=[[{"type": "box"}, {"type": "table"}],
-           [{"type": "scatter"}, {"type": "bar"}]]
-)
-
-# Box plot comparison
-fig.add_trace(go.Box(
-    y=method_A,
-    name='Method A',
-    marker_color=colors['danger'],
-    boxpoints='outliers'
-), row=1, col=1)
-
-fig.add_trace(go.Box(
-    y=method_B,
-    name='Method B',
-    marker_color=colors['success'],
-    boxpoints='outliers'
-), row=1, col=1)
-
-# Add group means
-fig.add_trace(go.Scatter(
-    x=['Method A', 'Method B'],
-    y=[np.mean(method_A), np.mean(method_B)],
-    mode='markers',
-    marker=dict(size=12, color=colors['primary'], symbol='diamond'),
-    name='Group Means'
-), row=1, col=1)
-
-# Test setup and calculations
-from scipy.stats import ttest_ind
-
-# Perform two-sample t-test
-t_stat_2samp, p_val_2samp = ttest_ind(method_A, method_B, equal_var=True)
-
-# Calculate pooled standard deviation and effect size
-n1, n2 = len(method_A), len(method_B)
-mean1, mean2 = np.mean(method_A), np.mean(method_B)
-s1, s2 = np.std(method_A, ddof=1), np.std(method_B, ddof=1)
-
-# Pooled standard deviation
-pooled_std = np.sqrt(((n1 - 1) * s1**2 + (n2 - 1) * s2**2) / (n1 + n2 - 2))
-cohens_d_2samp = (mean2 - mean1) / pooled_std
-
-test_info = [
-    ["Parameter", "Value"],
-    ["Hypotheses", "H₀: μ₁ = μ₂ vs H₁: μ₁ ≠ μ₂"],
-    ["Test Type", "Two-sample t-test (equal variances)"],
-    ["Significance Level", "α = 0.05"],
-    ["Group 1 (Method A)", f"n₁ = {n1}, x̄₁ = {mean1:.2f}, s₁ = {s1:.2f}"],
-    ["Group 2 (Method B)", f"n₂ = {n2}, x̄₂ = {mean2:.2f}, s₂ = {s2:.2f}"],
-    ["Pooled Std Dev", f"sp = {pooled_std:.2f}"],
-    ["Degrees of Freedom", f"df = {n1 + n2 - 2}"]
-]
-
-fig.add_trace(go.Table(
-    header=dict(
-        values=["Parameter", "Value"],
-        fill_color=colors['info'],
-        font=dict(size=11, color='white'),
-        align="left"
-    ),
-    cells=dict(
-        values=list(zip(*test_info[1:])),
-        fill_color=[['#faf5ff']*7, ['#e9d5ff']*7],
-        font=dict(size=10),
-        align="left",
-        height=25
-    )
-), row=1, col=2)
-
-# Test results visualization
-df_2samp = n1 + n2 - 2
-x_t2 = np.linspace(-4, 4, 1000)
-y_t2 = stats.t.pdf(x_t2, df_2samp)
-
-fig.add_trace(go.Scatter(
-    x=x_t2, y=y_t2,
-    mode='lines',
-    line=dict(color=colors['primary'], width=3),
-    name=f't-distribution (df={df_2samp})'
-), row=2, col=1)
-
-# Test statistic
-fig.add_vline(x=t_stat_2samp, line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"t = {t_stat_2samp:.3f}", row=2, col=1)
-fig.add_vline(x=-t_stat_2samp, line_dash="solid", line_color=colors['danger'], 
-              line_width=3, alpha=0.7, row=2, col=1)
-
-# P-value areas (two-tailed)
-t_abs = abs(t_stat_2samp)
-pval_right = x_t2[x_t2 >= t_abs]
-pval_left = x_t2[x_t2 <= -t_abs]
-
-fig.add_trace(go.Scatter(
-    x=np.concatenate([pval_right, [pval_right[-1], t_abs]]),
-    y=np.concatenate([stats.t.pdf(pval_right, df_2samp), [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(239, 68, 68, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name=f'P-value = {p_val_2samp:.4f}'
-), row=2, col=1)
-
-fig.add_trace(go.Scatter(
-    x=np.concatenate([pval_left, [-t_abs, pval_left[0]]]),
-    y=np.concatenate([stats.t.pdf(pval_left, df_2samp), [0, 0]]),
-    fill='toself',
-    fillcolor='rgba(239, 68, 68, 0.3)',
-    line=dict(color='rgba(0,0,0,0)'),
-    name='P-value area'
-), row=2, col=1)
-
-# Effect size comparison
-effect_categories = ['Negligible\n(d < 0.2)', 'Small\n(0.2 ≤ d < 0.5)', 'Medium\n(0.5 ≤ d < 0.8)', 'Large\n(d ≥ 0.8)']
-effect_values = [0.1, 0.35, 0.65, 0.9]
-our_effect = abs(cohens_d_2samp)
-
-# Color bars based on our effect size
-bar_colors = []
-for i, threshold in enumerate([0.2, 0.5, 0.8, float('inf')]):
-    if our_effect < threshold:
-        bar_colors = [colors['success'] if j == i else colors['light'] for j in range(4)]
-        break
-
-fig.add_trace(go.Bar(
-    x=effect_categories,
-    y=effect_values,
-    marker_color=bar_colors,
-    text=[f'd = {v}' for v in effect_values],
-    textposition='auto',
-    name='Effect Size Categories'
-), row=2, col=2)
-
-# Add our effect size
-fig.add_hline(y=our_effect, line_dash="dash", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"Our d = {our_effect:.3f}", row=2, col=2)
-
-fig.update_layout(
-    height=800,
-    showlegend=False,
-    title_text="Two-Sample t-test: Comparing Teaching Methods"
-)
-
-# Update axes
-fig.update_yaxes(title_text="Test Score", row=1, col=1)
-fig.update_xaxes(title_text="t-statistic", row=2, col=1)
-fig.update_yaxes(title_text="Probability Density", row=2, col=1)
-fig.update_xaxes(title_text="Effect Size Category", row=2, col=2)
-fig.update_yaxes(title_text="Cohen's d", row=2, col=2)
-
-fig.show()
-
-# Print comprehensive results
-print(f"\n🎯 TWO-SAMPLE T-TEST RESULTS:")
-print("=" * 50)
-print(f"Test Statistic: t = {t_stat_2samp:.3f}")
-print(f"P-value: {p_val_2samp:.4f}")
-print(f"Effect Size (Cohen's d): {cohens_d_2samp:.3f}")
-
-alpha = 0.05
-if p_val_2samp <= alpha:
-    print(f"\n✅ DECISION: Reject H₀")
-    print(f"📊 CONCLUSION: There is statistically significant evidence (p = {p_val_2samp:.4f}) of a difference between teaching methods.")
-    print(f"💡 PRACTICAL IMPACT: Method B appears to be {mean2 - mean1:.1f} points better than Method A.")
-else:
-    print(f"\n❌ DECISION: Fail to reject H₀")
-    print(f"📊 CONCLUSION: No statistically significant difference between methods (p = {p_val_2samp:.4f}).")
-
-# Effect size interpretation
-if abs(cohens_d_2samp) < 0.2:
-    effect_interp = "negligible"
-elif abs(cohens_d_2samp) < 0.5:
-    effect_interp = "small"
-elif abs(cohens_d_2samp) < 0.8:
-    effect_interp = "medium"
-else:
-    effect_interp = "large"
-
-print(f"🎯 EFFECT SIZE: {effect_interp} effect (d = {abs(cohens_d_2samp):.3f})")
-```
-
----
 
 ## Statistical vs Practical Significance 🤔
 
@@ -1538,10 +1293,25 @@ fig.add_trace(go.Histogram(
     nbinsx=50
 ), row=1, col=1)
 
-fig.add_vline(x=np.mean(tiny_effect), line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"Mean = {np.mean(tiny_effect):.2f}", row=1, col=1)
-fig.add_vline(x=100, line_dash="dash", line_color=colors['warning'], 
-              line_width=3, annotation_text="H₀: μ = 100", row=1, col=1)
+# Scenario 1 vertical lines
+sample_mean_large = np.mean(tiny_effect)
+fig.add_trace(go.Scatter(
+    x=[sample_mean_large, sample_mean_large],
+    y=[0, 0.025],  # Adjust height as needed
+    mode='lines',
+    line=dict(color=colors['danger'], width=3, dash='solid'),
+    name=f'Mean = {sample_mean_large:.2f}',
+    showlegend=False
+), row=1, col=1)
+
+fig.add_trace(go.Scatter(
+    x=[100, 100],
+    y=[0, 0.025],  # Adjust height as needed
+    mode='lines',
+    line=dict(color=colors['warning'], width=3, dash='dash'),
+    name='H₀: μ = 100',
+    showlegend=False
+), row=1, col=1)
 
 # Scenario 2: Small sample, large effect
 small_n = 10
@@ -1556,10 +1326,25 @@ fig.add_trace(go.Histogram(
     nbinsx=8
 ), row=1, col=2)
 
-fig.add_vline(x=np.mean(large_effect), line_dash="solid", line_color=colors['danger'], 
-              line_width=3, annotation_text=f"Mean = {np.mean(large_effect):.1f}", row=1, col=2)
-fig.add_vline(x=100, line_dash="dash", line_color=colors['warning'], 
-              line_width=3, annotation_text="H₀: μ = 100", row=1, col=2)
+# Scenario 2 vertical lines
+sample_mean_small = np.mean(large_effect)
+fig.add_trace(go.Scatter(
+    x=[sample_mean_small, sample_mean_small],
+    y=[0, 0.02],  # Adjust height as needed
+    mode='lines',
+    line=dict(color=colors['danger'], width=3, dash='solid'),
+    name=f'Mean = {sample_mean_small:.1f}',
+    showlegend=False
+), row=1, col=2)
+
+fig.add_trace(go.Scatter(
+    x=[100, 100],
+    y=[0, 0.02],  # Adjust height as needed
+    mode='lines',
+    line=dict(color=colors['warning'], width=3, dash='dash'),
+    name='H₀: μ = 100',
+    showlegend=False
+), row=1, col=2)
 
 # Add annotations with results
 fig.add_annotation(
@@ -1589,8 +1374,8 @@ fig.add_annotation(
 
 fig.update_layout(
     height=500,
-    showlegend=False,
-    title_text="Statistical Significance ≠ Practical Importance"
+    showlegend=False
+    #title_text="Statistical Significance ≠ Practical Importance"
 )
 
 fig.update_xaxes(title_text="Value", row=1, col=1)
@@ -1729,8 +1514,8 @@ fig.add_trace(go.Table(
 
 fig.update_layout(
     height=600,
-    showlegend=False,
-    title_text="Best Practices for Hypothesis Testing"
+    showlegend=False
+    #title_text="Best Practices for Hypothesis Testing"
 )
 
 fig.show()
@@ -1738,7 +1523,7 @@ fig.show()
 
 ---
 
-## Python Code Templates 💻
+## Python Code Templates 💻 {.hidden}
 
 ```{python}
 #| eval: false
@@ -1922,31 +1707,7 @@ print(f"\nRequired sample size for d=0.5, power=0.8: {required_n}")
 :::
 ::::
 
----
 
-## What's Next? 🚀
-
-:::: {.columns}
-::: {.column}
-### 🔜 Coming Up
-- **Multiple testing corrections** (Bonferroni, FDR)
-- **Non-parametric tests** (when assumptions fail)
-- **ANOVA** (comparing multiple groups)
-- **Regression analysis** (relationships between variables)
-- **Bayesian approaches** (alternative to frequentist)
-:::
-
-::: {.column}
-### 📚 Practice Opportunities
-- **Homework problems** with real datasets
-- **Lab sessions** using Python/R
-- **Group projects** applying hypothesis testing
-- **Discussion sections** for Q&A
-- **Office hours** for individual help
-:::
-::::
-
----
 
 # Thank You! 🎉
 
@@ -1954,6 +1715,6 @@ print(f"\nRequired sample size for d=0.5, power=0.8: {required_n}")
 
 *"The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data."* - John Tukey
 
-**Next class:** Multiple testing and ANOVA! 📊
+**Next class:** Regression Analysis! 📊
 
 ---
