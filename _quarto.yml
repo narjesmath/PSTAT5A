@@ -31,6 +31,7 @@ format:
     favicon: "img/logo.png"
     title-block-banner: false
     title-prefix: "PSTAT5A"
+    html-math-method: katex
     resources:
       - "img/logo.png"
     theme:
@@ -38,3 +39,7 @@ format:
       - brand
     css: /theme/styles.css
     toc: true
+    project:
+      type: website
+      output-dir: docs
+
