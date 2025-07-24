@@ -7,8 +7,11 @@ format:
     theme: cosmo
     css: /theme/schedule-styles.css
     page-layout: full
+self-contained: true
+menu: true
+search: true
+zoom: true
 python: pstat5a
-latex-tinytex: false
 execute:
   echo: false
   warning: false

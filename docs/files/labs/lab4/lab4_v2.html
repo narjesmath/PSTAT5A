@@ -281,7 +281,7 @@ window.Quarto = {
 <p>⏱️ <strong>Estimated time:</strong> 3 minutes</p>
 </div>
 <p>Before we begin working with probability distributions, let’s import the necessary modules:</p>
-<div id="7713c1f1" class="cell" data-execution_count="1">
+<div id="7d23fc3d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
@@ -316,7 +316,7 @@ Note
 <p>For a discrete random variable X, the <strong>Probability Mass Function</strong> P(X = k) gives the probability that X takes the value k.</p>
 <p>Key properties of a PMF: - P(X = k) ≥ 0 for all k - Σ P(X = k) = 1 (sum over all possible values)</p>
 <p>Let’s start with a simple example:</p>
-<div id="95f2435c" class="cell" data-execution_count="2">
+<div id="7f2037b5" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple discrete random variable: rolling a fair die</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># X can take values 1, 2, 3, 4, 5, 6 each with probability 1/6</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -333,7 +333,7 @@ Sum of probabilities: 0.9999999999999999</code></pre>
 </div>
 </div>
 <p>Let’s visualize this distribution:</p>
-<div id="9456b09a" class="cell" data-execution_count="3">
+<div id="3e592254" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.bar(die_values, die_probabilities, alpha<span class="op">=</span><span class="fl">0.7</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value'</span>)</span>
@@ -362,7 +362,7 @@ Sum of probabilities: 0.9999999999999999</code></pre>
 <li>Create a bar plot showing the PMF</li>
 </ol>
 </section>
-<div id="37daac2d" class="cell" data-execution_count="4">
+<div id="29524170" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -385,7 +385,7 @@ Sum of probabilities: 0.9999999999999999</code></pre>
 <p><span class="math display">\[\text{Var}(X) = \sigma^2 = E[X^2] - (E[X])^2 = \sum_{k} k^2 \cdot P(X = k) - \mu^2\]</span></p>
 </div>
 <p>Let’s calculate these for our fair die example:</p>
-<div id="f30350b8" class="cell" data-execution_count="5">
+<div id="298d5435" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected value of a fair die</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>expected_value <span class="op">=</span> <span class="bu">sum</span>(k <span class="op">*</span> p <span class="cf">for</span> k, p <span class="kw">in</span> <span class="bu">zip</span>(die_values, die_probabilities))</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Expected value of fair die: </span><span class="sc">{</span>expected_value<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -414,7 +414,7 @@ Standard deviation: 1.707825127659933</code></pre>
 <p>Calculate the expected value and variance for the biased coin from Task 1 (where X = 1 for Heads with probability 0.7, and X = 0 for Tails with probability 0.3).</p>
 <p>Show your calculations step by step.</p>
 </section>
-<div id="242d32fa" class="cell" data-execution_count="6">
+<div id="583f1df1" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -432,7 +432,7 @@ Standard deviation: 1.707825127659933</code></pre>
 <li>E[X] = p</li>
 <li>Var(X) = p(1-p)</li>
 </ul>
-<div id="19a91d51" class="cell" data-execution_count="7">
+<div id="5244cb22" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using scipy.stats for Bernoulli distribution</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.3</span>  <span class="co"># probability of success</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -454,7 +454,7 @@ Variance: 0.21</code></pre>
 </div>
 </div>
 <p>Let’s visualize several Bernoulli distributions:</p>
-<div id="79fc1960" class="cell" data-execution_count="8">
+<div id="cfe7a74f" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>p_values <span class="op">=</span> [<span class="fl">0.2</span>, <span class="fl">0.5</span>, <span class="fl">0.8</span>]</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -492,7 +492,7 @@ Variance: 0.21</code></pre>
 <li>E[X] = np</li>
 <li>Var(X) = np(1-p)</li>
 </ul>
-<div id="1dd0c863" class="cell" data-execution_count="9">
+<div id="50c6fa45" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Binomial distribution example: 10 coin flips with p = 0.5</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.5</span></span>
@@ -522,7 +522,7 @@ Standard deviation: 1.5811388300841898</code></pre>
 </div>
 </div>
 <p>Let’s visualize the binomial distribution:</p>
-<div id="b4ad05cd" class="cell" data-execution_count="10">
+<div id="ff2872fd" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>plt.bar(k_values, probabilities, alpha<span class="op">=</span><span class="fl">0.7</span>, color<span class="op">=</span><span class="st">'lightgreen'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Number of Successes (k)'</span>)</span>
@@ -551,7 +551,7 @@ Standard deviation: 1.5811388300841898</code></pre>
 <li>Create a bar plot showing the PMF for this scenario</li>
 </ol>
 </section>
-<div id="9f669909" class="cell" data-execution_count="11">
+<div id="c1668933" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="geometric-distribution" class="level2">
@@ -566,7 +566,7 @@ Standard deviation: 1.5811388300841898</code></pre>
 <li>E[X] = 1/p</li>
 <li>Var(X) = (1-p)/p²</li>
 </ul>
-<div id="b9b44e54" class="cell" data-execution_count="12">
+<div id="99517e77" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Geometric distribution: rolling a die until we get a 6</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">6</span>  <span class="co"># probability of rolling a 6</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -592,7 +592,7 @@ Variance: 30.00</code></pre>
 </div>
 </div>
 <p>Visualizing the geometric distribution:</p>
-<div id="22649c88" class="cell" data-execution_count="13">
+<div id="52331fd0" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>plt.bar(k_values, probabilities, alpha<span class="op">=</span><span class="fl">0.7</span>, color<span class="op">=</span><span class="st">'orange'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Trial Number (k)'</span>)</span>
@@ -620,7 +620,7 @@ Variance: 30.00</code></pre>
 <li>E[X] = λ</li>
 <li>Var(X) = λ</li>
 </ul>
-<div id="2ebc65e9" class="cell" data-execution_count="14">
+<div id="1ccd1971" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Poisson distribution: number of customers arriving per hour</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>lam <span class="op">=</span> <span class="fl">3.5</span>  <span class="co"># average 3.5 customers per hour</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -648,7 +648,7 @@ Variance: 3.5</code></pre>
 </div>
 </div>
 <p>Visualizing different Poisson distributions:</p>
-<div id="95b54ff5" class="cell" data-execution_count="15">
+<div id="3506e51d" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">5</span>))</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>lambda_values <span class="op">=</span> [<span class="dv">1</span>, <span class="fl">3.5</span>, <span class="dv">8</span>]</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -686,7 +686,7 @@ Variance: 3.5</code></pre>
 <li>Plot the PMF for k = 0 to 15 calls</li>
 </ol>
 </section>
-<div id="9b96001b" class="cell" data-execution_count="16">
+<div id="1455e3d3" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -696,7 +696,7 @@ Variance: 3.5</code></pre>
 <p>⏱️ <strong>Estimated time:</strong> 8 minutes</p>
 </div>
 <p>Let’s compare how different parameters affect the shape of distributions:</p>
-<div id="11d03ff9" class="cell" data-execution_count="17">
+<div id="ff96872b" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare binomial distributions with different parameters</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">10</span>))</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -750,16 +750,16 @@ Variance: 3.5</code></pre>
 <li><p><strong>Scenario D</strong>: A quality control inspector tests items where 5% are defective. What’s the probability the first defective item is found on the 8th test?</p></li>
 </ol>
 </section>
-<div id="2ee9960b" class="cell" data-execution_count="18">
+<div id="935cc0d9" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here - Scenario A</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="afeab3c2" class="cell" data-execution_count="19">
+<div id="990035b2" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here - Scenario B</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2f9cd828" class="cell" data-execution_count="20">
+<div id="3893300f" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here - Scenario C</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3c9dce34" class="cell" data-execution_count="21">
+<div id="553c2758" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here - Scenario D</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -769,7 +769,7 @@ Variance: 3.5</code></pre>
 <p>⏱️ <strong>Estimated time:</strong> 10 minutes</p>
 </div>
 <p>Let’s use simulation to verify our theoretical calculations:</p>
-<div id="02c8cb69" class="cell" data-execution_count="22">
+<div id="32a1c694" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate rolling a fair die many times and compare to theoretical expected value</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -828,7 +828,7 @@ n = 100000: Simulated mean = 3.5038, Difference from theoretical = 0.0038</code>
 <li>Create a histogram of the simulation results and overlay the theoretical PMF</li>
 </ol>
 </section>
-<div id="1e4f506e" class="cell" data-execution_count="23">
+<div id="a93baf56" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -862,7 +862,7 @@ n = 100000: Simulated mean = 3.5038, Difference from theoretical = 0.0038</code>
 <p>A customer service center has the following characteristics: - 20% of calls result in a sale (Bernoulli process) - Calls arrive at an average rate of 4 per hour (Poisson process) - Agents keep working until they make their first sale of the day (Geometric process)</p>
 <p>Calculate: 1. In a day with 8 hours of operation, what’s the expected number of calls? 2. What’s the probability that exactly 2 of the next 10 calls result in sales? 3. What’s the expected number of calls an agent needs to handle to make their first sale? 4. Create a comprehensive visualization showing all three distributions</p>
 </section>
-<div id="1646ae43" class="cell" data-execution_count="24">
+<div id="5709fe4d" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">

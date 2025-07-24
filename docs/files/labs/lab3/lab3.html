@@ -276,22 +276,22 @@ window.Quarto = {
 <p>⏱️ <strong>Estimated time:</strong> 5 minutes</p>
 </div>
 <p>Before we talk about plotting, we will need to quickly talk about modules again. Recall from Lab1 that <strong>modules</strong> are Python files containing definitions for functions and classes. Up until now, we’ve been importing all functions and classes from a module using the command</p>
-<div id="21633983" class="cell" data-execution_count="1">
+<div id="ee54860d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> <span class="op">&lt;</span>module name<span class="op">&gt;</span> <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There is another way to import modules, which is the following:</p>
-<div id="6f03c453" class="cell" data-execution_count="2">
+<div id="8ded60ab" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="op">&lt;</span>module name<span class="op">&gt;</span> <span class="im">as</span> <span class="op">&lt;</span>abbreviation<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For example,</p>
-<div id="2eaf0a5c" class="cell" data-execution_count="3">
+<div id="f2ab5561" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>not only imports the <code>numpy</code> module but imports it with the abbreviation (i.e.&nbsp;nickname) <code>np</code> so that we can simply write <code>np</code> in place of <code>numpy</code>every time.</p>
 <p>For example, to compute the mean of a list of numbers <code>1,2,3</code>, we can simply call the <code>numpy</code> mean function <code>np.mean()</code>.</p>
 <p>Here, we first create a generic list and call it <code>a</code>. We use the function <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html"><code>np.array()</code></a> to create an array of our chosen numbers. Then, we can use the function <code>np.mean()</code> to compute the mean of array we created.</p>
 <p>Each time, we call a function from the <code>numpy</code> module we use <code>np</code> as shown below:</p>
-<div id="9366c277" class="cell" data-execution_count="4">
+<div id="3f008d50" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.mean(a))   </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -300,15 +300,15 @@ window.Quarto = {
 </div>
 <p>The reason this is particularly useful is because module names can sometimes be quite long, so being able to refer to the module with a shortened nickname will save a lot of time!</p>
 <p>In general, if we import a module using</p>
-<div id="5c2c590d" class="cell" data-execution_count="5">
+<div id="d1d423b6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="op">&lt;</span>module name<span class="op">&gt;</span> <span class="im">as</span> <span class="op">&lt;</span>abbreviation<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>we reference functions from <code>&lt;module name&gt;</code> using the syntax</p>
-<div id="906a2fe2" class="cell" data-execution_count="6">
+<div id="d4c52e77" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>abbreviation<span class="op">&gt;</span>.<span class="op">&lt;</span>function name<span class="op">&gt;</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For example, after having imported the <code>numpy</code> module with the short name <code>np</code>, we access the <code>sin()</code> function contained in the <code>numpy</code> module by calling</p>
-<div id="e69e0bc7" class="cell" data-execution_count="7">
+<div id="bdf079fb" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>np.sin()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="task-1" class="level2 task-box">
@@ -320,14 +320,14 @@ window.Quarto = {
 <li><p>Import the <code>numpy</code> module as <code>np</code>, and check that <code>np.sin(0)</code> returns a value of 0.</p></li>
 <li><p>Import the <code>datascience</code> module as <code>ds</code>, and check that</p></li>
 </ol>
-<div id="c414463c" class="cell" data-execution_count="8">
+<div id="cd9a4cb9" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ds.Table().with_columns(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Col1"</span>, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Col2"</span>, [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>prints correctly as :</p>
-<div id="c0f5feb7" class="cell" data-execution_count="9">
+<div id="d9fbfa4a" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stderr">
 <pre><code>/Users/narjesmathlouthi/miniconda3/envs/pstat5a/lib/python3.11/site-packages/datascience/maps.py:13: UserWarning:
 
@@ -373,7 +373,7 @@ Important
 </div>
 </div>
 </section>
-<div id="17b8ff29" class="cell" data-execution_count="10">
+<div id="9d26a5f6" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="numerical-summaries" class="level2">
@@ -393,14 +393,14 @@ Important
 <h3 class="anchored" data-anchor-id="understanding-functions-and-parameters">Understanding Functions and Parameters</h3>
 <p>Before we dive into examples, let’s understand what functions are and how they work with parameters. A function is a block of code that performs a specific task. Functions can take <strong>parameters</strong> (also called <strong>arguments</strong>) as input, process them, and return a result.</p>
 <p>The general syntax for calling a function is:</p>
-<div id="47cb8db1" class="cell" data-execution_count="11">
+<div id="faeba08d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>function_name(parameter1, parameter2, ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For statistical functions like <code>np.mean()</code> and <code>np.median()</code>, the main parameter is the data (list or array) you want to analyze. You can read more about about each function in the official documentation for the <code>numpy</code> module.</p>
 <p>Here are some examples:</p>
 <section id="example-with-np.mean" class="level4">
 <h4 class="anchored" data-anchor-id="example-with-np.mean">Example with <code>np.mean()</code>:</h4>
-<div id="42a3d188" class="cell" data-execution_count="12">
+<div id="1045666c" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a simple list of numbers</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>]</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -415,7 +415,7 @@ Important
 </section>
 <section id="example-with-np.median" class="level4">
 <h4 class="anchored" data-anchor-id="example-with-np.median">Example with <code>np.median()</code>:</h4>
-<div id="5461ff81" class="cell" data-execution_count="13">
+<div id="9eff6747" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the same list</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>]</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -433,7 +433,7 @@ The median of odd list is: 7.0</code></pre>
 </div>
 </div>
 <p>Another example with different data:</p>
-<div id="8ad61853" class="cell" data-execution_count="14">
+<div id="83421fd5" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example with decimal numbers</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>grades <span class="op">=</span> [<span class="fl">85.5</span>, <span class="fl">92.0</span>, <span class="fl">78.5</span>, <span class="fl">96.0</span>, <span class="fl">88.5</span>, <span class="fl">91.0</span>]</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -470,7 +470,7 @@ Note
 </div>
 <p>Let <code>x_list</code> be a list containing the elements <code>1, 2, and 3</code>, and let <code>x_array</code> be an array containing the elements <code>1, 2, and 3</code>. Compute the mean and median of <code>x_list</code> and <code>x_array</code> using the appropriate functions from the <code>numpy</code> module.</p>
 </section>
-<div id="4f2ca31b" class="cell" data-execution_count="15">
+<div id="ef728399" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="measures-of-spread" class="level2">
@@ -496,7 +496,7 @@ Note
 </section>
 <pre class="{Markdown}"><code># Your answer here
 </code></pre>
-<div id="edb12814" class="cell" data-execution_count="16">
+<div id="eba90858" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, we tackle a slightly peculiar function: <a href="https://numpy.org/doc/stable/reference/generated/numpy.std.html"><code>np.std()</code></a>. We expect this to compute the standard deviation of a list/array, but…</p>
@@ -509,7 +509,7 @@ Note
 <p>Now, run <code>np.std(x_list)</code>. Does this answer agree with what you found in <strong>part (a)</strong> above?</p>
 <p>Now, recompute the standard deviation <span class="math inline">\(s\)</span> of <code>x_list</code> by hand but this time use <strong>n</strong> instead of <strong>n−1</strong> in the formula. How does this answer compare with the result of <code>np.std(x_list)</code>?</p>
 </section>
-<div id="c12953ca" class="cell" data-execution_count="17">
+<div id="92727e2b" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The result of the previous Task is the following: given a <code>list x = [$x_1, x_2, ..., x_n$]</code>, running <code>np.std(x)</code> actually computes the <strong>population standard deviation</strong> <span class="math inline">\(\sigma\)</span>.</p>
@@ -548,11 +548,11 @@ Note
 <p>To compute the standard deviation of a list x, we run <code>np.std(x, ddof = 1)</code> when working with sampled data unless otherwise specified that your source of data is representative of the population.</p>
 </div>
 </div>
-<div id="6e052363" class="cell" data-execution_count="18">
+<div id="8a6e14a5" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally, we turn to the Interquartile Range (IQR): to compute the IQR of a list/array <span class="math inline">\(x\)</span>, we use (after <code>importing numpy as np</code>)</p>
-<div id="e9ad319c" class="cell" data-execution_count="19">
+<div id="3fe2ad03" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>np.diff(np.percentile(x, [<span class="dv">25</span>,<span class="dv">75</span>]))[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="optional-task-creating-your-own-iqr-function" class="level2 task-box">
@@ -563,7 +563,7 @@ Note
 <p>Now that you understand how to use functions and their parameters, let’s create our own custom function to calculate the IQR! This will help you understand how to define your own functions in Python.</p>
 <p><strong>1. Understanding Function Definition Syntax</strong></p>
 <p>To create a function in Python, we use the <code>def</code> keyword followed by the function name and parameters:</p>
-<div id="02cc8dd5" class="cell" data-execution_count="20">
+<div id="53558496" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function_name(parameter1, parameter2):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code that does something with the parameters</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> some_calculation</span>
@@ -571,7 +571,7 @@ Note
 </div>
 <p><strong>2. Create the IQR Function</strong></p>
 <p>Let’s create a function called <code>calculate_iqr</code> that takes a list or array as input and returns the IQR:</p>
-<div id="eb214c70" class="cell" data-execution_count="21">
+<div id="e63cb6ca" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_iqr(data):</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculate the Interquartile Range (IQR) of a dataset.</span></span>
@@ -588,7 +588,7 @@ Note
 </div>
 <p><strong>3. Test Your Function</strong></p>
 <p>Now let’s test our custom function with some example data:</p>
-<div id="c3ad1e5c" class="cell" data-execution_count="22">
+<div id="29ac48ae" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create some test data</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Example - test_scores = [72, 85, 90, 78, 92, 88, 76, 94, 82, 89, 91, 77]</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -607,7 +607,7 @@ Note
 <span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="co"># They should be the same!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<div id="720681b1" class="cell" data-execution_count="23">
+<div id="b71cd7d5" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="visualizations" class="level2">
@@ -617,7 +617,7 @@ Note
 </div>
 <p>It’s finally time to make pretty plots! The module we will use to generate visualizations is the <code>matplotlib</code> module (though there are quite a few other modules that work for visualizations as well). The official website for <code>matplotlib</code> can be found at https://matplotlib.org/.</p>
 <p>Before we generate any plots, we will need to run the following code once:</p>
-<div id="5e0d49a0" class="cell" data-execution_count="24">
+<div id="1ae1849d" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -662,7 +662,7 @@ Note
 <li><p>Make a list called <code>y</code> that contains the following elements: <code>[1, 2, 3, 4, 5, 4, 3, 5, 4, 1, 2]</code>.</p></li>
 <li><p>Run <code>plt.boxplot(y);</code> (<strong>be sure to include the semicolon!</strong>). Your plot should look like a basic vertical boxplot.</p></li>
 </ol>
-<div id="7dd1807b" class="cell" data-execution_count="25">
+<div id="3870d594" class="cell" data-execution_count="25">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -687,7 +687,7 @@ Tip
 </div>
 <p>For <code>plt.boxplot()</code>, there is an optional param called <code>orientation</code>. It accepts the values “vertical” or “horizental” with ” vertical” being the default.</p>
 <p>To use in your pyton code, you can simply add <code>,</code> after your data and add <code>orientation =' '</code> . Inside <code>" "</code> specify the desired direction and close the parenthesis.</p>
-<div id="f6c1bddd" class="cell" data-execution_count="26">
+<div id="9e209a2d" class="cell" data-execution_count="26">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -697,7 +697,7 @@ Tip
 </div>
 </div>
 <p>Next, let’s add some color to our plot. Within your call to <code>plt.boxplot()</code>, after your data and orientation param, add a semicolon <code>,</code> to seperate the parameters and add the following: <code>patch_artist=True</code>, <code>boxprops = dict(facecolor = "aquamarine")</code> . Your boxplot should look like this:</p>
-<div id="6726b67c" class="cell" data-execution_count="27">
+<div id="c578a7cb" class="cell" data-execution_count="27">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -720,7 +720,7 @@ Tip
 <ul>
 <li><code>plt.title("My First Python Boxplot");</code> (again, don’t forget the semicolons).</li>
 </ul>
-<div id="86138413" class="cell" data-execution_count="28">
+<div id="823662d0" class="cell" data-execution_count="28">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -734,7 +734,7 @@ Tip
 </ol>
 </section>
 </section>
-<div id="18ade05d" class="cell" data-execution_count="29">
+<div id="0cdffa63" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre class="{Markdown}"><code>
@@ -748,7 +748,7 @@ Tip
 </div>
 <p>Call the <code>plt.hist()</code> function on the <code>y</code> list defined in <strong>Task 5</strong>, and use the function <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">documentation</a> to add arguments to your call to <code>plt.hist()</code> function to generate a histogram with appropriate number of bins. Add a label for the x-axis <code>plt.xlabel('Values')</code>, a label for the y-axis <code>plt.ylabel('Frequency')</code> and a title using <code>plt.title('Histogram of y values')</code>.</p>
 <p>For example, to create a basic histogram using <code>plt.hist()</code>, you would use the following:</p>
-<div id="39075df9" class="cell" data-execution_count="30">
+<div id="bf100046" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic histogram</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>plt.hist(y)<span class="op">;</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -767,7 +767,7 @@ Tip
 <li><p>Add edge colors with <code>edgecolor='black'</code> for visual separation</p></li>
 </ul>
 <p>Your histogram, will look like this!</p>
-<div id="11a67795" class="cell" data-execution_count="31">
+<div id="c696423b" class="cell" data-execution_count="31">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -790,7 +790,7 @@ Important
 </div>
 </div>
 </section>
-<div id="9a6ae4de" class="cell" data-execution_count="32">
+<div id="386cad81" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="scatterplots" class="level2">
@@ -805,7 +805,7 @@ Important
 <ol type="1">
 <li>Copy-paste the following code into a code cell, and then run that cell (don’t worry about what this code is doing- we’ll discuss that in a future lab).</li>
 </ol>
-<div id="9b60b8bf" class="cell" data-execution_count="33">
+<div id="20f05f96" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">5</span>)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
@@ -824,7 +824,7 @@ Important
 <li>Add an x-axis label that says “x1” and a y-axis label that says “x2”, along with the title “My First Python Scatterplot”.</li>
 </ol>
 </section>
-<div id="e63f3bfa" class="cell" data-execution_count="34">
+<div id="ee016e7b" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># You code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="plotting-a-function" class="level3">
@@ -834,15 +834,15 @@ Important
 </div>
 <p>Finally, I’d like to take a quick detour from descriptive statistics and talk about how to plot a function using Python. As a concrete example, let’s try and plot a sine curve from <span class="math inline">\(0\)</span> to <span class="math inline">\(2 \pi\)</span></p>
 <p>If you recall, in Lab1 we used the <code>sin()</code> function from the <code>math</code> module- it turns out that the <code>numpy</code> module (which, we have imported as <code>np</code>) also has a <code>sin</code> function, so let’s use that one today:</p>
-<div id="c1a4766c" class="cell" data-execution_count="35">
+<div id="b6e52522" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>np.sin()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, we create a set of finely-spaced points between our two desired endpoints (here, <span class="math inline">\(0\)</span> to <span class="math inline">\(2 \pi\)</span>, respectively). We will do so using the <code>np.linspace()</code> function, which works as follows:</p>
-<div id="82ab5a9d" class="cell" data-execution_count="36">
+<div id="3090e07b" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>np.linspace(start, stop, num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>creates a set of <code>num</code> evenly-spaced values between <code>start</code> and <code>stop</code>, respectively. For instance:</p>
-<div id="a352294c" class="cell" data-execution_count="37">
+<div id="a1a88112" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,
@@ -850,11 +850,11 @@ Important
 </div>
 </div>
 <p>In the context of plotting, the more points we generate the smoother our plot will seem (you will see what this means in a minute). As such, let’s start with <strong>150 points</strong> between <span class="math inline">\(0\)</span> to <span class="math inline">\(2 \pi\)</span>:</p>
-<div id="6c96b5ae" class="cell" data-execution_count="38">
+<div id="7320df26" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span> <span class="op">*</span> np.pi, <span class="dv">150</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally, we call the <code>plt.plot()</code> function on <span class="math inline">\(x\)</span> and <code>np.sin(x)</code> to generate our plot:</p>
-<div id="482e817d" class="cell" data-execution_count="39">
+<div id="dd73186d" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">4.5</span>, <span class="fl">2.25</span>))</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, np.sin(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -866,7 +866,7 @@ Important
 </div>
 </div>
 <p>Let’s see what would have happened if we used fewer values in our <code>np.linspace()</code> call:</p>
-<div id="80bd3f25" class="cell" data-execution_count="40">
+<div id="6b13cd30" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>xnew <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span> <span class="op">*</span> np.pi, <span class="dv">10</span>)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>plt.plot(xnew, np.sin(xnew))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -893,7 +893,7 @@ Important
 <p>Generate a plot of the function <span class="math inline">\(f(x)=x-x^2 \sin(x)\)</span> between <span class="math inline">\(x=−10\)</span> and <span class="math inline">\(x=10\)</span>.</p>
 <p>Experiment around with the number of values generated using <code>np.linspace(start, stop, num)</code> to ensure your plot is relatively smooth.</p>
 <p>Be sure to include axis labels; also, change the color of the graph to red. Your final plot should look something like this:</p>
-<div id="7bbfc8f2" class="cell" data-execution_count="41">
+<div id="0ec9c8cf" class="cell" data-execution_count="41">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -903,7 +903,7 @@ Important
 </div>
 </div>
 </section>
-<div id="ac6d2a91" class="cell" data-execution_count="42">
+<div id="b9aaa679" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create x values using linspace for a smooth plot</span></span>

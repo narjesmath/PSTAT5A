@@ -322,7 +322,7 @@ Setup
 </ul>
 </div>
 </div>
-<div id="5cc91879" class="cell" data-execution_count="1">
+<div id="9207527c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install any missing packages (will skip those already installed)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#%pip install --quiet numpy matplotlib scipy pandas statsmodels --&gt; uncommnent to install packages if needed</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -370,7 +370,7 @@ Note
 <section id="understanding-the-difference" class="level2">
 <h2 class="anchored" data-anchor-id="understanding-the-difference">Understanding the Difference</h2>
 <p>Let’s start by understanding what makes a variable continuous:</p>
-<div id="50da7953" class="cell" data-execution_count="2">
+<div id="d0d80290" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examples of different variable types</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"DISCRETE VARIABLES (countable):"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"• Number of students in class: 0, 1, 2, 3, ..."</span>)</span>
@@ -465,7 +465,7 @@ from SciPy’s <a href="https://docs.scipy.org/doc/scipy/reference/generated/sci
 <p>Optional: <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html"><code>plt.tight_layout()</code></a> to automatically adjust spacing so that titles, labels, and ticks don’t overlap.</p>
 </div>
 </div>
-<div id="8006273b" class="cell" data-execution_count="3">
+<div id="86c0ed50" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure with 1 row and 2 columns of axes, total size 12x5 inches</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -556,7 +556,7 @@ which removes units by centering at zero and scaling to unit variance. Its PDF i
 y = \frac{1}{\sigma},\phi (z) =\Bigl(\frac{x - \mu}{\sigma}\Bigr)
 \]</span></p>
 <p>where <span class="math inline">\(\phi(z)\)</span> is the standard normal PDF.</p>
-<div id="416d3d09" class="cell" data-execution_count="4">
+<div id="0c6c187b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a standard normal distribution</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>standard_normal <span class="op">=</span> stats.norm(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>)  <span class="co"># loc=mean, scale=standard deviation</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -630,7 +630,7 @@ F(x) = P(X \le x) = \int_{-\infty}^x \phi(t),dt
 <p><span class="math display">\[
 P(a &lt; X &lt; b) = F(b) - F(a)
 \]</span></p>
-<div id="10f2b411" class="cell" data-execution_count="5">
+<div id="0a4c5f63" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Probability that a value is between -1 and 1 - P(-1 &lt; X &lt; 1) for X ~ N(0,1</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>prob_between <span class="op">=</span> standard_normal.cdf(<span class="dv">1</span>) <span class="op">-</span> standard_normal.cdf(<span class="op">-</span><span class="dv">1</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P(-1 &lt; X &lt; 1) = </span><span class="sc">{</span>prob_between<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
@@ -675,7 +675,7 @@ P(a &lt; X &lt; b) = F(b) - F(a)
 <p>Let’s say human heights follow a normal distribution with mean = 68 inches and standard deviation = 4 inches.</p>
 <p>Copy the code and try it on your own!</p>
 <p><strong>Step 1:</strong> Create this distribution</p>
-<div id="edc4ea93" class="cell" data-execution_count="6">
+<div id="f21b753c" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Heights distribution</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>mean_height <span class="op">=</span> ___  <span class="co"># Fill in: 68</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>std_height <span class="op">=</span> ___   <span class="co"># Fill in: 4</span></span>
@@ -686,7 +686,7 @@ P(a &lt; X &lt; b) = F(b) - F(a)
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Standard deviation: </span><span class="sc">{</span>heights<span class="sc">.</span>std()<span class="sc">}</span><span class="ss"> inches"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Step 2:</strong> Calculate some probabilities</p>
-<div id="41283fcc" class="cell" data-execution_count="7">
+<div id="ceb44c0b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a) What's the probability someone is taller than 72 inches (6 feet)?</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>prob_tall <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> heights.cdf(___)  <span class="co"># Fill in: 72</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P(height &gt; 72 inches) = </span><span class="sc">{</span>prob_tall<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
@@ -700,7 +700,7 @@ P(a &lt; X &lt; b) = F(b) - F(a)
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"90th percentile height: </span><span class="sc">{</span>height_90th<span class="sc">:.2f}</span><span class="ss"> inches"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Step 3:</strong> Make a visualization</p>
-<div id="53e02fda" class="cell" data-execution_count="8">
+<div id="e098a0a3" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the height distribution</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">50</span>, <span class="dv">86</span>, <span class="dv">1000</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> heights.pdf(x)</span>
@@ -728,7 +728,7 @@ P(a &lt; X &lt; b) = F(b) - F(a)
 <li>Nearly <strong>99.7%</strong> lie within <strong>three</strong> standard deviations (<span class="math inline">\(\mu \pm 3\sigma\)</span>).</li>
 </ul>
 <p>In practice, this gives a quick way to gauge how “typical” a value is: if a point lies beyond <span class="math inline">\(\pm 2\sigma\)</span>, it’s already in the outer 5% and might be considered unusual or an outlier.</p>
-<div id="7661f71c" class="cell" data-execution_count="9">
+<div id="f613e84b" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The 68-95-99.7 rule for standard normal</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>mean, std <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -809,7 +809,7 @@ f(x) = \begin{cases}
 \]</span></p>
 <p>so the probability of any subinterval is simply its length divided by <span class="math inline">\((b-a)\)</span>. In SciPy, you specify this with <code>loc=a</code> and <code>scale=(b - a)</code> when calling <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.uniform.html"><code>stats.uniform</code></a>.</p>
 <p>Let’s visualize this:</p>
-<div id="3636f372" class="cell" data-execution_count="10">
+<div id="820d3939" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Uniform distribution between 0 and 10</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>uniform_dist <span class="op">=</span> stats.uniform(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">10</span>)  <span class="co"># loc=start, scale=width</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -864,7 +864,7 @@ f(x) \;=\; \lambda\,e^{-\lambda x},
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>rate <span class="op">=</span> <span class="fl">0.5</span>              <span class="co"># for example, 0.5 events per unit time</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>exp_dist <span class="op">=</span> stats.expon(scale<span class="op">=</span><span class="dv">1</span><span class="op">/</span>rate)  <span class="co"># scale = 1/λ</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Here is a quick example visualization of the exponential distribution :</p>
-<div id="f9260e0b" class="cell" data-execution_count="11">
+<div id="43ff86fd" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exponential distribution - models time between events</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameter λ (lambda) = rate parameter</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>rate <span class="op">=</span> <span class="fl">0.5</span>  <span class="co"># events per unit time</span></span>
@@ -911,7 +911,7 @@ Mean waiting time: 2.00</code></pre>
 <p>⏱️ <strong>Estimated time:</strong> 4 minutes</p>
 </div>
 <p>The time between buses follows an exponential distribution with an average of 15 minutes between buses. Copy the code and try it on your own!</p>
-<div id="732de59d" class="cell" data-execution_count="12">
+<div id="6c58d634" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bus waiting times</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>average_wait <span class="op">=</span> ___  <span class="co"># Fill in: 15 minutes</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>rate <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> average_wait</span>
@@ -960,7 +960,7 @@ What we’re doing
 </ol>
 </div>
 </div>
-<div id="68ee2ab8" class="cell" data-execution_count="13">
+<div id="da72c5ec" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Define a skewed population: Exponential with scale=2 (mean=2)</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> stats.expon(scale<span class="op">=</span><span class="dv">2</span>)  <span class="co"># Mean = 2, very right-skewed</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1076,7 +1076,7 @@ Central Limit Theorem (CLT)
 <p>⏱️ <strong>Estimated time:</strong> 6 minutes</p>
 </div>
 <p>Let’s verify the Central Limit Theorem with a different population! Copy the code and try it on your own!</p>
-<div id="18ac9029" class="cell" data-execution_count="14">
+<div id="bc89ed99" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Population: Uniform distribution from 0 to 100</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> stats.uniform(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">100</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1133,7 +1133,7 @@ Central Limit Theorem (CLT)
 </section>
 <section id="the-solution-confidence-intervals" class="level2">
 <h2 class="anchored" data-anchor-id="the-solution-confidence-intervals">The Solution: Confidence Intervals</h2>
-<div id="d95e7bc1" class="cell" data-execution_count="15">
+<div id="c90dbe82" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate the scenario</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1168,7 +1168,7 @@ True population mean: 68.0 inches</code></pre>
 </section>
 <section id="building-a-95-confidence-interval" class="level2">
 <h2 class="anchored" data-anchor-id="building-a-95-confidence-interval">Building a 95% Confidence Interval</h2>
-<div id="00126c0a" class="cell" data-execution_count="16">
+<div id="ff739b2c" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The Central Limit Theorem tells us that sample means are normally distributed</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># with mean = population mean and std = population_std / sqrt(n)</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1221,7 +1221,7 @@ mean height is between 66.72 and 69.39 inches.
 </section>
 <section id="visualizing-confidence-intervals" class="level2">
 <h2 class="anchored" data-anchor-id="visualizing-confidence-intervals">Visualizing Confidence Intervals</h2>
-<div id="c48f4440" class="cell" data-execution_count="17">
+<div id="775fa7b7" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's see what "95% confidence" really means</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We'll create 20 different confidence intervals and see how many capture the truth</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1304,7 +1304,7 @@ This should be close to 95%!</code></pre>
 </div>
 <p>You’re studying the average time students spend on homework per week. You survey 40 students and get the following results:</p>
 <p>Copy the below code and try it on your own!</p>
-<div id="bd9b7e20" class="cell" data-execution_count="18">
+<div id="45d809f3" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Homework time data (in hours per week)</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">456</span>)</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>homework_data <span class="op">=</span> np.random.normal(<span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">40</span>)  <span class="co"># 40 students, roughly normal</span></span>
@@ -1354,7 +1354,7 @@ This should be close to 95%!</code></pre>
 </section>
 <section id="different-confidence-levels" class="level2">
 <h2 class="anchored" data-anchor-id="different-confidence-levels">Different Confidence Levels</h2>
-<div id="26459a04" class="cell" data-execution_count="19">
+<div id="8d4aa2a5" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare different confidence levels using our height data</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>confidence_levels <span class="op">=</span> [<span class="fl">0.80</span>, <span class="fl">0.90</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>]</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1411,7 +1411,7 @@ Trade-off: Confidence vs. Precision</code></pre>
 <li><p>Discrete uniform</p></li>
 <li><p>Bernoulli</p></li>
 </ol>
-<div id="1823f5c5" class="cell" data-execution_count="20">
+<div id="06b95e58" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill in your answers:</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"My answers:"</span>)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A. Time between arrivals: ___"</span>)      <span class="co"># Fill in the number</span></span>
@@ -1430,7 +1430,7 @@ Trade-off: Confidence vs. Precision</code></pre>
 <p>⏱️ <strong>Estimated time:</strong> 5 minutes</p>
 </div>
 <p>Let’s see how sample means get closer to the population mean as we increase sample size:</p>
-<div id="1d08097d" class="cell" data-execution_count="21">
+<div id="bbb9ac41" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The Law of Large Numbers in action</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> stats.norm(<span class="dv">50</span>, <span class="dv">10</span>)  <span class="co"># Population: mean=50, std=10</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>true_mean <span class="op">=</span> population.mean()</span>
