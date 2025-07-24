@@ -4303,5 +4303,40 @@
     "title": "Hypothesis Testing: Making Decisions with Data",
     "section": "Best Practices Summary 📋",
     "text": "Best Practices Summary 📋"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Course Resources",
+    "section": "",
+    "text": "🔍"
+  },
+  {
+    "objectID": "resources.html#getting-started-with-data",
+    "href": "resources.html#getting-started-with-data",
+    "title": "Course Resources",
+    "section": "Getting Started with Data",
+    "text": "Getting Started with Data\nThis week introduces fundamental concepts in data science, including data types, basic statistics, and essential Python tools for data manipulation and analysis."
+  },
+  {
+    "objectID": "resources.html#understanding-uncertainty-through-statistics",
+    "href": "resources.html#understanding-uncertainty-through-statistics",
+    "title": "Course Resources",
+    "section": "Understanding Uncertainty Through Statistics",
+    "text": "Understanding Uncertainty Through Statistics\nThis week introduces fundamental concepts in probability theory, including sample spaces, events, conditional probability, independence, and Bayes’ theorem. You’ll learn to quantify uncertainty and make informed decisions with incomplete information."
+  },
+  {
+    "objectID": "resources.html#advanced-probability-discrete-distributions",
+    "href": "resources.html#advanced-probability-discrete-distributions",
+    "title": "Course Resources",
+    "section": "Advanced Probability & Discrete Distributions",
+    "text": "Advanced Probability & Discrete Distributions\nThis week deepens your understanding of conditional probability and Bayes’ theorem, introduces counting principles (permutations and combinations), and explores discrete random variables including their probability mass functions, expected values, and common distributions."
+  },
+  {
+    "objectID": "resources.html#from-discrete-to-continuous-understanding-density-and-intervals",
+    "href": "resources.html#from-discrete-to-continuous-understanding-density-and-intervals",
+    "title": "Course Resources",
+    "section": "From Discrete to Continuous: Understanding Density and Intervals",
+    "text": "From Discrete to Continuous: Understanding Density and Intervals\nThis week transitions from discrete to continuous random variables, introducing probability density functions, common continuous distributions, and the foundations of statistical inference through confidence intervals. You’ll learn how the Central Limit Theorem enables us to make probabilistic statements about population parameters."
   }
 ]
