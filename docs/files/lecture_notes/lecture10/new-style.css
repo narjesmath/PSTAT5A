@@ -1,0 +1,967 @@
+/* improved-pstat-theme.css - PSTAT 5A: Enhanced Typography & Modern Design - WORKING VERSION */
+
+/* ==========================================================================
+   Refined Color Palette - Modern & Accessible
+   ========================================================================== */
+:root {
+  /* Primary Blues - Deep and sophisticated */
+  --primary-blue: #1e40af;
+  --primary-blue-light: #dbeafe;
+  --primary-blue-dark: #1e3a8a;
+  --primary-blue-hover: #2563eb;
+  
+  /* Secondary Colors - Harmonious palette */
+  --accent-teal: #0d9488;
+  --accent-teal-light: #ccfbf1;
+  --accent-teal-dark: #0f766e;
+  --accent-amber: #d97706;
+  --accent-amber-light: #fef3c7;
+  --accent-purple: #7c3aed;
+  --accent-purple-light: #e9d5ff;
+  --accent-rose: #e11d48;
+  --accent-rose-light: #fecdd3;
+  
+  /* Neutrals - Perfect contrast ratios */
+  --soft-bg: #f8fafc;
+  --neutral-light: #f1f5f9;
+  --neutral-medium: #64748b;
+  --neutral-dark: #1e293b;
+  --border-color: #cbd5e1;
+  --white: #ffffff;
+  --text-muted: #475569;
+  
+  /* Shadows - Subtle depth */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  
+  /* Gradients - Elegant backgrounds */
+  --gradient-blue: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%);
+  --gradient-teal: linear-gradient(135deg, #ccfbf1 0%, #f8fafc 100%);
+  --gradient-amber: linear-gradient(135deg, #fef3c7 0%, #f8fafc 100%);
+  --gradient-cool: linear-gradient(135deg, #e0e7ff 0%, #f1f5f9 100%);
+  --gradient-hero: linear-gradient(135deg, #1e40af 0%, #0d9488 100%);
+  
+  /* Base font sizes using rem for better control */
+  --base-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --large-font-size: 1.125rem;
+  --xl-font-size: 1.25rem;
+}
+
+/* ==========================================================================
+   Enhanced Font System with Stable Loading & Size Control
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Crimson+Pro:wght@400;500;600;700&display=swap');
+
+/* Force consistent base font size for all browsers */
+html {
+  font-size: 16px !important;
+  -webkit-text-size-adjust: 100% !important;
+  -moz-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+body {
+  font-size: var(--base-font-size) !important;
+  line-height: 1.6 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Force full viewport usage with better browser compatibility */
+.reveal {
+  width: 100% !important;
+  height: 100% !important;
+  font-size: var(--base-font-size) !important;
+}
+
+.reveal .slides {
+  width: 100vw !important;
+  height: 100vh !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  font-size: inherit !important;
+}
+
+.reveal .slides section,
+.reveal .slides section.present {
+  width: 100% !important;
+  height: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0 !important;
+  padding: 20px 40px !important;
+  transform: none !important;
+  max-width: none !important;
+  max-height: none !important;
+  font-size: inherit !important;
+}
+
+/* ==========================================================================
+   Beautiful slide backgrounds with depth
+   ========================================================================== */
+body.reveal-viewport, 
+.reveal .backgrounds {
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 25%, #dbeafe 50%, #e0f2fe 75%, #f0f9ff 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: var(--base-font-size) !important;
+}
+
+.reveal .slides section {
+  text-align: left;
+  font-size: var(--base-font-size) !important;
+  line-height: 1.6 !important;
+  color: var(--neutral-dark);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(30, 64, 175, 0.1);
+  padding: 25px 45px;
+  margin: 0 !important;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+/* ==========================================================================
+   ENHANCED Header 1 - Centered with Beautiful Background
+   ========================================================================== */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: 'Crimson Pro', 'Georgia', serif !important;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8em;
+  line-height: 1.2;
+  color: var(--primary-blue);
+}
+
+/* Beautiful centered H1 with premium background */
+.reveal .slides section h1,
+.reveal .slides section.present h1,
+.reveal .slides > section h1 {
+  font-size: 2.8rem !important;
+  font-weight: 800 !important;
+  margin: 0 auto 2.5rem auto !important;
+  color: var(--white) !important;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+  position: relative !important;
+  padding: 2rem 3rem !important;
+  display: block !important;
+  text-align: center !important;
+  font-family: 'Crimson Pro', 'Georgia', serif !important;
+  
+  /* Beautiful gradient background */
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #0d9488 100%) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.4) !important;
+  border: 3px solid rgba(255, 255, 255, 0.3) !important;
+  
+  /* Responsive width */
+  max-width: 85% !important;
+  width: fit-content !important;
+  min-width: 350px !important;
+  
+  /* Add subtle glow effect */
+  box-shadow: 
+    0 10px 30px rgba(30, 64, 175, 0.4),
+    0 0 20px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Premium underline with glow effect */
+.reveal .slides section h1::after,
+.reveal .slides section.present h1::after,
+.reveal .slides > section h1::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0.3rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 80% !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, var(--accent-amber-light) 0%, var(--white) 50%, var(--accent-teal-light) 100%) !important;
+  border-radius: 3px !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6) !important;
+  display: block !important;
+  z-index: 15 !important;
+}
+
+/* Other headers with rem-based sizes */
+.reveal h2 {
+  font-size: 1.75rem !important;
+  margin-bottom: 0.7em;
+  color: var(--accent-teal);
+  font-weight: 600;
+}
+
+.reveal h3 {
+  font-size: 1.375rem !important;
+  margin-bottom: 0.6em;
+  color: var(--accent-amber);
+  font-weight: 600;
+}
+
+.reveal h4 {
+  font-size: 1.125rem !important;
+  margin-bottom: 0.5em;
+  color: var(--accent-purple);
+  font-weight: 600;
+}
+
+/* Subtitle with stable sizing */
+.reveal .slides section .subtitle {
+  color: var(--accent-purple);
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.25rem !important;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+  margin-bottom: 1em;
+  background: linear-gradient(90deg, var(--accent-purple-light) 60%, transparent 100%);
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: inline-block;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+/* ==========================================================================
+   Title Slide with rem-based sizing
+   ========================================================================== */
+.reveal .slides section.title-slide {
+  background: var(--gradient-hero);
+  color: var(--white);
+  text-align: center;
+  padding: 30px 50px;
+  border-radius: 0;
+  margin: 0 !important;
+  box-shadow: var(--shadow-lg);
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle animated background pattern */
+.reveal .slides section.title-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 0%, transparent 50%);
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.reveal .slides section.title-slide h1 {
+  font-family: 'Crimson Pro', 'Georgia', serif !important;
+  font-size: 3rem !important;
+  font-weight: 800;
+  color: var(--white);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  margin-bottom: 0.6em;
+  letter-spacing: -0.01em;
+  position: relative;
+  padding-bottom: 0.3rem;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.reveal .slides section.title-slide h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-amber-light) 0%, var(--white) 50%, var(--accent-teal-light) 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(255,255,255,0.3);
+}
+
+.reveal .slides section.title-slide .subtitle {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 500;
+  color: var(--accent-amber-light);
+  margin-bottom: 1.5em;
+  background: rgba(255,255,255,0.15);
+  padding: 12px 24px;
+  border-radius: 30px;
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.reveal .slides section.title-slide .author {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.8em;
+  letter-spacing: 0.02em;
+}
+
+.reveal .slides section.title-slide .date {
+  font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+  font-size: var(--base-font-size) !important;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.1);
+  padding: 8px 20px;
+  border-radius: 25px;
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ==========================================================================
+   Text Sizing with rem-based consistency
+   ========================================================================== */
+.reveal .smaller {
+  font-size: var(--small-font-size) !important;
+  line-height: 1.5;
+}
+
+.reveal .small-text {
+  font-size: 0.8rem !important;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.reveal .footnote {
+  font-size: 0.75rem !important;
+  color: var(--neutral-medium);
+  margin-top: 8px;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.reveal .large-text {
+  font-size: var(--large-font-size) !important;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Component Styling with consistent rem-based fonts
+   ========================================================================== */
+.key-insight {
+  background: var(--gradient-blue);
+  border-left: 5px solid var(--primary-blue);
+  padding: 20px 24px;
+  margin: 20px 0;
+  border-radius: 12px;
+  font-weight: 500;
+  position: relative;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--primary-blue-light);
+  font-size: var(--base-font-size) !important;
+  line-height: 1.5;
+  font-family: inherit !important;
+}
+
+.key-insight::before {
+  content: "💡";
+  position: absolute;
+  top: 20px;
+  left: -8px;
+  font-size: 1.25rem;
+  background: var(--white);
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--primary-blue-light);
+}
+
+.key-insight h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: var(--primary-blue-dark);
+  font-size: 1.1rem !important;
+}
+
+/* ==========================================================================
+   Summary Cards with stable font sizing
+   ========================================================================== */
+.summary-card {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+  margin-bottom: 20px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-size: var(--base-font-size) !important;
+  line-height: 1.5;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit !important;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-hero);
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-blue-light);
+}
+
+.summary-card h4, .summary-card h3, .summary-card h2 {
+  font-size: 1.125rem !important;
+  margin-bottom: 16px;
+  color: var(--primary-blue);
+  font-weight: 600;
+  font-family: 'Crimson Pro', serif !important;
+}
+
+.summary-card ul {
+  margin: 10px 0;
+  padding-left: 24px;
+}
+
+.summary-card li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--neutral-dark);
+  font-size: inherit;
+}
+
+/* ==========================================================================
+   Interactive Components with stable sizing
+   ========================================================================== */
+.interactive-demo {
+  background: var(--gradient-blue);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px 0;
+  box-shadow: var(--shadow-md);
+  font-size: var(--base-font-size) !important;
+  font-family: inherit !important;
+}
+
+.demo-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.demo-controls button {
+  background: var(--gradient-hero);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: var(--small-font-size) !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  font-family: 'Inter', sans-serif !important;
+}
+
+.demo-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.demo-controls select, .demo-controls input {
+  padding: 8px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: var(--small-font-size) !important;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.demo-controls label {
+  font-size: var(--small-font-size) !important;
+  color: var(--neutral-dark);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit !important;
+}
+
+.demo-stats {
+  background: rgba(30, 64, 175, 0.08);
+  padding: 16px 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-blue);
+  margin: 16px 0;
+  font-size: var(--base-font-size) !important;
+  font-weight: 500;
+  line-height: 1.4;
+  font-family: inherit !important;
+}
+
+/* ==========================================================================
+   Enhanced Text Styling
+   ========================================================================== */
+.reveal .slides section strong {
+  color: var(--accent-amber);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: linear-gradient(90deg, var(--accent-amber-light) 60%, transparent 100%);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: inherit;
+}
+
+.reveal .slides section em {
+  color: var(--accent-purple);
+  font-style: italic;
+  font-weight: 500;
+  font-size: inherit;
+}
+
+/* ==========================================================================
+   List Styling
+   ========================================================================== */
+.reveal .slides section ul li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--neutral-dark);
+  font-size: inherit;
+}
+
+.reveal .slides section ul li::marker {
+  color: var(--accent-amber);
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.reveal .slides section ol li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: var(--neutral-dark);
+  font-size: inherit;
+}
+
+/* ==========================================================================
+   Responsive Design with beautiful H1 scaling
+   ========================================================================== */
+@media (max-width: 768px) {
+  .reveal .slides section h1 {
+    font-size: 2.2rem !important;
+    padding: 1.2rem 1.5rem !important;
+    margin: 0 auto 1.5rem auto !important;
+    min-width: 280px !important;
+    max-width: 95% !important;
+    border-radius: 15px !important;
+  }
+  
+  .reveal .slides section h1::after {
+    width: 85% !important;
+    height: 3px !important;
+    bottom: 0.25rem !important;
+  }
+  
+  .reveal .slides section {
+    padding: 15px 25px;
+  }
+  
+  .reveal h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  .reveal h3 {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .reveal .slides section h1 {
+    font-size: 1.8rem !important;
+    padding: 1rem 1.2rem !important;
+    margin: 0 auto 1.2rem auto !important;
+    min-width: 260px !important;
+    max-width: 98% !important;
+    border-radius: 12px !important;
+    line-height: 1.3 !important;
+  }
+  
+  .reveal .slides section h1::after {
+    width: 90% !important;
+    height: 2px !important;
+    bottom: 0.2rem !important;
+  }
+  
+  .reveal .slides section {
+    padding: 12px 20px;
+  }
+  
+  .reveal .slides section.title-slide h1 {
+    font-size: 2.2rem !important;
+    padding: 1.2rem 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .reveal .slides section h1 {
+    font-size: 1.6rem !important;
+    padding: 0.8rem 1rem !important;
+    margin: 0 auto 1rem auto !important;
+    min-width: 240px !important;
+    max-width: 100% !important;
+    border-radius: 10px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .reveal .slides section h1::after {
+    width: 85% !important;
+    height: 2px !important;
+    bottom: 0.15rem !important;
+  }
+  
+  .reveal .slides section {
+    padding: 10px 15px;
+  }
+}
+
+/* ==========================================================================
+   Browser-specific fixes and utilities
+   ========================================================================== */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .reveal, .reveal .slides, .reveal .slides section {
+    font-size: var(--base-font-size) !important;
+    -webkit-text-size-adjust: none !important;
+  }
+}
+
+@-moz-document url-prefix() {
+  .reveal, .reveal .slides, .reveal .slides section {
+    font-size: var(--base-font-size) !important;
+  }
+}
+
+/* Full-width utility classes */
+.full-width {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+}
+
+.three-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .two-columns,
+  .three-columns {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Focus states */
+button:focus,
+input:focus,
+select:focus {
+  outline: 3px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Collapsible Solution Styling
+   ========================================================================== */
+.collapsible-solution {
+  background: var(--gradient-blue);
+  border-left: 5px solid var(--primary-blue);
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: var(--shadow-md);
+  padding: 0;
+  overflow: hidden;
+}
+
+.collapsible-solution .solution-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: var(--gradient-hero);
+  color: var(--white);
+  border: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 16px 24px;
+  cursor: pointer !important;
+  text-align: left;
+  outline: none;
+  transition: background 0.2s, color 0.2s;
+  border-bottom: 1px solid var(--primary-blue-light);
+  position: relative;
+  z-index: 10;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.collapsible-solution .solution-toggle:hover {
+  background: var(--primary-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Debug styles to ensure buttons are visible and clickable */
+.collapsible-solution {
+  position: relative;
+  z-index: 1;
+}
+
+.collapsible-solution .solution-toggle {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.collapsible-solution .solution-toggle::after {
+  content: '\25BC'; /* Down arrow */
+  margin-left: auto;
+  font-size: 1.2em;
+  transition: transform 0.2s;
+}
+
+.collapsible-solution.open .solution-toggle {
+  background: var(--primary-blue-hover);
+  color: var(--accent-amber-light);
+}
+
+.collapsible-solution.open .solution-toggle::after {
+  transform: rotate(180deg); /* Up arrow when open */
+}
+
+.collapsible-solution .solution-content,
+section.collapsible-solution .solution-content,
+aside.collapsible-solution .solution-content {
+  display: none !important;
+  padding: 20px 24px;
+  background: var(--white);
+  color: var(--neutral-dark);
+  font-size: 1em;
+  line-height: 1.5;
+  border-radius: 0 0 12px 12px;
+  box-shadow: none;
+  border-left: 5px solid var(--primary-blue-light);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px dashed #e11d48 !important; /* DEBUG: Remove after testing */
+}
+
+.collapsible-solution.open .solution-content,
+section.collapsible-solution.open .solution-content,
+aside.collapsible-solution.open .solution-content {
+  display: block !important;
+  opacity: 1;
+  max-height: 1000px;
+  animation: fadeIn 0.3s;
+  border: 2px solid #10b981 !important; /* DEBUG: Remove after testing */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Header variations */
+.reveal h1.no-underline::after {
+  display: none;
+}
+
+.reveal h1.simple-style {
+  background: none !important;
+  color: var(--primary-blue-dark) !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0.5rem 0 !important;
+  text-shadow: none !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --neutral-dark: #000000;
+    --primary-blue: #0000cc;
+    --accent-teal: #006666;
+  }
+  
+  .reveal .slides section h1 {
+    background: linear-gradient(135deg, #000000 0%, #003366 100%) !important;
+    border: 3px solid #ffffff !important;
+    color: #ffffff !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .reveal .slides section {
+    font-size: 12pt !important;
+    color: #000;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+  
+  .reveal .slides section h1 {
+    background: none !important;
+    color: #000000 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    border: 2px solid #000000 !important;
+    padding: 1rem !important;
+  }
+  
+  .reveal .slides section h1::after {
+    background: #000000 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ==========================================================================
+   Main Page Button - Top Left of Each Slide
+   ========================================================================== */
+.main-page-btn {
+  position: fixed !important;
+  top: 20px !important;
+  left: 20px !important;
+  z-index: 99999 !important;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #0d9488 100%) !important;
+  color: var(--white) !important;
+  text-decoration: none !important;
+  padding: 14px 24px !important;
+  border-radius: 30px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  font-family: 'Inter', sans-serif !important;
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(10px) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  letter-spacing: 0.5px !important;
+  pointer-events: auto !important;
+}
+
+.main-page-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #0f766e 100%) !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.6) !important;
+  color: var(--white) !important;
+  text-decoration: none !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.main-page-btn:active {
+  transform: translateY(0) !important;
+}
+
+/* Ensure it's visible on all slide backgrounds */
+.main-page-btn {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-page-btn {
+    top: 15px !important;
+    left: 15px !important;
+    padding: 10px 16px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-page-btn {
+    top: 10px !important;
+    left: 10px !important;
+    padding: 8px 12px !important;
+    font-size: 0.75rem !important;
+  }
+}
