@@ -1,0 +1,1043 @@
+/* Custom CSS for enhanced styling */
+/* Style the default title  */
+/* css styles */
+/* styles.css */
+.site-logo img {
+  max-height: 2rem;  /* or whatever fits */
+}
+
+.quarto-title {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 3rem 2rem;
+  margin: -2rem -2rem 2rem -2rem;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.quarto-title h1.title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  color: white;
+}
+
+/* Add a subtitle */
+.quarto-title .subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+  color: white;
+}
+
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #f093fb;
+  --light-bg: #f8f9fa;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --danger-color: #dc3545;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 3rem 2rem;
+  margin: -2rem -2rem 2rem -2rem;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.resource-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.resource-card:hover::before {
+  transform: scaleX(1);
+}
+
+.resource-type {
+  display: inline-block;
+  background: rgba(102, 126, 234, 0.1);
+  color: var(--primary-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resource-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.resource-title a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.resource-title a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.resource-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.resource-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.week-header {
+  background: linear-gradient(135deg, var(--light-bg) 0%, #e9ecef 100%);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border-left: 5px solid var(--primary-color);
+}
+
+.week-header h2 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.week-description {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+.section-divider h3 {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+  margin-left: 1rem;
+}
+
+.coming-soon {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--light-bg);
+  border-radius: 15px;
+  margin: 2rem 0;
+}
+
+.coming-soon-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Search functionality */
+.search-container {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid #e9ecef;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1.2rem;
+}
+
+/* ============================================ */
+/* WORKSHEET-SPECIFIC STYLES */
+/* ============================================ */
+
+/* Worksheet Container */
+.worksheet-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Instructions Section */
+.instructions-box {
+  background: linear-gradient(135deg, #e3f2fd 0%, #f8f9fa 100%);
+  border: 2px solid var(--info-color);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.instructions-box::before {
+  content: "📝";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+.instructions-box h3 {
+  color: var(--info-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.instructions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.instructions-list li {
+  padding: 0.5rem 0;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.instructions-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--success-color);
+  font-weight: bold;
+}
+
+/* Formula Reference Box */
+.formula-box {
+  background: linear-gradient(135deg, #fff8e1 0%, #fffbf0 100%);
+  border: 2px solid var(--warning-color);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.formula-box::before {
+  content: "📚";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+.formula-box h3 {
+  color: #e65100;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.formula-category {
+  margin-bottom: 1.5rem;
+}
+
+.formula-category h4 {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.3rem;
+}
+
+.formula-item {
+  margin: 0.5rem 0;
+  padding: 0.3rem 0;
+  font-family: 'Courier New', monospace;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* Problem Containers */
+.problem-container {
+  background: #f8f9fa;
+  border: 2px solid #dee2e6;
+  border-left: 6px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.problem-container:hover {
+  border-left-color: var(--secondary-color);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Alternative gray problem box styles */
+.problem-container.light-gray {
+  background: #f1f3f4;
+  border-color: #dadce0;
+}
+
+.problem-container.medium-gray {
+  background: #e8eaed;
+  border-color: #c1c7cd;
+}
+
+.problem-container.dark-gray {
+  background: #e0e0e0;
+  border-color: #bdbdbd;
+}
+
+.problem-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.problem-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.problem-points {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.problem-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.problem-parts {
+  margin: 1.5rem 0;
+}
+
+.problem-part {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.part-label {
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-right: 0.5rem;
+}
+
+.part-points {
+  background: rgba(102, 126, 234, 0.1);
+  color: var(--primary-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* Work Space */
+.work-space {
+  background: white;
+  border: 2px dashed #ced4da;
+  border-radius: 10px;
+  min-height: 150px;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.work-space::before {
+  content: "Work Space";
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  background: white;
+  padding: 0 8px;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.work-space.large {
+  min-height: 250px;
+}
+
+/* Section Headers */
+.section-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  margin: 3rem 0 2rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.section-number {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+/* Answer Key Section */
+.answer-key {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 100%);
+  border: 2px solid var(--success-color);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.answer-key::before {
+  content: "🔑";
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+.answer-key h3 {
+  color: var(--success-color);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.answer-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border-left: 4px solid var(--success-color);
+}
+
+.answer-section h4 {
+  color: var(--success-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.answer-item {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-family: 'Courier New', monospace;
+  background: white;
+  border-radius: 5px;
+  border-left: 3px solid #c8e6c9;
+}
+
+/* Simple Gray Boxes */
+.gray-box {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.gray-box.light {
+  background: #f1f3f4;
+  border-color: #dadce0;
+}
+
+.gray-box.medium {
+  background: #e8eaed;
+  border-color: #c1c7cd;
+}
+
+.gray-box.dark {
+  background: #e0e0e0;
+  border-color: #bdbdbd;
+}
+
+/* Data Display */
+.data-set {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+/* Mathematical Expressions */
+.math-expression {
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  background: rgba(102, 126, 234, 0.05);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  margin: 0 0.2rem;
+}
+
+/* Note Boxes */
+.note-box {
+  background: #e1f5fe;
+  border-left: 4px solid var(--info-color);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+
+.note-box::before {
+  content: "Note: ";
+  font-weight: 600;
+  color: var(--info-color);
+  font-style: normal;
+}
+
+/* Worksheet Footer */
+.worksheet-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--light-bg) 0%, #e9ecef 100%);
+  border-radius: 15px;
+  border-top: 4px solid var(--primary-color);
+}
+
+.total-points {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.good-luck {
+  color: #666;
+  font-style: italic;
+}
+
+/* Print Styles */
+@media print {
+  .worksheet-container {
+    max-width: none;
+    padding: 1rem;
+  }
+  
+  .problem-container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    background: #f5f5f5 !important; /* Ensure gray shows in print */
+  }
+  
+  .section-header {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  .work-space {
+    border: 1px solid #ccc;
+    background: white !important;
+  }
+  
+  .answer-key {
+    page-break-before: always;
+    break-before: page;
+  }
+  
+  .gray-box {
+    background: #f0f0f0 !important;
+    border: 1px solid #ccc;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-section {
+    padding: 2rem 1rem;
+    margin: -1rem -1rem 2rem -1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .worksheet-container {
+    padding: 1rem;
+  }
+  
+  .problem-container {
+    padding: 1.5rem;
+  }
+  
+  .problem-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .section-header {
+    padding: 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .formula-box, .instructions-box, .answer-key {
+    padding: 1.5rem;
+  }
+}
+
+/* Key Concepts Checklist Box */
+.key-concepts-box {
+  background: linear-gradient(135deg, #e3fcec 0%, #f8f9fa 100%);
+  border: 2px solid #28a745;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+.key-concepts-box::before {
+  content: "\1F3AF"; /* 🎯 */
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+/* Study Schedule Recommendation Box */
+.study-schedule-box {
+  background: linear-gradient(135deg, #e3e9fd 0%, #f8f9fa 100%);
+  border: 2px solid #667eea;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+.study-schedule-box::before {
+  content: "\1F4C5"; /* 📅 */
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+/* Additional Resources Box */
+.additional-resources-box {
+  background: linear-gradient(135deg, #e1f5fe 0%, #f8f9fa 100%);
+  border: 2px solid #17a2b8;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  position: relative;
+}
+.additional-resources-box::before {
+  content: "\1F50D"; /* 🔍 */
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .key-concepts-box,
+  .study-schedule-box,
+  .additional-resources-box {
+    padding: 1.5rem;
+  }
+}
+
+/* ============================================ */
+/* COLLAPSIBLE WEEK SECTIONS 
+/* ============================================ */
+
+/* Week Collapsible Container */
+.week-collapsible {
+  border: 2px solid #e1e4e8;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  background: white;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.week-collapsible:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.week-collapsible[open] {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-color: var(--primary-color);
+}
+
+/* Week Summary (clickable header) */
+.week-summary {
+  list-style: none;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--light-bg) 0%, #e9ecef 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 12px;
+  margin: 0;
+}
+
+.week-summary:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.week-collapsible[open] .week-summary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.week-summary::marker {
+  display: none;
+}
+
+/* Dropdown Arrow */
+.week-summary::after {
+  content: '▼';
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transition: all 0.3s ease;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.week-summary:hover::after {
+  color: var(--secondary-color);
+}
+
+.week-collapsible[open] .week-summary::after {
+  transform: translateY(-50%) rotate(0deg);
+  color: white;
+}
+
+/* Week Title */
+.week-summary h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.week-collapsible[open] .week-summary h3 {
+  color: white;
+}
+
+/* Week Subtitle */
+.week-subtitle {
+  margin: 0;
+  color: #6c757d;
+  font-size: 1rem;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.week-collapsible[open] .week-summary .week-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Week Content Container */
+.week-content {
+  padding: 0 2rem 2rem 2rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress Indicator */
+.week-summary::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: var(--success-color);
+  border-radius: 50%;
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--success-color);
+  transition: all 0.3s ease;
+}
+
+/* Future weeks - gray indicator */
+.week-collapsible:nth-child(n+5) .week-summary::before {
+  background: #6c757d;
+  box-shadow: 0 0 0 2px #6c757d;
+}
+
+/* Current week indicator - pulsing animation */
+.week-collapsible:nth-child(4) .week-summary::before {
+  background: var(--warning-color);
+  box-shadow: 0 0 0 2px var(--warning-color);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 2px var(--warning-color);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 193, 7, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 2px var(--warning-color);
+  }
+}
+
+/* Integration with existing search */
+.week-collapsible.search-highlight {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(240, 147, 251, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .week-summary {
+    padding: 1rem 1.5rem;
+  }
+  
+  .week-summary h3 {
+    font-size: 1.2rem;
+  }
+  
+  .week-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .week-summary::after {
+    right: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .week-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .week-summary::before {
+    left: -4px;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Dark mode support (if you add it later) */
+@media (prefers-color-scheme: dark) {
+  .week-collapsible {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+  
+  .week-summary {
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  }
+  
+  .week-summary:hover {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  }
+}
+
+/* Print styles for collapsible sections */
+@media print {
+  .week-collapsible {
+    border: 1px solid #ccc;
+    box-shadow: none;
+    page-break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .week-collapsible[open] {
+    border-color: #333;
+  }
+  
+  .week-summary {
+    background: #f5f5f5 !important;
+    color: #333 !important;
+    page-break-after: avoid;
+  }
+  
+  .week-summary::after {
+    display: none;
+  }
+  
+  .week-summary::before {
+    display: none;
+  }
+  
+  .week-content {
+    page-break-inside: avoid;
+  }
+}
