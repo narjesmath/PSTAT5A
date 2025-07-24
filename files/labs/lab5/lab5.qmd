@@ -12,10 +12,12 @@ format:
     code-fold: false
     theme: cosmo
     css: /files/lecture_notes/theme/lecture-styles.css
+latex-tinytex: false
 date: today
 jupyter: pstat5a
 execute: 
   eval: false
+
 ---
 
 ::: {.column-margin}

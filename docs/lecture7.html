@@ -9,7 +9,7 @@
 <meta name="author" content="Narjes Mathlouthi">
 <meta name="dcterms.date" content="2025-07-23">
 
-<title>PSTAT 5A: Continuous Random Variables – PSTAT5A</title>
+<title>PSTAT 5A: Discrete Random Variables – PSTAT5A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -164,43 +164,47 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome-to-lecture-9" id="toc-welcome-to-lecture-9" class="nav-link active" data-scroll-target="#welcome-to-lecture-9">Welcome to Lecture 9</a></li>
+  <li><a href="#welcome-to-lecture-8" id="toc-welcome-to-lecture-8" class="nav-link active" data-scroll-target="#welcome-to-lecture-8">Welcome to Lecture 8</a></li>
   <li><a href="#todays-learning-objectives" id="toc-todays-learning-objectives" class="nav-link" data-scroll-target="#todays-learning-objectives">Today’s Learning Objectives</a></li>
-  <li><a href="#sec-dis-cont-vars" id="toc-sec-dis-cont-vars" class="nav-link" data-scroll-target="#sec-dis-cont-vars">Review: Discrete vs Continuous</a></li>
-  <li><a href="#sec-pdf" id="toc-sec-pdf" class="nav-link" data-scroll-target="#sec-pdf">Why <code>P(X = x) = 0</code> for Continuous Variables?</a></li>
-  <li><a href="#probability-density-function-pdf" id="toc-probability-density-function-pdf" class="nav-link" data-scroll-target="#probability-density-function-pdf">Probability Density Function (PDF)</a>
+  <li><a href="#what-is-a-random-variable" id="toc-what-is-a-random-variable" class="nav-link" data-scroll-target="#what-is-a-random-variable">What is a Random Variable?</a></li>
+  <li><a href="#die-roll-example-mapping-outcomes-to-numbers" id="toc-die-roll-example-mapping-outcomes-to-numbers" class="nav-link" data-scroll-target="#die-roll-example-mapping-outcomes-to-numbers">Die Roll Example: Mapping Outcomes to Numbers</a></li>
+  <li><a href="#why-use-random-variables" id="toc-why-use-random-variables" class="nav-link" data-scroll-target="#why-use-random-variables">Why Use Random Variables?</a></li>
+  <li><a href="#types-of-random-variables" id="toc-types-of-random-variables" class="nav-link" data-scroll-target="#types-of-random-variables">Types of Random Variables</a></li>
+  <li><a href="#probability-mass-function-pmf" id="toc-probability-mass-function-pmf" class="nav-link" data-scroll-target="#probability-mass-function-pmf">Probability Mass Function (PMF)</a>
   <ul class="collapse">
-  <li><a href="#interactive-pdf-demo-understanding-density" id="toc-interactive-pdf-demo-understanding-density" class="nav-link" data-scroll-target="#interactive-pdf-demo-understanding-density">Interactive PDF Demo: Understanding Density</a></li>
+  <li><a href="#interactive-pmf-demo-fair-die" id="toc-interactive-pmf-demo-fair-die" class="nav-link" data-scroll-target="#interactive-pmf-demo-fair-die">Interactive PMF Demo: Fair Die</a></li>
   </ul></li>
+  <li><a href="#pmf-example-two-coin-flips" id="toc-pmf-example-two-coin-flips" class="nav-link" data-scroll-target="#pmf-example-two-coin-flips">PMF Example: Two Coin Flips</a></li>
   <li><a href="#cumulative-distribution-function-cdf" id="toc-cumulative-distribution-function-cdf" class="nav-link" data-scroll-target="#cumulative-distribution-function-cdf">Cumulative Distribution Function (CDF)</a></li>
   <li><a href="#expected-value-and-variance" id="toc-expected-value-and-variance" class="nav-link" data-scroll-target="#expected-value-and-variance">Expected Value and Variance</a></li>
-  <li><a href="#common-continuous-distributions" id="toc-common-continuous-distributions" class="nav-link" data-scroll-target="#common-continuous-distributions">Common Continuous Distributions</a></li>
-  <li><a href="#the-normal-distribution" id="toc-the-normal-distribution" class="nav-link" data-scroll-target="#the-normal-distribution">The Normal Distribution</a></li>
-  <li><a href="#practice-problem-1-uniform-distribution" id="toc-practice-problem-1-uniform-distribution" class="nav-link" data-scroll-target="#practice-problem-1-uniform-distribution">Practice Problem 1: Uniform Distribution</a></li>
-  <li><a href="#practice-problem-2-normal-distribution" id="toc-practice-problem-2-normal-distribution" class="nav-link" data-scroll-target="#practice-problem-2-normal-distribution">Practice Problem 2: Normal Distribution</a></li>
-  <li><a href="#practice-problem-3-exponential-distribution" id="toc-practice-problem-3-exponential-distribution" class="nav-link" data-scroll-target="#practice-problem-3-exponential-distribution">Practice Problem 3: Exponential Distribution</a></li>
-  <li><a href="#central-limit-theorem" id="toc-central-limit-theorem" class="nav-link" data-scroll-target="#central-limit-theorem">Central Limit Theorem</a>
+  <li><a href="#law-of-large-numbers-demo" id="toc-law-of-large-numbers-demo" class="nav-link" data-scroll-target="#law-of-large-numbers-demo">Law of Large Numbers Demo</a>
   <ul class="collapse">
-  <li><a href="#interactive-clt-demo-sample-means-approach-normal" id="toc-interactive-clt-demo-sample-means-approach-normal" class="nav-link" data-scroll-target="#interactive-clt-demo-sample-means-approach-normal">Interactive CLT Demo: Sample Means Approach Normal</a></li>
+  <li><a href="#law-of-large-numbers-demo-1" id="toc-law-of-large-numbers-demo-1" class="nav-link" data-scroll-target="#law-of-large-numbers-demo-1">Law of Large Numbers Demo</a></li>
   </ul></li>
-  <li><a href="#transformations-of-random-variables" id="toc-transformations-of-random-variables" class="nav-link" data-scroll-target="#transformations-of-random-variables">Transformations of Random Variables</a></li>
-  <li><a href="#comparing-discrete-and-continuous" id="toc-comparing-discrete-and-continuous" class="nav-link" data-scroll-target="#comparing-discrete-and-continuous">Comparing Discrete and Continuous</a></li>
-  <li><a href="#properties-of-continuous-distributions" id="toc-properties-of-continuous-distributions" class="nav-link" data-scroll-target="#properties-of-continuous-distributions">Properties of Continuous Distributions</a></li>
+  <li><a href="#common-discrete-distributions" id="toc-common-discrete-distributions" class="nav-link" data-scroll-target="#common-discrete-distributions">Common Discrete Distributions</a></li>
+  <li><a href="#interactive-distribution-explorer" id="toc-interactive-distribution-explorer" class="nav-link" data-scroll-target="#interactive-distribution-explorer">Interactive Distribution Explorer</a>
+  <ul class="collapse">
+  <li><a href="#distribution-visualizer" id="toc-distribution-visualizer" class="nav-link" data-scroll-target="#distribution-visualizer">Distribution Visualizer</a></li>
+  </ul></li>
+  <li><a href="#practice-problem-1" id="toc-practice-problem-1" class="nav-link" data-scroll-target="#practice-problem-1">Practice Problem 1</a></li>
+  <li><a href="#practice-problem-2-expected-value" id="toc-practice-problem-2-expected-value" class="nav-link" data-scroll-target="#practice-problem-2-expected-value">Practice Problem 2: Expected Value</a></li>
+  <li><a href="#practice-problem-3" id="toc-practice-problem-3" class="nav-link" data-scroll-target="#practice-problem-3">Practice Problem 3</a></li>
+  <li><a href="#properties-of-expected-value" id="toc-properties-of-expected-value" class="nav-link" data-scroll-target="#properties-of-expected-value">Properties of Expected Value</a></li>
   <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
   <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions?</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
-  <li><a href="#back-to-main-page" id="toc-back-to-main-page" class="nav-link" data-scroll-target="#back-to-main-page">Back to Main Page</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture8.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture7.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PSTAT 5A: Continuous Random Variables</h1>
-<p class="subtitle lead">Lecture 9</p>
+<h1 class="title">PSTAT 5A: Discrete Random Variables</h1>
+<p class="subtitle lead">Lecture 8</p>
 </div>
 
 
@@ -229,174 +233,314 @@ window.Quarto = {
 </header>
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Dancing+Script:wght@400;600&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-
-<script src="lecture-interactive.js"></script>
-<section id="welcome-to-lecture-9" class="level2 title-slide center">
-<h2 class="title-slide center anchored" data-anchor-id="welcome-to-lecture-9">Welcome to Lecture 9</h2>
-<p><strong>Continuous Random Variables</strong></p>
-<p><em>From discrete jumps to smooth curves: modeling the continuous world</em></p>
+<script src="../../../files/lecture_notes/lecture7/lecture-interactive.js"></script>
+<section id="welcome-to-lecture-8" class="level2 center">
+<h2 class="center anchored" data-anchor-id="welcome-to-lecture-8">Welcome to Lecture 8</h2>
+<p><strong>Discrete Random Variables</strong></p>
+<p><em>From outcomes to numbers: quantifying randomness</em></p>
 <hr>
 </section>
 <section id="todays-learning-objectives" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="todays-learning-objectives">Today’s Learning Objectives</h2>
 <p>By the end of this lecture, you will be able to:</p>
 <ul>
-<li><strong>Distinguish</strong> between discrete and continuous random variables (<a href="#sec-dis-cont-vars" class="quarto-xref">Section&nbsp;3</a>)</li>
-<li><strong>Understand</strong> probability density functions (PDFs) and their interpretation (<a href="#sec-pdf" class="quarto-xref">Section&nbsp;4</a>)</li>
-<li><strong>Work with</strong> cumulative distribution functions (CDFs) for continuous variables</li>
-<li><strong>Calculate</strong> probabilities using areas under curves</li>
-<li><strong>Compute</strong> expected values and variances for continuous distributions</li>
-<li><strong>Work with</strong> common continuous distributions (Uniform, Normal, Exponential)</li>
-<li><strong>Apply</strong> the Central Limit Theorem</li>
-<li><strong>Use</strong> <code>python</code> to work with continuous distributions</li>
+<li>Define random variables and distinguish discrete from continuous</li>
+<li>Work with probability mass functions (PMFs) and cumulative distribution functions (CDFs)</li>
+<li>Calculate expected values and variances for discrete random variables</li>
+<li>Apply properties of expectation and variance</li>
+<li>Work with common discrete distributions (Bernoulli, Binomial, Geometric, Poisson)</li>
+<li>Solve real-world problems using discrete random variables</li>
+<li>Use <code>python</code> to compute probabilities and parameters</li>
 </ul>
 <hr>
 </section>
-<section id="sec-dis-cont-vars" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="sec-dis-cont-vars">Review: Discrete vs Continuous</h2>
-<div class="columns">
-<div class="column smaller">
-<div class="type-card discrete-card">
-<h4 class="anchored">
-Discrete Random Variables
-</h4>
-<ul>
-<li>
-<strong>Countable</strong> values (can list them)
-</li>
-<li>
-<strong>Gaps</strong> between possible values
-</li>
-<li>
-Uses <strong>Probability Mass Function (PMF)</strong>
-</li>
-<li>
-<span class="math inline">\(P(X = x)\)</span> makes sense
-</li>
-</ul>
-<p>
-<strong>Examples:</strong> Dice rolls, number of emails, quiz scores
-</p>
-<div class="discrete-plot">
-<canvas id="discreteReview">
-</canvas>
+<section id="what-is-a-random-variable" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="what-is-a-random-variable">What is a Random Variable?</h2>
+<div class="key-insight smaller">
+<p><strong>Definition:</strong> A random variable is a function that assigns a numerical value to each outcome of a random experiment.</p>
+<p><strong>Notation</strong>: Usually denoted by capital letters <strong><span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span></strong></p>
+<p><strong>Key insight</strong>: Random variables <strong>transform</strong> outcomes into <strong>numbers</strong>, making statistical analysis possible</p>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../files/lecture_notes/lecture7/img/rv_y.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
 </div>
-</div><div class="column smaller">
-<div class="type-card continuous-card">
-<h4 class="anchored">
-Continuous Random Variables
-</h4>
-<ul>
-<li>
-<strong>Uncountable</strong> values (infinite possibilities)
-</li>
-<li>
-<strong>No gaps</strong> - any value in an interval
-</li>
-<li>
-Uses <strong>Probability Density Function (PDF)</strong>
-</li>
-<li>
-<span class="math inline">\(P(X = x) = 0\)</span> for any specific value!
-</li>
-</ul>
-<p>
-<strong>Examples:</strong> Height, weight, time, temperature
-</p>
-<div class="continuous-plot">
-<canvas id="continuousReview">
-</canvas>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="sec-pdf" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="sec-pdf">Why <code>P(X = x) = 0</code> for Continuous Variables?</h2>
-<div class="smaller">
-<div class="key-insight">
-<p>For continuous random variables, the probability of any <strong>exact</strong> value is zero!</p>
-<p><strong>Think about it:</strong> What’s the probability someone is exactly 5.7324681… feet tall?</p>
-</div>
-</div>
-<div class="columns">
-<div class="column smaller">
-<p><strong>Instead, we ask:</strong></p>
-<ul>
-<li><p><strong>P(5.7 ≤ X ≤ 5.8)?</strong></p></li>
-<li><p><strong>P(X ≤ 6.0)?</strong></p></li>
-<li><p><strong>P(X &gt; 5.5)?</strong></p></li>
-</ul>
-<p><strong>Key insight:</strong> We calculate probabilities for <strong>intervals</strong>, not exact points.</p>
-</div><div class="column smaller">
-<div class="chart-container">
-<canvas id="continuousPointChart">
-</canvas>
-</div>
-<p><em>Click to see why P(X = exact value) = 0</em></p>
-</div>
+<div class="footnote">
+<p><a href="https://treena.org/courses/hsc-mathematics-advanced/discrete-probability/random-variables/notes">Treena - Random Variables</a></p>
 </div>
 <hr>
 </section>
-<section id="probability-density-function-pdf" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="probability-density-function-pdf">Probability Density Function (PDF)</h2>
+<section id="die-roll-example-mapping-outcomes-to-numbers" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="die-roll-example-mapping-outcomes-to-numbers">Die Roll Example: Mapping Outcomes to Numbers</h2>
+<div style="display: flex; justify-content: center; align-items: center; background: #f8fafc; border-radius: 10px; border: 1px solid #e0e7ef; padding: 12px 18px; max-width: 420px; margin: 0 auto;">
+<table style="border-collapse: separate; border-spacing: 12px 0;">
+<tbody><tr>
+<td style="text-align: center;">
+<!-- Die 1 -->
+<svg width="28" height="28" viewbox="0 0 28 28">
+<rect width="28" height="28" rx="6" fill="#fff" stroke="#e0e7ef"></rect><circle cx="14" cy="14" r="3" fill="#2563eb"></circle>
+</svg>
+</td>
+<td style="text-align: center;">
+<!-- Die 2 -->
+<svg width="28" height="28" viewbox="0 0 28 28">
+<rect width="28" height="28" rx="6" fill="#fff" stroke="#e0e7ef"></rect><circle cx="8" cy="8" r="3" fill="#2563eb"></circle><circle cx="20" cy="20" r="3" fill="#2563eb"></circle>
+</svg>
+</td>
+<td style="text-align: center;">
+<!-- Die 3 -->
+<svg width="28" height="28" viewbox="0 0 28 28">
+<rect width="28" height="28" rx="6" fill="#fff" stroke="#e0e7ef"></rect><circle cx="8" cy="8" r="3" fill="#2563eb"></circle><circle cx="14" cy="14" r="3" fill="#2563eb"></circle><circle cx="20" cy="20" r="3" fill="#2563eb"></circle>
+</svg>
+</td>
+<td style="text-align: center;">
+<!-- Die 4 -->
+<svg width="28" height="28" viewbox="0 0 28 28">
+<rect width="28" height="28" rx="6" fill="#fff" stroke="#e0e7ef"></rect><circle cx="8" cy="8" r="3" fill="#2563eb"></circle><circle cx="8" cy="20" r="3" fill="#2563eb"></circle><circle cx="20" cy="8" r="3" fill="#2563eb"></circle><circle cx="20" cy="20" r="3" fill="#2563eb"></circle>
+</svg>
+</td>
+<td style="text-align: center;">
+<!-- Die 5 -->
+<svg width="28" height="28" viewbox="0 0 28 28">
+<rect width="28" height="28" rx="6" fill="#fff" stroke="#e0e7ef"></rect><circle cx="8" cy="8" r="3" fill="#2563eb"></circle><circle cx="8" cy="20" r="3" fill="#2563eb"></circle><circle cx="14" cy="14" r="3" fill="#2563eb"></circle><circle cx="20" cy="8" r="3" fill="#2563eb"></circle><circle cx="20" cy="20" r="3" fill="#2563eb"></circle>
+</svg>
+</td>
+<td style="text-align: center;">
+<!-- Die 6 -->
+<svg width="28" height="28" viewbox="0 0 28 28">
+<rect width="28" height="28" rx="6" fill="#fff" stroke="#e0e7ef"></rect><circle cx="8" cy="8" r="3" fill="#2563eb"></circle><circle cx="8" cy="14" r="3" fill="#2563eb"></circle><circle cx="8" cy="20" r="3" fill="#2563eb"></circle><circle cx="20" cy="8" r="3" fill="#2563eb"></circle><circle cx="20" cy="14" r="3" fill="#2563eb"></circle><circle cx="20" cy="20" r="3" fill="#2563eb"></circle>
+</svg>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; color: #2563eb; font-weight: 600;">
+1
+</td>
+<td style="text-align: center; color: #2563eb; font-weight: 600;">
+2
+</td>
+<td style="text-align: center; color: #2563eb; font-weight: 600;">
+3
+</td>
+<td style="text-align: center; color: #2563eb; font-weight: 600;">
+4
+</td>
+<td style="text-align: center; color: #2563eb; font-weight: 600;">
+5
+</td>
+<td style="text-align: center; color: #2563eb; font-weight: 600;">
+6
+</td>
+</tr>
+</tbody></table>
+</div>
+<div style="text-align: center; font-size: 0.98em; color: #444; margin-top: 8px;">
+<p><em>Random Variable X maps each die face to its numerical value.</em></p>
+</div>
+<hr>
+</section>
+<section id="why-use-random-variables" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="why-use-random-variables">Why Use Random Variables?</h2>
 <div class="columns">
 <div class="column">
+<p>Random variables allow us to:</p>
+<ul>
+<li><strong>Quantify</strong> outcomes numerically</li>
+<li><strong>Calculate</strong> means, variances, and other statistics</li>
+<li><strong>Model</strong> real-world phenomena</li>
+<li><strong>Make predictions</strong> and decisions</li>
+<li><strong>Compare</strong> different random processes</li>
+</ul>
+<p><strong>Examples</strong>: Height, test scores, number of defects, wait times, stock prices</p>
+</div><div class="column">
+<p><img src="../../../files/lecture_notes/lecture7/img/rv-image.png" class="img-fluid"></p>
+<div class="footnote">
+<p><a href="https://treena.org/courses/hsc-mathematics-advanced/discrete-probability/random-variables/notes">Treena - Random Variables</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="types-of-random-variables" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="types-of-random-variables">Types of Random Variables</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../files/lecture_notes/lecture7/img/rvs.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<div class="key-insight">
+<p>Today we focus on <strong>discrete random variables</strong> - notice there are <strong>gaps</strong> between possible values!</p>
+</div>
+<p><br></p>
+<div class="footnote">
+<p><a href="https://blog.gopenai.com/discrete-vs-continuous-demystifying-the-type-of-random-variables-2f10ee2db9d4">Discrete vs.&nbsp;Continuous: Demystifying the type of Random Variables</a></p>
+</div>
+<hr>
+<section id="discrete-random-variable" class="level4 smaller type-card discrete-card">
+<h4 class="smaller anchored" data-anchor-id="discrete-random-variable">Discrete Random Variable</h4>
+<p>Takes on a <strong>countable</strong> number of values</p>
+<p>Can list all possible values</p>
+<div class="discrete-examples">
+<p><strong>Examples:</strong><br>
+• <strong>Dice rolls:</strong> {1, 2, 3, 4, 5, 6}<br>
+• <strong>Number of emails:</strong> {0, 1, 2, 3, …}<br>
+• <strong>Quiz scores:</strong> {0, 1, 2, …, 10}</p>
+</div>
+<div class="discrete-plot">
+<canvas id="discretePlot">
+</canvas>
+</div>
+</section>
+<hr>
+<section id="continuous-random-variable" class="level4 smaller type-card continuous-card">
+<h4 class="smaller anchored" data-anchor-id="continuous-random-variable">Continuous Random Variable</h4>
+<p>Takes on <strong>uncountably many</strong> values</p>
+<p>Cannot list all possible values</p>
+<div class="continuous-examples">
+<p><strong>Examples:</strong><br>
+• <strong>Height:</strong> Any value in <span class="math inline">\([0, \infty)\)</span><br>
+• <strong>Time:</strong> Any positive real number<br>
+• <strong>Temperature:</strong> Any real number</p>
+</div>
+<div class="continuous-plot">
+<canvas id="continuousPlot">
+</canvas>
+</div>
+</section>
+<hr>
+</section>
+<section id="probability-mass-function-pmf" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="probability-mass-function-pmf">Probability Mass Function (PMF)</h2>
 <div class="summary-card smaller">
 <div style="font-weight: 600; color: #2563eb; margin-bottom: 8px;">
-<p><span style="font-size:1em;"> 🎯 Definition:</span> The <strong>Probability Density Function (PDF)</strong> of a continuous random variable <span class="math inline">\(X\)</span> is a function <span class="math inline">\(f(x)\)</span> such that:</p>
+<p><span style="font-size:1.1em;">Definition:</span> The <strong>Probability Mass Function (PMF)</strong> of a <em>discrete</em> random variable <span class="math inline">\(X\)</span> is:</p>
 </div>
-<div style="margin-bottom: 6px; font-size: 1em;">
-<p><span class="math display">\[P(a \leq X \leq b) = \int_a^b f(x) \, dx\]</span></p>
+<div style="margin-bottom: 10px; font-size: 1.05em;">
+<p><span class="math display">\[P(X = x) = \text{probability that } X \text{ takes the value } x\]</span></p>
 </div>
-</div>
-</div><div class="column">
-<div class="summary-card smaller">
 <div style="font-weight: 600; color: #f97316; margin-bottom: 4px;">
-<p>Properties of PDF:</p>
+<p>Properties of PMF:</p>
 </div>
 <ul style="margin-top: 0; margin-bottom: 0.5em;">
 <li>
-<span class="math inline">\(f(x) \geq 0\)</span> for all <span class="math inline">\(x\)</span>
+<span class="math inline">\(P(X = x) \geq 0\)</span> for all <span class="math inline">\(x\)</span>
 </li>
 <li>
-<span class="math inline">\(\int_{-\infty}^{\infty} f(x) \, dx = 1\)</span>
-</li>
-<li>
-<span class="math inline">\(f(x)\)</span> is NOT a probability - it’s a density!
+<span class="math inline">\(\sum_{\text{all } x} P(X = x) = 1\)</span>
 </li>
 </ul>
-<div style="font-weight: 600; color: #059669; margin-top: 12px; margin-bottom: 4px;">
-<p>Key Insight:</p>
-</div>
-<div style="font-size: 0.9em; color: var(--neutral-dark);">
-<p>The area under the PDF curve between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> gives the probability that <span class="math inline">\(X\)</span> falls in that interval.</p>
-</div>
-</div>
-</div>
 </div>
 <hr>
-<section id="interactive-pdf-demo-understanding-density" class="level3 smaller interactive-demo">
-<h3 class="smaller anchored" data-anchor-id="interactive-pdf-demo-understanding-density">Interactive PDF Demo: Understanding Density</h3>
+<section id="interactive-pmf-demo-fair-die" class="level3 interactive-demo">
+<h3 class="anchored" data-anchor-id="interactive-pmf-demo-fair-die">Interactive PMF Demo: Fair Die</h3>
 <div class="demo-controls">
-<button onclick="updatePDFDemo()">
-New Random Variable
+<button onclick="updateDieChart()">
+Roll Die
 </button>
-<p><select id="pdfType" onchange="updatePDFDemo()"> <option value="uniform">Uniform Distribution</option> <option value="normal">Normal Distribution</option> <option value="exponential">Exponential Distribution</option> </select> <label>Interval: [<input type="number" id="intervalA" value="1" step="0.1" onchange="updatePDFDemo()"> , <input type="number" id="intervalB" value="2" step="0.1" onchange="updatePDFDemo()">]</label></p>
+<p><select id="dieTrials" onchange="updateDieChart()"> <option value="100">100 trials</option> <option value="500">500 trials</option> <option value="1000" selected="">1000 trials</option> <option value="5000">5000 trials</option> <option value="10000">10000 trials</option> </select> <button onclick="resetDieChart()">Reset</button> <span>Theoretical vs Observed Frequencies</span></p>
 </div>
 <div class="demo-stats">
-<div id="pdfStats" style="margin-top: 8px; font-size: 0.9em; color: var(--neutral-medium);">
-<p><strong>Probability = Area under curve:</strong> <span id="pdfAreaText">Select an interval to see probability</span></p>
+<div id="dieStats" style="margin-top: 8px; font-size: 0.8em; color: var(--neutral-medium);">
+<p><strong>Statistics:</strong> <span id="dieStatsText">Click “Roll Die” to see statistics</span></p>
 </div>
 </div>
 <div class="chart-container">
-<canvas id="pdfChart">
+<canvas id="dieChart">
 </canvas>
+</div>
+</section>
+<hr>
+</section>
+<section id="pmf-example-two-coin-flips" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="pmf-example-two-coin-flips">PMF Example: Two Coin Flips</h2>
+<section id="two-coin-flips---number-of-heads" class="level4 summary-card smaller">
+<h4 class="anchored" data-anchor-id="two-coin-flips---number-of-heads">Two Coin Flips - Number of Heads</h4>
+<p>Let <span class="math inline">\(X\)</span> = number of heads in two coin flips</p>
+<p><strong>Sample Space:</strong> <span class="math inline">\(\{HH, HT, TH, TT\}\)</span></p>
+<div class="columns">
+<div class="column">
+<div class="coin-flip-demo">
+<p><span class="coin" data-index="0" onclick="flipCoinDemo(this, 0)">H</span> <span class="coin" data-index="1" onclick="flipCoinDemo(this, 1)">T</span> <span class="coin" data-index="2" onclick="flipCoinDemo(this, 2)">H</span> <span class="coin" data-index="3" onclick="flipCoinDemo(this, 3)">T</span></p>
+</div>
+<div id="coinOutcome" class="small-text" style="margin: 4px 0 0 0; color: #2563eb; font-weight: 600;">
+Current outcome: H T H T
+</div>
+<p><em>Click coins to flip them!</em></p>
+<div class="small-text" style="color: #888; margin-bottom: 2px;">
+Table summarizes by number of heads, not the exact sequence.
+</div>
+<table id="coinTable" class="compact-table smaller">
+<thead>
+<tr>
+<th>
+<span class="math inline">\(x\)</span> (heads)
+</th>
+<th>
+Outcomes
+</th>
+<th>
+<span class="math inline">\(P(X = x)\)</span>
+</th>
+<th>
+Empirical
+</th>
+</tr>
+</thead>
+<tbody>
+<tr id="row-0">
+<td>
+0
+</td>
+<td>
+TT
+</td>
+<td>
+0.25
+</td>
+<td id="emp-0">
+0
+</td>
+</tr>
+<tr id="row-1">
+<td>
+1
+</td>
+<td>
+HT, TH
+</td>
+<td>
+0.50
+</td>
+<td id="emp-1">
+0
+</td>
+</tr>
+<tr id="row-2">
+<td>
+2
+</td>
+<td>
+HH
+</td>
+<td>
+0.25
+</td>
+<td id="emp-2">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<div id="coinStats" class="small-text" style="margin-top: 4px; color: #444;">
+Empirical probability updates as you flip!
+</div>
+</div><div class="column">
+<div class="chart-container">
+<canvas id="coinChart">
+</canvas>
+</div>
+</div>
 </div>
 </section>
 <hr>
@@ -406,16 +550,14 @@ New Random Variable
 <div class="summary-card smaller">
 <div class="columns">
 <div class="column">
-<p>For continuous random variables, the <strong>CDF</strong> is:</p>
-<p><span class="math display">\[F(x) = P(X \leq x) = \int_{-\infty}^x f(t) \, dt\]</span></p>
-<p><strong>Key relationship:</strong> <span class="math display">\[f(x) = \frac{d}{dx}F(x)\]</span></p>
-<p>The PDF is the <strong>derivative</strong> of the CDF!</p>
+<p>The <strong>cumulative distribution function</strong> of a random variable <span class="math inline">\(X\)</span> is:</p>
+<p><span class="math display">\[F(x) = P(X \leq x)\]</span></p>
+<p><strong>Properties of CDF</strong>: 1. <span class="math inline">\(F(x)\)</span> is non-decreasing 2. <span class="math inline">\(\lim_{x \to -\infty} F(x) = 0\)</span> 3. <span class="math inline">\(\lim_{x \to \infty} F(x) = 1\)</span> 4. <span class="math inline">\(F(x)\)</span> is right-continuous</p>
 </div><div class="column">
 <div class="chart-container">
-<canvas id="cdfContinuousChart">
+<canvas id="cdfChart">
 </canvas>
 </div>
-<p><em>Click anywhere to see F(x) = P(X ≤ x) for that point</em></p>
 </div>
 </div>
 </div>
@@ -423,282 +565,155 @@ New Random Variable
 </section>
 <section id="expected-value-and-variance" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="expected-value-and-variance">Expected Value and Variance</h2>
-<div class="columns">
-<div class="column smaller">
-<p><strong>Expected Value:</strong> <span class="math display">\[E[X] = \mu = \int_{-\infty}^{\infty} x \cdot f(x) \, dx\]</span></p>
-<p><strong>Variance:</strong></p>
-<p><span class="math display">\[\text{Var}(X) = \sigma^2 = \int_{-\infty}^{\infty} (x - \mu)^2 f(x) \, dx = E[X^2] - (E[X])^2\]</span></p>
-<p><strong>Where:</strong></p>
-<p><span class="math display">\[E[X^2] = \int_{-\infty}^{\infty} x^2 \cdot f(x) \, dx\]</span></p>
-</div><div class="column">
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Notice: <strong>Integrals</strong> replace <strong>sums</strong> when moving from discrete to continuous!</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="common-continuous-distributions" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="common-continuous-distributions">Common Continuous Distributions</h2>
-<section id="uniform-distribution" class="level4 dist-card">
-<h4 class="anchored" data-anchor-id="uniform-distribution">Uniform Distribution</h4>
-<p>All values equally likely in an interval</p>
-<p><strong>Parameters:</strong> <span class="math inline">\(a\)</span> (min), <span class="math inline">\(b\)</span> (max)</p>
-<p><strong>PDF:</strong> <span class="math inline">\(f(x) = \frac{1}{b-a}\)</span> for <span class="math inline">\(a \leq x \leq b\)</span></p>
-<p><strong>Mean:</strong> <span class="math inline">\(\frac{a+b}{2}\)</span></p>
-<p><strong>Variance:</strong> <span class="math inline">\(\frac{(b-a)^2}{12}\)</span></p>
-<p><strong>Use:</strong> Random numbers, waiting times</p>
-</section>
-<section id="normal-distribution" class="level4 dist-card">
-<h4 class="anchored" data-anchor-id="normal-distribution">Normal Distribution</h4>
-<p>Bell-shaped, symmetric</p>
-<p><strong>Parameters:</strong> <span class="math inline">\(\mu\)</span> (mean), <span class="math inline">\(\sigma^2\)</span> (variance)</p>
-<p><strong>PDF:</strong> <span class="math inline">\(f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span></p>
-<p><strong>Mean:</strong> <span class="math inline">\(\mu\)</span></p>
-<p><strong>Variance:</strong> <span class="math inline">\(\sigma^2\)</span></p>
-<p><strong>Use:</strong> Heights, test scores, errors</p>
-</section>
-<section id="exponential-distribution" class="level4 dist-card">
-<h4 class="anchored" data-anchor-id="exponential-distribution">Exponential Distribution</h4>
-<p>Models waiting times</p>
-<p><strong>Parameters:</strong> <span class="math inline">\(\lambda\)</span> (rate)</p>
-<p><strong>PDF:</strong> <span class="math inline">\(f(x) = \lambda e^{-\lambda x}\)</span> for <span class="math inline">\(x \geq 0\)</span></p>
-<p><strong>Mean:</strong> <span class="math inline">\(\frac{1}{\lambda}\)</span></p>
-<p><strong>Variance:</strong> <span class="math inline">\(\frac{1}{\lambda^2}\)</span></p>
-<p><strong>Use:</strong> Time between events, lifetimes</p>
-</section>
-</section>
-<section id="the-normal-distribution" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="the-normal-distribution">The Normal Distribution</h2>
-<div class="summary-card smaller">
-<div class="columns">
-<div class="column">
-<section id="why-normal-is-special" class="level4">
-<h4 class="anchored" data-anchor-id="why-normal-is-special">Why Normal is Special</h4>
-<ul>
-<li><strong>Central Limit Theorem</strong>: Sample means approach normal</li>
-<li><strong>68-95-99.7 Rule</strong>:
-<ul>
-<li><strong>68%</strong> within <span class="math inline">\(1 \sigma\)</span> of <span class="math inline">\(\mu\)</span></li>
-<li><strong>95%</strong> within <span class="math inline">\(2 \sigma\)</span> of <span class="math inline">\(\mu\)</span><br>
-</li>
-<li><strong>99.7%</strong> within <span class="math inline">\(3 \sigma\)</span> of <span class="math inline">\(\mu\)</span></li>
-</ul></li>
-<li><strong>Standard Normal</strong>: <span class="math inline">\(\mu = 0\)</span> , <span class="math inline">\(\sigma = 1\)</span></li>
-</ul>
-</section>
-<section id="z-score-transformation" class="level4">
-<h4 class="anchored" data-anchor-id="z-score-transformation">Z-Score Transformation</h4>
-<p><span class="math display">\[Z = \frac{X - \mu}{\sigma}\]</span></p>
-</section>
-</div><div class="column">
-<div class="chart-container">
-<canvas id="normalChart">
-</canvas>
-</div>
-</div>
-</div>
+<p>The <strong>expected value</strong> of a discrete random variable <span class="math inline">\(X\)</span> is:</p>
+<p><span class="math display">\[E[X] = \mu = \sum_{\text{all } x} x \cdot P(X = x)\]</span></p>
+<p>The <strong>variance</strong> of a random variable <span class="math inline">\(X\)</span> measures spread around the mean:</p>
+<p><span class="math display">\[\text{Var}(X) = \sigma^2 = E[(X - \mu)^2] = E[X^2] - (E[X])^2\]</span></p>
+<div class="key-insight">
+<p>Expected value represents the <strong>long-run average</strong> if we repeat the experiment many times.</p>
 </div>
 <hr>
 </section>
-<section id="practice-problem-1-uniform-distribution" class="level2 smaller scrollable">
-<h2 class="smaller scrollable anchored" data-anchor-id="practice-problem-1-uniform-distribution">Practice Problem 1: Uniform Distribution</h2>
+<section id="law-of-large-numbers-demo" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="law-of-large-numbers-demo">Law of Large Numbers Demo</h2>
+<section id="law-of-large-numbers-demo-1" class="level3 smaller interactive-demo">
+<h3 class="smaller anchored" data-anchor-id="law-of-large-numbers-demo-1">Law of Large Numbers Demo</h3>
+<div class="demo-controls smaller">
+<button onclick="runLLNDemo()">
+Run Simulation
+</button>
+<p><select id="llnTrials"> <option value="100">100 trials</option> <option value="500">500 trials</option> <option value="1000" selected="">1000 trials</option> <option value="5000">5000 trials</option> </select></p>
+</div>
+<div class="chart-container">
+<canvas id="llnChart">
+</canvas>
+</div>
+<p><em>Watch how the sample mean converges to the expected value!</em> {.smaller}</p>
+</section>
+<hr>
+</section>
+<section id="common-discrete-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="common-discrete-distributions">Common Discrete Distributions</h2>
+<section id="bernoulli" class="level4 dist-card">
+<h4 class="anchored" data-anchor-id="bernoulli">Bernoulli</h4>
+<p>Single trial, two outcomes</p>
+<p><strong>Parameters:</strong> <span class="math inline">\(p\)</span> (success probability)</p>
+<p><strong>PMF:</strong> <span class="math inline">\(P(X = 1) = p\)</span>, <span class="math inline">\(P(X = 0) = 1-p\)</span></p>
+<p><strong>Mean:</strong> <span class="math inline">\(p\)</span></p>
+<p><strong>Variance:</strong> <span class="math inline">\(p(1-p)\)</span></p>
+</section>
+<section id="binomial" class="level4 dist-card">
+<h4 class="anchored" data-anchor-id="binomial">Binomial</h4>
+<p><span class="math inline">\(n\)</span> independent Bernoulli trials</p>
+<p><strong>Parameters:</strong> <span class="math inline">\(n\)</span> (trials), <span class="math inline">\(p\)</span> (success prob.)</p>
+<p><strong>PMF:</strong> <span class="math inline">\(P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\)</span></p>
+<p><strong>Mean:</strong> <span class="math inline">\(np\)</span></p>
+<p><strong>Variance:</strong> <span class="math inline">\(np(1-p)\)</span></p>
+</section>
+<section id="geometric" class="level4 dist-card">
+<h4 class="anchored" data-anchor-id="geometric">Geometric</h4>
+<p>Trials until first success</p>
+<p><strong>Parameters:</strong> <span class="math inline">\(p\)</span> (success probability)</p>
+<p><strong>PMF:</strong> <span class="math inline">\(P(X = k) = (1-p)^{k-1} p\)</span></p>
+<p><strong>Mean:</strong> <span class="math inline">\(1/p\)</span></p>
+<p><strong>Variance:</strong> <span class="math inline">\((1-p)/p^2\)</span></p>
+</section>
+<section id="poisson" class="level4 dist-card">
+<h4 class="anchored" data-anchor-id="poisson">Poisson</h4>
+<p>Events in fixed interval</p>
+<p><strong>Parameters:</strong> <span class="math inline">\(\lambda\)</span> (average rate)</p>
+<p><strong>PMF:</strong> <span class="math inline">\(P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}\)</span></p>
+<p><strong>Mean:</strong> <span class="math inline">\(\lambda\)</span></p>
+<p><strong>Variance:</strong> <span class="math inline">\(\lambda\)</span></p>
+</section>
+<hr>
+</section>
+<section id="interactive-distribution-explorer" class="level2 smaller scrollable">
+<h2 class="smaller scrollable anchored" data-anchor-id="interactive-distribution-explorer">Interactive Distribution Explorer</h2>
+<section id="distribution-visualizer" class="level3 interactive-demo">
+<h3 class="anchored" data-anchor-id="distribution-visualizer">Distribution Visualizer</h3>
+<div class="demo-controls">
+<p><select id="distType" onchange="updateDistribution()"> <option value="binomial">Binomial</option> <option value="geometric">Geometric</option> <option value="poisson">Poisson</option> </select> <label>Parameter 1: <input type="number" id="param1" value="10" min="1" max="50" onchange="updateDistribution()"></label> <label>Parameter 2: <input type="number" id="param2" value="0.3" min="0.01" max="0.99" step="0.01" onchange="updateDistribution()"></label></p>
+</div>
+<div class="chart-container">
+<canvas id="distChart">
+</canvas>
+</div>
+</section>
+<hr>
+</section>
+<section id="practice-problem-1" class="level2 smaller scrollable">
+<h2 class="smaller scrollable anchored" data-anchor-id="practice-problem-1">Practice Problem 1</h2>
 <div class="practice-problem">
-<p>A bus arrives uniformly between 10:00 AM and 10:20 AM. Let <span class="math inline">\(X\)</span> = arrival time in minutes after 10:00 AM.</p>
-<p><strong>(a)</strong> What is the PDF of <span class="math inline">\(X\)</span>?<br>
-<strong>(b)</strong> What’s the probability the bus arrives between 10:05 and 10:12?<br>
-<strong>(c)</strong> What’s the expected arrival time?</p>
+<p>A box contains 3 red balls and 2 blue balls. Two balls are drawn without replacement. Let <span class="math inline">\(X\)</span> = number of red balls drawn. Find the PMF of <span class="math inline">\(X\)</span>.</p>
 <button class="show-solution smaller" onclick="toggleSolution('sol1')">
 Show Solution
 </button>
 <div class="proof solution" data-id="sol1">
-<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong> <span class="math inline">\(X \sim \text{Uniform}(0, 20)\)</span> <span class="math display">\[f(x) = \frac{1}{20-0} = \frac{1}{20} \text{ for } 0 \leq x \leq 20\]</span></p>
-<p><strong>(b)</strong> <span class="math inline">\(P(5 \leq X \leq 12) = \int_5^{12} \frac{1}{20} dx = \frac{1}{20} \times (12-5) = \frac{7}{20} = 0.35\)</span></p>
-<p><strong>(c)</strong> <span class="math inline">\(E[X] = \frac{a+b}{2} = \frac{0+20}{2} = 10\)</span> minutes after 10:00 AM</p>
+<p><span class="proof-title"><em>Solution</em>. </span><span class="math inline">\(X\)</span> can take values 0, 1, or 2.</p>
+<p><span class="math inline">\(P(X = 0) = \frac{\binom{3}{0}\binom{2}{2}}{\binom{5}{2}} = \frac{1 \times 1}{10} = \frac{1}{10}\)</span></p>
+<p><span class="math inline">\(P(X = 1) = \frac{\binom{3}{1}\binom{2}{1}}{\binom{5}{2}} = \frac{3 \times 2}{10} = \frac{6}{10}\)</span></p>
+<p><span class="math inline">\(P(X = 2) = \frac{\binom{3}{2}\binom{2}{0}}{\binom{5}{2}} = \frac{3 \times 1}{10} = \frac{3}{10}\)</span></p>
+<p><strong>Check:</strong> <span class="math inline">\(\frac{1}{10} + \frac{6}{10} + \frac{3}{10} = 1\)</span> ✓</p>
 </div>
 </div>
 <hr>
 </section>
-<section id="practice-problem-2-normal-distribution" class="level2 smaller scrollable">
-<h2 class="smaller scrollable anchored" data-anchor-id="practice-problem-2-normal-distribution">Practice Problem 2: Normal Distribution</h2>
+<section id="practice-problem-2-expected-value" class="level2 smaller scrollable">
+<h2 class="smaller scrollable anchored" data-anchor-id="practice-problem-2-expected-value">Practice Problem 2: Expected Value</h2>
 <div class="practice-problem">
-<p>Heights of adult women are normally distributed with μ = 64 inches and σ = 2.5 inches.</p>
-<p><strong>(a)</strong> What’s the probability a woman is taller than 67 inches?<br>
-<strong>(b)</strong> What height represents the 90th percentile?<br>
-<strong>(c)</strong> What’s the probability a woman is between 62 and 66 inches tall?</p>
+<p>Using the red balls example from Problem 1, find <span class="math inline">\(E[X]\)</span> and <span class="math inline">\(\text{Var}(X)\)</span>.</p>
 <button class="show-solution smaller" onclick="toggleSolution('sol2')">
 Show Solution
 </button>
 <div class="proof solution" data-id="sol2">
-<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong> <span class="math inline">\(P(X &gt; 67) = P\left(Z &gt; \frac{67-64}{2.5}\right) = P(Z &gt; 1.2) = 1 - 0.8849 = 0.1151\)</span></p>
-<p><strong>(b)</strong> For 90th percentile: <span class="math inline">\(P(X \leq x) = 0.90\)</span><br>
-<span class="math inline">\(z_{0.90} = 1.28\)</span>, so <span class="math inline">\(x = 64 + 1.28(2.5) = 67.2\)</span> inches</p>
-<p><strong>(c)</strong> <span class="math inline">\(P(62 \leq X \leq 66) = P\left(\frac{62-64}{2.5} \leq Z \leq \frac{66-64}{2.5}\right)\)</span><br>
-<span class="math inline">\(= P(-0.8 \leq Z \leq 0.8) = 0.7881 - 0.2119 = 0.5762\)</span></p>
+<p><span class="proof-title"><em>Solution</em>. </span><strong>Expected Value:</strong> <span class="math display">\[E[X] = 0 \times \frac{1}{10} + 1 \times \frac{6}{10} + 2 \times \frac{3}{10} = 0 + \frac{6}{10} + \frac{6}{10} = 1.2\]</span></p>
+<p><strong>Variance:</strong> <span class="math display">\[E[X^2] = 0^2 \times \frac{1}{10} + 1^2 \times \frac{6}{10} + 2^2 \times \frac{3}{10} = 0 + \frac{6}{10} + \frac{12}{10} = 1.8\]</span></p>
+<p><span class="math display">\[\text{Var}(X) = E[X^2] - (E[X])^2 = 1.8 - (1.2)^2 = 1.8 - 1.44 = 0.36\]</span></p>
+<p><strong>Standard Deviation:</strong> <span class="math inline">\(\sigma = \sqrt{0.36} = 0.6\)</span></p>
 </div>
 </div>
 <hr>
 </section>
-<section id="practice-problem-3-exponential-distribution" class="level2 smaller scrollable">
-<h2 class="smaller scrollable anchored" data-anchor-id="practice-problem-3-exponential-distribution">Practice Problem 3: Exponential Distribution</h2>
+<section id="practice-problem-3" class="level2 smaller scrollable">
+<h2 class="smaller scrollable anchored" data-anchor-id="practice-problem-3">Practice Problem 3</h2>
 <div class="practice-problem">
-<p>The time between customer arrivals at a store follows an exponential distribution with an average of 5 minutes between arrivals.</p>
-<p><strong>(a)</strong> What is the PDF?<br>
-<strong>(b)</strong> What’s the probability the next customer arrives within 3 minutes?<br>
-<strong>(c)</strong> What’s the probability no customer arrives in the next 10 minutes?</p>
+<p>A student takes a 10-question multiple choice quiz with 4 options per question. If the student guesses randomly, what’s the probability of getting exactly 3 correct?</p>
 <button class="show-solution smaller" onclick="toggleSolution('sol3')">
 Show Solution
 </button>
 <div class="proof solution" data-id="sol3">
-<p><span class="proof-title"><em>Solution</em>. </span><strong>(a)</strong> Average = 5 minutes = <span class="math inline">\(\frac{1}{\lambda}\)</span>, so <span class="math inline">\(\lambda = 0.2\)</span><br>
-<span class="math display">\[f(x) = 0.2e^{-0.2x} \text{ for } x \geq 0\]</span></p>
-<p><strong>(b)</strong> <span class="math inline">\(P(X \leq 3) = \int_0^3 0.2e^{-0.2x} dx = 1 - e^{-0.2 \times 3} = 1 - e^{-0.6} = 0.4512\)</span></p>
-<p><strong>(c)</strong> <span class="math inline">\(P(X &gt; 10) = e^{-0.2 \times 10} = e^{-2} = 0.1353\)</span></p>
+<p><span class="proof-title"><em>Solution</em>. </span>This is a binomial distribution with <span class="math inline">\(n = 10\)</span>, <span class="math inline">\(p = 1/4 = 0.25\)</span></p>
+<p><span class="math display">\[P(X = 3) = \binom{10}{3} \times (0.25)^3 \times (0.75)^7\]</span></p>
+<p><span class="math display">\[P(X = 3) = 120 \times 0.015625 \times 0.1335 \approx 0.2503\]</span></p>
+<p>So there’s about a 25% chance of getting exactly 3 correct by guessing.</p>
 </div>
 </div>
 <hr>
 </section>
-<section id="central-limit-theorem" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="central-limit-theorem">Central Limit Theorem</h2>
-<section id="interactive-clt-demo-sample-means-approach-normal" class="level3 smaller interactive-demo">
-<h3 class="smaller anchored" data-anchor-id="interactive-clt-demo-sample-means-approach-normal">Interactive CLT Demo: Sample Means Approach Normal</h3>
-<div class="demo-controls">
-<p><select id="cltPopulation" onchange="updateCLTDemo()"> <option value="uniform">Uniform Population</option> <option value="exponential">Exponential Population</option> <option value="bimodal">Bimodal Population</option> </select> <label>Sample Size: <input type="number" id="cltSampleSize" value="30" min="5" max="100" onchange="updateCLTDemo()"></label> <button onclick="runCLTSimulation()">Run Simulation</button></p>
-</div>
-<div class="clt-container">
-<div class="chart-container">
-<canvas id="cltPopChart">
-</canvas>
-<div class="chart-title">
-Population Distribution
-</div>
-</div>
-<div class="chart-container">
-<canvas id="cltSampleChart">
-</canvas>
-<div class="chart-title">
-Sample Means Distribution
-</div>
-</div>
-</div>
-<div id="cltStats" style="margin-top: 8px; font-size: 0.9em;">
-<p><strong>CLT in Action:</strong> <span id="cltStatsText">Run simulation to see the magic!</span></p>
-</div>
-</section>
-<hr>
-</section>
-<section id="transformations-of-random-variables" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="transformations-of-random-variables">Transformations of Random Variables</h2>
-<div class="columns">
-<div class="column">
-<section id="linear-transformations" class="level4">
-<h4 class="anchored" data-anchor-id="linear-transformations">Linear Transformations</h4>
-<p>If <span class="math inline">\(Y = aX + b\)</span>, then:</p>
-<ul>
-<li><span class="math inline">\(E[Y] = aE[X] + b\)</span></li>
-<li><span class="math inline">\(\text{Var}(Y) = a^2\text{Var}(X)\)</span></li>
-<li>If <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span>, then <span class="math inline">\(Y \sim N(a\mu + b, a^2\sigma^2)\)</span></li>
-</ul>
-</section>
-</div><div class="column">
-<section id="standardization" class="level4">
-<h4 class="anchored" data-anchor-id="standardization">Standardization</h4>
-<p><span class="math display">\[Z = \frac{X - \mu}{\sigma} \sim N(0, 1)\]</span></p>
-<div class="key-insight">
-<p><strong>Important</strong>: Normal distributions are closed under linear transformations!</p>
-</div>
-</section>
-</div>
-</div>
-<hr>
-</section>
-<section id="comparing-discrete-and-continuous" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="comparing-discrete-and-continuous">Comparing Discrete and Continuous</h2>
-<div class="comparison-table">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 31%">
-<col style="width: 37%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Property</th>
-<th>Discrete</th>
-<th>Continuous</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Probability Function</strong></td>
-<td>PMF: <span class="math inline">\(P(X = x)\)</span></td>
-<td>PDF: <span class="math inline">\(f(x)\)</span></td>
-</tr>
-<tr class="even">
-<td><strong>Exact Value Probability</strong></td>
-<td><span class="math inline">\(P(X = x) &gt; 0\)</span> possible</td>
-<td><span class="math inline">\(P(X = x) = 0\)</span> always</td>
-</tr>
-<tr class="odd">
-<td><strong>Interval Probability</strong></td>
-<td><span class="math inline">\(\sum P(X = x_i)\)</span></td>
-<td><span class="math inline">\(\int_a^b f(x) dx\)</span></td>
-</tr>
-<tr class="even">
-<td><strong>Expected Value</strong></td>
-<td><span class="math inline">\(\sum x \cdot P(X = x)\)</span></td>
-<td><span class="math inline">\(\int x \cdot f(x) dx\)</span></td>
-</tr>
-<tr class="odd">
-<td><strong>Variance</strong></td>
-<td><span class="math inline">\(\sum (x-\mu)^2 P(X = x)\)</span></td>
-<td><span class="math inline">\(\int (x-\mu)^2 f(x) dx\)</span></td>
-</tr>
-<tr class="even">
-<td><strong>CDF</strong></td>
-<td><span class="math inline">\(\sum_{x_i \leq x} P(X = x_i)\)</span></td>
-<td><span class="math inline">\(\int_{-\infty}^x f(t) dt\)</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-</section>
-<section id="properties-of-continuous-distributions" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="properties-of-continuous-distributions">Properties of Continuous Distributions</h2>
+<section id="properties-of-expected-value" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="properties-of-expected-value">Properties of Expected Value</h2>
 <div class="summary-card smaller">
 <div class="columns">
 <div class="column">
-<section id="key-properties" class="level4">
-<h4 class="anchored" data-anchor-id="key-properties">Key Properties</h4>
+<section id="linearity-of-expectation" class="level4">
+<h4 class="anchored" data-anchor-id="linearity-of-expectation">Linearity of Expectation</h4>
 <ol type="1">
-<li><p><strong>Memoryless Property</strong> (Exponential only):<br>
-<span class="math inline">\(P(X &gt; s+t | X &gt; s) = P(X &gt; t)\)</span></p></li>
-<li><p><strong>Symmetry</strong> (Normal):<br>
-<span class="math inline">\(P(X \leq \mu - a) = P(X \geq \mu + a)\)</span></p></li>
-<li><p><strong>Scaling Invariance</strong> (Normal):<br>
-Linear combinations of normals are normal</p></li>
+<li><span class="math inline">\(E[c] = c\)</span> (constant)</li>
+<li><span class="math inline">\(E[cX] = c \cdot E[X]\)</span> (scaling)</li>
+<li><span class="math inline">\(E[X + Y] = E[X] + E[Y]\)</span> (additivity)</li>
+<li><span class="math inline">\(E[aX + bY + c] = aE[X] + bE[Y] + c\)</span></li>
 </ol>
 </section>
 </div><div class="column">
-<section id="useful-relationships" class="level4">
-<h4 class="anchored" data-anchor-id="useful-relationships">Useful Relationships</h4>
+<section id="variance-properties" class="level4">
+<h4 class="anchored" data-anchor-id="variance-properties">Variance Properties</h4>
 <ul>
-<li><strong>CDF to PDF</strong>: <span class="math inline">\(f(x) = F'(x)\)</span></li>
-<li><strong>PDF to CDF</strong>: <span class="math inline">\(F(x) = \int_{-\infty}^x f(t) dt\)</span></li>
-<li><strong>Complementary CDF</strong>: <span class="math inline">\(P(X &gt; x) = 1 - F(x)\)</span></li>
+<li><span class="math inline">\(\text{Var}(aX + b) = a^2 \text{Var}(X)\)</span></li>
+<li><span class="math inline">\(\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y)\)</span> (if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent)</li>
 </ul>
 <div class="key-insight">
-<p><strong>Remember</strong>: Area under PDF = 1, but PDF values can exceed 1!</p>
+<p><strong>Important</strong>: Property 3 holds even if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are dependent!</p>
 </div>
 </section>
 </div>
@@ -708,53 +723,52 @@ Linear combinations of normals are normal</p></li>
 </section>
 <section id="key-takeaways" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
-<div class="summary-card smaller key-takeaways">
+<div class="summary-card smaller">
 <div class="columns">
 <div class="column">
 <section id="main-concepts" class="level4">
 <h4 class="anchored" data-anchor-id="main-concepts">Main Concepts</h4>
 <ul>
-<li><strong>Continuous variables</strong> require PDFs, not PMFs</li>
-<li><strong>Probabilities</strong> are areas under curves, not function values</li>
-<li><strong>Integration</strong> replaces summation for continuous distributions</li>
-<li><strong>Normal distribution</strong> is central due to CLT</li>
+<li><strong>Random variables</strong> transform outcomes into numbers for mathematical analysis</li>
+<li><strong>PMF</strong> gives probabilities for specific values; <strong>CDF</strong> gives cumulative probabilities</li>
+<li><strong>Expected value</strong> is the long-run average; <strong>variance</strong> measures spread</li>
 </ul>
 </section>
 </div><div class="column">
 <section id="distribution-selection" class="level4">
 <h4 class="anchored" data-anchor-id="distribution-selection">Distribution Selection</h4>
-<p>Choose distributions based on the data characteristics:</p>
+<p>Choose distributions based on the underlying process:</p>
 <ul>
-<li><strong>Uniform</strong> for equally likely intervals</li>
-<li><strong>Normal</strong> for symmetric, bell-shaped data<br>
-</li>
-<li><strong>Exponential</strong> for waiting times/lifetimes</li>
-<li><strong>Use CLT</strong> when working with sample means</li>
+<li><p><strong>Bernoulli</strong> for single trials</p></li>
+<li><p><strong>Binomial</strong> for fixed trials</p></li>
+<li><p><strong>Geometric</strong> for waiting times</p></li>
+<li><p><strong>Poisson</strong> for rates</p></li>
 </ul>
 </section>
 <section id="key-principle" class="level4">
 <h4 class="anchored" data-anchor-id="key-principle">Key Principle</h4>
 <ul>
-<li><strong>Central Limit Theorem</strong> makes normal distributions ubiquitous in statistics</li>
+<li><strong>Law of Large Numbers</strong> connects theoretical expectations with observed averages</li>
 </ul>
 </section>
 </div>
 </div>
 </div>
+<hr>
 </section>
 <section id="looking-ahead" class="level2 smaller">
 <h2 class="smaller anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
-<section id="next-lecture-statistical-inference" class="level4 summary-card smaller">
-<h4 class="anchored" data-anchor-id="next-lecture-statistical-inference">Next Lecture: Statistical Inference</h4>
+<section id="next-lecture-continuous-random-variables" class="level4 summary-card smaller">
+<h4 class="anchored" data-anchor-id="next-lecture-continuous-random-variables">Next Lecture: Continuous Random Variables</h4>
 <p><strong>Topics we’ll cover:</strong></p>
 <ul>
-<li>Sampling distributions</li>
-<li>Confidence intervals</li>
-<li>Hypothesis testing</li>
-<li>p-values and significance</li>
+<li><p>Probability density functions (PDFs)</p></li>
+<li><p>Normal distribution</p></li>
+<li><p>Exponential distribution</p></li>
+<li><p>Central Limit Theorem applications</p></li>
 </ul>
 <div class="connection">
-<p><strong>Connection</strong>: Continuous distributions (especially normal) form the foundation for statistical inference</p>
+<p><strong>Connection</strong>: Discrete distributions often approximate continuous ones, and vice versa</p>
 </div>
 </section>
 <hr>
@@ -763,34 +777,32 @@ Linear combinations of normals are normal</p></li>
 <h2 class="center anchored" data-anchor-id="questions">Questions?</h2>
 <p><strong>Office Hours</strong>: 11AM on Thursday (link on Canvas)</p>
 <p><strong>Email</strong>: nmathlouthi@ucsb.edu</p>
-<p><strong>Next Class</strong>: Statistical Inference and Hypothesis Testing</p>
-<hr>
+<p><strong>Next Class</strong>: Continuous Random Variables</p>
 </section>
 <section id="resources" class="level2">
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <div style="background: #f8fafc; border-radius: 10px; border: 1px solid #e0e7ef; padding: 16px 20px; margin: 8px 0;">
 <ul style="list-style: none; padding: 0; margin: 0;">
 <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
-<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #2563eb; border-radius: 50%;"></span> <strong>Read</strong> <a href="../../../files/Book/os4_for_screen_reader.pdf" style="color: #2563eb; text-decoration: none;">OpenIntro Statistics</a> <em style="color: #666;">Chapter 4 sections 4.1-4.3</em>
+<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #2563eb; border-radius: 50%;"></span> <strong>Read</strong> <a href="../../../files/Book/os4_for_screen_reader.pdf" style="color: #2563eb; text-decoration: none;">OpenIntro Statistics</a> <em style="color: #666;">Chapter 3 section 3.4</em>
 </li>
 <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
-<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #f97316; border-radius: 50%;"></span> <a href="https://www.khanacademy.org/math/statistics-probability/continuous-random-variables" style="color: #2563eb; text-decoration: none;">Khan Academy - Continuous Random Variables</a>
+<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #f97316; border-radius: 50%;"></span> <a href="https://treena.org/courses/hsc-mathematics-advanced/discrete-probability/random-variables/notes" style="color: #2563eb; text-decoration: none;">Random Variable - Treena Courses</a>
 </li>
 <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
-<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #059669; border-radius: 50%;"></span> <a href="https://seeing-theory.brown.edu/probability-distributions/" style="color: #2563eb; text-decoration: none;">Seeing Theory - Probability Distributions</a>
+<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #059669; border-radius: 50%;"></span> <a href="https://link.springer.com/chapter/10.1007/978-3-031-46565-9_6" style="color: #2563eb; text-decoration: none;">Random Variables and Probability Functions</a>
 </li>
 <li style="margin-bottom: 12px; padding-left: 24px; position: relative;">
-<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #7c3aed; border-radius: 50%;"></span> <a href="https://en.wikipedia.org/wiki/Central_limit_theorem" style="color: #2563eb; text-decoration: none;">Central Limit Theorem - Wikipedia</a>
+<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #7c3aed; border-radius: 50%;"></span> <a href="https://www.su18.eecs70.org/static/notes/n16.html" style="color: #2563eb; text-decoration: none;">Random Variables - Distribution and Expectation</a>
 </li>
 <li style="margin-bottom: 0; padding-left: 24px; position: relative;">
-<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #dc2626; border-radius: 50%;"></span> <a href="https://www.probabilitycourse.com/chapter4/" style="color: #2563eb; text-decoration: none;">Introduction to Probability - Continuous Random Variables</a>
+<span style="position: absolute; left: 0; top: 2px; width: 8px; height: 8px; background: #dc2626; border-radius: 50%;"></span> <a href="https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library" style="color: #2563eb; text-decoration: none;">Khan Academy - Unit9: Random Variables</a>
 </li>
 </ul>
 </div>
-<hr>
 </section>
-<section id="back-to-main-page" class="level2 center">
-<h2 class="center anchored" data-anchor-id="back-to-main-page">Back to Main Page</h2>
+<section id="section" class="level1">
+<h1></h1>
 <a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
 
 

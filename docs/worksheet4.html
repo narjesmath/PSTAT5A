@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Student Name: ________________________">
+<meta name="dcterms.date" content="2025-07-23">
 
-<title>quarto-input5c5324ccf6bbc242 – PSTAT5A</title>
+<title>PSTAT 5A Practice Worksheet 4 – PSTAT5A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,9 +70,38 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="./theme/styles.css">
-<link rel="stylesheet" href="./theme/home-page-styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../theme/styles.css">
+<link rel="stylesheet" href="../../files/lecture_notes/theme/lecture-styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -80,10 +111,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/logo.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">PSTAT5A</span>
     </a>
   </div>
@@ -94,27 +125,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html"> <i class="bi bi-calendar" role="img">
+    <a class="nav-link" href="../../schedule.html"> <i class="bi bi-calendar" role="img">
 </i> 
 <span class="menu-text">Class Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html"> <i class="bi bi-file-earmark-text" role="img">
+    <a class="nav-link" href="../../syllabus.html"> <i class="bi bi-file-earmark-text" role="img">
 </i> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> <i class="bi bi-book" role="img">
+    <a class="nav-link" href="../../resources.html"> <i class="bi bi-book" role="img">
 </i> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> <i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="../../contact.html"> <i class="bi bi-envelope" role="img">
 </i> 
 <span class="menu-text">Contact</span></a>
   </li>  
@@ -126,176 +157,220 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructions-and-overview" id="toc-instructions-and-overview" class="nav-link active" data-scroll-target="#instructions-and-overview">Instructions and Overview</a></li>
+  <li><a href="#section-a-basic-concepts-and-identification" id="toc-section-a-basic-concepts-and-identification" class="nav-link" data-scroll-target="#section-a-basic-concepts-and-identification">Section A: Basic Concepts and Identification</a></li>
+  <li><a href="#section-b-expected-value-and-variance" id="toc-section-b-expected-value-and-variance" class="nav-link" data-scroll-target="#section-b-expected-value-and-variance">Section B: Expected Value and Variance</a></li>
+  <li><a href="#optional-questions" id="toc-optional-questions" class="nav-link" data-scroll-target="#optional-questions">Optional Questions</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="worksheet4.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="worksheet4.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PSTAT 5A Practice Worksheet 4</h1>
+<p class="subtitle lead">Comprehensive Review: Discrete Random Variables and Distributions</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<div class="hero-section">
-<div class="logo-container">
-<p><img src="img/logo.png" alt="PSTAT5A Logo"></p>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Student Name: ________________________ </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 23, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="instructions-and-overview" class="level1">
+<h1>Instructions and Overview</h1>
+<p><strong>⏰ Time Allocation:</strong></p>
+<ul>
+<li><p><strong>Quiz Review</strong> : 15 minutes</p></li>
+<li><p><strong>Section A (Warm-up):</strong> 15 minutes</p></li>
+<li><p><strong>Section B (Intermediate):</strong> 20 minutes</p></li>
+<li><p><strong>Optional Question:</strong> Do on your own</p></li>
+<li><p><strong>Total:</strong> 50 minutes</p></li>
+</ul>
+<div class="important">
+<p><strong>📝 Important Instructions:</strong></p>
+<ul>
+<li><p>Use the formulas provided for guidance</p></li>
+<li><p>Round final answers to 4 decimal places unless otherwise specified</p></li>
+<li><p>Identify the distribution type before calculating</p></li>
+<li><p>Show your work for expected value and variance calculations</p></li>
+<li><p>Use calculator as needed for factorials and combinations</p></li>
+</ul>
 </div>
-<section id="pstat-5a-understanding-data" class="level1 hero-title hero-content">
-<h1 class="hero-title">PSTAT 5A: Understanding Data</h1>
-<div class="hero-subtitle">
-<p>Learn the fundamentals of data science and statistical thinking</p>
-</div>
-<div class="instructor-info">
-<p><strong>Summer Session A 2025</strong> • Taught by <strong>Narjes Mathlouthi</strong></p>
-</div>
-<p><a href="./schedule.html" class="cta-button">Get Started →</a></p>
-</section>
-</div>
-<section class="overview-section">
-<section id="course-overview" class="level2 section-title section-header">
-<h2 class="section-title anchored" data-anchor-id="course-overview">Course Overview</h2>
-<div class="section-subtitle">
-<p>Transform raw data into meaningful insights through hands-on learning and real-world applications</p>
-</div>
-</section>
-<div class="learning-objectives">
-<div class="objective-card">
-<div class="objective-icon">
-<p>📊</p>
-</div>
-<div class="objective-text">
-<p>Apply descriptive and inferential statistical methods</p>
-</div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>🎲</p>
-</div>
-<div class="objective-text">
-<p>Work with probability models and random variables</p>
-</div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>🔍</p>
-</div>
-<div class="objective-text">
-<p>Construct confidence intervals and perform hypothesis tests</p>
-</div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>📈</p>
-</div>
-<div class="objective-text">
-<p>Fit and interpret regression and ANOVA models</p>
-</div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>🐍</p>
-</div>
-<div class="objective-text">
-<p>Use Python and Jupyter notebooks for data analysis</p>
-</div>
-</div>
-</div>
-</section>
-<section class="quick-links-section">
-<section id="quick-navigation" class="level2 section-title section-header">
-<h2 class="section-title anchored" data-anchor-id="quick-navigation">Quick Navigation</h2>
-<div class="section-subtitle">
-<p>Everything you need for the course, organized and accessible</p>
-</div>
-</section>
-<div class="quick-links-grid">
-<div class="quick-link-card">
-<p><span class="quick-link-icon">📘</span></p>
-<p><span class="quick-link-title">Syllabus</span></p>
-<p><span class="quick-link-desc">View Syllabus</span></p>
-<p><a href="./syllabus.html" class="btn btn-primary">Go to Syllabus →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">🗓️</span></p>
-<p><span class="quick-link-title">Schedule</span></p>
-<p><span class="quick-link-desc">Class Schedule</span></p>
-<p><a href="./schedule.html" class="btn btn-primary">View Schedule →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">🎥</span></p>
-<p><span class="quick-link-title">Lectures</span></p>
-<p><span class="quick-link-desc">Lecture Notes</span></p>
-<p><a href="./schedule.html" class="btn btn-primary">View Lectures →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">💻</span></p>
-<p><span class="quick-link-title">Labs</span></p>
-<p><span class="quick-link-desc">Computing Labs</span></p>
-<p><a href="./schedule.html" class="btn btn-primary">View Labs →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">📂</span></p>
-<p><span class="quick-link-title">Resources</span></p>
-<p><span class="quick-link-desc">Data &amp; Code</span></p>
-<p><a href="./resources.html" class="btn btn-primary">View Resources →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">📬</span></p>
-<p><span class="quick-link-title">Get in Touch</span></p>
-<p><span class="quick-link-desc">Get in Touch</span></p>
-<p><a href="./contact.html" class="btn btn-primary">Contact Info →</a></p>
-</div>
+<div class="formula-box">
+<p><strong>📚 Key Formulas Reference:</strong></p>
+<p><strong>General Random Variable Properties:</strong></p>
+<ul>
+<li><p><strong>Expected Value:</strong> <span class="math inline">\(E[X] = \sum_{k} k \cdot P(X = k)\)</span></p></li>
+<li><p><strong>Variance:</strong> <span class="math inline">\(\text{Var}(X) = E[X^2] - (E[X])^2 = \sum_{k} k^2 \cdot P(X = k) - \mu^2\)</span></p></li>
+<li><p><strong>Standard Deviation:</strong> <span class="math inline">\(\sigma = \sqrt{\text{Var}(X)}\)</span></p></li>
+</ul>
+<p><strong>Discrete Distributions:</strong></p>
+<p><strong>Bernoulli Distribution:</strong> <span class="math inline">\(X \sim \text{Bernoulli}(p)\)</span></p>
+<ul>
+<li><strong>PMF:</strong> <span class="math inline">\(P(X = k) = p^k(1-p)^{1-k}\)</span> for <span class="math inline">\(k \in \{0,1\}\)</span></li>
+<li><strong>Mean:</strong> <span class="math inline">\(E[X] = p\)</span></li>
+<li><strong>Variance:</strong> <span class="math inline">\(\text{Var}(X) = p(1-p)\)</span></li>
+</ul>
+<p><strong>Binomial Distribution:</strong> <span class="math inline">\(X \sim \text{Binomial}(n,p)\)</span></p>
+<ul>
+<li><strong>PMF:</strong> <span class="math inline">\(P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}\)</span> for <span class="math inline">\(k = 0, 1, 2, ..., n\)</span></li>
+<li><strong>Mean:</strong> <span class="math inline">\(E[X] = np\)</span></li>
+<li><strong>Variance:</strong> <span class="math inline">\(\text{Var}(X) = np(1-p)\)</span></li>
+</ul>
+<p><strong>Geometric Distribution:</strong> <span class="math inline">\(X \sim \text{Geometric}(p)\)</span></p>
+<ul>
+<li><strong>PMF:</strong> <span class="math inline">\(P(X = k) = (1-p)^{k-1} p\)</span> for <span class="math inline">\(k = 1, 2, 3, ...\)</span></li>
+<li><strong>Mean:</strong> <span class="math inline">\(E[X] = \frac{1}{p}\)</span></li>
+<li><strong>Variance:</strong> <span class="math inline">\(\text{Var}(X) = \frac{1-p}{p^2}\)</span></li>
+</ul>
+<p><strong>Poisson Distribution:</strong> <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span></p>
+<ul>
+<li><strong>PMF:</strong> <span class="math inline">\(P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}\)</span> for <span class="math inline">\(k = 0, 1, 2, ...\)</span></li>
+<li><strong>Mean:</strong> <span class="math inline">\(E[X] = \lambda\)</span></li>
+<li><strong>Variance:</strong> <span class="math inline">\(\text{Var}(X) = \lambda\)</span></li>
+</ul>
 </div>
 </section>
-<div class="notice-section">
-<section id="important-notice" class="level3 notice-title notice-content">
-<h3 class="notice-title anchored" data-anchor-id="important-notice">Important Notice</h3>
-<p>This schedule and all deadlines are subject to change. Check this site regularly for updates and announcements.</p>
+<section id="section-a-basic-concepts-and-identification" class="level1">
+<h1>Section A: Basic Concepts and Identification</h1>
+<p><em>⏱️ Estimated time: 15 minutes</em></p>
+<div class="problem">
+<p><strong>Problem A1: Distribution Identification</strong></p>
+<p>For each scenario below, identify the appropriate discrete distribution and state the parameter(s). <strong>Do not calculate probabilities yet.</strong></p>
+<p><strong>(a)</strong> A fair coin is flipped until the first head appears. Let X = number of flips needed.</p>
+<p><strong>(b)</strong> A quality control inspector tests 20 randomly selected items from a production line where 5% are defective. Let X = number of defective items found.</p>
+<p><strong>(c)</strong> A website receives visitors at an average rate of 3 per minute. Let X = number of visitors in a 2-minute period.</p>
+<p><strong>(d)</strong> A basketball player shoots one free throw with an 80% success rate. Let X = 1 if successful, 0 if unsuccessful.</p>
+<p><strong>(e)</strong> A student keeps taking a driving test until they pass. The probability of passing on any attempt is 0.7. Let X = number of attempts needed to pass.</p>
+</div>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br></p>
+<div class="problem">
+<p><strong>Problem A2: Probability Mass Function</strong></p>
+<p>The random variable X has the following probability distribution:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>X</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P(X=k)</td>
+<td>0.1</td>
+<td>0.3</td>
+<td>0.4</td>
+<td>a</td>
+<td>0.1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(a)</strong> Find the value of <span class="math inline">\(a\)</span>.</p>
+<p><strong>(b)</strong> Calculate <span class="math inline">\(P(X \leq 3)\)</span>.</p>
+<p><strong>(c)</strong> Calculate <span class="math inline">\(P(X &gt; 2)\)</span>.</p>
+</div>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br></p>
 </section>
+<section id="section-b-expected-value-and-variance" class="level1">
+<h1>Section B: Expected Value and Variance</h1>
+<p><em>⏱️ Estimated time: 20 minutes</em></p>
+<div class="problem">
+<p><strong>Problem B1: Manual Calculations</strong></p>
+<p>Using the probability distribution from Problem A2, calculate:</p>
+<p><strong>(a)</strong> The expected value <span class="math inline">\(E[X]\)</span></p>
+<p><strong>(b)</strong> The variance <span class="math inline">\(\text{Var}(X)\)</span></p>
+<p><strong>(c)</strong> The standard deviation <span class="math inline">\(\sigma\)</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="footer-section">
-<section id="ready-to-begin" class="level3 footer-title footer-content">
-<h3 class="footer-title anchored" data-anchor-id="ready-to-begin">Ready to Begin?</h3>
-<div class="footer-text">
-<p>Explore the navigation above or use the quick links to dive into course materials. Have questions? Visit office hours or use the contact page. Let’s have an amazing learning experience together!</p>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Calculation Strategy:</strong></p>
+<p>For expected value: <span class="math inline">\(E[X] = \sum k \cdot P(X = k)\)</span></p>
+<p>For variance: First find <span class="math inline">\(E[X^2] = \sum k^2 \cdot P(X = k)\)</span>, then use <span class="math inline">\(\text{Var}(X) = E[X^2] - (E[X])^2\)</span></p>
+<p>Show your work step by step!</p>
+</div>
+</div>
+</div>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br><br><br></p>
+<div class="problem">
+<p><strong>Problem B2: Bernoulli and Binomial Applications</strong></p>
+<p>A manufacturing process produces items that are defective with probability 0.15.</p>
+<p><strong>(a)</strong> If you select one item randomly, what is the expected value and variance of X = number of defective items?</p>
+<p><strong>(b)</strong> If you select 25 items randomly, what is the expected number of defective items and the standard deviation?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Part (a) is a Bernoulli distribution. Part (b) is a Binomial distribution. Use the formulas from the reference box!</p>
+</div>
+</div>
+</div>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br></p>
 </section>
+<section id="optional-questions" class="level1">
+<h1>Optional Questions</h1>
+<div class="problem">
+<p><strong>Optional Problem : Conceptual Understanding</strong></p>
+<p><strong>(a)</strong> Explain the key difference between a Binomial distribution and a Geometric distribution in terms of what they count.</p>
+<p><strong>(b)</strong> When would you use a Poisson distribution instead of a Binomial distribution?</p>
+<p><strong>(c)</strong> If <span class="math inline">\(X \sim \text{Binomial}(n, p)\)</span>, under what conditions would the variance be maximized?</p>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Add smooth scrolling for internal links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-
-  // Add intersection observer for animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  // Observe all cards
-  document.querySelectorAll('.objective-card, .quick-link-card').forEach(card => {
-    observer.observe(card);
-  });
-});
-</script>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

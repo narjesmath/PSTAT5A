@@ -13,6 +13,7 @@ format:
     theme: cosmo
     css: /files/lecture_notes/theme/lecture-styles.css
 date: today
+latex-tinytex: false
 jupyter: pstat5a
 execute: 
   eval: false

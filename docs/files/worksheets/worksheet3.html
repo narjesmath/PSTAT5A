@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Student Name: ________________________">
+<meta name="dcterms.date" content="2025-07-23">
 
-<title>quarto-input5c5324ccf6bbc242 – PSTAT5A</title>
+<title>PSTAT 5A Practice Worksheet 3 – PSTAT5A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,9 +70,38 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="./theme/styles.css">
-<link rel="stylesheet" href="./theme/home-page-styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../theme/styles.css">
+<link rel="stylesheet" href="../../files/lecture_notes/theme/lecture-styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -80,10 +111,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/logo.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">PSTAT5A</span>
     </a>
   </div>
@@ -94,27 +125,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html"> <i class="bi bi-calendar" role="img">
+    <a class="nav-link" href="../../schedule.html"> <i class="bi bi-calendar" role="img">
 </i> 
 <span class="menu-text">Class Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html"> <i class="bi bi-file-earmark-text" role="img">
+    <a class="nav-link" href="../../syllabus.html"> <i class="bi bi-file-earmark-text" role="img">
 </i> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> <i class="bi bi-book" role="img">
+    <a class="nav-link" href="../../resources.html"> <i class="bi bi-book" role="img">
 </i> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> <i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="../../contact.html"> <i class="bi bi-envelope" role="img">
 </i> 
 <span class="menu-text">Contact</span></a>
   </li>  
@@ -126,176 +157,256 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructions-and-overview" id="toc-instructions-and-overview" class="nav-link active" data-scroll-target="#instructions-and-overview">Instructions and Overview</a></li>
+  <li><a href="#section-a-probability" id="toc-section-a-probability" class="nav-link" data-scroll-target="#section-a-probability">Section A: Probability</a></li>
+  <li><a href="#section-b-permutations-and-combination" id="toc-section-b-permutations-and-combination" class="nav-link" data-scroll-target="#section-b-permutations-and-combination">Section B: Permutations and Combination</a></li>
+  <li><a href="#section-c-conditional-probability" id="toc-section-c-conditional-probability" class="nav-link" data-scroll-target="#section-c-conditional-probability">Section C: Conditional Probability</a></li>
+  <li><a href="#section-d-conditional-probability" id="toc-section-d-conditional-probability" class="nav-link" data-scroll-target="#section-d-conditional-probability">Section D: Conditional Probability</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="worksheet3.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="worksheet3.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PSTAT 5A Practice Worksheet 3</h1>
+<p class="subtitle lead">Comprehensive Review: Probability, Counting, an Conditional Probability</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<div class="hero-section">
-<div class="logo-container">
-<p><img src="img/logo.png" alt="PSTAT5A Logo"></p>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Student Name: ________________________ </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 23, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="instructions-and-overview" class="level1">
+<h1>Instructions and Overview</h1>
+<p><strong>⏰ Time Allocation:</strong></p>
+<ul>
+<li><p><strong>Section A (Warm-up):</strong> 8 minutes</p></li>
+<li><p><strong>Section B (Intermediate):</strong> 15 minutes</p></li>
+<li><p><strong>Section C (Advanced):</strong> 12 minutes</p></li>
+<li><p><strong>Section D (Review):</strong> 15 minutes</p></li>
+<li><p><strong>Total:</strong> 50 minutes</p></li>
+</ul>
+<div class="important">
+<p><strong>📝 Important Instructions:</strong></p>
+<ul>
+<li><p>Use the formulas provided for guidance</p></li>
+<li><p>Round final answers to 4 decimal places unless otherwise specified</p></li>
+<li><p>Identify your approach before calculating</p></li>
+<li><p>Use calculator as needed</p></li>
+</ul>
 </div>
-<section id="pstat-5a-understanding-data" class="level1 hero-title hero-content">
-<h1 class="hero-title">PSTAT 5A: Understanding Data</h1>
-<div class="hero-subtitle">
-<p>Learn the fundamentals of data science and statistical thinking</p>
-</div>
-<div class="instructor-info">
-<p><strong>Summer Session A 2025</strong> • Taught by <strong>Narjes Mathlouthi</strong></p>
-</div>
-<p><a href="./schedule.html" class="cta-button">Get Started →</a></p>
-</section>
-</div>
-<section class="overview-section">
-<section id="course-overview" class="level2 section-title section-header">
-<h2 class="section-title anchored" data-anchor-id="course-overview">Course Overview</h2>
-<div class="section-subtitle">
-<p>Transform raw data into meaningful insights through hands-on learning and real-world applications</p>
-</div>
-</section>
-<div class="learning-objectives">
-<div class="objective-card">
-<div class="objective-icon">
-<p>📊</p>
-</div>
-<div class="objective-text">
-<p>Apply descriptive and inferential statistical methods</p>
-</div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>🎲</p>
-</div>
-<div class="objective-text">
-<p>Work with probability models and random variables</p>
-</div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>🔍</p>
-</div>
-<div class="objective-text">
-<p>Construct confidence intervals and perform hypothesis tests</p>
-</div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>📈</p>
-</div>
-<div class="objective-text">
-<p>Fit and interpret regression and ANOVA models</p>
-</div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>🐍</p>
-</div>
-<div class="objective-text">
-<p>Use Python and Jupyter notebooks for data analysis</p>
-</div>
-</div>
-</div>
-</section>
-<section class="quick-links-section">
-<section id="quick-navigation" class="level2 section-title section-header">
-<h2 class="section-title anchored" data-anchor-id="quick-navigation">Quick Navigation</h2>
-<div class="section-subtitle">
-<p>Everything you need for the course, organized and accessible</p>
+<div class="formula-box">
+<p><strong>📚 Key Formulas Reference:</strong></p>
+<p><strong>Basic Probability:</strong></p>
+<ul>
+<li><p><strong>Conditional Probability:</strong> <span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)}\)</span></p></li>
+<li><p><strong>Law of Total Probability:</strong> <span class="math inline">\(P(A) = \sum P(A|B_i) \cdot P(B_i)\)</span></p></li>
+<li><p><strong>Addition Rule:</strong> <span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span></p></li>
+<li><p><strong>Multiplication Rule:</strong> <span class="math inline">\(P(A \cap B) = P(A) \cdot P(B|A) = P(B) \cdot P(A|B)\)</span></p></li>
+</ul>
+<p><strong>Counting:</strong></p>
+<ul>
+<li><p><strong>Multiplication Rule:</strong> If a procedure consists of <span class="math inline">\(k\)</span> steps, with <span class="math inline">\(n_1\)</span> ways for step 1, <span class="math inline">\(n_2\)</span> for step 2, …, <span class="math inline">\(n_k\)</span> for step <span class="math inline">\(k\)</span>, then total ways: <span class="math inline">\(n_1 \times n_2 \times \cdots \times n_k\)</span></p></li>
+<li><p><strong>Factorial:</strong> <span class="math inline">\(n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1\)</span></p></li>
+<li><p><strong>Permutations:</strong> <span class="math inline">\(P(n,r) = \frac{n!}{(n-r)!}\)</span></p></li>
+<li><p><strong>Combinations:</strong> <span class="math inline">\(C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}\)</span></p></li>
+</ul>
 </div>
 </section>
-<div class="quick-links-grid">
-<div class="quick-link-card">
-<p><span class="quick-link-icon">📘</span></p>
-<p><span class="quick-link-title">Syllabus</span></p>
-<p><span class="quick-link-desc">View Syllabus</span></p>
-<p><a href="./syllabus.html" class="btn btn-primary">Go to Syllabus →</a></p>
+<section id="section-a-probability" class="level1">
+<h1>Section A: Probability</h1>
+<p><em>⏱️ Estimated time: 8 minutes</em></p>
+<div class="problem">
+<p><strong>Problem A1: Probability Distributions</strong></p>
+<p>Each row in the table below is a proposed grade distribution for a class. Identify each as a valid or invalid probability distribution, and explain your reasoning.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Class</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(a)</td>
+<td>0.3</td>
+<td>0.3</td>
+<td>0.3</td>
+<td>0.2</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>(b)</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>(c)</td>
+<td>0.3</td>
+<td>0.3</td>
+<td>0.3</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>(d)</td>
+<td>0.3</td>
+<td>0.5</td>
+<td>0.2</td>
+<td>0.1</td>
+<td>-0.1</td>
+</tr>
+<tr class="odd">
+<td>(e)</td>
+<td>0.2</td>
+<td>0.4</td>
+<td>0.2</td>
+<td>0.1</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>(f)</td>
+<td>0</td>
+<td>-0.1</td>
+<td>1.1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">🗓️</span></p>
-<p><span class="quick-link-title">Schedule</span></p>
-<p><span class="quick-link-desc">Class Schedule</span></p>
-<p><a href="./schedule.html" class="btn btn-primary">View Schedule →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">🎥</span></p>
-<p><span class="quick-link-title">Lectures</span></p>
-<p><span class="quick-link-desc">Lecture Notes</span></p>
-<p><a href="./schedule.html" class="btn btn-primary">View Lectures →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">💻</span></p>
-<p><span class="quick-link-title">Labs</span></p>
-<p><span class="quick-link-desc">Computing Labs</span></p>
-<p><a href="./schedule.html" class="btn btn-primary">View Labs →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">📂</span></p>
-<p><span class="quick-link-title">Resources</span></p>
-<p><span class="quick-link-desc">Data &amp; Code</span></p>
-<p><a href="./resources.html" class="btn btn-primary">View Resources →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">📬</span></p>
-<p><span class="quick-link-title">Get in Touch</span></p>
-<p><span class="quick-link-desc">Get in Touch</span></p>
-<p><a href="./contact.html" class="btn btn-primary">Contact Info →</a></p>
-</div>
-</div>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br></p>
 </section>
-<div class="notice-section">
-<section id="important-notice" class="level3 notice-title notice-content">
-<h3 class="notice-title anchored" data-anchor-id="important-notice">Important Notice</h3>
-<p>This schedule and all deadlines are subject to change. Check this site regularly for updates and announcements.</p>
+<section id="section-b-permutations-and-combination" class="level1">
+<h1>Section B: Permutations and Combination</h1>
+<p><em>⏱️ Estimated time: 15 minutes</em></p>
+<div class="problem">
+<p><strong>Problem B1: Permutations and Combinations</strong></p>
+<p>A cybersecurity team needs to create a secure access protocol.</p>
+<p><strong>Part (a):</strong> How many 6-character passwords can be formed using 3 specific letters and 3 specific digits if repetitions are not allowed and letters must come before digits?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Since letters must come before digits, think of this as two separate arrangement problems:</p>
+<ul>
+<li><p>First, arrange the 3 letters in the first 3 positions</p></li>
+<li><p>Then, arrange the 3 digits in the last 3 positions</p></li>
+<li><p>Use the multiplication principle to combine these results</p></li>
+</ul>
+</div>
+</div>
+<p><strong>Part (b):</strong> If the team wants to select 4 people from 12 employees to form a security committee where order doesn’t matter, how many ways can this be done?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Since order doesn’t matter, this is a combination problem. Ask yourself:</p>
+<ul>
+<li><p>Are we arranging people in specific positions, or just selecting a group?</p></li>
+<li><p>Which formula should you use: <span class="math inline">\(P(n,r)\)</span> or <span class="math inline">\(C(n,r)\)</span>?</p></li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br></p>
 </section>
+<section id="section-c-conditional-probability" class="level1">
+<h1>Section C: Conditional Probability</h1>
+<p><em>⏱️ Estimated time: 12 minutes</em></p>
+<div class="problem">
+<p><strong>Problem C1: Drawing Cards (Without Replacement)</strong></p>
+<p>You draw two cards, one after the other, from a standard 52-card deck without putting the first card back. Let</p>
+<p>A = <span class="math inline">\(\{\text{“first card is a heart”}\}\)</span>,</p>
+<p>B = <span class="math inline">\(\{\text{“second card is an ace”}\}\)</span>.</p>
+<ol type="1">
+<li><p>P(A)</p></li>
+<li><p><span class="math inline">\(P\bigl(A\text{ and }B\bigr)\)</span></p></li>
+<li><p><span class="math inline">\(P\bigl(B\mid A\bigr)\)</span></p></li>
+<li><p>P(B)</p></li>
+<li><p>Compare your answers in (3) vs.&nbsp;(4). Why are they different (or the same)? What does this tell you about drawing cards without replacement?</p></li>
+</ol>
 </div>
-<div class="footer-section">
-<section id="ready-to-begin" class="level3 footer-title footer-content">
-<h3 class="footer-title anchored" data-anchor-id="ready-to-begin">Ready to Begin?</h3>
-<div class="footer-text">
-<p>Explore the navigation above or use the quick links to dive into course materials. Have questions? Visit office hours or use the contact page. Let’s have an amazing learning experience together!</p>
-</div>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br><br><br><br><br></p>
 </section>
+<section id="section-d-conditional-probability" class="level1">
+<h1>Section D: Conditional Probability</h1>
+<p><em>⏱️ Estimated time: 15 minutes</em></p>
+<div class="problem">
+<p><strong>Problem D1: Advanced Counting with Restrictions</strong></p>
+<p>A restaurant offers a prix fixe menu where customers must choose:</p>
+<ul>
+<li><p>1 appetizer from 6 options</p></li>
+<li><p>1 main course from 8 options</p></li>
+<li><p>1 dessert from 5 options</p></li>
+</ul>
+<p>However, there are restrictions:</p>
+<ul>
+<li><p>If you choose the seafood appetizer, you cannot choose the vegetarian main course</p></li>
+<li><p>If you choose the chocolate dessert, you must choose either the beef or chicken main course (3 of the 8 main courses)</p></li>
+</ul>
+<p><strong>Part (a):</strong> How many valid meal combinations are possible?</p>
+<p><strong>Part (b):</strong> If customers choose randomly among valid combinations, what is the probability someone chooses the chocolate dessert?</p>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Add smooth scrolling for internal links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-
-  // Add intersection observer for animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  // Observe all cards
-  document.querySelectorAll('.objective-card, .quick-link-card').forEach(card => {
-    observer.observe(card);
-  });
-});
-</script>
+<p><strong>Work Space:</strong></p>
+<p><br><br><br><br><br><br><br><br></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

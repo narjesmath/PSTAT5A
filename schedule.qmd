@@ -14,8 +14,6 @@ execute:
   warning: false
 ---
 
-
-
 ::: {.notice-banner}
 ::: {.notice-icon}
 ⚠️
@@ -34,7 +32,6 @@ Labs & Worksheets
 :::
 Quizzes & Exams
 :::
-
 ::: {.legend-item}
 ::: {.legend-color style="background: #667eea;"}
 :::
@@ -47,6 +44,7 @@ Lecture Materials
 ::: {.legend-color style="background: #FFA500;"}
 :::
 [Anonymous Feedback Survey](https://forms.gle/W33EdcpqGuy45tUP6)
+:::
 :::
 
 ::: {.schedule-container}
@@ -63,15 +61,19 @@ Lecture Materials
 ::: {.date}
 6/23
 :::
+
 ::: {.topic}
+
 [Introduction](/files/lecture_notes/Lecture_1/lecture1.qmd)
 :::
+
 ::: {.lab-quiz}
 
 [Lab 1](/files/labs/lab1/lab1.pdf)
 
 [lab1 Solutions](/files/labs/lab1/lab1_sln.qmd)
 :::
+
 ::: {.worksheet}
 [Worksheet 1](/files/worksheets/PSTAT_5A_Discussion_Worksheet_1.pdf)
 :::
@@ -123,7 +125,7 @@ Lecture Materials
 [Linear Transformations (Worksheet 1 Q3)](/files/lecture_notes/lecture3/q3_worksheet.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
--
+—
 :::
 ::: {.worksheet .empty-cell}
 —
@@ -148,7 +150,6 @@ Lecture Materials
 [Descriptive Statistics II (Continued)](/files/lecture_notes/lecture3/lecture3.qmd)
 :::
 ::: {.lab-quiz}
-
 [Lab2](/files/labs/lab2/lab2.qmd)
 
 [Lab2 Notebook](/files/labs/lab2/lab2.ipynb){download="lab2.ipynb"}
@@ -156,7 +157,6 @@ Lecture Materials
 [lab2 Solutions](/files/labs/lab2/lab2_sln.qmd)
 :::
 ::: {.worksheet}
-
 [Worksheet 2](/files/worksheets/worksheet2.qmd)
 
 [Worksheet 2 Solutions](/files/worksheets/worksheet2_sln.qmd)
@@ -218,7 +218,7 @@ Lecture Materials
 
 ::: {.week-section .week-3}
 ::: {.week-header}
-<span>Week 3: Conditional Probability, Counting & Random Variables </span>
+<span>Week 3: Conditional Probability, Counting & Random Variables</span>
 :::
 ::: {.week-content}
 ::: {.day-row}
@@ -229,9 +229,7 @@ Lecture Materials
 7/07
 :::
 ::: {.topic}
-[Conditional Probability & Bayes Theorem](/files/lecture_notes/lecture5/lecture5.qmd) 
-
-
+[Conditional Probability & Bayes Theorem](/files/lecture_notes/lecture5/lecture5.qmd)
 :::
 ::: {.lab-quiz}
 [Lab3](/files/labs/lab3/lab3.qmd)
@@ -253,7 +251,6 @@ Lecture Materials
 :::
 ::: {.topic}
 [Intro to Counting & Permutations](/files/lecture_notes/lecture6/lecture6-part1.qmd)
-
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -271,7 +268,6 @@ Lecture Materials
 :::
 ::: {.topic}
 [Intro to Counting & Combinations](/files/lecture_notes/lecture6/lecture6-part2.qmd)
-
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -307,8 +303,8 @@ Lecture Materials
 ::: {.topic .quiz-item}
 Quiz 1 (Weeks 1–2)
 :::
-::: {.topic .quiz-item}
-[Quiz 1 Solutions](/files/quizzes/quiz1/PSTAT5A__Quiz1_Solutions.pdf)
+::: {.lab-quiz .empty-cell}
+—
 :::
 ::: {.worksheet .empty-cell}
 —
@@ -333,7 +329,6 @@ Quiz 1 (Weeks 1–2)
 [Continuous Random Variables & Distributions](/files/lecture_notes/lecture8/lecture8.qmd)
 :::
 ::: {.lab-quiz}
-
 [Lab 4](/files/labs/lab4/lab4.qmd)
 
 [lab 4 Solutions](/files/labs/lab4/lab4_sln.qmd)
@@ -342,7 +337,6 @@ Quiz 1 (Weeks 1–2)
 [Worksheet 4](/files/worksheets/worksheet4.qmd)
 
 [Worksheet 4 Solutions](/files/worksheets/worksheet4_sln.qmd)
-
 :::
 :::
 
@@ -402,9 +396,7 @@ Quiz 1 (Weeks 1–2)
 ::: {.week-section .week-5}
 ::: {.week-header}
 <span>Week 5: Inference & Statistical Modeling</span>
-
 :::
-
 ::: {.week-content}
 ::: {.day-row}
 ::: {.week-number}
@@ -417,18 +409,14 @@ Quiz 1 (Weeks 1–2)
 [Sampling Principles and Strategies](/files/lecture_notes/lecture10/lecture10.qmd)
 :::
 ::: {.lab-quiz}
-
 [Lab 5](/files/labs/lab5/lab5.qmd)
 
-[Lab5 Solutions](/files/labs/lab5/lab5_sln.qmd) 
+[Lab5 Solutions](/files/labs/lab5/lab5_sln.qmd)
 :::
 ::: {.worksheet}
-
-Worksheet 5
-
 [Worksheet 5](/files/worksheets/worksheet5.qmd)
 
-<!-- [Worksheet 5 Solutions](/files/worksheets/worksheet5_sln.qmd) -->
+[Worksheet 5 Solutions](/files/worksheets/worksheet5_sln.qmd)
 :::
 :::
 
@@ -504,22 +492,16 @@ Quiz 2 (Weeks 3–4)
 :::
 :::
 :::
-:::
-:::
 
 ::: {.week-section .week-6}
 ::: {.week-header}
 <span>Week 6: Regression & Course Wrap-Up</span>
-
 :::
-
 ::: {.week-content}
 ::: {.day-row}
-
 ::: {.week-number}
 6
 :::
-
 ::: {.date}
 7/28
 :::
@@ -606,5 +588,3 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-
-```

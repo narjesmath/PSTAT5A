@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Student Name: ________________________">
+<meta name="dcterms.date" content="2025-07-23">
 
-<title>quarto-input5c5324ccf6bbc242 – PSTAT5A</title>
+<title>PSTAT 5A Practice Worksheet 2 – PSTAT5A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,9 +70,38 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="./theme/styles.css">
-<link rel="stylesheet" href="./theme/home-page-styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../theme/styles.css">
+<link rel="stylesheet" href="../../files/lecture_notes/theme/lecture-styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -80,10 +111,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./img/logo.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">PSTAT5A</span>
     </a>
   </div>
@@ -94,27 +125,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html"> <i class="bi bi-calendar" role="img">
+    <a class="nav-link" href="../../schedule.html"> <i class="bi bi-calendar" role="img">
 </i> 
 <span class="menu-text">Class Schedule</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html"> <i class="bi bi-file-earmark-text" role="img">
+    <a class="nav-link" href="../../syllabus.html"> <i class="bi bi-file-earmark-text" role="img">
 </i> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> <i class="bi bi-book" role="img">
+    <a class="nav-link" href="../../resources.html"> <i class="bi bi-book" role="img">
 </i> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> <i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="../../contact.html"> <i class="bi bi-envelope" role="img">
 </i> 
 <span class="menu-text">Contact</span></a>
   </li>  
@@ -126,176 +157,206 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructions-and-overview" id="toc-instructions-and-overview" class="nav-link active" data-scroll-target="#instructions-and-overview"><span class="header-section-number">1</span> Instructions and Overview</a></li>
+  <li><a href="#section-a-basic-descriptive-statistics" id="toc-section-a-basic-descriptive-statistics" class="nav-link" data-scroll-target="#section-a-basic-descriptive-statistics"><span class="header-section-number">2</span> Section A: Basic Descriptive Statistics</a></li>
+  <li><a href="#section-b-data-interpretation-and-graphical-analysis" id="toc-section-b-data-interpretation-and-graphical-analysis" class="nav-link" data-scroll-target="#section-b-data-interpretation-and-graphical-analysis"><span class="header-section-number">3</span> Section B: Data Interpretation and Graphical Analysis</a></li>
+  <li><a href="#section-c-variance-calculations-practice" id="toc-section-c-variance-calculations-practice" class="nav-link" data-scroll-target="#section-c-variance-calculations-practice"><span class="header-section-number">4</span> Section C : Variance Calculations Practice</a>
+  <ul class="collapse">
+  <li><a href="#understanding-variance-population-vs-sample" id="toc-understanding-variance-population-vs-sample" class="nav-link" data-scroll-target="#understanding-variance-population-vs-sample"><span class="header-section-number">4.1</span> Understanding Variance: Population vs Sample</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PSTAT 5A Practice Worksheet 2</h1>
+<p class="subtitle lead">Descriptive Statistics</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<div class="hero-section">
-<div class="logo-container">
-<p><img src="img/logo.png" alt="PSTAT5A Logo"></p>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Student Name: ________________________ </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 23, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="download-section">
+<p><a href="../../files/worksheets/worksheet_2.pdf" class="download-btn">Download PDF</a></p>
 </div>
-<section id="pstat-5a-understanding-data" class="level1 hero-title hero-content">
-<h1 class="hero-title">PSTAT 5A: Understanding Data</h1>
-<div class="hero-subtitle">
-<p>Learn the fundamentals of data science and statistical thinking</p>
+<section id="instructions-and-overview" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Instructions and Overview</h1>
+<div class="time-box">
+<p><strong>⏰ Time Allocation:</strong> - <strong>Section A (Warm-up):</strong> 15 minutes</p>
+<ul>
+<li><p><strong>Section B (Intermediate):</strong> 25 minutes</p></li>
+<li><p><strong>Section C (Wrap-Up):</strong> 10 minutes</p></li>
+<li><p><strong>Total:</strong> 50 minutes</p></li>
+</ul>
 </div>
-<div class="instructor-info">
-<p><strong>Summer Session A 2025</strong> • Taught by <strong>Narjes Mathlouthi</strong></p>
+<div class="important">
+<p><strong>📝 Important Instructions:</strong></p>
+<ul>
+<li><p>Use the formulas provided for guidance</p></li>
+<li><p>Round final answers to 4 decimal places unless otherwise specified</p></li>
+<li><p>Identify your approach before calculating</p></li>
+<li><p>Use calculator as needed</p></li>
+</ul>
 </div>
-<p><a href="./schedule.html" class="cta-button">Get Started →</a></p>
-</section>
+<div class="formula-box">
+<p><strong>📚 Key Formulas Reference:</strong></p>
+<p><strong>DESCRIPTIVE STATISTICS:</strong></p>
+<div class="formula-box">
+<p><strong>1. Mean Formulas:</strong></p>
+<p><strong>Sample Mean:</strong> <span class="math inline">\(\bar x = \frac{\sum x_i}{n}\)</span></p>
+<p><strong>Population Mean:</strong> <span class="math inline">\(\mu = \frac{\sum x_i}{N}\)</span></p>
 </div>
-<section class="overview-section">
-<section id="course-overview" class="level2 section-title section-header">
-<h2 class="section-title anchored" data-anchor-id="course-overview">Course Overview</h2>
-<div class="section-subtitle">
-<p>Transform raw data into meaningful insights through hands-on learning and real-world applications</p>
+<div class="formula-box">
+<p><strong>2. Variance Formulas:</strong></p>
+<p><strong>Population Variance:</strong> <span class="math inline">\(\sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}\)</span></p>
+<p><strong>Sample Variance:</strong> <span class="math inline">\(s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}\)</span></p>
 </div>
-</section>
-<div class="learning-objectives">
-<div class="objective-card">
-<div class="objective-icon">
-<p>📊</p>
+<div class="formula-box">
+<p><strong>3. Standard Deviations Formulas:</strong></p>
+<p><strong>Sample Standard Deviation:</strong> <span class="math inline">\(s = \sqrt \frac{\sum (x_i - \bar x)^2}{(n-1)}\)</span></p>
+<p><strong>Population Standard Deviation:</strong> <span class="math inline">\(\sigma = \sqrt \frac{\sum (x_i - \mu)^2}{N}\)</span></p>
 </div>
-<div class="objective-text">
-<p>Apply descriptive and inferential statistical methods</p>
+<div class="formula-box">
+<p><strong>MEASURES OF POSITION:</strong></p>
+<p><strong>Percentile:</strong> Value below which a certain percentage of data falls</p>
+<p><strong>Quartiles:</strong> Q1 (25th percentile), Q2 = Median (50th percentile), Q3 (75th percentile)</p>
+<p><strong>Interquartile Range (IQR):</strong> Q3 - Q1</p>
+<p><strong>Range:</strong> Maximum - Minimum</p>
 </div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>🎲</p>
-</div>
-<div class="objective-text">
-<p>Work with probability models and random variables</p>
-</div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>🔍</p>
-</div>
-<div class="objective-text">
-<p>Construct confidence intervals and perform hypothesis tests</p>
-</div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>📈</p>
-</div>
-<div class="objective-text">
-<p>Fit and interpret regression and ANOVA models</p>
-</div>
-</div>
-<div class="objective-card">
-<div class="objective-icon">
-<p>🐍</p>
-</div>
-<div class="objective-text">
-<p>Use Python and Jupyter notebooks for data analysis</p>
-</div>
-</div>
-</div>
-</section>
-<section class="quick-links-section">
-<section id="quick-navigation" class="level2 section-title section-header">
-<h2 class="section-title anchored" data-anchor-id="quick-navigation">Quick Navigation</h2>
-<div class="section-subtitle">
-<p>Everything you need for the course, organized and accessible</p>
-</div>
-</section>
-<div class="quick-links-grid">
-<div class="quick-link-card">
-<p><span class="quick-link-icon">📘</span></p>
-<p><span class="quick-link-title">Syllabus</span></p>
-<p><span class="quick-link-desc">View Syllabus</span></p>
-<p><a href="./syllabus.html" class="btn btn-primary">Go to Syllabus →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">🗓️</span></p>
-<p><span class="quick-link-title">Schedule</span></p>
-<p><span class="quick-link-desc">Class Schedule</span></p>
-<p><a href="./schedule.html" class="btn btn-primary">View Schedule →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">🎥</span></p>
-<p><span class="quick-link-title">Lectures</span></p>
-<p><span class="quick-link-desc">Lecture Notes</span></p>
-<p><a href="./schedule.html" class="btn btn-primary">View Lectures →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">💻</span></p>
-<p><span class="quick-link-title">Labs</span></p>
-<p><span class="quick-link-desc">Computing Labs</span></p>
-<p><a href="./schedule.html" class="btn btn-primary">View Labs →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">📂</span></p>
-<p><span class="quick-link-title">Resources</span></p>
-<p><span class="quick-link-desc">Data &amp; Code</span></p>
-<p><a href="./resources.html" class="btn btn-primary">View Resources →</a></p>
-</div>
-<div class="quick-link-card">
-<p><span class="quick-link-icon">📬</span></p>
-<p><span class="quick-link-title">Get in Touch</span></p>
-<p><span class="quick-link-desc">Get in Touch</span></p>
-<p><a href="./contact.html" class="btn btn-primary">Contact Info →</a></p>
+<div class="formula-box">
+<p><strong>DISTRIBUTION SHAPES:</strong></p>
+<p>Symmetric: Mean ≈ Median</p>
+<p>Right-skewed: Mean &gt; Median (tail extends to the right)</p>
+<p>Left-skewed: Mean &lt; Median (tail extends to the left)</p>
+<p>Outliers affect the mean more than the median</p>
 </div>
 </div>
 </section>
-<div class="notice-section">
-<section id="important-notice" class="level3 notice-title notice-content">
-<h3 class="notice-title anchored" data-anchor-id="important-notice">Important Notice</h3>
-<p>This schedule and all deadlines are subject to change. Check this site regularly for updates and announcements.</p>
+<section id="section-a-basic-descriptive-statistics" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Section A: Basic Descriptive Statistics</h1>
+<p><em>⏱️ Estimated time: 15 minutes</em></p>
+<div class="problem">
+<p><strong>Problem A1: Mean and Standard Deviation</strong></p>
+<p>In a class of 25 students, 24 of them took an exam in class and 1 student took a make-up exam the following day. The professor graded the first batch of 24 exams and found an average score of 74 points with a standard deviation of 8.9 points. The student who took the make-up the following day scored 64 points on the exam.</p>
+<ol type="a">
+<li>Does the new student’s score increase or decrease the average score?</li>
+<li>What is the new average?</li>
+<li>Does the new student’s score increase or decrease the standard deviation of the scores?</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<p><br><br><br><br><br><br></p>
+</div>
+<div class="problem">
+<p><strong>Problem A2: Distribution Shape Analysis</strong></p>
+<p>Students in an AP Statistics class were asked how many hours of television they watch per week (including online streaming). This sample yielded an average of 4.71 hours, with a standard deviation of 4.18 hours. Is the distribution of number of hours students watch television weekly symmetric? If not, what shape would you expect this distribution to have? Explain your reasoning</p>
+<p><strong>Answer:</strong></p>
+<p><br><br><br><br><br><br></p>
+</div>
 </section>
+<section id="section-b-data-interpretation-and-graphical-analysis" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Section B: Data Interpretation and Graphical Analysis</h1>
+<p><em>⏱️ Estimated time: 25 minutes</em></p>
+<div class="problem">
+<p><strong>Problem B1: Interpreting Histograms</strong></p>
+<div class="columns">
+<div class="column">
+<p>The infant mortality rate is defined as the number of infant deaths per 1,000 live births. This rate is often used as an indicator of the level of health in a country. The relative frequency histogram below shows the distribution of estimated infant death rates for 224 countries for which such data were available in 2014.</p>
+<ol type="a">
+<li>Estimate Q1, the median, and Q3 from the histogram.</li>
+<li>Would you expect the mean of this data set to be smaller or larger than the median? Explain your reasoning.</li>
+</ol>
+</div><div class="column">
+<p><img src="../../files/worksheets/img/infant_mortality.png" class="img-fluid" style="width:100.0%"></p>
 </div>
-<div class="footer-section">
-<section id="ready-to-begin" class="level3 footer-title footer-content">
-<h3 class="footer-title anchored" data-anchor-id="ready-to-begin">Ready to Begin?</h3>
-<div class="footer-text">
-<p>Explore the navigation above or use the quick links to dive into course materials. Have questions? Visit office hours or use the contact page. Let’s have an amazing learning experience together!</p>
+</div>
+<p><strong>Answer:</strong></p>
+<p><br><br><br><br><br><br><br><br><br><br></p>
+</div>
+<div class="problem">
+<p><strong>Problem B2: Comparing Distributions</strong></p>
+<p>Use the plots in the Figure below to compare the incomes for counties across the two groups. What do you notice about the approximate center of each group? What do you notice about the variability between groups? Is the shape relatively consistent between groups? How many prominent modes are there for each group?</p>
+<p><img src="../../files/worksheets/img/plots.png" class="img-fluid"></p>
+<p><strong>Answer:</strong></p>
+<p><br><br><br><br><br><br><br><br></p>
 </div>
 </section>
+<section id="section-c-variance-calculations-practice" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Section C : Variance Calculations Practice</h1>
+<p><em>⏱️ Estimated time: 10 minutes</em></p>
+<section id="understanding-variance-population-vs-sample" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="understanding-variance-population-vs-sample"><span class="header-section-number">4.1</span> Understanding Variance: Population vs Sample</h2>
+<div class="formula-box">
+<p><strong>🎯 Key Variance Concepts:</strong></p>
+<p><strong>Population Variance</strong> (when you have ALL data): <span class="math display">\[\sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}\]</span></p>
+<p><strong>Sample Variance</strong> (when you have a sample): <span class="math display">\[s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}\]</span></p>
+<p><strong>Why (n-1)?</strong> Using the sample mean to estimate deviations “uses up” one degree of freedom.</p>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Add smooth scrolling for internal links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-
-  // Add intersection observer for animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
-
-  // Observe all cards
-  document.querySelectorAll('.objective-card, .quick-link-card').forEach(card => {
-    observer.observe(card);
-  });
-});
-</script>
+<div class="problem">
+<p><strong>Problem C1: Basic Variance Calculations</strong></p>
+<p>The following data represents the number of customer complaints per day for a small business over 8 days:</p>
+<p><strong>Data:</strong> 3, 7, 2, 8, 5, 6, 4, 9</p>
+<p><strong>Part (a) :</strong> Calculate the sample mean <span class="math inline">\(\bar{x}\)</span>.</p>
+<p><strong>Part (b) :</strong> Calculate the sample variance <span class="math inline">\(s^2\)</span> using the formula with <span class="math inline">\((n-1)\)</span> in the denominator.</p>
+<p><strong>Part (c) :</strong> Calculate the sample standard deviation <span class="math inline">\(s\)</span>.</p>
+<p><strong>Part (d) :</strong> If this were treated as a complete population, what would the population variance <span class="math inline">\(\sigma^2\)</span> be?</p>
+<p><strong>Part (e) :</strong> Explain why we divide by <span class="math inline">\((n-1)\)</span> for sample variance instead of <span class="math inline">\(n\)</span>.</p>
+<p><strong>Answer:</strong></p>
+<p><br><br><br><br><br><br><br><br></p>
+</div>
+<div class="problem">
+<p><strong>Problem C2: Comparing Variability</strong></p>
+<p>Consider two data sets:</p>
+<ul>
+<li><p>Set A: 10, 12, 14, 16, 18</p></li>
+<li><p>Set B: 5, 10, 14, 18, 23</p></li>
+</ul>
+<ol type="a">
+<li>Calculate the mean for each set.</li>
+<li>Calculate the sample variance for each set.</li>
+<li>Which set has greater variability?</li>
+<li>Calculate the coefficient of variation <span class="math inline">\((CV = s/x̄)\)</span> for each set. Which has greater relative variability?</li>
+</ol>
+<p><strong>Answer:</strong></p>
+<p><br><br><br><br><br><br></p>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Course Resources – PSTAT5A</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-43cf0ab3cbfba30bb4e14216f34e884c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="./theme/styles.css">
+</head>
+
+<body class="floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./img/logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">PSTAT5A</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./schedule.html"> <i class="bi bi-calendar" role="img">
+</i> 
+<span class="menu-text">Class Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./syllabus.html"> <i class="bi bi-file-earmark-text" role="img">
+</i> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" aria-current="page"> <i class="bi bi-book" role="img">
+</i> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+  
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Course Resources</h1>
+<p class="subtitle lead">Your comprehensive guide to learning materials and references</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<script src="./theme/collapsible.js"></script>
+<div class="search-container">
+<div class="search-icon">
+<p>🔍</p>
+</div>
+<p><input type="text" class="search-input" placeholder="Search all resources..." id="searchInput"></p>
+</div>
+<details class="week-collapsible" open="">
+<summary class="week-summary">
+<h3 class="anchored">
+📊 Week 1: Foundations of Data Science
+</h3>
+<p class="week-subtitle">
+Getting Started with Data - Data types, basic statistics, and Python tools
+</p>
+</summary>
+<div class="week-content">
+<!-- ## Week 1: Foundations of Data Science {.panel-tabset} -->
+<section id="getting-started-with-data" class="level2 week-header">
+<h2 class="anchored" data-anchor-id="getting-started-with-data">Getting Started with Data</h2>
+<p>This week introduces fundamental concepts in data science, including data types, basic statistics, and essential Python tools for data manipulation and analysis.</p>
+</section>
+<section id="core-materials" class="level3">
+<h3 class="anchored" data-anchor-id="core-materials">📚 Core Materials</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Required Reading</p>
+</div>
+<div class="resource-title">
+<p><a href="./files/Book/os4_for_screen_reader.pdf" target="_blank"><strong>OpenIntro Statistics</strong>, Chapters 1 &amp; 2</a></p>
+</div>
+<div class="resource-description">
+<p>Essential foundations covering data types, variables, and descriptive statistics. Provides theoretical foundation for understanding how data is structured and analyzed.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📖 PDF • ⏱️ 2-3 hours • 🎯 Beginner</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Python for Statistics</p>
+</div>
+<div class="resource-title">
+<p><a href="https://learning.oreilly.com/library/view/think-stats/9781449308117/" target="_blank"><strong>Think Stats: Exploratory Data Analysis</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Perfect introduction to Python for statistics students. Covers probability, descriptive statistics, and statistical inference using Python with real datasets.</p>
+<p><strong>🎓 UCSB Access:</strong> <a href="https://www.oreilly.com/library-access/">Library Database</a> → Search “O’Reilly” → Login with NetID → Search “Think Stats”</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>💻 Online via UCSB Library • ⏱️ 4-6 hours • 🐍 Python + Statistics</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Supplementary Reading</p>
+</div>
+<div class="resource-title">
+<p><a href="https://learning.oreilly.com/library/view/data-science-from/9781491901410/ch05.html#idp14953264" target="_blank"><strong>Python for Data Analysis</strong>, Ch. 5</a></p>
+</div>
+<div class="resource-description">
+<p>Deep dive into pandas operations including <code>describe()</code>, <code>groupby()</code>, and essential aggregation functions for real-world datasets.</p>
+<p><strong>🎓 UCSB Access:</strong> <a href="https://www.library.ucsb.edu/research/db/211">Library Database</a> → Search “O’Reilly” → Login with NetID → Search “Python for Data Analysis”</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>💻 Online via UCSB Library • ⏱️ 1-2 hours • 🎯 Intermediate</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Library Access</p>
+</div>
+<div class="resource-title">
+<p><a href="https://www.library.ucsb.edu/research/db/211" target="_blank"><strong>O’Reilly Learning Platform</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Access thousands of technology and programming books including Python, statistics, and data science titles. Essential for supplementary reading and advanced topics.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🏛️ UCSB Library • 📖 50,000+ titles • 🔐 NetID Required</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="interactive-tools-practice" class="level3">
+<h3 class="anchored" data-anchor-id="interactive-tools-practice">💻 Interactive Tools &amp; Practice</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Hands-on Workshop</p>
+</div>
+<div class="resource-title">
+<p><a href="https://carpentry.library.ucsb.edu/2025-01-14-python-ecology-lesson/04-data-types-and-format.html" target="_blank"><strong>UCSB Data Lab: Data Types &amp; Format</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Comprehensive hands-on workshop covering Python data types, pandas DataFrame structures, and input/output operations with downloadable datasets.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🛠️ Interactive • ⏱️ 2-3 hours • 📁 Sample datasets</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>API Documentation</p>
+</div>
+<div class="resource-title">
+<p><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html" target="_blank"><strong>pandas.DataFrame.describe()</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Official documentation for descriptive statistics in pandas. Essential reference for understanding central tendency, dispersion, and shape analysis.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📚 API Docs • 🔗 Quick Reference • 🎯 All levels</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Statistical Functions</p>
+</div>
+<div class="resource-title">
+<p><a href="https://numpy.org/doc/2.1/reference/routines.statistics.html" target="_blank"><strong>NumPy Statistical Functions</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Complete reference for NumPy’s statistical toolkit including <code>mean()</code>, <code>median()</code>, <code>std()</code>, <code>percentile()</code>, and advanced statistical measures.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📚 API Docs • 🔧 25+ methods • 🎯 Beginner-Advanced</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Advanced Reference</p>
+</div>
+<div class="resource-title">
+<p><a href="https://docs.scipy.org/doc/scipy/reference/stats.html" target="_blank"><strong>SciPy Stats Module</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Comprehensive statistical analysis toolkit covering probability distributions, hypothesis testing, and advanced descriptive statistics for research-grade analysis.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📚 API Docs • 🎯 Advanced • 🔬 Research-grade</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="learning-objectives-study-plan" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives-study-plan">🎯 Learning Objectives &amp; Study Plan</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Mastery Checklist</p>
+</div>
+<div class="resource-title">
+<p><strong>Week 1 Learning Goals</strong></p>
+</div>
+<div class="resource-description">
+<p>After completing this week, you should be able to:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Understand data types</strong> (numerical, categorical, discrete, continuous)</label></li>
+<li><label><input type="checkbox"><strong>Calculate descriptive statistics</strong> (mean, median, mode, standard deviation)</label></li>
+<li><label><input type="checkbox"><strong>Use pandas</strong> for data manipulation and analysis</label></li>
+<li><label><input type="checkbox"><strong>Create basic visualizations</strong> to explore data patterns</label></li>
+<li><label><input type="checkbox"><strong>Interpret statistical summaries</strong> and identify data characteristics</label></li>
+<li><label><input type="checkbox"><strong>Apply Python tools</strong> for statistical analysis</label></li>
+</ul>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>✅ Self-Assessment • 🎯 Beginner • 🐍 Python Focus</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Study Schedule</p>
+</div>
+<div class="resource-title">
+<p><strong>Recommended Learning Path</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Days 1-2:</strong> Core Reading (OpenIntro Chapters 1-2)</p>
+<p><strong>Day 3:</strong> Python for Statistics (Think Stats)</p>
+<p><strong>Day 4:</strong> Supplementary Reading (Python for Data Analysis)</p>
+<p><strong>Day 5:</strong> Interactive tutorials and hands-on practice</p>
+<p><strong>Day 6:</strong> Get familiar with python documentation</p>
+<p><strong>Day 7:</strong> Review and concept integration</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📅 7-day plan • ⏱️ 2-3 hours daily • 🎯 Beginner-friendly</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="additional-resources" class="level3">
+<h3 class="anchored" data-anchor-id="additional-resources">🔍 Additional Resources</h3>
+<div class="resource-card">
+<div class="resource-type">
+<p>Extended Learning</p>
+</div>
+<div class="resource-title">
+<p><strong>Supplementary Materials by Topic</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Python Basics:</strong> <a href="https://docs.python.org/3/tutorial/">Python.org Tutorial</a> • <a href="https://www.codecademy.com/learn/learn-python-3">Codecademy Python</a> • <a href="https://www.py4e.com/">Python for Everybody</a></p>
+<p><strong>Data Science Foundations:</strong> <a href="https://www.kaggle.com/learn/python">Kaggle Learn</a> • <a href="https://www.datacamp.com/courses/intro-to-python-for-data-science">DataCamp Intro to Python</a> • <a href="https://www.coursera.org/learn/python-for-applied-data-science-ai">Coursera Python for Data Science</a></p>
+<p><strong>Statistical Computing:</strong> <a href="https://greenteapress.com/wp/think-python-2e/">Think Python</a> • <a href="https://automatetheboringstuff.com/">Automate the Boring Stuff</a> • <a href="https://realpython.com/">Real Python Tutorials</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎯 All skill levels • 📈 Beginner to Advanced • 🆓 Many free options</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</details>
+<details class="week-collapsible">
+<summary class="week-summary">
+<h3 class="anchored">
+🎲 Week 2: Introduction to Probability
+</h3>
+<p class="week-subtitle">
+Understanding Uncertainty - Sample spaces, conditional probability, and Bayes’ theorem
+</p>
+</summary>
+<div class="week-content">
+<!-- ## Week 2: Introduction to Probability {.panel-tabset} -->
+<section id="understanding-uncertainty-through-statistics" class="level2 week-header">
+<h2 class="anchored" data-anchor-id="understanding-uncertainty-through-statistics">Understanding Uncertainty Through Statistics</h2>
+<p>This week introduces fundamental concepts in probability theory, including sample spaces, events, conditional probability, independence, and Bayes’ theorem. You’ll learn to quantify uncertainty and make informed decisions with incomplete information.</p>
+</section>
+<section id="core-materials-1" class="level3">
+<h3 class="anchored" data-anchor-id="core-materials-1">📚 Core Materials</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Required Reading</p>
+</div>
+<div class="resource-title">
+<p><a href="./files/Book/os4_for_screen_reader.pdf" target="_blank"><strong>OpenIntro Statistics</strong>, Chapter 3</a></p>
+</div>
+<div class="resource-description">
+<p>Essential foundations covering probability definitions, sample spaces, events, conditional probability, and independence.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📖 PDF • ⏱️ 3-4 hours • 🎯 Beginner-Intermediate</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Supplementary Reading</p>
+</div>
+<div class="resource-title">
+<p><a href="https://bookdown.org/daniel_flores_agreda/Prob1-GSEM-UNIGE/settheory.html#the-venn-diagram" target="_blank"><strong>Elements of Set Theory for Probability</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive guide to set theory operations with Venn diagrams and visual explanations of probability concepts.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🌐 Online Book • ⏱️ 1-2 hours • 📊 Interactive diagrams</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Video Lectures</p>
+</div>
+<div class="resource-title">
+<p><a href="https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/" target="_blank"><strong>MIT: Introduction to Probability</strong></a></p>
+</div>
+<div class="resource-description">
+<p>High-quality video lectures covering probability axioms, sample spaces, and basic probability rules with problem sets.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎬 Video + Notes • ⏱️ 1 hour • 🎓 University Level</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Quick Reference</p>
+</div>
+<div class="resource-title">
+<p><a href="./files/resources/prob_cheat_sheet.html"><strong>Probability Formulas Cheat Sheet</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Comprehensive reference sheet covering all major probability formulas including conditional probability and independence.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📄 PDF • ⚡ Quick reference • 🎯 All levels</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="interactive-tools-practice-1" class="level3">
+<h3 class="anchored" data-anchor-id="interactive-tools-practice-1">💻 Interactive Tools &amp; Practice</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Visualizations</p>
+</div>
+<div class="resource-title">
+<p><a href="https://seeing-theory.brown.edu/basic-probability/index.html" target="_blank"><strong>Seeing Theory: Probability</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive visual introduction with animations for conditional probability, Bayes’ theorem, and independence.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎮 Interactive Web App • ⏱️ 1-2 hours</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Simulations</p>
+</div>
+<div class="resource-title">
+<p><a href="https://www.lock5stat.com/StatKey//bootstrap_1_quant/bootstrap_1_quant.html" target="_blank"><strong>StatKey: Probability Simulations</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive probability simulation tool with tree diagrams, conditional probability, and Bayes’ theorem calculators.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🌳 Interactive Tool • ⏱️ 1 hour</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Practice Problems</p>
+</div>
+<div class="resource-title">
+<p><a href="https://www.khanacademy.org/math/statistics-probability/probability-library" target="_blank"><strong>Khan Academy: Probability</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Comprehensive practice problems covering basic probability, conditional probability, and independence with instant feedback.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📝 Interactive Problems • ⏱️ 3-4 hours</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Python Code</p>
+</div>
+<div class="resource-title">
+<p><a href="https://matplotlib.org/stable/gallery/statistics/index.html" target="_blank"><strong>Matplotlib Statistical Gallery</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Gallery of statistical visualizations including probability distributions, Venn diagrams, and tree diagrams.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📊 Code Examples • 🛠️ Python, Matplotlib</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="learning-objectives-study-plan-1" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives-study-plan-1">🎯 Learning Objectives &amp; Study Plan</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Mastery Checklist</p>
+</div>
+<div class="resource-title">
+<p><strong>Week 2 Learning Goals</strong></p>
+</div>
+<div class="resource-description">
+<p>After completing this week, you should be able to:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Define probability</strong> and understand basic properties (0-1 range)</label></li>
+<li><label><input type="checkbox"><strong>Identify sample spaces</strong> and events for random experiments</label></li>
+<li><label><input type="checkbox"><strong>Apply set operations</strong> (union, intersection, complement)</label></li>
+<li><label><input type="checkbox"><strong>Calculate conditional probabilities</strong> using P(A|B) = P(A∩B)/P(B)</label></li>
+<li><label><input type="checkbox"><strong>Determine independence</strong> using P(A∩B) = P(A)×P(B)</label></li>
+</ul>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>✅ Self-Assessment • 🎯 Beginner-Intermediate</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Study Schedule</p>
+</div>
+<div class="resource-title">
+<p><strong>Recommended Learning Path</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Days 1-2:</strong> Core Reading (OpenIntro Chapter 3)</p>
+<p><strong>Day 3:</strong> Interactive tutorials and visualizations</p>
+<p><strong>Day 4:</strong> Video lectures and supplementary readings</p>
+<p><strong>Day 5:</strong> Practice problems and exercises</p>
+<p><strong>Day 6:</strong> Review and concept integration</p>
+<p><strong>Day 7:</strong> Assessment preparation</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📅 7-day plan • ⏱️ 2-3 hours daily</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="additional-resources-1" class="level3">
+<h3 class="anchored" data-anchor-id="additional-resources-1">🔍 Additional Resources</h3>
+<div class="resource-card">
+<div class="resource-type">
+<p>Extended Learning</p>
+</div>
+<div class="resource-title">
+<p><strong>Supplementary Materials by Learning Style</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Visual Learners:</strong> <a href="https://www.khanacademy.org/math/statistics-probability/probability-library">Khan Academy Videos</a> • <a href="https://treena.org/courses/hsc-mathematics-advanced/discrete-probability/random-variables/notes">Treena Notes</a> • <a href="https://www.mathsisfun.com/data/index.html#stats">Math is Fun Stats</a></p>
+<p><strong>Practical Applications:</strong> <a href="https://www.mathsisfun.com/data/probability-false-positives-negatives.html">Medical Diagnosis Examples</a> • <a href="https://www.khanacademy.org/math/statistics-probability/probability-library/basic-set-ops/a/probability-the-basics">Real-world Problems</a></p>
+<p><strong>Advanced Study:</strong> <a href="https://ocw.mit.edu/courses/res-6-012-introduction-to-probability-spring-2018/pages/part-i-the-fundamentals/">MIT 6.041 Full Course</a> • <a href="https://en.wikipedia.org/wiki/Category:Probability_fallacies">Probability Fallacies Guide</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎯 All learning styles • 📈 Beginner to Advanced</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</details>
+<details class="week-collapsible" open="">
+<summary class="week-summary">
+<h3 class="anchored">
+🃏 Week 3: Conditional Probability, Counting &amp; Discrete Random Variables
+</h3>
+<p class="week-subtitle">
+Getting Started with conditional probability and Bayes’ theorem, counting principles (permutations and combinations), and Python tools
+</p>
+</summary>
+<div class="week-content">
+<!-- ## Week 3: Conditional Probability, Counting & Discrete Random Variables {.panel-tabset} -->
+<section id="advanced-probability-discrete-distributions" class="level2 week-header">
+<h2 class="anchored" data-anchor-id="advanced-probability-discrete-distributions">Advanced Probability &amp; Discrete Distributions</h2>
+<p>This week deepens your understanding of conditional probability and Bayes’ theorem, introduces counting principles (permutations and combinations), and explores discrete random variables including their probability mass functions, expected values, and common distributions.</p>
+</section>
+<section id="core-materials-2" class="level3">
+<h3 class="anchored" data-anchor-id="core-materials-2">📚 Core Materials</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Required Reading</p>
+</div>
+<div class="resource-title">
+<p><a href="./files/Book/os4_for_screen_reader.pdf" target="_blank"><strong>OpenIntro Statistics</strong>, Chapter 3 sections 3.3-3.4</a></p>
+</div>
+<div class="resource-description">
+<p>Essential coverage of conditional probability, Bayes’ theorem, counting principles, and discrete random variables. Includes probability mass functions and expected values.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📖 PDF • ⏱️ 3-4 hours • 🎯 Intermediate</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Bayes’ Theorem</p>
+</div>
+<div class="resource-title">
+<p><a href="https://seeing-theory.brown.edu/bayesian-inference/index.html#section1" target="_blank"><strong>Seeing Theory: Bayes’ Theorem</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive visualization of Bayes’ theorem with medical testing examples, false positives/negatives, and real-world applications. Essential for understanding conditional probability.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎮 Interactive • ⏱️ 1 hour • 🔍 Visual Learning</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Combinatorics</p>
+</div>
+<div class="resource-title">
+<p><a href="https://www.khanacademy.org/math/statistics-probability/counting-permutations-and-combinations" target="_blank"><strong>Khan Academy: Counting &amp; Probability</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Comprehensive coverage of counting principles, permutations, combinations, and their applications to probability with step-by-step examples and practice problems.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎬 Video + Practice • ⏱️ 2-3 hours • 🎯 Beginner-Friendly</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Discrete Distributions</p>
+</div>
+<div class="resource-title">
+<p><a href="https://seeing-theory.brown.edu/probability-distributions/index.html" target="_blank"><strong>Seeing Theory: Random Variables</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive exploration of discrete random variables, probability mass functions, and common distributions (Bernoulli, Binomial, Geometric, Poisson) with parameter adjustments.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎮 Interactive • ⏱️ 1-2 hours • 📊 Distribution Explorer</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="interactive-tools-practice-2" class="level3">
+<h3 class="anchored" data-anchor-id="interactive-tools-practice-2">💻 Interactive Tools &amp; Practice</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Bayes Calculator</p>
+</div>
+<div class="resource-title">
+<p><a href="https://www.mathsisfun.com/data/bayes-theorem.html" target="_blank"><strong>Interactive Bayes’ Theorem Calculator</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Step-by-step Bayes’ theorem calculator with medical testing examples, tree diagrams, and visual representations of prior and posterior probabilities.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🧮 Calculator • ⏱️ 30 minutes • 🎯 All Levels</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Combinatorics Tool</p>
+</div>
+<div class="resource-title">
+<p><a href="https://www.calculator.net/permutation-and-combination-calculator.html" target="_blank"><strong>Permutation &amp; Combination Calculator</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Online calculator for permutations, combinations, and factorial calculations with explanations and step-by-step solutions for complex counting problems.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🧮 Calculator • ⚡ Quick Results • 📊 Problem Solving</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Python Documentation</p>
+</div>
+<div class="resource-title">
+<p><a href="https://docs.scipy.org/doc/scipy/reference/stats.html#discrete-distributions" target="_blank"><strong>SciPy Stats: Discrete Distributions</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Complete reference for discrete probability distributions in Python including Bernoulli, Binomial, Geometric, and Poisson with PMF, CDF, and random generation functions.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📚 API Docs • 🐍 Python • 🎯 Intermediate-Advanced</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Interactive Simulations</p>
+</div>
+<div class="resource-title">
+<p><a href="https://treena.org/courses/hsc-mathematics-advanced/discrete-probability/probability-distributions/overview" target="_blank"><strong>Treena: Probability Distributions</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive probability distribution notes and overview for discrete random variables.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎮 Interactive Tool • ⏱️ 1 hour • 📈 Visual Distributions</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="learning-objectives-study-plan-2" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives-study-plan-2">🎯 Learning Objectives &amp; Study Plan</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Mastery Checklist</p>
+</div>
+<div class="resource-title">
+<p><strong>Week 3 Learning Goals</strong></p>
+</div>
+<div class="resource-description">
+<p>After completing this week, you should be able to:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Apply Bayes’ theorem</strong> to medical testing and real-world scenarios</label></li>
+<li><label><input type="checkbox"><strong>Calculate permutations</strong> and combinations for counting problems</label></li>
+<li><label><input type="checkbox"><strong>Distinguish discrete random variables</strong> from outcomes</label></li>
+<li><label><input type="checkbox"><strong>Work with PMFs</strong> and calculate probabilities for specific values</label></li>
+<li><label><input type="checkbox"><strong>Calculate expected values</strong> and variances for discrete distributions</label></li>
+<li><label><input type="checkbox"><strong>Apply common distributions</strong> (Bernoulli, Binomial, Geometric, Poisson)</label></li>
+<li><label><input type="checkbox"><strong>Use Python</strong> for discrete probability calculations</label></li>
+</ul>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>✅ Self-Assessment • 🎯 Intermediate • 🎲 Probability &amp; Counting</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Study Schedule</p>
+</div>
+<div class="resource-title">
+<p><strong>Recommended Learning Path</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Days 1-2:</strong> Conditional probability and Bayes’ theorem review</p>
+<p><strong>Day 3:</strong> Counting principles: permutations and combinations</p>
+<p><strong>Day 4:</strong> Introduction to discrete random variables and PMFs</p>
+<p><strong>Day 5:</strong> Expected values, variance, and common distributions</p>
+<p><strong>Day 6:</strong> Python implementation and interactive practice</p>
+<p><strong>Day 7:</strong> Real-world applications and problem integration</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📅 7-day plan • ⏱️ 3-4 hours daily • 🔄 Building on Week 2</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="additional-resources-2" class="level3">
+<h3 class="anchored" data-anchor-id="additional-resources-2">🔍 Additional Resources</h3>
+<div class="resource-card">
+<div class="resource-type">
+<p>Extended Learning</p>
+</div>
+<div class="resource-title">
+<p><strong>Supplementary Materials by Topic</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Bayes’ Theorem Applications:</strong> <a href="https://www.mathsisfun.com/data/probability-false-positives-negatives.html">Medical Diagnosis Examples</a> • <a href="https://web.stanford.edu/class/archive/cs/cs109/cs109.1218/files/student_drive/9.3.pdf">Spam Filtering Kaggle Python Example</a> • <a href="https://www.kaggle.com/code/rashimishra19/spam-filtering-using-bayesian-theorem">Spam Filtering</a> • <a href="https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2016.00877.x">Legal Evidence</a></p>
+<p><strong>Combinatorics:</strong> <a href="https://artofproblemsolving.com/wiki/index.php/Combinatorics">Art of Problem Solving</a> • <a href="https://brilliant.org/wiki/combinatorics/">Brilliant Combinatorics</a> • <a href="https://www.mathsisfun.com/pascals-triangle.html">Pascal’s Triangle</a></p>
+<p><strong>Discrete Distributions:</strong> <a href="http://mathworld.wolfram.com/DiscreteDistribution.html">Wolfram MathWorld</a> • <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda366.htm">NIST Engineering Statistics</a> • <a href="https://online.stat.psu.edu/stat414/lesson/12">Real-world Examples</a></p>
+<p><strong>Python Programming:</strong> <a href="https://numpy.org/doc/stable/reference/random/index.html">NumPy Random Documentation</a> • <a href="https://matplotlib.org/stable/gallery/statistics/index.html">Matplotlib Statistical Plots</a> • <a href="https://github.com/unpingco/Python-for-Probability-Statistics-and-Machine-Learning">Jupyter Notebooks Examples</a></p>
+<p><strong>Advanced Topics:</strong> <a href="https://colah.github.io/posts/2015-09-Visual-Information/">Information Theory</a> • <a href="https://setosa.io/ev/markov-chains/">Markov Chains</a> • <a href="https://seeing-theory.brown.edu/frequentist-inference/index.html">Maximum Likelihood Estimation</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎯 All skill levels • 📈 Beginner to Advanced • 🔢 Mathematical Applications</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</details>
+<details class="week-collapsible" open="">
+<summary class="week-summary">
+<h3 class="anchored">
+📈 Week 4: Continuous Random Variables &amp; Intro to Confidence Intervals
+</h3>
+<p class="week-subtitle">
+This week transitions from discrete to continuous random variables.
+</p>
+</summary>
+<div class="week-content">
+<!-- ## Week 4: Continuous Random Variables & Intro to Confidence Intervals {.panel-tabset} -->
+<section id="from-discrete-to-continuous-understanding-density-and-intervals" class="level2 week-header">
+<h2 class="anchored" data-anchor-id="from-discrete-to-continuous-understanding-density-and-intervals">From Discrete to Continuous: Understanding Density and Intervals</h2>
+<p>This week transitions from discrete to continuous random variables, introducing probability density functions, common continuous distributions, and the foundations of statistical inference through confidence intervals. You’ll learn how the Central Limit Theorem enables us to make probabilistic statements about population parameters.</p>
+</section>
+<section id="core-materials-3" class="level3">
+<h3 class="anchored" data-anchor-id="core-materials-3">📚 Core Materials</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Required Reading</p>
+</div>
+<div class="resource-title">
+<p><a href="./files/Book/os4_for_screen_reader.pdf" target="_blank"><strong>OpenIntro Statistics</strong>, Chapter 4</a></p>
+</div>
+<div class="resource-description">
+<p>Essential coverage of continuous random variables, probability density functions, normal distribution, and Central Limit Theorem. Foundation for understanding statistical inference.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📖 PDF • ⏱️ 3-4 hours • 🎯 Intermediate</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Required Reading</p>
+</div>
+<div class="resource-title">
+<p><a href="./files/Book/os4_for_screen_reader.pdf" target="_blank"><strong>OpenIntro Statistics</strong>, Chapter 5 sections 5.1-5.2</a></p>
+</div>
+<div class="resource-description">
+<p>Introduction to confidence intervals, interpretation, and construction. Essential for understanding how sample statistics relate to population parameters.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📖 PDF • ⏱️ 2-3 hours • 🎯 Intermediate</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Central Limit Theorem</p>
+</div>
+<div class="resource-title">
+<p><a href="https://seeing-theory.brown.edu/probability-distributions/index.html#section3" target="_blank"><strong>Seeing Theory: Central Limit Theorem</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive visualization of the Central Limit Theorem with adjustable sample sizes and population distributions. See how sample means become normally distributed regardless of the original population shape.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎮 Interactive • ⏱️ 1 hour • 📊 Visual Learning</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Continuous Distributions</p>
+</div>
+<div class="resource-title">
+<p><a href="https://learning.oreilly.com/library/view/think-stats/9781449308117/ch05.html" target="_blank"><strong>Think Stats: Continuous Distributions</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Python-focused introduction to continuous distributions including normal, exponential, and Pareto distributions with real data examples and implementation.</p>
+<p><strong>🎓 UCSB Access:</strong> <a href="https://www.library.ucsb.edu/research/db/211">Library Database</a> → Search “O’Reilly” → Login with NetID → Search “Think Stats”</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>💻 Online via UCSB Library • ⏱️ 2-3 hours • 🐍 Python Focus</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="interactive-tools-practice-3" class="level3">
+<h3 class="anchored" data-anchor-id="interactive-tools-practice-3">💻 Interactive Tools &amp; Practice</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Distribution Explorer</p>
+</div>
+<div class="resource-title">
+<p><a href="https://seeing-theory.brown.edu/probability-distributions/index.html" target="_blank"><strong>Seeing Theory: Probability Distributions</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive exploration of continuous distributions including Normal, Exponential, and Uniform distributions. Adjust parameters and see real-time changes in PDFs and CDFs.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎮 Interactive Web App • ⏱️ 1-2 hours • 📈 Parameter Exploration</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Confidence Intervals</p>
+</div>
+<div class="resource-title">
+<p><a href="https://www.lock5stat.com/statkey/confidence_intervals_1_mean/confidence_intervals_1_mean.html" target="_blank"><strong>StatKey: Confidence Intervals</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive confidence interval construction tool. Upload data or use built-in datasets to create and interpret confidence intervals with different confidence levels.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🔧 Interactive Tool • ⏱️ 1 hour • 📊 Data Upload</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Normal Distribution</p>
+</div>
+<div class="resource-title">
+<p><a href="https://www.geogebra.org/t/normal-distribution?lang=en" target="_blank"><strong>GeoGebra: Normal Distribution</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Interactive normal distribution calculator with Z-score calculations, area under curve, and probability computations. Essential for understanding standardization.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🧮 Calculator • ⏱️ 30 minutes • 📐 Z-scores &amp; Areas</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Python Documentation</p>
+</div>
+<div class="resource-title">
+<p><a href="https://docs.scipy.org/doc/scipy/reference/stats.html#continuous-distributions" target="_blank"><strong>SciPy Stats: Continuous Distributions</strong></a></p>
+</div>
+<div class="resource-description">
+<p>Complete reference for continuous probability distributions in Python including Normal, Exponential, Uniform, and T-distributions with PDF, CDF, and random generation functions.</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📚 API Docs • 🐍 Python • 🎯 Intermediate-Advanced</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="learning-objectives-study-plan-3" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives-study-plan-3">🎯 Learning Objectives &amp; Study Plan</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Mastery Checklist</p>
+</div>
+<div class="resource-title">
+<p><strong>Week 4 Learning Goals</strong></p>
+</div>
+<div class="resource-description">
+<p>After completing this week, you should be able to:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Distinguish PDFs from PMFs</strong> and understand continuous probability</label></li>
+<li><label><input type="checkbox"><strong>Work with normal distribution</strong> including standardization and Z-scores</label></li>
+<li><label><input type="checkbox"><strong>Apply the Central Limit Theorem</strong> to sampling distributions</label></li>
+<li><label><input type="checkbox"><strong>Calculate and interpret confidence intervals</strong> for population means</label></li>
+<li><label><input type="checkbox"><strong>Choose appropriate confidence levels</strong> based on context</label></li>
+<li><label><input type="checkbox"><strong>Understand factors affecting CI width</strong> (sample size, confidence level, variability)</label></li>
+<li><label><input type="checkbox"><strong>Use Python</strong> for continuous distributions and confidence intervals</label></li>
+<li><label><input type="checkbox"><strong>Interpret CI results correctly</strong> avoiding common misconceptions</label></li>
+</ul>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>✅ Self-Assessment • 🎯 Intermediate • 📊 Continuous Probability</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Study Schedule</p>
+</div>
+<div class="resource-title">
+<p><strong>Recommended Learning Path</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Days 1-2:</strong> Continuous random variables and PDFs (OpenIntro Ch. 4)</p>
+<p><strong>Day 3:</strong> Normal distribution and standardization</p>
+<p><strong>Day 4:</strong> Central Limit Theorem and sampling distributions</p>
+<p><strong>Day 5:</strong> Introduction to confidence intervals (OpenIntro Ch. 5.1-5.2)</p>
+<p><strong>Day 6:</strong> Python implementation and interactive practice</p>
+<p><strong>Day 7:</strong> Real-world applications and interpretation practice</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📅 7-day plan • ⏱️ 3-4 hours daily • 🔄 Building on Discrete Foundation</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="additional-resources-3" class="level3">
+<h3 class="anchored" data-anchor-id="additional-resources-3">🔍 Additional Resources</h3>
+<div class="resource-card">
+<div class="resource-type">
+<p>Extended Learning</p>
+</div>
+<div class="resource-title">
+<p><strong>Supplementary Materials by Topic</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Normal Distribution:</strong> <a href="https://www.mathsisfun.com/data/standard-normal-distribution-table.html">Standard Normal Table</a> • <a href="https://www.khanacademy.org/math/ap-statistics/density-curves-normal-distribution-ap/stats-normal-distributions/e/empirical_rule">68-95-99.7 Rule</a> • <a href="https://www.calculator.net/z-score-calculator.html">Z-score Calculator</a></p>
+<p><strong>Central Limit Theorem:</strong> <a href="https://www.khanacademy.org/math/statistics-probability/sampling-distributions-library/central-limit-theorem/v/central-limit-theorem">Khan Academy CLT</a> • <a href="https://onlinestatbook.com/2/sampling_distributions/clt_demo.html">Interactive CLT Demo</a> • <a href="https://onlinestatbook.com/2/sampling_distributions/samp_dist_mean.html">Rice University Simulations</a></p>
+<p><strong>Confidence Intervals:</strong> <a href="https://www.mathsisfun.com/data/confidence-interval.html">Interpretation Guide</a> • <a href="https://rpsychologist.com/d3/ci/">Common Misconceptions</a> • <a href="https://www.calculator.net/sample-size-calculator.html">Sample Size Calculator</a></p>
+<p><strong>Python Implementation:</strong> <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html">NumPy Random Normal</a> • <a href="https://scipy-lectures.org/packages/statistics/index.html">SciPy Statistical Tests</a> • <a href="https://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.PredictionResults.conf_int.html">Statsmodels Confidence Intervals</a></p>
+<p><strong>Real-world Applications:</strong> <a href="https://en.wikipedia.org/wiki/Reference_range">Medical Reference Ranges</a> • <a href="https://asq.org/quality-resources/control-chart">Quality Control in Manufacturing</a> • <a href="https://fivethirtyeight.com/features/how-fivethirtyeight-calculates-pollster-ratings/">Polling and Election Predictions</a> • <a href="https://blog.optimizely.com/2015/01/20/statistics-for-the-internet-age-the-story-behind-optimizelys-new-stats-engine/">A/B Testing in Tech</a></p>
+<p><strong>Advanced Topics:</strong> <a href="https://seeing-theory.brown.edu/frequentist-inference/index.html#section3">Bootstrap Confidence Intervals</a> • <a href="https://online.stat.psu.edu/stat415/">Non-parametric Methods</a> • <a href="https://seeing-theory.brown.edu/bayesian-inference/index.html#section3">Bayesian Credible Intervals</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🎯 All skill levels • 📈 Beginner to Advanced • 🔬 Statistical Inference</p>
+</div>
+</div>
+</div>
+</section>
+<section id="practical-applications-case-studies" class="level3">
+<h3 class="anchored" data-anchor-id="practical-applications-case-studies">📊 Practical Applications &amp; Case Studies</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Healthcare Example</p>
+</div>
+<div class="resource-title">
+<p><strong>Blood Pressure Analysis</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Working Kaggle Notebooks:</strong> - <a href="https://www.kaggle.com/code/akhilasp/blood-pressure-data-analysis" target="_blank">Blood Pressure Data Analysis</a> - Complete analysis with descriptive statistics and confidence intervals - <a href="https://www.kaggle.com/code/jothamsoboyejo/blood-pressure-prediction" target="_blank">Blood Pressure Prediction</a> - Normal distribution modeling</p>
+<p><strong>Concepts Applied:</strong> - Normal distribution for blood pressure readings - Confidence intervals for population means - Statistical inference in medical research</p>
+<p><strong>Datasets:</strong> <a href="https://www.kaggle.com/datasets/haritmengar/blood-pressure-variability" target="_blank">Blood Pressure Variability</a> • <a href="https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset" target="_blank">Cardiovascular Disease</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🏥 Healthcare • 📊 Real Kaggle Data • 🎯 Applied Statistics</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Business Example</p>
+</div>
+<div class="resource-title">
+<p><strong>Customer Satisfaction Analysis</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Working Kaggle Notebooks:</strong> - <a href="https://www.kaggle.com/code/jacksondivakarr/customer-satisfaction-analysis" target="_blank">Customer Satisfaction Analysis</a> - 10K+ records with statistical analysis - <a href="https://www.kaggle.com/code/ddosad/customer-service-satisfaction-analysis" target="_blank">Customer Service Satisfaction</a> - eCommerce data analysis</p>
+<p><strong>Concepts Applied:</strong> - Continuous rating scales and normal distribution - Confidence intervals for customer ratings - Business decision-making with statistical evidence</p>
+<p><strong>Datasets:</strong> <a href="https://www.kaggle.com/datasets/ahmedaliraja/customer-satisfaction-10k" target="_blank">Customer Satisfaction 10K+</a> • <a href="https://www.kaggle.com/datasets/sjleshrac/airlines-customer-satisfaction" target="_blank">Airlines Customer Satisfaction</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>💼 Business • 📈 Customer Analytics • 🎯 Decision Making</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Environmental Science</p>
+</div>
+<div class="resource-title">
+<p><strong>Climate Data Analysis</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Working Kaggle Notebooks:</strong> - <a href="https://www.kaggle.com/code/shauvikbrahma/climate-change-data-analysis" target="_blank">Climate Change Data Analysis</a> - Temperature trends with statistical analysis - <a href="https://www.kaggle.com/code/sebastienj/map-of-temperatures-and-analysis-of-global-warming" target="_blank">Global Temperature Analysis</a> - Historical climate data exploration</p>
+<p><strong>Concepts Applied:</strong> - Normal distribution for temperature measurements - Confidence intervals for climate change analysis - Central Limit Theorem with environmental data</p>
+<p><strong>Datasets:</strong> <a href="https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data" target="_blank">Climate Change: Earth Surface Temperature</a> • <a href="https://www.kaggle.com/datasets/garystafford/environmental-sensor-data-132k" target="_blank">Environmental Sensor Data</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🌡️ Environmental • 🌍 Climate Data • 🔬 Research Applications</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Quality Control</p>
+</div>
+<div class="resource-title">
+<p><strong>Manufacturing Process Control</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Working Kaggle Notebooks:</strong> - <a href="https://www.kaggle.com/code/nalkrolu/statistical-process-control-quality-control" target="_blank">Statistical Process Control</a> - Complete SPC implementation - <a href="https://www.kaggle.com/code/gabrielsantello/parts-manufacturing-quality-analysis" target="_blank">Parts Manufacturing Quality Analysis</a> - Industrial quality metrics - <a href="https://www.kaggle.com/code/melissamonfared/production-quality-control-analysis-eda" target="_blank">Production Quality Control Analysis</a> - EDA with confidence intervals</p>
+<p><strong>Concepts Applied:</strong> - Normal distribution for process measurements - Control charts and confidence limits - Statistical quality control methods</p>
+<p><strong>Datasets:</strong> <a href="https://www.kaggle.com/datasets/podsyp/production-quality" target="_blank">Production Quality</a> • <a href="https://www.kaggle.com/datasets/fahmidachowdhury/manufacturing-defects" target="_blank">Manufacturing Defects</a></p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🏭 Manufacturing • ⚙️ Quality Control • 📊 Process Improvement</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="core-statistical-concepts---working-notebooks" class="level3">
+<h3 class="anchored" data-anchor-id="core-statistical-concepts---working-notebooks">🎯 Core Statistical Concepts - Working Notebooks</h3>
+<div class="grid-2">
+<div class="resource-card">
+<div class="resource-type">
+<p>Continuous Distributions</p>
+</div>
+<div class="resource-title">
+<p><strong>Normal Distribution Tutorials</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Beginner-Friendly Notebooks:</strong> - <a href="https://www.kaggle.com/code/gadaadhaarigeek/normal-distribution" target="_blank">Normal Distribution</a> - Complete introduction with examples - <a href="https://www.kaggle.com/code/olgaluzhetska/students-performance-and-normal-distribution" target="_blank">Students Performance &amp; Normal Distribution</a> - Real education data - <a href="https://www.kaggle.com/code/paulrohan2020/tutorial-discrete-vs-continuous-prob-distribution" target="_blank">Discrete vs Continuous Distributions</a> - Comprehensive comparison</p>
+<p><strong>Concepts Covered:</strong> PDF/CDF, standardization, Z-scores, probability calculations</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📊 Core Concepts • 🎯 Beginner-Friendly • 📚 Tutorial Style</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Confidence Intervals</p>
+</div>
+<div class="resource-title">
+<p><strong>Confidence Interval Implementation</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Hands-on Practice:</strong> - <a href="https://www.kaggle.com/code/hamelg/python-for-data-23-confidence-intervals" target="_blank">Python for Data 23: Confidence Intervals</a> - Complete Python tutorial with Titanic data - <a href="https://www.kaggle.com/code/adikeshri/understanding-confidence-intervals" target="_blank">Understanding Confidence Intervals</a> - Theory and practice - <a href="https://www.kaggle.com/code/ramendrapandey/inference-statistics-1-confidence-intervals" target="_blank">Inference Statistics: Confidence Intervals</a> - Multi-dataset analysis</p>
+<p><strong>Concepts Covered:</strong> Construction, interpretation, margin of error, confidence levels</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>🔢 Statistical Inference • 🐍 Python Implementation • 📈 Real Data</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>General Statistics</p>
+</div>
+<div class="resource-title">
+<p><strong>Comprehensive Statistics Tutorial</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>Complete Reference:</strong> - <a href="https://www.kaggle.com/code/carlolepelaars/statistics-tutorial" target="_blank">Statistics Tutorial</a> - End-to-end statistical analysis covering descriptive statistics, probability distributions, and inference</p>
+<p><strong>Perfect for:</strong> Students wanting a single comprehensive notebook covering multiple Week 4 concepts in one place</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📚 Comprehensive • 🎯 All Levels • 🔄 Complete Reference</p>
+</div>
+</div>
+</div>
+<div class="resource-card">
+<div class="resource-type">
+<p>Datasets for Practice</p>
+</div>
+<div class="resource-title">
+<p><strong>Ready-to-Use Datasets</strong></p>
+</div>
+<div class="resource-description">
+<p><strong>High-Quality Data:</strong> - <a href="https://www.kaggle.com/datasets/tinasoni/normal-distribution-data" target="_blank">Normal Distribution Data</a> - Clean datasets for practicing normal distribution concepts - <a href="https://www.kaggle.com/datasets/sumanthvrao/daily-climate-time-series-data" target="_blank">Daily Climate Data</a> - Delhi weather data (2013-2017) - <a href="https://www.kaggle.com/datasets/supergus/multistage-continuousflow-manufacturing-process" target="_blank">Multi-stage Manufacturing Process</a> - Real factory data</p>
+<p><strong>Perfect for:</strong> Creating your own analysis and practicing confidence interval construction</p>
+</div>
+<div class="resource-meta">
+<div class="meta-item">
+<p>📊 Practice Data • 🎯 Student Projects • 🔧 Analysis Ready</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="formula-reference-sheet" class="level3">
+<h3 class="anchored" data-anchor-id="formula-reference-sheet">🧮 Formula Reference Sheet</h3>
+<div class="formula-reference">
+<p><strong>Essential Formulas for Week 4</strong></p>
+<p><strong>Normal Distribution:</strong> - Standard Normal: <span class="math inline">\(Z = \frac{X - \mu}{\sigma}\)</span> - Probability: <span class="math inline">\(P(a &lt; X &lt; b) = \int_a^b \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx\)</span></p>
+<p><strong>Central Limit Theorem:</strong> - Sampling Distribution: <span class="math inline">\(\bar{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)\)</span> - Standard Error: <span class="math inline">\(SE = \frac{\sigma}{\sqrt{n}}\)</span></p>
+<p><strong>Confidence Intervals:</strong> - General Form: <span class="math inline">\(\text{statistic} \pm \text{margin of error}\)</span> - For Means: <span class="math inline">\(\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}\)</span> - Margin of Error: <span class="math inline">\(ME = z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}\)</span></p>
+<p><strong>Common Z-values:</strong> - 90% CI: <span class="math inline">\(z_{0.05} = 1.645\)</span> - 95% CI: <span class="math inline">\(z_{0.025} = 1.96\)</span><br>
+- 99% CI: <span class="math inline">\(z_{0.005} = 2.576\)</span></p>
+</div>
+</section>
+</div>
+</details>
+<details class="week-collapsible" open="">
+<summary class="week-summary">
+<h3 class="anchored">
+🎯 Week 5: Statistical Methods &amp; Testing
+</h3>
+<p class="week-subtitle">
+During this week, we’ll cover confidence intervals for means and proportions and tackle hypothesis testing.
+</p>
+</summary>
+<div class="week-content">
+<div class="coming-soon">
+<div class="coming-soon-icon">
+<p>🎯</p>
+</div>
+<section id="hypothesis-testing-fundamentals" class="level3">
+<h3 class="anchored" data-anchor-id="hypothesis-testing-fundamentals">Hypothesis Testing Fundamentals</h3>
+<p>Week 5 will cover Confidence Intervals, hypothesis testing, and two sample t-Tests. Materials will be posted by week 5.</p>
+</section>
+</div>
+</div>
+</details>
+<details class="week-collapsible" open="">
+<summary class="week-summary">
+<h3 class="anchored">
+⚖️ Week 6: Statistical Methods &amp; Testing
+</h3>
+<p class="week-subtitle">
+During the last week, we dive into statistical modeling and testing!
+</p>
+</summary>
+<div class="week-content">
+<div class="coming-soon">
+<div class="coming-soon-icon">
+<p>⚖️</p>
+</div>
+<section id="advanced-statistical-methods" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-statistical-methods">Advanced Statistical Methods</h3>
+<p>Week 6 will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 6.</p>
+</section>
+</div>
+</div>
+</details>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('searchInput');
+  
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      const resourceCards = document.querySelectorAll('.resource-card');
+      
+      resourceCards.forEach(card => {
+        const title = card.querySelector('.resource-title')?.textContent.toLowerCase() || '';
+        const description = card.querySelector('.resource-description')?.textContent.toLowerCase() || '';
+        const type = card.querySelector('.resource-type')?.textContent.toLowerCase() || '';
+        
+        if (title.includes(searchTerm) || description.includes(searchTerm) || type.includes(searchTerm)) {
+          card.style.display = 'block';
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1)';
+        } else if (searchTerm !== '') {
+          card.style.opacity = '0.3';
+          card.style.transform = 'scale(0.95)';
+        } else {
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1)';
+        }
+      });
+    });
+  }
+});
+</script>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/pstat5a\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
