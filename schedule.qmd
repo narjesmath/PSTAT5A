@@ -61,19 +61,14 @@ Lecture Materials
 ::: {.date}
 6/23
 :::
-
 ::: {.topic}
-
 [Introduction](/files/lecture_notes/Lecture_1/lecture1.qmd)
 :::
-
 ::: {.lab-quiz}
-
 [Lab 1](/files/labs/lab1/lab1.pdf)
 
 [lab1 Solutions](/files/labs/lab1/lab1_sln.qmd)
 :::
-
 ::: {.worksheet}
 [Worksheet 1](/files/worksheets/PSTAT_5A_Discussion_Worksheet_1.pdf)
 :::
