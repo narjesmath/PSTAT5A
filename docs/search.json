@@ -1664,5 +1664,180 @@
     "title": "Lecture 2: Descriptive Statistics I",
     "section": "Try These Problems",
     "text": "Try These Problems\n\nCalculate mean, median, and mode for: 12, 15, 18, 12, 20, 25, 12, 30\nA dataset has mean = 50 and median = 45. What does this tell you about the distribution?\nWhy might median be preferred over mean for reporting household income?\nCreate a Python function to identify the most appropriate measure of central tendency for a given dataset."
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Download the full syllabus as a PDF\n\n\n\n\n📚\n\n\nCourse Information\n\n\n\n\n\nLecture Time\n\n\nM/W/T/R 8:00 AM–9:30 AM\n\n\n\n\nLecture Hall\n\n\nHSSB 1173\n\n\n\n\nSections\n\n\nAs scheduled on GOLD (see Canvas for Zoom links)\n\n\n\n\nEmail\n\n\nnmathlouthi@ucsb.edu\n\n\n\n\nOffice\n\n\nEllison Hall 5829\n\n\n\n\nOffice Hours\n\n\nThursdays 11:00 AM–12:00 PM (via Zoom or by appointment)\n\n\n\n\n\nNote: Zoom links are posted on the Canvas page for the class.\n\n\n\n\n\n\n👥\n\n\nTeaching Assistants\n\n\n\n\n\nSL\n\n\nSummer Le\n\n\nsle@ucsb.edu\n\n\n\n\nMH\n\n\nMingzhu He\n\n\nmingzhuhe@ucsb.edu\n\n\n\n\n\nEmail policy: Include [PSTAT 5A] in your subject. Allow 24–48 hours for a reply (avoid weekends).\n\n\n\n\n\n\n🎯\n\n\nCourse Description\n\n\nThis introductory course covers the foundations of statistical thinking, including data description, probability, and inference. Students will learn how to summarize data, compute basic probabilities, and make informed decisions using statistical tools.\n\nStudent Learning Objectives\nBy the end of this course, you will be able to:\n\nSummarize data using descriptive statistics\nUnderstand fundamental probability rules and distributions\nConduct basic inferential procedures (confidence intervals, hypothesis tests)\nInterpret results and communicate findings\n\n\n\n\n\n\n📖\n\n\nCourse Materials\n\n\n\n\n\nCanvas\n\n\nAnnouncements, Zoom links, and grades (canvas.ucsb.edu)\n\n\n\n\nCalculator\n\n\nScientific calculator for in-class and quiz work\n\n\n\n\nComputer\n\n\nUse our JupyterHub instance\n\n\n\n\nRecommended Texts\n\n\nOpenIntro Statistics (free online)\nThink Stats by Allen Downey (free online)\n\n\n\n\n\n\n\n📅\n\n\nClass Schedule\n\n\n\n\nNote: For the most up-to-date details, please visit the Class Schedule tab on our website: Class Schedule\n\n\n\n\n\n\n📊\n\n\nGrading\n\n\n\n\nGrade Breakdown:\n\n\n\nLecture attendance: 5%\nSection attendance: 5%\nQuiz 1: 30%\nQuiz 2: 30%\nQuiz 3: 30%\n\n\n\nGrading Scale:\n\n\n\n\nA Grades\nB Grades\nC Grades\nD/F Grades\n\n\n\n\nA+: 97–100\nB+: 87–89\nC+: 77–79\nD+: 67–69\n\n\nA: 93–96\nB: 83–86\nC: 73–76\nD: 60–66\n\n\nA–: 90–92\nB–: 80–82\nC–: 70–72\nF: &lt; 60\n\n\n\n\n\n\nGrades round to the nearest whole number (e.g., 89.7 → 90).\n\n\n\n\n\n\n📝\n\n\nQuizzes\n\n\n\n\n\n1\n\n\n\nQuiz 1: Weeks 1–2\n\n\nJuly 11th\n\n\nCovers introduction, descriptive statistics and Intro to Probability\n\n\n\n\n\n2\n\n\n\nQuiz 2: Weeks 3–4\n\n\nJuly 25th\n\n\nCovers Conditional Probability, Counting & Random Variables (Discrete & Continuous)\n\n\n\n\n\n3\n\n\n\nQuiz 3: Weeks 5–6\n\n\nJuly 31st\n\n\nCovers Confidence Intervals & Hypothesis testing\n\n\n\n\n\n\nFormat: Multiple choice & short answer (open book)\nPlatform: Canvas /-or Gradescope\nAvailability: Fridays 7 AM–12 AM (1‑hour limit)\nMake‑up policy: Notify within 48 h; documentation required.\n\n\n\n\n\n\n🎯\n\n\nHow to Succeed\n\n\n\nAttend lectures & sections\nEngage actively & ask questions\nUse office hours for help\n\n\nClassroom Expectations\nRespect peers & TAs. Stay engaged. Seek support if needed.\n\n\nCommunication Guidelines\n\nUse UCSB email with clear subject\nAllow 24–48 h for replies\nUse office hours or appointments\n\n\n\n\n\n\n🛡️\n\n\nAcademic Integrity\n\n\nDo your own work. Cite sources properly. See:\n\nAcademic Integrity Policy\nStudent Conduct Code\n\n\n\n\n\n🤝\n\n\nStudent Resources\n\n\n\n\n🦽 DSP & Accommodations Disability services and accommodations\n\n\n📚 CLAS Campus Learning Assistance Services\n\n\n🏥 Student Health Health and wellness services\n\n\n🍎 Basic Needs Food security and basic needs support\n\n\n💚 CAPS Counseling & Psychological Services\n\n\n🎓 EOP Educational Opportunity Program\n\n\n👥 ONDAS First-Generation Support\n\n\n📋 Undocumented Services Support for undocumented students\n\n\n🔄 Transfer Center Transfer student support\n\n\n\n\n\n\n📅\n\n\nImportant Dates\n\n\n\n\n\nAdd w/o Code\n\n\nJune 29\n\n\n\n\nDrop w/ Refund\n\n\nJune 29\n\n\n\n\nAdd w/ Code\n\n\nJuly 3\n\n\n\n\nDrop Course\n\n\nJuly 9\n\n\n\n\nChange Grade Option\n\n\nAugust 1"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PSTAT 5A: Understanding Data",
+    "section": "",
+    "text": "Learn the fundamentals of data science and statistical thinking\n\n\nSummer Session A 2025 • Taught by Narjes Mathlouthi\n\nGet Started →"
+  },
+  {
+    "objectID": "index.html#course-overview",
+    "href": "index.html#course-overview",
+    "title": "PSTAT 5A: Understanding Data",
+    "section": "Course Overview",
+    "text": "Course Overview\n\nTransform raw data into meaningful insights through hands-on learning and real-world applications"
+  },
+  {
+    "objectID": "index.html#quick-navigation",
+    "href": "index.html#quick-navigation",
+    "title": "PSTAT 5A: Understanding Data",
+    "section": "Quick Navigation",
+    "text": "Quick Navigation\n\nEverything you need for the course, organized and accessible"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#welcome-to-lecture-8",
+    "href": "files/lecture_notes/lecture7/lecture7.html#welcome-to-lecture-8",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Welcome to Lecture 8",
+    "text": "Welcome to Lecture 8\nDiscrete Random Variables\nFrom outcomes to numbers: quantifying randomness"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#todays-learning-objectives",
+    "href": "files/lecture_notes/lecture7/lecture7.html#todays-learning-objectives",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Today’s Learning Objectives",
+    "text": "Today’s Learning Objectives\nBy the end of this lecture, you will be able to:\n\nDefine random variables and distinguish discrete from continuous\nWork with probability mass functions (PMFs) and cumulative distribution functions (CDFs)\nCalculate expected values and variances for discrete random variables\nApply properties of expectation and variance\nWork with common discrete distributions (Bernoulli, Binomial, Geometric, Poisson)\nSolve real-world problems using discrete random variables\nUse python to compute probabilities and parameters"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#what-is-a-random-variable",
+    "href": "files/lecture_notes/lecture7/lecture7.html#what-is-a-random-variable",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "What is a Random Variable?",
+    "text": "What is a Random Variable?\n\nDefinition: A random variable is a function that assigns a numerical value to each outcome of a random experiment.\nNotation: Usually denoted by capital letters \\(X\\), \\(Y\\), \\(Z\\)\nKey insight: Random variables transform outcomes into numbers, making statistical analysis possible\n\n\n\nTreena - Random Variables"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#die-roll-example-mapping-outcomes-to-numbers",
+    "href": "files/lecture_notes/lecture7/lecture7.html#die-roll-example-mapping-outcomes-to-numbers",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Die Roll Example: Mapping Outcomes to Numbers",
+    "text": "Die Roll Example: Mapping Outcomes to Numbers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\n\n\n2\n\n\n3\n\n\n4\n\n\n5\n\n\n6\n\n\n\n\n\nRandom Variable X maps each die face to its numerical value."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#why-use-random-variables",
+    "href": "files/lecture_notes/lecture7/lecture7.html#why-use-random-variables",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Why Use Random Variables?",
+    "text": "Why Use Random Variables?\n\n\nRandom variables allow us to:\n\nQuantify outcomes numerically\nCalculate means, variances, and other statistics\nModel real-world phenomena\nMake predictions and decisions\nCompare different random processes\n\nExamples: Height, test scores, number of defects, wait times, stock prices\n\n\n\nTreena - Random Variables"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#types-of-random-variables",
+    "href": "files/lecture_notes/lecture7/lecture7.html#types-of-random-variables",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Types of Random Variables",
+    "text": "Types of Random Variables\n\n\nToday we focus on discrete random variables - notice there are gaps between possible values!\n\n\n\nDiscrete vs. Continuous: Demystifying the type of Random Variables"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#probability-mass-function-pmf",
+    "href": "files/lecture_notes/lecture7/lecture7.html#probability-mass-function-pmf",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Probability Mass Function (PMF)",
+    "text": "Probability Mass Function (PMF)\n\n\nDefinition: The Probability Mass Function (PMF) of a discrete random variable \\(X\\) is:\n\n\n\\[P(X = x) = \\text{probability that } X \\text{ takes the value } x\\]\n\n\nProperties of PMF:\n\n\n\n\\(P(X = x) \\geq 0\\) for all \\(x\\)\n\n\n\\(\\sum_{\\text{all } x} P(X = x) = 1\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#pmf-example-two-coin-flips",
+    "href": "files/lecture_notes/lecture7/lecture7.html#pmf-example-two-coin-flips",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "PMF Example: Two Coin Flips",
+    "text": "PMF Example: Two Coin Flips\n\nTwo Coin Flips - Number of Heads\nLet \\(X\\) = number of heads in two coin flips\nSample Space: \\(\\{HH, HT, TH, TT\\}\\)\n\n\n\nH T H T\n\n\nCurrent outcome: H T H T\n\nClick coins to flip them!\n\nTable summarizes by number of heads, not the exact sequence.\n\n\n\n\n\n\\(x\\) (heads)\n\n\nOutcomes\n\n\n\\(P(X = x)\\)\n\n\nEmpirical\n\n\n\n\n\n\n0\n\n\nTT\n\n\n0.25\n\n\n0\n\n\n\n\n1\n\n\nHT, TH\n\n\n0.50\n\n\n0\n\n\n\n\n2\n\n\nHH\n\n\n0.25\n\n\n0\n\n\n\n\n\nEmpirical probability updates as you flip!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#cumulative-distribution-function-cdf",
+    "href": "files/lecture_notes/lecture7/lecture7.html#cumulative-distribution-function-cdf",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Cumulative Distribution Function (CDF)",
+    "text": "Cumulative Distribution Function (CDF)\n\n\n\nThe cumulative distribution function of a random variable \\(X\\) is:\n\\[F(x) = P(X \\leq x)\\]\nProperties of CDF: 1. \\(F(x)\\) is non-decreasing 2. \\(\\lim_{x \\to -\\infty} F(x) = 0\\) 3. \\(\\lim_{x \\to \\infty} F(x) = 1\\) 4. \\(F(x)\\) is right-continuous"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#expected-value-and-variance",
+    "href": "files/lecture_notes/lecture7/lecture7.html#expected-value-and-variance",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Expected Value and Variance",
+    "text": "Expected Value and Variance\nThe expected value of a discrete random variable \\(X\\) is:\n\\[E[X] = \\mu = \\sum_{\\text{all } x} x \\cdot P(X = x)\\]\nThe variance of a random variable \\(X\\) measures spread around the mean:\n\\[\\text{Var}(X) = \\sigma^2 = E[(X - \\mu)^2] = E[X^2] - (E[X])^2\\]\n\nExpected value represents the long-run average if we repeat the experiment many times."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#law-of-large-numbers-demo",
+    "href": "files/lecture_notes/lecture7/lecture7.html#law-of-large-numbers-demo",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Law of Large Numbers Demo",
+    "text": "Law of Large Numbers Demo\n\nLaw of Large Numbers Demo\n\n\nRun Simulation\n\n 100 trials 500 trials 1000 trials 5000 trials \n\n\n\n\n\nWatch how the sample mean converges to the expected value! {.smaller}"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#common-discrete-distributions",
+    "href": "files/lecture_notes/lecture7/lecture7.html#common-discrete-distributions",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Common Discrete Distributions",
+    "text": "Common Discrete Distributions\n\nBernoulli\nSingle trial, two outcomes\nParameters: \\(p\\) (success probability)\nPMF: \\(P(X = 1) = p\\), \\(P(X = 0) = 1-p\\)\nMean: \\(p\\)\nVariance: \\(p(1-p)\\)\n\n\nBinomial\n\\(n\\) independent Bernoulli trials\nParameters: \\(n\\) (trials), \\(p\\) (success prob.)\nPMF: \\(P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\\)\nMean: \\(np\\)\nVariance: \\(np(1-p)\\)\n\n\nGeometric\nTrials until first success\nParameters: \\(p\\) (success probability)\nPMF: \\(P(X = k) = (1-p)^{k-1} p\\)\nMean: \\(1/p\\)\nVariance: \\((1-p)/p^2\\)\n\n\nPoisson\nEvents in fixed interval\nParameters: \\(\\lambda\\) (average rate)\nPMF: \\(P(X = k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}\\)\nMean: \\(\\lambda\\)\nVariance: \\(\\lambda\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#interactive-distribution-explorer",
+    "href": "files/lecture_notes/lecture7/lecture7.html#interactive-distribution-explorer",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Interactive Distribution Explorer",
+    "text": "Interactive Distribution Explorer\n\nDistribution Visualizer\n\n Binomial Geometric Poisson  Parameter 1:  Parameter 2:"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-1",
+    "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-1",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Practice Problem 1",
+    "text": "Practice Problem 1\n\nA box contains 3 red balls and 2 blue balls. Two balls are drawn without replacement. Let \\(X\\) = number of red balls drawn. Find the PMF of \\(X\\).\n\nShow Solution\n\n\nSolution. \\(X\\) can take values 0, 1, or 2.\n\\(P(X = 0) = \\frac{\\binom{3}{0}\\binom{2}{2}}{\\binom{5}{2}} = \\frac{1 \\times 1}{10} = \\frac{1}{10}\\)\n\\(P(X = 1) = \\frac{\\binom{3}{1}\\binom{2}{1}}{\\binom{5}{2}} = \\frac{3 \\times 2}{10} = \\frac{6}{10}\\)\n\\(P(X = 2) = \\frac{\\binom{3}{2}\\binom{2}{0}}{\\binom{5}{2}} = \\frac{3 \\times 1}{10} = \\frac{3}{10}\\)\nCheck: \\(\\frac{1}{10} + \\frac{6}{10} + \\frac{3}{10} = 1\\) ✓"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-2-expected-value",
+    "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-2-expected-value",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Practice Problem 2: Expected Value",
+    "text": "Practice Problem 2: Expected Value\n\nUsing the red balls example from Problem 1, find \\(E[X]\\) and \\(\\text{Var}(X)\\).\n\nShow Solution\n\n\nSolution. Expected Value: \\[E[X] = 0 \\times \\frac{1}{10} + 1 \\times \\frac{6}{10} + 2 \\times \\frac{3}{10} = 0 + \\frac{6}{10} + \\frac{6}{10} = 1.2\\]\nVariance: \\[E[X^2] = 0^2 \\times \\frac{1}{10} + 1^2 \\times \\frac{6}{10} + 2^2 \\times \\frac{3}{10} = 0 + \\frac{6}{10} + \\frac{12}{10} = 1.8\\]\n\\[\\text{Var}(X) = E[X^2] - (E[X])^2 = 1.8 - (1.2)^2 = 1.8 - 1.44 = 0.36\\]\nStandard Deviation: \\(\\sigma = \\sqrt{0.36} = 0.6\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#practice-problem-3",
+    "href": "files/lecture_notes/lecture7/lecture7.html#practice-problem-3",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Practice Problem 3",
+    "text": "Practice Problem 3\n\nA student takes a 10-question multiple choice quiz with 4 options per question. If the student guesses randomly, what’s the probability of getting exactly 3 correct?\n\nShow Solution\n\n\nSolution. This is a binomial distribution with \\(n = 10\\), \\(p = 1/4 = 0.25\\)\n\\[P(X = 3) = \\binom{10}{3} \\times (0.25)^3 \\times (0.75)^7\\]\n\\[P(X = 3) = 120 \\times 0.015625 \\times 0.1335 \\approx 0.2503\\]\nSo there’s about a 25% chance of getting exactly 3 correct by guessing."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#properties-of-expected-value",
+    "href": "files/lecture_notes/lecture7/lecture7.html#properties-of-expected-value",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Properties of Expected Value",
+    "text": "Properties of Expected Value\n\n\n\nLinearity of Expectation\n\n\\(E[c] = c\\) (constant)\n\\(E[cX] = c \\cdot E[X]\\) (scaling)\n\\(E[X + Y] = E[X] + E[Y]\\) (additivity)\n\\(E[aX + bY + c] = aE[X] + bE[Y] + c\\)\n\n\nVariance Properties\n\n\\(\\text{Var}(aX + b) = a^2 \\text{Var}(X)\\)\n\\(\\text{Var}(X + Y) = \\text{Var}(X) + \\text{Var}(Y)\\) (if \\(X\\) and \\(Y\\) are independent)\n\n\nImportant: Property 3 holds even if \\(X\\) and \\(Y\\) are dependent!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#key-takeaways",
+    "href": "files/lecture_notes/lecture7/lecture7.html#key-takeaways",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\n\n\nMain Concepts\n\nRandom variables transform outcomes into numbers for mathematical analysis\nPMF gives probabilities for specific values; CDF gives cumulative probabilities\nExpected value is the long-run average; variance measures spread\n\n\nDistribution Selection\nChoose distributions based on the underlying process:\n\nBernoulli for single trials\nBinomial for fixed trials\nGeometric for waiting times\nPoisson for rates\n\nKey Principle\n\nLaw of Large Numbers connects theoretical expectations with observed averages"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#looking-ahead",
+    "href": "files/lecture_notes/lecture7/lecture7.html#looking-ahead",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\nNext Lecture: Continuous Random Variables\nTopics we’ll cover:\n\nProbability density functions (PDFs)\nNormal distribution\nExponential distribution\nCentral Limit Theorem applications\n\n\nConnection: Discrete distributions often approximate continuous ones, and vice versa"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#questions",
+    "href": "files/lecture_notes/lecture7/lecture7.html#questions",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Questions?",
+    "text": "Questions?\nOffice Hours: 11AM on Thursday (link on Canvas)\nEmail: nmathlouthi@ucsb.edu\nNext Class: Continuous Random Variables"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture7/lecture7.html#resources",
+    "href": "files/lecture_notes/lecture7/lecture7.html#resources",
+    "title": "PSTAT 5A: Discrete Random Variables",
+    "section": "Resources",
+    "text": "Resources\n\n\n\n Read OpenIntro Statistics Chapter 3 section 3.4\n\n\n Random Variable - Treena Courses\n\n\n Random Variables and Probability Functions\n\n\n Random Variables - Distribution and Expectation\n\n\n Khan Academy - Unit9: Random Variables"
   }
 ]

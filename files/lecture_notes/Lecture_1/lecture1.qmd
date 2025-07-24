@@ -8,6 +8,7 @@ format:
    footer: " Understanding Data - Intro to Data Science © 2025 Narjes Mathlouthi"
    transition: slide
    background-transition: fade
+   latex-tinytex: false
    theme: default
    css: /files/lecture_notes/theme/lecture-styles.css
    slide-number: true

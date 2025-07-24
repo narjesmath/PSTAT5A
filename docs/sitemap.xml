@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pstat5a.com/schedule.html</loc>
-    <lastmod>2025-07-24T00:32:27.972Z</lastmod>
+    <lastmod>2025-07-24T00:39:13.860Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/lecture13/lecture13.html</loc>
@@ -34,10 +34,22 @@
   </url>
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/Lecture_1/lecture1.html</loc>
-    <lastmod>2025-07-24T00:24:44.302Z</lastmod>
+    <lastmod>2025-07-24T00:39:33.824Z</lastmod>
   </url>
   <url>
     <loc>https://pstat5a.com/files/lecture_notes/lecture2/lecture2.html</loc>
     <lastmod>2025-07-23T23:14:40.588Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/syllabus.html</loc>
+    <lastmod>2025-07-24T00:41:27.317Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/index.html</loc>
+    <lastmod>2025-07-24T00:41:44.364Z</lastmod>
+  </url>
+  <url>
+    <loc>https://pstat5a.com/files/lecture_notes/lecture7/lecture7.html</loc>
+    <lastmod>2025-07-23T23:28:18.191Z</lastmod>
   </url>
 </urlset>
