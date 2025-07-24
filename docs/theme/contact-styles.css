@@ -1,0 +1,353 @@
+/* Contact Page Styling */
+/* Hide the default Quarto title */
+.quarto-title {
+  display: none;
+}
+
+/* Or more specifically, just hide the title text */
+h1.title {
+  display: none;
+}
+
+/* If you want to hide the entire title block including subtitle/author */
+.quarto-title-block {
+  display: none;
+}
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #f093fb;
+  --light-bg: #f8f9fa;
+  --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --success-color: #28a745;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+  background: var(--gradient-1);
+  color: white;
+  padding: 4rem 2rem;
+  margin: -2rem -2rem 3rem -2rem;
+  text-align: center;
+  border-radius: 0 0 30px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path d="M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,200 L0,200 Z" fill="rgba(255,255,255,0.1)"/></svg>') no-repeat bottom;
+  background-size: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-1);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover::before {
+  transform: scaleX(1);
+}
+
+.contact-avatar {
+  width: 120px;
+  height: 120px;
+  background: var(--gradient-1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem auto;
+  font-size: 3rem;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-avatar {
+  transform: scale(1.1);
+}
+
+.contact-role {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.contact-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: var(--light-bg);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateX(5px);
+}
+
+.contact-icon {
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  width: 30px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.contact-text {
+  flex: 1;
+  color: #333;
+  font-weight: 500;
+}
+
+.contact-text a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-text a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* Office Hours Card */
+.office-hours-card {
+  background: var(--gradient-2);
+  color: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin: 3rem 0;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.office-hours-card::before {
+  content: '🕐';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 8rem;
+  opacity: 0.1;
+  transform: rotate(15deg);
+}
+
+.office-hours-content {
+  position: relative;
+  z-index: 2;
+}
+
+.office-hours-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.office-hours-time {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.office-hours-note {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Communication Guidelines */
+.guidelines-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin: 3rem 0;
+  box-shadow: var(--card-shadow);
+  border-left: 5px solid var(--success-color);
+}
+
+.guidelines-title {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.guideline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--light-bg);
+  border-radius: 10px;
+}
+
+.guideline-number {
+  background: var(--success-color);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.guideline-text {
+  color: #333;
+  line-height: 1.6;
+}
+
+.guideline-text strong {
+  color: var(--primary-color);
+}
+
+/* Emergency Contact */
+.emergency-notice {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 3rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.emergency-notice::before {
+  content: '⚠️';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 6rem;
+  opacity: 0.2;
+}
+
+.emergency-content {
+  position: relative;
+  z-index: 2;
+}
+
+.emergency-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.emergency-text {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-card {
+    padding: 2rem;
+  }
+  
+  .contact-avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+  
+  .contact-name {
+    font-size: 1.5rem;
+  }
+}
