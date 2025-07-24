@@ -17,85 +17,85 @@
     "objectID": "files/lecture_notes/lecture13/lecture13.html#quick-announcements",
     "href": "files/lecture_notes/lecture13/lecture13.html#quick-announcements",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "When:\n- 📅 Date: Friday, July 25\n- ⏰ Window: 7 AM – 12 AM\n- ⏳ Duration: 1 hour once started\nWhere: 💻 Online via Canvas\n\n\n\n\n\nFoundation: Logic of hypothesis testing\nPractice: Real examples with Python\nSkills: Making statistical decisions\nApplications: From medicine to marketing"
+    "section": "📢 Quick Announcements",
+    "text": "📢 Quick Announcements\n\n\n📝 Quiz 2 Reminder\nWhen:\n- 📅 Date: Friday, July 25\n- ⏰ Window: 7 AM – 12 AM\n- ⏳ Duration: 1 hour once started\nWhere: 💻 Online via Canvas\n\n📚 Today’s Focus\n\nFoundation: Logic of hypothesis testing\nPractice: Real examples with Python\nSkills: Making statistical decisions\nApplications: From medicine to marketing"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#learning-journey-today",
     "href": "files/lecture_notes/lecture13/lecture13.html#learning-journey-today",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "Understand the logic of hypothesis testing\nMaster the language of statistical decisions\nRecognize different types of errors and their consequences\nConnect to confidence intervals from last lecture\n\n\n\n\n\n\nFormulate hypotheses from research questions\nCalculate and interpret p-values correctly\nPerform hypothesis tests in Python\nMake informed decisions using statistical evidence\nCommunicate results effectively"
+    "section": "Learning Journey Today 🎯",
+    "text": "Learning Journey Today 🎯\n\n\n🧠 Conceptual Goals\n\nUnderstand the logic of hypothesis testing\nMaster the language of statistical decisions\nRecognize different types of errors and their consequences\nConnect to confidence intervals from last lecture\n\n\n🛠️ Practical Skills\n\nFormulate hypotheses from research questions\nCalculate and interpret p-values correctly\nPerform hypothesis tests in Python\nMake informed decisions using statistical evidence\nCommunicate results effectively"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#what-is-hypothesis-testing",
     "href": "files/lecture_notes/lecture13/lecture13.html#what-is-hypothesis-testing",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "Hypothesis testing helps us answer: “Is what we observed in our sample strong enough evidence to conclude something about the population?”"
+    "section": "What is Hypothesis Testing? 🤔",
+    "text": "What is Hypothesis Testing? 🤔\n\n\n        \n        \n        \n\n\n                            \n                                            \n\n\nHypothesis testing helps us answer: “Is what we observed in our sample strong enough evidence to conclude something about the population?”"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#the-courtroom-analogy",
     "href": "files/lecture_notes/lecture13/lecture13.html#the-courtroom-analogy",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "Key Insight: Just like in court, we never “prove” innocence or “accept” the null hypothesis. We only determine if there’s sufficient evidence to reject it!"
+    "section": "The Courtroom Analogy ⚖️",
+    "text": "The Courtroom Analogy ⚖️\n\n\n                            \n                                            \n\n\nKey Insight: Just like in court, we never “prove” innocence or “accept” the null hypothesis. We only determine if there’s sufficient evidence to reject it!"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#understanding-p-values",
     "href": "files/lecture_notes/lecture13/lecture13.html#understanding-p-values",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "Key Message: P-value tells us “How surprised should we be by this data if H₀ were true?”"
+    "section": "Understanding P-values 📊",
+    "text": "Understanding P-values 📊\nKey Message: P-value tells us “How surprised should we be by this data if H₀ were true?”"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#types-of-errors-the-trade-off",
     "href": "files/lecture_notes/lecture13/lecture13.html#types-of-errors-the-trade-off",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "Bottom Line: There’s always a trade-off between Type I and Type II errors. Choose α based on which error is more costly in your context!"
+    "section": "Types of Errors: The Trade-off 🎲",
+    "text": "Types of Errors: The Trade-off 🎲\n\n\n                            \n                                            \n\n\nBottom Line: There’s always a trade-off between Type I and Type II errors. Choose α based on which error is more costly in your context!"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#statistical-power-detecting-true-effects",
     "href": "files/lecture_notes/lecture13/lecture13.html#statistical-power-detecting-true-effects",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "Key Insight: Higher power means you’re more likely to detect a true effect when it exists. Aim for power ≥ 0.80!"
+    "section": "Statistical Power: Detecting True Effects 💪",
+    "text": "Statistical Power: Detecting True Effects 💪\n\n\n                            \n                                            \n\n\nKey Insight: Higher power means you’re more likely to detect a true effect when it exists. Aim for power ≥ 0.80!"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#example-1-one-sample-t-test",
     "href": "files/lecture_notes/lecture13/lecture13.html#example-1-one-sample-t-test",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "Research Question: A new study technique claims to improve test scores. The current average is 75. We test 25 students using the new method.\n\n\n📊 Sample Data Summary:\n========================================\nSample size (n): 25\nSample mean (x̄): 77.19\nSample std (s): 7.65\nCurrent average (μ₀): 75\n\n\n\n\n\n\n\n                            \n                                            \n\n\n\n🎯 DETAILED RESULTS:\n==================================================\nTest Statistic: t = 1.432\nP-value: 0.0825\nCritical Value: 1.711\nEffect Size (Cohen's d): 0.286\n\n❌ DECISION: Fail to reject H₀\n📊 CONCLUSION: There is insufficient evidence (p = 0.0825) that the new study method improves test scores.\n💡 PRACTICAL IMPACT: The observed difference could reasonably be due to chance.\n\n\n\n\n\n\n\n🐍 PYTHON IMPLEMENTATION:\n========================================\nMethod 1: scipy.stats.ttest_1samp\nt-statistic: 1.432\np-value (two-tailed): 0.1650\np-value (one-tailed): 0.0825\n\nMethod 2: Manual with 95% Confidence Interval\n95% CI: (74.03, 80.35)\nInterpretation: We're 95% confident the true mean is between 74.0 and 80.4\n\nEffect Size (Cohen's d): 0.286\nEffect size interpretation: small effect"
+    "section": "Example 1: One-Sample t-test 📊",
+    "text": "Example 1: One-Sample t-test 📊\nProblem Setup\nResearch Question: A new study technique claims to improve test scores. The current average is 75. We test 25 students using the new method.\n\n\n📊 Sample Data Summary:\n========================================\nSample size (n): 25\nSample mean (x̄): 77.19\nSample std (s): 7.65\nCurrent average (μ₀): 75\n\n\nComplete Hypothesis Test\n\n\n                            \n                                            \n\n\n\n🎯 DETAILED RESULTS:\n==================================================\nTest Statistic: t = 1.432\nP-value: 0.0825\nCritical Value: 1.711\nEffect Size (Cohen's d): 0.286\n\n❌ DECISION: Fail to reject H₀\n📊 CONCLUSION: There is insufficient evidence (p = 0.0825) that the new study method improves test scores.\n💡 PRACTICAL IMPACT: The observed difference could reasonably be due to chance.\n\n\nUsing Python’s Built-in Functions\n\n\n🐍 PYTHON IMPLEMENTATION:\n========================================\nMethod 1: scipy.stats.ttest_1samp\nt-statistic: 1.432\np-value (two-tailed): 0.1650\np-value (one-tailed): 0.0825\n\nMethod 2: Manual with 95% Confidence Interval\n95% CI: (74.03, 80.35)\nInterpretation: We're 95% confident the true mean is between 74.0 and 80.4\n\nEffect Size (Cohen's d): 0.286\nEffect size interpretation: small effect"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#example-2-two-sample-t-test",
     "href": "files/lecture_notes/lecture13/lecture13.html#example-2-two-sample-t-test",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "Research Question: Compare effectiveness of two teaching methods\n\n\n📊 TWO-GROUP COMPARISON:\n========================================\nMethod A (Traditional):\n  n = 30, mean = 75.45, std = 11.87\n\nMethod B (New):\n  n = 28, mean = 82.72, std = 14.82\n\nDifference in means: 7.27 points"
+    "section": "Example 2: Two-Sample t-test 📊",
+    "text": "Example 2: Two-Sample t-test 📊\nProblem Setup\nResearch Question: Compare effectiveness of two teaching methods\n\n\n📊 TWO-GROUP COMPARISON:\n========================================\nMethod A (Traditional):\n  n = 30, mean = 75.45, std = 11.87\n\nMethod B (New):\n  n = 28, mean = 82.72, std = 14.82\n\nDifference in means: 7.27 points"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#statistical-vs-practical-significance",
     "href": "files/lecture_notes/lecture13/lecture13.html#statistical-vs-practical-significance",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "🔑 KEY LESSON: Statistical Significance ≠ Practical Importance\n============================================================\nLeft: Tiny effect (0.02) but significant due to large sample\nRight: Large effect (8.7) but significant with small sample\n\n💡 Always consider BOTH statistical significance AND effect size!"
+    "section": "Statistical vs Practical Significance 🤔",
+    "text": "Statistical vs Practical Significance 🤔\n\n\n                            \n                                            \n\n\n🔑 KEY LESSON: Statistical Significance ≠ Practical Importance\n============================================================\nLeft: Tiny effect (0.02) but significant due to large sample\nRight: Large effect (8.7) but significant with small sample\n\n💡 Always consider BOTH statistical significance AND effect size!"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#python-code-templates",
     "href": "files/lecture_notes/lecture13/lecture13.html#python-code-templates",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "# =============================================================================\n# COMPLETE HYPOTHESIS TESTING TOOLKIT\n# =============================================================================\n\nimport numpy as np\nfrom scipy import stats\nimport matplotlib.pyplot as plt\n\n# -----------------------------------------------------------------------------\n# Template 1: One-Sample t-test\n# -----------------------------------------------------------------------------\ndef one_sample_ttest(data, null_value, alpha=0.05, alternative='two-sided'):\n    \"\"\"\n    Perform one-sample t-test with complete analysis\n    \n    Parameters:\n    -----------\n    data : array-like\n        Sample data\n    null_value : float\n        Hypothesized population mean\n    alpha : float\n        Significance level (default 0.05)\n    alternative : str\n        'two-sided', 'greater', or 'less'\n    \"\"\"\n    \n    # Calculate statistics\n    n = len(data)\n    x_bar = np.mean(data)\n    s = np.std(data, ddof=1)\n    se = s / np.sqrt(n)\n    \n    # Test statistic\n    t_stat = (x_bar - null_value) / se\n    df = n - 1\n    \n    # P-value calculation\n    if alternative == 'two-sided':\n        p_value = 2 * (1 - stats.t.cdf(abs(t_stat), df))\n    elif alternative == 'greater':\n        p_value = 1 - stats.t.cdf(t_stat, df)\n    elif alternative == 'less':\n        p_value = stats.t.cdf(t_stat, df)\n    \n    # Effect size (Cohen's d)\n    cohens_d = (x_bar - null_value) / s\n    \n    # Confidence interval\n    t_crit = stats.t.ppf(1 - alpha/2, df)\n    ci_lower = x_bar - t_crit * se\n    ci_upper = x_bar + t_crit * se\n    \n    # Results\n    results = {\n        'test_statistic': t_stat,\n        'p_value': p_value,\n        'degrees_of_freedom': df,\n        'effect_size': cohens_d,\n        'confidence_interval': (ci_lower, ci_upper),\n        'reject_null': p_value &lt;= alpha,\n        'sample_mean': x_bar,\n        'sample_std': s,\n        'sample_size': n\n    }\n    \n    return results\n\n# -----------------------------------------------------------------------------\n# Template 2: Two-Sample t-test\n# -----------------------------------------------------------------------------\ndef two_sample_ttest(group1, group2, alpha=0.05, equal_var=True):\n    \"\"\"\n    Perform two-sample t-test with complete analysis\n    \"\"\"\n    \n    # Calculate statistics\n    n1, n2 = len(group1), len(group2)\n    mean1, mean2 = np.mean(group1), np.mean(group2)\n    s1, s2 = np.std(group1, ddof=1), np.std(group2, ddof=1)\n    \n    if equal_var:\n        # Pooled variance\n        pooled_var = ((n1-1)*s1**2 + (n2-1)*s2**2) / (n1+n2-2)\n        se = np.sqrt(pooled_var * (1/n1 + 1/n2))\n        df = n1 + n2 - 2\n    else:\n        # Welch's t-test\n        se = np.sqrt(s1**2/n1 + s2**2/n2)\n        df = (s1**2/n1 + s2**2/n2)**2 / ((s1**2/n1)**2/(n1-1) + (s2**2/n2)**2/(n2-1))\n    \n    # Test statistic\n    t_stat = (mean1 - mean2) / se\n    p_value = 2 * (1 - stats.t.cdf(abs(t_stat), df))\n    \n    # Effect size (Cohen's d)\n    if equal_var:\n        pooled_std = np.sqrt(pooled_var)\n    else:\n        pooled_std = np.sqrt(((n1-1)*s1**2 + (n2-1)*s2**2) / (n1+n2-2))\n    \n    cohens_d = (mean1 - mean2) / pooled_std\n    \n    results = {\n        'test_statistic': t_stat,\n        'p_value': p_value,\n        'degrees_of_freedom': df,\n        'effect_size': cohens_d,\n        'reject_null': p_value &lt;= alpha,\n        'group1_stats': {'mean': mean1, 'std': s1, 'n': n1},\n        'group2_stats': {'mean': mean2, 'std': s2, 'n': n2}\n    }\n    \n    return results\n\n# -----------------------------------------------------------------------------\n# Template 3: Power Analysis\n# -----------------------------------------------------------------------------\ndef power_analysis(effect_size, alpha=0.05, power=0.8):\n    \"\"\"\n    Calculate required sample size for desired power\n    \"\"\"\n    from scipy.stats import norm\n    \n    z_alpha = norm.ppf(1 - alpha/2)\n    z_beta = norm.ppf(power)\n    \n    n = ((z_alpha + z_beta) / effect_size) ** 2\n    \n    return int(np.ceil(n))\n\n# -----------------------------------------------------------------------------\n# Example Usage\n# -----------------------------------------------------------------------------\n\n# Generate sample data\nnp.random.seed(42)\nsample_data = np.random.normal(105, 15, 25)\n\n# Perform one-sample t-test\nresults = one_sample_ttest(sample_data, null_value=100, alternative='greater')\n\nprint(\"One-Sample t-test Results:\")\nprint(f\"Test statistic: {results['test_statistic']:.3f}\")\nprint(f\"P-value: {results['p_value']:.4f}\")\nprint(f\"Effect size (d): {results['effect_size']:.3f}\")\nprint(f\"95% CI: ({results['confidence_interval'][0]:.2f}, {results['confidence_interval'][1]:.2f})\")\nprint(f\"Reject null: {results['reject_null']}\")\n\n# Power analysis\nrequired_n = power_analysis(effect_size=0.5, power=0.8)\nprint(f\"\\nRequired sample size for d=0.5, power=0.8: {required_n}\")"
+    "section": "Python Code Templates 💻",
+    "text": "Python Code Templates 💻\n\n# =============================================================================\n# COMPLETE HYPOTHESIS TESTING TOOLKIT\n# =============================================================================\n\nimport numpy as np\nfrom scipy import stats\nimport matplotlib.pyplot as plt\n\n# -----------------------------------------------------------------------------\n# Template 1: One-Sample t-test\n# -----------------------------------------------------------------------------\ndef one_sample_ttest(data, null_value, alpha=0.05, alternative='two-sided'):\n    \"\"\"\n    Perform one-sample t-test with complete analysis\n    \n    Parameters:\n    -----------\n    data : array-like\n        Sample data\n    null_value : float\n        Hypothesized population mean\n    alpha : float\n        Significance level (default 0.05)\n    alternative : str\n        'two-sided', 'greater', or 'less'\n    \"\"\"\n    \n    # Calculate statistics\n    n = len(data)\n    x_bar = np.mean(data)\n    s = np.std(data, ddof=1)\n    se = s / np.sqrt(n)\n    \n    # Test statistic\n    t_stat = (x_bar - null_value) / se\n    df = n - 1\n    \n    # P-value calculation\n    if alternative == 'two-sided':\n        p_value = 2 * (1 - stats.t.cdf(abs(t_stat), df))\n    elif alternative == 'greater':\n        p_value = 1 - stats.t.cdf(t_stat, df)\n    elif alternative == 'less':\n        p_value = stats.t.cdf(t_stat, df)\n    \n    # Effect size (Cohen's d)\n    cohens_d = (x_bar - null_value) / s\n    \n    # Confidence interval\n    t_crit = stats.t.ppf(1 - alpha/2, df)\n    ci_lower = x_bar - t_crit * se\n    ci_upper = x_bar + t_crit * se\n    \n    # Results\n    results = {\n        'test_statistic': t_stat,\n        'p_value': p_value,\n        'degrees_of_freedom': df,\n        'effect_size': cohens_d,\n        'confidence_interval': (ci_lower, ci_upper),\n        'reject_null': p_value &lt;= alpha,\n        'sample_mean': x_bar,\n        'sample_std': s,\n        'sample_size': n\n    }\n    \n    return results\n\n# -----------------------------------------------------------------------------\n# Template 2: Two-Sample t-test\n# -----------------------------------------------------------------------------\ndef two_sample_ttest(group1, group2, alpha=0.05, equal_var=True):\n    \"\"\"\n    Perform two-sample t-test with complete analysis\n    \"\"\"\n    \n    # Calculate statistics\n    n1, n2 = len(group1), len(group2)\n    mean1, mean2 = np.mean(group1), np.mean(group2)\n    s1, s2 = np.std(group1, ddof=1), np.std(group2, ddof=1)\n    \n    if equal_var:\n        # Pooled variance\n        pooled_var = ((n1-1)*s1**2 + (n2-1)*s2**2) / (n1+n2-2)\n        se = np.sqrt(pooled_var * (1/n1 + 1/n2))\n        df = n1 + n2 - 2\n    else:\n        # Welch's t-test\n        se = np.sqrt(s1**2/n1 + s2**2/n2)\n        df = (s1**2/n1 + s2**2/n2)**2 / ((s1**2/n1)**2/(n1-1) + (s2**2/n2)**2/(n2-1))\n    \n    # Test statistic\n    t_stat = (mean1 - mean2) / se\n    p_value = 2 * (1 - stats.t.cdf(abs(t_stat), df))\n    \n    # Effect size (Cohen's d)\n    if equal_var:\n        pooled_std = np.sqrt(pooled_var)\n    else:\n        pooled_std = np.sqrt(((n1-1)*s1**2 + (n2-1)*s2**2) / (n1+n2-2))\n    \n    cohens_d = (mean1 - mean2) / pooled_std\n    \n    results = {\n        'test_statistic': t_stat,\n        'p_value': p_value,\n        'degrees_of_freedom': df,\n        'effect_size': cohens_d,\n        'reject_null': p_value &lt;= alpha,\n        'group1_stats': {'mean': mean1, 'std': s1, 'n': n1},\n        'group2_stats': {'mean': mean2, 'std': s2, 'n': n2}\n    }\n    \n    return results\n\n# -----------------------------------------------------------------------------\n# Template 3: Power Analysis\n# -----------------------------------------------------------------------------\ndef power_analysis(effect_size, alpha=0.05, power=0.8):\n    \"\"\"\n    Calculate required sample size for desired power\n    \"\"\"\n    from scipy.stats import norm\n    \n    z_alpha = norm.ppf(1 - alpha/2)\n    z_beta = norm.ppf(power)\n    \n    n = ((z_alpha + z_beta) / effect_size) ** 2\n    \n    return int(np.ceil(n))\n\n# -----------------------------------------------------------------------------\n# Example Usage\n# -----------------------------------------------------------------------------\n\n# Generate sample data\nnp.random.seed(42)\nsample_data = np.random.normal(105, 15, 25)\n\n# Perform one-sample t-test\nresults = one_sample_ttest(sample_data, null_value=100, alternative='greater')\n\nprint(\"One-Sample t-test Results:\")\nprint(f\"Test statistic: {results['test_statistic']:.3f}\")\nprint(f\"P-value: {results['p_value']:.4f}\")\nprint(f\"Effect size (d): {results['effect_size']:.3f}\")\nprint(f\"95% CI: ({results['confidence_interval'][0]:.2f}, {results['confidence_interval'][1]:.2f})\")\nprint(f\"Reject null: {results['reject_null']}\")\n\n# Power analysis\nrequired_n = power_analysis(effect_size=0.5, power=0.8)\nprint(f\"\\nRequired sample size for d=0.5, power=0.8: {required_n}\")"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#summary-key-takeaways",
     "href": "files/lecture_notes/lecture13/lecture13.html#summary-key-takeaways",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "",
-    "text": "Hypothesis testing provides a framework for making decisions under uncertainty\nP-values quantify how surprising our data would be if H₀ were true\nStatistical significance ≠ practical importance - always consider effect size\nType I and II errors represent different kinds of mistakes with different costs\nPower is the ability to detect true effects when they exist\n\n\n\n\n\n\nPlan before you analyze - specify hypotheses and α level in advance\nCheck assumptions and use appropriate tests\nReport effect sizes and confidence intervals, not just p-values\nConsider practical significance alongside statistical significance\nBe honest about limitations and acknowledge uncertainty"
+    "section": "Summary: Key Takeaways 🎯",
+    "text": "Summary: Key Takeaways 🎯\n\n\n🧠 Core Concepts\n\nHypothesis testing provides a framework for making decisions under uncertainty\nP-values quantify how surprising our data would be if H₀ were true\nStatistical significance ≠ practical importance - always consider effect size\nType I and II errors represent different kinds of mistakes with different costs\nPower is the ability to detect true effects when they exist\n\n\n🛠️ Practical Skills\n\nPlan before you analyze - specify hypotheses and α level in advance\nCheck assumptions and use appropriate tests\nReport effect sizes and confidence intervals, not just p-values\nConsider practical significance alongside statistical significance\nBe honest about limitations and acknowledge uncertainty"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4-5-6.html",
@@ -3897,5 +3897,411 @@
     "title": "PSTAT 5A: Counting",
     "section": "Questions?",
     "text": "Questions?\nOffice Hours: Thursday’s 11 AM On Zoom (Link on Canvas)\nEmail: nmathlouthi@ucsb.edu\nNext Class: Counting continued"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture12/lecture12.html#important-announcements",
+    "href": "files/lecture_notes/lecture12/lecture12.html#important-announcements",
+    "title": "PSTAT 5A: Confidence Intervals Deep Dive",
+    "section": "📢 Important Announcements",
+    "text": "📢 Important Announcements\n\n\n📝 Quiz 2 Details\nWhen:\n- 📅 Date: Friday, July 25\n- ⏰ Window: 7 AM – 12 AM\n- ⏳ Duration: 1 hour once started\nWhere: 💻 Online via Canvas\nCovers: Material from Weeks 3-4\n\n📚 What to Expect\n\nDiscrete & continuous distributions\nProbability calculations\nExpected value & variance\nNormal distribution applications\nNote: Upload photos of written work for calculation problems"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture12/lecture12.html#todays-roadmap",
+    "href": "files/lecture_notes/lecture12/lecture12.html#todays-roadmap",
+    "title": "PSTAT 5A: Confidence Intervals Deep Dive",
+    "section": "📢 Today’s Roadmap",
+    "text": "📢 Today’s Roadmap\n\n\n🎯 Learning Objectives\n\nKnow the difference between \\(z\\) and \\(t\\) distributions\nUnderstand when to use each distribution\nLearn to find critical values from tables and plots\nPractice calculating confidence intervals step-by-step\nInterpret results correctly in context\n\n\n📋 What We’ll Cover\n\nReview: Confidence interval basics\nThe t-Distribution: When and why we use it\nCritical Regions: Finding the right values\nPractical Examples: z and t calculations\nCommon Mistakes: What to avoid\nReal Applications: Making it meaningful"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture12/lecture12.html#quick-review-confidence-interval-basics",
+    "href": "files/lecture_notes/lecture12/lecture12.html#quick-review-confidence-interval-basics",
+    "title": "PSTAT 5A: Confidence Intervals Deep Dive",
+    "section": "Quick Review: Confidence Interval Basics 🔄",
+    "text": "Quick Review: Confidence Interval Basics 🔄\n\n\n🎯 The Big Idea\nA confidence interval (CI) takes a single sample statistic and turns it into a range that is likely to contain an unknown population parameter; most often the mean \\(\\mu\\).\nCI template\n\\[\n\\underbrace{\\text{Point estimate}}_{\\color{blue}{(e.g., \\bar{x})}}\n\\;\\pm\\;\n\\underbrace{\\text{(critical value) $\\times$ (standard error)}}_{\\color{red}{\\text{Margin of Error (ME)}}}\n\\]\nFor the mean\n\n\n\n\n\n\n\n\nSituation\nFormula\nDistribution\n\n\n\n\nσ known (rare)\n\\(\\displaystyle \\bar{x} \\;\\pm\\; z^{*}\\,\\frac{\\sigma}{\\sqrt{n}}\\)\nz-distribution\n\n\nσ unknown (typical)\n\\(\\displaystyle \\bar{x} \\;\\pm\\; t^{*}\\,\\frac{s}{\\sqrt{n}}\\)\nt-distribution (\\(df = n-1\\))\n\n\n\nKey points\n\nWe never know the true mean \\(\\mu\\) in practice, that’s exactly what the CI estimates.\n\nUse the population SD σ only when it is genuinely known (e.g., industrial process with long‑term QC).\n\nOtherwise substitute the sample SD s and switch to the t‑distribution, which is wider to reflect that extra uncertainty.\n\n\n\n\n        \n        \n        \n\n\n                            \n                                            \n\n\nKey Formula: \\(\\bar{x} \\pm z^* \\cdot \\frac{s}{\\sqrt{n}}\\) (when using z-distribution)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture12/lecture12.html#step-by-step-example-1-using-z-distribution",
+    "href": "files/lecture_notes/lecture12/lecture12.html#step-by-step-example-1-using-z-distribution",
+    "title": "PSTAT 5A: Confidence Intervals Deep Dive",
+    "section": "Step-by-Step Example 1: Using z-Distribution 📝",
+    "text": "Step-by-Step Example 1: Using z-Distribution 📝\n\n\n🎯 Problem Setup\nResearch Question: What is the average SAT score of students at UCSB?\nGiven Information:\n\nSample size: \\(n = 50\\) students\nSample mean: \\(\\bar{x} = 1180\\)\nPopulation standard deviation: \\(\\sigma = 120\\) (known from past data)\nConfidence level: \\(95\\%\\)\n\nQuestion: Construct a \\(95\\%\\) confidence interval for the population mean SAT score.\n\n\nShow Solution\n\n\nStep 1: Check conditions\n\n\\(\\sigma\\) is known ✓\nUse z-distribution ✓\n\nStep 2: Find critical value\n\nFor \\(95\\%\\) CI: \\(\\alpha = 0.05, \\frac{\\alpha}{2} = 0.025\\)\n\\(z^* = 1.96\\) (from z-table)\n\nStep 3: Calculate SE\n\\[SE = \\frac{\\sigma}{\\sqrt{n}} = \\frac{120}{\\sqrt{50}} = \\frac{120}{7.071} = 16.97\\]\nStep 4: Calculate Margin of Error\n\\[ME = z^* \\times SE = 1.96 \\times 16.97 = 33.26\\]\nStep 5: Construct CI\n\\[CI = \\bar{x} \\pm ME = 1180 \\pm 33.26 = (1146.7, 1213.3)\\]\nFinal Answer: We are 95% confident that the true average SAT score is between 1146.7 and 1213.3."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture12/lecture12.html#step-by-step-example-2-using-t-distribution",
+    "href": "files/lecture_notes/lecture12/lecture12.html#step-by-step-example-2-using-t-distribution",
+    "title": "PSTAT 5A: Confidence Intervals Deep Dive",
+    "section": "Step-by-Step Example 2: Using t-Distribution 📝",
+    "text": "Step-by-Step Example 2: Using t-Distribution 📝\n\n\n🎯 Problem Setup\nResearch Question: What is the average daily coffee consumption at our office?\nGiven Information:\n- Sample size: n = 16 employees\n- Sample mean: \\(\\bar{x} = 2.8\\) cups\n- Sample standard deviation: s = 0.9 (\\(\\sigma\\) unknown)\n- Confidence level: 90%\nQuestion: Construct a 90% confidence interval for the population mean daily coffee consumption.\n\n\nShow Solution\n\n\nStep 1: Check conditions - \\(\\sigma\\) is unknown ✓ - n &lt; 30 ✓ - Use t-distribution ✓\nStep 2: Calculate degrees of freedom - df = n - 1 = 16 - 1 = 15\nStep 3: Find critical value - For 90% CI: \\(\\alpha = 0.10, \\alpha/2 = 0.05\\) - t* = 1.753 (from t-table, df = 15)\nStep 4: Calculate SE\n\\[SE = \\frac{s}{\\sqrt{n}} = \\frac{0.9}{\\sqrt{16}} = \\frac{0.9}{4} = 0.225\\]\nStep 5: Calculate Margin of Error\n\\[ME = t^* \\times SE = 1.753 \\times 0.225 = 0.394\\]\nStep 6: Construct CI\n\\[CI = \\bar{x} \\pm ME = 2.8 \\pm 0.394 = (2.406, 3.194)\\]\nFinal Answer: We are 90% confident that the true average daily coffee consumption is between 2.406 and 3.194 cups."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture12/lecture12.html#practice-problem-test-your-skills",
+    "href": "files/lecture_notes/lecture12/lecture12.html#practice-problem-test-your-skills",
+    "title": "PSTAT 5A: Confidence Intervals Deep Dive",
+    "section": "Practice Problem: Test Your Skills! 🧠",
+    "text": "Practice Problem: Test Your Skills! 🧠\n\n\n🎯 Your Turn!\nProblem: A researcher wants to estimate the average time students spend studying per day.\nGiven:\n\nSample size: \\(n = 25\\) students\n\nSample mean: \\(\\bar{x} = 3.2\\) hours\nSample standard deviation: \\(s = 1.1\\) hours\nConfidence level: \\(95\\%\\)\n\nQuestions:\n\nShould you use \\(z\\) or \\(t\\)-distribution? Why?\nWhat are the degrees of freedom?\nWhat is the critical value?\nCalculate the 95% confidence interval\nInterpret your result in context\n\n\n\nShow Solution\n\n\nStep 1: Distribution Choice Use t-distribution because: - σ is unknown (only sample standard deviation s is given) - n = 25 &lt; 30\nStep 2: Degrees of Freedom df = n - 1 = 25 - 1 = 24\nStep 3: Critical Value For 95% CI with df = 24: t* = 2.064\nStep 4: Calculate CI\nStandard Error: \\(SE = \\frac{s}{\\sqrt{n}} = \\frac{1.1}{\\sqrt{25}} = \\frac{1.1}{5} = 0.220\\)\nMargin of Error: \\(ME = t^* \\times SE = 2.064 \\times 0.220 = 0.454\\)\nConfidence Interval: \\(CI = \\bar{x} \\pm ME = 3.2 \\pm 0.454 = (2.746, 3.654)\\)\nStep 5: Interpretation We are 95% confident that the true average study time for students is between 2.746 and 3.654 hours per day.\n\n\n\n\n\n                            \n                                            \n\n\n🤔 Think About It…\n\nWhy is the t-distribution appropriate here?\nHow would the interval change if n = 100?\nWhat if we wanted 99% confidence instead?"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture12/lecture12.html#summary-key-takeaways",
+    "href": "files/lecture_notes/lecture12/lecture12.html#summary-key-takeaways",
+    "title": "PSTAT 5A: Confidence Intervals Deep Dive",
+    "section": "Summary: Key Takeaways 🎯",
+    "text": "Summary: Key Takeaways 🎯\n\n\n🧠 Core Concepts\n1. Distribution Choice - σ known → z-distribution - σ unknown + n ≥ 30 → z-distribution\n- σ unknown + n &lt; 30 → t-distribution\n2. t-Distribution Properties - Heavier tails than z - Depends on degrees of freedom (df = n-1) - Approaches z as df increases\n3. Critical Regions - α/2 in each tail for two-sided CI - Critical values from tables or software - Larger confidence → larger critical values\n\n🛠️ Practical Skills\n4. Calculation Steps 1. Check conditions (σ known?, sample size?) 2. Choose distribution (z or t) 3. Find critical value 4. Calculate standard error 5. Compute margin of error\n6. Construct interval 7. Interpret in context\n5. Interpretation - “We are C% confident…” - Focus on the process, not individual interval - Consider practical significance\n6. Common Pitfalls to Avoid - Wrong distribution choice - Incorrect degrees of freedom - Using α instead of α/2 - Misinterpreting the interval"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture12/lecture12.html#section",
+    "href": "files/lecture_notes/lecture12/lecture12.html#section",
+    "title": "PSTAT 5A: Confidence Intervals Deep Dive",
+    "section": "",
+    "text": "🏠 Back to Main Page"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#welcome-to-lecture-9",
+    "href": "files/lecture_notes/lecture8/lecture8.html#welcome-to-lecture-9",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Welcome to Lecture 9",
+    "text": "Welcome to Lecture 9\nContinuous Random Variables\nFrom discrete jumps to smooth curves: modeling the continuous world"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#todays-learning-objectives",
+    "href": "files/lecture_notes/lecture8/lecture8.html#todays-learning-objectives",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Today’s Learning Objectives",
+    "text": "Today’s Learning Objectives\nBy the end of this lecture, you will be able to:\n\nDistinguish between discrete and continuous random variables (Section 3)\nUnderstand probability density functions (PDFs) and their interpretation (Section 4)\nWork with cumulative distribution functions (CDFs) for continuous variables\nCalculate probabilities using areas under curves\nCompute expected values and variances for continuous distributions\nWork with common continuous distributions (Uniform, Normal, Exponential)\nApply the Central Limit Theorem\nUse python to work with continuous distributions"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#sec-dis-cont-vars",
+    "href": "files/lecture_notes/lecture8/lecture8.html#sec-dis-cont-vars",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Review: Discrete vs Continuous",
+    "text": "Review: Discrete vs Continuous\n\n\n\n\nDiscrete Random Variables\n\n\n\nCountable values (can list them)\n\n\nGaps between possible values\n\n\nUses Probability Mass Function (PMF)\n\n\n\\(P(X = x)\\) makes sense\n\n\n\nExamples: Dice rolls, number of emails, quiz scores\n\n\n\n\n\n\n\n\n\nContinuous Random Variables\n\n\n\nUncountable values (infinite possibilities)\n\n\nNo gaps - any value in an interval\n\n\nUses Probability Density Function (PDF)\n\n\n\\(P(X = x) = 0\\) for any specific value!\n\n\n\nExamples: Height, weight, time, temperature"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#sec-pdf",
+    "href": "files/lecture_notes/lecture8/lecture8.html#sec-pdf",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Why P(X = x) = 0 for Continuous Variables?",
+    "text": "Why P(X = x) = 0 for Continuous Variables?\n\n\nFor continuous random variables, the probability of any exact value is zero!\nThink about it: What’s the probability someone is exactly 5.7324681… feet tall?\n\n\n\n\nInstead, we ask:\n\nP(5.7 ≤ X ≤ 5.8)?\nP(X ≤ 6.0)?\nP(X &gt; 5.5)?\n\nKey insight: We calculate probabilities for intervals, not exact points.\n\n\n\n\n\nClick to see why P(X = exact value) = 0"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#probability-density-function-pdf",
+    "href": "files/lecture_notes/lecture8/lecture8.html#probability-density-function-pdf",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Probability Density Function (PDF)",
+    "text": "Probability Density Function (PDF)\n\n\n\n\n 🎯 Definition: The Probability Density Function (PDF) of a continuous random variable \\(X\\) is a function \\(f(x)\\) such that:\n\n\n\\[P(a \\leq X \\leq b) = \\int_a^b f(x) \\, dx\\]\n\n\n\n\n\nProperties of PDF:\n\n\n\n\\(f(x) \\geq 0\\) for all \\(x\\)\n\n\n\\(\\int_{-\\infty}^{\\infty} f(x) \\, dx = 1\\)\n\n\n\\(f(x)\\) is NOT a probability - it’s a density!\n\n\n\nKey Insight:\n\n\nThe area under the PDF curve between \\(a\\) and \\(b\\) gives the probability that \\(X\\) falls in that interval."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#cumulative-distribution-function-cdf",
+    "href": "files/lecture_notes/lecture8/lecture8.html#cumulative-distribution-function-cdf",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Cumulative Distribution Function (CDF)",
+    "text": "Cumulative Distribution Function (CDF)\n\n\n\nFor continuous random variables, the CDF is:\n\\[F(x) = P(X \\leq x) = \\int_{-\\infty}^x f(t) \\, dt\\]\nKey relationship: \\[f(x) = \\frac{d}{dx}F(x)\\]\nThe PDF is the derivative of the CDF!\n\n\n\n\n\nClick anywhere to see F(x) = P(X ≤ x) for that point"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#expected-value-and-variance",
+    "href": "files/lecture_notes/lecture8/lecture8.html#expected-value-and-variance",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Expected Value and Variance",
+    "text": "Expected Value and Variance\n\n\nExpected Value: \\[E[X] = \\mu = \\int_{-\\infty}^{\\infty} x \\cdot f(x) \\, dx\\]\nVariance:\n\\[\\text{Var}(X) = \\sigma^2 = \\int_{-\\infty}^{\\infty} (x - \\mu)^2 f(x) \\, dx = E[X^2] - (E[X])^2\\]\nWhere:\n\\[E[X^2] = \\int_{-\\infty}^{\\infty} x^2 \\cdot f(x) \\, dx\\]\n\n\n\n\n\n\n\nImportant\n\n\nNotice: Integrals replace sums when moving from discrete to continuous!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#common-continuous-distributions",
+    "href": "files/lecture_notes/lecture8/lecture8.html#common-continuous-distributions",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Common Continuous Distributions",
+    "text": "Common Continuous Distributions\n\nUniform Distribution\nAll values equally likely in an interval\nParameters: \\(a\\) (min), \\(b\\) (max)\nPDF: \\(f(x) = \\frac{1}{b-a}\\) for \\(a \\leq x \\leq b\\)\nMean: \\(\\frac{a+b}{2}\\)\nVariance: \\(\\frac{(b-a)^2}{12}\\)\nUse: Random numbers, waiting times\n\n\nNormal Distribution\nBell-shaped, symmetric\nParameters: \\(\\mu\\) (mean), \\(\\sigma^2\\) (variance)\nPDF: \\(f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}\\)\nMean: \\(\\mu\\)\nVariance: \\(\\sigma^2\\)\nUse: Heights, test scores, errors\n\n\nExponential Distribution\nModels waiting times\nParameters: \\(\\lambda\\) (rate)\nPDF: \\(f(x) = \\lambda e^{-\\lambda x}\\) for \\(x \\geq 0\\)\nMean: \\(\\frac{1}{\\lambda}\\)\nVariance: \\(\\frac{1}{\\lambda^2}\\)\nUse: Time between events, lifetimes"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#the-normal-distribution",
+    "href": "files/lecture_notes/lecture8/lecture8.html#the-normal-distribution",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "The Normal Distribution",
+    "text": "The Normal Distribution\n\n\n\nWhy Normal is Special\n\nCentral Limit Theorem: Sample means approach normal\n68-95-99.7 Rule:\n\n68% within \\(1 \\sigma\\) of \\(\\mu\\)\n95% within \\(2 \\sigma\\) of \\(\\mu\\)\n\n99.7% within \\(3 \\sigma\\) of \\(\\mu\\)\n\nStandard Normal: \\(\\mu = 0\\) , \\(\\sigma = 1\\)\n\nZ-Score Transformation\n\\[Z = \\frac{X - \\mu}{\\sigma}\\]"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#practice-problem-1-uniform-distribution",
+    "href": "files/lecture_notes/lecture8/lecture8.html#practice-problem-1-uniform-distribution",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Practice Problem 1: Uniform Distribution",
+    "text": "Practice Problem 1: Uniform Distribution\n\nA bus arrives uniformly between 10:00 AM and 10:20 AM. Let \\(X\\) = arrival time in minutes after 10:00 AM.\n(a) What is the PDF of \\(X\\)?\n(b) What’s the probability the bus arrives between 10:05 and 10:12?\n(c) What’s the expected arrival time?\n\nShow Solution\n\n\nSolution. (a) \\(X \\sim \\text{Uniform}(0, 20)\\) \\[f(x) = \\frac{1}{20-0} = \\frac{1}{20} \\text{ for } 0 \\leq x \\leq 20\\]\n(b) \\(P(5 \\leq X \\leq 12) = \\int_5^{12} \\frac{1}{20} dx = \\frac{1}{20} \\times (12-5) = \\frac{7}{20} = 0.35\\)\n(c) \\(E[X] = \\frac{a+b}{2} = \\frac{0+20}{2} = 10\\) minutes after 10:00 AM"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#practice-problem-2-normal-distribution",
+    "href": "files/lecture_notes/lecture8/lecture8.html#practice-problem-2-normal-distribution",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Practice Problem 2: Normal Distribution",
+    "text": "Practice Problem 2: Normal Distribution\n\nHeights of adult women are normally distributed with μ = 64 inches and σ = 2.5 inches.\n(a) What’s the probability a woman is taller than 67 inches?\n(b) What height represents the 90th percentile?\n(c) What’s the probability a woman is between 62 and 66 inches tall?\n\nShow Solution\n\n\nSolution. (a) \\(P(X &gt; 67) = P\\left(Z &gt; \\frac{67-64}{2.5}\\right) = P(Z &gt; 1.2) = 1 - 0.8849 = 0.1151\\)\n(b) For 90th percentile: \\(P(X \\leq x) = 0.90\\)\n\\(z_{0.90} = 1.28\\), so \\(x = 64 + 1.28(2.5) = 67.2\\) inches\n(c) \\(P(62 \\leq X \\leq 66) = P\\left(\\frac{62-64}{2.5} \\leq Z \\leq \\frac{66-64}{2.5}\\right)\\)\n\\(= P(-0.8 \\leq Z \\leq 0.8) = 0.7881 - 0.2119 = 0.5762\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#practice-problem-3-exponential-distribution",
+    "href": "files/lecture_notes/lecture8/lecture8.html#practice-problem-3-exponential-distribution",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Practice Problem 3: Exponential Distribution",
+    "text": "Practice Problem 3: Exponential Distribution\n\nThe time between customer arrivals at a store follows an exponential distribution with an average of 5 minutes between arrivals.\n(a) What is the PDF?\n(b) What’s the probability the next customer arrives within 3 minutes?\n(c) What’s the probability no customer arrives in the next 10 minutes?\n\nShow Solution\n\n\nSolution. (a) Average = 5 minutes = \\(\\frac{1}{\\lambda}\\), so \\(\\lambda = 0.2\\)\n\\[f(x) = 0.2e^{-0.2x} \\text{ for } x \\geq 0\\]\n(b) \\(P(X \\leq 3) = \\int_0^3 0.2e^{-0.2x} dx = 1 - e^{-0.2 \\times 3} = 1 - e^{-0.6} = 0.4512\\)\n(c) \\(P(X &gt; 10) = e^{-0.2 \\times 10} = e^{-2} = 0.1353\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#central-limit-theorem",
+    "href": "files/lecture_notes/lecture8/lecture8.html#central-limit-theorem",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Central Limit Theorem",
+    "text": "Central Limit Theorem\n\nInteractive CLT Demo: Sample Means Approach Normal\n\n Uniform Population Exponential Population Bimodal Population  Sample Size:  Run Simulation\n\n\n\n\n\n\nPopulation Distribution\n\n\n\n\n\n\nSample Means Distribution\n\n\n\n\nCLT in Action: Run simulation to see the magic!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#transformations-of-random-variables",
+    "href": "files/lecture_notes/lecture8/lecture8.html#transformations-of-random-variables",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Transformations of Random Variables",
+    "text": "Transformations of Random Variables\n\n\nLinear Transformations\nIf \\(Y = aX + b\\), then:\n\n\\(E[Y] = aE[X] + b\\)\n\\(\\text{Var}(Y) = a^2\\text{Var}(X)\\)\nIf \\(X \\sim N(\\mu, \\sigma^2)\\), then \\(Y \\sim N(a\\mu + b, a^2\\sigma^2)\\)\n\n\nStandardization\n\\[Z = \\frac{X - \\mu}{\\sigma} \\sim N(0, 1)\\]\n\nImportant: Normal distributions are closed under linear transformations!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#comparing-discrete-and-continuous",
+    "href": "files/lecture_notes/lecture8/lecture8.html#comparing-discrete-and-continuous",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Comparing Discrete and Continuous",
+    "text": "Comparing Discrete and Continuous\n\n\n\n\n\n\n\n\n\nProperty\nDiscrete\nContinuous\n\n\n\n\nProbability Function\nPMF: \\(P(X = x)\\)\nPDF: \\(f(x)\\)\n\n\nExact Value Probability\n\\(P(X = x) &gt; 0\\) possible\n\\(P(X = x) = 0\\) always\n\n\nInterval Probability\n\\(\\sum P(X = x_i)\\)\n\\(\\int_a^b f(x) dx\\)\n\n\nExpected Value\n\\(\\sum x \\cdot P(X = x)\\)\n\\(\\int x \\cdot f(x) dx\\)\n\n\nVariance\n\\(\\sum (x-\\mu)^2 P(X = x)\\)\n\\(\\int (x-\\mu)^2 f(x) dx\\)\n\n\nCDF\n\\(\\sum_{x_i \\leq x} P(X = x_i)\\)\n\\(\\int_{-\\infty}^x f(t) dt\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#properties-of-continuous-distributions",
+    "href": "files/lecture_notes/lecture8/lecture8.html#properties-of-continuous-distributions",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Properties of Continuous Distributions",
+    "text": "Properties of Continuous Distributions\n\n\n\nKey Properties\n\nMemoryless Property (Exponential only):\n\\(P(X &gt; s+t | X &gt; s) = P(X &gt; t)\\)\nSymmetry (Normal):\n\\(P(X \\leq \\mu - a) = P(X \\geq \\mu + a)\\)\nScaling Invariance (Normal):\nLinear combinations of normals are normal\n\n\nUseful Relationships\n\nCDF to PDF: \\(f(x) = F'(x)\\)\nPDF to CDF: \\(F(x) = \\int_{-\\infty}^x f(t) dt\\)\nComplementary CDF: \\(P(X &gt; x) = 1 - F(x)\\)\n\n\nRemember: Area under PDF = 1, but PDF values can exceed 1!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#key-takeaways",
+    "href": "files/lecture_notes/lecture8/lecture8.html#key-takeaways",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\n\n\nMain Concepts\n\nContinuous variables require PDFs, not PMFs\nProbabilities are areas under curves, not function values\nIntegration replaces summation for continuous distributions\nNormal distribution is central due to CLT\n\n\nDistribution Selection\nChoose distributions based on the data characteristics:\n\nUniform for equally likely intervals\nNormal for symmetric, bell-shaped data\n\nExponential for waiting times/lifetimes\nUse CLT when working with sample means\n\nKey Principle\n\nCentral Limit Theorem makes normal distributions ubiquitous in statistics"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#looking-ahead",
+    "href": "files/lecture_notes/lecture8/lecture8.html#looking-ahead",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\n\nNext Lecture: Statistical Inference\nTopics we’ll cover:\n\nSampling distributions\nConfidence intervals\nHypothesis testing\np-values and significance\n\n\nConnection: Continuous distributions (especially normal) form the foundation for statistical inference"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#questions",
+    "href": "files/lecture_notes/lecture8/lecture8.html#questions",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Questions?",
+    "text": "Questions?\nOffice Hours: 11AM on Thursday (link on Canvas)\nEmail: nmathlouthi@ucsb.edu\nNext Class: Statistical Inference and Hypothesis Testing"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#resources",
+    "href": "files/lecture_notes/lecture8/lecture8.html#resources",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Resources",
+    "text": "Resources\n\n\n\n Read OpenIntro Statistics Chapter 4 sections 4.1-4.3\n\n\n Khan Academy - Continuous Random Variables\n\n\n Seeing Theory - Probability Distributions\n\n\n Central Limit Theorem - Wikipedia\n\n\n Introduction to Probability - Continuous Random Variables"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture8/lecture8.html#back-to-main-page",
+    "href": "files/lecture_notes/lecture8/lecture8.html#back-to-main-page",
+    "title": "PSTAT 5A: Continuous Random Variables",
+    "section": "Back to Main Page",
+    "text": "Back to Main Page\n🏠 Back to Main Page"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#todays-learning-objectives",
+    "href": "files/lecture_notes/lecture9/lecture9.html#todays-learning-objectives",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Today’s Learning Objectives",
+    "text": "Today’s Learning Objectives\nBy the end of this session, you will be able to:\n\nDefine what a random variable is\nDistinguish between different types of random variables\nIdentify examples of random variables in your field of study\nConnect probability concepts to real-world applications"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#what-is-a-random-variable",
+    "href": "files/lecture_notes/lecture9/lecture9.html#what-is-a-random-variable",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "What is a Random Variable?",
+    "text": "What is a Random Variable?\n\nA random variable (r.v.) is a function that assigns numerical values to the outcomes of a random experiment\nNotation: Usually denoted by capital letters (X, Y, Z)\nIt’s a bridge between the sample space and real numbers\nThink of it as a “rule” that translates outcomes into numbers\n\n\nKey Point: It’s not actually “random”, it’s a deterministic function applied to random outcomes!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#real-world-connection",
+    "href": "files/lecture_notes/lecture9/lecture9.html#real-world-connection",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Real-World Connection",
+    "text": "Real-World Connection"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#activity-your-research-field",
+    "href": "files/lecture_notes/lecture9/lecture9.html#activity-your-research-field",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Activity: Your Research Field",
+    "text": "Activity: Your Research Field\n\n\n\n\n\n\n\n\nThink About Your Major/Research Area\n\n\nTake 2 minutes to brainstorm:\n\nWhat random phenomena occur in your field?\nHow might you assign numbers to these outcomes?\nWhat questions could you answer with this data?\n\n\n\n\n\n\n\n\n\n\n\n\nExamples by Field\n\n\n\nPsychology: Reaction times, survey responses\nBiology: Species counts, gene expression levels\nEconomics: Stock prices, unemployment rates\nEngineering: System failures, signal strength"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#discrete-random-variables",
+    "href": "files/lecture_notes/lecture9/lecture9.html#discrete-random-variables",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Discrete Random Variables",
+    "text": "Discrete Random Variables\n\nDefinition: Takes on countable values (finite or countably infinite)\nExamples:\n\nNumber of emails received per day\nNumber of defective products in a batch\nStudent enrollment in courses\nNumber of research papers published per year\n\n\n\nNote: If X is discrete, then X can take values \\(x_1, x_2, x_3, \\cdot\\) where we can list all possible values."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#continuous-random-variables",
+    "href": "files/lecture_notes/lecture9/lecture9.html#continuous-random-variables",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Continuous Random Variables",
+    "text": "Continuous Random Variables\n\nDefinition: Takes on uncountably infinite values (any value in an interval)\nExamples:\n\nHeight of students\nTime until equipment failure\nTemperature measurements\nGPA (technically discrete, but often treated as continuous)\n\n\n\nNote: If \\(X\\) is continuous, then \\(X\\) can take any value in an interval \\([a,b]\\) or \\((-\\infty, \\infty)\\)."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#sampling-and-random-variables",
+    "href": "files/lecture_notes/lecture9/lecture9.html#sampling-and-random-variables",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Sampling and Random Variables",
+    "text": "Sampling and Random Variables"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#central-limit-theorem-connection",
+    "href": "files/lecture_notes/lecture9/lecture9.html#central-limit-theorem-connection",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Central Limit Theorem Connection",
+    "text": "Central Limit Theorem Connection\n\nWhen we repeatedly sample from a population, the sample mean becomes a random variable\nFormula: \\(\\bar{X} = \\frac{1}{n}\\sum_{i=1}^{n} X_i\\)\nEach time we sample, we get a different \\(\\bar{X}\\)\nThe distribution of \\(\\bar{X}\\) has special properties!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#central-limit-theorem-connection-1",
+    "href": "files/lecture_notes/lecture9/lecture9.html#central-limit-theorem-connection-1",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Central Limit Theorem Connection",
+    "text": "Central Limit Theorem Connection\n\n\nThese properties are :\n\nCenter (Unbiased): \\(E[\\bar{X}] = \\mu\\).\nSpread Shrinks with \\(n\\): \\(\\mathrm{Var}(\\bar{X}) = \\sigma^2/n\\); \\(\\mathrm{SE}(\\bar{X}) = \\sigma/\\sqrt{n}\\) (estimate with \\(s/\\sqrt{n}\\)).\nShape:\n\nIf the population is Normal, then \\(\\bar{X} \\sim \\text{Normal}(\\mu, \\sigma^2/n)\\) exactly.\n\nOtherwise, CLT: for large \\(n\\), \\(\\bar{X}\\) is approximately Normal even when the data aren’t.\n\n\n\n\nConsistency / Law of Large Numbers: \\(\\bar{X} \\xrightarrow{P} \\mu\\) as \\(n \\to \\infty\\) (estimates get closer to the truth with more data).\n(If sampling w/out replacement, pop size \\(N\\)): Apply finite population correction (FPC):\n\\(\\mathrm{SE}(\\bar{X}) = \\dfrac{\\sigma}{\\sqrt{n}}\\sqrt{\\dfrac{N-n}{N-1}}\\)."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#common-discrete-distributions",
+    "href": "files/lecture_notes/lecture9/lecture9.html#common-discrete-distributions",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Common Discrete Distributions",
+    "text": "Common Discrete Distributions\nBinomial Distribution - Characteristics\n\n\n\n\nFixed number of trials (n)\nEach trial has two outcomes\nConstant probability of success\nTrials are independent\n\nExample: Number of successful research grants out of 10 applications"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#poisson-distribution---characteristics",
+    "href": "files/lecture_notes/lecture9/lecture9.html#poisson-distribution---characteristics",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Poisson Distribution - Characteristics",
+    "text": "Poisson Distribution - Characteristics\n\n\n\nModels rare events\nEvents occur independently\nConstant average rate\nUseful for counts over time/space\n\nExample: Number of emails received per hour, number of mutations in DNA sequences"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#common-continuous-distributions",
+    "href": "files/lecture_notes/lecture9/lecture9.html#common-continuous-distributions",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Common Continuous Distributions",
+    "text": "Common Continuous Distributions\nNormal Distribution - Characteristics\n\n\n\nBell-shaped curve\nSymmetric around mean\nParameters: \\(\\mu\\) (mean), \\(\\sigma\\) (standard deviation)\nMany natural phenomena follow this pattern\n\nExample: Heights, test scores, measurement errors"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#exponential-distribution---characteristics",
+    "href": "files/lecture_notes/lecture9/lecture9.html#exponential-distribution---characteristics",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Exponential Distribution - Characteristics",
+    "text": "Exponential Distribution - Characteristics\n\n\n\nModels waiting times\nMemoryless property\nParameter: \\(\\lambda\\) (rate)\nRight-skewed\n\nExample: Time between arrivals, equipment lifespan, time to next earthquake"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#interactive-activity-choose-your-distribution",
+    "href": "files/lecture_notes/lecture9/lecture9.html#interactive-activity-choose-your-distribution",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Interactive Activity: Choose Your Distribution",
+    "text": "Interactive Activity: Choose Your Distribution\n\n\n\n\n\n\nGroup Discussion (5 minutes)\n\n\nFor each scenario, identify: 1. Is the random variable discrete or continuous? 2. What distribution might it follow? 3. What are the parameters?\nScenarios: - Number of students attending office hours per week - Time spent studying for an exam - Number of typos in a research paper - Body temperature of patients in a hospital"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#application-research-design",
+    "href": "files/lecture_notes/lecture9/lecture9.html#application-research-design",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Application: Research Design",
+    "text": "Application: Research Design\nConsider your research question:\n\nIdentify your random variable(s)\n\nWhat are you measuring?\nWhat values can it take?\n\nChoose appropriate distribution\n\nBased on the nature of your data\nConsider the underlying process\n\nPlan your analysis\n\nHow will you collect data?\nWhat statistical tests are appropriate?"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#probability-mass-vs.-density-functions",
+    "href": "files/lecture_notes/lecture9/lecture9.html#probability-mass-vs.-density-functions",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Probability Mass vs. Density Functions",
+    "text": "Probability Mass vs. Density Functions\n\n\nDiscrete: Probability Mass Function (PMF)\n\n\\(P(X = x)\\) for specific values\nSums to 1 over all possible values\nCan find exact probabilities\n\nExample: \\(P(X = 3) = 0.2\\)\n\nContinuous: Probability Density Function (PDF)\n\n\\(f(x)\\) represents density\nArea under curve = 1\n\\(P(X = x) = 0\\) for any specific value\nFind probabilities over intervals\n\nExample: \\(P(a &lt; X &lt; b) =  \\int_{a}^{b} f(x)dx\\)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#comparing-distributions-side-by-side",
+    "href": "files/lecture_notes/lecture9/lecture9.html#comparing-distributions-side-by-side",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Comparing Distributions Side-by-Side",
+    "text": "Comparing Distributions Side-by-Side"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#confidence-intervals-for-means",
+    "href": "files/lecture_notes/lecture9/lecture9.html#confidence-intervals-for-means",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Confidence Intervals for Means",
+    "text": "Confidence Intervals for Means\n\nProblem: We have one sample mean, but want to estimate the population mean\nSolution: Use the sampling distribution to create a confidence interval\nKey Insight: If we know how \\(\\bar{X}\\) varies, we can make probabilistic statements about μ\n\n\n95% Confidence Interval Formula: \\(\\bar{x} \\pm 1.96 \\times \\frac{\\sigma}{\\sqrt{n}}\\)\nInterpretation: “We are 95% confident that the true population mean lies within this interval”"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#visualizing-confidence-intervals",
+    "href": "files/lecture_notes/lecture9/lecture9.html#visualizing-confidence-intervals",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Visualizing Confidence Intervals",
+    "text": "Visualizing Confidence Intervals"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#confidence-interval-interpretation",
+    "href": "files/lecture_notes/lecture9/lecture9.html#confidence-interval-interpretation",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Confidence Interval Interpretation",
+    "text": "Confidence Interval Interpretation\n\n\n\n\n\n\nCommon Misconceptions\n\n\n❌ WRONG: “There’s a 95% probability that μ is in this specific interval”\n✅ CORRECT: “If we repeated this process many times, 95% of the intervals we construct would contain the true μ”\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe interval is random, not the population parameter\nBefore collecting data: 95% chance our method will work\nAfter collecting data: The interval either contains μ or it doesn’t\nConfidence level = Long-run success rate of the method"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#factors-affecting-confidence-interval-width",
+    "href": "files/lecture_notes/lecture9/lecture9.html#factors-affecting-confidence-interval-width",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Factors Affecting Confidence Interval Width",
+    "text": "Factors Affecting Confidence Interval Width"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#key-takeaways",
+    "href": "files/lecture_notes/lecture9/lecture9.html#key-takeaways",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nRandom variables translate random outcomes into numbers\nDiscrete variables have countable values; continuous variables have uncountable values\nDistributions describe the probability patterns of random variables\nChoosing the right distribution depends on understanding your data’s nature\nReal applications exist in every field - think about your research!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#next-steps",
+    "href": "files/lecture_notes/lecture9/lecture9.html#next-steps",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Next Steps",
+    "text": "Next Steps\n\n\n\n\n\n\nFor Your Research/Interests\n\n\n\nIdentify random variables in your field\nThink about appropriate distributions\nConsider data collection methods\nPlan statistical analyses\nConnect theory to practice"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#questions-and-discussion",
+    "href": "files/lecture_notes/lecture9/lecture9.html#questions-and-discussion",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Questions and Discussion",
+    "text": "Questions and Discussion\n\nShare with the class:\n\nWhat random variables are important in your field of study/major?\nWhich distributions might be most relevant?\nWhat challenges do you anticipate in data collection?\n\n\n\nThank you for your participation!"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#appendix-python-code-examples",
+    "href": "files/lecture_notes/lecture9/lecture9.html#appendix-python-code-examples",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Appendix: Python Code Examples",
+    "text": "Appendix: Python Code Examples\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy import stats\nimport seaborn as sns\n\n# Generate random samples from different distributions\n\n# Binomial\nbinom_data = np.random.binomial(n=10, p=0.3, size=100)\n\n# Poisson  \npoisson_data = np.random.poisson(lam=3, size=100)\n\n# Normal\nnormal_data = np.random.normal(loc=0, scale=1, size=100)\n\n# Exponential\nexp_data = np.random.exponential(scale=1/1.5, size=100)\n\n# Create histograms\nfig, axes = plt.subplots(2, 2, figsize=(12, 8))\n\naxes[0,0].hist(binom_data, bins=11, alpha=0.7, color='steelblue')\naxes[0,0].set_title('Binomial Sample')\n\naxes[0,1].hist(poisson_data, bins=15, alpha=0.7, color='coral')\naxes[0,1].set_title('Poisson Sample')\n\naxes[1,0].hist(normal_data, bins=20, alpha=0.7, color='lightblue')\naxes[1,0].set_title('Normal Sample')\n\naxes[1,1].hist(exp_data, bins=20, alpha=0.7, color='lightgreen')\naxes[1,1].set_title('Exponential Sample')\n\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture9/lecture9.html#additional-resources",
+    "href": "files/lecture_notes/lecture9/lecture9.html#additional-resources",
+    "title": "From Random Variables to Sampling & Confidence Intervals",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\n# Useful Python libraries for statistics and probability\nimport numpy as np           # Numerical computing\nimport scipy.stats as stats  # Statistical functions\nimport matplotlib.pyplot as plt  # Plotting\nimport seaborn as sns        # Statistical visualization\nimport pandas as pd          # Data manipulation\n\n# Quick reference for common distributions:\n# stats.binom.pmf(k, n, p)     # Binomial PMF\n# stats.poisson.pmf(k, lam)    # Poisson PMF  \n# stats.norm.pdf(x, mu, sigma) # Normal PDF\n# stats.expon.pdf(x, scale)    # Exponential PDF\n\n# Generate random samples:\n# np.random.binomial(n, p, size)\n# np.random.poisson(lam, size)\n# np.random.normal(mu, sigma, size)\n# np.random.exponential(scale, size)"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture13/lecture13.html#the-six-steps-of-hypothesis-testing",
+    "href": "files/lecture_notes/lecture13/lecture13.html#the-six-steps-of-hypothesis-testing",
+    "title": "Hypothesis Testing: Making Decisions with Data",
+    "section": "The Six Steps of Hypothesis Testing 📋",
+    "text": "The Six Steps of Hypothesis Testing 📋"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture13/lecture13.html#types-of-alternative-hypotheses",
+    "href": "files/lecture_notes/lecture13/lecture13.html#types-of-alternative-hypotheses",
+    "title": "Hypothesis Testing: Making Decisions with Data",
+    "section": "Types of Alternative Hypotheses 🎯",
+    "text": "Types of Alternative Hypotheses 🎯"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture13/lecture13.html#best-practices-summary",
+    "href": "files/lecture_notes/lecture13/lecture13.html#best-practices-summary",
+    "title": "Hypothesis Testing: Making Decisions with Data",
+    "section": "Best Practices Summary 📋",
+    "text": "Best Practices Summary 📋"
   }
 ]
