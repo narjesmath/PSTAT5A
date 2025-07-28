@@ -2,7 +2,6 @@ project:
   type: website
   output-dir: docs
 
-
 website:
   title: "PSTAT5A"
   site-url: "https://pstat5a.com"
@@ -26,20 +25,19 @@ website:
         href: contact.qmd
         text: "Contact"
 
-format:
-  html:
-    favicon: "img/logo.png"
-    title-block-banner: false
-    title-prefix: "PSTAT5A"
-    html-math-method: katex
-    resources:
-      - "img/logo.png"
-    theme:
-      - cosmo
-      - brand
-    css: /theme/styles.css
-    toc: true
-    project:
-      type: website
-      output-dir: docs
+# format:
+#   html:
+#     favicon: "img/logo.png"
+#     title-block-banner: false
+#     title-prefix: "PSTAT5A"
+#     html-math-method: katex
+#     theme:
+#       - cosmo
+#       - brand
+#     toc: true
+#     resources:
+#       - img/logo.png
+#       - theme/styles.css    
 
+    
+#     css: theme/styles.css

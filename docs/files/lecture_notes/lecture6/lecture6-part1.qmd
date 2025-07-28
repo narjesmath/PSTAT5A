@@ -1,0 +1,631 @@
+---
+title: "PSTAT 5A: Counting"
+subtitle: "Lecture 7 - Permutations"
+author: "Narjes Mathlouthi"
+date: 7/07/2025
+format: 
+  revealjs:
+    html-math-method: katex
+    logo: /img/logo.png
+    theme: default
+    css: /files/lecture_notes/theme/lecture-styles.css
+    slide-number: true
+    self-contained: true
+    mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    search: true
+    preview-links: auto
+    footer: "Understanding Data - Counting © 2025 Narjes Mathlouthi"
+    transition: slide
+    background-transition: fade
+    smaller: true
+    scrollable: true
+jupyter: pstat5a
+---
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+
+import plotly.graph_objects as go
+import math
+```
+
+## Welcome to Lecture 7 {.center}
+
+*The art and science of systematic enumeration*
+
+
+---
+
+## Today's Learning Objectives {#learning-objectives}
+
+::: {.callout-tip title="Learning Objectives"}
+By the end of this lecture, you will be able to:
+
+- Apply the fundamental counting principles ([@sec-fundamental-counting])
+- Calculate permutations with and without repetition ([@sec-permutations], [@sec-permutations-r-from-n], [@sec-permutations-repetition])
+:::
+
+---
+
+## Why Study Counting? {.smaller}
+::: {.columns}
+::: {.column}
+
+:::{.callout-note}
+### Counting helps us:
+
+- Calculate probabilities for complex events  
+- Solve optimization problems  
+- Understand combinations in genetics, computer science  
+- Analyze algorithms and data structures  
+- Make decisions involving arrangements and selections
+:::
+:::
+
+::: {.column width="45%" .smaller}
+:::{.callout-tip}
+### Real-world Examples:
+
+- **Cryptography**: Password strength and encryption key space
+- **Genetics**: DNA sequence analysis and gene combinations  
+- **Tournament brackets**: March Madness and sports competitions
+- **Lottery odds**: Probability calculations for games of chance
+- **Password security**: Character combinations and brute force protection
+:::
+
+![](/files/lecture_notes/lecture6/img/counting_icon.png){fig-align="left" width="10%"}
+:::
+
+:::
+
+---
+
+## The Counting Principle {#sec-fundamental-counting .smaller} 
+
+::: {.columns .smaller}
+
+::: {.column }
+::: {.callout-note title="Multiplication Rule"} 
+If a procedure consists of **$k$** separate tasks where:
+
+- Task 1 can be performed in **$n_1$** ways
+  
+- Task 2 can be performed in **$n_2$** ways
+  
+- ...
+  
+- Task **$k$** can be performed in **$n_k$** ways
+
+Then, the entire procedure can be performed in **$n_1 \times n_2 \times \cdots \times n_k$** ways
+:::
+:::
+
+::: {.column }
+::: {.callout-example title="Visual Demo: Task Tree"}
+:::{.callout-tip .smaller}
+### Visualization
+
+```{mermaid}
+%%{init: {'flowchart': {'nodeSpacing': 5, 'rankSpacing': 20}}}%%
+flowchart TD
+    Start([🟢 Start]) --> T1[📋 Task 1<br/>n₁ ways]
+    T1 --> C1[Choice 1]
+    T1 --> C2[Choice 2]
+    T1 --> Cn1[Choice n₁]
+    
+    C1 --> T2[📋 Task 2<br/>n₂ ways]
+    C2 --> T2
+    Cn1 --> T2
+    
+    T2 --> C21[Choice 1]
+    T2 --> C22[Choice 2]
+    T2 --> C2n[Choice n₂]
+    
+    C21 --> Total[🎯 Total ways<br/>n₁ × n₂ × ... × nₖ]
+    C22 --> Total
+    C2n --> Total
+    
+    classDef start fill:#d4edda,stroke:#155724,stroke-width:3px
+    classDef task fill:#d1ecf1,stroke:#0c5460,stroke-width:2px
+    classDef choice fill:#fff3cd,stroke:#856404,stroke-width:1px
+    classDef total fill:#f8d7da,stroke:#721c24,stroke-width:3px
+    
+    class Start start
+    class T1,T2 task
+    class C1,C2,Cn1,C21,C22,C2n choice
+    class Total total
+```
+:::
+:::
+
+:::
+
+
+
+
+
+:::
+
+
+
+---
+
+## Counting Example {.smaller}
+
+:::{.columns}
+:::{.column}
+::: {.example .smaller}
+
+**Format**:  ABC-123
+
+$$
+\underbrace{A \; B \; \_ \; \ - \_ \; \_ \; \_}_{positions}
+$$
+
+:::{.shrink}
+- **First position:** 26 letters
+  
+- **Second position:** 26 letters  
+  
+- **Third position:** 26 letters
+  
+- **Fourth position:** 10 digits
+  
+- **Fifth position:** 10 digits
+  
+- **Sixth position:** 10 digits
+:::
+![](/files/lecture_notes/lecture6/img/count.png){width="70px"}
+:::
+:::
+
+:::{.column}
+::: {.solution .fragment}
+
+Total possibilities: $26 \times 26 \times 26 \times 10 \times 10 \times 10 = 26^3 \times 10^3$
+
+Total possibilities $= 17,576,000$
+:::
+:::
+
+:::
+
+---
+
+## Restaurant Menu Example{.smaller}
+
+::: {.example}
+A restaurant offers:
+
+🍤 Appetizers: 4
+
+🍲 Main Courses: 6
+
+🍰 Desserts: 3
+
+**How many different three-course meals are possible?**
+:::
+
+::: {.solution .fragment}
+$4 \times 6 \times 3 = 72$ different meals
+:::
+
+---
+
+## Practice Problem 1 {#practice-1 .smaller}
+
+::: {.example}
+A password must contain:
+
+- **Exactly 8 characters**
+  
+- Each character is either a **letter** (26 possibilities) or **digit** (10 possibilities)
+
+**How many possible passwords are there?**
+
+![](/files/lecture_notes/lecture6/img/login.png){width="10%" fig-align="right"}
+:::
+
+::: {.solution .fragment}
+Each position has $26 + 10 = 36$ choices.
+
+Total: $36^8 = 2,821,109,907,456$ passwords
+:::
+
+---
+
+## What Are Permutations? {#sec-permutations .smaller}
+
+:::{.columns}
+:::{.column}
+::: {.callout-note title="Permutation"}
+An arrangement of objects where **order matters**
+:::
+
+::: {.callout-important title="Order Matters"}
+- Race finish positions (1st, 2nd, 3rd)
+  
+- Seating arrangements
+  
+- Passwords
+  
+- DNA sequences
+
+![](/files/lecture_notes/lecture6/img/letter.png){width="20%"}
+:::
+
+:::
+
+
+:::{.column}
+
+::: {.callout-example title="Permutation Animation: Placing Objects in Boxes"}
+```{python}
+#| echo: false
+#| warning: false
+
+import plotly.graph_objects as go
+import itertools
+
+# Create permutation animation
+items = ['A', 'B', 'C']
+perms = list(itertools.permutations(items))
+
+# Show first permutation step by step
+perm = perms[0]  # ABC
+fig = go.Figure()
+
+# Create boxes with step-by-step filling
+for step in range(4):
+    boxes = [''] * 3
+    for i in range(step):
+        boxes[i] = perm[i]
+    
+    fig.add_trace(go.Bar(
+        x=['Box 1', 'Box 2', 'Box 3'],
+        y=[1, 1, 1],
+        text=boxes,
+        textposition='inside',
+        marker_color=['lightblue']*3,
+        hoverinfo='none',
+        showlegend=False,
+        visible=(step==3)  # Only show final step
+    ))
+
+fig.update_layout(
+    title='Permutation ABC: Step-by-Step Placement',
+    yaxis=dict(showticklabels=False, range=[0, 1.5]),
+    autosize=False, 
+    xaxis=dict(showticklabels=True),
+    height=300,
+    width=1000
+    #margin=dict(l=10, r=10, t=40, b=10)
+)
+
+fig.show()
+
+# Show all permutations
+print("All permutations of ABC:")
+for i, perm in enumerate(perms):
+    print(f"{i+1}. {''.join(perm)}")
+```
+:::
+
+
+:::
+:::
+---
+
+## Permutations of $n$ Distinct Objects {.smaller}
+
+::: {.columns .smaller}
+::: {.column width="50%"}
+
+::: {.callout-important title="Key Formula" .smaller}
+The number of ways to arrange $n$ distinct objects is:
+
+$$n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$$
+:::
+
+
+![](/files/lecture_notes/lecture6/img/people.png){width="30%" fig-align="right"}
+
+:::
+
+::: {.column width="50%"}
+
+::: {.callout-note .smaller}
+Seating Process:
+
+**1st position:** 5 choices (Alice, Bob, Carol, David, Eve)
+
+**2nd position:** 4 choices (whoever is left)
+
+**3rd position:** 3 choices (whoever is left)
+
+**4th position:** 2 choices (whoever is left)
+
+**5th position:** 1 choice (last person)
+
+**How many ways can 5 people sit in a row?**
+
+:::
+
+::: {.solution .fragment}
+$5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$ ways
+:::
+
+:::
+
+:::
+
+---
+
+## Factorial Values {.smaller}
+
+::: {.columns}
+::: {.column width="30%"}
+| $n$          | $n!$       |
+|--------------|------------|
+| 0            | 1          |
+| 1            | 1          |
+| 2            | 2          |
+| 3            | 6          |
+| 4            | 24         |
+| 5            | 120        |
+
+
+
+::: {.callout-tip title="Note"}
+$0! = 1$ by definition
+:::
+:::
+
+::: {.column width="70%"}
+```{python}
+#| echo: false
+#| warning: false
+
+# Create factorial data
+n_values = list(range(11))
+factorials = [math.factorial(n) for n in n_values]
+
+# Create interactive plot
+fig = go.Figure()
+
+# Add bar chart
+fig.add_trace(go.Bar(
+    x=n_values,
+    y=factorials,
+    marker_color='lightblue',
+    name='n!',
+    hovertemplate='n=%{x}<br>n!=%{y:,}<extra></extra>'
+))
+
+# Add line for exponential growth
+fig.add_trace(go.Scatter(
+    x=n_values,
+    y=factorials,
+    mode='lines+markers',
+    line=dict(color='red', width=2),
+    name='Growth Trend',
+    hovertemplate='n=%{x}<br>n!=%{y:,}<extra></extra>'
+))
+
+fig.update_layout(
+    title='Factorial Growth: n! vs n',
+    xaxis_title='n',
+    yaxis_title='n!',
+    height=400,
+    showlegend=True,
+    hovermode='x unified'
+)
+
+fig.update_xaxes(tickmode='linear', tick0=0, dtick=1)
+fig.update_yaxes(type='log', title='n! (log scale)')
+
+fig.show()
+```
+:::
+
+
+:::
+
+---
+
+## Arranging with Order {#sec-permutations-r-from-n .smaller}
+
+:::{.columns}
+:::{.column width="30%"}
+::: {.callout-important title="Key Formula"}
+**$P(n,r)$** or **$_nP_r$**: Number of ways to arrange **$r$** objects (a subset) selected from **$n$** (total num.) distinct objects
+
+$$P(n,r) = \frac{n!}{(n-r)!}$$
+:::
+
+![](/files/lecture_notes/lecture6/img/cunting_icon2.png){width="50%"}
+:::
+
+:::{.column width="70%" .smaller}
+:::{.callout-note .smaller}
+
+$$
+P_{k,n} = 
+\frac{n!}{(n-k)!}
+=
+$$
+
+$$
+= \frac{
+  n(n-1)\cdots(n-k+1)\,
+  \overbrace{(n-k)(n-k-1)\cdots3\cdot2\cdot1}^{(n-k)!}
+}{
+  (n-k)!
+}
+$$
+
+$$
+= \underbrace{
+n (n-1) (n-2) \cdots (n-k+1)
+}_{k \text{ terms}}
+$$
+
+
+
+Fill in **$k$** slots with no repetitions  
+$$
+\underbrace{n \; (n-1) \; \_ \; \_ \; \cdots}_{k}
+$$
+
+Note that if we allowed repetitions we would get **$n^k$** 
+$$
+\underbrace{n \; n \; n \; \cdots \; n}_{k}
+$$
+
+:::
+
+
+:::
+:::
+
+
+## Example 
+
+::: {.example}
+**How many ways can we select and arrange 3 people from a group of 8 for president, vice-president, and secretary?**
+![](/files/lecture_notes/lecture6/img/networking.png){width="10%"}
+:::
+
+:::{.solution .fragment}
+$P(8,3) = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 8 \times 7 \times 6 = 336$
+:::
+
+
+
+## Understanding $P(n,r)$ {.smaller}
+
+Why is $P(n,r) = \frac{n!}{(n-r)!}$?
+
+- **First position:** $n$ choices
+- **Second position:** $(n-1)$ choices  
+- **Third position:** $(n-2)$ choices
+- ...
+- **$r$-th position:** $(n-r+1)$ choices
+
+::: {.formula-box}
+Total: $n \times (n-1) \times (n-2) \times \cdots \times (n-r+1) = \frac{n!}{(n-r)!}$
+:::
+
+---
+
+## Practice Problem 2 {#practice-2 .smaller}
+
+::: {.example}
+A baseball team has 15 players. How many ways can the coach:
+
+a) Arrange all 15 players in a line?
+b) Choose and arrange 9 players for the starting lineup (batting order matters)?
+
+![](/files/lecture_notes/lecture6/img/baseball-player.png){width="10%"}
+:::
+
+::: {.solution .fragment}
+a) $15! = 1,307,674,368,000$
+b) $P(15,9) = \frac{15!}{6!} = 1,816,214,400$
+:::
+
+---
+
+## Permutations with Repetition {#sec-permutations-repetition}
+
+::: {.callout-note title="Permutations with Repetition"}
+When some objects are identical, we have **fewer** distinct arrangements
+
+If we have $n$ objects where:
+
+- $n_1$ are of type 1
+  
+- $n_2$ are of type 2  
+  
+- ...
+  
+- $n_k$ are of type $k$
+
+Number of distinct arrangements: $\frac{n!}{n_1! \times n_2! \times \cdots \times n_k!}$
+:::
+
+---
+
+## Permutations with Repetition Example {.smaller}
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.example .smaller}
+**How many distinct arrangements are there of the letters in "STATISTICS"?**
+![](/files/lecture_notes/lecture6/img/abc.png){width="10%" fig-align="right"}
+:::
+
+
+
+:::
+
+
+::: {.column width="50%"}
+
+:::{.callout-tip .smaller}
+**S-T-A-T-I-S-T-I-C-S**
+
+- Total letters: 10
+  
+- **S** appears 3 times
+  
+- **T** appears 3 times  
+  
+- **A** appears 1 time
+  
+- **I** appears 2 times
+  
+- **C** appears 1 time
+:::
+
+
+
+
+:::
+::: {.solution .fragment}
+$\frac{10!}{3! \times 3! \times 1! \times 2! \times 1!} = \frac{3,628,800}{6 \times 6 \times 1 \times 2 \times 1} = \frac{3,628,800}{72} = 50,400$
+:::
+:::
+
+
+
+
+## Learning Objectives Summary {#learning-summary}
+
+::: {.callout-tip title="What We've Covered"}
+In this lecture, we've addressed all the learning objectives:
+
+- ✅ **Apply the fundamental counting principles**: Covered in [@sec-fundamental-counting]
+- ✅ **Calculate permutations with and without repetition**: Covered in [@sec-permutations], [@sec-permutations-r-from-n], and [@sec-permutations-repetition]  
+:::
+
+
+
+
+## Questions? {.center}
+
+
+**Office Hours**: Thursday's 11 AM On Zoom (Link on Canvas)
+
+**Email**: nmathlouthi@ucsb.edu
+
+**Next Class**: Counting continued 
+
+#
+```{=html}
+<a href="https://pstat5a.com/schedule.html" class="main-page-btn">🏠 Back to Main Page</a>
+```

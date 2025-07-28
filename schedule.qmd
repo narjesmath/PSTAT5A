@@ -8,9 +8,6 @@ format:
     css: /theme/schedule-styles.css
     page-layout: full
 self-contained: true
-menu: true
-search: true
-zoom: true
 python: pstat5a
 execute:
   echo: false
@@ -227,7 +224,9 @@ Lecture Materials
 7/07
 :::
 ::: {.topic}
+
 [Conditional Probability & Bayes Theorem](/files/lecture_notes/lecture5/lecture5.qmd)
+
 :::
 ::: {.lab-quiz}
 [Lab3](/files/labs/lab3/lab3.qmd)
@@ -428,7 +427,7 @@ Quiz 1 (Weeks 1–2)
 [Confidence Intervals (Means & Proportions)](/files/lecture_notes/lecture11/lecture11.qmd)
 
 - [Z-table](https://math.arizona.edu/~rsims/ma464/standardnormaltable.pdf),
-[t-table](https://www.sjsu.edu/faculty/gerstman/StatPrimer/t-table.pdf)
+[t-table](https://www.statology.org/wp-content/uploads/2018/09/t_dist.png)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -445,7 +444,7 @@ Quiz 1 (Weeks 1–2)
 7/23
 :::
 ::: {.topic}
-Intro to Hypothesis Testing
+[Confidence Intervals Deep Dive](/files/lecture_notes/lecture12/lecture12.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -462,7 +461,7 @@ Intro to Hypothesis Testing
 7/24
 :::
 ::: {.topic}
-Hypothesis Testing Continued
+[Hypothesis Testing ](/files/lecture_notes/lecture13/lecture13.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -507,7 +506,8 @@ Quiz 2 (Weeks 3–4)
 Regression Analysis
 :::
 ::: {.lab-quiz}
-Lab 6
+[Lab 6](/files/labs/lab6/lab6.qmd)
+<!-- [Lab 6 Solutions](/files/labs/lab6/lab6_sln.qmd) -->
 :::
 ::: {.worksheet}
 Worksheet 6
