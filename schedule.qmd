@@ -462,6 +462,7 @@ Quiz 1 (Weeks 1–2)
 :::
 ::: {.topic}
 [Hypothesis Testing ](/files/lecture_notes/lecture13/lecture13.qmd)
+
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -492,7 +493,7 @@ Quiz 2 (Weeks 3–4)
 
 ::: {.week-section .week-6}
 ::: {.week-header}
-<span>Week 6: Regression & Course Wrap-Up</span>
+<span>Week 6: Hypothesis Testing, Regression & Course Wrap-Up</span>
 :::
 ::: {.week-content}
 ::: {.day-row}
@@ -503,11 +504,14 @@ Quiz 2 (Weeks 3–4)
 7/28
 :::
 ::: {.topic}
-Regression Analysis
+
+[Hypothesis Testing Notes](/files/lecture_notes/lecture13/Lecture13_Hypothesis_Testing.pdf)
 :::
 ::: {.lab-quiz}
+
 [Lab 6](/files/labs/lab6/lab6.qmd)
-<!-- [Lab 6 Solutions](/files/labs/lab6/lab6_sln.qmd) -->
+
+[Lab 6 Solutions](/files/labs/lab6/lab6_sln.qmd)
 :::
 ::: {.worksheet}
 Worksheet 6
@@ -521,7 +525,7 @@ Worksheet 6
 7/29
 :::
 ::: {.topic}
-Regression Diagnostics, Sampling
+Intro to Regression Analysis
 :::
 ::: {.lab-quiz .empty-cell}
 —

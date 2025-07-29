@@ -1,7 +1,0 @@
----
-title: "Test Lecture"
-format: revealjs
----
-
-## Test Slide
-This is a test.

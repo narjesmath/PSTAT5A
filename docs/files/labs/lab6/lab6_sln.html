@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Instructor: Narjes Mathlouthi">
-<meta name="dcterms.date" content="2025-07-27">
+<meta name="dcterms.date" content="2025-07-29">
 
 <title>Lab 6 Solutions: Basic Hypothesis Testing &amp; Simple Regression – PSTAT5A</title>
 <style>
@@ -105,22 +105,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -149,7 +135,6 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../../theme/styles.css">
 <link rel="stylesheet" href="../../../files/lecture_notes/theme/lecture-styles.css">
 </head>
 
@@ -275,7 +260,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 27, 2025</p>
+      <p class="date">July 29, 2025</p>
     </div>
   </div>
   
@@ -375,7 +360,7 @@ Setup
 <p><strong>The Question</strong>: Is the actual average caffeine content different from what the coffee shop claims?</p>
 <section id="scenario" class="level3 task-box">
 <h3 class="anchored" data-anchor-id="scenario">Scenario</h3>
-<p>A coffee shop claims their average espresso shot contains <strong>75 mg</strong> of caffeine. You suspect it’s actually <strong>higher</strong>. You test <strong>20 shots</strong> and want to test at <strong><span class="math inline">\alpha = 0.05</span></strong> significance level.</p>
+<p>A coffee shop claims their average espresso shot contains <strong>75 mg</strong> of caffeine. You suspect it’s actually <strong>higher</strong>. You test <strong>20 shots</strong> and want to test at <strong><span class="math inline">\(\alpha = 0.05\)</span></strong> significance level.</p>
 <p><strong>Your Goal</strong>: Determine if there’s sufficient evidence that the actual caffeine content exceeds the coffee shop’s claim.</p>
 </section>
 <section id="step-1-explore-the-data" class="level3">
@@ -439,11 +424,11 @@ Test type: RIGHT-tailed test
 • We use $\alpha$ = 0.05 as our significance level</code></pre>
 </div>
 </div>
-<p><strong>✅ Answer Key:</strong> - <span class="math inline">H_0</span>: <span class="math inline">\mu</span> = 75 mg (coffee shop’s claim) - <span class="math inline">H_1</span>: <span class="math inline">\mu</span> &gt; 75 mg (we suspect it’s higher) - Right-tailed test (testing if mean is greater than 75)</p>
+<p><strong>✅ Answer Key:</strong> - <span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu\)</span> = 75 mg (coffee shop’s claim) - <span class="math inline">\(H_1\)</span>: <span class="math inline">\(\mu\)</span> &gt; 75 mg (we suspect it’s higher) - Right-tailed test (testing if mean is greater than 75)</p>
 </section>
 <section id="step-3-calculate-the-test-statistic" class="level3">
 <h3 class="anchored" data-anchor-id="step-3-calculate-the-test-statistic">Step 3: Calculate the Test Statistic</h3>
-<p>The t-statistic formula is: <strong><span class="math inline">t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}</span></strong></p>
+<p>The t-statistic formula is: <strong><span class="math inline">\(t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}\)</span></strong></p>
 <div id="9575f59b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"🔢 STEP 2: Calculating Test Statistic"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">38</span>)</span>
@@ -502,11 +487,11 @@ What exactly is a p‑value?
 </blockquote>
 <p>Formally, it is the probability, calculated under the assumption that the null hypothesis is correct; of obtaining a test statistic <strong>as extreme or more extreme</strong> than the one observed.</p>
 <ul>
-<li><strong>Small p‑value (e.g., &lt; 0.05)</strong> → data are rare under <span class="math inline">H_0</span> → strong evidence <em>against</em> <span class="math inline">H_0</span>.<br>
+<li><strong>Small p‑value (e.g., &lt; 0.05)</strong> → data are rare under <span class="math inline">\(H_0\)</span> → strong evidence <em>against</em> <span class="math inline">\(H_0\)</span>.<br>
 </li>
-<li><strong>Large p‑value</strong> → data are plausible under <span class="math inline">H_0</span> → little or no evidence against <span class="math inline">H_0</span>.</li>
+<li><strong>Large p‑value</strong> → data are plausible under <span class="math inline">\(H_0\)</span> → little or no evidence against <span class="math inline">\(H_0\)</span>.</li>
 </ul>
-<p><strong>Important:</strong> A p‑value does <strong>not</strong> give the probability that the null hypothesis is true; it quantifies how incompatible your data are with <span class="math inline">H_0</span>.</p>
+<p><strong>Important:</strong> A p‑value does <strong>not</strong> give the probability that the null hypothesis is true; it quantifies how incompatible your data are with <span class="math inline">\(H_0\)</span>.</p>
 </div>
 </div>
 <div id="6828b797" class="cell" data-execution_count="5">
@@ -538,7 +523,7 @@ What exactly is a p‑value?
 </section>
 <section id="step-5-make-your-decision" class="level3">
 <h3 class="anchored" data-anchor-id="step-5-make-your-decision">Step 5: Make Your Decision</h3>
-<p>Compare your p-value to <span class="math inline">\alpha = 0.05</span> and make a statistical decision.</p>
+<p>Compare your p-value to <span class="math inline">\(\alpha = 0.05\)</span> and make a statistical decision.</p>
 <div id="1ee80e8f" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"⚖️ STEP 4: Making the Decision"</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">31</span>)</span>
@@ -680,7 +665,7 @@ What exactly is a p‑value?
 <ol type="1">
 <li><strong>Hypotheses</strong>: What were your null and alternative hypotheses? Why did you choose a right-tailed test?
 <ul>
-<li><strong>Answer</strong>: <span class="math inline">H_0</span>: <span class="math inline">\mu</span> = 75 mg, <span class="math inline">H_1</span>: <span class="math inline">\mu</span> &gt; 75 mg. We chose a right-tailed test because we specifically suspected the caffeine content was <em>higher</em> than claimed, not just different.</li>
+<li><strong>Answer</strong>: <span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu\)</span> = 75 mg, <span class="math inline">\(H_1\)</span>: <span class="math inline">\(\mu\)</span> &gt; 75 mg. We chose a right-tailed test because we specifically suspected the caffeine content was <em>higher</em> than claimed, not just different.</li>
 </ul></li>
 <li><strong>Test Choice</strong>: Why did you use a t-test instead of a z-test for this problem?
 <ul>
@@ -690,9 +675,9 @@ What exactly is a p‑value?
 <ul>
 <li><strong>Answer</strong>: t ≈ 1.84, p ≈ 0.041. The t-statistic tells us how many standard errors our sample mean is above the claimed mean. The p-value tells us there’s only a 4.1% chance of seeing this result if the true mean were 75mg.</li>
 </ul></li>
-<li><strong>Decision</strong>: What was your final conclusion at <span class="math inline">\alpha = 0.05</span>? Do you reject or fail to reject the null hypothesis?
+<li><strong>Decision</strong>: What was your final conclusion at <span class="math inline">\(\alpha = 0.05\)</span>? Do you reject or fail to reject the null hypothesis?
 <ul>
-<li><strong>Answer</strong>: We REJECT <span class="math inline">H_0</span> because p-value (0.041) &lt; α (0.05). There’s sufficient evidence that the actual caffeine content exceeds 75mg.</li>
+<li><strong>Answer</strong>: We REJECT <span class="math inline">\(H_0\)</span> because p-value (0.041) &lt; α (0.05). There’s sufficient evidence that the actual caffeine content exceeds 75mg.</li>
 </ul></li>
 <li><strong>Real-World Impact</strong>: If you were advising the coffee shop, what would you tell them based on your analysis?
 <ul>
@@ -737,8 +722,8 @@ At a glance — what you’ll do
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Explore &amp; visualize the data</li>
-<li>Measure correlation (r) and <span class="math inline">R^2</span></li>
-<li>Fit the regression line <span class="math inline">\hat{y} = \beta_0 + \beta_1 x</span></li>
+<li>Measure correlation (r) and <span class="math inline">\(R^2\)</span></li>
+<li>Fit the regression line <span class="math inline">\(\hat{y} = \beta_0 + \beta_1 x\)</span></li>
 <li>Test if the slope is significant</li>
 <li>Predict new values &amp; quantify error</li>
 <li>Check model assumptions</li>
@@ -762,9 +747,9 @@ Key Concepts:
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>Correlation</strong>: How strongly two variables move together (-1 to +1)</li>
-<li><strong>Slope</strong>: How much <span class="math inline">Y</span> changes when X increases by <span class="math inline">1</span> unit</li>
-<li><strong>Intercept</strong>: The predicted value of <span class="math inline">Y</span> when <span class="math inline">X = 0</span></li>
-<li><strong><span class="math inline">R^2</span></strong>: What percentage of the variation in <span class="math inline">Y</span> is explained by <span class="math inline">X</span></li>
+<li><strong>Slope</strong>: How much <span class="math inline">\(Y\)</span> changes when X increases by <span class="math inline">\(1\)</span> unit</li>
+<li><strong>Intercept</strong>: The predicted value of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X = 0\)</span></li>
+<li><strong><span class="math inline">\(R^2\)</span></strong>: What percentage of the variation in <span class="math inline">\(Y\)</span> is explained by <span class="math inline">\(X\)</span></li>
 </ul>
 </div>
 </div>
@@ -784,7 +769,7 @@ Important
 </div>
 <section id="scenario-1" class="level3 task-box">
 <h3 class="anchored" data-anchor-id="scenario-1">Scenario</h3>
-<p>You want to investigate the relationship between <strong>study hours</strong> and <strong>exam performance</strong>. You collect data from <span class="math inline">50</span> students about their weekly study hours and corresponding exam scores.</p>
+<p>You want to investigate the relationship between <strong>study hours</strong> and <strong>exam performance</strong>. You collect data from <span class="math inline">\(50\)</span> students about their weekly study hours and corresponding exam scores.</p>
 <p><strong>Your Goal</strong>: Create a statistical model to predict exam scores based on study hours and determine how much each additional hour of studying helps.</p>
 </section>
 <section id="step-1-explore-the-data-1" class="level3">
