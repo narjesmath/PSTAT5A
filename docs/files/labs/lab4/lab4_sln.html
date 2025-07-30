@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Complete Solutions">
-<meta name="dcterms.date" content="2025-07-23">
+<meta name="dcterms.date" content="2025-07-29">
 
 <title>Lab 4 Solutions: Introduction to Probability with Python – PSTAT5A</title>
 <style>
@@ -135,7 +135,6 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../../theme/styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -262,7 +261,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 23, 2025</p>
+      <p class="date">July 29, 2025</p>
     </div>
   </div>
   
@@ -276,7 +275,7 @@ window.Quarto = {
 
 <section id="getting-started---solution" class="level1">
 <h1>Getting Started - SOLUTION</h1>
-<div id="4a2ccbab" class="cell" data-execution_count="1">
+<div id="661ef1c1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load our tools (libraries)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -297,7 +296,7 @@ window.Quarto = {
 <h1>Part 1: Understanding Probability with Coins - SOLUTIONS</h1>
 <section id="step-1-a-fair-coin" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-a-fair-coin">Step 1: A Fair Coin</h2>
-<div id="b201d5c0" class="cell" data-execution_count="2">
+<div id="573304ff" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A fair coin - just run this code!</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>outcomes <span class="op">=</span> [<span class="st">"Tails"</span>, <span class="st">"Heads"</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>probabilities <span class="op">=</span> [<span class="fl">0.5</span>, <span class="fl">0.5</span>]  <span class="co"># 50% each</span></span>
@@ -311,7 +310,7 @@ Probabilities: [0.5, 0.5]
 Total probability: 1.0</code></pre>
 </div>
 </div>
-<div id="25f87822" class="cell" data-execution_count="3">
+<div id="5575a71b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a bar chart - just run this code!</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.bar(outcomes, probabilities, color<span class="op">=</span>[<span class="st">'lightcoral'</span>, <span class="st">'lightblue'</span>], alpha<span class="op">=</span><span class="fl">0.7</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
@@ -330,7 +329,7 @@ Total probability: 1.0</code></pre>
 </section>
 <section id="task-1-solution-fill-in-the-biased-coin" class="level2">
 <h2 class="anchored" data-anchor-id="task-1-solution-fill-in-the-biased-coin">Task 1 Solution: Fill in the Biased Coin</h2>
-<div id="7a128c3a" class="cell" data-execution_count="4">
+<div id="1859d067" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A biased coin that lands Heads 70% of the time</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>biased_outcomes <span class="op">=</span> [<span class="st">"Tails"</span>, <span class="st">"Heads"</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>biased_probabilities <span class="op">=</span> [<span class="fl">0.3</span>, <span class="fl">0.7</span>]  <span class="co"># If Heads is 70%, then Tails is 30%</span></span>
@@ -346,7 +345,7 @@ Biased coin probabilities: [0.3, 0.7]
 Total probability: 1.0</code></pre>
 </div>
 </div>
-<div id="61a2161b" class="cell" data-execution_count="5">
+<div id="5774b6bb" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph of biased coin</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.bar(biased_outcomes, biased_probabilities, color<span class="op">=</span>[<span class="st">'lightcoral'</span>, <span class="st">'lightblue'</span>], alpha<span class="op">=</span><span class="fl">0.7</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
@@ -368,7 +367,7 @@ Total probability: 1.0</code></pre>
 <h1>Part 2: Calculating Expected Values - SOLUTIONS</h1>
 <section id="example-expected-value-of-a-fair-coin" class="level2">
 <h2 class="anchored" data-anchor-id="example-expected-value-of-a-fair-coin">Example: Expected Value of a Fair Coin</h2>
-<div id="5fb4a43e" class="cell" data-execution_count="6">
+<div id="a761dbde" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected value calculation for fair coin</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>coin_values <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]  <span class="co"># Tails = 0, Heads = 1</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>coin_probs <span class="op">=</span> [<span class="fl">0.5</span>, <span class="fl">0.5</span>]</span>
@@ -382,7 +381,7 @@ Total probability: 1.0</code></pre>
 </section>
 <section id="task-2-solution-expected-value-of-biased-coin" class="level2">
 <h2 class="anchored" data-anchor-id="task-2-solution-expected-value-of-biased-coin">Task 2 Solution: Expected Value of Biased Coin</h2>
-<div id="fee36c8e" class="cell" data-execution_count="7">
+<div id="90d0bc9f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected value for biased coin</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Values: Tails = 0, Heads = 1</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilities: Tails = 30%, Heads = 70%</span></span>
@@ -393,7 +392,7 @@ Total probability: 1.0</code></pre>
 <pre><code>Expected value of biased coin: 0.7</code></pre>
 </div>
 </div>
-<div id="9e37b2bd" class="cell" data-execution_count="8">
+<div id="d71f7f56" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"This means: if we flip the biased coin many times,"</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"we expect about </span><span class="sc">{</span>expected_biased<span class="sc">}</span><span class="ss"> points per flip on average."</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Since this is closer to 1 than 0.5, the coin favors Heads"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -409,7 +408,7 @@ Since this is closer to 1 than 0.5, the coin favors Heads</code></pre>
 <h1>Part 3: Using Python’s Built-in Probability Tools - SOLUTIONS</h1>
 <section id="bernoulli-distribution-example" class="level2">
 <h2 class="anchored" data-anchor-id="bernoulli-distribution-example">Bernoulli Distribution Example</h2>
-<div id="35550e62" class="cell" data-execution_count="9">
+<div id="d5d98b9c" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a Bernoulli distribution for a fair coin</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>fair_coin <span class="op">=</span> stats.bernoulli(<span class="fl">0.5</span>)  <span class="co"># 0.5 = 50% chance of success (Heads)</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -431,7 +430,7 @@ Expected value: 0.5</code></pre>
 </section>
 <section id="task-3-solution-biased-coin-with-python-tools" class="level2">
 <h2 class="anchored" data-anchor-id="task-3-solution-biased-coin-with-python-tools">Task 3 Solution: Biased Coin with Python Tools</h2>
-<div id="23071295" class="cell" data-execution_count="10">
+<div id="13ca4f82" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create Bernoulli distribution for biased coin</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>biased_coin <span class="op">=</span> stats.bernoulli(<span class="fl">0.7</span>)  <span class="co"># 70% probability of Heads</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -452,7 +451,7 @@ Expected value: 0.7</code></pre>
 </section>
 <section id="visualizing-different-coins" class="level2">
 <h2 class="anchored" data-anchor-id="visualizing-different-coins">Visualizing Different Coins</h2>
-<div id="29dc95f7" class="cell" data-execution_count="11">
+<div id="c8991128" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare three coins with different bias</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -495,7 +494,7 @@ Expected value: 0.7</code></pre>
 <h1>Part 4: Multiple Coin Flips - SOLUTIONS</h1>
 <section id="example-5-fair-coin-flips" class="level2">
 <h2 class="anchored" data-anchor-id="example-5-fair-coin-flips">Example: 5 Fair Coin Flips</h2>
-<div id="55bf769f" class="cell" data-execution_count="12">
+<div id="1ec7cf4a" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Binomial distribution: 5 fair coin flips</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>n_flips <span class="op">=</span> <span class="dv">5</span>        <span class="co"># number of flips</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>p_heads <span class="op">=</span> <span class="fl">0.5</span>      <span class="co"># probability of heads each time</span></span>
@@ -523,7 +522,7 @@ Probability of 5 heads: 0.0312
 Expected number of heads: 2.5</code></pre>
 </div>
 </div>
-<div id="e47ffc8f" class="cell" data-execution_count="13">
+<div id="14638ba1" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph showing all possibilities</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>possible_heads <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>probabilities <span class="op">=</span> [five_flips.pmf(k) <span class="cf">for</span> k <span class="kw">in</span> possible_heads]</span>
@@ -548,14 +547,14 @@ Expected number of heads: 2.5</code></pre>
 </section>
 <section id="task-4-solution-basketball-free-throws" class="level2">
 <h2 class="anchored" data-anchor-id="task-4-solution-basketball-free-throws">Task 4 Solution: Basketball Free Throws</h2>
-<div id="5a255386" class="cell" data-execution_count="14">
+<div id="c1753a30" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basketball free throws</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>n_shots <span class="op">=</span> <span class="dv">10</span>       <span class="co"># 10 shots</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>p_make <span class="op">=</span> <span class="fl">0.6</span>       <span class="co"># 60% chance of making each shot</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>basketball <span class="op">=</span> stats.binom(n_shots, p_make)  <span class="co"># Create the distribution</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5d8f3ac1" class="cell" data-execution_count="15">
+<div id="391c1829" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a) What's the probability of making exactly 6 shots?</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>prob_exactly_6 <span class="op">=</span> basketball.pmf(<span class="dv">6</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probability of exactly 6 makes: </span><span class="sc">{</span>prob_exactly_6<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
@@ -573,7 +572,7 @@ Expected number of makes: 6.0
 Probability of 8+ makes: 0.1673</code></pre>
 </div>
 </div>
-<div id="f11ecc95" class="cell" data-execution_count="16">
+<div id="ca61ea1a" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create bar chart</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>possible_makes <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">11</span>))  <span class="co"># 0 to 10 makes</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>probabilities <span class="op">=</span> [basketball.pmf(k) <span class="cf">for</span> k <span class="kw">in</span> possible_makes]</span>
@@ -601,7 +600,7 @@ Probability of 8+ makes: 0.1673</code></pre>
 <h1>Part 5: Events Over Time - SOLUTIONS</h1>
 <section id="example-store-customers" class="level2">
 <h2 class="anchored" data-anchor-id="example-store-customers">Example: Store Customers</h2>
-<div id="d7570968" class="cell" data-execution_count="17">
+<div id="022ea273" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On average, 4 customers enter the store per hour</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>average_customers <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -624,7 +623,7 @@ Probability of 6 customers: 0.1042
 Expected customers per hour: 4.0</code></pre>
 </div>
 </div>
-<div id="f03772f8" class="cell" data-execution_count="18">
+<div id="9465cc4f" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph customer arrivals</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>possible_customers <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">12</span>))  <span class="co"># 0 to 11 customers</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>probabilities <span class="op">=</span> [store_customers.pmf(k) <span class="cf">for</span> k <span class="kw">in</span> possible_customers]</span>
@@ -649,12 +648,12 @@ Expected customers per hour: 4.0</code></pre>
 </section>
 <section id="task-5-solution-email-inbox" class="level2">
 <h2 class="anchored" data-anchor-id="task-5-solution-email-inbox">Task 5 Solution: Email Inbox</h2>
-<div id="030f1d3a" class="cell" data-execution_count="19">
+<div id="12f460f0" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Email arrivals</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>average_emails <span class="op">=</span> <span class="dv">3</span>  <span class="co"># 3 emails per hour on average</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>email_arrivals <span class="op">=</span> stats.poisson(average_emails)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f7dbe042" class="cell" data-execution_count="20">
+<div id="378a6573" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a) Probability of getting exactly 3 emails in an hour</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>prob_exactly_3 <span class="op">=</span> email_arrivals.pmf(<span class="dv">3</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Probability of exactly 3 emails: </span><span class="sc">{</span>prob_exactly_3<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
@@ -672,7 +671,7 @@ Probability of no emails: 0.0498
 Expected emails per hour: 3.0</code></pre>
 </div>
 </div>
-<div id="d787a0b0" class="cell" data-execution_count="21">
+<div id="58bac1da" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph for email arrivals</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>possible_emails <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">12</span>))  <span class="co"># 0 to 11 emails</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>probabilities <span class="op">=</span> [email_arrivals.pmf(k) <span class="cf">for</span> k <span class="kw">in</span> possible_emails]</span>
@@ -700,7 +699,7 @@ Expected emails per hour: 3.0</code></pre>
 <h1>Part 6: Distribution Detective - SOLUTIONS</h1>
 <section id="task-6-solution-which-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="task-6-solution-which-distribution">Task 6 Solution: Which Distribution?</h2>
-<div id="c4f637ac" class="cell" data-execution_count="22">
+<div id="262ff4d6" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scenario A - 8 coin flips, exactly 5 heads</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">8</span>          <span class="co"># number of flips</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.5</span>        <span class="co"># probability of heads (fair coin)</span></span>
@@ -712,7 +711,7 @@ Expected emails per hour: 3.0</code></pre>
 <pre><code>Scenario A answer: 0.2187</code></pre>
 </div>
 </div>
-<div id="21b47acf" class="cell" data-execution_count="23">
+<div id="eedfe28d" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scenario B - Coffee shop customers</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>average_rate <span class="op">=</span> <span class="dv">6</span>  <span class="co"># customers per hour</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>scenario_b <span class="op">=</span> stats.poisson(average_rate)</span>
@@ -723,7 +722,7 @@ Expected emails per hour: 3.0</code></pre>
 <pre><code>Scenario B answer: 0.1339</code></pre>
 </div>
 </div>
-<div id="f18cf5d6" class="cell" data-execution_count="24">
+<div id="9f58f135" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scenario C - Student homework problem</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>p_correct <span class="op">=</span> <span class="fl">0.8</span>  <span class="co"># 80% chance of getting it right</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>scenario_c <span class="op">=</span> stats.bernoulli(p_correct)</span>
@@ -738,7 +737,7 @@ Expected emails per hour: 3.0</code></pre>
 </section>
 <section id="part-7-simple-simulation---solution" class="level1">
 <h1>Part 7: Simple Simulation - SOLUTION</h1>
-<div id="66a138a0" class="cell" data-execution_count="25">
+<div id="6c10dd84" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate flipping 10 fair coins many times</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)  <span class="co"># This makes everyone get the same "random" results</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>

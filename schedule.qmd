@@ -8,7 +8,7 @@ format:
     theme: cosmo
     css: /theme/schedule-styles.css
     page-layout: full
-#self-contained: true
+self-contained: true
 python: pstat5a
 execute:
   echo: false
@@ -515,7 +515,10 @@ Quiz 2 (Weeks 3–4)
 [Lab 6 Solutions](/files/labs/lab6/lab6_sln.qmd)
 :::
 ::: {.worksheet}
-Worksheet 6
+
+<!-- [Worksheet 6](/files/worksheets/pstat5a_worksheet6.pdf) -->
+
+<!-- [Worksheet 6 Solutions](/files/worksheets/pstat5a_worksheet6.pdf) -->
 :::
 :::
 
@@ -526,7 +529,7 @@ Worksheet 6
 7/29
 :::
 ::: {.topic}
-Intro to Regression Analysis
+<!-- [Linear Regression Basics](/files/lecture_notes/lecture14/lecture14.qmd) -->
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -543,7 +546,7 @@ Intro to Regression Analysis
 7/30
 :::
 ::: {.topic}
-Wrap-Up
+<!-- [Linear Regression Notes](/files/lecture_notes/lecture14/Lecture_Regression_Analysis.pdf) -->
 :::
 ::: {.lab-quiz .empty-cell}
 —

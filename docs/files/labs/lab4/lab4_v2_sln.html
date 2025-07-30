@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Solutions by: Instructor">
-<meta name="dcterms.date" content="2025-07-23">
+<meta name="dcterms.date" content="2025-07-29">
 
 <title>Lab 4 Solutions: Discrete Random Variables and Distributions – PSTAT5A</title>
 <style>
@@ -106,7 +106,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../../theme/styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -205,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 23, 2025</p>
+      <p class="date">July 29, 2025</p>
     </div>
   </div>
   
@@ -219,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="setup" class="level1">
 <h1>Setup</h1>
-<div id="2e0e655d" class="cell" data-execution_count="1">
+<div id="210b52db" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
@@ -233,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="task-1-solution" class="level1">
 <h1>Task 1 Solution</h1>
 <p><strong>Problem:</strong> Consider a biased coin where P(Heads) = 0.7 and P(Tails) = 0.3. Let X be a random variable where X = 1 for Heads and X = 0 for Tails.</p>
-<div id="d52d13d8" class="cell" data-execution_count="2">
+<div id="f626f815" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 1 Solution</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Create lists for values and probabilities</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>coin_values <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]  <span class="co"># 0 for Tails, 1 for Heads</span></span>
@@ -274,7 +273,7 @@ Probabilities sum to 1: True</code></pre>
 <section id="task-2-solution" class="level1">
 <h1>Task 2 Solution</h1>
 <p><strong>Problem:</strong> Calculate the expected value and variance for the biased coin from Task 1.</p>
-<div id="d4db8584" class="cell" data-execution_count="3">
+<div id="1dac87da" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 2 Solution</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected value calculation: E[X] = Σ k * P(X = k)</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>expected_value <span class="op">=</span> <span class="bu">sum</span>(k <span class="op">*</span> p <span class="cf">for</span> k, p <span class="kw">in</span> <span class="bu">zip</span>(coin_values, coin_probabilities))</span>
@@ -317,7 +316,7 @@ Verification using Bernoulli formula: Var(X) = p(1-p) = 0.7 × 0.3 = 0.210000000
 <section id="task-3-solution" class="level1">
 <h1>Task 3 Solution</h1>
 <p><strong>Problem:</strong> A basketball player makes 70% of their free throws. They take 15 free throws.</p>
-<div id="3784b117" class="cell" data-execution_count="4">
+<div id="115d2a41" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 3 Solution</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a binomial distribution with n=15, p=0.7</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">15</span></span>
@@ -381,7 +380,7 @@ Standard Deviation: 1.7748</code></pre>
 <section id="task-4-solution" class="level1">
 <h1>Task 4 Solution</h1>
 <p><strong>Problem:</strong> A call center receives an average of 5 calls per minute.</p>
-<div id="d4f16b09" class="cell" data-execution_count="5">
+<div id="b431e0ca" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 4 Solution</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a Poisson distribution with λ = 5</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>lam <span class="op">=</span> <span class="dv">5</span></span>
@@ -440,7 +439,7 @@ Standard Deviation: 2.2361</code></pre>
 <section id="task-5-solution" class="level1">
 <h1>Task 5 Solution</h1>
 <p><strong>Problem:</strong> Distribution Identification Practice</p>
-<div id="05fce42d" class="cell" data-execution_count="6">
+<div id="e6b1ac83" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 5 Solutions</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=== SCENARIO A ==="</span>)</span>
@@ -505,7 +504,7 @@ Answer: P(X = 8) = 0.0349</code></pre>
 <section id="task-6-solution" class="level1">
 <h1>Task 6 Solution</h1>
 <p><strong>Problem:</strong> Simulation of basketball free throw scenario</p>
-<div id="d441d48a" class="cell" data-execution_count="7">
+<div id="349b21d0" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Task 6 Solution</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)  <span class="co"># For reproducible results</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -587,7 +586,7 @@ Theoretical standard deviation: 1.77</code></pre>
 <section id="final-challenge-solution" class="level1">
 <h1>Final Challenge Solution</h1>
 <p><strong>Problem:</strong> Customer service center analysis</p>
-<div id="277001ba" class="cell" data-execution_count="8">
+<div id="6c477f3b" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Final Challenge Solution</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=== CUSTOMER SERVICE CENTER ANALYSIS ===</span><span class="ch">\n</span><span class="st">"</span>)</span>
