@@ -278,3 +278,318 @@ body {
   border-radius: 50%;
 }
 
+/* Tab Navigation Styling */
+.tab-navigation {
+    display: flex;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 20px 20px 0 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-bottom: 0;
+    box-shadow: var(--card-shadow);
+}
+
+.tab-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-button {
+    flex: 1;
+    min-width: 150px;
+    padding: 15px 20px;
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.tab-button small {
+    display: block;
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+.tab-button:hover {
+    color: white;
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    color: white;
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #ffd23f;
+}
+
+/* Tab Content Styling */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Content Filters Styling */
+.content-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 30px 0;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filter-button {
+    padding: 8px 16px;
+    border: 2px solid var(--primary-color);
+    background: white;
+    color: var(--primary-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    user-select: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filter-button.active {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.filter-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.2);
+}
+
+/* Enhanced week sections for tabbed view */
+.tab-content .week-section {
+    margin-bottom: 0;
+    border-radius: 0 0 20px 20px;
+    box-shadow: none;
+    border: none;
+    background: white;
+}
+
+/* Content type indicators */
+.lectures-content {
+    position: relative;
+}
+
+.lectures-content::before {
+    content: "📚";
+    margin-right: 8px;
+    font-size: 0.9em;
+}
+
+.labs-content::before {
+    content: "🧪";
+    margin-right: 8px;
+    font-size: 0.9em;
+}
+
+.worksheets-content::before {
+    content: "📝";
+    margin-right: 8px;
+    font-size: 0.9em;
+}
+
+.quizzes-content::before {
+    content: "📊";
+    margin-right: 8px;
+    font-size: 0.9em;
+}
+
+/* Hide content type indicators on mobile to save space */
+@media (max-width: 768px) {
+    .lectures-content::before,
+    .labs-content::before,
+    .worksheets-content::before,
+    .quizzes-content::before {
+        display: none;
+    }
+}
+
+/* Improved grid layout for filtered content */
+.day-row {
+    transition: all 0.3s ease;
+}
+
+.day-row[style*="display: none"] {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+/* Mobile responsive tabs */
+@media (max-width: 768px) {
+    .tab-navigation {
+        flex-direction: column;
+        border-radius: 20px;
+    }
+    
+    .tab-button {
+        min-width: auto;
+        text-align: center;
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .tab-button:last-child {
+        border-bottom: none;
+    }
+    
+    .tab-button.active::after {
+        display: none;
+    }
+    
+    .tab-button.active::before {
+        content: '→ ';
+        position: absolute;
+        left: 15px;
+        color: #ffd23f;
+        font-weight: bold;
+    }
+    
+    .content-filters {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+    }
+    
+    .filter-button {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .tab-button {
+        font-size: 0.8em;
+        padding: 10px 12px;
+    }
+    
+    .tab-button small {
+        font-size: 0.7em;
+    }
+    
+    .filter-button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+}
+
+/* Enhanced hover effects for better UX */
+.week-section {
+    transition: all 0.3s ease;
+}
+
+.week-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Loading state for tab content */
+.tab-content:not(.active) {
+    pointer-events: none;
+}
+
+/* Accessibility improvements */
+.tab-button:focus {
+    outline: 3px solid #ffd23f;
+    outline-offset: 2px;
+}
+
+.filter-button:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .tab-button {
+        border: 2px solid rgba(255,255,255,0.5);
+    }
+    
+    .tab-button.active {
+        border: 2px solid #ffff00;
+        background: rgba(255,255,0,0.2);
+    }
+    
+    .filter-button {
+        border-width: 3px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .tab-content,
+    .tab-button,
+    .filter-button,
+    .week-section,
+    .day-row {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .tab-button:hover,
+    .filter-button:hover,
+    .week-section:hover {
+        transform: none !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .tab-navigation,
+    .content-filters {
+        display: none !important;
+    }
+    
+    .tab-content {
+        display: block !important;
+    }
+    
+    .tab-content:not(.active) {
+        display: block !important;
+        page-break-before: always;
+    }
+}

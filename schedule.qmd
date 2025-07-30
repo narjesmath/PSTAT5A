@@ -6,7 +6,7 @@ format:
     html-math-method: katex
     toc: false
     theme: cosmo
-    css: /theme/schedule-styles.css
+    css: [/theme/schedule-styles.css, /theme/schedule-tabs.css]
     page-layout: full
 self-contained: true
 python: pstat5a
@@ -38,9 +38,6 @@ Quizzes & Exams
 :::
 Lecture Materials
 :::
-:::
-
-::: {.legend}
 ::: {.legend-item}
 ::: {.legend-color style="background: #FFA500;"}
 :::
@@ -49,6 +46,26 @@ Lecture Materials
 :::
 
 ::: {.schedule-container}
+
+<!-- Tab Navigation -->
+::: {.tab-navigation}
+<button class="tab-button active" data-week="1">Week 1<br><small>Intro & Descriptive Stats</small></button>
+<button class="tab-button" data-week="2">Week 2<br><small>Probability Foundations</small></button>
+<button class="tab-button" data-week="3">Week 3<br><small>Conditional Probability</small></button>
+<button class="tab-button" data-week="4">Week 4<br><small>Random Variables</small></button>
+<button class="tab-button" data-week="5">Week 5<br><small>Inference & Modeling</small></button>
+<button class="tab-button" data-week="6">Week 6<br><small>Hypothesis Testing</small></button>
+:::
+
+<!-- Week 1 Content -->
+::: {.tab-content .active data-week="1"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Content</button>
+<button class="filter-button" data-filter="lectures">Lectures</button>
+<button class="filter-button" data-filter="labs">Labs</button>
+<button class="filter-button" data-filter="worksheets">Worksheets</button>
+:::
 
 ::: {.week-section .week-1}
 ::: {.week-header}
@@ -62,15 +79,15 @@ Lecture Materials
 ::: {.date}
 6/23
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Introduction](/files/lecture_notes/Lecture_1/lecture1.qmd)
 :::
-::: {.lab-quiz}
+::: {.lab-quiz .labs-content}
 [Lab 1](/files/labs/lab1/lab1.pdf)
 
 [lab1 Solutions](/files/labs/lab1/lab1_sln.qmd)
 :::
-::: {.worksheet}
+::: {.worksheet .worksheets-content}
 [Worksheet 1](/files/worksheets/PSTAT_5A_Discussion_Worksheet_1.pdf)
 :::
 :::
@@ -98,7 +115,7 @@ Lecture Materials
 ::: {.date}
 6/25
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Descriptive Statistics I](/files/lecture_notes/lecture2/lecture2.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -115,7 +132,7 @@ Lecture Materials
 ::: {.date}
 6/26
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Descriptive Statistics II](/files/lecture_notes/lecture3/lecture3.qmd)
 
 [Linear Transformations (Worksheet 1 Q3)](/files/lecture_notes/lecture3/q3_worksheet.qmd)
@@ -130,6 +147,18 @@ Lecture Materials
 :::
 :::
 
+:::
+
+<!-- Week 2 Content -->
+::: {.tab-content data-week="2"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Content</button>
+<button class="filter-button" data-filter="lectures">Lectures</button>
+<button class="filter-button" data-filter="labs">Labs</button>
+<button class="filter-button" data-filter="worksheets">Worksheets</button>
+:::
+
 ::: {.week-section .week-2}
 ::: {.week-header}
 <span>Week 2: Probability Foundations</span>
@@ -142,17 +171,17 @@ Lecture Materials
 ::: {.date}
 6/30
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Descriptive Statistics II (Continued)](/files/lecture_notes/lecture3/lecture3.qmd)
 :::
-::: {.lab-quiz}
+::: {.lab-quiz .labs-content}
 [Lab2](/files/labs/lab2/lab2.qmd)
 
 [Lab2 Notebook](/files/labs/lab2/lab2.ipynb){download="lab2.ipynb"}
 
 [lab2 Solutions](/files/labs/lab2/lab2_sln.qmd)
 :::
-::: {.worksheet}
+::: {.worksheet .worksheets-content}
 [Worksheet 2](/files/worksheets/worksheet2.qmd)
 
 [Worksheet 2 Solutions](/files/worksheets/worksheet2_sln.qmd)
@@ -165,7 +194,7 @@ Lecture Materials
 ::: {.date}
 7/01
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Intro to Probability](/files/lecture_notes/lecture4/lecture4.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -182,7 +211,7 @@ Lecture Materials
 ::: {.date}
 7/02
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Intro to Probability (Continued)](/files/lecture_notes/lecture4/lecture4.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -199,7 +228,7 @@ Lecture Materials
 ::: {.date}
 7/03
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Conditional Probability, Independence, & Bayes Theorem](/files/lecture_notes/lecture5/lecture5.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -210,6 +239,19 @@ Lecture Materials
 :::
 :::
 :::
+:::
+
+:::
+
+<!-- Week 3 Content -->
+::: {.tab-content data-week="3"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Content</button>
+<button class="filter-button" data-filter="lectures">Lectures</button>
+<button class="filter-button" data-filter="labs">Labs</button>
+<button class="filter-button" data-filter="worksheets">Worksheets</button>
+<button class="filter-button" data-filter="quizzes">Quizzes</button>
 :::
 
 ::: {.week-section .week-3}
@@ -224,17 +266,15 @@ Lecture Materials
 ::: {.date}
 7/07
 :::
-::: {.topic}
-
+::: {.topic .lectures-content}
 [Conditional Probability & Bayes Theorem](/files/lecture_notes/lecture5/lecture5.qmd)
-
 :::
-::: {.lab-quiz}
+::: {.lab-quiz .labs-content}
 [Lab3](/files/labs/lab3/lab3.qmd)
 
 [Lab3 Solutions](/files/labs/lab3/lab3_sln.qmd)
 :::
-::: {.worksheet}
+::: {.worksheet .worksheets-content}
 [Worksheet 3](/files/worksheets/worksheet3.qmd)
 
 [Worksheet 3 Solutions](/files/worksheets/worksheet3_sln.qmd)
@@ -247,7 +287,7 @@ Lecture Materials
 ::: {.date}
 7/08
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Intro to Counting & Permutations](/files/lecture_notes/lecture6/lecture6-part1.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -264,7 +304,7 @@ Lecture Materials
 ::: {.date}
 7/09
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Intro to Counting & Combinations](/files/lecture_notes/lecture6/lecture6-part2.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -281,7 +321,7 @@ Lecture Materials
 ::: {.date}
 7/10
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Discrete Random Variables](/files/lecture_notes/lecture7/lecture7.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -298,7 +338,7 @@ Lecture Materials
 ::: {.date}
 7/11
 :::
-::: {.topic .quiz-item}
+::: {.topic .quiz-item .quizzes-content}
 Quiz 1 (Weeks 1–2)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -309,6 +349,18 @@ Quiz 1 (Weeks 1–2)
 :::
 :::
 :::
+:::
+
+:::
+
+<!-- Week 4 Content -->
+::: {.tab-content data-week="4"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Content</button>
+<button class="filter-button" data-filter="lectures">Lectures</button>
+<button class="filter-button" data-filter="labs">Labs</button>
+<button class="filter-button" data-filter="worksheets">Worksheets</button>
 :::
 
 ::: {.week-section .week-4}
@@ -323,15 +375,15 @@ Quiz 1 (Weeks 1–2)
 ::: {.date}
 7/14
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Continuous Random Variables & Distributions](/files/lecture_notes/lecture8/lecture8.qmd)
 :::
-::: {.lab-quiz}
+::: {.lab-quiz .labs-content}
 [Lab 4](/files/labs/lab4/lab4.qmd)
 
 [lab 4 Solutions](/files/labs/lab4/lab4_sln.qmd)
 :::
-::: {.worksheet}
+::: {.worksheet .worksheets-content}
 [Worksheet 4](/files/worksheets/worksheet4.qmd)
 
 [Worksheet 4 Solutions](/files/worksheets/worksheet4_sln.qmd)
@@ -344,7 +396,7 @@ Quiz 1 (Weeks 1–2)
 ::: {.date}
 7/15
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Continuous Random Variables & Distributions Continued](/files/lecture_notes/lecture8/lecture8.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -361,7 +413,7 @@ Quiz 1 (Weeks 1–2)
 ::: {.date}
 7/16
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Continuous Random Variables & Distributions Wrap Up & Exercises](/files/lecture_notes/lecture8/lecture8.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -378,7 +430,7 @@ Quiz 1 (Weeks 1–2)
 ::: {.date}
 7/17
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Random Variables, Sampling & Intro to Confidence Intervals](/files/lecture_notes/lecture9/lecture9.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -389,6 +441,19 @@ Quiz 1 (Weeks 1–2)
 :::
 :::
 :::
+:::
+
+:::
+
+<!-- Week 5 Content -->
+::: {.tab-content data-week="5"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Content</button>
+<button class="filter-button" data-filter="lectures">Lectures</button>
+<button class="filter-button" data-filter="labs">Labs</button>
+<button class="filter-button" data-filter="worksheets">Worksheets</button>
+<button class="filter-button" data-filter="quizzes">Quizzes</button>
 :::
 
 ::: {.week-section .week-5}
@@ -403,15 +468,15 @@ Quiz 1 (Weeks 1–2)
 ::: {.date}
 7/21
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Sampling Principles and Strategies](/files/lecture_notes/lecture10/lecture10.qmd)
 :::
-::: {.lab-quiz}
+::: {.lab-quiz .labs-content}
 [Lab 5](/files/labs/lab5/lab5.qmd)
 
 [Lab5 Solutions](/files/labs/lab5/lab5_sln.qmd)
 :::
-::: {.worksheet}
+::: {.worksheet .worksheets-content}
 [Worksheet 5](/files/worksheets/worksheet5.qmd)
 
 [Worksheet 5 Solutions](/files/worksheets/worksheet5_sln.qmd)
@@ -424,7 +489,7 @@ Quiz 1 (Weeks 1–2)
 ::: {.date}
 7/22
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Confidence Intervals (Means & Proportions)](/files/lecture_notes/lecture11/lecture11.qmd)
 
 - [Z-table](https://math.arizona.edu/~rsims/ma464/standardnormaltable.pdf),
@@ -444,7 +509,7 @@ Quiz 1 (Weeks 1–2)
 ::: {.date}
 7/23
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Confidence Intervals Deep Dive](/files/lecture_notes/lecture12/lecture12.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -461,9 +526,8 @@ Quiz 1 (Weeks 1–2)
 ::: {.date}
 7/24
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 [Hypothesis Testing ](/files/lecture_notes/lecture13/lecture13.qmd)
-
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -479,7 +543,7 @@ Quiz 1 (Weeks 1–2)
 ::: {.date}
 7/25
 :::
-::: {.topic .quiz-item}
+::: {.topic .quiz-item .quizzes-content}
 Quiz 2 (Weeks 3–4)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -490,6 +554,19 @@ Quiz 2 (Weeks 3–4)
 :::
 :::
 :::
+:::
+
+:::
+
+<!-- Week 6 Content -->
+::: {.tab-content data-week="6"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Content</button>
+<button class="filter-button" data-filter="lectures">Lectures</button>
+<button class="filter-button" data-filter="labs">Labs</button>
+<button class="filter-button" data-filter="worksheets">Worksheets</button>
+<button class="filter-button" data-filter="quizzes">Quizzes</button>
 :::
 
 ::: {.week-section .week-6}
@@ -504,20 +581,16 @@ Quiz 2 (Weeks 3–4)
 ::: {.date}
 7/28
 :::
-::: {.topic}
-
+::: {.topic .lectures-content}
 [Hypothesis Testing Notes](/files/lecture_notes/lecture13/Lecture13_Hypothesis_Testing.pdf)
 :::
-::: {.lab-quiz}
-
+::: {.lab-quiz .labs-content}
 [Lab 6](/files/labs/lab6/lab6.qmd)
 
 [Lab 6 Solutions](/files/labs/lab6/lab6_sln.qmd)
 :::
 ::: {.worksheet}
-
 <!-- [Worksheet 6](/files/worksheets/pstat5a_worksheet6.pdf) -->
-
 <!-- [Worksheet 6 Solutions](/files/worksheets/pstat5a_worksheet6.pdf) -->
 :::
 :::
@@ -528,7 +601,7 @@ Quiz 2 (Weeks 3–4)
 ::: {.date}
 7/29
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 <!-- [Linear Regression Basics](/files/lecture_notes/lecture14/lecture14.qmd) -->
 :::
 ::: {.lab-quiz .empty-cell}
@@ -545,7 +618,7 @@ Quiz 2 (Weeks 3–4)
 ::: {.date}
 7/30
 :::
-::: {.topic}
+::: {.topic .lectures-content}
 <!-- [Linear Regression Notes](/files/lecture_notes/lecture14/Lecture_Regression_Analysis.pdf) -->
 :::
 ::: {.lab-quiz .empty-cell}
@@ -562,7 +635,7 @@ Quiz 2 (Weeks 3–4)
 ::: {.date}
 7/31
 :::
-::: {.topic .quiz-item}
+::: {.topic .quiz-item .quizzes-content}
 Quiz 3 (Weeks 5–6)
 :::
 ::: {.lab-quiz .empty-cell}
@@ -577,20 +650,137 @@ Quiz 3 (Weeks 5–6)
 
 :::
 
+:::
+
 ```{=html}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Add smooth scrolling and hover effects
-  const weekSections = document.querySelectorAll('.week-section');
-  
-  weekSections.forEach(section => {
-    section.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-5px)';
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    // Initialize - show only first tab
+    showTab('1');
+    
+    // Tab button click handlers
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const weekNum = this.dataset.week;
+            showTab(weekNum);
+            
+            // Update active tab button
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
     
-    section.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0)';
+    // Filter functionality
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('filter-button')) {
+            const filter = e.target.dataset.filter;
+            const tabContent = e.target.closest('.tab-content');
+            const weekNum = tabContent.dataset.week;
+            
+            // Update active filter button within this tab
+            const tabFilters = tabContent.querySelectorAll('.filter-button');
+            tabFilters.forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            // Apply filter to current tab
+            filterContent(filter, weekNum);
+        }
     });
-  });
+    
+    function showTab(weekNum) {
+        // Hide all tabs
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // Show selected tab
+        const selectedTab = document.querySelector(`[data-week="${weekNum}"].tab-content`);
+        if (selectedTab) {
+            selectedTab.classList.add('active');
+            
+            // Reset filters for this tab
+            const tabFilters = selectedTab.querySelectorAll('.filter-button');
+            tabFilters.forEach(btn => btn.classList.remove('active'));
+            const allFilter = selectedTab.querySelector('.filter-button[data-filter="all"]');
+            if (allFilter) {
+                allFilter.classList.add('active');
+            }
+            
+            // Show all content by default
+            filterContent('all', weekNum);
+        }
+    }
+    
+    function filterContent(filter, weekNum) {
+        const tabContent = document.querySelector(`[data-week="${weekNum}"].tab-content`);
+        if (!tabContent) return;
+        
+        const dayRows = tabContent.querySelectorAll('.day-row');
+        
+        dayRows.forEach(row => {
+            if (filter === 'all') {
+                // Show all rows
+                row.style.display = 'grid';
+                
+                // Show all columns
+                const columns = row.querySelectorAll('.topic, .lab-quiz, .worksheet');
+                columns.forEach(col => {
+                    col.style.display = 'block';
+                });
+            } else {
+                // Check if this row has content for the selected filter
+                const hasFilterContent = row.querySelector(`.${filter}-content`) && 
+                                        !row.querySelector(`.${filter}-content`).classList.contains('empty-cell');
+                
+                if (hasFilterContent || row.querySelector('.special-note') || row.querySelector('.quiz-item')) {
+                    row.style.display = 'grid';
+                    
+                    // Hide/show specific columns based on filter
+                    const topicColumn = row.querySelector('.topic');
+                    const labColumn = row.querySelector('.lab-quiz');
+                    const worksheetColumn = row.querySelector('.worksheet');
+                    
+                    if (filter === 'lectures') {
+                        topicColumn.style.display = topicColumn.classList.contains('lectures-content') || 
+                                                  topicColumn.classList.contains('special-note') || 
+                                                  topicColumn.classList.contains('quiz-item') ? 'block' : 'none';
+                        labColumn.style.display = 'none';
+                        worksheetColumn.style.display = 'none';
+                    } else if (filter === 'labs') {
+                        topicColumn.style.display = 'none';
+                        labColumn.style.display = labColumn.classList.contains('labs-content') ? 'block' : 'none';
+                        worksheetColumn.style.display = 'none';
+                    } else if (filter === 'worksheets') {
+                        topicColumn.style.display = 'none';
+                        labColumn.style.display = 'none';
+                        worksheetColumn.style.display = worksheetColumn.classList.contains('worksheets-content') ? 'block' : 'none';
+                    } else if (filter === 'quizzes') {
+                        topicColumn.style.display = topicColumn.classList.contains('quizzes-content') ? 'block' : 'none';
+                        labColumn.style.display = 'none';
+                        worksheetColumn.style.display = 'none';
+                    }
+                } else {
+                    row.style.display = 'none';
+                }
+            }
+        });
+    }
+    
+    // Add smooth hover effects
+    const weekSections = document.querySelectorAll('.week-section');
+    weekSections.forEach(section => {
+        section.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+        });
+        
+        section.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
 });
 </script>
+```
