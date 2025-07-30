@@ -616,9 +616,10 @@ Quiz 2 (Weeks 3–4)
 ::: {.week-number}
 :::
 ::: {.date}
-7/30
+7/30 - 7/31
 :::
 ::: {.topic .lectures-content}
+Linear Regression Continued, Quiz Review & Wrap up
 <!-- [Linear Regression Notes](/files/lecture_notes/lecture14/Lecture_Regression_Analysis.pdf) -->
 :::
 ::: {.lab-quiz .empty-cell}
@@ -633,7 +634,7 @@ Quiz 2 (Weeks 3–4)
 ::: {.week-number}
 :::
 ::: {.date}
-7/31
+8/01
 :::
 ::: {.topic .quiz-item .quizzes-content}
 Quiz 3 (Weeks 5–6)
