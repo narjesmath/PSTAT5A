@@ -590,7 +590,7 @@ Quiz 2 (Weeks 3–4)
 [Lab 6 Solutions](/files/labs/lab6/lab6_sln.qmd)
 :::
 ::: {.worksheet}
-<!-- [Worksheet 6](/files/worksheets/pstat5a_worksheet6.pdf) -->
+[Worksheet 6](/files/worksheets/pstat5a_worksheet6.pdf)
 <!-- [Worksheet 6 Solutions](/files/worksheets/pstat5a_worksheet6.pdf) -->
 :::
 :::
