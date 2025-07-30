@@ -3,10 +3,10 @@ title: "Syllabus"
 subtitle: "Summer 2025 Course Syllabus"
 format:
   html:
-    toc: true
+    toc: false
     toc-location: left
     theme: default
-    css: /theme/syllabus-styles.css
+    css: [/theme/syllabus-styles.css, /theme/syllabus-tabs.css]
     page-layout: full
     grid:
       sidebar-width: 300px
@@ -17,13 +17,33 @@ execute:
   warning: false
 ---
 
-
-
-::: {.download-section .hidden}
+::: {.download-section}
 [Download the full syllabus as a PDF](/files/syllabus/PSTAT5A__Syllabus.pdf){.download-btn}
 :::
 
-::: {.section-card}
+::: {.syllabus-container}
+
+<!-- Tab Navigation -->
+::: {.tab-navigation}
+<button class="tab-button active" data-tab="overview">📚 Overview</button>
+<button class="tab-button" data-tab="logistics">👥 Logistics</button>
+<button class="tab-button" data-tab="grading">📊 Assessment</button>
+<button class="tab-button" data-tab="policies">🛡️ Policies</button>
+<button class="tab-button" data-tab="resources">🤝 Resources</button>
+<button class="tab-button" data-tab="dates">📅 Important Dates</button>
+:::
+
+<!-- Overview Tab -->
+::: {.tab-content .active data-tab="overview"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Info</button>
+<button class="filter-button" data-filter="course-info">Course Info</button>
+<button class="filter-button" data-filter="description">Description</button>
+<button class="filter-button" data-filter="materials">Materials</button>
+:::
+
+::: {.section-card .course-info-content}
 ::: {.section-header}
 ::: {.section-icon}
 📚
@@ -96,50 +116,7 @@ Thursdays 11:00 AM–12:00 PM (via Zoom or by appointment)
 :::
 :::
 
-::: {.section-card}
-::: {.section-header}
-::: {.section-icon}
-👥
-:::
-::: {.section-title}
-Teaching Assistants
-:::
-:::
-
-::: {.contact-grid}
-::: {.contact-card}
-::: {.contact-avatar}
-SL
-:::
-::: {.contact-name}
-Summer Le
-:::
-::: {.contact-email}
-sle@ucsb.edu
-:::
-:::
-
-::: {.contact-card}
-::: {.contact-avatar}
-MH
-:::
-::: {.contact-name}
-Mingzhu He
-:::
-::: {.contact-email}
-mingzhuhe@ucsb.edu
-:::
-:::
-:::
-
-::: {.notice-box .notice-important}
-::: {.notice-content}
-**Email policy:** Include `[PSTAT 5A]` in your subject. Allow 24–48 hours for a reply (avoid weekends).
-:::
-:::
-:::
-
-::: {.section-card}
+::: {.section-card .description-content}
 ::: {.section-header}
 ::: {.section-icon}
 🎯
@@ -161,7 +138,7 @@ By the end of this course, you will be able to:
 - **Interpret** results and communicate findings
 :::
 
-::: {.section-card}
+::: {.section-card .materials-content}
 ::: {.section-header}
 ::: {.section-icon}
 📖
@@ -211,7 +188,7 @@ Recommended Texts
 :::
 :::
 
-::: {.section-card}
+::: {.section-card .materials-content}
 ::: {.section-header}
 ::: {.section-icon}
 📅
@@ -228,7 +205,129 @@ Class Schedule
 :::
 :::
 
-::: {.section-card}
+:::
+
+<!-- Logistics Tab -->
+::: {.tab-content data-tab="logistics"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Staff</button>
+<button class="filter-button" data-filter="instructor">Instructor</button>
+<button class="filter-button" data-filter="tas">Teaching Assistants</button>
+<button class="filter-button" data-filter="success-tips">Success Tips</button>
+:::
+
+::: {.section-card .instructor-content}
+::: {.section-header}
+::: {.section-icon}
+👩‍🏫
+:::
+::: {.section-title}
+Instructor Information
+:::
+:::
+
+::: {.contact-grid}
+::: {.contact-card}
+::: {.contact-avatar}
+NM
+:::
+::: {.contact-name}
+Narjes Mathlouthi
+:::
+::: {.contact-email}
+nmathlouthi@ucsb.edu
+:::
+::: {.contact-office}
+Office: Ellison Hall 5829
+:::
+::: {.contact-hours}
+Office Hours: Thursdays 11:00 AM–12:00 PM
+:::
+:::
+:::
+:::
+
+::: {.section-card .tas-content}
+::: {.section-header}
+::: {.section-icon}
+👥
+:::
+::: {.section-title}
+Teaching Assistants
+:::
+:::
+
+::: {.contact-grid}
+::: {.contact-card}
+::: {.contact-avatar}
+SL
+:::
+::: {.contact-name}
+Summer Le
+:::
+::: {.contact-email}
+sle@ucsb.edu
+:::
+:::
+
+::: {.contact-card}
+::: {.contact-avatar}
+MH
+:::
+::: {.contact-name}
+Mingzhu He
+:::
+::: {.contact-email}
+mingzhuhe@ucsb.edu
+:::
+:::
+:::
+
+::: {.notice-box .notice-important}
+::: {.notice-content}
+**Email policy:** Include `[PSTAT 5A]` in your subject. Allow 24–48 hours for a reply (avoid weekends).
+:::
+:::
+:::
+
+::: {.section-card .success-tips-content}
+::: {.section-header}
+::: {.section-icon}
+🎯
+:::
+::: {.section-title}
+How to Succeed
+:::
+:::
+
+- **Attend** lectures & sections
+- **Engage actively** & ask questions
+- **Use office hours** for help
+
+### Classroom Expectations
+
+Respect peers & TAs. Stay engaged. Seek support if needed.
+
+### Communication Guidelines
+
+- Use UCSB email with clear subject
+- Allow 24–48 h for replies
+- Use office hours or appointments
+:::
+
+:::
+
+<!-- Assessment Tab -->
+::: {.tab-content data-tab="grading"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Assessment Info</button>
+<button class="filter-button" data-filter="grading">Grade Breakdown</button>
+<button class="filter-button" data-filter="quizzes">Quiz Details</button>
+:::
+
+::: {.section-card .grading-content}
 ::: {.section-header}
 ::: {.section-icon}
 📊
@@ -255,8 +354,6 @@ Grading
 :::
 :::
 
-
-
 **Grading Scale:**
 
 ::: {.grading-container}
@@ -274,9 +371,7 @@ Grades round to the nearest whole number (e.g., 89.7 → 90).
 :::
 :::
 
-
-
-::: {.section-card}
+::: {.section-card .quizzes-content}
 ::: {.section-header}
 ::: {.section-icon}
 📝
@@ -342,39 +437,25 @@ Covers Confidence Intervals & Hypothesis testing
 ::: {.info-item}
 ::: {.info-value}
 **Format:** Multiple choice & short answer (open book)  
-**Platform:** Canvas /-or Gradescope  
+**Platform:** Canvas or Gradescope  
 **Availability:** Fridays 7 AM–12 AM (1‑hour limit)  
 **Make‑up policy:** Notify within 48 h; documentation required.
 :::
 :::
 :::
 
-::: {.section-card}
-::: {.section-header}
-::: {.section-icon}
-🎯
-:::
-::: {.section-title}
-How to Succeed
-:::
 :::
 
-- **Attend** lectures & sections
-- **Engage actively** & ask questions
-- **Use office hours** for help
+<!-- Policies Tab -->
+::: {.tab-content data-tab="policies"}
 
-### Classroom Expectations
-
-Respect peers & TAs. Stay engaged. Seek support if needed.
-
-### Communication Guidelines
-
-- Use UCSB email with clear subject
-- Allow 24–48 h for replies
-- Use office hours or appointments
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Policies</button>
+<button class="filter-button" data-filter="academic">Academic Integrity</button>
+<button class="filter-button" data-filter="attendance">Attendance</button>
 :::
 
-::: {.section-card}
+::: {.section-card .academic-content}
 ::: {.section-header}
 ::: {.section-icon}
 🛡️
@@ -389,6 +470,64 @@ Do your own work. Cite sources properly. See:
 - [Academic Integrity Policy](https://studentconduct.sa.ucsb.edu/academic-integrity)
   
 - [Student Conduct Code](https://www.sa.ucsb.edu/regulations/student-conduct-code/student-conduct-code)
+
+::: {.notice-box .notice-important}
+::: {.notice-content}
+**Important:** Violations of academic integrity will result in course failure and reporting to the Office of Student Conduct.
+:::
+:::
+:::
+
+::: {.section-card .attendance-content}
+::: {.section-header}
+::: {.section-icon}
+📋
+:::
+::: {.section-title}
+Attendance Policy
+:::
+:::
+
+::: {.info-grid}
+::: {.info-item}
+::: {.info-label}
+Lecture Attendance
+:::
+::: {.info-value}
+Worth 5% of final grade. Regular attendance expected for success.
+:::
+:::
+
+::: {.info-item}
+::: {.info-label}
+Section Attendance
+:::
+::: {.info-value}
+Worth 5% of final grade. Participation in discussion sections is required.
+:::
+:::
+
+::: {.info-item}
+::: {.info-label}
+Make-up Policy
+:::
+::: {.info-value}
+Contact instructor within 48 hours for excused absences with documentation.
+:::
+:::
+:::
+:::
+
+:::
+
+<!-- Resources Tab -->
+::: {.tab-content data-tab="resources"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Resources</button>
+<button class="filter-button" data-filter="academic">Academic Support</button>
+<button class="filter-button" data-filter="wellness">Health & Wellness</button>
+<button class="filter-button" data-filter="basic-needs">Basic Needs</button>
 :::
 
 ::: {.section-card}
@@ -402,62 +541,72 @@ Student Resources
 :::
 
 ::: {.resource-grid}
-::: {.resource-link}
+::: {.resource-link .academic-content}
 [🦽]{.resource-icon}
 [DSP & Accommodations]{.resource-name}
 [Disability services and accommodations]{.resource-desc}
 :::
 
-::: {.resource-link}
+::: {.resource-link .academic-content}
 [📚]{.resource-icon}
 [CLAS]{.resource-name}
 [Campus Learning Assistance Services]{.resource-desc}
 :::
 
-::: {.resource-link}
-[🏥]{.resource-icon}
-[Student Health]{.resource-name}
-[Health and wellness services]{.resource-desc}
-:::
-
-::: {.resource-link}
-[🍎]{.resource-icon}
-[Basic Needs]{.resource-name}
-[Food security and basic needs support]{.resource-desc}
-:::
-
-::: {.resource-link}
-[💚]{.resource-icon}
-[CAPS]{.resource-name}
-[Counseling & Psychological Services]{.resource-desc}
-:::
-
-::: {.resource-link}
+::: {.resource-link .academic-content}
 [🎓]{.resource-icon}
 [EOP]{.resource-name}
 [Educational Opportunity Program]{.resource-desc}
 :::
 
-::: {.resource-link}
+::: {.resource-link .academic-content}
+[🔄]{.resource-icon}
+[Transfer Center]{.resource-name}
+[Transfer student support]{.resource-desc}
+:::
+
+::: {.resource-link .wellness-content}
+[🏥]{.resource-icon}
+[Student Health]{.resource-name}
+[Health and wellness services]{.resource-desc}
+:::
+
+::: {.resource-link .wellness-content}
+[💚]{.resource-icon}
+[CAPS]{.resource-name}
+[Counseling & Psychological Services]{.resource-desc}
+:::
+
+::: {.resource-link .basic-needs-content}
+[🍎]{.resource-icon}
+[Basic Needs]{.resource-name}
+[Food security and basic needs support]{.resource-desc}
+:::
+
+::: {.resource-link .basic-needs-content}
 [👥]{.resource-icon}
 [ONDAS]{.resource-name}
 [First-Generation Support]{.resource-desc}
 :::
 
-::: {.resource-link}
+::: {.resource-link .basic-needs-content}
 [📋]{.resource-icon}
 [Undocumented Services]{.resource-name}
 [Support for undocumented students]{.resource-desc}
 :::
-
-::: {.resource-link}
-[🔄]{.resource-icon}
-[Transfer Center]{.resource-name}
-[Transfer student support]{.resource-desc}
-:::
 :::
 :::
 
+:::
+
+<!-- Important Dates Tab -->
+::: {.tab-content data-tab="dates"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Dates</button>
+<button class="filter-button" data-filter="registration">Registration</button>
+<button class="filter-button" data-filter="deadlines">Deadlines</button>
+:::
 
 ::: {.section-card}
 ::: {.section-header}
@@ -470,7 +619,7 @@ Important Dates
 :::
 
 ::: {.dates-grid}
-::: {.date-item}
+::: {.date-item .registration-content}
 ::: {.date-label}
 Add w/o Code
 :::
@@ -479,7 +628,7 @@ June 29
 :::
 :::
 
-::: {.date-item}
+::: {.date-item .registration-content}
 ::: {.date-label}
 Drop w/ Refund
 :::
@@ -488,7 +637,7 @@ June 29
 :::
 :::
 
-::: {.date-item}
+::: {.date-item .registration-content}
 ::: {.date-label}
 Add w/ Code
 :::
@@ -497,7 +646,7 @@ July 3
 :::
 :::
 
-::: {.date-item}
+::: {.date-item .deadlines-content}
 ::: {.date-label}
 Drop Course
 :::
@@ -506,7 +655,7 @@ July 9
 :::
 :::
 
-::: {.date-item}
+::: {.date-item .deadlines-content}
 ::: {.date-label}
 Change Grade Option
 :::
@@ -515,46 +664,167 @@ August 1
 :::
 :::
 :::
+
+::: {.notice-box .notice-info}
+::: {.notice-content}
+**Note:** All dates are based on the UCSB Academic Calendar. Please verify important dates on your GOLD account.
+:::
+:::
+:::
+
+:::
+
 :::
 
 ```{=html}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Add smooth animations on scroll
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    // Initialize - show only first tab
+    showTab('overview');
+    
+    // Tab button click handlers
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const tabName = this.dataset.tab;
+            showTab(tabName);
+            
+            // Update active tab button
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
-  }, observerOptions);
-
-  // Observe all section cards
-  document.querySelectorAll('.section-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease';
-    observer.observe(card);
-  });
-
-  // Add click-to-copy functionality for email addresses
-  document.querySelectorAll('.contact-email').forEach(email => {
-    email.style.cursor = 'pointer';
-    email.addEventListener('click', function() {
-      navigator.clipboard.writeText(this.textContent);
-      const originalText = this.textContent;
-      this.textContent = 'Copied!';
-      setTimeout(() => {
-        this.textContent = originalText;
-      }, 1000);
+    
+    // Filter functionality
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('filter-button')) {
+            const filter = e.target.dataset.filter;
+            const tabContent = e.target.closest('.tab-content');
+            const tabName = tabContent.dataset.tab;
+            
+            // Update active filter button within this tab
+            const tabFilters = tabContent.querySelectorAll('.filter-button');
+            tabFilters.forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            // Apply filter to current tab
+            filterContent(filter, tabName);
+        }
     });
-  });
+    
+    function showTab(tabName) {
+        // Hide all tabs
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // Show selected tab
+        const selectedTab = document.querySelector(`[data-tab="${tabName}"].tab-content`);
+        if (selectedTab) {
+            selectedTab.classList.add('active');
+            
+            // Reset filters for this tab
+            const tabFilters = selectedTab.querySelectorAll('.filter-button');
+            tabFilters.forEach(btn => btn.classList.remove('active'));
+            const allFilter = selectedTab.querySelector('.filter-button[data-filter="all"]');
+            if (allFilter) {
+                allFilter.classList.add('active');
+            }
+            
+            // Show all content by default
+            filterContent('all', tabName);
+        }
+    }
+    
+    function filterContent(filter, tabName) {
+        const tabContent = document.querySelector(`[data-tab="${tabName}"].tab-content`);
+        if (!tabContent) return;
+        
+        const sectionCards = tabContent.querySelectorAll('.section-card');
+        const resourceItems = tabContent.querySelectorAll('.resource-link');
+        const dateItems = tabContent.querySelectorAll('.date-item');
+        
+        // Handle section cards
+        sectionCards.forEach(card => {
+            if (filter === 'all') {
+                card.style.display = 'block';
+            } else {
+                const hasFilterContent = card.classList.contains(`${filter}-content`);
+                card.style.display = hasFilterContent ? 'block' : 'none';
+            }
+        });
+        
+        // Handle resource items
+        resourceItems.forEach(item => {
+            if (filter === 'all') {
+                item.style.display = 'block';
+            } else {
+                const hasFilterContent = item.classList.contains(`${filter}-content`);
+                item.style.display = hasFilterContent ? 'block' : 'none';
+            }
+        });
+        
+        // Handle date items
+        dateItems.forEach(item => {
+            if (filter === 'all') {
+                item.style.display = 'block';
+            } else {
+                const hasFilterContent = item.classList.contains(`${filter}-content`);
+                item.style.display = hasFilterContent ? 'block' : 'none';
+            }
+        });
+    }
+    
+    // Add smooth animations on scroll for visible content
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all section cards
+    document.querySelectorAll('.section-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+    });
+
+    // Add click-to-copy functionality for email addresses
+    document.querySelectorAll('.contact-email').forEach(email => {
+        email.style.cursor = 'pointer';
+        email.addEventListener('click', function() {
+            navigator.clipboard.writeText(this.textContent);
+            const originalText = this.textContent;
+            this.textContent = 'Copied!';
+            setTimeout(() => {
+                this.textContent = originalText;
+            }, 1000);
+        });
+    });
+    
+    // Add smooth hover effects
+    const sectionCards = document.querySelectorAll('.section-card');
+    sectionCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
 });
 </script>
 ```

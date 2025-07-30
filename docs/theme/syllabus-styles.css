@@ -544,3 +544,457 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* Additional CSS for Tabbed Syllabus - syllabus-tabs.css */
+/* This file works with your existing syllabus-styles.css */
+
+/* Container for the entire tabbed interface */
+.syllabus-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Tab Navigation Styling */
+.tab-navigation {
+    display: flex;
+    background: var(--gradient-1);
+    border-radius: 20px 20px 0 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-bottom: 0;
+    box-shadow: var(--card-shadow);
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+}
+
+.tab-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-button {
+    flex: 1;
+    min-width: 140px;
+    padding: 15px 20px;
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.tab-button:hover {
+    color: white;
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    color: white;
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+/* Tab Content Styling */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+    background: white;
+    border-radius: 0 0 20px 20px;
+    box-shadow: var(--card-shadow);
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Content Filters Styling */
+.content-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 0;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    justify-content: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.filter-button {
+    padding: 10px 18px;
+    border: 2px solid var(--primary-color);
+    background: white;
+    color: var(--primary-color);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    user-select: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.filter-button:hover::before {
+    left: 100%;
+}
+
+.filter-button.active {
+    background: var(--gradient-1);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(150, 167, 245, 0.4);
+    border-color: transparent;
+}
+
+.filter-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(150, 167, 245, 0.3);
+}
+
+/* Adjust section cards within tabs */
+.tab-content .section-card {
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.tab-content .section-card:first-of-type {
+    margin-top: 2rem;
+}
+
+.tab-content .section-card:last-of-type {
+    margin-bottom: 2rem;
+}
+
+/* Enhanced section cards for better visual hierarchy */
+.tab-content .section-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Content visibility transitions */
+.section-card,
+.resource-link,
+.date-item {
+    transition: all 0.3s ease;
+}
+
+.section-card[style*="display: none"],
+.resource-link[style*="display: none"],
+.date-item[style*="display: none"] {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Enhanced contact cards within tabs */
+.tab-content .contact-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.tab-content .contact-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(150, 167, 245, 0.2);
+}
+
+/* Contact card enhancements */
+.contact-office,
+.contact-hours {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 0.5rem;
+}
+
+/* Quiz timeline adjustments for tab layout */
+.tab-content .quiz-timeline {
+    margin: 2rem 0;
+}
+
+/* Resource grid adjustments */
+.tab-content .resource-grid {
+    margin: 2rem 0;
+}
+
+/* Enhanced hover states for resource links */
+.tab-content .resource-link:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Improved grading table styling */
+.tab-content .grading-container {
+    margin: 2rem 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Notice boxes within tabs */
+.tab-content .notice-box {
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Dates grid enhancements */
+.tab-content .dates-grid {
+    gap: 1.5rem;
+}
+
+.tab-content .date-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    border: 2px solid var(--primary-color);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .tab-navigation {
+        flex-direction: column;
+        border-radius: 20px;
+        position: relative;
+        top: 0;
+    }
+    
+    .tab-button {
+        min-width: auto;
+        text-align: center;
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.85em;
+    }
+    
+    .tab-button:last-child {
+        border-bottom: none;
+    }
+    
+    .tab-button.active::after {
+        display: none;
+    }
+    
+    .tab-button.active::before {
+        content: '→ ';
+        position: absolute;
+        left: 15px;
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+    
+    .content-filters {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        gap: 8px;
+    }
+    
+    .filter-button {
+        text-align: center;
+        margin-bottom: 0;
+        font-size: 0.85em;
+        padding: 8px 16px;
+    }
+    
+    .tab-content .section-card {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .syllabus-container {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .tab-button {
+        font-size: 0.8em;
+        padding: 10px 12px;
+    }
+    
+    .filter-button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+    
+    .tab-content .section-card {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .tab-content .section-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .tab-content .section-icon {
+        font-size: 2rem;
+        margin-right: 0;
+    }
+}
+
+/* Enhanced accessibility */
+.tab-button:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.filter-button:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .tab-button {
+        border: 2px solid rgba(255,255,255,0.5);
+    }
+    
+    .tab-button.active {
+        border: 2px solid var(--accent-color);
+        background: rgba(255,255,255,0.3);
+    }
+    
+    .filter-button {
+        border-width: 3px;
+    }
+    
+    .tab-content .section-card {
+        border: 2px solid var(--primary-color);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .tab-content,
+    .tab-button,
+    .filter-button,
+    .section-card,
+    .contact-card,
+    .resource-link,
+    .date-item {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .tab-button:hover,
+    .filter-button:hover,
+    .section-card:hover,
+    .contact-card:hover,
+    .resource-link:hover,
+    .date-item:hover {
+        transform: none !important;
+    }
+    
+    .filter-button::before {
+        display: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .tab-navigation,
+    .content-filters {
+        display: none !important;
+    }
+    
+    .tab-content {
+        display: block !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+    
+    .tab-content:not(.active) {
+        display: block !important;
+        page-break-before: always;
+    }
+    
+    .section-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}
+
+/* Loading states */
+.tab-content:not(.active) {
+    pointer-events: none;
+}
+
+/* Smooth scrolling when switching tabs */
+.syllabus-container {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced visual feedback */
+.tab-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.filter-button:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Additional spacing for better visual hierarchy */
+.tab-content > .section-card:not(:last-child) {
+    border-bottom: 1px solid rgba(150, 167, 245, 0.1);
+}
+
+/* Improved focus indicators for keyboard navigation */
+.tab-button:focus-visible {
+    background: rgba(255,255,255,0.2);
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.filter-button:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}

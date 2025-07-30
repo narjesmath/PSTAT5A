@@ -70,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="./theme/syllabus-styles.css">
+<link rel="stylesheet" href="./theme/syllabus-tabs.css">
 </head>
 
 <body class="floating nav-fixed quarto-light">
@@ -130,8 +131,7 @@ ul.task-list li input[type="checkbox"] {
   
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
+    
 <!-- main -->
 <main class="content column-page" id="quarto-document-content">
 
@@ -155,10 +155,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="download-section hidden">
+<div class="download-section">
 <p><a href="./files/syllabus/PSTAT5A__Syllabus.pdf" class="download-btn">Download the full syllabus as a PDF</a></p>
 </div>
-<div class="section-card">
+<div class="syllabus-container">
+<!-- Tab Navigation -->
+<div class="tab-navigation">
+<button class="tab-button active" data-tab="overview">
+📚 Overview
+</button>
+<button class="tab-button" data-tab="logistics">
+👥 Logistics
+</button>
+<button class="tab-button" data-tab="grading">
+📊 Assessment
+</button>
+<button class="tab-button" data-tab="policies">
+🛡️ Policies
+</button>
+<button class="tab-button" data-tab="resources">
+🤝 Resources
+</button>
+<button class="tab-button" data-tab="dates">
+📅 Important Dates
+</button>
+</div>
+<!-- Overview Tab -->
+<div class="tab-content active" data-tab="overview">
+<div class="content-filters">
+<button class="filter-button active" data-filter="all">
+All Info
+</button>
+<button class="filter-button" data-filter="course-info">
+Course Info
+</button>
+<button class="filter-button" data-filter="description">
+Description
+</button>
+<button class="filter-button" data-filter="materials">
+Materials
+</button>
+</div>
+<div class="section-card course-info-content">
 <div class="section-header">
 <div class="section-icon">
 <p>📚</p>
@@ -223,46 +261,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>👥</p>
-</div>
-<div class="section-title">
-<p>Teaching Assistants</p>
-</div>
-</div>
-<div class="contact-grid">
-<div class="contact-card">
-<div class="contact-avatar">
-<p>SL</p>
-</div>
-<div class="contact-name">
-<p>Summer Le</p>
-</div>
-<div class="contact-email">
-<p>sle@ucsb.edu</p>
-</div>
-</div>
-<div class="contact-card">
-<div class="contact-avatar">
-<p>MH</p>
-</div>
-<div class="contact-name">
-<p>Mingzhu He</p>
-</div>
-<div class="contact-email">
-<p>mingzhuhe@ucsb.edu</p>
-</div>
-</div>
-</div>
-<div class="notice-box notice-important">
-<div class="notice-content">
-<p><strong>Email policy:</strong> Include <code>[PSTAT 5A]</code> in your subject. Allow 24–48 hours for a reply (avoid weekends).</p>
-</div>
-</div>
-</div>
-<div class="section-card">
+<div class="section-card description-content">
 <div class="section-header">
 <div class="section-icon">
 <p>🎯</p>
@@ -283,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </div>
-<div class="section-card">
+<div class="section-card materials-content">
 <div class="section-header">
 <div class="section-icon">
 <p>📖</p>
@@ -328,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<div class="section-card">
+<div class="section-card materials-content">
 <div class="section-header">
 <div class="section-icon">
 <p>📅</p>
@@ -343,7 +342,133 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<div class="section-card">
+</div>
+<!-- Logistics Tab -->
+<div class="tab-content" data-tab="logistics">
+<div class="content-filters">
+<button class="filter-button active" data-filter="all">
+All Staff
+</button>
+<button class="filter-button" data-filter="instructor">
+Instructor
+</button>
+<button class="filter-button" data-filter="tas">
+Teaching Assistants
+</button>
+<button class="filter-button" data-filter="success-tips">
+Success Tips
+</button>
+</div>
+<div class="section-card instructor-content">
+<div class="section-header">
+<div class="section-icon">
+<p>👩‍🏫</p>
+</div>
+<div class="section-title">
+<p>Instructor Information</p>
+</div>
+</div>
+<div class="contact-grid">
+<div class="contact-card">
+<div class="contact-avatar">
+<p>NM</p>
+</div>
+<div class="contact-name">
+<p>Narjes Mathlouthi</p>
+</div>
+<div class="contact-email">
+<p>nmathlouthi@ucsb.edu</p>
+</div>
+<div class="contact-office">
+<p>Office: Ellison Hall 5829</p>
+</div>
+<div class="contact-hours">
+<p>Office Hours: Thursdays 11:00 AM–12:00 PM</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section-card tas-content">
+<div class="section-header">
+<div class="section-icon">
+<p>👥</p>
+</div>
+<div class="section-title">
+<p>Teaching Assistants</p>
+</div>
+</div>
+<div class="contact-grid">
+<div class="contact-card">
+<div class="contact-avatar">
+<p>SL</p>
+</div>
+<div class="contact-name">
+<p>Summer Le</p>
+</div>
+<div class="contact-email">
+<p>sle@ucsb.edu</p>
+</div>
+</div>
+<div class="contact-card">
+<div class="contact-avatar">
+<p>MH</p>
+</div>
+<div class="contact-name">
+<p>Mingzhu He</p>
+</div>
+<div class="contact-email">
+<p>mingzhuhe@ucsb.edu</p>
+</div>
+</div>
+</div>
+<div class="notice-box notice-important">
+<div class="notice-content">
+<p><strong>Email policy:</strong> Include <code>[PSTAT 5A]</code> in your subject. Allow 24–48 hours for a reply (avoid weekends).</p>
+</div>
+</div>
+</div>
+<div class="section-card success-tips-content">
+<div class="section-header">
+<div class="section-icon">
+<p>🎯</p>
+</div>
+<div class="section-title">
+<p>How to Succeed</p>
+</div>
+</div>
+<ul>
+<li><strong>Attend</strong> lectures &amp; sections</li>
+<li><strong>Engage actively</strong> &amp; ask questions</li>
+<li><strong>Use office hours</strong> for help</li>
+</ul>
+<section id="classroom-expectations" class="level3">
+<h3 class="anchored" data-anchor-id="classroom-expectations">Classroom Expectations</h3>
+<p>Respect peers &amp; TAs. Stay engaged. Seek support if needed.</p>
+</section>
+<section id="communication-guidelines" class="level3">
+<h3 class="anchored" data-anchor-id="communication-guidelines">Communication Guidelines</h3>
+<ul>
+<li>Use UCSB email with clear subject</li>
+<li>Allow 24–48 h for replies</li>
+<li>Use office hours or appointments</li>
+</ul>
+</section>
+</div>
+</div>
+<!-- Assessment Tab -->
+<div class="tab-content" data-tab="grading">
+<div class="content-filters">
+<button class="filter-button active" data-filter="all">
+All Assessment Info
+</button>
+<button class="filter-button" data-filter="grading">
+Grade Breakdown
+</button>
+<button class="filter-button" data-filter="quizzes">
+Quiz Details
+</button>
+</div>
+<div class="section-card grading-content">
 <div class="section-header">
 <div class="section-icon">
 <p>📊</p>
@@ -405,7 +530,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<div class="section-card">
+<div class="section-card quizzes-content">
 <div class="section-header">
 <div class="section-icon">
 <p>📝</p>
@@ -467,40 +592,27 @@ ul.task-list li input[type="checkbox"] {
 <div class="info-item">
 <div class="info-value">
 <p><strong>Format:</strong> Multiple choice &amp; short answer (open book)<br>
-<strong>Platform:</strong> Canvas /-or Gradescope<br>
+<strong>Platform:</strong> Canvas or Gradescope<br>
 <strong>Availability:</strong> Fridays 7 AM–12 AM (1‑hour limit)<br>
 <strong>Make‑up policy:</strong> Notify within 48 h; documentation required.</p>
 </div>
 </div>
 </div>
-<div class="section-card">
-<div class="section-header">
-<div class="section-icon">
-<p>🎯</p>
 </div>
-<div class="section-title">
-<p>How to Succeed</p>
+<!-- Policies Tab -->
+<div class="tab-content" data-tab="policies">
+<div class="content-filters">
+<button class="filter-button active" data-filter="all">
+All Policies
+</button>
+<button class="filter-button" data-filter="academic">
+Academic Integrity
+</button>
+<button class="filter-button" data-filter="attendance">
+Attendance
+</button>
 </div>
-</div>
-<ul>
-<li><strong>Attend</strong> lectures &amp; sections</li>
-<li><strong>Engage actively</strong> &amp; ask questions</li>
-<li><strong>Use office hours</strong> for help</li>
-</ul>
-<section id="classroom-expectations" class="level3">
-<h3 class="anchored" data-anchor-id="classroom-expectations">Classroom Expectations</h3>
-<p>Respect peers &amp; TAs. Stay engaged. Seek support if needed.</p>
-</section>
-<section id="communication-guidelines" class="level3">
-<h3 class="anchored" data-anchor-id="communication-guidelines">Communication Guidelines</h3>
-<ul>
-<li>Use UCSB email with clear subject</li>
-<li>Allow 24–48 h for replies</li>
-<li>Use office hours or appointments</li>
-</ul>
-</section>
-</div>
-<div class="section-card">
+<div class="section-card academic-content">
 <div class="section-header">
 <div class="section-icon">
 <p>🛡️</p>
@@ -514,6 +626,64 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://studentconduct.sa.ucsb.edu/academic-integrity">Academic Integrity Policy</a></p></li>
 <li><p><a href="https://www.sa.ucsb.edu/regulations/student-conduct-code/student-conduct-code">Student Conduct Code</a></p></li>
 </ul>
+<div class="notice-box notice-important">
+<div class="notice-content">
+<p><strong>Important:</strong> Violations of academic integrity will result in course failure and reporting to the Office of Student Conduct.</p>
+</div>
+</div>
+</div>
+<div class="section-card attendance-content">
+<div class="section-header">
+<div class="section-icon">
+<p>📋</p>
+</div>
+<div class="section-title">
+<p>Attendance Policy</p>
+</div>
+</div>
+<div class="info-grid">
+<div class="info-item">
+<div class="info-label">
+<p>Lecture Attendance</p>
+</div>
+<div class="info-value">
+<p>Worth 5% of final grade. Regular attendance expected for success.</p>
+</div>
+</div>
+<div class="info-item">
+<div class="info-label">
+<p>Section Attendance</p>
+</div>
+<div class="info-value">
+<p>Worth 5% of final grade. Participation in discussion sections is required.</p>
+</div>
+</div>
+<div class="info-item">
+<div class="info-label">
+<p>Make-up Policy</p>
+</div>
+<div class="info-value">
+<p>Contact instructor within 48 hours for excused absences with documentation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Resources Tab -->
+<div class="tab-content" data-tab="resources">
+<div class="content-filters">
+<button class="filter-button active" data-filter="all">
+All Resources
+</button>
+<button class="filter-button" data-filter="academic">
+Academic Support
+</button>
+<button class="filter-button" data-filter="wellness">
+Health &amp; Wellness
+</button>
+<button class="filter-button" data-filter="basic-needs">
+Basic Needs
+</button>
 </div>
 <div class="section-card">
 <div class="section-header">
@@ -525,34 +695,48 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="resource-grid">
-<div class="resource-link">
+<div class="resource-link academic-content">
 <p><span class="resource-icon">🦽</span> <span class="resource-name">DSP &amp; Accommodations</span> <span class="resource-desc">Disability services and accommodations</span></p>
 </div>
-<div class="resource-link">
+<div class="resource-link academic-content">
 <p><span class="resource-icon">📚</span> <span class="resource-name">CLAS</span> <span class="resource-desc">Campus Learning Assistance Services</span></p>
 </div>
-<div class="resource-link">
-<p><span class="resource-icon">🏥</span> <span class="resource-name">Student Health</span> <span class="resource-desc">Health and wellness services</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">🍎</span> <span class="resource-name">Basic Needs</span> <span class="resource-desc">Food security and basic needs support</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">💚</span> <span class="resource-name">CAPS</span> <span class="resource-desc">Counseling &amp; Psychological Services</span></p>
-</div>
-<div class="resource-link">
+<div class="resource-link academic-content">
 <p><span class="resource-icon">🎓</span> <span class="resource-name">EOP</span> <span class="resource-desc">Educational Opportunity Program</span></p>
 </div>
-<div class="resource-link">
-<p><span class="resource-icon">👥</span> <span class="resource-name">ONDAS</span> <span class="resource-desc">First-Generation Support</span></p>
-</div>
-<div class="resource-link">
-<p><span class="resource-icon">📋</span> <span class="resource-name">Undocumented Services</span> <span class="resource-desc">Support for undocumented students</span></p>
-</div>
-<div class="resource-link">
+<div class="resource-link academic-content">
 <p><span class="resource-icon">🔄</span> <span class="resource-name">Transfer Center</span> <span class="resource-desc">Transfer student support</span></p>
 </div>
+<div class="resource-link wellness-content">
+<p><span class="resource-icon">🏥</span> <span class="resource-name">Student Health</span> <span class="resource-desc">Health and wellness services</span></p>
 </div>
+<div class="resource-link wellness-content">
+<p><span class="resource-icon">💚</span> <span class="resource-name">CAPS</span> <span class="resource-desc">Counseling &amp; Psychological Services</span></p>
+</div>
+<div class="resource-link basic-needs-content">
+<p><span class="resource-icon">🍎</span> <span class="resource-name">Basic Needs</span> <span class="resource-desc">Food security and basic needs support</span></p>
+</div>
+<div class="resource-link basic-needs-content">
+<p><span class="resource-icon">👥</span> <span class="resource-name">ONDAS</span> <span class="resource-desc">First-Generation Support</span></p>
+</div>
+<div class="resource-link basic-needs-content">
+<p><span class="resource-icon">📋</span> <span class="resource-name">Undocumented Services</span> <span class="resource-desc">Support for undocumented students</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Important Dates Tab -->
+<div class="tab-content" data-tab="dates">
+<div class="content-filters">
+<button class="filter-button active" data-filter="all">
+All Dates
+</button>
+<button class="filter-button" data-filter="registration">
+Registration
+</button>
+<button class="filter-button" data-filter="deadlines">
+Deadlines
+</button>
 </div>
 <div class="section-card">
 <div class="section-header">
@@ -564,7 +748,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="dates-grid">
-<div class="date-item">
+<div class="date-item registration-content">
 <div class="date-label">
 <p>Add w/o Code</p>
 </div>
@@ -572,7 +756,7 @@ ul.task-list li input[type="checkbox"] {
 <p>June 29</p>
 </div>
 </div>
-<div class="date-item">
+<div class="date-item registration-content">
 <div class="date-label">
 <p>Drop w/ Refund</p>
 </div>
@@ -580,7 +764,7 @@ ul.task-list li input[type="checkbox"] {
 <p>June 29</p>
 </div>
 </div>
-<div class="date-item">
+<div class="date-item registration-content">
 <div class="date-label">
 <p>Add w/ Code</p>
 </div>
@@ -588,7 +772,7 @@ ul.task-list li input[type="checkbox"] {
 <p>July 3</p>
 </div>
 </div>
-<div class="date-item">
+<div class="date-item deadlines-content">
 <div class="date-label">
 <p>Drop Course</p>
 </div>
@@ -596,7 +780,7 @@ ul.task-list li input[type="checkbox"] {
 <p>July 9</p>
 </div>
 </div>
-<div class="date-item">
+<div class="date-item deadlines-content">
 <div class="date-label">
 <p>Change Grade Option</p>
 </div>
@@ -605,44 +789,162 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<div class="notice-box notice-info">
+<div class="notice-content">
+<p><strong>Note:</strong> All dates are based on the UCSB Academic Calendar. Please verify important dates on your GOLD account.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Add smooth animations on scroll
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    // Initialize - show only first tab
+    showTab('overview');
+    
+    // Tab button click handlers
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const tabName = this.dataset.tab;
+            showTab(tabName);
+            
+            // Update active tab button
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
-  }, observerOptions);
-
-  // Observe all section cards
-  document.querySelectorAll('.section-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease';
-    observer.observe(card);
-  });
-
-  // Add click-to-copy functionality for email addresses
-  document.querySelectorAll('.contact-email').forEach(email => {
-    email.style.cursor = 'pointer';
-    email.addEventListener('click', function() {
-      navigator.clipboard.writeText(this.textContent);
-      const originalText = this.textContent;
-      this.textContent = 'Copied!';
-      setTimeout(() => {
-        this.textContent = originalText;
-      }, 1000);
+    
+    // Filter functionality
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('filter-button')) {
+            const filter = e.target.dataset.filter;
+            const tabContent = e.target.closest('.tab-content');
+            const tabName = tabContent.dataset.tab;
+            
+            // Update active filter button within this tab
+            const tabFilters = tabContent.querySelectorAll('.filter-button');
+            tabFilters.forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            // Apply filter to current tab
+            filterContent(filter, tabName);
+        }
     });
-  });
+    
+    function showTab(tabName) {
+        // Hide all tabs
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // Show selected tab
+        const selectedTab = document.querySelector(`[data-tab="${tabName}"].tab-content`);
+        if (selectedTab) {
+            selectedTab.classList.add('active');
+            
+            // Reset filters for this tab
+            const tabFilters = selectedTab.querySelectorAll('.filter-button');
+            tabFilters.forEach(btn => btn.classList.remove('active'));
+            const allFilter = selectedTab.querySelector('.filter-button[data-filter="all"]');
+            if (allFilter) {
+                allFilter.classList.add('active');
+            }
+            
+            // Show all content by default
+            filterContent('all', tabName);
+        }
+    }
+    
+    function filterContent(filter, tabName) {
+        const tabContent = document.querySelector(`[data-tab="${tabName}"].tab-content`);
+        if (!tabContent) return;
+        
+        const sectionCards = tabContent.querySelectorAll('.section-card');
+        const resourceItems = tabContent.querySelectorAll('.resource-link');
+        const dateItems = tabContent.querySelectorAll('.date-item');
+        
+        // Handle section cards
+        sectionCards.forEach(card => {
+            if (filter === 'all') {
+                card.style.display = 'block';
+            } else {
+                const hasFilterContent = card.classList.contains(`${filter}-content`);
+                card.style.display = hasFilterContent ? 'block' : 'none';
+            }
+        });
+        
+        // Handle resource items
+        resourceItems.forEach(item => {
+            if (filter === 'all') {
+                item.style.display = 'block';
+            } else {
+                const hasFilterContent = item.classList.contains(`${filter}-content`);
+                item.style.display = hasFilterContent ? 'block' : 'none';
+            }
+        });
+        
+        // Handle date items
+        dateItems.forEach(item => {
+            if (filter === 'all') {
+                item.style.display = 'block';
+            } else {
+                const hasFilterContent = item.classList.contains(`${filter}-content`);
+                item.style.display = hasFilterContent ? 'block' : 'none';
+            }
+        });
+    }
+    
+    // Add smooth animations on scroll for visible content
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all section cards
+    document.querySelectorAll('.section-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+    });
+
+    // Add click-to-copy functionality for email addresses
+    document.querySelectorAll('.contact-email').forEach(email => {
+        email.style.cursor = 'pointer';
+        email.addEventListener('click', function() {
+            navigator.clipboard.writeText(this.textContent);
+            const originalText = this.textContent;
+            this.textContent = 'Copied!';
+            setTimeout(() => {
+                this.textContent = originalText;
+            }, 1000);
+        });
+    });
+    
+    // Add smooth hover effects
+    const sectionCards = document.querySelectorAll('.section-card');
+    sectionCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
 });
 </script>
 
