@@ -4,7 +4,7 @@ format:
   html:
     toc: false
     theme: cosmo
-    css: /theme/home-page-styles.css
+    css: [/theme/home-page-styles.css, /theme/enhanced-home.css]
     page-layout: full
 execute:
   echo: false
@@ -27,11 +27,12 @@ Learn the fundamentals of data science and statistical thinking
 **Summer Session A 2025** • Taught by **Narjes Mathlouthi**
 :::
 
-[Get Started →](schedule.qmd){.cta-button}
+[Let's Get Started →](schedule.qmd){.cta-button}
 :::
 :::
 
 ::: {.overview-section .section}
+::: {.container}
 ::: {.section-header}
 ## Course Overview {.section-title}
 ::: {.section-subtitle}
@@ -40,139 +41,238 @@ Transform raw data into meaningful insights through hands-on learning and real-w
 :::
 
 ::: {.learning-objectives}
-::: {.objective-card}
+::: {.objective-card .card-stats}
 ::: {.objective-icon}
 📊
 :::
+::: {.objective-title}
+Statistical Methods
+:::
 ::: {.objective-text}
-Apply descriptive and inferential statistical methods
+Master descriptive and inferential statistical methods using real-world datasets and modern computational tools.
 :::
 :::
 
-::: {.objective-card}
+::: {.objective-card .card-probability}
 ::: {.objective-icon}
 🎲
 :::
+::: {.objective-title}
+Probability Models
+:::
 ::: {.objective-text}
-Work with probability models and random variables
+Understand probability distributions and random variables through interactive simulations and practical applications.
 :::
 :::
 
-::: {.objective-card}
+::: {.objective-card .card-inference}
 ::: {.objective-icon}
 🔍
 :::
+::: {.objective-title}
+Statistical Inference
+:::
 ::: {.objective-text}
-Construct confidence intervals and perform hypothesis tests
+Build confidence intervals and conduct hypothesis tests to make data-driven decisions with uncertainty.
 :::
 :::
 
-::: {.objective-card}
+::: {.objective-card .card-modeling}
 ::: {.objective-icon}
 📈
 :::
+::: {.objective-title}
+Data Modeling
+:::
 ::: {.objective-text}
-Fit and interpret regression and ANOVA models
+Develop predictive models using regression analysis and ANOVA for complex data relationships.
 :::
 :::
 
-::: {.objective-card}
+::: {.objective-card .card-programming}
 ::: {.objective-icon}
 🐍
 :::
+::: {.objective-title}
+Python Programming
+:::
 ::: {.objective-text}
-Use Python and Jupyter notebooks for data analysis
+Learn industry-standard Python libraries for data analysis, visualization, and statistical computing.
+:::
 :::
 :::
 :::
 :::
 
 ::: {.quick-links-section .section}
+::: {.container}
 ::: {.section-header}
 ## Quick Navigation {.section-title}
 ::: {.section-subtitle}
-Everything you need for the course, organized and accessible
+Everything you need for success, organized and accessible
 :::
 :::
 
 ::: {.quick-links-grid}
-
-::: {.quick-link-card}
+::: {.quick-link-card .card-syllabus}
+::: {.quick-link-content}
 [📘]{.quick-link-icon}
 
 [Syllabus]{.quick-link-title}
 
-[View Syllabus]{.quick-link-desc}
+[Complete course policies, grading structure, and academic expectations]{.quick-link-desc}
 
-[Go to Syllabus →](syllabus.qmd){.btn .btn-primary}
+[View Syllabus →](syllabus.qmd){.btn .btn-primary}
+:::
 :::
 
-::: {.quick-link-card}
+::: {.quick-link-card .card-schedule}
+::: {.quick-link-content}
 [🗓️]{.quick-link-icon}
 
 [Schedule]{.quick-link-title}
 
-[Class Schedule]{.quick-link-desc}
+[Weekly learning objectives, assignments, and important deadlines]{.quick-link-desc}
 
 [View Schedule →](schedule.qmd){.btn .btn-primary}
 :::
+:::
 
-::: {.quick-link-card}
+::: {.quick-link-card .card-lectures}
+::: {.quick-link-content}
 [🎥]{.quick-link-icon}
 
 [Lectures]{.quick-link-title}
 
-[Lecture Notes]{.quick-link-desc}
+[Interactive presentations, recorded sessions, and supplementary materials]{.quick-link-desc}
 
-[View Lectures →](schedule.qmd){.btn .btn-primary}
+[Access Lectures →](schedule.qmd){.btn .btn-primary}
+:::
 :::
 
-::: {.quick-link-card}
+::: {.quick-link-card .card-labs}
+::: {.quick-link-content}
 [💻]{.quick-link-icon}
 
 [Labs]{.quick-link-title}
 
-[Computing Labs]{.quick-link-desc}
+[Hands-on coding exercises and guided computational workshops]{.quick-link-desc}
 
-[View Labs →](schedule.qmd){.btn .btn-primary}
+[Start Labs →](schedule.qmd){.btn .btn-primary}
+:::
 :::
 
-::: {.quick-link-card}
+::: {.quick-link-card .card-resources}
+::: {.quick-link-content}
 [📂]{.quick-link-icon}
 
 [Resources]{.quick-link-title}
 
-[Data & Code]{.quick-link-desc}
+[Curated datasets, code templates, and comprehensive learning materials]{.quick-link-desc}
 
-[View Resources →](resources.qmd){.btn .btn-primary}
+[Explore Resources →](resources.qmd){.btn .btn-primary}
+:::
 :::
 
-
-::: {.quick-link-card}
+::: {.quick-link-card .card-contact}
+::: {.quick-link-content}
 [📬]{.quick-link-icon}
 
-[Get in Touch]{.quick-link-title}
+[Support]{.quick-link-title}
 
-[Get in Touch]{.quick-link-desc}
+[Office hours, contact information, and academic assistance]{.quick-link-desc}
 
-[Contact Info →](contact.qmd){.btn .btn-primary}
+[Get Help →](contact.qmd){.btn .btn-primary}
+:::
+:::
+:::
+:::
 :::
 
+::: {.features-section .section}
+::: {.container}
+::: {.section-header}
+## Course Highlights {.section-title}
+::: {.section-subtitle}
+Modern pedagogy meets practical application in statistical education
+:::
+:::
+
+::: {.features-grid}
+::: {.feature-card}
+::: {.feature-icon}
+🎮
+:::
+::: {.feature-title}
+Interactive Learning
+:::
+::: {.feature-text}
+Engage with concepts through dynamic visualizations, simulations, and hands-on exercises that make abstract ideas tangible.
+:::
+:::
+
+::: {.feature-card}
+::: {.feature-icon}
+🌍
+:::
+::: {.feature-title}
+Real-World Data
+:::
+::: {.feature-text}
+Work with authentic datasets from healthcare, finance, environmental science, and social research for practical experience.
+:::
+:::
+
+::: {.feature-card}
+::: {.feature-icon}
+🚀
+:::
+::: {.feature-title}
+Industry Tools
+:::
+::: {.feature-text}
+Master Python, Jupyter notebooks, and essential libraries like pandas, NumPy, and matplotlib for professional analysis.
+:::
+:::
+
+::: {.feature-card}
+::: {.feature-icon}
+🎯
+:::
+::: {.feature-title}
+Personalized Support
+:::
+::: {.feature-text}
+Benefit from small class sizes, dedicated office hours, and individualized feedback to ensure your success.
+:::
+:::
+:::
 :::
 :::
 
 ::: {.notice-section}
+::: {.notice-icon}
+⚠️
+:::
 ::: {.notice-content}
-### Important Notice {.notice-title}
-This schedule and all deadlines are subject to change. Check this site regularly for updates and announcements.
+### Stay Updated {.notice-title}
+Course schedules and deadlines may be adjusted as needed. Check this site regularly and join our communication channels for real-time announcements and updates.
 :::
 :::
 
 ::: {.footer-section}
+::: {.container}
 ::: {.footer-content}
-### Ready to Begin? {.footer-title}
+### Ready to Transform Your Data Skills? {.footer-title}
+
 ::: {.footer-text}
-Explore the navigation above or use the quick links to dive into course materials. Have questions? Visit office hours or use the contact page. Let's have an amazing learning experience together!
+Navigate through the course materials above or jump directly into the learning experience. Questions? Office hours are always available, and we're here to support your journey into data science.
+:::
+
+::: {.footer-cta}
+[Explore Materials →](schedule.qmd){.btn .btn-secondary}
+[Contact Instructor →](contact.qmd){.btn .btn-outline}
+:::
 :::
 :::
 :::
@@ -180,20 +280,24 @@ Explore the navigation above or use the quick links to dive into course material
 ```{=html}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Add smooth scrolling for internal links
+  // Enhanced smooth scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     });
   });
 
-  // Add intersection observer for animations
+  // Intersection Observer for scroll animations
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -100px 0px'
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -201,14 +305,111 @@ document.addEventListener('DOMContentLoaded', function() {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
+        
+        // Staggered animation for grid items
+        if (entry.target.classList.contains('objective-card') || 
+            entry.target.classList.contains('quick-link-card') ||
+            entry.target.classList.contains('feature-card')) {
+          const siblings = entry.target.parentElement.children;
+          const index = Array.from(siblings).indexOf(entry.target);
+          entry.target.style.transitionDelay = `${index * 0.1}s`;
+          entry.target.classList.add('animate-in');
+        }
       }
     });
   }, observerOptions);
 
-  // Observe all cards
-  document.querySelectorAll('.objective-card, .quick-link-card').forEach(card => {
-    observer.observe(card);
+  // Observe elements for animation
+  document.querySelectorAll('.objective-card, .quick-link-card, .feature-card, .section-header').forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    element.style.transition = 'all 0.6s cubic-bezier(0, 0, 0.2, 1)';
+    observer.observe(element);
+  });
+
+  // Parallax effect for floating shapes
+  let ticking = false;
+  
+  function updateShapes() {
+    const scrolled = window.pageYOffset;
+    
+    document.querySelectorAll('.shape').forEach((shape, index) => {
+      const speed = 0.3 + (index * 0.1);
+      const yPos = scrolled * speed * 0.05;
+      const rotation = scrolled * 0.02 * (index + 1);
+      
+      shape.style.transform = `translateY(${yPos}px) rotate(${rotation}deg)`;
+    });
+    
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateShapes);
+      ticking = true;
+    }
+  });
+
+  // Enhanced number counter for stats
+  const animateNumbers = () => {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const observerNumbers = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const finalValue = parseInt(entry.target.textContent.replace('+', ''));
+          let currentValue = 0;
+          const increment = finalValue / 60;
+          
+          const timer = setInterval(() => {
+            currentValue += increment;
+            if (currentValue >= finalValue) {
+              currentValue = finalValue;
+              clearInterval(timer);
+              entry.target.textContent = finalValue > 20 ? `${finalValue}+` : finalValue;
+            } else {
+              entry.target.textContent = Math.floor(currentValue);
+            }
+          }, 25);
+          
+          observerNumbers.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(stat => {
+      observerNumbers.observe(stat);
+    });
+  };
+
+  animateNumbers();
+
+  // Enhanced card interactions
+  document.querySelectorAll('.quick-link-card, .objective-card, .feature-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-8px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0)';
+    });
+  });
+
+  // Preload critical images
+  const criticalImages = ['img/logo.png'];
+  criticalImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
   });
 });
+
+// Performance optimization
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(() => {
+    // Non-critical enhancements
+    console.log('Page fully loaded and optimized');
+  });
+}
 </script>
 ```
