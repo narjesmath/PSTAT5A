@@ -724,8 +724,8 @@
     "objectID": "files/lecture_notes/lecture4/lecture4.html#sec-objectives",
     "href": "files/lecture_notes/lecture4/lecture4.html#sec-objectives",
     "title": "PSTAT 5A: Introduction to Probability",
-    "section": "",
-    "text": "By the end of this lecture, you will be able to:\n\nDefine probability and understand its basic properties\nIdentify sample spaces and events\nApply fundamental probability rules"
+    "section": "Today’s Learning Objectives",
+    "text": "Today’s Learning Objectives\nBy the end of this lecture, you will be able to:\n\nDefine probability and understand its basic properties\nIdentify sample spaces and events\nApply fundamental probability rules"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#sec-prob",
@@ -746,7 +746,7 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#three-ways-to-express-probability",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Three Ways to Express Probability",
-    "text": "Three Ways to Express Probability\n\nFraction: \\(\\frac{1}{2}\\), \\(\\frac{3}{4}\\), \\(\\frac{2}{6}\\)\nDecimal: 0.5, 0.75, 0.33\nPercentage: 50%, 75%, 33%"
+    "text": "Three Ways to Express Probability\n\nFraction: \\frac{1}{2}, \\frac{3}{4}, \\frac{2}{6}\nDecimal: 0.5, 0.75, 0.33\nPercentage: 50%, 75%, 33%"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#example",
@@ -774,35 +774,35 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#sample-space",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Sample Space",
-    "text": "Sample Space\n\n🎯 Definition The sample space (denoted \\(S\\) or \\(\\Omega\\)) is the set of all possible outcomes of a random experiment"
+    "text": "Sample Space\n\n🎯 Definition The sample space (denoted S or \\Omega) is the set of all possible outcomes of a random experiment"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#sample-space-examples",
     "href": "files/lecture_notes/lecture4/lecture4.html#sample-space-examples",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Sample Space Examples",
-    "text": "Sample Space Examples\n\nCoin flip: \\(S = \\{H, T\\}\\)\nTwo coin flips: \\(S = \\{HH, HT, TH, TT\\}\\)\n\n\n\n\n\n\n\n\n🎲 Die roll: \\(S = \\{1, 2, 3, 4, 5, 6\\}\\)\nTwo die rolls \n\n\n\n\\(S = \\{A\\heartsuit,\\ 2\\heartsuit,\\ \\dots,\\ K\\heartsuit,\\\\\n\\phantom{S = \\{}A\\diamondsuit,\\ 2\\diamondsuit,\\ \\dots,\\ K\\diamondsuit,\\\\\n\\phantom{S = \\{}A\\clubsuit,\\ 2\\clubsuit,\\ \\dots,\\ K\\clubsuit,\\\\\n\\phantom{S = \\{}A\\spadesuit,\\ 2\\spadesuit,\\ \\dots,\\ K\\spadesuit\\}\\)"
+    "text": "Sample Space Examples\n\nCoin flip: S = \\{H, T\\}\nTwo coin flips: S = \\{HH, HT, TH, TT\\}"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#types-of-sample-spaces",
     "href": "files/lecture_notes/lecture4/lecture4.html#types-of-sample-spaces",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Types of Sample Spaces",
-    "text": "Types of Sample Spaces\n\n\nFinite Sample Space\n\nLimited number of outcomes\n\nExample: Rolling a die\n\n\n\n\n\n\n\n\n\n\n\n\nInfinite Sample Space\n\nUnlimited outcomes (countable or uncountable)\n\nExample: Measuring exact height of students"
+    "text": "Types of Sample Spaces\n\n\nFinite Sample Space\n\nLimited number of outcomes\n\nExample: Rolling a die\n\n\n\n\n\n\n\n\n\n\n\nInfinite Sample Space\n\nUnlimited outcomes (countable or uncountable)\n\nExample: Measuring exact height of students"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#events",
     "href": "files/lecture_notes/lecture4/lecture4.html#events",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Events",
-    "text": "Events\n\n🎯 Definition An event is a subset of the sample space\n\nSimple event: Contains exactly one outcome (Ex: \\(A = \\{3\\}\\) (rolling a 3))\nCompound event: Contains multiple outcomes (Ex: \\(B = \\{2, 4, 6\\}\\) (rolling an even number))"
+    "text": "Events\n\n🎯 Definition An event is a subset of the sample space\n\nSimple event: Contains exactly one outcome (Ex: A = \\{3\\} (rolling a 3))\nCompound event: Contains multiple outcomes (Ex: B = \\{2, 4, 6\\} (rolling an even number))"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#event-notation",
     "href": "files/lecture_notes/lecture4/lecture4.html#event-notation",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Event Notation",
-    "text": "Event Notation\nFor a die roll with \\(S = \\{1, 2, 3, 4, 5, 6\\}\\):\n\n\\(A = \\{1, 3, 5\\}\\) (rolling an odd number)\n\\(B = \\{4, 5, 6\\}\\) (rolling 4 or higher)\n\\(C = \\{6\\}\\) (rolling a six)\n\n\n\n\n\n\n\nWe can describe events in words or using set notation"
+    "text": "Event Notation\nFor a die roll with S = \\{1, 2, 3, 4, 5, 6\\}:\n\nA = \\{1, 3, 5\\} (rolling an odd number)\nB = \\{4, 5, 6\\} (rolling 4 or higher)\nC = \\{6\\} (rolling a six)\n\n\n\nWe can describe events in words or using set notation"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#set-operations-overview",
@@ -823,7 +823,7 @@
     "href": "files/lecture_notes/lecture4/lecture4.html#union-a-b",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Union: A ∪ B",
-    "text": "Union: A ∪ B\n\n\n\n\n🎯 Definition: Contains all set elements, including intersections.\nIn Probability: The event that A OR B occurs (or both).\n\n\\[P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\]"
+    "text": "Union: A ∪ B\n\n\n\n\n🎯 Definition: Contains all set elements, including intersections.\nIn Probability: The event that A OR B occurs (or both).\n\nP(A \\cup B) = P(A) + P(B) - P(A \\cap B)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#intersection-a-b",
@@ -836,85 +836,85 @@
     "objectID": "files/lecture_notes/lecture4/lecture4.html#absolute-complement-ac",
     "href": "files/lecture_notes/lecture4/lecture4.html#absolute-complement-ac",
     "title": "PSTAT 5A: Introduction to Probability",
-    "section": "Absolute Complement: \\(A^c\\)",
-    "text": "Absolute Complement: \\(A^c\\)\n\n\n\n🎯 Definition: All elements that do not belong to the set.\nIn Probability: The event that A does NOT occur.\n\n\\(P(A^c) = 1 - P(A)\\)\n\n\nKey Property:\n\\(A \\cup A^c = S\\) (Sample Space)"
+    "section": "Absolute Complement: A^c",
+    "text": "Absolute Complement: A^c\n\n\n\n🎯 Definition: All elements that do not belong to the set.\nIn Probability: The event that A does NOT occur.\n\nP(A^c) = 1 - P(A)\n\n\nKey Property:\nA \\cup A^c = S (Sample Space)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#summary-table",
     "href": "files/lecture_notes/lecture4/lecture4.html#summary-table",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Summary Table",
-    "text": "Summary Table\n\n\n\n\n\n\n\n\n\nOperation\nSymbol\nMeaning\nProbability\n\n\n\n\nUnion\n\\(A \\cup B\\)\nOccurs if \\(A\\) or \\(B\\)\n\\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\)\n\n\nIntersection\n\\(A \\cap B\\)\nOccurs if \\(A\\) and \\(B\\)\n\\(P(A \\cap B)\\)\n\n\nComplement\n\\(A^c\\)\nOccurs if \\(A\\) does not occur\n\\(P(A^c) = 1 - P(A)\\)"
+    "text": "Summary Table\n\n\n\n\n\n\n\n\n\nOperation\nSymbol\nMeaning\nProbability\n\n\n\n\nUnion\nA \\cup B\nOccurs if A or B\nP(A \\cup B) = P(A) + P(B) - P(A \\cap B)\n\n\nIntersection\nA \\cap B\nOccurs if A and B\nP(A \\cap B)\n\n\nComplement\nA^c\nOccurs if A does not occur\nP(A^c) = 1 - P(A)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-commutative",
     "href": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-commutative",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Probability Axioms: Commutative",
-    "text": "Probability Axioms: Commutative\n\nCommutative\n\\(A \\cup B = B \\cup A\\)\n\\(A \\cap B = B \\cap A\\)"
+    "text": "Probability Axioms: Commutative\n\nCommutative\nA \\cup B = B \\cup A\nA \\cap B = B \\cap A"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-associative",
     "href": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-associative",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Probability Axioms: Associative",
-    "text": "Probability Axioms: Associative\n\nAssociative\n\\((A \\cup B) \\cup C = A \\cup (B \\cup C)\\)\n\\((A \\cap B) \\cap C = A \\cap (B \\cap C)\\)"
+    "text": "Probability Axioms: Associative\n\nAssociative\n(A \\cup B) \\cup C = A \\cup (B \\cup C)\n(A \\cap B) \\cap C = A \\cap (B \\cap C)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-distributive",
     "href": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-distributive",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Probability Axioms: Distributive",
-    "text": "Probability Axioms: Distributive\n\nDistributive\n\\(A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\\)\n\\(A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)\\)"
+    "text": "Probability Axioms: Distributive\n\nDistributive\nA \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\nA \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-de-morgans-laws",
     "href": "files/lecture_notes/lecture4/lecture4.html#probability-axioms-de-morgans-laws",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Probability Axioms: De Morgan’s Laws",
-    "text": "Probability Axioms: De Morgan’s Laws\n\nDe Morgan’s Laws\n\\((A \\cup B)^c = A^c \\cap B^c\\)\n\\((A \\cap B)^c = A^c \\cup B^c\\)"
+    "text": "Probability Axioms: De Morgan’s Laws\n\nDe Morgan’s Laws\n(A \\cup B)^c = A^c \\cap B^c\n(A \\cap B)^c = A^c \\cup B^c"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#practice-examples",
     "href": "files/lecture_notes/lecture4/lecture4.html#practice-examples",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Practice Examples",
-    "text": "Practice Examples\n\nExample 1: In a class of students:\n\nSet A = Students who like Math\nSet B = Students who like Science\n\nQ: What does A ∪ B represent?\n\n\n\nSolution. Students who like Math OR Science (or both)\n\n\n\n\nExample 2: What does A ∩ B represent?\n\n\n\nSolution. Students who like BOTH Math AND Science\n\n\n\n\nExample 3: What does \\(A^c\\) represent?\n\n\n\nSolution. Students who do NOT like Math"
+    "text": "Practice Examples\n\nExample 1: In a class of students:\n\nSet A = Students who like Math\nSet B = Students who like Science\n\nQ: What does A ∪ B represent?\n\n\n\nSolution. Students who like Math OR Science (or both)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#example-set-operations",
     "href": "files/lecture_notes/lecture4/lecture4.html#example-set-operations",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Example: Set Operations",
-    "text": "Example: Set Operations\n\n\nFor die roll \\(S = \\{1, 2, 3, 4, 5, 6\\}\\):\n\n\\(A = \\{1, 3, 5\\}\\) (odd numbers)\n\\(B = \\{4, 5, 6\\}\\) (4 or higher)\n\n\n\n\n\n\n\n\n\n\n\n\n\nFind:\n\n\\(A \\cup B\\)\n\\(A \\cap B\\)\n\\(A^c\\)\n\n\n\n\n\nSolution. \n\n\\(A \\cup B = \\{1, 3, 4, 5, 6\\}\\)\n\\(A \\cap B = \\{5\\}\\)\n\\(A^c = \\{2, 4, 6\\}\\)"
+    "text": "Example: Set Operations\n\n\nFor die roll S = \\{1, 2, 3, 4, 5, 6\\}:\n\nA = \\{1, 3, 5\\} (odd numbers)\nB = \\{4, 5, 6\\} (4 or higher)\n\n\n\n\n\n\n\n\n\n\n\n\n\nFind:\n\nA \\cup B\nA \\cap B\nA^c\n\n\n\n\n\nSolution. \n\nA \\cup B = \\{1, 3, 4, 5, 6\\}\nA \\cap B = \\{5\\}\nA^c = \\{2, 4, 6\\}"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#mutually-exclusive-events",
     "href": "files/lecture_notes/lecture4/lecture4.html#mutually-exclusive-events",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Mutually Exclusive Events",
-    "text": "Mutually Exclusive Events\n\n\nEvents \\(A\\) and \\(B\\) are mutually exclusive (or disjoint) if they cannot occur simultaneously\n\\[A \\cap B = \\emptyset\\]\n\n\n\n\n\n\n\n\n\n\n\n\nWhen rolling a die\n\n\\(A = \\{1, 3, 5\\}\\) (odd)\n\\(B = \\{2, 4, 6\\}\\) (even)\n\n\\(A\\) and \\(B\\) are mutually exclusive"
+    "text": "Mutually Exclusive Events\n\n\nEvents A and B are mutually exclusive (or disjoint) if they cannot occur simultaneously\nA \\cap B = \\emptyset\n\n\n\n\n\n\n\n\n\n\n\n\nWhen rolling a die\n\nA = \\{1, 3, 5\\} (odd)\nB = \\{2, 4, 6\\} (even)\n\nA and B are mutually exclusive"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#the-classical-definition-of-probability",
     "href": "files/lecture_notes/lecture4/lecture4.html#the-classical-definition-of-probability",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "The Classical Definition of Probability",
-    "text": "The Classical Definition of Probability\n\n🎯 Definition: For equally likely outcomes:\n\\[P(A) = \\frac{\\text{Number of outcomes in } A}{\\text{Total number of outcomes in } S}\\]\n\n\nProbability of rolling an even number on a fair die\n\n\n\\[P(\\text{even}) = \\frac{3}{6} = \\frac{1}{2}\\]"
+    "text": "The Classical Definition of Probability\n\n🎯 Definition: For equally likely outcomes:\nP(A) = \\frac{\\text{Number of outcomes in } A}{\\text{Total number of outcomes in } S}\n\n\nProbability of rolling an even number on a fair die\n\n\nP(\\text{even}) = \\frac{3}{6} = \\frac{1}{2}"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#properties-of-probability",
     "href": "files/lecture_notes/lecture4/lecture4.html#properties-of-probability",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "Properties of Probability",
-    "text": "Properties of Probability\n\nNon-negativity: \\(P(A) \\geq 0\\) for any event \\(A\\)\nNormalization: \\(P(S) = 1\\)\nAdditivity: If \\(A\\) and \\(B\\) are mutually exclusive, then\n\n\n\\[P(A \\cup B) = P(A) + P(B)\\]"
+    "text": "Properties of Probability\n\nNon-negativity: P(A) \\geq 0 for any event A\nNormalization: P(S) = 1\nAdditivity: If A and B are mutually exclusive, then\n\n\nP(A \\cup B) = P(A) + P(B)"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#the-complement-rule",
     "href": "files/lecture_notes/lecture4/lecture4.html#the-complement-rule",
     "title": "PSTAT 5A: Introduction to Probability",
     "section": "The Complement Rule",
-    "text": "The Complement Rule\n\n\\[P(A) + P(A^c) = 1\\]\n\\[P(A^c) = 1 - P(A)\\]\n\n\n\nIf the probability of rain is 0.3, what’s the probability of no rain?\n\n\n\n\nSolution. \\[P(\\text{no rain}) = 1 - P(\\text{rain}) = 1 - 0.3 = 0.7\\]"
+    "text": "The Complement Rule\n\nP(A) + P(A^c) = 1\nP(A^c) = 1 - P(A)\n\n\n\nIf the probability of rain is 0.3, what’s the probability of no rain?\n\n\n\n\nSolution. P(\\text{no rain}) = 1 - P(\\text{rain}) = 1 - 0.3 = 0.7"
   },
   {
     "objectID": "files/lecture_notes/lecture4/lecture4.html#questions",
@@ -1165,15 +1165,15 @@
     "objectID": "files/lecture_notes/Lecture_1/lecture1.html#welcome-to-pstat5a",
     "href": "files/lecture_notes/Lecture_1/lecture1.html#welcome-to-pstat5a",
     "title": "Lecture 1: Introduction to Data Science",
-    "section": "",
-    "text": "Instructor\n\nNarjes Mathlouthi (nmathlouthi@ucsb.edu)\n\nOffice Hours (Zoom):\n\nThursdays 11 AM–12 PM\n\n\nTeaching Assistants\n\nSummer Lee (sle@ucsb.edu)\nMingzhu He (mingzhuhe@ucsb.edu)"
+    "section": "Welcome to PSTAT5A!",
+    "text": "Welcome to PSTAT5A!\n\n\nInstructor\n\nNarjes Mathlouthi (nmathlouthi@ucsb.edu)\n\nOffice Hours (Zoom):\n\nThursdays 11 AM–12 PM\n\n\nTeaching Assistants\n\nSummer Lee (sle@ucsb.edu)\nMingzhu He (mingzhuhe@ucsb.edu)"
   },
   {
     "objectID": "files/lecture_notes/Lecture_1/lecture1.html#course-resources",
     "href": "files/lecture_notes/Lecture_1/lecture1.html#course-resources",
     "title": "Lecture 1: Introduction to Data Science",
     "section": "Course Resources",
-    "text": "Course Resources\n\n\n\nCanvas: Grades & Announcements\nGradescope: Quizzes & Labs\n\nEntry code: WJ4XR7\n\n\nCourse Website: bit.ly/3Ga8CSK\n\nAll lecture slides, labs, and code will be posted here\n\n\n\n\n\n\n\n\n\n\n\n\nCourse Resources\nLabs: Interactive, hands‐on Python computing sessions hosted on JupyterHub.\nAccess the lab environment at: https://pstat5a.lsit.ucsb.edu\n\n\n\n\n\n\n\n\n\nAll relevant course material will be posted on the website. Quizzes are the only exception and will be administered via Gradescope. Please read the syllabus fully and carefully!"
+    "text": "Course Resources\n\n\n\nCanvas: Grades & Announcements\nGradescope: Quizzes & Labs\n\nEntry code: WJ4XR7\n\n\nCourse Website: bit.ly/3Ga8CSK\n\nAll lecture slides, labs, and code will be posted here"
   },
   {
     "objectID": "files/lecture_notes/Lecture_1/lecture1.html#communication-email",
@@ -2082,36 +2082,36 @@
     "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#problem-statement",
     "href": "files/lecture_notes/lecture3/q3_worksheet.html#problem-statement",
     "title": "Linear Transformation Properties",
-    "section": "",
-    "text": "Given: Let \\(X = \\{x_i\\}_{i=1}^{n}\\) and define \\(Y = \\{y_i\\}_{i=1}^{n}\\) by \\(y_i = a x_i\\) for some fixed constant \\(a \\neq 0\\).\nProve the following relationships:\n\\[\\sum_{i=1}^{n} y_i = a \\sum_{i=1}^{n} x_i, \\quad \\bar{Y} = a \\bar{X}, \\quad S_Y^2 = a^2 S_X^2\\]"
+    "section": "Problem Statement",
+    "text": "Problem Statement\n\nGiven: Let \\(X = \\{x_i\\}_{i=1}^{n}\\) and define \\(Y = \\{y_i\\}_{i=1}^{n}\\) by \\(y_i = a x_i\\) for some fixed constant \\(a \\neq 0\\).\nProve the following relationships:\n\\[\\sum_{i=1}^{n} y_i = a \\sum_{i=1}^{n} x_i, \\quad \\bar{Y} = a \\bar{X}, \\quad S_Y^2 = a^2 S_X^2\\]"
   },
   {
     "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#understanding-the-notation",
     "href": "files/lecture_notes/lecture3/q3_worksheet.html#understanding-the-notation",
     "title": "Linear Transformation Properties",
     "section": "Understanding the Notation",
-    "text": "Understanding the Notation\n\nSet Notation\n\n\\(X = \\{x_i\\}_{i=1}^{n}\\) means:\n\n\\(X\\) is a dataset containing \\(n\\) observations\nThe observations are labeled \\(x_1, x_2, x_3, \\ldots, x_n\\)\n\\(i\\) is an index that runs from 1 to \\(n\\)\nThis is read as: “X is the set of \\(x_i\\) for \\(i\\) from 1 to \\(n\\)”\n\n\n\n\nExamples:\n\nIf \\(n = 5\\): \\(X = \\{x_1, x_2, x_3, x_4, x_5\\}\\)\nIf \\(X = \\{2, 4, 6, 8, 10\\}\\), then \\(x_1 = 2, x_2 = 4, x_3 = 6, x_4 = 8, x_5 = 10\\)"
+    "text": "Understanding the Notation\nSet Notation\n\n\\(X = \\{x_i\\}_{i=1}^{n}\\) means:\n\n\\(X\\) is a dataset containing \\(n\\) observations\nThe observations are labeled \\(x_1, x_2, x_3, \\ldots, x_n\\)\n\\(i\\) is an index that runs from 1 to \\(n\\)\nThis is read as: “X is the set of \\(x_i\\) for \\(i\\) from 1 to \\(n\\)”\n\n\nExamples:\n\nIf \\(n = 5\\): \\(X = \\{x_1, x_2, x_3, x_4, x_5\\}\\)\nIf \\(X = \\{2, 4, 6, 8, 10\\}\\), then \\(x_1 = 2, x_2 = 4, x_3 = 6, x_4 = 8, x_5 = 10\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#summation-notation",
     "href": "files/lecture_notes/lecture3/q3_worksheet.html#summation-notation",
     "title": "Linear Transformation Properties",
     "section": "Summation Notation",
-    "text": "Summation Notation\n\n\\(\\sum_{i=1}^{n} x_i\\) means:\n\nAdd up all the \\(x_i\\) values\nStart with \\(i = 1\\) and go up to \\(i = n\\)\nThis equals: \\(x_1 + x_2 + x_3 + \\cdots + x_n\\)\n\n\n\nExample:\nIf \\(X = \\{2, 4, 6, 8, 10\\}\\), then: \\[\\sum_{i=1}^{5} x_i = x_1 + x_2 + x_3 + x_4 + x_5 = 2 + 4 + 6 + 8 + 10 = 30\\]"
+    "text": "Summation Notation\n\n\\(\\sum_{i=1}^{n} x_i\\) means:\n\nAdd up all the \\(x_i\\) values\nStart with \\(i = 1\\) and go up to \\(i = n\\)\nThis equals: \\(x_1 + x_2 + x_3 + \\cdots + x_n\\)\n\n\nExample:\nIf \\(X = \\{2, 4, 6, 8, 10\\}\\), then: \\[\\sum_{i=1}^{5} x_i = x_1 + x_2 + x_3 + x_4 + x_5 = 2 + 4 + 6 + 8 + 10 = 30\\]"
   },
   {
     "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#linear-transformation",
     "href": "files/lecture_notes/lecture3/q3_worksheet.html#linear-transformation",
     "title": "Linear Transformation Properties",
     "section": "Linear Transformation",
-    "text": "Linear Transformation\n\n\\(Y = \\{y_i\\}_{i=1}^{n}\\) where \\(y_i = a x_i\\) means:\n\nEach element of \\(Y\\) is obtained by multiplying the corresponding element of \\(X\\) by the constant \\(a\\)\nThis is called a linear transformation\n\\(a\\) is called the scaling factor\n\n\n\nExample:\nIf \\(X = \\{2, 4, 6, 8, 10\\}\\) and \\(a = 3\\), then:\n\n\\(y_1 = 3 \\times 2 = 6\\)\n\\(y_2 = 3 \\times 4 = 12\\)\n\\(y_3 = 3 \\times 6 = 18\\)\n\\(y_4 = 3 \\times 8 = 24\\)\n\\(y_5 = 3 \\times 10 = 30\\)\n\nSo \\(Y = \\{6, 12, 18, 24, 30\\}\\)"
+    "text": "Linear Transformation\n\n\\(Y = \\{y_i\\}_{i=1}^{n}\\) where \\(y_i = a x_i\\) means:\n\nEach element of \\(Y\\) is obtained by multiplying the corresponding element of \\(X\\) by the constant \\(a\\)\nThis is called a linear transformation\n\\(a\\) is called the scaling factor\n\n\nExample:\nIf \\(X = \\{2, 4, 6, 8, 10\\}\\) and \\(a = 3\\), then:\n\n\\(y_1 = 3 \\times 2 = 6\\)\n\\(y_2 = 3 \\times 4 = 12\\)\n\\(y_3 = 3 \\times 6 = 18\\)\n\\(y_4 = 3 \\times 8 = 24\\)\n\\(y_5 = 3 \\times 10 = 30\\)\n\nSo \\(Y = \\{6, 12, 18, 24, 30\\}\\)"
   },
   {
     "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#sample-mean-notation",
     "href": "files/lecture_notes/lecture3/q3_worksheet.html#sample-mean-notation",
     "title": "Linear Transformation Properties",
     "section": "Sample Mean Notation",
-    "text": "Sample Mean Notation\n\nSample Mean: \\(\\bar{X} = \\frac{1}{n} \\sum_{i=1}^{n} x_i\\)\nThis means:\n\nAdd up all observations: \\(\\sum_{i=1}^{n} x_i\\)\nDivide by the number of observations: \\(n\\)\nThe “bar” over \\(X\\) indicates the mean\n\n\n\nExample:\nFor \\(X = \\{2, 4, 6, 8, 10\\}\\): \\[\\bar{X} = \\frac{1}{5}(2 + 4 + 6 + 8 + 10) = \\frac{30}{5} = 6\\]"
+    "text": "Sample Mean Notation\n\nSample Mean: \\(\\bar{X} = \\frac{1}{n} \\sum_{i=1}^{n} x_i\\)\nThis means:\n\nAdd up all observations: \\(\\sum_{i=1}^{n} x_i\\)\nDivide by the number of observations: \\(n\\)\nThe “bar” over \\(X\\) indicates the mean\n\n\nExample:\nFor \\(X = \\{2, 4, 6, 8, 10\\}\\): \\[\\bar{X} = \\frac{1}{5}(2 + 4 + 6 + 8 + 10) = \\frac{30}{5} = 6\\]"
   },
   {
     "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#sample-variance-notation",
@@ -2223,7 +2223,7 @@
     "href": "files/lecture_notes/lecture3/q3_worksheet.html#practice-problem",
     "title": "Linear Transformation Properties",
     "section": "Practice Problem",
-    "text": "Practice Problem\n\nTry This: A dataset has mean \\(\\bar{X} = 15\\) and variance \\(S_X^2 = 9\\).\nIf we transform the data using \\(y_i = 3x_i - 2\\), what are the new mean and variance?\n\n\n\n\n\n\nTip\n\n\n\nHint: This is not a pure linear transformation! You need \\(y_i = 3x_i - 2 = 3(x_i - \\frac{2}{3})\\)\n\n\n\nAnswer:\n\nNew mean: \\(\\bar{Y} = 3(15) - 2 = 43\\)\nNew variance: \\(S_Y^2 = 3^2 \\times 9 = 81\\)\n(The constant \\(-2\\) doesn’t affect variance!)"
+    "text": "Practice Problem\n\nTry This: A dataset has mean \\(\\bar{X} = 15\\) and variance \\(S_X^2 = 9\\).\nIf we transform the data using \\(y_i = 3x_i - 2\\), what are the new mean and variance?\n\n\n\n\n\n\nTip\n\n\nHint: This is not a pure linear transformation! You need \\(y_i = 3x_i - 2 = 3(x_i - \\frac{2}{3})\\)\n\n\n\n\nAnswer:\n\nNew mean: \\(\\bar{Y} = 3(15) - 2 = 43\\)\nNew variance: \\(S_Y^2 = 3^2 \\times 9 = 81\\)\n(The constant \\(-2\\) doesn’t affect variance!)"
   },
   {
     "objectID": "files/lecture_notes/lecture3/q3_worksheet.html#common-mistakes-to-avoid",
@@ -3631,5 +3631,173 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Quick Navigation",
     "text": "Quick Navigation\n\nEverything you need for the course, organized and accessible"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1_sln.html#task-1-solution",
+    "href": "files/labs/lab1/lab1_sln.html#task-1-solution",
+    "title": "PSTAT 5A Lab 1 - SOLUTIONS",
+    "section": "Task 1 Solution",
+    "text": "Task 1 Solution\n\nObjective: Rename your notebook from Untitled to Lab1\nSteps:\n\nLocated the notebook in the file browser (appears as Untitled.ipynb)\nRight-clicked on the notebook name\nSelected “Rename” from the context menu\nChanged the name to Lab1\nPressed Enter to confirm\nVerified the title bar now shows Lab1.ipynb\n\nExpected Result:\nYour notebook should now be named Lab1.ipynb and this should be visible in both the file browser and the title bar."
+  },
+  {
+    "objectID": "files/labs/lab1/lab1_sln.html#task-2-solution",
+    "href": "files/labs/lab1/lab1_sln.html#task-2-solution",
+    "title": "PSTAT 5A Lab 1 - SOLUTIONS",
+    "section": "Task 2 Solution",
+    "text": "Task 2 Solution\n\nObjective: Create a Markdown cell with heading and a Code cell with basic arithmetic\nMarkdown Cell:\n# Task 2\nCode Cell:\n\n2 + 2\n\n4\n\n\nExpected Result:\n\nThe code cell executes the arithmetic operation\nPython displays the result 4 below the cell\nA new empty code cell automatically appears below\nThe cell is marked as executed with a number like [1]"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1_sln.html#task-3-solution",
+    "href": "files/labs/lab1/lab1_sln.html#task-3-solution",
+    "title": "PSTAT 5A Lab 1 - SOLUTIONS",
+    "section": "Task 3 Solution",
+    "text": "Task 3 Solution\n\nObjective: Demonstrate syntax error and understand error messages\nMarkdown Cell:\n# Task 3\nCode Cell with Intentional Error:\n\n2 plus 2\n\nExpected Error Output:\n  Cell In[2], line 1\n    2 plus 2\n      ^^^^\nSyntaxError: invalid syntax\nExplanation:\n\nPython doesn’t understand plus as an operator\nThe ^^^^ points to where Python detected the problem\nThe error message tells us it’s a SyntaxError meaning invalid Python syntax\nIn Python, we must use + for addition, not the word plus\n\nCorrected Version:\n\n2 + 2  # This works correctly\n\n4"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1_sln.html#task-4-solution",
+    "href": "files/labs/lab1/lab1_sln.html#task-4-solution",
+    "title": "PSTAT 5A Lab 1 - SOLUTIONS",
+    "section": "Task 4 Solution",
+    "text": "Task 4 Solution\n\nObjective: Compute mathematical expressions using Python**\nProblem 1: \\(\\frac{2 + 3}{4 + 5^6}\\)\nPython Code:\n\n(2 + 3) / (4 + 5**6)\n\n0.0003199181009661527\n\n\nStep by Step:\n\nnumerator = 2 + 3\nprint(f\"Numerator: {numerator}\")\n\ndenominator = 4 + 5**6\nprint(f\"Denominator: {denominator}\")\n\nresult = numerator / denominator\nprint(f\"Final result: {result}\")\n\nNumerator: 5\nDenominator: 15629\nFinal result: 0.0003199181009661527\n\n\nProblem 2: \\((1 - 3 \\cdot 4^5)^6\\)\nPython Code:\n\n(1 - 3 * 4**5)**6\n\n838839550121163601921\n\n\nStep by Step:\n\ninner_exponent = 4**5\nprint(f\"4^5 = {inner_exponent}\")\n\nmultiplication = 3 * inner_exponent\nprint(f\"3 * 4^5 = {multiplication}\")\n\nsubtraction = 1 - multiplication\nprint(f\"1 - 3 * 4^5 = {subtraction}\")\n\nfinal_result = subtraction**6\nprint(f\"(1 - 3 * 4^5)^6 = {final_result}\")\n\n4^5 = 1024\n3 * 4^5 = 3072\n1 - 3 * 4^5 = -3071\n(1 - 3 * 4^5)^6 = 838839550121163601921"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1_sln.html#task-5-solution",
+    "href": "files/labs/lab1/lab1_sln.html#task-5-solution",
+    "title": "PSTAT 5A Lab 1 - SOLUTIONS",
+    "section": "Task 5 Solution",
+    "text": "Task 5 Solution\n\nObjective: Understand module importing and fix NameError\nStep 1: Code that produces error\n\nsin(1)\n\nExpected Error:\nNameError: name 'sin' is not defined\nExplanation: Python doesn’t recognize sin because the math functions aren’t loaded by default.\nStep 2: Import module and retry\n\nfrom math import *\nsin(1)\n\n0.8414709848078965\n\n\nAlternative Solutions:\n\n# Method 1: Import specific function\nfrom math import sin\nprint(sin(1))\n\n# Method 2: Import entire module\nimport math\nprint(math.sin(1))\n\n# Method 3: Import with alias\nimport math as m\nprint(m.sin(1))\n\n0.8414709848078965\n0.8414709848078965\n0.8414709848078965\n\n\nAll produce the same result: 0.8414709848078965"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1_sln.html#task-6-solution",
+    "href": "files/labs/lab1/lab1_sln.html#task-6-solution",
+    "title": "PSTAT 5A Lab 1 - SOLUTIONS",
+    "section": "Task 6 Solution",
+    "text": "Task 6 Solution\n\nObjective: Understand Python case sensitivity\nStep 1: Variable assignment\n\nmy_variable = 5\n\nStep 2: Wrong capitalization\n\nprint(My_variable)\n\nExpected Error:\nNameError: name 'My_variable' is not defined\nExplanation: Python is case-sensitive, so My_variable ≠ my_variable\nStep 3: Correct capitalization\n\nprint(my_variable)\n\n5\n\n\nAdditional Examples:\n\n# These are all different variables in Python\nmy_variable = 5\nMy_variable = 10\nMY_VARIABLE = 15\nmy_Variable = 20\n\nprint(f\"my_variable = {my_variable}\")\nprint(f\"My_variable = {My_variable}\")\nprint(f\"MY_VARIABLE = {MY_VARIABLE}\")\nprint(f\"my_Variable = {my_Variable}\")\n\nmy_variable = 5\nMy_variable = 10\nMY_VARIABLE = 15\nmy_Variable = 20"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1_sln.html#task-7-solution",
+    "href": "files/labs/lab1/lab1_sln.html#task-7-solution",
+    "title": "PSTAT 5A Lab 1 - SOLUTIONS",
+    "section": "Task 7 Solution",
+    "text": "Task 7 Solution\n\nObjective: Add descriptive comments to previous code\nExamples of well-commented code from previous tasks:\n\n# Task 2: Basic arithmetic\n2 + 2  # Adding two integers\n\n# Task 4: Complex mathematical expression\n# Calculate (2 + 3) / (4 + 5^6)\nnumerator = 2 + 3  # Sum of 2 and 3\ndenominator = 4 + 5**6  # 4 plus 5 to the 6th power\nresult = numerator / denominator  # Final division\nprint(f\"Result: {result}\")\n\n# Task 5: Import math module and use sin function\nfrom math import *  # Import all math functions\nangle_in_radians = 1  # Input angle in radians\nsine_value = sin(angle_in_radians)  # Calculate sine\nprint(f\"sin(1) = {sine_value}\")\n\n# Task 6: Variable assignment with proper naming\nmy_variable = 5  # Store the value 5 in my_variable\nprint(my_variable)  # Display the value\n\n\"\"\"\nThis is a multi-line comment.\nIt can span multiple lines and is useful\nfor longer explanations or documentation.\n\"\"\"\n\nGood commenting practices demonstrated:\n\nExplain what the code does\nClarify complex calculations\nDocument variable purposes\nUse both inline (#) and block (\"\"\") comments"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1_sln.html#task-8-solution",
+    "href": "files/labs/lab1/lab1_sln.html#task-8-solution",
+    "title": "PSTAT 5A Lab 1 - SOLUTIONS",
+    "section": "Task 8 Solution",
+    "text": "Task 8 Solution\n\nObjective: Explore Python data types using the type() function\nCode and Expected Outputs:\n\nprint(type(1))           # Output: &lt;class 'int'&gt;\nprint(type(1.1))         # Output: &lt;class 'float'&gt;\nprint(type(\"hello\"))     # Output: &lt;class 'str'&gt;\n\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'str'&gt;\n\n\nAdditional Examples:\n\n# More data type examples\nprint(\"Integer:\", type(42))\nprint(\"Float:\", type(3.14159))\nprint(\"String with single quotes:\", type('Python'))\nprint(\"String with double quotes:\", type(\"Programming\"))\nprint(\"Boolean True:\", type(True))\nprint(\"Boolean False:\", type(False))\nprint(\"List:\", type([1, 2, 3]))\nprint(\"Tuple:\", type((1, 2, 3)))\nprint(\"Dictionary:\", type({\"key\": \"value\"}))\n\nInteger: &lt;class 'int'&gt;\nFloat: &lt;class 'float'&gt;\nString with single quotes: &lt;class 'str'&gt;\nString with double quotes: &lt;class 'str'&gt;\nBoolean True: &lt;class 'bool'&gt;\nBoolean False: &lt;class 'bool'&gt;\nList: &lt;class 'list'&gt;\nTuple: &lt;class 'tuple'&gt;\nDictionary: &lt;class 'dict'&gt;"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1_sln.html#task-9-solution",
+    "href": "files/labs/lab1/lab1_sln.html#task-9-solution",
+    "title": "PSTAT 5A Lab 1 - SOLUTIONS",
+    "section": "Task 9 Solution",
+    "text": "Task 9 Solution\n\nObjective: Practice variable assignment, updating, and calculations\nMarkdown cell:\n# Task 9\nStep 2: Initial variable assignments\n\ncourse = \"PSTAT 5A\"\nnum_sections = 4\nsection_capacity = 25\n\nStep 3: Update num_sections (correct approach)\n\nnum_sections = num_sections + 1\nprint(f\"Updated number of sections: {num_sections}\")\n# Alternative: num_sections += 1\n# Alternative: num_sections = 4 + 1\n\nUpdated number of sections: 5\n\n\nStep 4: Predict and test expressions\n\nprint(type(course))           # Expected: &lt;class 'str'&gt;\nprint(type(num_sections))     # Expected: &lt;class 'int'&gt;\nprint(num_sections * section_capacity) # Expected: 125\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n125\n\n\nStep 5: Calculate course capacity\n\ncourse_capacity = num_sections * section_capacity\nprint(f\"Course: {course}\")\nprint(f\"Number of sections: {num_sections}\")\nprint(f\"Capacity per section: {section_capacity}\")\nprint(f\"Total course capacity: {course_capacity}\")\n\nCourse: PSTAT 5A\nNumber of sections: 5\nCapacity per section: 25\nTotal course capacity: 125\n\n\nComplete Solution with Comments:\n\n# Step 2: Initial variable assignments\ncourse = \"PSTAT 5A\"          # Course name as string\nnum_sections = 4             # Initial number of sections\nsection_capacity = 25        # Maximum students per section\n\n# Step 3: A new section has been added\nnum_sections = num_sections + 1  # Increment by 1, now equals 5\n\n# Step 4: Testing expressions with predictions\nprint(\"Testing type() function:\")\nprint(f\"type(course) = {type(course)}\")  # Expected: &lt;class 'str'&gt;\nprint(f\"type(num_sections) = {type(num_sections)}\")  # Expected: &lt;class 'int'&gt;\nprint(f\"num_sections * section_capacity = {num_sections * section_capacity}\")  # Expected: 125\n\n# Step 5: Calculate total course capacity\ncourse_capacity = num_sections * section_capacity  # 5 × 25 = 125\nprint(f\"\\nFinal Results:\")\nprint(f\"Course: {course}\")\nprint(f\"Total sections: {num_sections}\")\nprint(f\"Capacity per section: {section_capacity}\")\nprint(f\"Total course capacity: {course_capacity} students\")\n\nTesting type() function:\ntype(course) = &lt;class 'str'&gt;\ntype(num_sections) = &lt;class 'int'&gt;\nnum_sections * section_capacity = 125\n\nFinal Results:\nCourse: PSTAT 5A\nTotal sections: 5\nCapacity per section: 25\nTotal course capacity: 125 students"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1_sln.html#summary-of-key-concepts-learned",
+    "href": "files/labs/lab1/lab1_sln.html#summary-of-key-concepts-learned",
+    "title": "PSTAT 5A Lab 1 - SOLUTIONS",
+    "section": "Summary of Key Concepts Learned",
+    "text": "Summary of Key Concepts Learned\n✅ JupyterHub Environment\n\nCreating and renaming notebooks\nUnderstanding cell types (Code vs Markdown)\nRunning cells with ▶️ button or Shift+Enter\nNavigating the interface\n\n✅ Python Basics\n\nArithmetic operations: +, -, *, /, **\nOrder of operations: Parentheses, Exponents, Multiplication/Division, Addition/Subtraction\nError reading: Understanding SyntaxError and NameError messages\n\n✅ Variables and Data Types\n\nVariable assignment: variable_name = value\nCase sensitivity: my_var ≠ My_var\nBasic types: int, float, str, bool\nType checking: type() function\n\n✅ Modules and Imports\n\nImport syntax: from module import * or import module\nUsing functions: After importing, functions become available\nMath module: Contains mathematical functions like sin(), cos(), etc.\n\n✅ Comments and Documentation\n\nInline comments: # This is a comment\nBlock comments: \"\"\"Multi-line comment\"\"\"\nPurpose: Document code for yourself and others\n\n✅ Programming Best Practices\n\nWrite descriptive variable names\nAdd comments to explain complex logic\nTest your code incrementally\nRead and understand error messages\nUse existing variables in calculations when possible"
+  },
+  {
+    "objectID": "files/labs/lab1/lab1_sln.html#next-steps",
+    "href": "files/labs/lab1/lab1_sln.html#next-steps",
+    "title": "PSTAT 5A Lab 1 - SOLUTIONS",
+    "section": "Next Steps",
+    "text": "Next Steps\nIn Lab 2, you’ll learn about:\n\nPython functions and how to create them\nData structures (lists, dictionaries)\nControl flow (if statements, loops)\nMore advanced programming concepts\n\nGreat work completing Lab 1! You now have the foundation needed for statistical programming in Python."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Get in Touch\n\nWe’re here to help you succeed in PSTAT 5A\n\n\n\n\n\n\nNM\n\n\nCourse Instructor\n\n\nNarjes Mathlouthi\n\n\n\n\n📧\n\n\nnmathlouthi@ucsb.edu\n\n\n\n\n🏢\n\n\nEllison Hall 5829\n\n\n\n\n🕐\n\n\nThursdays 11:00 AM–12:00 PM\n\n\n\n\n💻\n\n\nVia Zoom or by appointment\n\n\n\n\n\n\nSL\n\n\nTeaching Assistant\n\n\nSummer Le\n\n\n\n\n📧\n\n\nsle@ucsb.edu\n\n\n\n\n🕐\n\n\nFriday 1:00 PM – 2:00 PM\n\n\n\n\n💻\n\n\nVia Zoom (links on Canvas)\n\n\n\n\n\n\n\nMH\n\n\nTeaching Assistant\n\n\nMingzhu He\n\n\n\n\n📧\n\n\nmingzhuhe@ucsb.edu\n\n\n\n\n🕐\n\n\nTuesday 11:00 AM – 12:00 PM\n\n\n\n\n💻\n\n\nVia Zoom (links on Canvas)\n\n\n\n\n\n\n\nInstructor Office Hours\n\n\nThursdays 11:00 AM – 12:00 PM\n\n\nAvailable via Zoom or by appointment  Zoom links posted on Canvas\n\n\n\n\n\nCommunication Guidelines\n\n\n\n1\n\n\nSubject Line: Always include [PSTAT 5A] in your email subject for faster response\n\n\n\n\n2\n\n\nResponse Time: Allow 24–48 hours for replies (avoid sending on weekends)\n\n\n\n\n3\n\n\nUse UCSB Email: Always email from your UCSB account for verification\n\n\n\n\n4\n\n\nOffice Hours: Use office hours for complex questions or detailed help\n\n\n\n\n5\n\n\nUrgent Matters: For time-sensitive issues, mention “URGENT” in the subject line\n\n\n\n\n\n\nEmergency Contacts\n\n\nFor campus emergencies: 911 • For student crisis support: CAPS 24/7 line (805) 893-4411"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-1-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-1-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 1 Solutions",
+    "text": "Task 1 Solutions\n\nTask 1 Solutions:\n\nImport the numpy module as np, and check that np.sin(0) returns a value of 0.\nImport the datascience module as ds, and check the table creation works correctly.\n\n\n\n# Solution to Task 1\n\n# Part 1: Import numpy and test sin function\nimport numpy as np\nprint(\"np.sin(0) =\", np.sin(0))\n\n# Part 2: Import datascience and test table creation\nimport datascience as ds\n\ntable_result = ds.Table().with_columns(\n    \"Col1\", [1, 2, 3],\n    \"Col2\", [2, 3, 4]\n)\nprint(table_result)\n\nnp.sin(0) = 0.0\nCol1 | Col2\n1    | 2\n2    | 3\n3    | 4"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-2-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-2-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 2 Solutions",
+    "text": "Task 2 Solutions\n\nTask 2 Solutions: Create x_list and x_array containing elements 1, 2, and 3, then compute mean and median.\n\n\n# Solution to Task 2\n\n# Create x_list as a regular Python list\nx_list = [1, 2, 3]\n\n# Create x_array as a numpy array\nx_array = np.array([1, 2, 3])\n\n# Compute mean and median for x_list\nprint(\"x_list mean:\", np.mean(x_list))\nprint(\"x_list median:\", np.median(x_list))\n\n# Compute mean and median for x_array\nprint(\"x_array mean:\", np.mean(x_array))\nprint(\"x_array median:\", np.median(x_array))\n\n# Verify they give the same results\nprint(\"\\nBoth give the same results!\")\n\nx_list mean: 2.0\nx_list median: 2.0\nx_array mean: 2.0\nx_array median: 2.0\n\nBoth give the same results!"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-3-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-3-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 3 Solutions",
+    "text": "Task 3 Solutions\n\nTask 3 Solutions: Look up np.ptp() function and apply it to the data.\n\nAnswer: The np.ptp() function computes the range of values (maximum - minimum) along an axis. PTP stands for “Peak To Peak” - the difference between the maximum peak and minimum peak values.\n\n# Solution to Task 3\n\n# Apply np.ptp() to x_list and x_array from Task 2\nprint(\"Range of x_list using np.ptp():\", np.ptp(x_list))\nprint(\"Range of x_array using np.ptp():\", np.ptp(x_array))\n\n# Manual verification: max - min\nprint(\"Manual calculation: max - min =\", max(x_list) - min(x_list))\n\n# Both should give the same result: 3 - 1 = 2\n\nRange of x_list using np.ptp(): 2\nRange of x_array using np.ptp(): 2\nManual calculation: max - min = 2"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-4-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-4-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 4 Solutions",
+    "text": "Task 4 Solutions\n\nTask 4 Solutions: Compute standard deviation by hand and compare with np.std() function.\n\n\n# Solution to Task 4\n\nx_list = [1, 2, 3]  # From Task 2\n\n# Part (a): Calculate sample standard deviation by hand (using n-1)\n# Mean = (1 + 2 + 3) / 3 = 2\nmean_x = 2\n\n# Sample variance = [(1-2)² + (2-2)² + (3-2)²] / (3-1)\n# = [1 + 0 + 1] / 2 = 2/2 = 1\nsample_variance = ((1-2)**2 + (2-2)**2 + (3-2)**2) / (3-1)\nsample_std = np.sqrt(sample_variance)\n\nprint(\"Sample standard deviation (by hand):\", sample_std)\nprint(\"Sample standard deviation (by hand):\", np.sqrt(1))  # Should be 1.0\n\n# Part (b): Compare with np.std(x_list)\nprint(\"np.std(x_list) default:\", np.std(x_list))\nprint(\"Does this match part (a)?\", np.isclose(sample_std, np.std(x_list)))\n\n# Part (c): Calculate population standard deviation by hand (using n)\n# Population variance = [(1-2)² + (2-2)² + (3-2)²] / 3\n# = [1 + 0 + 1] / 3 = 2/3\npopulation_variance = ((1-2)**2 + (2-2)**2 + (3-2)**2) / 3\npopulation_std = np.sqrt(population_variance)\n\nprint(\"Population standard deviation (by hand):\", population_std)\nprint(\"This matches np.std(x_list):\", np.isclose(population_std, np.std(x_list)))\n\n# Part (d): Use ddof=1 to get sample standard deviation\nprint(\"np.std(x_list, ddof=1):\", np.std(x_list, ddof=1))\nprint(\"This matches part (a):\", np.isclose(sample_std, np.std(x_list, ddof=1)))\n\nSample standard deviation (by hand): 1.0\nSample standard deviation (by hand): 1.0\nnp.std(x_list) default: 0.816496580928\nDoes this match part (a)? False\nPopulation standard deviation (by hand): 0.816496580928\nThis matches np.std(x_list): True\nnp.std(x_list, ddof=1): 1.0\nThis matches part (a): True"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#optional-task-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#optional-task-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Optional Task Solutions",
+    "text": "Optional Task Solutions\n\nOptional Task Solutions: Create a custom IQR function.\n\n\n# Solution to Optional Task\n\ndef calculate_iqr(data):\n    \"\"\"\n    Calculate the Interquartile Range (IQR) of a dataset.\n    \n    Parameter:\n    data - a list or array of numbers\n    \n    Returns:\n    The IQR value (Q3 - Q1)\n    \"\"\"\n    # Calculate the IQR using the numpy method we learned\n    iqr_value = np.diff(np.percentile(data, [25, 75]))[0]\n    return iqr_value\n\n# Test the function\ntest_scores = [72, 85, 90, 78, 92, 88, 76, 94, 82, 89, 91, 77]\n\n# Use our custom function\nmy_iqr = calculate_iqr(test_scores)\nprint(f\"IQR using our function: {my_iqr}\")\n\n# Compare with the direct method\ndirect_iqr = np.diff(np.percentile(test_scores, [25, 75]))[0]\nprint(f\"IQR using direct method: {direct_iqr}\")\n\n# They should be the same!\nprint(f\"Results match: {np.isclose(my_iqr, direct_iqr)}\")\n\nIQR using our function: 12.5\nIQR using direct method: 12.5\nResults match: True"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-5-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-5-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 5 Solutions",
+    "text": "Task 5 Solutions\n\nTask 5 Solutions: Create boxplots with various customizations.\n\n\n# Solution to Task 5\n\n# Import matplotlib for plotting\nimport matplotlib.pyplot as plt\n%matplotlib inline\nplt.style.use('seaborn-v0_8-whitegrid')\n\n# Step 1: Create the list y\ny = [1, 2, 3, 4, 5, 4, 3, 5, 4, 1, 2]\n\n# Step 2: Create basic vertical boxplot\nplt.figure(figsize=(8, 6))\nplt.subplot(2, 2, 1)\nplt.boxplot(y)\nplt.title(\"Basic Vertical Boxplot\")\n\n# Step 3: Create horizontal boxplot\nplt.subplot(2, 2, 2)\nplt.boxplot(y, orientation='horizontal')\nplt.title(\"Horizontal Boxplot\")\n\n# Step 4: Add color\nplt.subplot(2, 2, 3)\nplt.boxplot(y, orientation='horizontal', patch_artist=True, \n            boxprops=dict(facecolor=\"aquamarine\"))\nplt.title(\"Colored Horizontal Boxplot\")\n\n# Step 5: Final version with title\nplt.subplot(2, 2, 4)\nplt.boxplot(y, orientation='horizontal', patch_artist=True, \n            boxprops=dict(facecolor=\"aquamarine\"))\nplt.title(\"My First Python Boxplot\")\n\nplt.tight_layout()\nplt.show()\n\n# Answer the IQR question\nprint(\"\\nBased on the boxplot:\")\nprint(\"Q1 (25th percentile) appears to be around 2\")\nprint(\"Q3 (75th percentile) appears to be around 4.5\")\nprint(\"So IQR ≈ 4.5 - 2 = 2.5\")\n\n# Verify with Python calculation\niqr_calculated = np.diff(np.percentile(y, [25, 75]))[0]\nprint(f\"\\nActual IQR calculated by Python: {iqr_calculated}\")\n\n\n\n\n\n\n\n\n\nBased on the boxplot:\nQ1 (25th percentile) appears to be around 2\nQ3 (75th percentile) appears to be around 4.5\nSo IQR ≈ 4.5 - 2 = 2.5\n\nActual IQR calculated by Python: 2.0"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-6-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-6-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 6 Solutions",
+    "text": "Task 6 Solutions\n\nTask 6 Solutions: Create a histogram with appropriate bins and labels.\n\n\n# Solution to Task 6\n\ny = [1, 2, 3, 4, 5, 4, 3, 5, 4, 1, 2]  # From Task 5\n\n# Create histogram with appropriate bins\nplt.figure(figsize=(10, 6))\n\n# Method 1: Using explicit bin edges\nplt.subplot(1, 2, 1)\nplt.hist(y, bins=[0.5, 1.5, 2.5, 3.5, 4.5, 5.5], rwidth=0.9, edgecolor='black')\nplt.xlabel('Values')\nplt.ylabel('Frequency')\nplt.title('Histogram of y values (Method 1)')\n\n# Method 2: Using range and bins parameters\nplt.subplot(1, 2, 2)\nplt.hist(y, bins=5, range=(0.5, 5.5), rwidth=0.9, edgecolor='black')\nplt.xlabel('Values')\nplt.ylabel('Frequency')\nplt.title('Histogram of y values (Method 2)')\n\nplt.tight_layout()\nplt.show()\n\n# Show frequency count for verification\nunique, counts = np.unique(y, return_counts=True)\nprint(\"Value frequencies:\")\nfor value, count in zip(unique, counts):\n    print(f\"Value {value}: appears {count} times\")\n\n\n\n\n\n\n\n\nValue frequencies:\nValue 1: appears 2 times\nValue 2: appears 2 times\nValue 3: appears 2 times\nValue 4: appears 3 times\nValue 5: appears 2 times"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-7-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-7-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 7 Solutions",
+    "text": "Task 7 Solutions\n\nTask 7 Solutions: Create a scatterplot with proper labels.\n\n\n# Solution to Task 7\n\n# Part 1: Copy and run the provided code\nnp.random.seed(5)\n\nx1 = np.random.normal(0, 1, 100)\nx2 = x1 + np.random.normal(0, 1, 100)\n\nplt.figure(figsize=(8, 6))\nplt.scatter(x1, x2)\n\n# Part 2: Add labels and title\nplt.xlabel('x1')\nplt.ylabel('x2')\nplt.title('My First Python Scatterplot')\nplt.grid(True, alpha=0.3)\nplt.show()\n\n# Additional information about the plot\nprint(f\"Number of points plotted: {len(x1)}\")\nprint(f\"x1 range: {x1.min():.2f} to {x1.max():.2f}\")\nprint(f\"x2 range: {x2.min():.2f} to {x2.max():.2f}\")\n\n\n\n\n\n\n\n\nNumber of points plotted: 100\nx1 range: -2.86 to 2.43\nx2 range: -4.00 to 4.10"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#task-8-solutions",
+    "href": "files/labs/lab3/lab3_sln.html#task-8-solutions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Task 8 Solutions",
+    "text": "Task 8 Solutions\n\nTask 8 Solutions: Plot the function f(x) = x - x²sin(x) between x = -10 and x = 10.\n\n\n# Solution to Task 8\n\n# Create x values using linspace for a smooth plot\nx = np.linspace(-10, 10, 1000)  # 1000 points for smoothness\n\n# Define the function f(x) = x - x²sin(x)\ny = x - x**2 * np.sin(x)\n\n# Create the plot with red color\nplt.figure(figsize=(12, 8))\nplt.plot(x, y, color='red', linewidth=2)\nplt.xlabel('x')\nplt.ylabel('f(x)')\nplt.title('Plot of f(x) = x - x²sin(x)')\nplt.grid(True, alpha=0.3)  # Add a light grid for better readability\nplt.show()\n\n# Show what happens with fewer points for comparison\nplt.figure(figsize=(12, 4))\n\n# Fewer points - not smooth\nplt.subplot(1, 2, 1)\nx_few = np.linspace(-10, 10, 20)\ny_few = x_few - x_few**2 * np.sin(x_few)\nplt.plot(x_few, y_few, color='blue', linewidth=2, marker='o')\nplt.xlabel('x')\nplt.ylabel('f(x)')\nplt.title('With 20 points (not smooth)')\nplt.grid(True, alpha=0.3)\n\n# Many points - smooth\nplt.subplot(1, 2, 2)\nplt.plot(x, y, color='red', linewidth=2)\nplt.xlabel('x')\nplt.ylabel('f(x)')\nplt.title('With 1000 points (smooth)')\nplt.grid(True, alpha=0.3)\n\nplt.tight_layout()\nplt.show()\n\nprint(\"Notice how more points create a smoother curve!\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotice how more points create a smoother curve!"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#summary-of-key-learning-points",
+    "href": "files/labs/lab3/lab3_sln.html#summary-of-key-learning-points",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Summary of Key Learning Points",
+    "text": "Summary of Key Learning Points\n\nKey Functions Learned:\n\nnp.mean() - Calculate mean\nnp.median() - Calculate median\nnp.std() - Calculate standard deviation (use ddof=1 for sample std)\nnp.ptp() - Calculate range (peak-to-peak)\nnp.percentile() - Calculate percentiles\nnp.diff(np.percentile(data, [25,75]))[0] - Calculate IQR"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#key-plotting-functions",
+    "href": "files/labs/lab3/lab3_sln.html#key-plotting-functions",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Key Plotting Functions:",
+    "text": "Key Plotting Functions:\n\nplt.boxplot() - Create boxplots\nplt.hist() - Create histograms\nplt.scatter() - Create scatterplots\nplt.plot() - Create line plots\nplt.xlabel(), plt.ylabel(), plt.title() - Add labels"
+  },
+  {
+    "objectID": "files/labs/lab3/lab3_sln.html#important-concepts",
+    "href": "files/labs/lab3/lab3_sln.html#important-concepts",
+    "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
+    "section": "Important Concepts:",
+    "text": "Important Concepts:\n\nSample vs Population Standard Deviation: Use ddof=1 for sample statistics\nFunction Parameters: Many plotting functions accept optional parameters for customization\nSmooth Plotting: Use more points in np.linspace() for smoother function plots\nModule Importing: import module as abbreviation saves typing\n\nThis concludes Lab 3 Solutions!"
   }
 ]
