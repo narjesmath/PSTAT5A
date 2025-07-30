@@ -3799,5 +3799,47 @@
     "title": "Lab 3: Descriptive Statistics - SOLUTIONS",
     "section": "Important Concepts:",
     "text": "Important Concepts:\n\nSample vs Population Standard Deviation: Use ddof=1 for sample statistics\nFunction Parameters: Many plotting functions accept optional parameters for customization\nSmooth Plotting: Use more points in np.linspace() for smoother function plots\nModule Importing: import module as abbreviation saves typing\n\nThis concludes Lab 3 Solutions!"
+  },
+  {
+    "objectID": "resources.html#week-1-foundations-of-data-science",
+    "href": "resources.html#week-1-foundations-of-data-science",
+    "title": "Course Resources",
+    "section": "Week 1: Foundations of Data Science",
+    "text": "Week 1: Foundations of Data Science\nGetting Started with Data - Data types, basic statistics, and Python tools"
+  },
+  {
+    "objectID": "resources.html#week-2-introduction-to-probability",
+    "href": "resources.html#week-2-introduction-to-probability",
+    "title": "Course Resources",
+    "section": "Week 2: Introduction to Probability",
+    "text": "Week 2: Introduction to Probability\nUnderstanding Uncertainty - Sample spaces, conditional probability, and Bayes’ theorem"
+  },
+  {
+    "objectID": "resources.html#week-3-conditional-probability-counting-discrete-random-variables",
+    "href": "resources.html#week-3-conditional-probability-counting-discrete-random-variables",
+    "title": "Course Resources",
+    "section": "Week 3: Conditional Probability, Counting & Discrete Random Variables",
+    "text": "Week 3: Conditional Probability, Counting & Discrete Random Variables\nAdvanced Probability & Discrete Distributions"
+  },
+  {
+    "objectID": "resources.html#week-4-continuous-random-variables-intro-to-confidence-intervals",
+    "href": "resources.html#week-4-continuous-random-variables-intro-to-confidence-intervals",
+    "title": "Course Resources",
+    "section": "Week 4: Continuous Random Variables & Intro to Confidence Intervals",
+    "text": "Week 4: Continuous Random Variables & Intro to Confidence Intervals\nFrom Discrete to Continuous: Understanding Density and Intervals"
+  },
+  {
+    "objectID": "resources.html#week-5-statistical-methods-testing",
+    "href": "resources.html#week-5-statistical-methods-testing",
+    "title": "Course Resources",
+    "section": "Week 5: Statistical Methods & Testing",
+    "text": "Week 5: Statistical Methods & Testing\nConfidence Intervals, Hypothesis Testing, and Statistical Inference"
+  },
+  {
+    "objectID": "resources.html#week-6-linear-regression-basics",
+    "href": "resources.html#week-6-linear-regression-basics",
+    "title": "Course Resources",
+    "section": "Week 6: Linear Regression Basics",
+    "text": "Week 6: Linear Regression Basics\nStatistical Modeling and Relationship Analysis"
   }
 ]

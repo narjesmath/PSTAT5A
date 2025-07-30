@@ -3,10 +3,10 @@ title: "Course Resources"
 subtitle: "Your comprehensive guide to learning materials and references"
 format:
   html:
-    toc: true
+    toc: false
     toc-location: left
     theme: cosmo
-    css: /theme/styles.css
+    css: [/theme/styles.css, /theme/resources-tabs.css]
     code-fold: false
     code-tools: false
     smooth-scroll: true
@@ -18,12 +18,7 @@ format:
 execute:
   echo: false
   warning: false
-
 ---
-
-```{=html}
-<script src="/theme/collapsible.js"></script>
-```
 
 ::: {.search-container}
 ::: {.search-icon}
@@ -32,21 +27,35 @@ execute:
 <input type="text" class="search-input" placeholder="Search all resources..." id="searchInput">
 :::
 
-<details class="week-collapsible" open>
-<summary class="week-summary">
-<h3>📊 Week 1: Foundations of Data Science</h3>
-<p class="week-subtitle">Getting Started with Data - Data types, basic statistics, and Python tools</p>
-</summary>
+::: {.resources-container}
 
-<div class="week-content">
-
-<!-- ## Week 1: Foundations of Data Science {.panel-tabset} -->
-
-::: {.week-header}
-## Getting Started with Data
-This week introduces fundamental concepts in data science, including data types, basic statistics, and essential Python tools for data manipulation and analysis.
+<!-- Tab Navigation -->
+::: {.tab-navigation}
+<button class="tab-button active" data-week="1">📊 Week 1<br><small>Data Foundations</small></button>
+<button class="tab-button" data-week="2">🎲 Week 2<br><small>Probability</small></button>
+<button class="tab-button" data-week="3">🃏 Week 3<br><small>Conditional & Counting</small></button>
+<button class="tab-button" data-week="4">📈 Week 4<br><small>Continuous Variables</small></button>
+<button class="tab-button" data-week="5">🎯 Week 5<br><small>Statistical Testing</small></button>
+<button class="tab-button" data-week="6">⚖️ Week 6<br><small>Linear Regression</small></button>
 :::
 
+<!-- Week 1 Content -->
+::: {.tab-content .active data-week="1"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Resources</button>
+<button class="filter-button" data-filter="core">Core Materials</button>
+<button class="filter-button" data-filter="interactive">Interactive Tools</button>
+<button class="filter-button" data-filter="objectives">Learning Goals</button>
+<button class="filter-button" data-filter="additional">Additional</button>
+:::
+
+::: {.week-header}
+## Week 1: Foundations of Data Science
+Getting Started with Data - Data types, basic statistics, and Python tools
+:::
+
+::: {.core-content}
 ### 📚 Core Materials
 
 ::: {.grid-2}
@@ -134,7 +143,9 @@ Access thousands of technology and programming books including Python, statistic
 :::
 :::
 :::
+:::
 
+::: {.interactive-content}
 ### 💻 Interactive Tools & Practice
 
 ::: {.grid-2}
@@ -218,7 +229,9 @@ Comprehensive statistical analysis toolkit covering probability distributions, h
 :::
 :::
 :::
+:::
 
+::: {.objectives-content}
 ### 🎯 Learning Objectives & Study Plan
 
 ::: {.grid-2}
@@ -279,7 +292,9 @@ Study Schedule
 :::
 :::
 :::
+:::
 
+::: {.additional-content}
 ### 🔍 Additional Resources
 
 ::: {.resource-card}
@@ -305,26 +320,27 @@ Extended Learning
 :::
 :::
 :::
-
-
-</div>
-</details>
-
-<details class="week-collapsible">
-<summary class="week-summary">
-<h3>🎲 Week 2: Introduction to Probability</h3>
-<p class="week-subtitle">Understanding Uncertainty - Sample spaces, conditional probability, and Bayes' theorem</p>
-</summary>
-
-<div class="week-content">
-
-<!-- ## Week 2: Introduction to Probability {.panel-tabset} -->
-
-::: {.week-header}
-## Understanding Uncertainty Through Statistics
-This week introduces fundamental concepts in probability theory, including sample spaces, events, conditional probability, independence, and Bayes' theorem. You'll learn to quantify uncertainty and make informed decisions with incomplete information.
 :::
 
+:::
+
+<!-- Week 2 Content -->
+::: {.tab-content data-week="2"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Resources</button>
+<button class="filter-button" data-filter="core">Core Materials</button>
+<button class="filter-button" data-filter="interactive">Interactive Tools</button>
+<button class="filter-button" data-filter="objectives">Learning Goals</button>
+<button class="filter-button" data-filter="additional">Additional</button>
+:::
+
+::: {.week-header}
+## Week 2: Introduction to Probability
+Understanding Uncertainty - Sample spaces, conditional probability, and Bayes' theorem
+:::
+
+::: {.core-content}
 ### 📚 Core Materials
 
 ::: {.grid-2}
@@ -408,7 +424,9 @@ Comprehensive reference sheet covering all major probability formulas including 
 :::
 :::
 :::
+:::
 
+::: {.interactive-content}
 ### 💻 Interactive Tools & Practice
 
 ::: {.grid-2}
@@ -492,7 +510,9 @@ Gallery of statistical visualizations including probability distributions, Venn 
 :::
 :::
 :::
+:::
 
+::: {.objectives-content}
 ### 🎯 Learning Objectives & Study Plan
 
 ::: {.grid-2}
@@ -552,7 +572,9 @@ Study Schedule
 :::
 :::
 :::
+:::
 
+::: {.additional-content}
 ### 🔍 Additional Resources
 
 ::: {.resource-card}
@@ -578,26 +600,27 @@ Extended Learning
 :::
 :::
 :::
-
-</div>
-</details>
-
-
-<details class="week-collapsible" open>
-<summary class="week-summary">
-<h3>🃏 Week 3: Conditional Probability, Counting & Discrete Random Variables</h3>
-<p class="week-subtitle">Getting Started with conditional probability and Bayes' theorem, counting principles (permutations and combinations), and Python tools</p>
-</summary>
-
-<div class="week-content">
-
-<!-- ## Week 3: Conditional Probability, Counting & Discrete Random Variables {.panel-tabset} -->
-
-::: {.week-header}
-## Advanced Probability & Discrete Distributions
-This week deepens your understanding of conditional probability and Bayes' theorem, introduces counting principles (permutations and combinations), and explores discrete random variables including their probability mass functions, expected values, and common distributions.
 :::
 
+:::
+
+<!-- Week 3 Content -->
+::: {.tab-content data-week="3"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Resources</button>
+<button class="filter-button" data-filter="core">Core Materials</button>
+<button class="filter-button" data-filter="interactive">Interactive Tools</button>
+<button class="filter-button" data-filter="objectives">Learning Goals</button>
+<button class="filter-button" data-filter="additional">Additional</button>
+:::
+
+::: {.week-header}
+## Week 3: Conditional Probability, Counting & Discrete Random Variables
+Advanced Probability & Discrete Distributions
+:::
+
+::: {.core-content}
 ### 📚 Core Materials
 
 ::: {.grid-2}
@@ -681,7 +704,9 @@ Interactive exploration of discrete random variables, probability mass functions
 :::
 :::
 :::
+:::
 
+::: {.interactive-content}
 ### 💻 Interactive Tools & Practice
 
 ::: {.grid-2}
@@ -765,7 +790,9 @@ Interactive probability distribution notes and overview for discrete random vari
 :::
 :::
 :::
+:::
 
+::: {.objectives-content}
 ### 🎯 Learning Objectives & Study Plan
 
 ::: {.grid-2}
@@ -827,7 +854,9 @@ Study Schedule
 :::
 :::
 :::
+:::
 
+::: {.additional-content}
 ### 🔍 Additional Resources
 
 ::: {.resource-card}
@@ -840,17 +869,11 @@ Extended Learning
 :::
 
 ::: {.resource-description}
-**Bayes' Theorem Applications:** [Medical Diagnosis Examples](https://www.mathsisfun.com/data/probability-false-positives-negatives.html) 
-• [Spam Filtering Kaggle Python Example](https://web.stanford.edu/class/archive/cs/cs109/cs109.1218/files/student_drive/9.3.pdf)
-• [Spam Filtering](https://www.kaggle.com/code/rashimishra19/spam-filtering-using-bayesian-theorem) • [Legal Evidence](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2016.00877.x)
+**Bayes' Theorem Applications:** [Medical Diagnosis Examples](https://www.mathsisfun.com/data/probability-false-positives-negatives.html) • [Spam Filtering Kaggle Python Example](https://web.stanford.edu/class/archive/cs/cs109/cs109.1218/files/student_drive/9.3.pdf) • [Spam Filtering](https://www.kaggle.com/code/rashimishra19/spam-filtering-using-bayesian-theorem) • [Legal Evidence](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2016.00877.x)
 
 **Combinatorics:** [Art of Problem Solving](https://artofproblemsolving.com/wiki/index.php/Combinatorics) • [Brilliant Combinatorics](https://brilliant.org/wiki/combinatorics/) • [Pascal's Triangle](https://www.mathsisfun.com/pascals-triangle.html)
 
 **Discrete Distributions:** [Wolfram MathWorld](http://mathworld.wolfram.com/DiscreteDistribution.html) • [NIST Engineering Statistics](https://www.itl.nist.gov/div898/handbook/eda/section3/eda366.htm) • [Real-world Examples](https://online.stat.psu.edu/stat414/lesson/12)
-
-**Python Programming:** [NumPy Random Documentation](https://numpy.org/doc/stable/reference/random/index.html) • [Matplotlib Statistical Plots](https://matplotlib.org/stable/gallery/statistics/index.html) • [Jupyter Notebooks Examples](https://github.com/unpingco/Python-for-Probability-Statistics-and-Machine-Learning)
-
-**Advanced Topics:** [Information Theory](https://colah.github.io/posts/2015-09-Visual-Information/) • [Markov Chains](https://setosa.io/ev/markov-chains/) • [Maximum Likelihood Estimation](https://seeing-theory.brown.edu/frequentist-inference/index.html)
 :::
 
 ::: {.resource-meta}
@@ -859,26 +882,27 @@ Extended Learning
 :::
 :::
 :::
-
-</div>
-</details>
-
-<details class="week-collapsible" open>
-<summary class="week-summary">
-<h3>📈 Week 4: Continuous Random Variables & Intro to Confidence Intervals</h3>
-<p class="week-subtitle">This week transitions from discrete to continuous random variables.</p>
-</summary>
-
-
-<div class="week-content">
-
-<!-- ## Week 4: Continuous Random Variables & Intro to Confidence Intervals {.panel-tabset} -->
-
-::: {.week-header}
-## From Discrete to Continuous: Understanding Density and Intervals
-This week transitions from discrete to continuous random variables, introducing probability density functions, common continuous distributions, and the foundations of statistical inference through confidence intervals. You'll learn how the Central Limit Theorem enables us to make probabilistic statements about population parameters.
 :::
 
+:::
+
+<!-- Week 4 Content -->
+::: {.tab-content data-week="4"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Resources</button>
+<button class="filter-button" data-filter="core">Core Materials</button>
+<button class="filter-button" data-filter="interactive">Interactive Tools</button>
+<button class="filter-button" data-filter="objectives">Learning Goals</button>
+<button class="filter-button" data-filter="additional">Additional</button>
+:::
+
+::: {.week-header}
+## Week 4: Continuous Random Variables & Intro to Confidence Intervals
+From Discrete to Continuous: Understanding Density and Intervals
+:::
+
+::: {.core-content}
 ### 📚 Core Materials
 
 ::: {.grid-2}
@@ -964,7 +988,9 @@ Python-focused introduction to continuous distributions including normal, expone
 :::
 :::
 :::
+:::
 
+::: {.interactive-content}
 ### 💻 Interactive Tools & Practice
 
 ::: {.grid-2}
@@ -1048,7 +1074,9 @@ Complete reference for continuous probability distributions in Python including 
 :::
 :::
 :::
+:::
 
+::: {.objectives-content}
 ### 🎯 Learning Objectives & Study Plan
 
 ::: {.grid-2}
@@ -1111,7 +1139,9 @@ Study Schedule
 :::
 :::
 :::
+:::
 
+::: {.additional-content}
 ### 🔍 Additional Resources
 
 ::: {.resource-card}
@@ -1129,12 +1159,6 @@ Extended Learning
 **Central Limit Theorem:** [Khan Academy CLT](https://www.khanacademy.org/math/statistics-probability/sampling-distributions-library/central-limit-theorem/v/central-limit-theorem) • [Interactive CLT Demo](https://onlinestatbook.com/2/sampling_distributions/clt_demo.html) • [Rice University Simulations](https://onlinestatbook.com/2/sampling_distributions/samp_dist_mean.html)
 
 **Confidence Intervals:** [Interpretation Guide](https://www.mathsisfun.com/data/confidence-interval.html) • [Common Misconceptions](https://rpsychologist.com/d3/ci/) • [Sample Size Calculator](https://www.calculator.net/sample-size-calculator.html)
-
-**Python Implementation:** [NumPy Random Normal](https://numpy.org/doc/stable/reference/random/generated/numpy.random.normal.html) • [SciPy Statistical Tests](https://scipy-lectures.org/packages/statistics/index.html) • [Statsmodels Confidence Intervals](https://www.statsmodels.org/dev/generated/statsmodels.regression.linear_model.PredictionResults.conf_int.html)
-
-**Real-world Applications:** [Medical Reference Ranges](https://en.wikipedia.org/wiki/Reference_range) • [Quality Control in Manufacturing](https://asq.org/quality-resources/control-chart) • [Polling and Election Predictions](https://fivethirtyeight.com/features/how-fivethirtyeight-calculates-pollster-ratings/) • [A/B Testing in Tech](https://blog.optimizely.com/2015/01/20/statistics-for-the-internet-age-the-story-behind-optimizelys-new-stats-engine/)
-
-**Advanced Topics:** [Bootstrap Confidence Intervals](https://seeing-theory.brown.edu/frequentist-inference/index.html#section3) • [Non-parametric Methods](https://online.stat.psu.edu/stat415/) • [Bayesian Credible Intervals](https://seeing-theory.brown.edu/bayesian-inference/index.html#section3)
 :::
 
 ::: {.resource-meta}
@@ -1143,65 +1167,622 @@ Extended Learning
 :::
 :::
 :::
+:::
 
-### 📊 Practical Applications & Case Studies
+:::
 
+<!-- Week 5 Content -->
+::: {.tab-content data-week="5"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Resources</button>
+<button class="filter-button" data-filter="core">Core Materials</button>
+<button class="filter-button" data-filter="interactive">Interactive Tools</button>
+<button class="filter-button" data-filter="objectives">Learning Goals</button>
+<button class="filter-button" data-filter="additional">Additional</button>
+:::
+
+::: {.week-header}
+## Week 5: Statistical Methods & Testing
+Confidence Intervals, Hypothesis Testing, and Statistical Inference
+:::
+
+::: {.core-content}
+### 📚 Core Materials
 
 ::: {.grid-2}
 ::: {.resource-card}
 ::: {.resource-type}
-Healthcare Example
+Required Reading
 :::
 
 ::: {.resource-title}
-**Blood Pressure Analysis**
+[**OpenIntro Statistics**, Chapter 5 sections 5.3-5.4](/files/Book/os4_for_screen_reader.pdf){target="_blank"}
 :::
 
 ::: {.resource-description}
-**Working Kaggle Notebooks:**
-- [Blood Pressure Data Analysis](https://www.kaggle.com/code/akhilasp/blood-pressure-data-analysis){target="_blank"} - Complete analysis with descriptive statistics and confidence intervals
-- [Blood Pressure Prediction](https://www.kaggle.com/code/jothamsoboyejo/blood-pressure-prediction){target="_blank"} - Normal distribution modeling
-
-**Concepts Applied:**
-- Normal distribution for blood pressure readings
-- Confidence intervals for population means
-- Statistical inference in medical research
-
-**Datasets:** [Blood Pressure Variability](https://www.kaggle.com/datasets/haritmengar/blood-pressure-variability){target="_blank"} • [Cardiovascular Disease](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset){target="_blank"}
+Comprehensive coverage of confidence intervals for means and proportions, including t-distribution applications when population standard deviation is unknown.
 :::
 
 ::: {.resource-meta}
 ::: {.meta-item}
-🏥 Healthcare • 📊 Real Kaggle Data • 🎯 Applied Statistics
+📖 PDF • ⏱️ 3-4 hours • 🎯 Intermediate-Advanced
 :::
 :::
 :::
 
 ::: {.resource-card}
 ::: {.resource-type}
-Business Example
+Required Reading
 :::
 
 ::: {.resource-title}
-**Customer Satisfaction Analysis**
+[**OpenIntro Statistics**, Chapter 6 sections 6.1-6.3](/files/Book/os4_for_screen_reader.pdf){target="_blank"}
 :::
 
 ::: {.resource-description}
-**Working Kaggle Notebooks:**
-- [Customer Satisfaction Analysis](https://www.kaggle.com/code/jacksondivakarr/customer-satisfaction-analysis){target="_blank"} - 10K+ records with statistical analysis
-- [Customer Service Satisfaction](https://www.kaggle.com/code/ddosad/customer-service-satisfaction-analysis){target="_blank"} - eCommerce data analysis
-
-**Concepts Applied:**
-- Continuous rating scales and normal distribution
-- Confidence intervals for customer ratings
-- Business decision-making with statistical evidence
-
-**Datasets:** [Customer Satisfaction 10K+](https://www.kaggle.com/datasets/ahmedaliraja/customer-satisfaction-10k){target="_blank"} • [Airlines Customer Satisfaction](https://www.kaggle.com/datasets/sjleshrac/airlines-customer-satisfaction){target="_blank"}
+Introduction to hypothesis testing fundamentals including null and alternative hypotheses, p-values, Type I and Type II errors, and statistical significance.
 :::
 
 ::: {.resource-meta}
 ::: {.meta-item}
-💼 Business • 📈 Customer Analytics • 🎯 Decision Making
+📖 PDF • ⏱️ 4-5 hours • 🎯 Advanced
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+T-Distribution
+:::
+
+::: {.resource-title}
+[**Khan Academy: t- statistics**](https://www.khanacademy.org/math/ap-statistics/xfb5d8e68:inference-quantitative-means/one-sample-t-interval-mean/v/introduction-to-t-statistics){target="_blank"}
+:::
+
+::: {.resource-description}
+Video series explaining the t-distribution, degrees of freedom, and when to use t vs z distributions in confidence intervals and hypothesis testing.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎬 Video Series • ⏱️ 2-3 hours • 🎯 Beginner-Friendly
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Hypothesis Testing
+:::
+
+::: {.resource-title}
+[**Seeing Theory: Frequentist Inference**](https://seeing-theory.brown.edu/frequentist-inference/index.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive exploration of hypothesis testing concepts including point estimation, confidence intervals, and the bootstrap method with real-time visualizations.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎮 Interactive • ⏱️ 2 hours • 📊 Visual Learning
+:::
+:::
+:::
+:::
+:::
+
+::: {.interactive-content}
+### 💻 Interactive Tools & Practice
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+T-Distribution Calculator
+:::
+
+::: {.resource-title}
+[**StatKey: T-Distribution**](https://www.lock5stat.com/statkey/theoretical_distribution/theoretical_distribution.html#t){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive t-distribution calculator with adjustable degrees of freedom, tail probability calculations, and critical value finder for confidence intervals.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🧮 Calculator • ⏱️ 30 minutes • 📊 Interactive Visualization
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Hypothesis Testing Simulator
+:::
+
+::: {.resource-title}
+[**StatKey: Hypothesis Testing**](https://www.lock5stat.com/StatKey/randomization_1_quant/randomization_1_quant.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Step-by-step hypothesis testing tool with built-in datasets or data upload capability. Automatically calculates test statistics, p-values, and conclusions.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🔧 Interactive Tool • ⏱️ 1-2 hours • 📈 Real Data Analysis
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+P-Value Visualization
+:::
+
+::: {.resource-title}
+[**Rpsychologist: P-Values**](https://rpsychologist.com/d3/pdist/){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive visualization of p-values, showing the relationship between test statistics, distributions, and probability calculations for different hypothesis tests.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📊 Visual Tool • ⏱️ 45 minutes • 🎯 Conceptual Understanding
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Python Implementation
+:::
+
+::: {.resource-title}
+[**SciPy Stats: Statistical Tests**](https://docs.scipy.org/doc/scipy/reference/stats.html#statistical-tests){target="_blank"}
+:::
+
+::: {.resource-description}
+Complete reference for statistical tests in Python including t-tests, z-tests, and chi-square tests with confidence interval functions and effect size calculations.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📚 API Docs • 🐍 Python • 🎯 Intermediate-Advanced
+:::
+:::
+:::
+:::
+:::
+
+::: {.objectives-content}
+### 🎯 Learning Objectives & Study Plan
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Mastery Checklist
+:::
+
+::: {.resource-title}
+**Week 5 Learning Goals**
+:::
+
+::: {.resource-description}
+After completing this week, you should be able to:
+
+- [ ] **Construct confidence intervals** for means using t-distribution
+- [ ] **Build confidence intervals for proportions** using normal approximation
+- [ ] **Formulate null and alternative hypotheses** for research questions
+- [ ] **Calculate test statistics** and p-values for one-sample tests
+- [ ] **Interpret p-values** and make statistical decisions using α levels
+- [ ] **Understand Type I and Type II errors** and their implications
+- [ ] **Conduct one-sample t-tests** and z-tests for proportions
+- [ ] **Use Python** for statistical testing and confidence intervals
+- [ ] **Communicate results** in context with appropriate statistical language
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+✅ Self-Assessment • 🎯 Advanced • 🔬 Statistical Inference
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Study Schedule
+:::
+
+::: {.resource-title}
+**Recommended Learning Path**
+:::
+
+::: {.resource-description}
+**Days 1-2:** Advanced confidence intervals with t-distribution (OpenIntro Ch. 5.3-5.4)
+
+**Day 3:** Confidence intervals for proportions and sample size calculations
+
+**Day 4:** Hypothesis testing fundamentals (OpenIntro Ch. 6.1-6.2)
+
+**Day 5:** P-values, significance levels, and Type I/II errors
+
+**Day 6:** One-sample tests implementation and practice
+
+**Day 7:** Real-world applications and result interpretation
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📅 7-day plan • ⏱️ 4-5 hours daily • 🎯 Intensive Study Week
+:::
+:::
+:::
+:::
+:::
+
+::: {.additional-content}
+### 🔍 Additional Resources
+
+::: {.resource-card}
+::: {.resource-type}
+Extended Learning
+:::
+
+::: {.resource-title}
+**Real-World Applications & Case Studies**
+:::
+
+::: {.resource-description}
+**Medical Research:** [Clinical Trial Analysis Notebook](https://www.kaggle.com/code/hamelg/python-for-data-25-chi-squared-tests) • [Drug Effectiveness Testing](https://www.kaggle.com/code/carlolepelaars/hypothesis-testing-and-statistical-significance) • [Medical Device Validation](https://www.kaggle.com/code/shashankagarwal1998/hypothesis-testing-on-medical-data)
+
+**Business Analytics:** [A/B Testing Guide](https://www.kaggle.com/code/temmybabs/a-b-testing-step-by-step-hypothesis-testing) • [Marketing Campaign Analysis](https://www.kaggle.com/code/khotijahs1/marketing-campaign-analysis-hypothesis-testing) • [Customer Satisfaction Testing](https://www.kaggle.com/code/faressayah/statistical-hypothesis-testing-tutorial)
+
+**Quality Control:** [Manufacturing Process Control](https://www.kaggle.com/code/nalkrolu/statistical-process-control-quality-control) • [Product Testing Analysis](https://www.kaggle.com/code/gabrielsantello/parts-manufacturing-quality-analysis) • [Six Sigma Applications](https://www.kaggle.com/code/melissamonfared/production-quality-control-analysis-eda)
+
+**Educational Research:** [Student Performance Analysis](https://www.kaggle.com/code/olgaluzhetska/students-performance-and-normal-distribution) • [Teaching Method Effectiveness](https://www.kaggle.com/code/adityakumar529/student-performance-analysis-hypothesis-testing) • [Standardized Test Scores](https://www.kaggle.com/code/faressayah/statistical-hypothesis-testing-tutorial)
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎯 Applied Statistics • 📊 Real Data • 🔬 Research Applications
+:::
+:::
+:::
+:::
+
+::: {.formula-reference}
+**Essential Formulas for Week 5**
+
+**Confidence Intervals:**
+- **For Means (σ unknown):** $\bar{x} \pm t_{\alpha/2,df} \cdot \frac{s}{\sqrt{n}}$
+- **For Proportions:** $\hat{p} \pm z_{\alpha/2} \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
+- **Degrees of Freedom:** $df = n - 1$
+
+**Hypothesis Testing:**
+- **Test Statistic (means):** $t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}$
+- **Test Statistic (proportions):** $z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$
+- **P-value:** Probability of observing test statistic or more extreme under H₀
+
+**Error Types:**
+- **Type I Error (α):** Reject true H₀
+- **Type II Error (β):** Fail to reject false H₀
+- **Power:** $1 - \beta$ = Probability of correctly rejecting false H₀
+:::
+
+:::
+
+<!-- Week 6 Content -->
+::: {.tab-content data-week="6"}
+
+::: {.content-filters}
+<button class="filter-button active" data-filter="all">All Resources</button>
+<button class="filter-button" data-filter="core">Core Materials</button>
+<button class="filter-button" data-filter="interactive">Interactive Tools</button>
+<button class="filter-button" data-filter="objectives">Learning Goals</button>
+<button class="filter-button" data-filter="additional">Additional</button>
+:::
+
+::: {.week-header}
+## Week 6: Linear Regression Basics
+Statistical Modeling and Relationship Analysis
+:::
+
+::: {.core-content}
+### 📚 Core Materials
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Required Reading
+:::
+
+::: {.resource-title}
+[**OpenIntro Statistics**, Chapter 7 sections 7.1-7.3 and Chapter 8](/files/Book/os4_for_screen_reader.pdf){target="_blank"}
+:::
+
+::: {.resource-description}
+Comprehensive introduction to linear regression including correlation, least squares method, regression equations, and interpretation of slope and intercept.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📖 PDF • ⏱️ 4-5 hours • 🎯 Advanced
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Python for Regression
+:::
+
+::: {.resource-title}
+[**Think Stats: Regression**](https://learning.oreilly.com/library/view/think-stats/9781449308117/ch10.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Python-focused approach to linear regression with real data examples, including correlation analysis, fitting regression lines, and residual analysis.
+
+**🎓 UCSB Access:** [Library Database](https://www.library.ucsb.edu/research/db/211) → Search "O'Reilly" → Login with NetID → Search "Think Stats"
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+💻 Online via UCSB Library • ⏱️ 2-3 hours • 🐍 Python Implementation
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Correlation Analysis
+:::
+
+::: {.resource-title}
+[**Khan Academy: Correlation and Regression**](https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data){target="_blank"}
+:::
+
+::: {.resource-description}
+Comprehensive video series covering correlation coefficients, scatterplots, regression lines, and interpretation of relationships between quantitative variables.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎬 Video Series • ⏱️ 3-4 hours • 🎯 Beginner-Friendly
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Regression Assumptions
+:::
+
+::: {.resource-title}
+[**Penn State: Regression Methods**](https://online.stat.psu.edu/stat462/node/117/){target="_blank"}
+:::
+
+::: {.resource-description}
+Detailed coverage of linear regression assumptions including linearity, independence, normality, and equal variance with diagnostic methods and remedies.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎓 University Course • ⏱️ 2-3 hours • 🔬 Statistical Theory
+:::
+:::
+:::
+:::
+:::
+
+::: {.interactive-content}
+### 💻 Interactive Tools & Practice
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Regression Visualization
+:::
+
+::: {.resource-title}
+[**Seeing Theory: Linear Regression**](https://seeing-theory.brown.edu/regression-analysis/index.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive exploration of linear regression with adjustable data points, real-time least squares fitting, and visualization of residuals and R-squared values.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🎮 Interactive Web App • ⏱️ 1-2 hours • 📈 Real-time Fitting
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Correlation Calculator
+:::
+
+::: {.resource-title}
+[**StatKey: Correlation**](https://www.lock5stat.com/StatKey/randomization_2_quant/randomization_2_quant.html){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive tool for calculating correlation coefficients and fitting regression lines with built-in datasets or data upload capability.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🔧 Interactive Tool • ⏱️ 1 hour • 📊 Data Analysis
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Residual Analysis
+:::
+
+::: {.resource-title}
+[**GeoGebra: Regression Analysis**](https://www.geogebra.org/m/H9uxBKyC){target="_blank"}
+:::
+
+::: {.resource-description}
+Interactive regression analysis tools including scatterplot creation, line fitting, residual plots, and regression diagnostics for assumption checking.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📊 Analysis Tool • ⏱️ 45 minutes • 🔍 Diagnostic Plots
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Python Libraries
+:::
+
+::: {.resource-title}
+[**Scikit-learn: Linear Regression**](https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares){target="_blank"}
+:::
+
+::: {.resource-description}
+Complete documentation for linear regression in scikit-learn including model fitting, prediction, coefficient interpretation, and performance metrics.
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📚 API Docs • 🐍 Python • 🎯 Intermediate-Advanced
+:::
+:::
+:::
+:::
+:::
+
+::: {.objectives-content}
+### 🎯 Learning Objectives & Study Plan
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Mastery Checklist
+:::
+
+::: {.resource-title}
+**Week 6 Learning Goals**
+:::
+
+::: {.resource-description}
+After completing this week, you should be able to:
+
+- [ ] **Calculate and interpret correlation coefficients** (Pearson's r)
+- [ ] **Understand the least squares method** for fitting regression lines
+- [ ] **Write and interpret regression equations** ŷ = a + bx
+- [ ] **Explain slope and intercept** in context of the problem
+- [ ] **Calculate and interpret R-squared** as explained variance
+- [ ] **Analyze residual plots** to check regression assumptions
+- [ ] **Identify outliers and influential points** in regression analysis
+- [ ] **Use Python** for regression analysis with pandas and scikit-learn
+- [ ] **Make predictions** using regression models with appropriate caution
+- [ ] **Understand limitations** of correlation and regression analysis
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+✅ Self-Assessment • 🎯 Advanced • 📈 Statistical Modeling
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Study Schedule
+:::
+
+::: {.resource-title}
+**Recommended Learning Path**
+:::
+
+::: {.resource-description}
+**Days 1-2:** Correlation analysis and scatterplots (OpenIntro Ch. 7.1)
+
+**Day 3:** Linear regression theory and least squares method (Ch. 7.2)
+
+**Day 4:** Regression equations, interpretation, and R-squared (Ch. 7.3)
+
+**Day 5:** Residual analysis and assumption checking
+
+**Day 6:** Python implementation with real datasets
+
+**Day 7:** Advanced topics and course integration review
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+📅 7-day plan • ⏱️ 4-5 hours daily • 🎯 Capstone Week
+:::
+:::
+:::
+:::
+:::
+
+::: {.additional-content}
+### 🔍 Additional Resources & Real-World Applications
+
+::: {.grid-2}
+::: {.resource-card}
+::: {.resource-type}
+Business Analytics
+:::
+
+::: {.resource-title}
+**Sales and Marketing Analysis**
+:::
+
+::: {.resource-description}
+**Kaggle Notebooks:**
+- [Marketing Campaign ROI Analysis](https://www.kaggle.com/code/khotijahs1/marketing-campaign-analysis-hypothesis-testing) • [Sales Forecasting with Regression](https://www.kaggle.com/code/faressayah/statistical-hypothesis-testing-tutorial) • [Customer Lifetime Value Prediction](https://www.kaggle.com/code/carlolepelaars/statistics-tutorial)
+
+**Applications:** Advertising spend vs. sales revenue, price elasticity analysis, customer acquisition cost modeling
+
+**Datasets:** [Marketing Data](https://www.kaggle.com/datasets/rodsaldanha/arketing-campaign) • [Sales Data](https://www.kaggle.com/datasets/kyanyoga/sample-sales-data) • [E-commerce Data](https://www.kaggle.com/datasets/carrie1/ecommerce-data)
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+💼 Business • 📈 ROI Analysis • 💰 Revenue Prediction
+:::
+:::
+:::
+
+::: {.resource-card}
+::: {.resource-type}
+Health & Medicine
+:::
+
+::: {.resource-title}
+**Medical Research Applications**
+:::
+
+::: {.resource-description}
+**Research Examples:**
+- [BMI vs Health Outcomes](https://www.kaggle.com/code/akhilasp/blood-pressure-data-analysis) • [Drug Dosage Effectiveness](https://www.kaggle.com/code/shashankagarwal1998/hypothesis-testing-on-medical-data) • [Treatment Response Prediction](https://www.kaggle.com/code/hamelg/python-for-data-25-chi-squared-tests)
+
+**Applications:** Dose-response relationships, biomarker analysis, treatment outcome prediction, epidemiological studies
+
+**Datasets:** [Heart Disease Data](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset) • [Diabetes Prediction](https://www.kaggle.com/datasets/mathchi/diabetes-data-set) • [Cancer Research Data](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)
+:::
+
+::: {.resource-meta}
+::: {.meta-item}
+🏥 Healthcare • 🔬 Medical Research • 📊 Clinical Analysis
 :::
 :::
 :::
@@ -1212,258 +1793,246 @@ Environmental Science
 :::
 
 ::: {.resource-title}
-**Climate Data Analysis**
+**Climate and Environmental Modeling**
 :::
 
 ::: {.resource-description}
-**Working Kaggle Notebooks:**
-- [Climate Change Data Analysis](https://www.kaggle.com/code/shauvikbrahma/climate-change-data-analysis){target="_blank"} - Temperature trends with statistical analysis
-- [Global Temperature Analysis](https://www.kaggle.com/code/sebastienj/map-of-temperatures-and-analysis-of-global-warming){target="_blank"} - Historical climate data exploration
+**Climate Analysis:**
+- [Temperature vs Time Trends](https://www.kaggle.com/code/sebastienj/map-of-temperatures-and-analysis-of-global-warming) • [Air Quality Prediction](https://www.kaggle.com/code/shauvikbrahma/climate-change-data-analysis) • [Renewable Energy Analysis](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data)
 
-**Concepts Applied:**
-- Normal distribution for temperature measurements
-- Confidence intervals for climate change analysis
-- Central Limit Theorem with environmental data
+**Applications:** Climate change modeling, pollution correlation analysis, energy consumption prediction, environmental impact assessment
 
-**Datasets:** [Climate Change: Earth Surface Temperature](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data){target="_blank"} • [Environmental Sensor Data](https://www.kaggle.com/datasets/garystafford/environmental-sensor-data-132k){target="_blank"}
+**Datasets:** [Global Temperature](https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data) • [Air Quality](https://www.kaggle.com/datasets/hasibalmuzdadid/global-air-pollution-dataset) • [Energy Consumption](https://www.kaggle.com/datasets/akhiljethwa/world-energy-consumption)
 :::
 
 ::: {.resource-meta}
 ::: {.meta-item}
-🌡️ Environmental • 🌍 Climate Data • 🔬 Research Applications
+🌍 Environmental • 🌡️ Climate Science • ♻️ Sustainability
 :::
 :::
 :::
 
 ::: {.resource-card}
 ::: {.resource-type}
-Quality Control
+Economics & Finance
 :::
 
 ::: {.resource-title}
-**Manufacturing Process Control**
+**Economic Analysis & Financial Modeling**
 :::
 
 ::: {.resource-description}
-**Working Kaggle Notebooks:**
-- [Statistical Process Control](https://www.kaggle.com/code/nalkrolu/statistical-process-control-quality-control){target="_blank"} - Complete SPC implementation
-- [Parts Manufacturing Quality Analysis](https://www.kaggle.com/code/gabrielsantello/parts-manufacturing-quality-analysis){target="_blank"} - Industrial quality metrics
-- [Production Quality Control Analysis](https://www.kaggle.com/code/melissamonfared/production-quality-control-analysis-eda){target="_blank"} - EDA with confidence intervals
+**Financial Applications:**
+- [Stock Price Prediction](https://www.kaggle.com/code/faressayah/statistical-hypothesis-testing-tutorial) • [Economic Indicators Analysis](https://www.kaggle.com/code/carlolepelaars/statistics-tutorial) • [Housing Price Modeling](https://www.kaggle.com/datasets/htagholdings/property-sales)
 
-**Concepts Applied:**
-- Normal distribution for process measurements
-- Control charts and confidence limits
-- Statistical quality control methods
+**Applications:** Portfolio optimization, risk assessment, economic forecasting, market trend analysis, real estate valuation
 
-**Datasets:** [Production Quality](https://www.kaggle.com/datasets/podsyp/production-quality){target="_blank"} • [Manufacturing Defects](https://www.kaggle.com/datasets/fahmidachowdhury/manufacturing-defects){target="_blank"}
+**Datasets:** [Stock Market Data](https://www.kaggle.com/datasets/jacksoncrow/stock-market-dataset) • [Housing Prices](https://www.kaggle.com/datasets/amitabhajoy/bengaluru-house-price-data) • [Economic Indicators](https://www.kaggle.com/datasets/tunguz/us-economics-data)
 :::
 
 ::: {.resource-meta}
 ::: {.meta-item}
-🏭 Manufacturing • ⚙️ Quality Control • 📊 Process Improvement
+💹 Finance • 🏠 Real Estate • 📊 Economic Modeling
 :::
 :::
 :::
 :::
 
-### 🎯 Core Statistical Concepts - Working Notebooks
-
-::: {.grid-2}
-::: {.resource-card}
-::: {.resource-type}
-Continuous Distributions
-:::
-
-::: {.resource-title}
-**Normal Distribution Tutorials**
-:::
-
-::: {.resource-description}
-**Beginner-Friendly Notebooks:**
-- [Normal Distribution](https://www.kaggle.com/code/gadaadhaarigeek/normal-distribution){target="_blank"} - Complete introduction with examples
-- [Students Performance & Normal Distribution](https://www.kaggle.com/code/olgaluzhetska/students-performance-and-normal-distribution){target="_blank"} - Real education data
-- [Discrete vs Continuous Distributions](https://www.kaggle.com/code/paulrohan2020/tutorial-discrete-vs-continuous-prob-distribution){target="_blank"} - Comprehensive comparison
-
-**Concepts Covered:** PDF/CDF, standardization, Z-scores, probability calculations
-:::
-
-::: {.resource-meta}
-::: {.meta-item}
-📊 Core Concepts • 🎯 Beginner-Friendly • 📚 Tutorial Style
-:::
-:::
-:::
+### 📊 Advanced Regression Topics Preview
 
 ::: {.resource-card}
 ::: {.resource-type}
-Confidence Intervals
+Beyond Simple Regression
 :::
 
 ::: {.resource-title}
-**Confidence Interval Implementation**
+**Topics for Further Study**
 :::
 
 ::: {.resource-description}
-**Hands-on Practice:**
-- [Python for Data 23: Confidence Intervals](https://www.kaggle.com/code/hamelg/python-for-data-23-confidence-intervals){target="_blank"} - Complete Python tutorial with Titanic data
-- [Understanding Confidence Intervals](https://www.kaggle.com/code/adikeshri/understanding-confidence-intervals){target="_blank"} - Theory and practice
-- [Inference Statistics: Confidence Intervals](https://www.kaggle.com/code/ramendrapandey/inference-statistics-1-confidence-intervals){target="_blank"} - Multi-dataset analysis
+**Multiple Regression:** Adding more predictor variables, interpreting coefficients in multivariate models, dealing with multicollinearity
 
-**Concepts Covered:** Construction, interpretation, margin of error, confidence levels
+**Polynomial Regression:** Modeling non-linear relationships, choosing appropriate degree, overfitting concerns
+
+**Logistic Regression:** Binary outcome variables, odds ratios, classification problems
+
+**Model Diagnostics:** Advanced residual analysis, influence measures, model selection criteria (AIC, BIC)
+
+**Regularization:** Ridge regression, Lasso regression, dealing with high-dimensional data
+
+**Time Series:** Regression with temporal data, autocorrelation, trend analysis
+
+**🎓 Recommended Next Courses:** PSTAT 109 (Statistics for Economics), PSTAT 126 (Regression Analysis), PSTAT 131 (Statistical Machine Learning)
 :::
 
 ::: {.resource-meta}
 ::: {.meta-item}
-🔢 Statistical Inference • 🐍 Python Implementation • 📈 Real Data
+🚀 Advanced Topics • 📈 Next Level • 🎓 Further Study
 :::
 :::
 :::
-
-::: {.resource-card}
-::: {.resource-type}
-General Statistics
-:::
-
-::: {.resource-title}
-**Comprehensive Statistics Tutorial**
-:::
-
-::: {.resource-description}
-**Complete Reference:**
-- [Statistics Tutorial](https://www.kaggle.com/code/carlolepelaars/statistics-tutorial){target="_blank"} - End-to-end statistical analysis covering descriptive statistics, probability distributions, and inference
-
-**Perfect for:** Students wanting a single comprehensive notebook covering multiple Week 4 concepts in one place
-:::
-
-::: {.resource-meta}
-::: {.meta-item}
-📚 Comprehensive • 🎯 All Levels • 🔄 Complete Reference
-:::
-:::
-:::
-
-::: {.resource-card}
-::: {.resource-type}
-Datasets for Practice
-:::
-
-::: {.resource-title}
-**Ready-to-Use Datasets**
-:::
-
-::: {.resource-description}
-**High-Quality Data:**
-- [Normal Distribution Data](https://www.kaggle.com/datasets/tinasoni/normal-distribution-data){target="_blank"} - Clean datasets for practicing normal distribution concepts
-- [Daily Climate Data](https://www.kaggle.com/datasets/sumanthvrao/daily-climate-time-series-data){target="_blank"} - Delhi weather data (2013-2017)
-- [Multi-stage Manufacturing Process](https://www.kaggle.com/datasets/supergus/multistage-continuousflow-manufacturing-process){target="_blank"} - Real factory data
-
-**Perfect for:** Creating your own analysis and practicing confidence interval construction
-:::
-
-::: {.resource-meta}
-::: {.meta-item}
-📊 Practice Data • 🎯 Student Projects • 🔧 Analysis Ready
-:::
-:::
-:::
-:::
-
-### 🧮 Formula Reference Sheet
 
 ::: {.formula-reference}
-**Essential Formulas for Week 4**
+**Essential Regression Formulas**
 
-**Normal Distribution:**
-- Standard Normal: $Z = \frac{X - \mu}{\sigma}$
-- Probability: $P(a < X < b) = \int_a^b \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx$
+**Correlation:**
+- **Pearson's r:** $r = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum(x_i - \bar{x})^2 \sum(y_i - \bar{y})^2}}$
 
-**Central Limit Theorem:**
-- Sampling Distribution: $\bar{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right)$
-- Standard Error: $SE = \frac{\sigma}{\sqrt{n}}$
+**Simple Linear Regression:**
+- **Slope:** $b_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2}$
+- **Intercept:** $b_0 = \bar{y} - b_1\bar{x}$
+- **Regression Line:** $\hat{y} = b_0 + b_1 x$
 
-**Confidence Intervals:**
-- General Form: $\text{statistic} \pm \text{margin of error}$
-- For Means: $\bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$
-- Margin of Error: $ME = z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$
+**Model Evaluation:**
+- **R-squared:** $R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}$
+- **Residual:** $e_i = y_i - \hat{y}_i$
+- **Standard Error:** $s_e = \sqrt{\frac{\sum e_i^2}{n-2}}$
 
-**Common Z-values:**
-- 90% CI: $z_{0.05} = 1.645$
-- 95% CI: $z_{0.025} = 1.96$  
-- 99% CI: $z_{0.005} = 2.576$
+**Key Relationships:**
+- **SST = SSR + SSE** (Total = Regression + Error)
+- **Correlation and R²:** $R^2 = r^2$ (for simple linear regression)
 :::
 
-</div>
-</details>
-
-
-<details class="week-collapsible" open>
-<summary class="week-summary">
-<h3>🎯 Week 5: Statistical Methods & Testing</h3>
-<p class="week-subtitle">During this week, we'll cover confidence intervals for means and proportions and tackle hypothesis testing.</p>
-</summary>
-
-<div class="week-content">
-
-::: {.coming-soon}
-::: {.coming-soon-icon}
-🎯
-:::
-### Hypothesis Testing Fundamentals
-Week 5 will cover Confidence Intervals, hypothesis testing, and two sample t-Tests. Materials will be posted by week 5.
 :::
 
-</div>
-</details>
-
-<details class="week-collapsible" open>
-<summary class="week-summary">
-<h3>⚖️ Week 6: Statistical Methods & Testing</h3>
-<p class="week-subtitle">During the last week, we dive into statistical modeling and testing!</p>
-</summary>
-
-<div class="week-content">
-
-::: {.coming-soon}
-::: {.coming-soon-icon}
-⚖️
 :::
-### Advanced Statistical Methods
-Week 6 will cover hypothesis testing, and two sample t-Tests. Materials will be posted by week 6.
-:::
-
-</div>
-</details>
-
 
 ```{=html}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('searchInput');
-  
-  if (searchInput) {
-    searchInput.addEventListener('input', function() {
-      const searchTerm = this.value.toLowerCase();
-      const resourceCards = document.querySelectorAll('.resource-card');
-      
-      resourceCards.forEach(card => {
-        const title = card.querySelector('.resource-title')?.textContent.toLowerCase() || '';
-        const description = card.querySelector('.resource-description')?.textContent.toLowerCase() || '';
-        const type = card.querySelector('.resource-type')?.textContent.toLowerCase() || '';
-        
-        if (title.includes(searchTerm) || description.includes(searchTerm) || type.includes(searchTerm)) {
-          card.style.display = 'block';
-          card.style.opacity = '1';
-          card.style.transform = 'scale(1)';
-        } else if (searchTerm !== '') {
-          card.style.opacity = '0.3';
-          card.style.transform = 'scale(0.95)';
-        } else {
-          card.style.opacity = '1';
-          card.style.transform = 'scale(1)';
-        }
-      });
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    // Initialize - show only first tab
+    showTab('1');
+    
+    // Tab button click handlers
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const weekNum = this.dataset.week;
+            showTab(weekNum);
+            
+            // Update active tab button
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
-  }
+    
+    // Filter functionality
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('filter-button')) {
+            const filter = e.target.dataset.filter;
+            const tabContent = e.target.closest('.tab-content');
+            const weekNum = tabContent.dataset.week;
+            
+            // Update active filter button within this tab
+            const tabFilters = tabContent.querySelectorAll('.filter-button');
+            tabFilters.forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            // Apply filter to current tab
+            filterContent(filter, weekNum);
+        }
+    });
+    
+    function showTab(weekNum) {
+        // Hide all tabs
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // Show selected tab
+        const selectedTab = document.querySelector(`[data-week="${weekNum}"].tab-content`);
+        if (selectedTab) {
+            selectedTab.classList.add('active');
+            
+            // Reset filters for this tab
+            const tabFilters = selectedTab.querySelectorAll('.filter-button');
+            tabFilters.forEach(btn => btn.classList.remove('active'));
+            const allFilter = selectedTab.querySelector('.filter-button[data-filter="all"]');
+            if (allFilter) {
+                allFilter.classList.add('active');
+            }
+            
+            // Show all content by default
+            filterContent('all', weekNum);
+        }
+    }
+    
+    function filterContent(filter, weekNum) {
+        const tabContent = document.querySelector(`[data-week="${weekNum}"].tab-content`);
+        if (!tabContent) return;
+        
+        const contentSections = tabContent.querySelectorAll('.core-content, .interactive-content, .objectives-content, .additional-content');
+        const resourceCards = tabContent.querySelectorAll('.resource-card');
+        
+        if (filter === 'all') {
+            // Show all content sections
+            contentSections.forEach(section => {
+                section.style.display = 'block';
+            });
+            resourceCards.forEach(card => {
+                card.style.display = 'block';
+            });
+        } else {
+            // Hide all content sections first
+            contentSections.forEach(section => {
+                section.style.display = section.classList.contains(`${filter}-content`) ? 'block' : 'none';
+            });
+            
+            // For individual resource cards within visible sections
+            const visibleSections = tabContent.querySelectorAll(`.${filter}-content`);
+            resourceCards.forEach(card => {
+                let shouldShow = false;
+                visibleSections.forEach(section => {
+                    if (section.contains(card)) {
+                        shouldShow = true;
+                    }
+                });
+                card.style.display = shouldShow ? 'block' : 'none';
+            });
+        }
+    }
+    
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const resourceCards = document.querySelectorAll('.resource-card');
+            
+            resourceCards.forEach(card => {
+                const title = card.querySelector('.resource-title')?.textContent.toLowerCase() || '';
+                const description = card.querySelector('.resource-description')?.textContent.toLowerCase() || '';
+                const type = card.querySelector('.resource-type')?.textContent.toLowerCase() || '';
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm) || type.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                } else if (searchTerm !== '') {
+                    card.style.opacity = '0.3';
+                    card.style.transform = 'scale(0.95)';
+                } else {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }
+            });
+        });
+    }
+    
+    // Add smooth hover effects
+    const resourceCards = document.querySelectorAll('.resource-card');
+    resourceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
 });
 </script>
 ```

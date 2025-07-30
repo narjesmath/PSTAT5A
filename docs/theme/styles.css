@@ -1041,3 +1041,541 @@
     page-break-inside: avoid;
   }
 }
+/* Additional CSS for Tabbed Resources - resources-tabs.css */
+/* This file works with your existing styles.css */
+
+/* Container for the entire tabbed interface */
+.resources-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Tab Navigation Styling */
+.tab-navigation {
+    display: flex;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 20px 20px 0 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-bottom: 0;
+    box-shadow: var(--card-shadow);
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+}
+
+.tab-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-button {
+    flex: 1;
+    min-width: 120px;
+    padding: 15px 16px;
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85em;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.tab-button small {
+    display: block;
+    font-size: 0.75em;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+.tab-button:hover {
+    color: white;
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    color: white;
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+/* Tab Content Styling */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+    background: white;
+    border-radius: 0 0 20px 20px;
+    box-shadow: var(--card-shadow);
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Content Filters Styling */
+.content-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 0;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    justify-content: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.filter-button {
+    padding: 10px 18px;
+    border: 2px solid var(--primary-color);
+    background: white;
+    color: var(--primary-color);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85em;
+    transition: all 0.3s ease;
+    user-select: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.filter-button:hover::before {
+    left: 100%;
+}
+
+.filter-button.active {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    border-color: transparent;
+}
+
+.filter-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Adjust content sections within tabs */
+.tab-content .week-header {
+    margin: 0;
+    padding: 2rem 2rem 1rem 2rem;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.tab-content .core-content,
+.tab-content .interactive-content,
+.tab-content .objectives-content,
+.tab-content .additional-content {
+    padding: 0 2rem 2rem 2rem;
+}
+
+/* Enhanced resource cards within tabs */
+.tab-content .resource-card {
+    transition: all 0.3s ease;
+    border-left-width: 4px;
+}
+
+.tab-content .resource-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Content visibility transitions */
+.core-content,
+.interactive-content,
+.objectives-content,
+.additional-content {
+    transition: all 0.3s ease;
+}
+
+.core-content[style*="display: none"],
+.interactive-content[style*="display: none"],
+.objectives-content[style*="display: none"],
+.additional-content[style*="display: none"] {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Section headers within tabs */
+.tab-content h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* Grid adjustments for better spacing */
+.tab-content .grid-2 {
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+/* Formula reference box within tabs */
+.formula-reference {
+    background: linear-gradient(135deg, #fff8e1 0%, #fffbf0 100%);
+    border: 2px solid var(--warning-color);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.formula-reference strong {
+    color: var(--secondary-color);
+    font-family: inherit;
+}
+
+/* Progress indicators for week tabs */
+.tab-button[data-week="1"]::before,
+.tab-button[data-week="2"]::before,
+.tab-button[data-week="3"]::before,
+.tab-button[data-week="4"]::before {
+    content: '✅';
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.tab-button[data-week="5"]::before {
+    content: '🚧';
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.tab-button[data-week="6"]::before {
+    content: '🚧';
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* Search integration */
+.search-container {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid #e9ecef;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1.2rem;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .tab-navigation {
+        flex-direction: column;
+        border-radius: 20px;
+        position: relative;
+        top: 0;
+    }
+    
+    .tab-button {
+        min-width: auto;
+        text-align: center;
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.8em;
+    }
+    
+    .tab-button:last-child {
+        border-bottom: none;
+    }
+    
+    .tab-button.active::after {
+        display: none;
+    }
+    
+    .tab-button.active::before {
+        content: '→ ';
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--accent-color);
+        font-weight: bold;
+        font-size: 1em;
+    }
+    
+    .content-filters {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        gap: 8px;
+    }
+    
+    .filter-button {
+        text-align: center;
+        margin-bottom: 0;
+        font-size: 0.8em;
+        padding: 8px 16px;
+    }
+    
+    .tab-content .week-header,
+    .tab-content .core-content,
+    .tab-content .interactive-content,
+    .tab-content .objectives-content,
+    .tab-content .additional-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .resources-container {
+        padding: 0 0.5rem;
+    }
+    
+    .tab-content .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .tab-button {
+        font-size: 0.75em;
+        padding: 10px 12px;
+    }
+    
+    .tab-button small {
+        font-size: 0.7em;
+    }
+    
+    .filter-button {
+        font-size: 0.75em;
+        padding: 6px 12px;
+    }
+    
+    .tab-content .week-header h2 {
+        font-size: 1.3em;
+    }
+    
+    .tab-content .resource-card {
+        padding: 1rem;
+    }
+}
+
+/* Enhanced accessibility */
+.tab-button:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.filter-button:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .tab-button {
+        border: 2px solid rgba(255,255,255,0.5);
+    }
+    
+    .tab-button.active {
+        border: 2px solid var(--accent-color);
+        background: rgba(255,255,255,0.3);
+    }
+    
+    .filter-button {
+        border-width: 3px;
+    }
+    
+    .tab-content .resource-card {
+        border: 2px solid var(--primary-color);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .tab-content,
+    .tab-button,
+    .filter-button,
+    .resource-card {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .tab-button:hover,
+    .filter-button:hover,
+    .resource-card:hover {
+        transform: none !important;
+    }
+    
+    .filter-button::before {
+        display: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .tab-navigation,
+    .content-filters,
+    .search-container {
+        display: none !important;
+    }
+    
+    .tab-content {
+        display: block !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+    
+    .tab-content:not(.active) {
+        display: block !important;
+        page-break-before: always;
+    }
+    
+    .resource-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+    
+    .week-header {
+        break-after: avoid;
+    }
+}
+
+/* Loading states */
+.tab-content:not(.active) {
+    pointer-events: none;
+}
+
+/* Smooth scrolling when switching tabs */
+.resources-container {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced visual feedback */
+.tab-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.filter-button:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Improved focus indicators for keyboard navigation */
+.tab-button:focus-visible {
+    background: rgba(255,255,255,0.2);
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.filter-button:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Special styling for coming soon content */
+.coming-soon {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--light-bg);
+    border-radius: 15px;
+    margin: 2rem 0;
+    border: 2px dashed #ddd;
+}
+
+.coming-soon-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+
+/* Enhanced grid responsiveness */
+@media (max-width: 1200px) {
+    .tab-content .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .tab-button {
+        min-width: 100px;
+        font-size: 0.8em;
+        padding: 12px 10px;
+    }
+    
+    .tab-button small {
+        font-size: 0.7em;
+    }
+}
