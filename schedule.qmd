@@ -602,7 +602,7 @@ Quiz 2 (Weeks 3–4)
 7/29
 :::
 ::: {.topic .lectures-content}
-<!-- [Linear Regression Basics](/files/lecture_notes/lecture14/lecture14.qmd) -->
+[Linear Regression Basics](/files/lecture_notes/lecture14/lecture14.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
