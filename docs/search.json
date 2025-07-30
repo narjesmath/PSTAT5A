@@ -3399,14 +3399,14 @@
     "href": "files/lecture_notes/lecture13/lecture13.html#learning-journey-today",
     "title": "Hypothesis Testing: Making Decisions with Data",
     "section": "Learning Journey Today 🎯",
-    "text": "Learning Journey Today 🎯\n\n\n🧠 Conceptual Goals\n\nUnderstand the logic of hypothesis testing\nMaster the language of statistical decisions\nRecognize different types of errors and their consequences\nConnect to confidence intervals from last lecture\n\n\n🛠️ Practical Skills\n\nFormulate hypotheses from research questions\nCalculate and interpret p-values correctly\nPerform hypothesis tests in Python\nMake informed decisions using statistical evidence\nCommunicate results effectively"
+    "text": "Learning Journey Today 🎯\n\n\n🧠 Conceptual Goals\n\nUnderstand the logic of hypothesis testing\nGet familiar with the language of statistical decisions\nRecognize different types of errors and their consequences\nConnect to confidence intervals from last lecture\n\n\n🛠️ Practical Skills\n\nFormulate hypotheses from research questions\nCalculate and interpret p-values correctly\nPerform hypothesis tests in Python\nMake informed decisions using statistical evidence\nCommunicate results effectively"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#what-is-hypothesis-testing",
     "href": "files/lecture_notes/lecture13/lecture13.html#what-is-hypothesis-testing",
     "title": "Hypothesis Testing: Making Decisions with Data",
-    "section": "What is Hypothesis Testing? 🤔",
-    "text": "What is Hypothesis Testing? 🤔\n\n\n        \n        \n        \n\n\n                            \n                                            \n\n\nHypothesis testing helps us answer: “Is what we observed in our sample strong enough evidence to conclude something about the population?”"
+    "section": "What is Hypothesis Testing?",
+    "text": "What is Hypothesis Testing?\n\n\n\n\n\n\n\n\nWhat is Hypothesis Testing?\n\n\nHypothesis testing lets us use sample data to weigh competing claims about a population.\nWorkflow\n\nState H₀ (null) – the status‑quo or “no‑effect” position\n\nState H₁ (alternative) – the research claim you hope to support\n\nChoose α – the tolerable Type I error rate (e.g., 0.05)\n\nCompute a test statistic – compress the data into one number\n\nFind the p‑value – “How unusual is this statistic if H₀ were true?”\n\nMake a decision – reject H₀ if p ≤ α; otherwise fail to reject\n\nThe goal is not to prove anything with certainty, but to judge whether the evidence tips the scale away from H₀.\n\n\n\n\n\n\n        \n        \n        \n\n\n                            \n                                            \n\n\nHypothesis testing helps us answer: “Is what we observed in our sample strong enough evidence to conclude something about the population?”"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#the-courtroom-analogy",
