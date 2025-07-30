@@ -3,11 +3,12 @@ title: "Class Schedule"
 subtitle: "PSTAT5A- Understanding Data"
 format:
   html:
+    html-math-method: katex
     toc: false
     theme: cosmo
     css: /theme/schedule-styles.css
     page-layout: full
-self-contained: true
+#self-contained: true
 python: pstat5a
 execute:
   echo: false

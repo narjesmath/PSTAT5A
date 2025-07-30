@@ -3413,7 +3413,7 @@
     "href": "files/lecture_notes/lecture13/lecture13.html#the-courtroom-analogy",
     "title": "Hypothesis Testing: Making Decisions with Data",
     "section": "The Courtroom Analogy ⚖️",
-    "text": "The Courtroom Analogy ⚖️\n\n\n                            \n                                            \n\n\nKey Insight: Just like in court, we never “prove” innocence or “accept” the null hypothesis. We only determine if there’s sufficient evidence to reject it!"
+    "text": "The Courtroom Analogy ⚖️\n\n\nCriminal Justice System\n\n\n\nAspect\nCriminal Court\n\n\n\n\nStarting Position\nDefendant is innocent\n\n\nBurden of Proof\nProsecution must prove guilt\n\n\nEvidence Standard\nBeyond reasonable doubt\n\n\nDecision Options\nGuilty or Not Guilty\n\n\nType I Error\nConvict an innocent person\n\n\nType II Error\nAcquit a guilty person\n\n\nConsequences\nBalance justice vs. protecting innocent\n\n\n\n\nStatistical Hypothesis Testing\n\n\n\nAspect\nHypothesis Testing\n\n\n\n\nStarting Position\nNull hypothesis (H₀) is true\n\n\nBurden of Proof\nData must support alternative (H₁)\n\n\nEvidence Standard\np ≤ α (usually 0.05)\n\n\nDecision Options\nReject H₀ or Fail to reject H₀\n\n\nType I Error\nReject a true null (false positive)\n\n\nType II Error\nFail to reject a false null (false negative)\n\n\nConsequences\nBalance discovery vs. false claims\n\n\n\n\n\nKey Insight 💡 Just like in court, we never “prove” innocence or accept the null hypothesis—we only decide whether the evidence is strong enough to reject it."
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#the-six-steps-of-hypothesis-testing",
@@ -3441,7 +3441,7 @@
     "href": "files/lecture_notes/lecture13/lecture13.html#types-of-errors-the-trade-off",
     "title": "Hypothesis Testing: Making Decisions with Data",
     "section": "Types of Errors: The Trade-off 🎲",
-    "text": "Types of Errors: The Trade-off 🎲\n\n\n                            \n                                            \n\n\nBottom Line: There’s always a trade-off between Type I and Type II errors. Choose α based on which error is more costly in your context!"
+    "text": "Types of Errors: The Trade-off 🎲\n\n\nError Types Matrix\n\n\n\nDecision ↓ / Reality →\nH₀ True\nH₀ False\n\n\n\n\nReject H₀\nType I Error (α)\n✔ Correct (Power)\n\n\nFail to Reject H₀\n✔ Correct\nType II Error (β)\n\n\n\n\nReal‑World Consequences\n\n\n\n\n\n\n\n\nContext\nType I Error (False Positive)\nType II Error (False Negative)\n\n\n\n\nMedical Test\nTreat healthy patient\nMiss actual disease\n\n\nDrug Approval\nApprove ineffective drug\nReject effective drug\n\n\nFire Alarm\nFalse alarm evacuation\nFail to detect real fire\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nBalancing the risks\nLowering the significance level \\alpha reduces the chance of Type I mistakes but increases the risk of Type II errors unless you gather more data or target a larger effect.\nChoose $$ based on which error would be more costly in your scenario."
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#statistical-power-detecting-true-effects",
@@ -3455,7 +3455,7 @@
     "href": "files/lecture_notes/lecture13/lecture13.html#example-1-one-sample-t-test",
     "title": "Hypothesis Testing: Making Decisions with Data",
     "section": "Example 1: One-Sample t-test 📊",
-    "text": "Example 1: One-Sample t-test 📊\nProblem Setup\nResearch Question: A new study technique claims to improve test scores. The current average is 75. We test 25 students using the new method.\n\n\n📊 Sample Data Summary:\n========================================\nSample size (n): 25\nSample mean (x̄): 77.19\nSample std (s): 7.65\nCurrent average (μ₀): 75\n\n\nComplete Hypothesis Test\n\n\n                            \n                                            \n\n\n\n🎯 DETAILED RESULTS:\n==================================================\nTest Statistic: t = 1.432\nP-value: 0.0825\nCritical Value: 1.711\nEffect Size (Cohen's d): 0.286\n\n❌ DECISION: Fail to reject H₀\n📊 CONCLUSION: There is insufficient evidence (p = 0.0825) that the new study method improves test scores.\n💡 PRACTICAL IMPACT: The observed difference could reasonably be due to chance.\n\n\nUsing Python’s Built-in Functions\n\n\n🐍 PYTHON IMPLEMENTATION:\n========================================\nMethod 1: scipy.stats.ttest_1samp\nt-statistic: 1.432\np-value (two-tailed): 0.1650\np-value (one-tailed): 0.0825\n\nMethod 2: Manual with 95% Confidence Interval\n95% CI: (74.03, 80.35)\nInterpretation: We're 95% confident the true mean is between 74.0 and 80.4\n\nEffect Size (Cohen's d): 0.286\nEffect size interpretation: small effect"
+    "text": "Example 1: One-Sample t-test 📊\n\n\nProblem Setup\nResearch Question: A new study technique claims to improve test scores. The current average is 75. We test 25 students using the new method.\n\n\n📊 Sample Data Summary:\n========================================\nSample size (n): 25\nSample mean (x̄): 77.19\nSample std (s): 7.65\nCurrent average (μ₀): 75\n\n\n\nComplete Hypothesis Test\n\n\n                            \n                                            \n\n\n\n🎯 DETAILED RESULTS:\n==================================================\nTest Statistic: t = 1.432\nP-value: 0.0825\nCritical Value: 1.711\nEffect Size (Cohen's d): 0.286\n\n❌ DECISION: Fail to reject H₀\n📊 CONCLUSION: There is insufficient evidence (p = 0.0825) that the new study method improves test scores.\n💡 PRACTICAL IMPACT: The observed difference could reasonably be due to chance.\n\n\nUsing Python’s Built-in Functions\n\n\n🐍 PYTHON IMPLEMENTATION:\n========================================\nMethod 1: scipy.stats.ttest_1samp\nt-statistic: 1.432\np-value (two-tailed): 0.1650\np-value (one-tailed): 0.0825\n\nMethod 2: Manual with 95% Confidence Interval\n95% CI: (74.03, 80.35)\nInterpretation: We're 95% confident the true mean is between 74.0 and 80.4\n\nEffect Size (Cohen's d): 0.286\nEffect size interpretation: small effect"
   },
   {
     "objectID": "files/lecture_notes/lecture13/lecture13.html#example-2-two-sample-t-test",
@@ -4079,5 +4079,19 @@
     "title": "PSTAT 5A: Linear Regression Basics",
     "section": "",
     "text": "🏠 Back to Main Page"
+  },
+  {
+    "objectID": "files/lecture_notes/lecture13/lecture13.html#what-is-a-p-value",
+    "href": "files/lecture_notes/lecture13/lecture13.html#what-is-a-p-value",
+    "title": "Hypothesis Testing: Making Decisions with Data",
+    "section": "What is a p-value?",
+    "text": "What is a p-value?\n\n\n\n\n\n\nWhat is a p-value?\n\n\nThe p-value answers the question\n“If the null hypothesis were true, how likely is a result at least this extreme?”\nFormally, for an observed test statistic T_{\\text{obs}},\n\n  p = P\\bigl(|T| \\ge |T_{\\text{obs}}| \\;\\big|\\; H_0\\bigr).\n\nSmaller p-values → data less compatible with H_0 → stronger evidence against H_0.\n\n\n\n\n\nInterpretation Cheat-Sheet\n\n\n\np-value\nEvidence vs H_0\n\n\n\n\np &gt; 0.10\nLittle / none\n\n\n0.05 &lt; p \\le 0.10\nWeak\n\n\n0.01 &lt; p \\le 0.05\nModerate\n\n\np \\le 0.01\nStrong\n\n\n\n(Guidelines, not iron-clad laws.)\n\nCommon Pitfalls\n\np is not the probability that (H_0) is true\n\np is not the probability the result occurred “by chance”\n\nA non-significant p does not prove H_0\n\nStatistical significance ≠ practical importance\n\n\n\nExample: In our treatment test, t = 2.5 gave p = 0.006.\nIf H_0 were true, such an extreme outcome would occur only 0.6 % of the time,compelling evidence favoring the new treatment."
+  },
+  {
+    "objectID": "files/lecture_notes/lecture13/lecture13.html#resources",
+    "href": "files/lecture_notes/lecture13/lecture13.html#resources",
+    "title": "Hypothesis Testing: Making Decisions with Data",
+    "section": "Resources",
+    "text": "Resources\n\nOpenIntro Statistics, Ch. 7 – “Inference for Numerical Data” (Sections 7.1–7.5)\nKhan Academy - Hypothesis Testing\nSciPy Documentation - scipy.stats.ttest_1samp\nstatsmodels - Statistical Power & Sample‑Size Tools"
   }
 ]
