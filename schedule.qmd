@@ -589,9 +589,10 @@ Quiz 2 (Weeks 3–4)
 
 [Lab 6 Solutions](/files/labs/lab6/lab6_sln.qmd)
 :::
-::: {.worksheet}
+::: {.worksheet .worksheets-content}
 [Worksheet 6](/files/worksheets/pstat5a_worksheet6.pdf)
-<!-- [Worksheet 6 Solutions](/files/worksheets/pstat5a_worksheet6.pdf) -->
+
+[Worksheet 6 Solutions](/files/worksheets/pstat5a_worksheet6_withsolutions.pdf)
 :::
 :::
 
@@ -619,8 +620,13 @@ Quiz 2 (Weeks 3–4)
 7/30 - 7/31
 :::
 ::: {.topic .lectures-content}
-Linear Regression Continued, Quiz Review & Wrap up
-<!-- [Linear Regression Notes](/files/lecture_notes/lecture14/Lecture_Regression_Analysis.pdf) -->
+
+
+[Linear Regression Notes](/files/lecture_notes/lecture14/Lecture_Regression_Analysis.pdf)
+
+- [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1V-s2-5MuGmCMWuiTNry7EawaFvBIClu7?usp=sharing)
+
+[Course Wrap-Up & Quiz Review](/files/lecture_notes/wrap_up.qmd)
 :::
 ::: {.lab-quiz .empty-cell}
 —
