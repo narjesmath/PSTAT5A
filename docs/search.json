@@ -2706,7 +2706,7 @@
     "href": "files/lecture_notes/lecture10/lecture10.html#types-of-sampling-methods",
     "title": "PSTAT 5A: Sampling Principles and Strategies",
     "section": "Types of Sampling Methods 🎯",
-    "text": "Types of Sampling Methods 🎯\n\n📋 Probability Sampling Methods\n\n1. Simple Random Sampling (SRS)\nEvery individual has equal chance of selection\nGold standard for inference\n2. Stratified Sampling\nDivide population into groups (strata)\nSample randomly within each group\nEnsures representation of subgroups\n\n3. Cluster Sampling\nDivide into clusters, randomly select clusters\nSample all/some individuals within chosen clusters\nCost-effective for large populations\n4. Systematic Sampling\nSelect every \\(kth\\) individual from ordered list\nSimple but can introduce bias if pattern exists"
+    "text": "Types of Sampling Methods 🎯\n\n📋 Probability Sampling Methods\n\n1. Simple Random Sampling (SRS)\nEvery individual has equal chance of selection\nGold standard for inference\n2. Stratified Sampling\nDivide population into groups (strata)\nSample randomly within each group\nEnsures representation of subgroups\n\n3. Cluster Sampling\nDivide into clusters, randomly select clusters\nSample all/some individuals within chosen clusters\nCost-effective for large populations\n4. Systematic Sampling\nSelect every kth individual from ordered list\nSimple but can introduce bias if pattern exists"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#sampling-bias-what-can-go-wrong",
@@ -2727,56 +2727,56 @@
     "href": "files/lecture_notes/lecture10/lecture10.html#the-central-limit-theorem",
     "title": "PSTAT 5A: Sampling Principles and Strategies",
     "section": "The Central Limit Theorem 🌟",
-    "text": "The Central Limit Theorem 🌟\n\n\n📐 The Statement\nFor a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\), when sample size \\(n\\) is large enough:\n\\[\\bar{X} \\sim N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\\]\nOr equivalently: \\[Z = \\frac{\\bar{X} - \\mu}{\\sigma/\\sqrt{n}} \\sim N(0,1)\\]\n✨ The Magic Rules\n\nRule of Thumb: \\(n \\geq 30\\) usually works\nShape doesn’t matter: Works for ANY population distribution\n\nLarger \\(n\\) = Better approximation"
+    "text": "The Central Limit Theorem 🌟\n\n\n📐 The Statement\nFor a population with mean \\mu and standard deviation \\sigma, when sample size n is large enough:\n\\bar{X} \\sim N\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\nOr equivalently: Z = \\frac{\\bar{X} - \\mu}{\\sigma/\\sqrt{n}} \\sim N(0,1)\n✨ The Magic Rules\n\nRule of Thumb: n \\geq 30 usually works\nShape doesn’t matter: Works for ANY population distribution\n\nLarger n = Better approximation"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#standard-error-measuring-our-uncertainty",
     "href": "files/lecture_notes/lecture10/lecture10.html#standard-error-measuring-our-uncertainty",
     "title": "PSTAT 5A: Sampling Principles and Strategies",
     "section": "Standard Error: Measuring Our Uncertainty 📏",
-    "text": "Standard Error: Measuring Our Uncertainty 📏\n\n\n🎯 What is Standard Error?\nStandard Error (SE) measures how much sample means vary from sample to sample.\n\\[SE = \\frac{\\sigma}{\\sqrt{n}} \\text{ (when } \\sigma \\text{ is known)}\\]\n\\[SE = \\frac{s}{\\sqrt{n}} \\text{ (usual case, } \\sigma \\text{ unknown)}\\]\n🔍 Key Insights\n\nSmaller SE = More precise estimates\nSE decreases as sample size increases\nRate of decrease: \\(SE \\propto 1/\\sqrt{n}\\)\n4× larger sample = ½ the uncertainty!"
+    "text": "Standard Error: Measuring Our Uncertainty 📏\n\n\n🎯 What is Standard Error?\nStandard Error (SE) measures how much sample means vary from sample to sample.\nSE = \\frac{\\sigma}{\\sqrt{n}} \\text{ (when } \\sigma \\text{ is known)}\nSE = \\frac{s}{\\sqrt{n}} \\text{ (usual case, } \\sigma \\text{ unknown)}\n🔍 Key Insights\n\nSmaller SE = More precise estimates\nSE decreases as sample size increases\nRate of decrease: SE \\propto 1/\\sqrt{n}\n4× larger sample = ½ the uncertainty!"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#confidence-intervals-our-bridge-to-the-population",
     "href": "files/lecture_notes/lecture10/lecture10.html#confidence-intervals-our-bridge-to-the-population",
     "title": "PSTAT 5A: Sampling Principles and Strategies",
     "section": "Confidence Intervals: Our Bridge to the Population 🌉",
-    "text": "Confidence Intervals: Our Bridge to the Population 🌉\n\n\n🎯 What Are Confidence Intervals?\nA confidence interval gives us a range of plausible values for the population parameter.\nFor a population mean: \\[\\bar{x} \\pm z^* \\cdot \\frac{s}{\\sqrt{n}}\\]\n🔢 Common Confidence Levels\n\n90% CI: \\(z^* = 1.645\\)\n95% CI: \\(z^* = 1.96\\)\n99% CI: \\(z^* = 2.576\\)\n\n💭 Correct Interpretation\n“We are 95% confident that the true population mean lies between [lower bound] and [upper bound]”"
+    "text": "Confidence Intervals: Our Bridge to the Population 🌉\n\n\n🎯 What Are Confidence Intervals?\nA confidence interval gives us a range of plausible values for the population parameter.\nFor a population mean: \\bar{x} \\pm z^* \\cdot \\frac{s}{\\sqrt{n}}\n🔢 Common Confidence Levels\n\n90% CI: z^* = 1.645\n95% CI: z^* = 1.96\n99% CI: z^* = 2.576\n\n💭 Correct Interpretation\n“We are 95% confident that the true population mean lies between [lower bound] and [upper bound]”"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#sample-size-planning-getting-it-right",
     "href": "files/lecture_notes/lecture10/lecture10.html#sample-size-planning-getting-it-right",
     "title": "PSTAT 5A: Sampling Principles and Strategies",
     "section": "Sample Size Planning: Getting It Right 🎯",
-    "text": "Sample Size Planning: Getting It Right 🎯\n\n\n📐 The Formula\nTo achieve margin of error \\(E\\) with confidence level \\((1-\\alpha)\\):\n\\[n = \\left(\\frac{z^*\\sigma}{E}\\right)^2\\]\n🎯 Key Considerations\nMargin of Error Trade-offs: - Smaller \\(E\\) requires larger \\(n\\) - Higher confidence requires larger \\(n\\)\n- More variable population requires larger \\(n\\)\nPractical Constraints: - Budget limitations - Time constraints\n- Availability of participants"
+    "text": "Sample Size Planning: Getting It Right 🎯\n\n\n📐 The Formula\nTo achieve margin of error E with confidence level (1-\\alpha):\nn = \\left(\\frac{z^*\\sigma}{E}\\right)^2\n🎯 Key Considerations\nMargin of Error Trade-offs: - Smaller E requires larger n - Higher confidence requires larger n\n- More variable population requires larger n\nPractical Constraints: - Budget limitations - Time constraints\n- Availability of participants"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#putting-it-all-together-a-real-example",
     "href": "files/lecture_notes/lecture10/lecture10.html#putting-it-all-together-a-real-example",
     "title": "PSTAT 5A: Sampling Principles and Strategies",
     "section": "Putting It All Together: A Real Example 📊",
-    "text": "Putting It All Together: A Real Example 📊\n\n\n🎯 Research Question\n“What is the average height of UCSB students?”\nOur Approach:\n\nPopulation: All 26,000 UCSB students\nSample: Random sample of 100 students\nMeasurement: Height in inches\nGoal: 95% confidence interval for population mean\n\nResults:\n\nSample mean: \\(\\bar{x} = 68.2\\) inches\nSample std dev: \\(s = 4.1\\) inches\nSample size: \\(n = 100\\)\n\n\n\n\n                            \n                                            \n\n\n🎯 Interpretation: We are 95% confident that the true average height of UCSB students is between 67.40 and 69.00 inches."
+    "text": "Putting It All Together: A Real Example 📊\n\n\n🎯 Research Question\n“What is the average height of UCSB students?”\nOur Approach:\n\nPopulation: All 26,000 UCSB students\nSample: Random sample of 100 students\nMeasurement: Height in inches\nGoal: 95% confidence interval for population mean\n\nResults:\n\nSample mean: \\bar{x} = 68.2 inches\nSample std dev: s = 4.1 inches\nSample size: n = 100\n\n\n\n\n                            \n                                            \n\n\n🎯 Interpretation: We are 95% confident that the true average height of UCSB students is between 67.40 and 69.00 inches."
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#key-takeaways-your-statistical-toolkit",
     "href": "files/lecture_notes/lecture10/lecture10.html#key-takeaways-your-statistical-toolkit",
     "title": "PSTAT 5A: Sampling Principles and Strategies",
     "section": "Key Takeaways: Your Statistical Toolkit 🎯",
-    "text": "Key Takeaways: Your Statistical Toolkit 🎯\n\n\n🧠 Fundamental Concepts\n1. Sampling Wisdom\n\nRepresentative samples beat large biased samples\nRandomization is your best friend\nBias can’t be fixed with larger samples\n\n2. The CLT Magic\n\nSample means are approximately normal (\\(n ≥ 30\\))\nWorks for ANY population distribution\nEnables powerful statistical inference\n\n3. Standard Error\n\nMeasures precision of our estimates\nDecreases with \\(\\sqrt{n}\\), not \\(n\\)\nKey ingredient in confidence intervals\n\n\n🛠️ Practical Skills\n4. Confidence Intervals\n\nQuantify uncertainty in our estimates\nCorrect interpretation is crucial\nWidth depends on confidence level and sample size\n\n5. Sample Size Planning\n\nBalance precision needs with resources\nConsider margin of error requirements\nAccount for practical constraints\n\n6. Quality Control\n\nAlways check for potential bias\nVerify assumptions (normality, independence)\nConsider the broader context"
+    "text": "Key Takeaways: Your Statistical Toolkit 🎯\n\n\n🧠 Fundamental Concepts\n1. Sampling Wisdom\n\nRepresentative samples beat large biased samples\nRandomization is your best friend\nBias can’t be fixed with larger samples\n\n2. The CLT Magic\n\nSample means are approximately normal (n ≥ 30)\nWorks for ANY population distribution\nEnables powerful statistical inference\n\n3. Standard Error\n\nMeasures precision of our estimates\nDecreases with \\sqrt{n}, not n\nKey ingredient in confidence intervals\n\n\n🛠️ Practical Skills\n4. Confidence Intervals\n\nQuantify uncertainty in our estimates\nCorrect interpretation is crucial\nWidth depends on confidence level and sample size\n\n5. Sample Size Planning\n\nBalance precision needs with resources\nConsider margin of error requirements\nAccount for practical constraints\n\n6. Quality Control\n\nAlways check for potential bias\nVerify assumptions (normality, independence)\nConsider the broader context"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#common-misconceptions-to-avoid",
     "href": "files/lecture_notes/lecture10/lecture10.html#common-misconceptions-to-avoid",
     "title": "PSTAT 5A: Sampling Principles and Strategies",
     "section": "Common Misconceptions to Avoid ⚠️",
-    "text": "Common Misconceptions to Avoid ⚠️"
+    "text": "Common Misconceptions to Avoid ⚠️\n\n\n\n\n\n\n\n❌ Common Misconception\n✅ Correct Understanding\n\n\n\n\n‘95% probability the mean is in our specific interval’\n‘95% of intervals constructed this way contain the true mean’\n\n\n‘Larger sample always better regardless of cost’\n‘Balance sample size with precision needs and budget’\n\n\n‘Bias disappears with large enough sample’\n‘Bias requires design fixes, not just more data’\n\n\n‘Normal population required for CLT to work’\n‘CLT works for ANY population shape with n ≥ 30’\n\n\n‘Confidence interval contains all reasonable values’\n‘CI contains plausible values for the population parameter’"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#interactive-practice-test-your-understanding",
     "href": "files/lecture_notes/lecture10/lecture10.html#interactive-practice-test-your-understanding",
     "title": "PSTAT 5A: Sampling Principles and Strategies",
     "section": "Interactive Practice: Test Your Understanding 🧪",
-    "text": "Interactive Practice: Test Your Understanding 🧪\n\n\n🤔 Check Questions\n1. Sample Size Question: If we want to halve our margin of error, by what factor should we increase our sample size?\n2. CLT Application:\nA population has a right-skewed distribution. What can we say about the distribution of sample means when n = 50?\n3. CI Interpretation: We calculated a 95% CI as (45, 55). What does this mean?\n4. Bias Detection: An online survey about internet usage gets 10,000 responses. What type of bias might be present?\n\n✅ Answers\n1. Increase by factor of 4 (since \\(SE \\propto \\frac{1}{\\sqrt{n}}\\))\n2. Sample means will be approximately normal regardless of population shape\n3. We’re 95% confident the true population parameter is between 45 and 55\n4. Selection bias - excludes people without internet access"
+    "text": "Interactive Practice: Test Your Understanding 🧪\n\n\n🤔 Check Questions\n1. Sample Size Question: If we want to halve our margin of error, by what factor should we increase our sample size?\n2. CLT Application:\nA population has a right-skewed distribution. What can we say about the distribution of sample means when n = 50?\n3. CI Interpretation: We calculated a 95% CI as (45, 55). What does this mean?\n4. Bias Detection: An online survey about internet usage gets 10,000 responses. What type of bias might be present?\n\n✅ Answers\n1. Increase by factor of 4 (since SE \\propto \\frac{1}{\\sqrt{n}})\n2. Sample means will be approximately normal regardless of population shape\n3. We’re 95% confident the true population parameter is between 45 and 55\n4. Selection bias - excludes people without internet access"
   },
   {
     "objectID": "files/lecture_notes/lecture10/lecture10.html#comprehensive-resources",
