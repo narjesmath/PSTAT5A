@@ -340,6 +340,8 @@ Lecture Materials
 :::
 ::: {.topic .quiz-item .quizzes-content}
 Quiz 1 (Weeks 1–2)
+
+[Quiz 1 Solutions](files/quizzes/quiz1/PSTAT5A__Quiz1_Solutions.pdf)
 :::
 ::: {.lab-quiz .empty-cell}
 —
@@ -545,6 +547,8 @@ Quiz 1 (Weeks 1–2)
 :::
 ::: {.topic .quiz-item .quizzes-content}
 Quiz 2 (Weeks 3–4)
+
+[Quiz 2 Solutions](/files/quizzes/quiz2/PSTAT5A_Quiz2_Solutions.pdf)
 :::
 ::: {.lab-quiz .empty-cell}
 —
