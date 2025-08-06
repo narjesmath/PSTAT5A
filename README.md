@@ -233,13 +233,6 @@ quarto render
 - **Course Website**: [https//pstat5a.com](https://pstat5a.com/)
 
 
-## 🙏 Acknowledgments
-
-- UCSB Department of Statistics and Applied Probability
-- Quarto development team for the excellent publishing platform
-- The open-source community for tools and resources
-- Students and colleagues for feedback and suggestions
-
 ## 📈 Project Status
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/narjesmath/PSTAT5A)
