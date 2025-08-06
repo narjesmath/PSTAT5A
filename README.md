@@ -1,4 +1,4 @@
-<div align="center">
+<div align="right">
   <img src="img/logo.png" alt="PSTAT5A Logo" width="200" height="auto">
 </div>
 
